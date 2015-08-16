@@ -12,6 +12,8 @@ categoriescss= "/style/template.css"
 highlightStyle="darkula"
 sidebartitle = "Development"
 sidebartagline = "Is super awesome"
+
+[params.xap]
 xaplatestrelease="10.2"
 
 projecturl="https://github.com/guy-mograbi-at-gigaspaces/getcloudify-hugo-version"

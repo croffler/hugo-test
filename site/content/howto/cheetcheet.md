@@ -1,14 +1,14 @@
 +++
 
 Description = ""
-title = "Cheet sheet"
+title = "Cheat sheet"
 
 +++
 
 # Site variables
 
  
-
+{{<latestxaprelease>}}
 
 
 
@@ -114,9 +114,14 @@ sadklsjadjksjdsjdkla
 
 
 
-{{%tip%}}
+{{%tip title="Tip"%}}
 This is an info 
 {{%/tip%}}
+
+
+{{%warning title="Warning"%}}
+This is a warning
+{{%/warning%}}
 
 
 {{%comment%}}
