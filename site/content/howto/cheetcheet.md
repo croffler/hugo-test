@@ -8,7 +8,7 @@ title = "Cheat sheet"
 # Site variables
 
  
-{{<latestxaprelease>}}
+The latest XAP release is : {{<latestxaprelease>}}
 
 
 
