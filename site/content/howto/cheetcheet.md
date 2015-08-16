@@ -7,7 +7,7 @@ title = "Cheet sheet"
 
 # Site variables
 
-{{<latestxaprelease>}}
+ 
 
 
 
