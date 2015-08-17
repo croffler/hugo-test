@@ -1,0 +1,12 @@
+ 
+<div class='panel-group' id="{{ .Get 0}}">
+        {{ .Inner }}
+</div>
+
+
+<!--
+      output = "<div class='panel-group' id='#{@div_id}'>"
+        output << Kramdown::Document.new(content).to_html
+        output << "</div>"
+
+        -->

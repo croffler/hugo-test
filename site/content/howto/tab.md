@@ -13,19 +13,38 @@ title = "Tab"
 </ul>
 </div>
 
+
+
+# Accordion
+
+{{%accordion 1%}}
+
+
+
+{{%accord title="accordion1" parent="1"%}}
  
-# Tabs
+ fdslfsdkfldkfdsf
+ dsfsdf
+ sdfsdfdsf
 
+{{%/accord%}}
 
-{{<inittab>}}
+{{%accord title="accordion2" parent="1"%}}
+ 
+ fdslfsdkfldkfdsf
+ dsfsdf
+ sdfsdfdsf
 
-{{%tabcontent%}}
-Tab 1 showing
-{{%/tabcontent%}}
+{{%/accord%}}
 
-{{%tabcontent%}}
-Tab 2 showing
-{{%/tabcontent%}}
+{{%accord title="accordion3" parent="1"%}}
+ 
+ fdslfsdkfldkfdsf
+ dsfsdf
+ sdfsdfdsf
 
-{{</inittab>}}
+{{%/accord%}}
+
+{{%/accordion%}}
+
  
