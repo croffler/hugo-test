@@ -5,49 +5,17 @@ title = "Cheat sheet"
 
 +++
 
+
+
+ 
+
+
+
 # Site variables
 
  
 The latest XAP release is : {{<latestxaprelease>}}
 
-
-
-{{%inittab%}}
-
-{{%tabcontent%}}
-Tab 1 showing
-{{%/tabcontent%}}
-
-{{%tabcontent%}}
-Tab 2 showing
-{{%/tabcontent%}}
-
-{{%/inittab%}}
-
-# Section
-
-{{%section%}}
-
-{{%column%}}
-column 1 dasdsajdjskajdkjskadjksjadkjskadjksjadkjsk
-sdasdasdasdas
-{{%/column%}}
-
-
-{{%column%}}
-column 2 dsajdsjadkjaskdjaskjdkasjdkjaskd
-asdsadasdkjaskdjskajdkasjd
-{{%/column%}}
-
-{{%column%}}
-column 3
-asdhsahdjhsajdhjshdhsadhsahdashd
-{{%/column%}}
-
-{{%/section%}}
-
-
-<br><br>
 
 # Icons
 
@@ -74,9 +42,18 @@ asdhsahdjhsajdhjshdhsadhsahdashd
 
 
 
+# Navigation
+
+{{%tryit "http://docs.gigaspaces.com"%}}
+
+{{%learn "http://docs.gigaspaces.com"%}}
+
+{{%refer%}} Please refer to this section if you need more info [docs](http://docs.gigaspaces.com) {{%/refer%}}
+
+
 # Code Highlight
 
-{{%gshighlight java%}}
+{{<highlight java>}}
 @SpaceClass
 public class User {
   private Long id;
@@ -93,45 +70,73 @@ public class User {
 	return id;
   }
 }
-{{%/gshighlight%}}
+{{</highlight>}}
+
+ 
+ {{< highlight  yaml >}}
+tosca_definitions_version: cloudify_dsl_1_0
+
+imports:
+  - http://www.getcloudify.org/spec/cloudify/3.2/types.yaml
+  - http://www.getcloudify.org/spec/openstack-plugin/1.2/plugin.yaml
+
+inputs:
+  image_name:
+    description: The server's image name
+    type: string
+    default: "Ubuntu 12.04"
+
+node_templates:
+  vm:
+    type: cloudify.openstack.nodes.Server
+    properties:
+      server:
+        image_name: { get_input: image_name }
+{{< /highlight >}}
+
+
+
+
 
  
 
 
-# Panels 
-
-
-{{%fpanel%}}
-
-This is a Front - Panel
-ksjdjsdkjsjdsjdjsld
-sadkjskjdkjskdjsjdjsld
-
-dsadksajdkljklsjdl
-
-sadklsjadjksjdsjdkla
-{{%/fpanel%}}
-
-
-
-{{%tip title="Tip"%}}
-This is an info 
-{{%/tip%}}
-
-
-{{%warning title="Warning"%}}
-This is a warning
-{{%/warning%}}
-
-
-{{%comment%}}
-
-This should not show up 
-
-{{%/comment%}}
+ 
  
  
 
-# Youtube
+ 
 
-{{%youtube kAe-ZxFnIYc%}}
+
+# Color
+
+
+## Text Color
+
+This is a color {{%color blue%}} test {{%/color%}}
+
+This is a color {{%color red%}} test {{%/color%}}
+
+
+## Background color
+
+This is a color {{%bcolor yellow%}} test {{%/bcolor%}}
+
+This is a color {{%bcolor green%}} test {{%/bcolor%}}
+
+### Text stuff 
+
+
+This is a text {{%sub%}} small text should be here {{%/sub%}}
+
+
+# Text Alignment
+
+{{%align center%}} This text should be aligned in the center{{%/align%}}
+
+{{%align right%}} This text should be aligned to the right{{%/align%}}
+
+{{%align left%}} This text should be aligned to the left{{%/align%}}
+
+
+ 
