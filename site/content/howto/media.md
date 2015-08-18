@@ -16,19 +16,18 @@ parent="cheetscheet.html"
 ![display image](/images/doc_api.jpg)
 
 
- 
-
- 
-
 
 ## Image Popup
 
 {{%popup  "/images/web_app_archi.jpg" %}}
 
 
+{{%popup  "/images/doc_api.jpg" %}}
+
+
 
 ## Video Popup
 
-{{%popup  "v=fgXdQhPkXBQ" %}}
+{{<youtube  "fgXdQhPkXBQ" >}}
 
   

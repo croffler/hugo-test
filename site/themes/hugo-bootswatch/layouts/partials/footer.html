@@ -1,14 +1,20 @@
-        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <!--script src="https://code.jquery.com/jquery-1.10.2.min.js"></script-->
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/bootswatch.js"></script>
-        <script src="/js/lightbox.min.js"></script>
-        <script src="/js/jquery.scrollToTop.min.js"></script>
-		<script src="/js/ekko-lightbox.js"></script>
 
-        <script src="/js/bootstrap-table.min.js"></script>
- 
- 
- <script type="text/javascript">
+
+         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!--script src="/js/lightbox.js"></script-->
+
+
+
+	<script src="/js/ekko-lightbox.js"></script>
+
+<script type="text/javascript">
     $(document).ready(function ($) {
     // delegate calls to data-toggle="lightbox"
     $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
@@ -33,21 +39,19 @@
     //   });
 
     });
-    </script>
 
-  
-   
- 
+    //mixpanel tracking 
+    if(mixpanel.cookie.props.Email) {
+        mixpanel.identify(mixpanel.cookie.props.Email);
+    }
 
+    var pageObj = {'Page Name' : document.title, 'URL' : window.location.pathname};
+    mixpanel.track('XAP Docs Page View', pageObj);
+    mixpanel.people.increment('XAP docs page views');
 
-
-<script type="text/javascript">
-    $(function() {
-    $("#toTop").scrollToTop(1000);
-    });
 </script>
 
-
+     
     </body>
 </html>
 

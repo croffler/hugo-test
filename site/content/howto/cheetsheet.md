@@ -4,14 +4,7 @@ Description = ""
 title = "Cheat sheet"
 
 +++
-
  
- {{< highlight go "linenos=inline,hl_lines=2 3" >}}
-var a string
-var b string
-var c string
-var d string
-{{</highlight>}}
 
 
 # Site variables
