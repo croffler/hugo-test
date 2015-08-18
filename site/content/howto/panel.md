@@ -6,9 +6,17 @@ title = "Panel"
 +++
  
 # Panels 
-{: .table .table-bordered .table-condensed}
+
+
+{: .table .table-bordered}
 | Header1 | Header2 | Header3 |
-|:---------------|:&-------------|:----------------|
+|:--------|:--------|:--------|
+| column1 | column2 | column3 |
+
+
+{: .table .table-bordered .table-condensed}
+| Header11 | Header22 | Header33 |
+|---------------|-------------|----------------|
 | column1sdsadsdsa | column2dsadsad | column3dsadsad |
 
 

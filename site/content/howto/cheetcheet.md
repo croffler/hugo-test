@@ -7,9 +7,13 @@ title = "Cheat sheet"
 
 
 
+{{%summary%}}
  
 
 
+ 
+
+ 
 
 # Site variables
 
@@ -31,7 +35,7 @@ The latest XAP release is : {{<latestxaprelease>}}
 {{<lampoff>}} Lamp off<br>
 
 
-### Downloads
+# Downloads
 
 {{%externurl  "http://docs.gigaspaces.com"%}}<br>
 {{%download  "http://docs.gigaspaces.com"%}}<br>
