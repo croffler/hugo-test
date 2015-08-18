@@ -1,77 +1,40 @@
 +++
 
 Description = ""
-title = "Panel"
+title = "Panels"
 
 +++
  
-# Panels 
+# Info panels
+
+ 
+{{%warning title="Caution"%}}This is an warning panel{{%/warning%}}
+
+{{%tip title="Tip"%}}This is an Tip panel{{%/tip%}}
+
+{{%note title="Note"%}}This is an Note panel{{%/note%}}
 
 
-{: .table .table-bordered}
-| Header1 | Header2 | Header3 |
-|:--------|:--------|:--------|
-| column1 | column2 | column3 |
+{{%info title="Info"%}}This is an info panel{{%/info%}}
 
 
-{: .table .table-bordered .table-condensed}
-| Header11 | Header22 | Header33 |
-|---------------|-------------|----------------|
-| column1sdsadsdsa | column2dsadsad | column3dsadsad |
-
-
+ 
 
 ### Front panel 
 
 {{%fpanel%}}
+- [Overview](./change-api.html)<br>
+Change API overview.
 
-This is a Front - Panel
-ksjdjsdkjsjdsjdjsld
-sadkjskjdkjskdjsjdjsld
+- [Custom Change](./change-api-custom-operation.html)<br>
+A custom change operation lets the user implement his own change operation.
 
-dsadksajdkljklsjdl
-
-sadklsjadjksjdsjdkla
+- [Advanced Change Options](./change-api-advanced.html)<br>
+A SpaceSynchronizationEndpoint implementation can make use of the Change API and support change operation.
 {{%/fpanel%}}
 
 
-   
-
-
-
-|First Header   | Second Header|
-|-------------|-------------|
-|Content Cell | Content Cell|
-|Content Cell   | Content Cell|
-|---------------|---------|
-
-
- <div class="container">
-  <h2>Table</h2>
-  <p>Using all the table classes on one table:</p>                                          
-  <table class="table table-striped table-bordered table-hover table-condensed">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Firstname</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Anna</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Debbie</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>John</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  
 
  
 

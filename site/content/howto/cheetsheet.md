@@ -5,14 +5,6 @@ title = "Cheat sheet"
 
 +++
 
-
-
-{{%summary%}}
- 
-
-
- 
-
  
 
 # Site variables
