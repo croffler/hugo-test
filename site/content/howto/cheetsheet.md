@@ -6,6 +6,13 @@ title = "Cheat sheet"
 +++
 
  
+ {{< highlight go "linenos=inline,hl_lines=2 3" >}}
+var a string
+var b string
+var c string
+var d string
+{{</highlight>}}
+
 
 # Site variables
 
@@ -44,7 +51,6 @@ The latest XAP release is : {{<latestxaprelease>}}
 
 {{%learn "http://docs.gigaspaces.com"%}}
 
-{{%refer%}} Please refer to this section if you need more info [docs](http://docs.gigaspaces.com) {{%/refer%}}
 
 
 # Code Highlight
@@ -68,38 +74,6 @@ public class User {
 }
 {{</highlight>}}
 
- 
- {{< highlight  yaml >}}
-tosca_definitions_version: cloudify_dsl_1_0
-
-imports:
-  - http://www.getcloudify.org/spec/cloudify/3.2/types.yaml
-  - http://www.getcloudify.org/spec/openstack-plugin/1.2/plugin.yaml
-
-inputs:
-  image_name:
-    description: The server's image name
-    type: string
-    default: "Ubuntu 12.04"
-
-node_templates:
-  vm:
-    type: cloudify.openstack.nodes.Server
-    properties:
-      server:
-        image_name: { get_input: image_name }
-{{< /highlight >}}
-
-
-
-
-
- 
-
-
- 
- 
- 
 
  
 

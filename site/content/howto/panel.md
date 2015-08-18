@@ -8,6 +8,11 @@ title = "Panels"
 # Info panels
 
  
+<div class='bs-callout bs-callout-danger'><strong><p>Warning</p></strong>
+    This is a warning
+</div> 
+
+
 {{%warning title="Caution"%}}This is an warning panel{{%/warning%}}
 
 {{%tip title="Tip"%}}This is an Tip panel{{%/tip%}}
@@ -17,6 +22,8 @@ title = "Panels"
 
 {{%info title="Info"%}}This is an info panel{{%/info%}}
 
+
+{{%refer%}} Please refer to this section if you need more info [docs](http://docs.gigaspaces.com) {{%/refer%}}
 
  
 
