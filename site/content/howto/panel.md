@@ -8,16 +8,7 @@ title = "Panels"
 # Info panels
 
 
-
-<div class="bs-callout bs-callout-default">
-  <h4>Default Callout</h4>
-  This is a default callout.
-</div>
-
  
-<div class='bs-callout bs-callout-danger'><strong><p>Warning</p></strong>
-    This is a warning
-</div> 
 
 
 {{%warning title="Caution"%}}This is an warning panel{{%/warning%}}
