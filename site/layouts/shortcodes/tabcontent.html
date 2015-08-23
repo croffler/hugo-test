@@ -1,15 +1,15 @@
    
 
-  <div class="tab-pane" id="foo" title="Foo"><p>{{.Inner}}</p></div>
+  <div class="tab-pane" id="{{ .Get 0}}" title="{{ .Get 0}} "><p>{{.Inner}}</p></div>
 
 
+<!--
+     def add_div_for_tabcontent(context, code)
+        escapedTitle = @title.downcase.gsub(/(\s)/, "_").gsub(".", "_").gsub("+", "P").gsub("#", "_")
+      	output = "<div class='tab-pane' id='#{escapedTitle}' title='#{@title}'>"
+        output << Kramdown::Document.new(code).to_html
+        output << "</div>"
+      end
+
+  -->
  
-
- <!--
- <div> 
- <ul class="nav nav-tabs">{{ .Inner}}
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
-</div -->

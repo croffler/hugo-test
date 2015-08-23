@@ -20,6 +20,8 @@ title = "Panels"
 
 {{%info title="Info"%}}This is an info panel{{%/info%}}
 
+{{%vbar title="VBar"%}}This is an vbar panel{{%/vbar%}}
+
 
 {{%refer%}} Please refer to this section if you need more info [docs](http://docs.gigaspaces.com) {{%/refer%}}
 
