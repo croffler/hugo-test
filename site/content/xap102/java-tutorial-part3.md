@@ -35,8 +35,8 @@ Task Execution provides a fine-grained API for performing ad-hoc parallel execut
 * As a dynamic "stored procedure" enabling to execute complex multi stage queries or data manipulation where the data resides, thus enabling to send back only the end result of the calculation and avoid excess network traffic.
 * Scatter/Gather pattern - when you need to perform aggregated operations over a cluster of distributed partitions.
 
-Task execution comes in two flavors:
-- Java Tasks - In this mode you can pass Java code from the client to the cluster to be executed on the data grid nodes. The code is dynamically introduced to the server nodes classpath.
+Task execution comes in two flavors:<br>
+- Java Tasks - In this mode you can pass Java code from the client to the cluster to be executed on the data grid nodes. The code is dynamically introduced to the server nodes classpath.<br>
 - Dynamic language tasks - Tasks can be defined using one of the dynamic languages supported by the JVM (JSR-223) and be compiled and executed on the fly. In this part of the tutorial we will not cover Dynamic language tasks.
 
 {{%learn "/dynamic-language-tasks.html" %}}
