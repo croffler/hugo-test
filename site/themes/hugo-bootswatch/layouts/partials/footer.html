@@ -1,3 +1,12 @@
+ <div id="footer">
+  <div class="container">
+    <p style="text-align:center;margin: 20px 0" class="text-muted credit">&copy; GigaSpaces Technologies, 2015. Powered by <a href="http://jekyllrb.com/">Jekyll</a>, Web Site Sources Hosted on <a href="http://github.com/Gigaspaces/gigaspaces-wiki-jekyll">Github</a>.&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/terms-of-use.html">Terms of Use</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/release_notes/third-party.html">3rd Party License Agreements</a></p>
+  </div>
+
+  
+</div>
+
+
         <!--script src="https://code.jquery.com/jquery-1.10.2.min.js"></script-->
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/bootswatch.js"></script>
@@ -12,9 +21,38 @@
     <script src="/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
-    <!--script src="/js/lightbox.js"></script-->
+    <script src="/js/jquery.scrollToTop.js"></script>
 
 
+<!--script src="/js/jquery.scrollToTop.min.js"></script -->
+
+
+<script type="text/javascript">
+    $(function() {
+    $("#toTop").scrollToTop(1000);
+    });
+</script>
+
+<script>
+$(document).ready(function(){
+    
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+    
+    //Click event to scroll to top
+    $('.scrollToTop').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
+    
+});
+</script>
 
 	<script src="/js/ekko-lightbox.js"></script>
 

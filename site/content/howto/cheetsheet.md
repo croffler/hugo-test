@@ -10,7 +10,7 @@ title = "Cheat sheet"
 # Site variables
 
  
-The latest XAP release is : {{<latestxaprelease>}}
+The latest XAP release is : {{<latestxaprelease>}} this is the latest release
 
 
 # Icons
@@ -31,7 +31,7 @@ The latest XAP release is : {{<latestxaprelease>}}
 
 {{%externurl  "http://docs.gigaspaces.com"%}}<br>
 {{%download  "http://docs.gigaspaces.com"%}}<br>
-{{%pdf  "http://docs.gigaspaces.com"%}}<br>
+{{%pdf  "http://docs.gigaspaces.com"%}} doenload pdf<br>
 {{%git  "http://docs.gigaspaces.com"%}}<br>
 {{%zip  "http://docs.gigaspaces.com"%}}<br>
 {{%word "http://docs.gigaspaces.com"%}}
@@ -48,14 +48,14 @@ The latest XAP release is : {{<latestxaprelease>}}
 
 # Code Highlight
 
-{{<highlight java>}}
+{{%highlight java%}}
 @SpaceClass
 public class User {
   private Long id;
   private String name;
   private Double balance;
   private Double creditLimit;
- 
+
   public User() {
   }
 
@@ -65,7 +65,7 @@ public class User {
 	return id;
   }
 }
-{{</highlight>}}
+{{%/highlight%}}
 
 
  

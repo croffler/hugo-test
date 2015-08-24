@@ -7,6 +7,14 @@ title="Test"
 
  
 
-<row>
- <div class='bs-callout bs-callout-info'>Search Results</div>
- </row>
+{{%summary%}}
+
+
+
+
+# Title 1
+
+
+# Title 2
+
+# Title 3
