@@ -237,19 +237,19 @@ public class PaymentProcessor implements IPaymentProcessor {
 The service is exported to the server with the Spring configuration. Here is an example:
 
 {{<highlight xml>}}
- 
-context:component-scan base-package="xap.qsg"  
+
+<context:component-scan base-package="xap.qsg"/> 
 
  
-os-remoting:annotation-support />
+<os-remoting:annotation-support />
 
  
-os-core:embedded-space id="space" name="xapTutorialSpace"  
+<os-core:embedded-space id="space" name="xapTutorialSpace" /> 
 
  
-os-core:giga-space id="xapTutorialSpace" space="space" 
+<os-core:giga-space id="xapTutorialSpace" space="space" />
 
-os-remoting:service-exporter id="serviceExporter"  
+<os-remoting:service-exporter id="serviceExporter"/>
 {{</highlight>}}
 
 #### Client side invocation
