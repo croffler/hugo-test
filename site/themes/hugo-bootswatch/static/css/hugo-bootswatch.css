@@ -18,7 +18,7 @@ footer{
     top:400px;
     right:0px;
     display:none;
-    background: url('arrow-up.png') no-repeat 0px 5px;
+    background: url('/images/arrow-up.png') no-repeat 0px 5px;
 }
 .scrollToTop:hover{
     text-decoration:none;
