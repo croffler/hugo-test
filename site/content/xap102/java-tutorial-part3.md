@@ -1,7 +1,7 @@
 +++
  
 title="Processing Services"
- 
+toc="true" 
  
 +++
 
@@ -17,7 +17,7 @@ title="Processing Services"
 {%endsection%}
 -->
 
-In this part of the tutorial we will introduce you to the different processing services you can run on top of the space.
+{{<summary "In this part of the tutorial we will introduce you to the different processing services you can run on top of the space." >}}
 
 
 

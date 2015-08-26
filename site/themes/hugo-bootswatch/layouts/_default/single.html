@@ -4,15 +4,20 @@
     <div class="container">
         <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
        
-        <div class="post">
-            {{ .Content }}
-        </div>
-
-        {{ partial "container-footer.html" . }}
  
-     </div>
-    
+ 
+
+ 
+<div class="col-lg-8 col-md-12">
+{{ .Content }}
+</div>
+<div id="toc" class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
+<h5> On this page </h5>
+{{ .TableOfContents }}
+</div>
+ 
+    </div>
 
 {{ partial "footer.html" . }}
 
-
+ 
