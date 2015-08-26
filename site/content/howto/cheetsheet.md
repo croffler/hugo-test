@@ -2,7 +2,7 @@
 
 Description = ""
 title = "Cheat sheet"
-
+categories="100"
 +++
  
 
@@ -12,6 +12,8 @@ title = "Cheat sheet"
  
 The latest XAP release is : {{<latestxaprelease>}} this is the latest release
 
+
+Current adm url : {{<currentadmurl>}}
 
 # Icons
 
