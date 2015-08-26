@@ -32,6 +32,14 @@ projectversion="3.1.0"
     url = "/posts"
 
 
+[[menu.xap102]]
+    name = "xap102"
+    url = "/xap102"
 
-    pygmentsUseClasses = true
+ 
+
+ pygmentsUseClasses = true
+
+
+
   

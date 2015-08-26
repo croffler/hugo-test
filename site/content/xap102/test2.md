@@ -1,9 +1,9 @@
 +++
  
-title="Test"
+title="Test2"
  
-menu="xap102" 
-weight="10"
+menu="main" 
+weight="50"
 +++
 
  
