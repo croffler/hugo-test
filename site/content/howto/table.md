@@ -18,7 +18,7 @@ instances     | no       | dict          | Instances configuration.
 interfaces    | no       | interfaces    | Used for mapping plugins to [interfaces](dsl-spec-interfaces.html) operation or for specifying inputs for already mapped node type operations.
 relationships | no       | relationships | Used for specifying the [relationships](dsl-spec-relationships.html) this node template has with other node templates.
 
-
+ 
 <br>
 
 
