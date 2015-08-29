@@ -12,20 +12,15 @@ title = "Section"
 
 {{%section%}}
 
-{{%column width="30%" %}}
+{{%column width="40%" %}}
 ![display image](/images/doc_api.jpg)
 {{%/column%}}
 
 
-{{%column width="30%" %}}
+{{%column width="60%" %}}
 <br>
-column 2 dsajdsjadkjaskdjaskjdkasjdkjaskd
+dlsakldklsdklskdlskdlskadldsajdsjadkjaskdjaskjdkasjdkjaskd
 asdsadasdkjaskdjskajdkasjd
-{{%/column%}}
-
-{{%column width="30%"%}}
-column 3
-asdhsahdjhsajdhjshdhsadhsahdashd
 {{%/column%}}
 
 {{%/section%}}

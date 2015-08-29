@@ -1,19 +1,19 @@
-+++
-title="Java Developers Guide"
-categories="102"
-
-+++
+---
+layout: post102
+title:  Java Developers Guide
+categories: XAP102
+---
 
 <br>
 
-{%section%}
-{%column width=15% %}
+{{%section%}}
+{{%column width="15%" %}}
 <img src="/attachment_files/subject/imc.png" width="80" height="80">
-{%endcolumn%}
-{%column width=85% %}
+{{%/column%}}
+{{%column width="85%" %}}
 This guide introduces the key concepts for building XAP applications. The topics in this guide span installation, tutorials, the XAP API, Processing Unit, web application support, Space replication, platform interoperability and security.
-{%endcolumn%}
-{%endsection%}
+{{%/column%}}
+{{%/section%}}
 
 <br>
 
