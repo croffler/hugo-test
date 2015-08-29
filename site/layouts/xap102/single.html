@@ -35,38 +35,4 @@
 
 {{ partial "footer.html" . }}
 
- 
-
-<!--
- <div class="container">
-        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-       
- 
-	<div class="col-lg-8 col-md-12">
-    	<nav class="sidebar-nav">
-        	{{ $currentNode := . }}
-        	{{ range .Site.Menus.main }}
-        	<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
-        	{{ end }}
-    	</nav>
- 	</div>
-
- 
-	<div class="col-lg-8 col-md-12">
-		{{ .Content }}
-	</div>
-
-
-	<div id="toc" class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
-		<h5> On this page </h5>
-		{{ .TableOfContents }}
-	</div>
- 
-
-
-</div>
-
-
-
-{{ partial "footer.html" . }}
--->
+  

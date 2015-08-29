@@ -2,7 +2,7 @@
  
 title="Test2"
  
-menu="main" 
+
 weight="50"
 +++
 

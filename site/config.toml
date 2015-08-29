@@ -18,9 +18,7 @@ projecturl="https://github.com/guy-mograbi-at-gigaspaces/getcloudify-hugo-versio
 projectversion="3.1.0"
 
 
-[[menu.main]]
-    name = "Blog"
-    url = "/posts"
+ 
 
 [[menu.social]]
     pre = "<i class='fa fa-twitter'></i>"
@@ -32,11 +30,19 @@ projectversion="3.1.0"
     url = "/posts"
 
 
-[[menu.xap102]]
+[[menu.xap100]]
+    name = "xap100"
+    url = "/xap100"
+
+ 
+ [[menu.xap101]]
+    name = "xap101"
+    url = "/xap101"
+
+    [[menu.xap102]]
     name = "xap102"
     url = "/xap102"
 
- 
 
  pygmentsUseClasses = true
 
