@@ -7,7 +7,7 @@ weight: 600
 ---
 
 
-{{% summary  %}}  {{% /summary %}}
+{{% ssummary  %}}  {{% /ssummary %}}
 
 The XAP Mirror Service provides reliable asynchronous persistency which allows you to asynchronously delegate the operations conducted with the In-Memory-Data-Grid (IMDG) into a backend database, significantly reducing the performance overhead.
 
@@ -183,7 +183,7 @@ Before primary space is un deployed/redeployed, all data changes are flushed to 
 
 # Optimizing the Mirror Activity
 
-{{% warning title=Database Update Rate %}}
+{{% warning title="Database Update Rate" %}}
 The database update rate by the Mirror is a function of the number of IMDG partitions, database update speed with a single thread, database transaction size, network latency between the Mirror and the Database, hibernate overhead (if hibernate is being used as the persistence mechanism), relevant table indexed columns, and the database record size. Also, when distributed transactions are used with the IMDG, this may improve the database update rate (since multiple partitions will be sending their updates to the Mirror, which can batch all cumulative updates to the database), but this will impact the IMDG transaction latency.
 {{% /warning %}}
 
@@ -224,7 +224,7 @@ The activity of the mirror service can be monitored using the [Administration an
 
 You may view Mirror and its replication statistics via the [GigaSpaces Management Center]({{%currentadmurl%}}/gigaspaces-management-center.html). Move into the Space Browser tab, click the top tree Spaces icon, right click the table columns title area on the right panel, select the columns you would to view as part of the table and click OK.
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 
 {{%popup "/attachment_files/mirror_ui_stats.jpg" %}}
 {{%/column%}}

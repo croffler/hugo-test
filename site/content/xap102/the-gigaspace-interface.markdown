@@ -6,7 +6,7 @@ weight: 100
 parent: the-gigaspace-interface-overview.html
 ---
 
-{{% summary %}}{{%/summary%}}
+{{% ssummary %}}{{%/ssummary%}}
 
 
 A Space is a logical in-memory service, which can store entries of information. An entry is a domain object; In Java, an entry can be as simple a POJO or a SpaceDocument.
@@ -20,7 +20,7 @@ The space is accessed via a programmatic interface which supports the following 
 - Take – get the value from the space and delete its content.
 - Notify – alert when the contents of an entry of interest have registered changes.
 
-{{%learn%}}./the-space-operations.html{{%endlearn%}}
+{{%learn ./the-space-operations.html%}
 
 
 
@@ -35,7 +35,7 @@ A client communicating with a an embedded space performs all its operation via l
 
 Here is an example how to create an embedded space. The `EmbeddedSpaceConfigurer` is used to configure the space url:
 
-{{% inittab os_space_emb|top %}}
+{{% inittab os_space_emb %}}
 {{% tabcontent Code %}}
 
 {{% highlight java %}}
@@ -88,7 +88,7 @@ A client communicating with a remote space performs all its operation via a remo
 
 Here is an example how a client application can create a proxy to interacting with a remote space:
 
-{{% inittab os_space_remote|top %}}
+{{% inittab os_space_remote %}}
 {{% tabcontent Code %}}
 
 {{% highlight java %}}
@@ -143,7 +143,7 @@ XAP supports a [Local Cache](./local-cache.html) (near cache) configuration. Thi
 
 Here is an example for a `GigaSpace` construct with a local cache:
 
-{{% inittab os_local_cache|top %}}
+{{% inittab os_local_cache %}}
 {{% tabcontent Code %}}
 
 {{% highlight java %}}
@@ -183,7 +183,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 
 {{% /inittab %}}
 
-{{%learn%}}./local-cache.html{{%endlearn%}}
+{{%learn ./local-cache.html%}
 
 
 # Local View
@@ -196,7 +196,7 @@ XAP supports a [Local View](./local-view.html) configuration. This provides a fr
 
 Here is an example for a `GigaSpace` construct with a local cache:
 
-{{% inittab os_local_view|top %}}
+{{% inittab os_local_view %}}
 {{% tabcontent Code %}}
 
 {{% highlight java %}}
@@ -253,7 +253,7 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {{% /tabcontent %}}
 {{% /inittab %}}
 
-{{%learn%}}./local-view.html{{%endlearn%}}
+{{%learn ./local-view.html%}
 
 
 # Resource cleanup
@@ -312,7 +312,7 @@ LRMIManager.shutdown();
 
 A secured space should be configured with a security context so that it can be accessed (when connecting to it remotely). Here is an example of how this can be configured:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -343,7 +343,7 @@ A secured space should be configured with a security context so that it can be a
 
 Here is an example of how to define security with an embedded space. In this case, we enable security and specify the username and password.
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -374,14 +374,14 @@ Here is an example of how to define security with an embedded space. In this cas
 
 It is possible to configure the space to be secured using deploy time properties (bean level properties), without declaring the security element. The `security.username` and `security.password` can be provided, and the spaces defined within the processing unit are automatically secured.
 
-{{%learn %}}{{%currentsecurl%}}{{%endlearn %}}
+{{%learn %}}{{%currentsecurl%}}{{%/learn %}}
 
 
 # Persistency
 
 When constructing a space, it is possible to provide [Space Persistency](./space-persistency.html) extensions using Spring-based configuration (instead of using the space schema). Here is an example of how it can be defined:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

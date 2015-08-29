@@ -6,7 +6,7 @@ parent: client-side-caching.html
 weight: 200
 ---
 
-{{% summary page %}}{{% /summary %}}
+{{% ssummary page %}}{{% /ssummary %}}
 
 
 
@@ -29,7 +29,7 @@ The Local view can be used with financial applications (e.g. trading , market da
 
 Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-interface.html) instance, except the space should be wrapped with a local view before exposing it as a `GigaSpace`. The local view can be configured via Spring using `LocalViewSpaceFactoryBean` or the `<os-core:local-view>` Spring tag, or in code using `LocalViewSpaceConfigurer`. For example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent   Namespace   %}}
 
 {{% highlight xml %}}
@@ -209,20 +209,3 @@ This properties can be configured on the space side and they will affect all the
 | cluster-config.groups.group.repl-policy.redo-log-local-view-recovery-capacity | Specifies the total capacity of replication packets the redo log can hold for a local view replication target while the local view is in recovery state (initial load process)| 1000000 |
 | cluster-config.groups.group.repl-policy.local-view-max-disconnection-time | Specifies the maximum amount of time (in milliseconds) the space will wait for the local view replication target before it is considered disconnected, after which the target will be dropped. | 300000 |
 
-
-{{%comment%}}
-#### Summary of Configuration Changes
-
-The following table summarizes the configuration changes made in 8.0.5
-
-{: .table .table-bordered .table-bordered}
-| Old Property (8.0.4 and older) | `LocalViewSpaceFactoryBean` | `LocalViewSpaceConfigurer` |
-|:-------------------------------|:----------------------------|:---------------------------|
-| space-config.dist-cache.events.lease | max-disconnection-duration | maxDisconnectionDuration() |
-| space-config.dist-cache.events.lease-renew.duration | max-disconnection-duration | maxDisconnectionDuration() |
-| space-config.dist-cache.retry-connections | Ignored - Irrelevant | Ignored - Irrelevant |
-| space-config.dist-cache.delay-between-retries | Ignored - Irrelevant | Ignored - Irrelevant |
-| space-config.dist-cache.events.batch.size | batch-size | batchSize() |
-| space-config.dist-cache.events.batch.timeout | batch-timeout | batchTimeout() |
-| <nobr>space-config.dist-cache.events.lease-renew.round-trip-time</nobr> | Ignored in replication sync{{% wbr %}}Same in notification sync | Ignored in replication sync{{% wbr %}}Same in notification sync |
-{{%/comment%}}

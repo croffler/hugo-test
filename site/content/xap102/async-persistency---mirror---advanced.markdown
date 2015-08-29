@@ -7,7 +7,7 @@ weight: 100
 ---
 
 
-{{% summary%}} {{% /summary %}}
+{{% ssummary%}} {{% /ssummary %}}
 
 # Custom Mirror Service Name
 
@@ -93,7 +93,7 @@ And here is how this can be configured within the mirror configuration:
 {{% gcloak config %}}
 {{% panel bgColor=white|borderStyle=none %}}
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -393,7 +393,7 @@ Setting both `dist-tx-wait-timeout-millis` and `dist-tx-wait-for-opers` to unlim
 {{%column width="80%" %}}
 The following is a schematic flow of a synchronous replicated cluster with three members, which are communicating with a Mirror Service:
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/IMG101.gif"%}}
 {{%/column%}}
 {{%/section%}}
@@ -408,7 +408,7 @@ The data-grid pu.xml needs to be configured to use an **space data source** whic
 
 Here is a schematic flow of how a Mirror Service asynchronously receives data, to persist into an data source, while the cluster is reading data directly from the data source.
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/IMG103.gif"%}}
 {{%/column%}}
 {{%/section%}}
@@ -422,7 +422,7 @@ When partitioning data, each partition asynchronously replicates data into the M
 
 Here is a schematic flow of how two partitions (each a primary-backup pair) asynchronously interact with a data source:
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/IMG104.gif"%}}
 {{%/column%}}
 {{%/section%}}

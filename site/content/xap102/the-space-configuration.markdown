@@ -6,7 +6,7 @@ weight: 200
 parent: the-gigaspace-interface-overview.html
 ---
 
-{{% summary %}}{{%/summary%}}
+{{% ssummary %}}{{%/ssummary%}}
 
 When a client connects to a space, a proxy is created that holds a connection to the space. All client interaction is performed through this proxy.
 The proxy provides a simpler space API using the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html) interface.
@@ -132,7 +132,7 @@ The `UrlSpaceFactoryBean` allows you to set different URL properties, either exp
 
 Here is an example of a space working in FIFO mode, using specific lookup groups:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -182,11 +182,11 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 
 The space allows you to override specific schema configuration element values using the `Properties` object, that uses an XPath-like navigation as the name value. The `UrlSpaceFactoryBean` allows you to set the `Properties` object, specifying it within the Spring configuration.
 
-{{% tip title=Which component's configuration can be overridden? %}}
+{{% tip title="Which component's configuration can be overridden?" %}}
 The general properties are used to override various components such as the space, space container, cluster schema properties, space proxy/client configuration, space URL attributes and other system and environmental properties.
 {{% /tip %}}
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -248,7 +248,7 @@ The `GigaSpace` Spring Bean provides a simple way to configure a proxy to be inj
 
 Here is an example on how to create the proxy:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -312,7 +312,7 @@ The `GigaSpace` Bean can have the following elements:
 
 Here is an example of the `GigaSpace` Bean:
 
-{{% inittab gigaspace|top %}}
+{{% inittab gigaspace %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -425,7 +425,7 @@ The application is always injected with `os-core:giga-space` bean that wraps alw
 
 You may configure default modifiers for the different operations in the `GigaSpace` interface. The default modifiers can be configured in the following manner:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

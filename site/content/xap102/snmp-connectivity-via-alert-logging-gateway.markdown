@@ -11,7 +11,7 @@ weight: 300
  ![counter-logo.jpg](/attachment_files/subject/alerts.png)
  {{% /column %}}
  {{% column width="90%" %}}
- {{% summary %}} {{% /summary %}}
+ {{% ssummary %}} {{% /ssummary %}}
  {{% /column %}}
  {{% /section %}}
 

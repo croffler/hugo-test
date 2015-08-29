@@ -16,7 +16,7 @@ When using transactions, only the event listener operations are rolled back. The
 
 Transaction support can be configured as follows:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}

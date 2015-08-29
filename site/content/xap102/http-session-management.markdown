@@ -11,7 +11,7 @@ weight: 250
  ![counter-logo.jpg](/attachment_files/subject/httpsession.png)
  {{% /column %}}
  {{% column width="90%" %}}
- {{% summary %}} {{% /summary %}}
+ {{% ssummary %}} {{% /ssummary %}}
  {{% /column %}}
  {{% /section %}}
 

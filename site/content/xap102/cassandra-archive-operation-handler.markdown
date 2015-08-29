@@ -15,7 +15,7 @@ weight: 200
 The [Archive Container](./archive-container.html) can be configured to work against Cassandra (without writing any extra code). The [ArchiveOperationHandler interface](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/archive/ArchiveOperationHandler.html) abstracts the Big-Data storage from the [Archive Container](./archive-container.html). The Cassandra Archive Operation Handler implements this interface by [serializing](#Property Value Serializer) space objects into Cassandra.
 
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/archive-container-cassandra.jpg"%}}
 {{%/column%}}
 {{%/section%}}
@@ -28,7 +28,7 @@ The Cassandra Archive Operation Handler uses the [Hector Library](http://hector-
 Include the following in your `pom.xml`
 
 {{% inittab %}}
-{{% tabcontent hector using log4j %}}
+{{% tabcontent "hector using log4j" %}}
 
 {{% highlight xml %}}
 <dependency>
@@ -51,7 +51,7 @@ Include the following in your `pom.xml`
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent hector using java.util.logging %}}
+{{% tabcontent "hector using java.util.logging" %}}
 
 {{% highlight xml %}}
 <dependency>
@@ -95,7 +95,7 @@ Include the following in your `pom.xml`
 
 #### Setup
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -110,7 +110,7 @@ Include the following in your `pom.xml`
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 
@@ -159,16 +159,7 @@ archiveContainer.destroy();
 |flattenedPropertiesFilter| see [Flattened Properties Filter](./cassandra-space-synchronization-endpoint.html#Flattened Properties Filter).|
 |columnFamilyNameConverter| see [Column Family Name Converter](./cassandra-space-synchronization-endpoint.html#Column Family Name Converter).|
 
-{{%comment%}}
-#### XSD Schema
 
-- <os-archive:cassandra-archive-handler> schema:
-
-{{% indent %}}
-![cassandra-archive-handler-schema-9-1-1.png](/attachment_files/cassandra-archive-handler-schema-9-1-1.png)
-{{% /indent %}}
-
-{{%/comment%}}
 
 #### Property Value Serializer
 

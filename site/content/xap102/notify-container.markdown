@@ -6,14 +6,14 @@ parent: notify-container-overview.html
 weight: 100
 ---
 
-{{% summary  %}}{{%/summary%}}
+{{% ssummary  %}}{{%/ssummary%}}
 
 
 {{% section %}}
 {{% column width="80%" %}}
 The notify event container uses the space inherited support for notifications (continuous query) using a XAPs unified event session API. If a notification occurs, the [data event listener](./data-event-listener.html) is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
 {{% /column %}}
-{{% column width=20% %}}
+{{% column width="20%" %}}
 {{%popup "/attachment_files/notify_container_basic.jpg" %}}
 {{% /column %}}
 {{% /section %}}
@@ -30,7 +30,7 @@ The notify container life cycle events described below. You may implement each o
 
 Here is a simple example of a notify event container configuration:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -166,7 +166,7 @@ Notifications for expired objects (NOTIFY_LEASE_EXPIRATION type) are sent both f
 
 When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./query-sql.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -309,7 +309,7 @@ When using transactions, only the event listener operations are rolled back. The
 
 Transaction support can be configured as follows:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -436,7 +436,7 @@ The notify container allows you to mask which operations performed against the s
 
 Here is an example of the notify container configured to trigger notifications for both write and update operations:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -626,7 +626,7 @@ Below is an example how batch notification should be configured. With this examp
 Make sure you set a reasonable batch size to avoid overloading the listener with a large burst of events to process. A value under 100 will be acceptable for most cases.
 {{% /tip %}}
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -740,7 +740,7 @@ For full FIFO support, the actual template also has to be marked as FIFO. For mo
 
 Here is an example of how FIFO events can be configured with the notify container:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -816,7 +816,7 @@ The Notify Container can recover from partial disconnections (e.g failover) auto
 
 To get a notification about such disconnections, the *Auto Renew* feature needs to be enabled, and the container needs to implement a `LeaseListener` and register if to be triggered when the container becomes disconnected. For example:
 
-{{% inittab register_notifications|top %}}
+{{% inittab register_notifications%}}
 
 {{% tabcontent Notify Container Creation %}}
 
@@ -943,7 +943,7 @@ This means that during this very short period of time, the registered client mig
 
 Durable notifications allows configuring the notify container to withstand failover and short network disconnections with no notifications lost.
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -1038,7 +1038,7 @@ Pojo properties should implement `hashcode` and `equals` methods for matching to
 
 Here is how the notify container can be configured:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}

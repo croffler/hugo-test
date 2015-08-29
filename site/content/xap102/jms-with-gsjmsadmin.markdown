@@ -33,7 +33,7 @@ String url="jini://myhost:myport/mySpace_container/mySpace;jini://myhost/./mySpa
 ConnectionFactory factory = admin.getConnectionfactory(url); // or a proxy
 {{% /highlight %}}
 
-{{% note title=Using the following space URL:%}}
+{{% note title="Using the following space URL:"%}}
 
 `jini://myhost:myport/myJMSSpace_container/myJMSSpace;jini://myhost/./myJMSSpace` combines two separate Jini Lookup Services avoiding **Single Point of Failure**.
 {{%/note%}}

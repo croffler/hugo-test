@@ -50,4 +50,4 @@ Obtaining partial results when querying the space to improve application perform
 
 #### Additional Resources
 
-{{%youtube jC57mId3SMg | XAP Query APIS%}}
+{{<youtube "jC57mId3SMg""XAP Query APIS">}}

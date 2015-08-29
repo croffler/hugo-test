@@ -6,7 +6,7 @@ parent: rest-service-overview.html
 weight: 300
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 The REST service is a Processing Unit that once it is deployed it starts an embedded jetty server along with a REST service allowing interactions with the Space via the [REST API](./rest-service-api.html).
 

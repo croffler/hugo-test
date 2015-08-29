@@ -53,10 +53,10 @@ Configuring XAP as a Windows service.
 #### Additional Resources
 {{%section%}}
 {{%column%}}
-{{%youtube Q1zCFxqbqrQ | Installing XAP%}}
+{{<youtube "Q1zCFxqbqrQ""Installing XAP">}}
 {{%/column%}}
 {{%column%}}
-{{%youtube _n8ZCnoAIyw | Maven Plugin%}}
+{{<youtube "_n8ZCnoAIyw""Maven Plugin">}}
 {{%/column%}}
 {{%/section%}}
 

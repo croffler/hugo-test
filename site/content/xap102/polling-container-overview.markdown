@@ -38,6 +38,6 @@ Both the receive operation and the actual event action can be configured to be p
 
 #### Additional Resources
 
-{{%youtube GwLfDYgl6f8 | Event Processing%}}
+{{<youtube "GwLfDYgl6f8" "Event Processing">}}
 
 

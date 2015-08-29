@@ -19,7 +19,7 @@ Multiple site replication is the ability to replicate state between different de
 {{%/column%}}
 {{%/section%}}
 
-{{% info title=Licensing %}}
+{{% info title="Licensing" %}}
 The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.
 {{% /info %}}
 
@@ -65,7 +65,7 @@ Frequently asked questions.
 <br>
 
 #### Additional Resources
-{{%youtube V7rbbmWo3JU | Multi Site Deployment%}}
+{{<youtube "V7rbbmWo3JU" "Multi Site Deployment">}}
 
 
 

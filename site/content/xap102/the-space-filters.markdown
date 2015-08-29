@@ -6,7 +6,7 @@ weight: 800
 parent: the-gigaspace-interface-overview.html
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 Space Filters are interceptors inside the XAP Space engine that enable integration with external systems and/or implementation of user-defined logic based once space operations are executed.
 
@@ -52,7 +52,7 @@ public class SimpleFilter implements ISpaceFilter {
 
 The following Spring configuration registers this filter for before write (`0`), before read (`2`), and before take (`3`) operations:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -165,7 +165,7 @@ When either annotations or explicit method listings are used, only a single meth
 
 The delegate filter shown above, can be configured in Spring using the following XML:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -203,7 +203,7 @@ The delegate filter shown above, can be configured in Spring using the following
 
 The following Spring configuration XML shows how the filter can be configured, using explicit method listings. (In this case, annotations are not required.)
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -280,7 +280,7 @@ public class SimpleReplicationFilter implements IReplicationFilter {
 
 The following configuration shows how it can be injected:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

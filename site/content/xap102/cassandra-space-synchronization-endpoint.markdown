@@ -15,7 +15,7 @@ The Cassandra Space Synchronization Endpoint uses the [Hector Library](http://he
 Include the following in your `pom.xml`
 
 {{% inittab %}}
-{{% tabcontent hector using log4j %}}
+{{% tabcontent "hector using log4j" %}}
 
 {{% highlight xml %}}
 <dependency>
@@ -84,7 +84,7 @@ Include the following in your `pom.xml`
 
 An example of how the Cassandra Space Synchronization Endpoint can be configured within a mirror.
 
-{{% inittab Configuration Examples %}}
+{{% inittab "Configuration Examples" %}}
 {{% tabcontent Spring %}}
 
 {{% highlight xml %}}

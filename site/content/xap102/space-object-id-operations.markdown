@@ -6,7 +6,7 @@ parent: modeling-your-data.html
 weight: 100
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 # How Space Object ID is Generated?
 
@@ -36,7 +36,7 @@ You might need to construct an ID that will be comprised from a user defined Obj
 
 See below example:
 
-{{% inittab The CompoundId|top %}}
+{{% inittab The CompoundId %}}
 {{% tabcontent The CompoundId %}}
 
 {{% highlight java %}}

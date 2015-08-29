@@ -6,7 +6,7 @@ weight: 550
 parent: the-gigaspace-interface-overview.html
 ---
 
-{{% summary  %}}  {{% /summary %}}
+{{% ssummary  %}}  {{% /ssummary %}}
 
 
 {{%section%}}
@@ -14,8 +14,8 @@ parent: the-gigaspace-interface-overview.html
 With many systems such as pricing systems, risk management, trading and other analytic and business intelligence applications you may need to perform an aggregation activity across data stored within the data grid when generating reports or when running some business process. Such activity can leverage data stored in memory and will be much faster than performing it with a database.
 XAP provides common functionality to perform aggregations across the space. There is no need to retrieve the entire data set from the space to the client side , iterate the result set and perform the aggregation. This would be an expensive activity as it might return large amount of data into the client application.
 {{%/column%}}
-{{%column width=20% %}}
-{{%youtube H22qPux8Fh8 | Aggregations %}}
+{{%column width="20%" %}}
+{{<youtube "H22qPux8Fh8""Aggregations">}}
 {{%/column%}}
 {{%/section%}}
 
@@ -35,10 +35,11 @@ Aggregators are executed by iterating the internal data grid structure that main
 {{%column width="80%" %}}
 XAP comes with several built-in Aggregators you may use. The aggregation process executed across all data grid partitions when using a partitioned data grid , or across the proxy master replica when using a replicated data grid. You may rout the aggregation into a specific partition. You may implement also a custom Aggregator that will perform a special aggregation logic on a given field (path) and a given entries set based on a query. Aggregators are specified via the [AggregationSet](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/index.html?com/gigaspaces/query/aggregators/AggregationSet.html) that may have one or more Aggregators listed.
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/aggregation1.png" %}}
 {{%/column%}}
 {{%/section%}}
+
 <br>
 
 {: .table .table-bordered .table-condensed}
@@ -137,8 +138,8 @@ public class Person {
 Compound aggregation will execute multiple aggregation operations across the space returning all of the result sets at once. When multiple aggregates are needed the compound aggregation API is significantly faster than calling each individual aggregate.
 
 {{%/column%}}
-{{%column width=20% %}}
-{{%popup "/attachment_files/aggregation2.png" %}}
+{{%column width="20%" %}}
+{{<popup "/attachment_files/aggregation2.png">}}
 {{%/column%}}
 {{%/section%}}
 
@@ -358,7 +359,7 @@ for (GroupByValue group : groupByResult) {
 {{%/highlight%}}
 
 
-{{%learn%}}./query-sql.html#routing{{%endlearn%}}
+{{<learn "./query-sql.html#routing">}}
 
 # Custom Aggregation
 

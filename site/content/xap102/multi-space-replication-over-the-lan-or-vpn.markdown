@@ -6,7 +6,7 @@ parent: multi-space-replication-overview.html
 weight: 100
 ---
 
-{{% summary %}}  {{% /summary %}}
+{{% ssummary %}}  {{% /ssummary %}}
 
 
 
@@ -30,9 +30,6 @@ The GigaSpaces Gateway features the following:
 In the case where each space resides on a different network and there is no network connectivity between all space instances of all the spaces, please refer to [Multi-Site Replication over the WAN](./multi-site-replication-over-the-wan.html) to understand how to establish such replication between different networks.
 {{% /info %}}
 
-{{%comment%}}
-<iframe width="640" height="360" src="//www.youtube.com/embed/V7rbbmWo3JU?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
-{{%/comment%}}
 
 # Supported Topologies
 

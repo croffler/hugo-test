@@ -6,7 +6,7 @@ parent: xap-cpp.html
 weight: 200
 ---
 
-{{% summary   %}}{{% /summary %}}
+{{% ssummary   %}}{{% /ssummary %}}
 
 
 The `SpaceProxy` is the primary C++ interface that allows you to connect to the space and perform space operations. The basic space operations include the following:

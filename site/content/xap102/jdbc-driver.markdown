@@ -6,7 +6,7 @@ parent: other-data-access-apis.html
 weight: 100
 ---
 
-{{% summary%}}{{% /summary %}}
+{{% ssummary%}}{{% /ssummary %}}
 
 
 The XAP JDBC interface allows database-driven applications to interact with spaces via SQL queries and commands. A query processor transparently translates SQL queries into legal space operations. No integration is required - all you need to do is point the application to the GigaSpaces JDBC driver like any other JDBC driver.

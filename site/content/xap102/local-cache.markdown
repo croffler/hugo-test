@@ -6,7 +6,7 @@ parent: client-side-caching.html
 weight: 100
 ---
 
-{{% summary page %}}{{% /summary %}}
+{{% ssummary page %}}{{% /ssummary %}}
 
 A **Local Cache** is a Client Side Cache that maintains a subset of the master space's data based on the client application's recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master space and caches the result locally for future queries.
 
@@ -19,7 +19,7 @@ A **Local Cache** is a Client Side Cache that maintains a subset of the master s
 
 Creating a local cache is similar to creating a GigaSpace, except that we wrap the space with a local cache before handing it to the GigaSpace. The local cache can be configured at design time using `LocalCacheSpaceFactoryBean`, or at runtime using `LocalCacheSpaceConfigurer`. For example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent  Namespace   %}}
 
 {{% highlight xml %}}

@@ -6,7 +6,7 @@ parent: elastic-processing-unit-overview.html
 weight: 200
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 The deployment of a partitioned (space based) EPU and stateless/web EPU is done via the Admin API.
 
@@ -233,7 +233,7 @@ gs> scale -name myPU -memory-capacity 32g
 
 Specifying number of partitions explicitly is recommended only when fine grained scale triggers are required. The example below illustrating 12 partitions system (12 primaries + 12 backups = 24 instances). See how the system scales to have increased total memory capacity as a function of the number of Containers and `memoryCapacityPerContainer`:
 
-{{% inittab memoryCapacityPerContainer|top %}}
+{{% inittab memoryCapacityPerContainer %}}
 {{% tabcontent memoryCapacityPerContainer 6G %}}
 
 {: .table .table-bordered .table-condensed}

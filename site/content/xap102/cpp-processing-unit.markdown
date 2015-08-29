@@ -6,7 +6,7 @@ parent: xap-cpp.html
 weight: 500
 ---
 
-{{% summary%}}{{% /summary %}}
+{{% ssummary%}}{{% /ssummary %}}
 
 
 GigaSpaces XAP is a universal grid based runtime environment for real-time Java, c++ and .Net applications. The real-time environment includes business logic Service Level agreement based container allowing you to deploy your libraries and their statefull data to have self-healing, dynamic scalability and continuous high-availability capabilities out of the box.

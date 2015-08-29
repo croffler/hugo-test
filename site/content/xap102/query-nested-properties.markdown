@@ -7,11 +7,11 @@ weight: 400
 ---
 
 {{%comment%}}
-{{% summary %}}Query nested properties, maps and collections using SQL queries {{% /summary %}}
+{{% ssummary %}}Query nested properties, maps and collections using SQL queries {{% /ssummary %}}
 # Overview
 {{%/comment%}}
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 The [SQL Query](./query-sql.html) page shows how to express complex queries on flat space entries (e.g. entries which are composed of scalar types like integers and strings), but in reality space entries are often composed of more complex types.
 For example, a **Person** class may have:
@@ -213,7 +213,7 @@ The following example queries for a **Dealer** which has a **Car** whose *compan
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*](company = 'Honda' AND color = 'Red')");
 {{% /highlight %}}
 
-{{% note title=Caution %}}
+{{% note title="Caution" %}}
 Writing that last query without parentheses will yield results which are somewhat confusing:
 
 {{% highlight java %}}
@@ -234,7 +234,7 @@ The following example queries for a **Dealer** which has a **Car** whose *compan
 ![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
 
 
-{{%warning title=The following is not supported%}}
+{{%warning title="The following is not supported"%}}
 
 {{%highlight java%}}
 ... = new SqlQuery<Dealer>("Cars[*](company = 'Honda' OR color = 'Red' OR tags[*] = 'Convertible')");

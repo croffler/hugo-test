@@ -7,7 +7,7 @@ weight: 500
 ---
 
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 # Available Storage Types
 
@@ -82,7 +82,7 @@ In remote mode, the Object's non-primitive fields are serialized where the seria
 
 Specifying space level storage type can be done using any of the following:
 
-{{% inittab Space-Level Storage Type|top %}}
+{{% inittab Space-Level Storage Type %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

@@ -6,7 +6,7 @@ parent: pojo-xml-metadata-overview.html
 weight: 100
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 # Name
@@ -43,7 +43,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}./space-persistency.html{{%endlearn%}}
+{{%learn "./space-persistency.html"%}}
 
 # Replication
 
@@ -63,7 +63,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}{{%currentadmurl%}}/replication.html{{%endlearn%}}
+{{%learn "{{%currentadmurl%}}/replication.html"%}}
 
 
 # FIFO Support
@@ -84,7 +84,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}./fifo-support.html{{%endlearn%}}
+{{%learn "./fifo-support.html"%}}
 
 # Storage Type
 
@@ -104,7 +104,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}./storage-types---controlling-serialization.html{{%endlearn%}}
+{{%learn "./storage-types---controlling-serialization.html"%}}
 
 
 # Include Properties
@@ -141,7 +141,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn%}}./indexing.html{{%endlearn%}}
+{{%learn "./indexing.html"%}}
 
 
 # Compound Index
@@ -164,7 +164,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}./indexing-compound.html{{%endlearn%}}
+{{%learn "./indexing-compound.html"%}}
 
 
 # Blob Store
@@ -188,7 +188,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}{{%currentadmurl%}}//memoryxtend.html{{%endlearn%}}
+{{%learn "{{%currentadmurl%}}//memoryxtend.html"%}}
 
 
 

@@ -7,7 +7,7 @@ weight: 100
 ---
 
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 Unlike POJOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class `SpaceTypeDescriptor`.
@@ -47,7 +47,7 @@ We also decide that **CatalogNumber** will be a primary key, partitioning will b
 
 The following is an example of how to introduce a new document type:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace Configuration %}}
 
 {{% highlight xml %}}
@@ -287,7 +287,8 @@ public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
 
 The `Document` properties values can be either scalars (integers, strings, enumuerations, etc), collections (arrays, lists), or nested properties (Map or an extension of map, such as `DocumentProperties`). Values must adhere to the same restrictions as in the POJO model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
 
-{{% note %}} It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
+{{% note %}}
+It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
 
 - While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
 
@@ -391,7 +392,7 @@ Event containers (both [polling container](./polling-container.html) and [notify
 
 Here is a simple example of a polling event container configuration using a `Document`:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -537,7 +538,7 @@ pollingEventListenerContainer.destroy();
 
 [FIFO support](./fifo-support.html) is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace Configuration %}}
 
 {{% highlight xml %}}
@@ -602,7 +603,7 @@ Transactions and isolation modifiers semantics is identical to the POJO semantic
 
 Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace Configuration %}}
 
 {{% highlight xml %}}
@@ -672,7 +673,7 @@ If you intend to use local cache or local view in a mixed POJO-Document environm
 External Data Source is supported for space documents.
 Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 
-{{% inittab example|top %}}
+{{% inittab example %}}
 {{% tabcontent Configuration %}}
 
 {{% highlight xml %}}

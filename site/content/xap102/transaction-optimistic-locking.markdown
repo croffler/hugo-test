@@ -6,7 +6,7 @@ parent: transaction-overview.html
 weight: 400
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 With optimistic locking, you write your business logic allowing multiple users to read the same object at the same time, but allow only one user to update the object successfully. The assumption is that there will be a relatively large number of users trying to read the same object, but a low probability of having a small number of users trying to update the same object at the same time.
 
@@ -90,7 +90,7 @@ At any time, you can commit or rollback the transaction. If you are using Spring
 
 By following the above procedure, you get a shorter locking duration, that improves performance and concurrency of access among multiple users to the space object. The object version ID validation that is performed on `update`, `take`, and `updateMultiple` requests, keeps the data within the space consistent.
 
-{{% endtoczone %}}
+
 
 # Examples
 
@@ -141,7 +141,7 @@ public class Employee
 }
 {{% /highlight %}}
 
-{{% inittab code_exmple|top %}}
+{{% inittab code_exmple %}}
 {{% tabcontent Non-Transactional Update %}}
 This example illustrates optimistic locking usage without using a transactional update:
 

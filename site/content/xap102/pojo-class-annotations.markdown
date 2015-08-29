@@ -6,7 +6,7 @@ parent: pojo-annotation-overview.html
 weight: 100
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 
@@ -32,7 +32,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn%}}./space-persistency.html{{%endlearn%}}
+{{%learn "./space-persistency.html"%}}
 
 
 # Include Properties
@@ -69,7 +69,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn%}}./fifo-support.html{{%endlearn%}}
+{{%learn "./fifo-support.html"%}}
 
 
 # Inherit Index
@@ -89,7 +89,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn%}}./indexing.html{{%endlearn%}}
+{{%learn "./indexing.html"%}}
 
 # Storage Type
 
@@ -109,7 +109,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn%}}./storage-types---controlling-serialization.html{{%endlearn%}}
+{{%learn "./storage-types---controlling-serialization.html"%}}
 
 # Replication
 
@@ -130,7 +130,7 @@ public class Person {
 
 
 
-{{%learn%}}{{%currentadmurl%}}/replication.html{{%endlearn%}}
+{{%learn {{%currentadmurl%}}/replication.html%}}
 
 
 # Compound Index
@@ -159,7 +159,7 @@ public class User {
 
 {{%/highlight%}}
 
-{{%learn%}}./indexing-compound.html{{%endlearn%}}
+{{%learn "./indexing-compound.html"%}}
 
 # Blob Store
 
@@ -179,6 +179,6 @@ public class Person {
 
 {{%/highlight%}}
 
-{{%learn%}}{{%currentadmurl%}}/memoryxtend.html{{%endlearn%}}
+{{%learn {{%currentadmurl%}}/memoryxtend.html%}}
 
 

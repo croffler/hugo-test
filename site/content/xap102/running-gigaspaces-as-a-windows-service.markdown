@@ -6,7 +6,7 @@ parent: installation.html
 weight: 800
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 # Common Scenarios
 

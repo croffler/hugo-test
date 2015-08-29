@@ -6,7 +6,7 @@ parent: mule-esb.html
 weight: 100
 ---
 
-{{% summary%}}  {{% /summary %}}
+{{% ssummary%}}  {{% /ssummary %}}
 
 
 XAP event container transport uses [event components](./messaging-support.html) (namely the [polling container](./polling-container.html) and [notify container](./notify-container.html)) to receive POJO messages using the Space as the transport layer. It also allows you to send POJO messages using the Space as the transport layer.

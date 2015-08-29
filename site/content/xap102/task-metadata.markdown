@@ -6,7 +6,7 @@ parent: task-execution-overview.html
 weight: 400
 ---
 
-{{%summary%}}{{%/summary%}}
+{{%ssummary%}}{{%/ssummary%}}
 
 
 # Task Execution
@@ -31,7 +31,7 @@ public class MyTask implements Task<Integer>  {
 {{%/highlight%}}
 
 
-{{%learn%}}./task-execution-overview.html{{%endlearn%}}
+{{%learn "./task-execution-overview.html"%}}
 
 
 # Task Routing
@@ -54,4 +54,4 @@ public class MyTask implements Task<Integer>  {
 }
 {{%/highlight%}}
 
-{{%learn%}}./task-execution-overview.html{{%endlearn%}}
+{{%learn "./task-execution-overview.html"%}}

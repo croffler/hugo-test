@@ -6,7 +6,7 @@ parent: space-based-remoting-overview.html
 weight: 200
 ---
 
-{{% summary%}}{{%/summary%}}
+{{% ssummary%}}{{%/ssummary%}}
 
 
 *Executor Based Remoting* uses [Executors](./task-execution-over-the-space.html) to provided remoting capabilities on top of the Space. Executor Based Remoting allows for direct invocation of services in an asynchronous manner in a broadcast or routed manner. Executor Remoting works with services that are deployed in a Processing Unit and execute within a collocated space.
@@ -82,7 +82,7 @@ public interface IDataProcessor {
 
 Next, an implementation of this contract needs to be provided. This implementation will "live" on the server side. Here is a sample implementation:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -118,7 +118,7 @@ The XML tab corresponds to exporting the service using an xml configuration (exp
 
 The next step is exporting the service over the space. Exporting the service is done on the server side. As with other Spring remoting support, exporting the service and the mechanism of exporting the service is a configuration-time decision. Here is an example of a Spring XML configuration:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -200,7 +200,7 @@ public class DataRemoting {
 
 Configuring the `IDataProcessor` proxy can done in the following manner:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -274,7 +274,7 @@ If there are more than one `GigaSpace` beans defined within the application cont
 
 In order to enable this feature, the following element needs to be added to the application context XML:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -323,7 +323,7 @@ public class DataRemoteRoutingHandler implements RemoteRoutingHandler<Long> {
 
 Finally, the wiring is done in the following manner:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -619,7 +619,7 @@ public interface RemoteInvocationAspect<T> {
 
 An implementation of such an aspect can be configured as follows:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -711,7 +711,7 @@ public interface ServiceExecutionAspect {
 
 An implementation of such an aspect can be configured as follows:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -780,7 +780,7 @@ public interface MetaArgumentsHandler {
 
 The following snippets show how to plug a custom meta arguments handler to the client side remote proxy. The `Object` array returned by the implementation of the `MetaArgumentsHandler` interface will be sent along with the invocation to server side.
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -861,7 +861,7 @@ The Second phase involves reducing the results retrieved from the Services:
 
 The configuration of enabling broadcasting is done on the client level, by setting the broadcast flag to `true`:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

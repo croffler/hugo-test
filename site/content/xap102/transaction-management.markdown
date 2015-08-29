@@ -6,7 +6,7 @@ parent: transaction-overview.html
 weight: 100
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 
 {{%section%}}
@@ -14,7 +14,7 @@ weight: 100
 The Spring Framework provides a transaction manager abstraction using the `PlatformTransactionManager` interface with several different built-in implementations, such as JDBC Data Source and JTA. GigaSpaces provides several implementations for Spring's `PlatformTransactionManager`, allowing you to use the GigaSpaces local and Jini Distributed Transaction Managers.
 By implementing Spring's `PlatformTransactionManager`, the XAP API allows users to utilize Spring's rich support for [declarative transaction management](http://static.springframework.org/spring/docs/2.5.x/reference/transaction.html#transaction-declarative). The declarative transaction support can be easily utilized with the [GigaSpace Interface](./the-gigaspace-interface.html).
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/tx_manager.jpg"%}}
 {{%/column%}}
 {{%/section%}}
@@ -49,7 +49,7 @@ The distributed [Jini Transaction Manager](http://river.apache.org/doc/specs/htm
 
 Below is an example of how it can be defined in a Spring application context:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -96,7 +96,7 @@ The Jini distributed (mahalo) transaction manager allows to set the default time
 
 For example, to change the default timeout to 2 minutes, use the following configuration:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -156,7 +156,7 @@ The Jini Transaction Manager Lookup allows you to use the Jini lookup mechanism 
 
 Below is an example of how it can be defined in a Spring application context:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -204,7 +204,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm
 
 The Jini lookup transaction manager allows to set the default timeout value for transactions. A timeout value is used when a transaction is not committed/rolled back (for example due to a JVM crash) to control when the transaction will be discarded. By default the timeout value is 60 Sec and is set in seconds. Controlling the timeout value can be done using:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -265,7 +265,7 @@ Jini transactions allow you to configure automatic renewing of ongoing transacti
 
 Here is an example of how this can be configured:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -328,7 +328,7 @@ More information regarding Lease Renewal Manager can be found [here](./leases-au
 
 GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API allows you to work with Spring's `JTATransactionManager` and provides support for declarative transaction management. Here is an example of how OpenSpaces JTA support can be used (using JOTM):
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

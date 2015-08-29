@@ -6,15 +6,15 @@ weight: 100
 parent: change-api-overview.html
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 {{%section%}}
 {{%column width="80%" %}}
 The [GigaSpace.change](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/GigaSpace.html) and the [ChangeSet](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?com/gigaspaces/client/ChangeSet.html) allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object.
 Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup).
 {{%/column%}}
-{{%column width=20% %}}
-{{%popup "/attachment_files/change-api.jpg"""Change API"%}}
+{{%column width="20%" %}}
+{{%popup "/attachment_files/change-api.jpg""Change API"%}}
 {{%/column%}}
 {{%/section%}}
 
@@ -320,10 +320,10 @@ will propagate to the underlying external data source.
 
 # Asynchronous Change
 {{%section%}}
-{{%column width=65% %}}
+{{%column width="65%" %}}
 The `change` operation has also an asynchronous API, in which the operation is dispatched to the server and the result is returned asynchronously via a listener or a future.
 {{%/column%}}
-{{%column width=30% %}}
+{{%column width="30%" %}}
 ![changeAsync-api.jpg](/attachment_files/changeAsync-api.jpg)
 {{%/column%}}
 {{%/section%}}

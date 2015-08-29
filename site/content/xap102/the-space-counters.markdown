@@ -11,7 +11,7 @@ parent: the-gigaspace-interface-overview.html
  ![counter-logo.jpg](/attachment_files/counter-logo.jpg)
  {{% /column %}}
  {{% column width="90%" %}}
- {{% summary %}} {{% /summary %}}
+ {{% ssummary %}} {{% /ssummary %}}
  {{% /column %}}
  {{% /section %}}
 
@@ -26,7 +26,7 @@ XAP introducing Counter functionality via the `GigaSpace.change` API. It allows 
 There is no need to use a transaction when getting the counter value as the counter is atomic.
 If the counter property does not exists, the delta will be set as its initial state. This simple API allows you to maintain counters with minimal impact on the system performance as it is replicating only the `ChangeSet` command and not the entire space object to the backup copy when running a clustered data-grid.
 {{% /column %}}
-{{% column width=45% %}}
+{{% column width="45%" %}}
 ![change-api-counter.jpg](/attachment_files/change-api-counter.jpg)
 {{% /column %}}
 {{% /section %}}
@@ -114,7 +114,7 @@ When pre-loading the space via the [External Data Source initial-load](./space-p
 With the following example the `Counter` class wraps the `GigaSpace.change` operation providing simple `increment`,`decrement`,`get` and `unset` methods to manage counters. The example using an [extended SpaceDocument](./document-extending.html) as the space object storing the counters data. To retrieve the counter existing value a [Task](./task-execution-over-the-space.html) is used. To launch the example run the `CounterTest` unit test.
 
 {{%inittab%}}
-{{%tabcontent CounterTest.java%}}
+{{%tabcontent "CounterTest.java"%}}
 {{% highlight java %}}
 package org.openspaces;
 import org.junit.Before;
@@ -172,7 +172,7 @@ public class CounterTest {
 {{% /highlight %}}
 {{%/tabcontent%}}
 
-{{%tabcontent Counter.java%}}
+{{%tabcontent Counter%}}
 
 {{% highlight java %}}
 package org.openspaces;
@@ -224,7 +224,7 @@ public class Counter {
 {{% /highlight %}}
 {{%/tabcontent%}}
 
-{{%tabcontent CounterData.java%}}
+{{%tabcontent CounterData%}}
 {{% highlight java %}}
 package org.openspaces;
 

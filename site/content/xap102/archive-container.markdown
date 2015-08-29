@@ -6,7 +6,7 @@ parent: big-data.html
 weight: 100
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 {{%section%}}
 {{%column width="80%" %}}
@@ -14,7 +14,7 @@ The archive container is used to transfer historical data into Big-Data storage 
 
 The typical scenario is when streaming vast number of raw events through the Space, enriching them and then moving them to a Big-Data storage. Typically, there is no  intention of keeping them in the space nor querying them in the space.
 
-{{%vbar title=The Archive Container:%}}
+{{%vbar title="The Archive Container:"%}}
 - automatically moves objects from the Space to the Big-Data storage.
 - configures the set of objects to be archived.
 - supports Space fail-over, and Big-Data storage unavailability.
@@ -25,7 +25,7 @@ The typical scenario is when streaming vast number of raw events through the Spa
 {{%/vbar%}}
 
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/archive-container.jpg" %}}
 {{%/column%}}
 {{%/section%}}
@@ -49,7 +49,7 @@ In cases where the same type is handled by both, configure the Archive Container
 
 Here is a simple example of an archive container configuration:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 {{% highlight xml %}}
 <!-- Enable scan for OpenSpaces and Spring components -->
@@ -245,7 +245,7 @@ This mostly applies when working with an embedded space directly with a cluster 
 
 When removing objects from the space, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./query-sql.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -352,7 +352,7 @@ In order to archive objects using multiple consumer threads, in the same order t
 
 Here is an example of an archive container with 3 concurrent consumers and 5 maximum concurrent consumers and fifo grouping enabled:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}

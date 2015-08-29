@@ -39,4 +39,4 @@ This section explains the different Task metadata.
 
 #### Additional Resources
 
-{{%youtube n7P4rnQN1gw | Map Reduce%}}
+{{<youtube "n7P4rnQN1gw""Map Reduce">}}

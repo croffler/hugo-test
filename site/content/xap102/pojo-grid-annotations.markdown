@@ -6,7 +6,7 @@ parent: pojo-metadata.html
 weight: 400
 ---
 
-{{% summary %}}This section explains the different data grid metadata.{{% /summary %}}
+{{% ssummary %}}This section explains the different data grid metadata.{{% /ssummary %}}
 
 
 
@@ -39,7 +39,7 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 
 {{% togglecloak id=11 %}}**Spring Configuration**{{% endtogglecloak %}}
 {{% gcloak 11 %}}
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
  {{% highlight xml %}}
@@ -106,7 +106,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 
 {{% togglecloak id=21 %}}**Spring Configuration**{{% endtogglecloak %}}
 {{% gcloak 21 %}}
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

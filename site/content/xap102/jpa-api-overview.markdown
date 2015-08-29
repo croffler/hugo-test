@@ -39,4 +39,4 @@ Functionalities that are not supported by the XAP JPA API.
 
 #### Additional Resources
 
-{{%youtube YRbzC_89G5Q | XAP JPA API%}}
+{{<youtube "YRbzC_89G5Q" "XAP JPA API">}}

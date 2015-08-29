@@ -17,7 +17,7 @@ With XAP you can share HTTP session data across multiple data centers, multiple 
 {{% /column %}}
 {{% /section %}}
 
-{{% info title=Licensing %}}
+{{% info title="Licensing"%}}
 This feature requires a separate license in addition to the XAP commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.
 {{% /info %}}
 
@@ -40,4 +40,4 @@ Configure the web application and Shiro for deployment on the grid.
 
 #### Additional resources
 
-{{%youtube gRdGWMigJBI | Global HTTP Session sharing%}}
+{{<youtube "gRdGWMigJBI" "Global HTTP Session sharing">}}

@@ -6,19 +6,15 @@ parent: xap-cpp.html
 weight: 100
 ---
 
-{{% summary %}}{{%/summary%}}
-{{%comment%}}
-{{% summary page|65 %}}GigaSpaces C++ API explained: About POCOs; space class metadata; using existing C++ classes with the space; dynamic scalability; deployment -- standalone and grid-based; configuration; compatibility and packaging.{{% /summary %}}
+{{% ssummary %}}{{%/ssummary%}}
 
-# Overview
-{{%/comment%}}
 
 {{%section %}}
 {{%column width="80%" %}}
 GigaSpaces C++ applications may use the [CPP Processing Unit](./cpp-processing-unit.html), which utilize the concept of Space-Based Architecture (SBA) by allowing simple development, packaging and deployment of application services together with middleware services.
 The C++ Processing Unit runs as an independent service, allowing you to distribute and parallelize your processing on several machines, thus achieving higher performance, lower latency, and scalability.
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/cpp-SBA-system-archi.jpg" %}}
 {{%/column%}}
 {{%/section%}}
@@ -40,7 +36,7 @@ The GigaSpaces c++ API has been designed to address the following:
 GigaSpaces c++ API offers a very straightforward API that directly accepts the developers c++ objects. No additional serialization or marshalling code needs to be developed and maintained.
 
 
-{{%vbar title=The GigaSpaces c++ API provides the following:%}}
+{{%vbar title="The GigaSpaces c++ API provides the following:"%}}
 
 - **Single space operations and batch space operations**.
 - **Space transactions support**.
@@ -84,7 +80,7 @@ In order to allow interoperability of POCO objects with both POJO (Java) and PON
 {{%column width="80%" %}}
 When the c++ application is running as a standalone application, the c++ business logic interacts with the space via remote calls. All space operations are conducted using c++ objects, where the actual interaction is performed via native PBS objects. The c++ objects are transformed to PBS objects in runtime, and sent to the space via the C+/\+ and Java runtime layers.
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/cpp_image004.jpg" %}}
 {{%/column%}}
 {{%/section%}}
@@ -94,7 +90,7 @@ When the c++ application is running as a standalone application, the c++ busines
 {{%column width="80%" %}}
 When the c++ business logic runs as a worker, collocated with the space; no remote calls are involved when interacting with the space. Interactions with the space are done using c++ objects, similar to the standalone c++ application configuration.
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/cpp_image006.jpg" %}}
 {{%/column%}}
 {{%/section%}}

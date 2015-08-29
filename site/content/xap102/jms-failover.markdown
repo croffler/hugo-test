@@ -6,7 +6,7 @@ parent: jms-advanced.html
 weight: 100
 ---
 
-{{%summary%}}{{%/summary%}}
+{{%ssummary%}}{{%/ssummary%}}
 
 The JMS layer is responsible for handling space failover properly. The goal is to make failover transparent to the JMS client. In a primary-backup architecture, when the primary space fails, the backup space takes its place as the primary space. This switch should be transparent to the client application, so it won't know that failover ever occurred.
 
@@ -56,7 +56,7 @@ The `JMSRedelivered` header is not set for messages redelivered from a Queue. Fo
 
 # Example Scenarios
 
-{{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}}
+
 
 ## Synchronous Consumer
 
@@ -86,7 +86,7 @@ In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redeliver
 1. The next message to arrive is the first unacknowledged message.
 1. The `JMSRedelivered` header of recovered messages is set.
 
-{{% endtoczone %}}
+
 
 {{% refer %}}
 In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](./jms-known-issues-and-considerations.html).

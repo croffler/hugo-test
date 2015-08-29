@@ -6,7 +6,7 @@ parent: session-based-messaging-api.html
 weight: 100
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 
 

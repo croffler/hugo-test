@@ -6,11 +6,11 @@ parent: fifo-overview.html
 weight: 100
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 {{%comment%}}
 
-{{% summary %}}How to get entries in the same order in which they were written to the space.{{% /summary %}}
+{{% ssummary %}}How to get entries in the same order in which they were written to the space.{{% /ssummary %}}
 
 # Overview
 

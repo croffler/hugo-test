@@ -63,15 +63,15 @@ Lease basics and explains how Leases can be managed.
 
 
 {{%section%}}
-{{%column width=30%  %}}
-{{%youtube k2zGdUi_ntU | Custom Change API%}}
+{{%column width="30%"  %}}
+{{<youtube "k2zGdUi_ntU""Custom Change API">}}
 {{%/column%}}
 
-{{%column width=30%  %}}
-{{%youtube H22qPux8Fh8 | Aggregations %}}
+{{%column width="30%"  %}}
+{{<youtube "H22qPux8Fh8""Aggregations">}}
 {{%/column%}}
 
-{{%column width=30%  %}}
+{{%column width="30%"  %}}
 {{%/column%}}
 {{%/section%}}
 

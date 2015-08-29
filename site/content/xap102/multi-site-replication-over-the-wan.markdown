@@ -6,7 +6,7 @@ parent: multi-site-replication-overview.html
 weight: 50
 ---
 
-{{% summary %}} {{%/summary%}}
+{{% ssummary %}} {{%/ssummary%}}
 
 
 
@@ -38,10 +38,6 @@ The GigaSpaces WAN Gateway features the following:
 {{% info %}}
 This page describe how to establish replication between multiple spaces in a typical WAN environment, where each space is a separate network and there is a need for a designated outbound and inbound gateway machine or machines on each network in order to interact with the other network. If this is not the case, and there is a direct network connection available between all space instances machine like VLAN or VPN please refer to [Multi-Space Replication over the LAN or VPN](./multi-space-replication-over-the-lan-or-vpn.html)
 {{% /info %}}
-
-{{%comment%}}
-<iframe width="640" height="360" src="//www.youtube.com/embed/V7rbbmWo3JU?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
-{{%/comment%}}
 
 # Supported Toplogies
 

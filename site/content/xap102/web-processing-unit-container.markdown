@@ -7,7 +7,7 @@ weight: 300
 ---
 
 
-{{% summary  %}}{{% /summary %}}
+{{% ssummary  %}}{{% /ssummary %}}
 
 
 
@@ -124,7 +124,7 @@ There are several ways that a Space (and other components) can be used, and conf
 
 A typical usage pattern is connecting remotely to a Space. Here is an example (either using Spring within the web application Spring context file, or using pure Java code):
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace %}}
 
 {{% highlight xml %}}
@@ -170,7 +170,7 @@ A web application is still just a processing unit. This means that a **META-INF/
 
 Here is an example that starts an embedded Space as part of the web application within the `pu.xml`. The following is the content of the `pu.xml`
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Spring Namespace %}}
 
 {{% highlight xml %}}

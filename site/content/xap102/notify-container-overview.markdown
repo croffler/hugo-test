@@ -37,4 +37,4 @@ The Notify Session API provides a unified and consistent mechanism for event reg
 
 #### Additional Resources
 
-{{%youtube GwLfDYgl6f8 | Event Processing%}}
+{{<youtube "GwLfDYgl6f8" "Event Processing">}}

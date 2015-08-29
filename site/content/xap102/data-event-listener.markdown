@@ -6,14 +6,14 @@ parent: event-processing.html
 weight: 400
 ---
 
-{{% summary  %}}{{%/summary%}}
+{{% ssummary  %}}{{%/ssummary%}}
 
 
 {{%section%}}
 {{%column width="80%" %}}
 XAP provides a single interface for Space Data event listeners used by different event containers (Space data event generators) such as Polling Event and Notify Event containers. The benefit of doing so is the loose coupling between how the events are received (the different containers) and what to do with a received event (the listener).
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/data_event.jpg"%}}
 {{%/column%}}
 {{%/section%}}
@@ -54,7 +54,7 @@ public class SimpleListener implements SpaceDataEventListener {
 
 Here is how it can be configured:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -101,7 +101,7 @@ public class SimpleListener {
 
 The `myEventHandler` is marked using the `SpaceDataEvent` annotation as a callback that needs to be called in case of an event. Here is the XML configuration of the mentioned event listener:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -142,7 +142,7 @@ The `myEventHandler` is marked using the `SpaceDataEvent` annotation as a callba
 
 If we do not wish to use annotations, we can use the method adapter where method listing is used to define which methods are to be invoked. We can reuse the same SimpleListener (simply without the annotation) and configure it in the following manner:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -216,7 +216,7 @@ public class SimpleListener {
 
 and the following is the configuration of such a listener using the annotation adapter:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -284,7 +284,7 @@ When using a single event method, the event adapter will cache the reflection in
 
 OpenSpaces comes with an event adapter that allows you to delegate the execution of an event listener to a different task executor (a thread pool). It is handy when using the notify container and wanting to release the notification thread. Here is how it can be configured:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

@@ -6,21 +6,21 @@ parent: query-paging-support.html
 weight: 100
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 {{%comment%}}
-{{% summary %}}Reading large number of objects using multiple queries in one call in a continuous manner. {{% /summary %}}
+{{% ssummary %}}Reading large number of objects using multiple queries in one call in a continuous manner. {{% /ssummary %}}
 
 # Overview
 
 
 {{%section%}}
-{{%column width=70% %}}
+{{%column width="70%" %}}
 The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?com/j_spaces/core/client/GSIterator.html)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
 
 There are scenarios where the conventional read operation that returns a single space object does not fit and there is a need to return a collection of entries from the space. Generally, an iterator should be used in cases where returning all the entries in one result with the `readMultiple` operation will consume too much memory on the client or introduce too much latency before the first space object could be processed.
 {{%/column%}}
-{{%column width=30% %}}
+{{%column width="30%" %}}
 ![paging-iteratorBuilder.jpg](/attachment_files/paging-iteratorBuilder.jpg)
 {{%/column%}}
 {{%/section%}}

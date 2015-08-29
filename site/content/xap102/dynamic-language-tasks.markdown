@@ -6,7 +6,7 @@ parent: task-execution-overview.html
 weight: 300
 ---
 
-{{%summary%}}{{%/summary%}}
+{{%ssummary%}}{{%/ssummary%}}
 
 [Event Driven Remoting](./event-driven-remoting.html) and [Executor Based Remoting](./executor-based-remoting.html) allow you to simply expose and execute custom services using the Space as the transport layer. The dynamic tasks feature (also known as "scripting support") allows you to utilize a built remote service, exposed using these two remoting mechanisms, that can execute dynamic language scripts in the space.
 A major benefit of using scripting or dynamic languages is the ability to simply change the behavior without the need to recompile your application. As per the SBA paradigm, dynamic language scripts can be executed collocated with the Space, allowing you to execute the task as close as possible to the data it needs to access, and then return a result.
@@ -15,7 +15,7 @@ The following section goes through the steps needed in order to execute dynamic 
 
 The first step in using scripting is exposing the built in scripting service over the Space. Here is a simple example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -95,7 +95,7 @@ public class MyRemoting {
 
 On the client side Spring XML configuration, the following needs to be defined (mainly to define the connection to the Space as the transport layer, and define the scripting annotation processor):
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -219,7 +219,7 @@ Using scripting on the client side is very similar to how similar remoting servi
 
 Here is the xml definition of an async scripting proxy (the sync proxy is exactly the same except for the tag/class name of the proxy):
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

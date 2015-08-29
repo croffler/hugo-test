@@ -6,11 +6,7 @@ parent: transaction-overview.html
 weight: 500
 ---
 
-{{%summary%}}{{%/summary%}}
-{{%comment%}}
-{{% summary %}}In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes.{{% /summary %}}
-# Overview
-{{%/comment%}}
+{{%ssummary%}}{{%/ssummary%}}
 
 The pessimistic locking protocol provides data consistency in a multi user transactional environment. It should be used when there might be a large number of clients trying to read and update the same object(s) at the same time. This protocol utilize the system resources (CPU, network) in a very efficient manner both at the client and space server side.
 
@@ -23,7 +19,7 @@ When performing read operations without locking the object via a transaction, us
 {{% note %}} The optimistic locking protocol assumes that a client that retrieved an object from the space, might or might not update the object, so it never locks the object when it is reading it. This makes the object accessible for large amount of users avoiding the need to wait for the lock to be released. Using the optimistic locking protocol when every object that is read is also updated, will consume unnecessary resources at the client and space side since all the clients will try to get the latest version of the object when updating it.{{%/note%}}
 
 
-{{%note title=To implement the pessimistic locking protocol you should have the following:%}}
+{{%note title="To implement the pessimistic locking protocol you should have the following:"%}}
 
 - Start a transaction. You may use spring automatic transaction demarcation by annotating the method as `@Transactional`.
 - Read the object using the `Exclusive read Lock` modifier.  This will block other transactions from reading the same object. If there is another transaction locking the object, the read operation will wait for the transaction (according to the specified timeout) to be completed (commit or abort) and return the latest version of the object. You may read multiple objects during this phase.

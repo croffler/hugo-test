@@ -6,7 +6,7 @@ parent: deploying-and-running-overview.html
 weight: 300
 ---
 
-{{% summary%}}{{% /summary %}}
+{{% ssummary%}}{{% /ssummary %}}
 
 
 
@@ -28,7 +28,7 @@ Once built according to the processing unit [directory structure](./the-processi
 
 After you [package](./the-processing-unit-overview.html) the processing unit and deploy it via one of the deployment tools, the deployment tool uploads it to all the running [GSMs](/product_overview/service-grid.html#gsm), where it is extracted and provisioned to the [GSCs](/product_overview/service-grid.html#gsc).
 
-{{% info title=To Jar or Not to Jar %}}
+{{% info title="To Jar or Not to Jar" %}}
 The recommended way to deploy the processing unit is by packaging it into a .jar or a .zip archive and specifying the location of the packaged file to the deployment tool in use.
 
 However, GigaSpaces XAP also supports the deployment of exploded processing units. (The deployment tool will package the processing unit directories into a jar file automatically). Another option to deploy a processing unit is by placing the exploded processing unit under the deploy directory of each of the GSMs and issuing  a deploy command with the processing unit name (the name of the directory under the deploy directory).
@@ -46,7 +46,7 @@ Downloading the processing unit archive to the GSC is the recommended option, bu
 
 GigaSpaces provides several options to deploy a processing unit onto the Service Grid. Below you can find a simple deployment example with the various deployment tools for deploying a processing unit archive called `myPU.jar` located in the `/opt/gigaspaces` directory:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Admin API %}}
 Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc]({{%javadoc%}}) of the Admin API.
 
@@ -106,7 +106,7 @@ When deploying a partitioned Processing Unit or a partitioned Space it is recomm
 
 You should have **one GigaSpaces agent** running the ESM. No GSCs should be started.
 
-{{% inittab deckName1|top %}}
+{{% inittab deckName1 %}}
 {{% tabcontent Windows %}}
 
 {{% highlight java %}}
@@ -191,7 +191,7 @@ Since we are un deploying an Elastic Processing Unit, this will also terminate a
 
 Running the deployment code from the command line is very convenient. Rename the java file extension to groovy, and run it using the following command:
 
-{{% inittab deckName2|top %}}
+{{% inittab deckName2 %}}
 {{% tabcontent Windows %}}
 
 {{% highlight java %}}
@@ -338,7 +338,7 @@ The feeder instance is deployed only after the space is deployed
 
 The sample code below deploys an application named "data-app" which consists of a space and a feeder processing unit. The feeder processing unit instances are deployed only after the space deployment is complete (each partition has both a primary and a backup space instance).
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Admin API %}}
 
 {{% highlight java %}}
@@ -455,7 +455,7 @@ The reason for imposing this dependency is that the space proxy bean in the feed
 
 The feeder can relax this restriction, by specifying a dependency of at least one instance per partition. Now the feeder is redeployed as long as the space has a minimum of one instance per partition. The downside of this approach is that during initial deployment there is a small time gap in which the feeder writes data to the space while there is only one copy of the data (one instance per partition).
 
-{{% inittab adaptive_sla|top %}}
+{{% inittab adaptive_sla %}}
 {{% tabcontent Admin API %}}
 
 {{% highlight java %}}

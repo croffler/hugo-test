@@ -11,15 +11,15 @@ weight: 800
  ![counter-logo.jpg](/attachment_files/subject/projection.png)
  {{% /column %}}
  {{% column width="90%" %}}
- {{% summary %}} {{% /summary %}}
+ {{% ssummary %}} {{% /ssummary %}}
  {{% /column %}}
  {{% /section %}}
 
 {{% section %}}
-{{% column width=60% %}}
+{{% column width="60%" %}}
 In some cases, when querying the Space for `Objects`, only certain properties of those `Objects` are required (a.k.a. delta read). The same scenario is also relevant when subscribing for notifications on Space data changes, where only specific properties are of interest to the subscriber. For that purpose, the *Projection API* can be used, where one can declare which properties are of interest. The space will only populate these properties on the returned data.
 {{% /column %}}
-{{% column width=40% %}}
+{{% column width="40%" %}}
 ![space-projections.jpg](/attachment_files/space-projections.jpg)
 {{% /column %}}
 {{% /section %}}

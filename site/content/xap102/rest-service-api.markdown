@@ -15,7 +15,7 @@ weight: 400
 ![data-access.jpg](/attachment_files/web-services.jpg)
 {{%/column%}}
 {{%column width="90%" %}}
-{{% summary  %}}{{% /summary %}}
+{{% ssummary  %}}{{% /ssummary %}}
 {{%/column%}}
 {{%/section%}}
 

@@ -6,21 +6,9 @@ parent: querying-the-space.html
 weight: 300
 ---
 
-{{%summary%}}{{%/summary%}}
+{{%ssummary%}}{{%/ssummary%}}
 
-{{%comment%}}
-{{% summary %}}The SQLQuery class is used to query the space using `SQL`-like syntax.{{% /summary %}}
 
-# Overview
-{{% section %}}
-{{% column width=70% %}}
-The `SQLQuery` class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` statement part - the selection aspect of a SQL statement is embedded in other parameters for a SQL query.
-{{% /column %}}
-{{% column width=30% %}}
-![space-projections.jpg](/attachment_files/space-projections.jpg)
-{{% /column %}}
-{{% /section %}}
-{{%/comment%}}
 
 The `SQLQuery` class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` statement part - the selection aspect of a SQL statement is embedded in other parameters for a SQL query.
 
@@ -28,10 +16,6 @@ The `SQLQuery` class is used to query the space using SQL-like syntax. The query
 For the full documentation of the class's methods and constructors, see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?com/j_spaces/core/client/SQLQuery.html).
 {{% /refer %}}
 
-
-{{%comment%}}
-<iframe width="640" height="360" src="//www.youtube.com/embed/jC57mId3SMg?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-{{%/comment%}}
 
 
 # Examples
@@ -66,17 +50,14 @@ results = gigaSpace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num > 1 O
 
 # Supported Space Operations
 
-{{%vbar title=The following operations fully support GigaSpaces `SQLQuery`:%}}
+{{%vbar title="The following operations fully support GigaSpaces `SQLQuery`:"%}}
 - `count`
 - `clear`
 - `read`, `readIfExists`, `readMultiple`
 - `take`, `takeIfExists`, `takeMultiple`
 
 
-{{% comment %}}
-- `asyncRead`
-- `asyncTake`
-{{% /comment %}}
+
 
 The following operations support`SQLQuery` only with Simple Queries:
 
@@ -87,7 +68,7 @@ The following operations support`SQLQuery` only with Simple Queries:
 
 # Supported SQL Features
 
-{{%vbar title=SQLQuery supports the following: %}}
+{{%vbar title="SQLQuery supports the following:" %}}
 
 - `AND` / `OR` operators to combine two or more conditions.
 - All basic logical operations to create conditions: `=, <>, <, >, >=, <=, like, NOT like, is null, is NOT null, IN`.
@@ -104,11 +85,8 @@ The following operations support`SQLQuery` only with Simple Queries:
 
 # Unsupported SQL Features
 
-{{%vbar title=SQLQuery **does not** support the following: %}}
+{{%vbar title="SQLQuery **does not** support the following:" %}}
 
-{{%comment%}}
-- Aggregate functions: COUNT, MAX, MIN, SUM, AVG are only supported in sub queries (These are fully supported with the [JDBC API](./jdbc-driver.html)).
-{{%/comment%}}
 
 - Multiple tables select - This is supported with the [JDBC API](./jdbc-driver.html).
 - `DISTINCT` - This is supported with the [JDBC API](./jdbc-driver.html).
@@ -293,9 +271,9 @@ XAP supports the `LocalDate`, `LocalTime` and `LocalDateTime` classes. The follo
 
 Here are examples on how to use the Java8 dates:
 
-{{%accordion id=acc10%}}
+{{%accordion id="acc10"%}}
 
-{{%accord title=LocalDate | parent=acc10%}}
+{{%accord title="LocalDate" parent="acc10"%}}
 
 {{%inittab%}}
 {{%tabcontent LocalDatePojo%}}
@@ -350,9 +328,9 @@ public void testLocalDate() {
 {{%/tabcontent%}}
 {{%/inittab%}}
 
-{{%endaccord%}}
+{{%/accord%}}
 
-{{%accord title=LocalTime| parent=acc10%}}
+{{%accord title="LocalTime" parent="acc10"%}}
 
 {{%inittab%}}
 {{%tabcontent LocalTimePojo%}}
@@ -406,9 +384,9 @@ public class LocalTimePojo {
 {{%/tabcontent%}}
 {{%/inittab%}}
 
-{{%endaccord%}}
+{{%/accord%}}
 
-{{%accord title=LocalDateTime| parent=acc10%}}
+{{%accord title="LocalDateTime" parent="acc10"%}}
 
 {{%inittab%}}
 {{%tabcontent LocalDateTimePojo%}}
@@ -462,9 +440,9 @@ public void testLocalDateTime() {
 {{%/highlight%}}
 {{%/tabcontent%}}
 {{%/inittab%}}
-{{%endaccord%}}
+{{%/accord%}}
 
-{{%endaccordion%}}
+{{%/accordion%}}
 
 
 {{%warning%}}
@@ -474,11 +452,11 @@ Java 8's LocalDate, LocalTime, LocalDateTime are currently not interoperable wit
 # Aggregators
 
 {{%section%}}
-{{%column width=60% %}}
+{{%column width="60%" %}}
 [Aggregators](./aggregators.html) allows you to perform aggregations (Average , Max , Min , Sum , Group By , Having) on a relatively large space objects data set. A query (SQLQuery or template) may be specified to determine the exact subset of space objects to iterate while performing the aggregation. Aggregators support single and compound based execution and a fully customized Aggregation.
 
 {{%/column%}}
-{{%column width=40% %}}
+{{%column width="40%" %}}
 ![aggreg.jpg](/attachment_files/built-in-Compound-aggregators.jpg)
 {{%/column%}}
 {{%/section%}}
@@ -592,7 +570,7 @@ The following features support only simple SQL queries
 
 The following are reserved keywords in the GigaSpaces SQL syntax:
 
-{{%vbar title=Reserved words %}}
+{{%vbar title="Reserved words" %}}
 alter add all and asc avg between by create call drop desc bit tinyint
  	 end from group in is like rlike max min not null or distinct
  	 order select substr sum sysdate upper where count delete varchar2 char
@@ -609,7 +587,7 @@ For example: if you need to query a property by the name of count, which is a re
 new SQLQuery<MyData>(MyData.class, "`count` = 5")
 {{% /highlight %}}
 
-{{%vbar title=Reserved Separators and Operators:%}}
+{{%vbar title="Reserved Separators and Operators:"%}}
 := || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}
 {{% /vbar %}}
 

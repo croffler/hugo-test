@@ -34,7 +34,7 @@ public class SpaceModeContextBean implements InitializingBean, DisposableBean {
 
 and the following Spring XML definition constructing this bean (stored in a separate XML file than the Processing Unit definition called `mode.xml`):
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -62,7 +62,7 @@ and the following Spring XML definition constructing this bean (stored in a sepa
 
 with the following Processing Unit definition:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

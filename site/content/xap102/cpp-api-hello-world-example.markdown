@@ -7,7 +7,7 @@ weight: 100
 ---
 
 
-{{% summary%}}{{% /summary %}}
+{{% ssummary%}}{{% /ssummary %}}
 
 
 
@@ -126,11 +126,11 @@ clean:
 	rm -f $(OBJS) $(TARGET)
 {{% /highlight %}}
 
-{{% note title=Debugging in Linux %}}
+{{% note title="Debugging in Linux" %}}
 When debugging the code in Linux, you may receive the signal SIGSEGV (segmentation fault). It is recommended to instruct the debugger to ignore these signals ("`handle SIGSEGV nostop noprint`" in gdb, "`ignore SIGSEGV`" in most versions of dbx).
 {{% /note %}}
 {{% /tabcontent %}}
-{{% tabcontent Using Visual Studio %}}
+{{% tabcontent "Using Visual Studio" %}}
 
 
 Step 6. Start Visual Studio using the `<XAP Root>\cpp\GigaVisualStudio.bat` script.

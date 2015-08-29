@@ -18,7 +18,7 @@ The Local View/Cache JMX Monitor monitors the number of objects stored within th
 
 To use the Local View/Cache JMX Monitor:
 
-1. {{%download /download_files/GSClientCacheJMXMonitorXAP9.jar%}} the monitor jar and add it into your application classpath.
+1. {{<download "/download_files/GSClientCacheJMXMonitorXAP9.jar">}} the monitor jar and add it into your application classpath.
 2. Add into your local view/cache configuration the `space-config.filters.Statistics.enabled` parameter as demonstrated below.
 3. Add into your application Spring file the `gsClientCacheMonitor` bean. The following example assumes you have an application using two master spaces, each has its own client local cache proxy. See how the `GigaSpacesClientCacheJMXMonitor` is configured to specify the different proxies used by the application:
 
@@ -66,7 +66,7 @@ You can specify up to 5 local View/Cache `GigaSpace` beans as part of the `gigaS
 6. A graph (or multiple graphs) should be presented illustrating the value of the monitored statistic(s). The graph(s) will be updated periodically.
 See   example how you can monitor multiple local cache instances running within the same application:
 {{%/column%}}
-{{%column width=20% %}}
+{{%column width="20%" %}}
 {{%popup "/attachment_files/clientCacheJMXMonitor.jpg"%}}
 {{%/column%}}
 {{%/section%}}

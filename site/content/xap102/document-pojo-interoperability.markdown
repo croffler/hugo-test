@@ -6,10 +6,10 @@ parent: document-overview.html
 weight: 300
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 {{%comment%}}
-{{% summary %}}Interoperability between POJO and Document space entries{{% /summary %}}
+{{% ssummary %}}Interoperability between POJO and Document space entries{{% /ssummary %}}
 
 # Overview
 {{%/comment%}}

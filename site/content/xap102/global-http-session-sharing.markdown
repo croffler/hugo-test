@@ -6,7 +6,7 @@ parent: global-http-session-sharing-overview.html
 weight: 100
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 
 
@@ -17,17 +17,11 @@ It's becoming increasingly important for organizations to share HTTP session dat
 - **Reduce Web application memory footprint** - The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
 - **Multiple Data-Center deployment** - You may need to deploy your application across multiple data centers for high-availability, scalability or flexibility, so session data will need to be replicated.
 
-{{%comment%}}
-[Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
-
-
-<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="500" height="426" id="onlinePlayer"><param name="allowScriptAccess" value="always" /><param name="movie" value="http://www.slideboom.com/player/player.swf?id_resource=631622" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="flashVars" value="mode=2&idResource=1837&siteUrl=http://www.slideboom.com" /><param name="allowFullScreen" name="true" /><embed src="http://www.slideboom.com/player/player.swf?id_resource=631622" quality="high" bgcolor="#ffffff" width="500" height="426" name="onlinePlayer" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" allowFullScreen="true" flashVars="mode=0&idResource=631622&siteUrl=http://www.slideboom.com" /></object>
-{{%/comment%}}
 
 
 XAPs Global HTTP Session Management is designed to deliver maximum performance for the application with ZERO application code changes.
 
-{{%vbar title=Global HTTP Session Management features:%}}
+{{%vbar title="Global HTTP Session Management features:"%}}
 - **Reduce App/Web server memory footprint** storing the session within a remote JVM.
 
 - **No code changes required** to share the session with other remote Web/App servers - Support **Serialized and Non-Serialized** Session attributes. Your attributes do not need to implement Serializable or Externalizable interface.
@@ -93,10 +87,10 @@ The XAP Global HTTP Session Sharing support two Load-Balancing scenarios:
 ##### Session Sharing Scenario
 
 {{% section %}}
-{{% column width=60% %}}
+{{% column width="60%" %}}
 Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support *non-sticky sessions* routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load.
 {{% /column %}}
-{{% column width=40% %}}
+{{% column width="40%" %}}
  ![http-session-non-sticky.jpg](/attachment_files/http-session-non-sticky.jpg)
 {{% /column %}}
 {{% /section %}}
@@ -104,10 +98,10 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 ##### Session Failover Scenario
 
 {{% section %}}
-{{% column width=60% %}}
+{{% column width="60%" %}}
 Have `cacheManager.cacheSessionLocally = false` when you would like the same web application instance to serve the same client and have the client to failover to another web application in case the original web application fails. In this case **sticky sessions** should be enabled at the HTTP load-balancer allowing the HTTP request associated with the same session to be routed always to the same Web container. When there is a web container failure, other Web container will take over and have the most up-to-date session retrieved from the In-Memory-Data-Grid.
 {{% /column %}}
-{{% column width=40% %}}
+{{% column width="40%" %}}
  ![http-session-sticky.jpg](/attachment_files/http-session-sticky.jpg)
 {{% /column %}}
 {{% /section %}}

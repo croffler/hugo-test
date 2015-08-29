@@ -36,5 +36,5 @@ Event Driven Remoting allows you to use remote invocations of POJO services, wit
 <br>
 
 #### Additional Resources
-{{%youtube -07-0PXUoeM | Space based remoting%}}
+{{<youtube "-07-0PXUoeM""Space based remoting">}}
 

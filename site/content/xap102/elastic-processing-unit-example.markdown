@@ -6,7 +6,7 @@ parent: elastic-processing-unit-overview.html
 weight: 600
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 
@@ -27,7 +27,7 @@ This demo assumes you have about 300 MB available memory on your machine.
 # Running the Example
 
 #### Step 1. Download and Install<br>
-Download the example {{%download /download_files/EPUScaleDemo.zip%}} and extract it.
+Download the example {{%download "/download_files/EPUScaleDemo.zip"%}} and extract it.
 
 #### Step 2. Start gs-agent<br>
 Start gs-agent using the following command:
@@ -56,7 +56,7 @@ When running the GS-UI you will have the following displayed:
 
 
 
-{{% inittab epu_demo|top %}}
+{{% inittab epu_demo %}}
 {{% tabcontent Initial State %}}
 Initial State - agent without any GSCs running:
 
@@ -101,7 +101,7 @@ After Scaling from 256.0 MB to 64 MB:
 
 The Client application will display the following output:
 
-{{% inittab epu_demo_output|top %}}
+{{% inittab epu_demo_output %}}
 {{% tabcontent Initial State %}}
 
 {{% highlight console %}}

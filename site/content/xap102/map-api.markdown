@@ -12,7 +12,7 @@ weight: 300
 ![key-value.png](/attachment_files/subject/key-value.png)
 {{%/column%}}
 {{%column width="90%" %}}
-{{% summary %}} {{%/summary%}}
+{{% ssummary %}} {{%/ssummary%}}
 {{%/column%}}
 {{%/section%}}
 
@@ -34,7 +34,7 @@ Using the Map API requires two layers:
 In general, you would use the Map component to create the proxy layer, and then wrap it with a GigaMap instance and do all the operations against this instance.
 --------
 
-{{% summary page%}}Using XAP as a distributed cache. Interacting with the space using the Hashtable API.{{% /summary %}}
+{{% ssummary page%}}Using XAP as a distributed cache. Interacting with the space using the Hashtable API.{{% /ssummary %}}
 {{% /comment %}}
 
 
@@ -52,7 +52,7 @@ A client communicating with a remote space performs all its operation via a remo
 
 Here is a very simple example how a client application can create a `GigaMap` interface interacting with a remote space:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -99,7 +99,7 @@ A client communicating with a an embedded space performs all its operation via l
 
 To create a `GigaMap` for a co-located (embedded) space the space URL should use embedded space URL format:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -156,7 +156,7 @@ The `GigaMap` support [Local Cache](./local-cache.html) (near cache) configurati
 
 Here is an example for a `GigaMap` construct with a local cache:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -294,7 +294,7 @@ gigaMap.getMap().put("key", "value", gigaMap.getCurrentTransaction(), 1000);
 
 GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED` and `REPEATABLE_READ` (default). When using `GigaMap`, the default isolation level it is performed under can be defined in the following manner:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -451,7 +451,7 @@ Many times, especially when working with a Processing Unit that starts an embedd
 The decision of working directly with a cluster member or against the whole cluster is done in the GigaMap level. The `MapFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (i.e. `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol i.e.
     jini://*/*/space
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

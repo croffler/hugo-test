@@ -6,7 +6,7 @@ parent: space-based-remoting-overview.html
 weight: 400
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 # RemotingService
@@ -47,7 +47,7 @@ public interface MyService {
 }
 {{%/highlight%}}
 {{% endgcloak %}}
-{{%learn%}}./space-based-remoting.html{{%endlearn%}}
+{{%learn ./space-based-remoting.html%}
 
 
 # ExecutorProxy
@@ -70,7 +70,7 @@ public class DataRemoting {
 }
 {{%/highlight%}}
 {{% endgcloak %}}
-{{%learn%}}./space-based-remoting.html{{%endlearn%}}
+{{%learn ./space-based-remoting.html%}
 
 
 # Routing
@@ -94,4 +94,5 @@ public class DataRemoting {
 }
 {{%/highlight%}}
 {{% endgcloak %}}
-{{%learn%}}./space-based-remoting.html{{%endlearn%}}
+
+{{%learn ./space-based-remoting.html%}

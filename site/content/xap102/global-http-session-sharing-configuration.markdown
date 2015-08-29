@@ -6,7 +6,7 @@ parent: global-http-session-sharing-overview.html
 weight: 200
 ---
 
-{{%summary%}}{{%/summary%}}
+{{%ssummary%}}{{%/ssummary%}}
 
 
 
@@ -118,10 +118,10 @@ The following should be located under **main** section.
 
 The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below examples for the `shiro.ini` file:
 
-{{%accordion id=acc0%}}
+{{%accordion id="acc0"%}}
 
 
-{{%accord title=Session Sharing Configuration For Non-Secured Application ... | parent=acc0%}}
+{{%accord title="Session Sharing Configuration For Non-Secured Application ..." parent="acc0"%}}
 
 {{% highlight ini %}}
 
@@ -185,9 +185,9 @@ cacheManager.compressor=$compressor
 securityManager.cacheManager=$cacheManager
 
 {{% /highlight %}}
-{{%endaccord%}}
+{{%/accord%}}
 
-{{%accord title=Session Sharing Configuration Example For Secured Application Using Shiro Security...  | parent=acc0%}}
+{{%accord title="Session Sharing Configuration Example For Secured Application Using Shiro Security..."  parent="acc0"%}}
 {{% note %}}Note that this example uses the basic authentication configuration but, Shiro has various authenticator types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html) {{% /note %}}
 {{% highlight ini %}}
 
@@ -275,9 +275,9 @@ goodguy = winnebago:drive:eagle5
 ##/account/** = authc
 /remoting/** = authc, roles[b2bClient], perms["remote:invoke:lan,wan"]
 {{% /highlight %}}
-{{%endaccord%}}
+{{%/accord%}}
 
-{{%accord title=Session Sharing Configuration Example For Secured Application Using Spring Security...  | parent=acc0%}}
+{{%accord title="Session Sharing Configuration Example For Secured Application Using Spring Security..."  parent="acc0"%}}
 {{% note %}}Note that in order to use Spring Security you still have to provide `shiro.ini` configuration file.
 <br>The configuration should be similar to the one in the **Non-Secured Application** example above. {{% /note %}}
 
@@ -339,10 +339,10 @@ In addition, you need to add the following in your web.xml file:
   
 {{% /highlight %}}
 
-{{%endaccord%}}
+{{%/accord%}}
 
 
-{{%endaccordion%}}
+{{%/accordion%}}
 
 <br>
 
@@ -431,9 +431,9 @@ Examples of using the XAP HTTP Session can be found [here]({{%currentjavatuturl%
 
 {{% comment %}}
 
-The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish). It demostrates Single Application Session Sharing configuration.
+The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish). It demonstrates Single Application Session Sharing configuration.
 
-1. Download the demo web application {{%download /download_files/demo-app.war%}}.
+1. Download the demo web application {{%download "/download_files/demo-app.war"%}}.
 2. Deploy a space named **sessionSpace**. You may have a single instance Space or deploy a clustered Space using the command line , GS-UI or the Web-UI.
 3. Deploy the `demo-app.war` into Tomcat (or any other app server).
 4. Start your browser and access the web application via the following URL: http://localhost:8080/demo-app

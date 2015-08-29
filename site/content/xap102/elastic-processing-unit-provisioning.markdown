@@ -6,7 +6,7 @@ parent: elastic-processing-unit-overview.html
 weight: 400
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 
@@ -16,7 +16,7 @@ Each machine requires a single running [GigaSpaces Agent](/product_overview/serv
 
 That means that potentially any machine could be a management machine:
 
-{{% inittab deckName1|top %}}
+{{% inittab deckName1 %}}
 {{% tabcontent Windows %}}
 
 {{% highlight java %}}
@@ -47,7 +47,7 @@ nohup ${JSHOMEDIR}/bin/gs-agent.sh gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 g
 
 In case you prefer having dedicated management machines, start GigaSpaces agents with the above settings on two machines, and start the rest of the GigaSpaces agents with the settings below. The command line parameters instruct the GigaSpaces agents not to start managers. It does not start any containers automatically. The EPU starts containers on demand:
 
-{{% inittab deckName2|top %}}
+{{% inittab deckName2 %}}
 {{% tabcontent Windows %}}
 
 {{% highlight java %}}

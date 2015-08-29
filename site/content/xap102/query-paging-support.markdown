@@ -6,7 +6,7 @@ parent: querying-the-space.html
 weight: 700
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 In some scenarios there's a need to return a collection of entries from the space. This is usually carried out using one of the [readMultiple](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/GigaSpace.html#readMultiple-T-) overloads in `GigaSpace`. However, if there are lots of matching entries, you may encounter several problems:
 
@@ -15,7 +15,7 @@ In some scenarios there's a need to return a collection of entries from the spac
 
 A better approach is to create an iterator that iterates over the matching entries one at a time. Under the hood, the server returns results in batches, and when the client's buffer is exhausted the next batch is implicitly returned from the server.
 
-{{%info title=GSIterator%}}This page describes the new space iterator which is intended to replace the old `GSIterator` starting 10.1. Information about the old GSIterator is available [here](./query-paging-support-old.html).{{%/info%}}
+{{%info title="GSIterator"%}}This page describes the new space iterator which is intended to replace the old `GSIterator` starting 10.1. Information about the old GSIterator is available [here](./query-paging-support-old.html).{{%/info%}}
 
 # Usage
 

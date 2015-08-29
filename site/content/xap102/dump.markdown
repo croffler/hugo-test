@@ -7,7 +7,7 @@ weight: 200
 ---
 
 
-{{% summary  %}}{{% /summary %}}
+{{% ssummary  %}}{{% /ssummary %}}
 
 
 The dump feature of the Admin API allows to easily generate dump information out of GigaSpaces runtime environment. Here is an example:
@@ -18,13 +18,13 @@ Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 // wait a bit for components to be discovered (or use waitFor) ...
 
 DumpResult dumpResult = admin.dump("reason comes here", null,
-                                "summary", "thread", "log", "processingUnits");
+                                "ssummary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/dump.zip"), null);
 {{% /highlight %}}
 
 The above example will go over all the currently discovered runtime elements in GigaSpaces (GSA, GSM, GSC, LUS) and generate a dump of them (stored locally to each runtime component). Then, the `DumpResult` can be used to download all the dump information, from all the different runtime components, into a file.
 
-The above example generates dump that will include a simple "summary" information (JVM information and stats, for example), a thread dump, all the logs associated with the given runtime component, and all the processing unit instances running (applied to a GSC).
+The above example generates dump that will include a simple "ssummary" information (JVM information and stats, for example), a thread dump, all the logs associated with the given runtime component, and all the processing unit instances running (applied to a GSC).
 
 # Dump Provider
 
@@ -37,16 +37,16 @@ Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 
 // dump all the GSMs
 DumpResult dumpResult = admin.getGridServiceManagers().dump("reason comes here", null,
-                                "summary", "thread", "log", "processingUnits");
+                                "ssummary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/gsms.zip"), null);
 
 // dump all the GSCs
 dumpResult = admin.getGridServiceContainers().dump("reason comes here", null,
-                                "summary", "thread", "log", "processingUnits");
+                                "ssummary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/gscs.zip"), null);
 
 dumpResult = admin.getZones().getByName("zoneA").dump("reason comes here", null,
-                                "summary", "thread", "log", "processingUnits");
+                                "ssummary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/zoneA.zip"), null);
 {{% /highlight %}}
 
@@ -65,7 +65,7 @@ dumpResult.download(new File("target/compound.zip", null);
 
 The dump process occurs in stages within the runtime component. Each stage is called a processor and the following is a list of all the different processors:
 
-- **summary**: General summary information of the process.
+- **ssummary**: General ssummary information of the process.
 - **network**: Information on the network layer of the process and the OS network stats.
 - **thread**: Thread dump of the process.
 - **heap**: Heap dump of the process. **Note, this is a heavy operation and can produce very large dump files**.
@@ -77,7 +77,7 @@ The **log** process is the only processor that takes into account the context (M
 {{% highlight java %}}
 Map<String, Object> context = new HashMap<String, Object>();
 context.put("logEntryMatcher", lastN(200));
-DumpResult dumpResult = admin.generateDump("test", context, "summary", "log");
+DumpResult dumpResult = admin.generateDump("test", context, "ssummary", "log");
 {{% /highlight %}}
 
 The above code will generate a dump, including the just the last 200 log entries which the log dump processor will process.
@@ -123,14 +123,14 @@ dump_file.zip
 
     gsa-10.10.10.249-23610--1284928573201
         network.txt
-        summary.txt
+        ssummary.txt
         threads.txt
         logs
             2010-09-19~08.22-gigaspaces-gsa-10.10.10.249-23610.log
 
     gsc-10.10.10.249-23739--1284928573169
         network.txt
-        summary.txt
+        ssummary.txt
         threads.txt
         logs
             2010-09-19~08.22-gigaspaces-gsc_1-10.10.10.249-23739.log
@@ -140,11 +140,11 @@ dump_file.zip
                     pu.xml
                     spaces
                         space
-                            summary.txt
+                            ssummary.txt
 
     gsc-10.10.10.249-23766--1284928573079
         network.txt
-        summary.txt
+        ssummary.txt
         threads.txt
         logs
             2010-09-19~08.22-gigaspaces-gsc_2-10.10.10.249-23766.log
@@ -154,23 +154,23 @@ dump_file.zip
                     pu.xml
                     spaces
                         mirror
-                            summary.txt
+                            ssummary.txt
             space
                 1_1
                     pu.xml
                     spaces
                         space
-                            summary.txt
+                            ssummary.txt
 
     gsm-10.10.10.249-24112--1284928573193
         network.txt
-        summary.txt
+        ssummary.txt
         threads.txt
         logs
             2010-09-19~08.22-gigaspaces-gsm_3-10.10.10.249-24112.log
     lus-10.10.10.249-24127--1284928573201
         network.txt
-        summary.txt
+        ssummary.txt
         threads.txt
         logs
             2010-09-19~08.22-gigaspaces-lus_4-10.10.10.249-24127.log

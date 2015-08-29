@@ -6,7 +6,7 @@ parent: messaging-support.html
 weight: 300
 ---
 
-{{% summary%}}  {{% /summary %}}
+{{% ssummary%}}  {{% /ssummary %}}
 
 
 JMS-space interoperability allows JMS applications to communicate with non-JMS applications using the space, without having to know or deal with the space API.
@@ -38,7 +38,7 @@ The following sections will show you how to use the `MessageConverter` to write 
 
 # Writing POJOs/Entries to Space using JMS API -- MessageConverter
 
-{{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}}
+
 
 This feature allows clients to define the outcome of JMS writes. By implementing a `MessageConverter`, you can convert JMS messages to a POJO before they are written to the space. The result of using a converter is that what is written to the space is not necessarily the JMS message (with all the headers, properties etc.), but the result of the message conversion.
 
@@ -154,11 +154,11 @@ No conversion is performed and the JMS messages are written as-is.
 - After calling `MessageProducer.send()`, the message instance behaves as if no conversion occurred. The `JMS_GSMessageConverter` property in the returned object is unset.
 - A destination has to be created, even if it is not used in the converted object.
 
-{{% endtoczone %}}
+
 
 # Writing and Reading JMS Messages using Space API
 
-{{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}}
+
 
 ## Writing JMS messages
 
@@ -241,4 +241,4 @@ You can use the template to read or take messages from the space. The following 
 GSTextMessageImpl msg = (GSTextMessageImpl ) spaceProxy.take(textMessageTemplate, null, 1000L);
 {{% /highlight %}}
 
-{{% endtoczone %}}
+

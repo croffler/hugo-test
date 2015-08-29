@@ -6,7 +6,7 @@ parent: querying-the-space.html
 weight: 350
 ---
 
-{{%summary%}}{{%/summary%}}
+{{%ssummary%}}{{%/ssummary%}}
 
 
 # Regular Expressions

@@ -6,7 +6,7 @@ parent: jpa-api-overview.html
 weight: 300
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 

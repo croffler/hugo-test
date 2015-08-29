@@ -6,7 +6,7 @@ parent: space-persistency-overview.html
 weight: 50
 ---
 
-{{% summary  %}}  {{% /summary %}}
+{{% ssummary  %}}  {{% /ssummary %}}
 
 The Space Persistency is made of two components, A space data source & a space synchronization endpoint.
 These components provide advanced persistency capabilities for the space architecture to interact with a persistency layer.

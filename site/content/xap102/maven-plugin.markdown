@@ -6,7 +6,7 @@ parent: installation.html
 weight: 500
 ---
 
-{{% summary%}}{{% /summary %}}
+{{% ssummary%}}{{% /ssummary %}}
 
 
 

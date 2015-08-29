@@ -6,7 +6,7 @@ parent: the-space-filters.html
 weight: 100
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 The Space Filter implementation may use the following interceptors. The relevant method should be annotated with the annotation listed below. The signature of these methods may include the following parameters:
 
@@ -56,7 +56,7 @@ The space filter business logic impacts the space responsiveness to client reque
 
 The following example illustrates a space Filter POJO and a Bean that performs some space operations:
 
-{{% inittab example|top %}}
+{{% inittab example %}}
 {{% tabcontent The Space Filter POJO %}}
 
 {{% highlight java %}}

@@ -6,14 +6,14 @@ parent: polling-container-overview.html
 weight: 100
 ---
 
-{{% summary  %}}{{%/summary%}}
+{{% ssummary  %}}{{%/ssummary%}}
 
 
 {{% section %}}
 {{% column width="80%" %}}
 The polling event container is an implementation of the [polling consumer pattern](http://enterpriseintegrationpatterns.com/PollingConsumer.html){:target="_blank"} which uses the space to receive events. It performs polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [Data Event Listener](./data-event-listener.html) is invoked with the event. A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
 {{% /column %}}
-{{% column width=20% %}}
+{{% column width="20%" %}}
 {{%popup "/attachment_files/polling_container_basic.jpg"%}}
 {{% /column %}}
 {{% /section %}}
@@ -29,7 +29,7 @@ The polling container life cycle events described below. You may implement each 
 
 Here is a simple example of polling event container configuration:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -179,7 +179,7 @@ In order to receive events using multiple consumer threads, in the same order th
 
 Here is an example of a polling container with 3 concurrent consumers and 5 maximum concurrent consumers:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -228,7 +228,7 @@ public class SimpleListener {
 
 Sometimes, it is very convenient to have a listener instance per concurrent polling thread. This allows a thread-safe instance variable to be constructed without worrying about concurrent access. In such a case, the `prototype` Spring scope can be used in conjunction with a `listenerRef` bean name injection. Here is an example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -273,7 +273,7 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
 
 When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./query-sql.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -395,7 +395,7 @@ SimplePollingEventListenerContainer pollingEventListenerContainer =
 When performing polling receive operations, a dynamic template can be used. A method providing a dynamic template is called before each receive operation, and can return a different object in each call.
 The event template object has the same syntax rules as with @EventTemplate.
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -531,7 +531,7 @@ When using the `ExclusiveReadReceiveOperationHandler` or even the `SingleReadRec
 
 Here is an example of how the receive operation handler can be configured with `MultiTakeReceiveOperationHandler`:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -654,7 +654,7 @@ Step 2  - Workers generating results which are consumed by the Master:
 
 Here is an example of how a Non-Blocking mode can be configured:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -817,7 +817,7 @@ To free the resources used by the polling container make sure you close it prope
 
 Both the receive operation and the actual event action can be configured to be performed under a transaction. Transaction support is required when, for example, an exception occurs in the event listener, and the receive operation needs to be to rolled back (and the actual data event is returned to the space). Adding transaction support is very simple in the polling container, and can be done by injecting a transaction manager into it. For example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -955,7 +955,7 @@ Note the timeout value is in seconds as per Spring spec for TransactionDefinitio
 
 Here is an example how timeout value (and transaction isolation) can be set with polling container:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -1107,7 +1107,7 @@ public interface TriggerOperationHandler {
 
 OpenSpaces comes with a built-in implementation of this interface, called `ReadTriggerOperationHandler`. It performs a single blocking read operation (using the provided receive timeout), thus "peeking" into the space for relevant event data. If the read operation returns a value, this means that there is higher probability that the receive operation will succeed, and the transaction won't be started without a purpose. Here is how it can be configured:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}

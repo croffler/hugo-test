@@ -6,7 +6,7 @@ parent: installation.html
 weight: 100
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 When downloading   XAP from the [GigaSpaces website](http://www.gigaspaces.com/LatestProductVersion) the installation already has a bundled license key for a limited period of time, therefore for the evaluation period, **there is no need to install any license key**.

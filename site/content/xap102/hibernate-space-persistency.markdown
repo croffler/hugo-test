@@ -7,7 +7,7 @@ weight: 200
 ---
 
 
-{{% summary%}}  {{% /summary %}}
+{{% ssummary%}}  {{% /ssummary %}}
 
 
 
@@ -33,7 +33,7 @@ The `Hibernate Space Persistency Implementation` is used both with the [Synchron
 
 See below example for `Hibernate Space Persistency` that is configured having a Space connected to a central data source using Hibernate configuration files decorating the Space Classes:
 
-{{% inittab simple_space|top %}}
+{{% inittab simple_space %}}
 
 {{% tabcontent Namespace %}}
 {{% highlight xml %}}

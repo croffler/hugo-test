@@ -19,7 +19,7 @@ In order to receive events using multiple consumer threads, in the same order th
 
 Here is an example of a polling container with 3 concurrent consumers and 5 maximum concurrent consumers:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -68,7 +68,7 @@ public class SimpleListener {
 
 Sometimes, it is very convenient to have a listener instance per concurrent polling thread. This allows a thread-safe instance variable to be constructed without worrying about concurrent access. In such a case, the `prototype` Spring scope can be used in conjunction with a `listenerRef` bean name injection. Here is an example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

@@ -6,7 +6,7 @@ parent: pojo-annotation-overview.html
 weight: 200
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 The [XAP API](./the-gigaspace-interface-overview.html) supports  field-level decorations with POJOs. These can be specified via annotations on the Space class source itself. The annotations are defined on the getter methods.
@@ -37,7 +37,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn%}}./space-object-id-operations.html{{%endlearn%}}
+{{%learn "./space-object-id-operations.html"%}}
 
 
 # SpaceRouting
@@ -64,7 +64,7 @@ public class Employee {
 }
 {{%/highlight%}}
 
-{{%learn%}}{{%currentadmurl%}}/data-partitioning.html{{%endlearn%}}
+{{%learn "./data-partitioning.html"%}}
 
 <br>
 
@@ -139,7 +139,7 @@ public class User {
 {{%/highlight%}}
 
 
-{{%learn%}}./indexing.html{{%endlearn%}}
+{{%learn "./indexing.html"%}}
 
 # Unique Index
 
@@ -171,7 +171,7 @@ public class Person
 {{%/highlight%}}
 
 
-{{%learn%}}./indexing.html{{%endlearn%}}
+{{%learn "./indexing.html"%}}
 
 # SpaceIndex Path
 
@@ -216,7 +216,7 @@ public static class Address implements Serializable {
 }
 {{%/highlight%}}
 
-{{%learn%}}./indexing-nested-properties.html{{%endlearn%}}
+{{%learn "./indexing-nested-properties.html"%}}
 
 # SpaceVersion
 
@@ -245,7 +245,7 @@ public class Employee {
 }
 {{%/highlight%}}
 
-{{%learn%}}./transaction-optimistic-locking.html{{%endlearn%}}
+{{%learn "./transaction-optimistic-locking.html"%}}
 
 # SpacePersist
 
@@ -327,7 +327,7 @@ public class MyData {
 }
 {{%/highlight%}}
 
-{{%learn%}}./leases-automatic-expiration.html{{%endlearn%}}
+{{%learn "./leases-automatic-expiration.html"%}}
 
 # SpaceStorageType
 
@@ -355,7 +355,7 @@ public class Message {
 }
 {{%/highlight%}}
 
-{{%learn%}}./storage-types---controlling-serialization.html{{%endlearn%}}
+{{%learn "./storage-types---controlling-serialization.html%}}
 
 
 # SpaceFifoGroupingProperty
@@ -384,7 +384,7 @@ public class FlightReservation
 }
 {{%/highlight%}}
 
-{{%learn%}}./fifo-grouping.html{{%endlearn%}}
+{{%learn "./fifo-grouping.html"%}
 
 
 # SpaceFifoGroupingIndex
@@ -409,7 +409,7 @@ Example:
 
 {{%/highlight%}}
 
-{{%learn%}}./fifo-grouping.html{{%endlearn%}}
+{{%learn "./fifo-grouping.html"%}
 
 
 
@@ -445,7 +445,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn%}}./dynamic-properties.html{{%endlearn%}}
+{{%learn "./dynamic-properties.html"%}
 
 
 # SpaceDocumentSupport
@@ -470,7 +470,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn%}}./document-pojo-interoperability.html#deep-interoperability{{%endlearn%}}
+{{%learn "./document-pojo-interoperability.html#deep-interoperability"%}
 
 
 

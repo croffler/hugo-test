@@ -43,7 +43,7 @@ Here is an example; the Person class has an Address property that is being exter
 
 
 {{%inittab%}}
-{{%tabcontent Person.java %}}
+{{%tabcontent Person %}}
 {{%highlight java%}}
 @SpaceClass
 public class Person {
@@ -91,7 +91,7 @@ public class Person {
 }
 {{%/highlight%}}
 {{%/tabcontent%}}
-{{%tabcontent Address.java %}}
+{{%tabcontent Address %}}
 {{%highlight java%}}
 public class Address implements Externalizable {
 

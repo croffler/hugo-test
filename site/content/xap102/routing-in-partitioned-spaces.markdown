@@ -13,7 +13,7 @@ weight: 600
  ![counter-logo.jpg](/attachment_files/subject/partitioning.png)
  {{% /column %}}
  {{% column width="90%" %}}
- {{% summary %}} {{% /summary %}}
+ {{% ssummary %}} {{% /ssummary %}}
  {{% /column %}}
  {{% /section %}}
 

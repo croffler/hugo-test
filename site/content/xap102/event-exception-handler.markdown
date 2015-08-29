@@ -6,7 +6,7 @@ parent: event-processing.html
 weight: 500
 ---
 
-{{% summary  %}}{{%/summary%}}
+{{% ssummary  %}}{{%/ssummary%}}
 
 
 
@@ -70,7 +70,7 @@ public class SimpleEventExceptionHandler implements EventExceptionHandler {
 
 Here is how it can be configured:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}

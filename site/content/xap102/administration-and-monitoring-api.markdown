@@ -7,13 +7,13 @@ weight: 100
 ---
 
 
-{{% summary%}}{{% /summary %}}
+{{% ssummary%}}{{% /ssummary %}}
 
 
 
 Before diving into the Admin API, here are some code examples showing how the Admin API can be used to display information on the currently deployed services / components:
 
-{{% inittab admin_test|top %}}
+{{% inittab admin_test%}}
 {{% tabcontent GSA %}}
 
 {{% highlight java %}}
@@ -330,10 +330,10 @@ The Admin Domain Model has representation to all GigaSpaces level main actors. T
 
 ![admin_DomainModel.jpg](/attachment_files/admin_DomainModel.jpg)
 
-{{% whr %}}
+<hr>
 
 {{%section%}}
-{{%column width=45% %}}
+{{%column width="45%" %}}
 - [GridServiceAgent](#GridServiceAgentLink)
 - [GridServiceAgents](#GridServiceAgentsLink)
 - [GridServiceManager](#GridServiceManagerLink)
@@ -348,7 +348,7 @@ The Admin Domain Model has representation to all GigaSpaces level main actors. T
 - [ServiceMonitors](#servicemonitors)
 
 {{%/column%}}
-{{%column width=45% %}}
+{{%column width="45%" %}}
 
 - [Space](#SpaceLink)
 - [SpaceInstance](#SpaceInstanceLink)

@@ -6,7 +6,7 @@ parent: pojo-xml-metadata-overview.html
 weight: 200
 ---
 
-{{% summary %}}{{% /summary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 
 All the properties are written automatically into space. If the field is a reference to another object, it has to be Serializable and it will be written into space as well. Only the fields which need special space behavior need to be specified in the gs.xml file. Specify the fields which are id's, indexes or need exclusions, etc.
@@ -90,7 +90,7 @@ Example:
 </gigaspaces-mapping>
 {{% /highlight %}}
 
-{{%learn%}}./storage-types---controlling-serialization.html{{%endlearn%}}
+{{%learn ./storage-types---controlling-serialization.html%}
 
 ### SpaceIndex
 
@@ -118,7 +118,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}./indexing.html{{%endlearn%}}
+{{%learn ./indexing.html%}
 
 ### SpaceIndex Path
 
@@ -140,7 +140,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn%}}./indexing-nested-properties.html{{%endlearn%}}
+{{%learn ./indexing-nested-properties.html%}
 
 
 ### Unique Index
@@ -171,7 +171,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}./indexing.html{{%endlearn%}}
+{{%learn ./indexing.html%}
 
 
 ### SpaceFifoGroupingIndex
@@ -197,7 +197,7 @@ Example:
 
 {{%/highlight%}}
 
-{{%learn%}}./fifo-grouping.html{{%endlearn%}}
+{{%learn ./fifo-grouping.html%}
 
 
 
@@ -231,7 +231,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn%}}./space-object-id-operations.html{{%endlearn%}}
+{{%learn ./space-object-id-operations.html%}
 
 
 # SpaceRouting
@@ -255,7 +255,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn%}}{{%currentadmurl%}}/data-partitioning.html{{%endlearn%}}
+{{%learn {{%currentadmurl%}}/data-partitioning.html%}
 
 # Class Reference
 
@@ -317,7 +317,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn%}}./transaction-optimistic-locking.html{{%endlearn%}}
+{{%learn ./transaction-optimistic-locking.html%}
 
 
 
@@ -367,7 +367,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn%}}./leases-automatic-expiration.html{{%endlearn%}}
+{{%learn ./leases-automatic-expiration.html%}
 
 # SpaceFifoGroupingProperty
 
@@ -388,7 +388,7 @@ Example:
 
 {{%/highlight%}}
 
-{{%learn%}}./fifo-grouping.html{{%endlearn%}}
+{{%learn ./fifo-grouping.html%}
 
 
 # SpaceDynamicProperties
@@ -414,7 +414,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn%}}./dynamic-properties.html{{%endlearn%}}
+{{%learn ./dynamic-properties.html%}
 
 
 # SpaceDocumentSupport
@@ -436,7 +436,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn%}}./document-pojo-interoperability.html#deep-interoperability{{%endlearn%}}
+{{%learn ./document-pojo-interoperability.html#deep-interoperability%}
 
 
 

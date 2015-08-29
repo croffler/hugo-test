@@ -6,12 +6,12 @@ parent: task-execution-overview.html
 weight: 100
 ---
 
-{{%summary%}}{{%/summary%}}
+{{%ssummary%}}{{%/ssummary%}}
 {{%section%}}
-{{%column width=70% %}}
+{{%column width="70%" %}}
 XAP supports `Task` execution in an asynchronous manner, collocated with the Space (Processing Unit that started an embedded Space). `Tasks` can be executed directly on a specific cluster member using routing declarations. `Tasks` can also be executed in "broadcast" mode on all the primary cluster members concurrently and reduced to a single result on the client-side. `Tasks` are dynamic in terms of content and class definition. (The `Task` does not have to be available within the space classpath.)
 {{%/column%}}
-{{%column width=30% %}}
+{{%column width="30%" %}}
 ![Executors_task_flow_basic.jpg](/attachment_files/Executors_task_flow_basic.jpg)
 {{%/column%}}
 {{%/section%}}
@@ -140,7 +140,7 @@ Routing information can also be defined at the `Task`-level, in two ways:
 1. Provide an instance property and annotate the getter with the `@SpaceRouting` annotation.
 1. Implement the `TaskRoutingProvider` interface (for non annotations based configuration). 
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -202,11 +202,11 @@ int result = future.get();
 A `DistributedTask` is a `Task` that is executed more than once (concurrently). It returns a result that is the reduced product of all operations. This reduction is calculated in the `Task`'s `reduce(...)` method. 
 
 {{% section %}}
-{{% column width=45% %}}
+{{% column width="45%" %}}
 Phase 1 - Sending the Tasks to be executed:
 ![DistributedTaskExecution_phase1.jpg](/attachment_files/DistributedTaskExecution_phase1.jpg)
 {{% /column %}}
-{{% column width=45%%}}
+{{% column width="45%"%}}
 Phase 2 - Getting the results back to be reduced:
 ![DistributedTaskExecution_phase2.jpg](/attachment_files/DistributedTaskExecution_phase2.jpg)
 {{% /column %}}
@@ -337,7 +337,7 @@ See the [Elastic Distributed Risk Analysis Engine](/sbp/elastic-distributed-calc
 
 The most common scenario for using executors is by interacting with the collocated Space on which the task is executed. A `GigaSpace` instance, which works against a collocated Space can be easily injected either using annotations or using an interface. Here is an example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -474,7 +474,7 @@ public class OrderCountTask implements DistributedTask<Integer, Long> {
 
 When enabling autowiring of tasks, OpenSpaces annotations/interface injection can also be used such as `ClusterInfo` injection.
 
-{{% info title=Why use @TaskGigaSpace/TaskGigaSpaceAware when you can autowire using standard Spring? %}}
+{{% info title="Why use @TaskGigaSpace/TaskGigaSpaceAware when you can autowire using standard Spring?" %}}
 You can inject a collocated `GigaSpace` instance to the task using the `@TaskGigaSpace` annotation  implementing the `TaskGigaSpaceAware` interface. However, you can also wire the task through standard Spring dependency injection using the `@AutowireTask` and `@Resource` annotations. However, there's a big difference between the two: the `@TaskGigaSpace` annotation and the `TaskGigaSpaceAware` interface are intentionally designed not to trigger the spring dependency resolution and injection process, since it can be quite costly in terms of performance if executed every time a task is submitted. Therefore, for the common case where you only need to inject the collocated `GigaSpace` instance to the task, it is recommended to use `@TaskGigaSpace` or `TaskGigaSpaceAware`.
 {{% /info %}}
 
@@ -514,7 +514,7 @@ An exception thrown within the `execute` operation will not cause the transactio
 When executing distributed tasks or tasks that executed on more than one node within the same execution should use the distributed transaction manager. Tasks that execute just on a single node can use the distributed transaction manager, but should use the local transaction manager.
 {{%/tip%}}
 
-{{% anchor j.u.c. ExecutorService %}}
+{{% anchor "j.u.c. ExecutorService" %}}
 
 # ExecutorService
 

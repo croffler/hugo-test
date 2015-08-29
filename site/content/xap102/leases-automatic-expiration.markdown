@@ -6,7 +6,7 @@ weight: 1000
 parent: the-gigaspace-interface-overview.html
 ---
 
-{{% summary %}} {{% /summary %}}
+{{% ssummary %}} {{% /ssummary %}}
 
 
 
@@ -217,7 +217,7 @@ The TaskManager that manages the renewal threads has a bound on the number of si
 
 Following example shows a client writing `Order`'s to the space with a limited lease. It uses a LeaseRenewalManager to renew the Lease for the `Order`. It also uses a LeaseListener which is triggered in case LeaseRenewalManager runs into errors renewing a lease. Example source can be downloaded from [here](/download_files/LeaseRenewalManager.zip).
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent LeaseManagerClient %}}
 
 {{% highlight java %}}

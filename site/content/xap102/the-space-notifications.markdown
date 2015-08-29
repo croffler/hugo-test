@@ -6,7 +6,7 @@ weight: 700
 parent: the-gigaspace-interface-overview.html
 ---
 
-{{% summary %}} {{% /summary %}}
+{{%ssummary%}} {{%/ssummary%}}
 
 Some of the space operations can generate notifications when they are executed. Notifications are also generated when working in clustered mode (schema) that includes a primary/backup schema. A listener can be defined to receive these notifications.
 
@@ -56,7 +56,7 @@ eventListener.destroy();
 
 {{% /highlight %}}
 
-{{%learn%}}./notify-container.html{{%endlearn%}}
+{{%learn "./notify-container.html" %}}
 
 
 # Polling Example
@@ -100,15 +100,15 @@ This example works just like the notification example above, except that the obj
   pollingListener.destroy();
 {{% /highlight %}}
 
-{{%learn%}}./polling-container.html{{%endlearn%}}
+{{<learn "./polling-container.html">}}
 
 # Primary/Backup
 
 {{%section%}}
-{{%column width=60% %}}
+{{%column width="60%" %}}
 When working in clustered mode (schema) that includes a primary/backup schema, several components within the Processing Unit need to be aware of the current space mode and any changes made to it (such as event containers). Using Spring support for application events, two events are defined within OpenSpaces: `BeforeSpaceModeChangeEvent` and `AfterSpaceModeChangeEvent`. Both are raised when a space changes its mode from primary to backup or versa, and holds the current space mode.
 {{%/column%}}
-{{%column width=35% %}}
+{{%column width="35%" %}}
 ![OS_PrimaryBackupCluster.jpg](/attachment_files/OS_PrimaryBackupCluster.jpg)
 {{%/column%}}
 {{%/section%}}
@@ -123,7 +123,7 @@ In embedded mode, the space factory bean registers with the space for space mode
 
 Space mode registration can be overridden and explicitly set within the space factory configuration. Here is an example of how it can be set (it cannot register for notifications even though it is an embedded space):
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -223,7 +223,7 @@ class MyBean {
 
 In order to enable this feature, the following should be placed within the application context configuration:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

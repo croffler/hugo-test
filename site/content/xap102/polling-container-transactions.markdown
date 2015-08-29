@@ -6,7 +6,7 @@ parent: polling-container-overview.html
 weight: 200
 ---
 
-{{% summary  %}}{{%/summary%}}
+{{% ssummary  %}}{{%/ssummary%}}
 
 <br>
 
@@ -14,7 +14,7 @@ Both the receive operation and the actual event action can be configured to be p
 
 For example:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -153,7 +153,7 @@ Note the timeout value is in seconds as per Spring spec for TransactionDefinitio
 
 Here is an example how timeout value (and transaction isolation) can be set with polling container:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}

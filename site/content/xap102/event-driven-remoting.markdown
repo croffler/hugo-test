@@ -6,10 +6,10 @@ parent: space-based-remoting-overview.html
 weight: 300
 ---
 
-{{% summary%}}{{%/summary%}}
+{{% ssummary%}}{{%/ssummary%}}
 
 {{%comment%}}
-{{% summary  %}}Event Driven Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using a polling container on the space side to process the invocations{{% /summary %}}
+{{% ssummary  %}}Event Driven Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using a polling container on the space side to process the invocations{{% /ssummary %}}
 
 # Overview
 {{%/comment%}}
@@ -42,7 +42,7 @@ The `Data` object should be `Serializable`, or better yet, `Externalizable` (for
 
 Next, an implementation of this contract needs to be provided. This implementation will "live" on the server side. Here is a sample implementation:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight java %}}
@@ -78,7 +78,7 @@ The XML tab corresponds to exporting the service using xml configuration. The An
 
 The next step is exporting the service over the space. Exporting the service is done on the server side. As with other Spring remoting support, exporting the service and the method of exporting the service is a configuration time decision. Here is an example of a Spring XML configuration:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
 {{% highlight xml %}}
@@ -209,7 +209,7 @@ public class DataRemoting {
 
 Configuring the `IDataProcessor` proxy can be done in the following manner:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -287,7 +287,7 @@ If there are more than one `GigaSpace` beans defined within the application cont
 
 In order to enable this feature, the following element needs to be added to the application context XML:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -338,7 +338,7 @@ public class DataRemoteRoutingHandler implements RemoteRoutingHandler<Long> {
 
 Finally, the wiring is done in the following manner:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -494,7 +494,7 @@ public interface RemoteInvocationAspect<T> {
 
 An implementation of such an aspect can be configured as follows:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -589,7 +589,7 @@ public interface ServiceExecutionAspect {
 
 An implementation of such an aspect can be configured as follows:
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -670,7 +670,7 @@ public interface MetaArgumentsHandler {
 
 The following snippets show how to plug a custom meta arguments handler to the client side remote proxy. The `Object` array returned by the implementation of the `MetaArgumentsHandler` interface will be sent along with the invocation to server side.
 
-{{% inittab os_simple_space|top %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}

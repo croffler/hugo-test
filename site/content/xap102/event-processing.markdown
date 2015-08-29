@@ -45,6 +45,6 @@ XAP provide a JMS implementation, built on top of the core spaces architecture.
 
 #### Additional Resources
 
-{{%youtube GwLfDYgl6f8 | Event Processing%}}
+{{<youtube "GwLfDYgl6f8" "Event Processing">}}
 
 
