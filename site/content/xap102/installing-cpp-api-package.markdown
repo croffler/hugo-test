@@ -18,9 +18,7 @@ The current supported platforms and compilers are:
 - Windows
     - 32/64bit -- VS 9.0/10.0 (Visual Studio 2008/2010)
 
-{{%comment%}}
-{{% exclamation %}} Prior to installation, see the **[XAP installation prerequisites](./installation.html#Prior-to-Installation)**.
-{{%/comment%}}
+
 
 # Installation
 

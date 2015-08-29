@@ -84,7 +84,7 @@ public class MirrorSpaceSynchronizationEndpoint extends SpaceSynchronizationEndp
 }
 {{% /highlight %}}
 
-{{% endpanel %}}
+{{% /panel %}}
 {{% endgcloak %}}
 
 And here is how this can be configured within the mirror configuration:
@@ -123,7 +123,7 @@ And here is how this can be configured within the mirror configuration:
 {{% /tabcontent %}}
 {{% /inittab %}}
 
-{{% endpanel %}}
+{{% /panel %}}
 {{% endgcloak %}}
 
 In order to use the data source as the read mechanism for the cluster Space that connects to the mirror, a `SpaceDataSource` extension needs to be implemented.

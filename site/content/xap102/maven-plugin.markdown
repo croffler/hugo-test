@@ -34,9 +34,10 @@ Java version: 1.6.0_23
 OS name: "windows 7" version: "6.1" arch: "x86" Family: "windows"
 {{% /highlight %}}
 
-{{% note %}} **First uses of Maven require internet connection** in order for the local repository to be populated with required libraries. Once all required libraries are in the local repository the internet connection is not mandatory. {{%/note%}}
+{{% note %}}
+ **First uses of Maven require internet connection** in order for the local repository to be populated with required libraries. Once all required libraries are in the local repository the internet connection is not mandatory. {{%/note%}}
 
-{{% info title=Dependency Download by Maven %}}
+{{% info title="Dependency Download by Maven" %}}
 Maven uses repositories: a local repository where all required dependencies (artifacts) are stored for Maven's use, and remote repositories from which Maven downloads required dependencies that are missing in the local repository. If a dependency is missing from the local repository during execution, Maven automatically downloads the missing dependencies from the remote repositories. The download might take a few minutes (progress messages are printed to the console). When the download is finished, Maven returns to its original tasks.
 {{%/info%}}
 
@@ -102,16 +103,17 @@ mvn os:create
 
 The result is a list of available template names and descriptions:
 
-{: .table .table-bordered .table-condensed}
+
 |Template Name | Description|
 |:-------------|:-----------|
 |basic|Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.|
 |basic-async-persistency| Creates a basic SBA application with three processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.The Processor is connected to a Mirror and provides a reliable async replication and persistency to the Database using Hibernate. |
 |basic-xml| Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.|
-|<nobr>basic-async-persistency-xml</nobr>|Creates a basic SBA application with three processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit. The Processor is connected to a Mirror and provides a reliable asynchronous replication and persistency to the Database using Hibernate.|
+|basic-async-persistency-xml|Creates a basic SBA application with three processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit. The Processor is connected to a Mirror and provides a reliable asynchronous replication and persistency to the Database using Hibernate.|
 |mule|Creates a SBA application with two processing units that use mule as an ESB. The Feeder processing unit writes Data objects to the Space. The Processor processing unit uses the extended SEDA model to defines 3 services. A Verifier service that verifies unprocessed Data objects, an Approver service that approves verified Data objects and a Processor service that processes approved Data objects. The Space and the Processor are collocated in the same processing unit.|
 
-Use the -Dtemplate=<template> argument to specify a project template. Example:
+<br>
+Use the -Dtemplate=`<template>` argument to specify a project template. Example:
 
 {{% highlight bash %}}
 mvn os:create -Dtemplate=basic-async-persistency

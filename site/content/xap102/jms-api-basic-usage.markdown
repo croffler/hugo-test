@@ -77,7 +77,7 @@ connection.start();
 connection.close();
 {{% /highlight %}}
 
-{{% endpanel %}}
+{{% /panel %}}
 {{% endgcloak %}}
 
 ### Using Separate Domains (JMS 1.0.2)
@@ -126,7 +126,7 @@ topicConnection.start();
 topicConnection.close();
 {{% /highlight %}}
 
-{{% endpanel %}}
+{{% /panel %}}
 {{% endgcloak %}}
 
 #### Point to Point
@@ -173,5 +173,5 @@ queueConnection.start();
 queueConnection.close();
 {{% /highlight %}}
 
-{{% endpanel %}}
+{{% /panel %}}
 {{% endgcloak %}}

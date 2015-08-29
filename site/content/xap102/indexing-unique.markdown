@@ -29,7 +29,7 @@ When the system encounters a unique constraint violation in one of the index-cha
 The operation which caused the violation is rolled back with the following effects:
 
 
-{: .table .table-bordered}
+
 | Operation | Action |
 |:--------------|:------------|
 |write|the entry is removed|
@@ -45,7 +45,7 @@ A unique attribute is added to the `@SpaceIndex` annotation. Unique = true will 
 
 Example:
 
-{{% inittab Java |top %}}
+{{% inittab Java %}}
 {{% tabcontent Java %}}
 {{%highlight java%}}
 

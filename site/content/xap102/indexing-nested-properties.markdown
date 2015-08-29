@@ -17,7 +17,7 @@ The **`path()`** attribute represents the path of the property within the nested
 
 Below is an example of defining an index on a nested property:
 
-{{% inittab example|top %}}
+{{% inittab example %}}
 {{% tabcontent Single Index Annotation %}}
 
 {{% highlight java %}}
@@ -124,9 +124,9 @@ SQLQuery<Person> query = new SQLQuery<Person>(Person.class,
 	"personalInfo.socialSecurity<10000050L and personalInfo.socialSecurity>=10000010L");
 {{% /highlight %}}
 
-{{% learn %}}./query-sql.html#Nested Properties{{%endlearn%}}
+{{% learn "./query-sql.html#Nested Properties"%}}
 
-{{% info title=Map based nested properties %}}
+{{% info title="Map based nested properties" %}}
 Note that the same indexing techniques above are also applicable to Map-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `java.util.Map<String,Object>`, with the map keys representing the property names.
 {{% /info %}}
 

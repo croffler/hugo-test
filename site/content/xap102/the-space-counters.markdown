@@ -22,7 +22,7 @@ XAP introducing Counter functionality via the `GigaSpace.change` API. It allows 
 
 
 {{% section %}}
-{{% column width=50% %}}
+{{% column width="50%" %}}
 There is no need to use a transaction when getting the counter value as the counter is atomic.
 If the counter property does not exists, the delta will be set as its initial state. This simple API allows you to maintain counters with minimal impact on the system performance as it is replicating only the `ChangeSet` command and not the entire space object to the backup copy when running a clustered data-grid.
 {{% /column %}}

@@ -445,16 +445,16 @@ The URL above assumes the Web Server is configured to use port 8080.
 
 {{%panel title=Set some attributes with their name and value and click the **Update Session** button.%}}
 ![httpSessionSharing4.jpg](/attachment_files/http-session-sharing-single-1.png)
-{{%endpanel%}}
+{{%/panel%}}
 
 
 {{%panel title=View the session updated within the space via the GS-UI or Web-UI.%}}
 ![httpSessionSharing4.jpg](/attachment_files/http-session-sharing-single-2.png)
-{{%endpanel%}}
+{{%/panel%}}
 
 {{%panel title=Identify the Session ID%}}
 ![httpSessionSharing4.jpg](/attachment_files/http-session-sharing-single-3.png)
-{{%endpanel%}}
+{{%/panel%}}
 
 {{%tip%}}
 Restart your web application and refresh the page. The session will be reloaded from the data grid.
@@ -468,10 +468,10 @@ You may share the HTTP session between different web servers. To test this on yo
 
 {{%panel%}}
 {{%section%}}
-{{%column width=50% %}}
+{{%column width="50%" %}}
 ![httpSessionSharing8.jpg](/attachment_files/httpSessionSharing8.jpg)
 {{%/column%}}
-{{%column width=50% %}}
+{{%column width="50%" %}}
 ![httpSessionSharing9.jpg](/attachment_files/httpSessionSharing9.jpg)
 {{%/column%}}
 {{%/section%}}
@@ -481,7 +481,7 @@ You may share the HTTP session between different web servers. To test this on yo
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the Space.
 {{%/tip%}}
 
-{{%endpanel%}}
+{{%/panel%}}
 
 {{% note %}}
 When deploying the web application WAR file please make sure the web app context will be identical.

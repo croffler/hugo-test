@@ -634,7 +634,7 @@ public class SimpleListener {
 When working with a partitioned cluster and configuring the remote polling container to work against the [whole cluster](./the-gigaspace-interface.html#Clustered Flag), blocking operations (take with a timeout>0) are not allowed (when the routing field is not set on the template or SQLQuery). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the `SingleTakeReceiveOperationHandler` performs a non-blocking take operation against the space and then sleeps for a configurable amount of time. A classic scenario where the Non-Blocking mode would be used is the [Master-Worker Pattern](/sbp/master-worker-pattern.html).
 
 {{% section %}}
-{{% column width=50% %}}
+{{% column width="50%" %}}
 Step 1 - Master sending requests to process by the workers implemented using the polling container:
 
 {{% indent %}}
@@ -642,7 +642,7 @@ Step 1 - Master sending requests to process by the workers implemented using the
 {{% /indent %}}
 
 {{% /column %}}
-{{% column width=50% %}}
+{{% column width="50%" %}}
 Step 2  - Workers generating results which are consumed by the Master:
 
 {{% indent %}}

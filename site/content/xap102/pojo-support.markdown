@@ -9,13 +9,6 @@ weight: 100
 
 {{% summary %}} {{% /summary %}}
 
-
-
-
-{{%comment%}}
-One of the differences between the `GigaSpace` interface and the classic `net.jini.Space.JavaSpace` interface is its support for POJOs as Space entries. The `JavaSpace` interface is rather intrusive and forces objects that are written to the Space to implement the `net.jini.core.entry.Entry` interface, and mark any field to be stored on the Space as `public`.
-{{%/comment%}}
-
 The XAP interface fully supports POJOs. In terms of preconditions, your POJO classes need to follow the JavaBeans conventions, i.e. have a no-argument constructor, and declare a getter and setter to every field you want saved on the Space. The POJO class does not have to implement `java.io.Serializable`, but its properties must. The reason for this, is that the POJOs fields are extracted when written to the Space, and stored in a special tuple format that enables the Space to index and analyze them more easily. Therefore the actual POJO is not sent over the network, but rather its properties.
 
 # Metadata
@@ -37,13 +30,14 @@ Here is an overview of the most commonly used POJO annotations:
 {{% info %}}
  You can define space classes metadata by class and field level decorations. These can be defined via annotations or XML configurations files (**gs.xml file**).
 {{% /info %}}
-{{%learn%}}./modeling-your-data.html{{%endlearn%}}
+
+{{%learn "./modeling-your-data.html"%}}
 
 {{%warning%}}
 When using  annotations and the gs.xml file to define metadata, the metadata in the gs.xml will be used and the annotations will be ignored. **It is not recommended to use the two metadata definitions for a space class at the same time**.
 {{%/warning%}}
 
-{{% vbar title=Primitives or Wrapper Classes for POJO Properties? %}}
+{{% vbar title="Primitives or Wrapper Classes for POJO Properties?" %}}
 XAP supports both primitives (`int`, `long`, `double`, `float`, etc.), and primitive wrappers (`java.lang.Integer`, `java.lang.Double`, etc.). In general, it is recommended that you use the primitive wrapper. This enables you to use the `null` values as a wildcard when using template matching.
 
 If you use primitives make sure you define the following for your POJO class:
@@ -83,20 +77,7 @@ public class Person {
 }
 {{% /highlight %}}
 
-{{%comment%}}
-GigaSpaces `POJO` rules:
 
-- Do not implement the `net.jini.core.entry` interface.
-- Follow the [JavaBeans specification](http://java.sun.com/javase/technologies/desktop/javabeans/docs/spec.html).
-- Have private fields.
-- Avoid using numeric [primitives](http://download.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) (long , int) as the POJO fields. Use their relevant Object wrapper instead Long and Integer. This will avoid the need to specify a null-value and simplify query construction when using the [SQLQuery](./query-sql.html).
-- Have getter and setter methods for every field you would like to be stored within the space object.
-- Include space class metadata decorations (indexed fields, affinity-keys, persisted mode, etc.).
-
-
-
-This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](./data-event-listener.html) and [Space Based Remoting](./space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.
-{{%/comment%}}
 
 # POJO Rules
 
@@ -117,20 +98,8 @@ When using a POJO as a space domain class, follow these guidelines:
 - The `@Spaceid` annotation or `id` tag must be declared when performing update operations.
 
 
-{{%comment%}}
-- When using POJOs, the **write operation** uses the [WriteModifiers.UPDATE_OR_WRITE](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/com/gigaspaces/client/WriteModifiers.html) mode by default. This means that when the space already includes an object with the same UID (`@SpaceId(autoGenerate=false)` with the same value), the POJO is updated, and a new object is not inserted.
-- When using `SpaceId(autoGenerate=true)`, the UID is stored inside the `SpaceId` field, causing an overhead when indexed.
-{{%/comment%}}
-
 - A POJO class must implement the `Serializable`  interface if used as a parameter for a remote call ([Space Based Remoting](./space-based-remoting.html)).
 
-
-{{%comment%}}
-- When using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/GigaSpace.html) interface, you can use [generics](http://en.wikipedia.org/wiki/Generics_in_Java) when conducting space operations.
-
-- When a space is configured to use the `ExternalDataSource`, the `@Spaceid` annotation or `id` tag `auto-generate` attribute should be set to **`false`**. The object must include a unique value with the `SpaceId` field when written into the space.
-- [SQLQuery](./query-sql.html) should not be used to query base abstract class.
-{{%/comment%}}
 
 
 

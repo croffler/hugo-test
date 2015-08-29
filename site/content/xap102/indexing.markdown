@@ -105,7 +105,10 @@ Indexes can be added dynamically at run-time using the GigaSpaces Management Cen
 You can also create a [Compound Space Index dynamically](./indexing-compound.html#dynamic-creation).
 {{%/refer%}}
 
-{{% note %}} Removing an index or changing an index type is currently not supported. {{%/note%}}
+
+{{% note %}}
+Removing an index or changing an index type is currently not supported.
+ {{%/note%}}
 
 
 # Performance Tips

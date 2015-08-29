@@ -16,26 +16,26 @@ XAP provides a simple space API using the [GigaSpace](http://www.gigaspaces.com/
 The interface includes the following main operations:
 
 {{%section%}}
-{{%column width=50% %}}
-{{%panel bgColor=white | title=Write objects into the Space:%}}
+{{%column width="50%" %}}
+{{%panel title="Write objects into the Space:"%}}
 [write](#write) one object into the space<br>
 [writeMultiple](#writeMultiple) objects into the Space<br>
 [asynchronous write](#asynchronousWrite) to the Space
-{{%endpanel%}}
+{{%/panel%}}
 {{%/column%}}
-{{%column width=50% %}}
-{{%panel bgColor=white | title=Change objects in Space:%}}
+{{%column width="50%" %}}
+{{%panel title="Change objects in Space:"%}}
 [change](#change) one object in Space<br>
 		  [changeMultiple](./change-api.html) objects in Space <br>
 [asynchronous change](./change-api.html) of objects
-{{%endpanel%}}
+{{%/panel%}}
 {{%/column%}}
 {{%/section%}}
 
 
 {{%section%}}
-{{%column width=50% %}}
-{{%panel bgColor=white |  title=Reading objects from the Space:%}}
+{{%column width="50%" %}}
+{{%panel title="Reading objects from the Space:"%}}
 [readById](#read) from the Space<br>
 [readByIds](#readMultiple) from the Space<br>
 [read](#read) object by template from the Space<br>
@@ -43,10 +43,10 @@ The interface includes the following main operations:
 [read asynchronous](#asynchronousRead) from the Space <br>
 [read if exists](#readIfExists) <br>
 [read if exists by id](#readIfExists)
-{{%endpanel%}}
+{{%/panel%}}
 {{%/column%}}
-{{%column width=50% %}}
-{{%panel bgColor=white |  title=Removing objects from the Space:%}}
+{{%column width="50%" %}}
+{{%panel "title=Removing objects from the Space:"%}}
 [take](#take) object by template from Space<br>
 [takeById](#take) object by id from Space<br>
 [takeByIds](#takeMultiple) objects by ids from Space<br>
@@ -54,35 +54,23 @@ The interface includes the following main operations:
 [take asynchronous](#asynchronousTake)<br>
 [take if exists](#takeIfExists)<br>
 [clear](#clear) objects in Space
-{{%endpanel%}}
+{{%/panel%}}
 {{%/column%}}
 {{%/section%}}
 
 {{%section%}}
-{{%column width=50% %}}
-{{%panel bgColor=white |  title=Other operations:%}}
+{{%column width="50%" %}}
+{{%panel "title=Other operations:%"}}
 [aggregation](#aggregators)  across the Space<br>
 [count](#count) objects in Space<br>
 [counters](#counters) increment and decrement
-{{%endpanel%}}
-{{%column width=50% %}}
+{{%/panel%}}
+{{%column width="50%" %}}
 {{%/column%}}
 {{%/column%}}
 {{%/section%}}
 
-{{%comment%}}
 
-{: .table .table-bordered}
-|[Id Based operations](./id-queries.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|
-|:--|:--|:--|:--|
-|[readById](./id-queries.html#Reading an Object using its ID){{% wbr %}}takeById{{% wbr %}}[readByIds](./id-queries.html#Reading Multiple Objects using their IDs){{% wbr %}}takeByIds{{% wbr %}}readIfExistsById{{% wbr %}}takeIfExistsById|readMultiple{{% wbr %}}takeMultiple{{% wbr %}}[writeMultiple](#writeMultiple){{% wbr %}}readByIds{{% wbr %}}takeByIds|asyncRead{{% wbr %}}asyncTake{{% wbr %}}asyncChange{{% wbr %}}execute|count|
-
-{: .table .table-bordered}
-|[Data Query operations](./query-sql.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
-|:--|:--|:--|:--|
-|read{{% wbr %}}readMultiple{{% wbr %}}[iterator](./query-paging-support.html)|write{{% wbr %}}writeMultiple{{% wbr %}}   [change](./change-api.html) |execute{{% wbr %}}executorBuilder|clean{{% wbr %}}clear{{% wbr %}}take{{% wbr %}}takeMultiple|
-
-{{%/comment%}}
 
 # Simpler API
 

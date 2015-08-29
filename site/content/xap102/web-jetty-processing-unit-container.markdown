@@ -29,7 +29,7 @@ To install Jetty 9.1.3.v20140225 follow these steps:
 2. Replace the files in the `<XAPHOME>/lib/platform/jetty` directory  with the Jetty 9.1.3.v20140225 distribution jar files.
 3. With version 9 the connector configuration has [changed](#jetty9).
 
-{{%endpanel%}}
+{{%/panel%}}
 
 {{%comment%}}
 {{% tip %}}

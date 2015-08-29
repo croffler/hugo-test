@@ -148,13 +148,13 @@ Each change on the master space triggers a notification at the local cache. The 
 - `None` - Do not register for master space updates - If an object is changed in the master space, it will remain stale in the local cache until its lease expires.
 
 {{%section%}}
-{{%column width=50% %}}
+{{%column width="50%" %}}
 #### Pull Update Policy
 
 {{%popup "/attachment_files/local_cache_pull.jpg"%}}
 {{%/column%}}
 
-{{%column width=50% %}}
+{{%column width="50%" %}}
 #### Push Update Policy
 
 {{%popup "/attachment_files/local_cache_pull.jpg"%}}
