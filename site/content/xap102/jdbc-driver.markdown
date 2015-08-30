@@ -294,7 +294,7 @@ The following information represents the SQL to Java mapping conducted at runtim
 
 
 {{% accordion acc %}}
-{{% accord title="Click to see the code example1:" parent="acc"%}}
+{{% accord title="example1:" parent="acc"%}}
 
 
 Connection conn;
