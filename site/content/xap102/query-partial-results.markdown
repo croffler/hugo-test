@@ -26,9 +26,6 @@ In some cases, when querying the Space for `Objects`, only certain properties of
 
 This approach reduces network overhead, garbage memory generation and CPU overhead due to serialization.
 
-{{%comment%}}
-In some cases, when querying the Space for `Objects`, only certain properties of those `Objects` are required (a.k.a. delta read). The same scenario is also relevant when subscribing for notifications on Space data changes, where only specific properties are of interest to the subscriber. For that purpose, the *Projection API* can be used, where one can declare which properties are of interest. The space will only populate these properties on the returned data. This approach reduces network overhead, garbage memory generation and CPU overhead due to serialization.
-{{%/comment%}}
 
 # Examples
 

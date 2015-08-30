@@ -56,11 +56,7 @@ This guide will cover the following topics:
 - The **Scale Triggers** section describes how to scale a PU after it has been deployed.
 - The **Machine Provisioning**, describes how to start the GigaSpaces agent on each machine, plug-in development for different cloud providers and the algorithm that re-balances the PU across the machines.
 
-{{%comment%}}
-{{% note %}}
-With XAP 8.0 the EPU supports only partitioned deployment topology. The scale event is triggered by the administrator and not automatically when memory reaches a certain threshold.
-{{%/note%}}
-{{%/comment%}}
+
 
 
 # Considerations

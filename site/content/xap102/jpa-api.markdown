@@ -33,13 +33,6 @@ Maven users should define the following dependency in their `pom.xml` file:
 {{% /highlight %}}
 
 
-{{%comment%}}
-#### OpenJPA 2.0.1
-
-GigaSpaces 8.0.1 uses OpenJPA version 2.0.1.
-Note that it's no longer needed to set a maven dependency for OpenJPA since OpenSpaces has an OpenJPA dependency.
-If from some reason one needs an OpenJPA maven dependency set, make sure to set the OpenJPA version to "2.0.1".
-{{%/comment%}}
 
 
 ### The persistence.xml file
@@ -567,10 +560,6 @@ result = gigaspace.read(query);
 {{% /highlight %}}
 
 # Native Query Execution
-
-{{%comment%}}
-![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
-{{%/comment%}}
 
 GigaSpaces JPA native query execution is a powerful feature used for executing:
 

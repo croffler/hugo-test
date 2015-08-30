@@ -56,10 +56,6 @@ The sender of the message can write an Entry with a limited lease time to the sp
 
 # Supported Topologies
 
-{{%comment%}}
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
-{{%/comment%}}
-
 
 Event registration is available with all supported space topologies. Each topology allows the client to receive the event. Still, there are behaviors you should be aware of when deploying the application.
 
@@ -496,11 +492,6 @@ The INotifyDelegatorFilter implementation class should be part of the space clas
 
 # Advanced Options
 
-{{%comment%}}
-
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
-
-{{%/comment%}}
 
 ## Registering Large Number of Listeners
 When having a system that requires  large number of listeners (above few hundreds) the `Multiplex` communication mode should be used. With this mode the amount of resources (threads) used to invoke the listener are shared between all the session listeners. This approach reduces the memory footprint of the client considerably. This option avoiding the need to construct multiple [notify containers|notify container] that may consume large amount of resources when having many of these created. See below how the `MULTIPLEX` communication mode should be used:
@@ -619,10 +610,6 @@ For the custom client-side FIFO-based notifications example, send a request to s
 {{%/note%}}
 
 ## Notification Reliability
-
-{{%comment%}}
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
-{{%/comment%}}
 
 Notifications are asynchronous by nature. The client that triggered the notification is unaware of the notification delivery, and does not wait for an acknowledgement from the client receiving the notification for successful arrival of the event before continuing with its operation -- i.e., when process A registers for notification delivery, and B writes an Entry to the space, process B does not wait for process A to receive the notification before taking control after the write operation. Process B might perform additional space operations before process A receives the notification.
 

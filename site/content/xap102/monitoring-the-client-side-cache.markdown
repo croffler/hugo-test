@@ -75,8 +75,3 @@ See   example how you can monitor multiple local cache instances running within 
 {{% note %}}
 This version of the local view/cache monitor does not reflect statistics for operations using the `readByID` operation from the local view/cache.
 {{%/note%}}
-
-{{% comment %}}
-The Local View/Cache JMX Monitor source code is available [here](/attachment_files/GSClientCacheJMXMonitor_src.zip) .
-{{% /comment %}}
-

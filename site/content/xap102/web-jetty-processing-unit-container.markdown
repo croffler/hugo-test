@@ -31,11 +31,6 @@ To install Jetty 9.1.3.v20140225 follow these steps:
 
 {{%/panel%}}
 
-{{%comment%}}
-{{% tip %}}
-See the [http Session Management](./http-session-management.html) for details about clustering the Jetty HTTP session.
-{{% /tip %}}
-{{%/comment%}}
 
 # Jetty Instance Handling
 

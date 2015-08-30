@@ -8,16 +8,6 @@ weight: 100
 
 {{% ssummary %}}{{% /ssummary %}}
 
-{{%comment%}}
-
-{{% ssummary %}}How to get entries in the same order in which they were written to the space.{{% /ssummary %}}
-
-# Overview
-
-Supporting FIFO (First In, First Out) behavior for Entries is a critical requirement when building messaging systems or implementing master-worker patterns. Users should be able to get Entries in the same order in which they were written. GigaSpaces supports both non-ordered Entries and FIFO ordered Entries when performing space operations.
-
-# Enabling
-{{%/comment%}}
 
 The default space behavior is non-FIFO. The reason is that FIFO support comes at a cost: the space needs to organize and maintain the entries internally in a more complex fashion to support FIFO queries, thus slowing down concurrent write operations. To enable FIFO operations users need to turn on FIFO support for classes which will participate in such operations. If a FIFO operation is performed on an entry whose class does not support FIFO, an exception will be thrown.
 

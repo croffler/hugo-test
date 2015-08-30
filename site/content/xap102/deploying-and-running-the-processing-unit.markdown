@@ -7,9 +7,6 @@ weight: 100
 ---
 
 
-{{%comment%}}
-# Supporting Multiple Runtime Modes via Processing Unit Containers
-{{%/comment%}}
 
 In production, your processing units run on the GigaSpaces service grid, taking advantage of its SLA and monitoring capabilities. However, when developing the application, you typically want to run it from within your IDE or in a more lightweight mode that will not require you to start a complete runtime environment.
 

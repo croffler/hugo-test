@@ -339,30 +339,6 @@ while (true)
 When there are more than 2 clients (or 2 threads within the same client) that might update space objects at the same time, before re-reading the space objects, you should have a short sleep with a random duration. This allows one of the threads to complete the update successfully. Without such a sleep, you might have a contention with the update activity.
 {{% /tip %}}
 
-{{% comment %}}
-# Versioning
-
-Versioning addresses the issue of concurrent updates on the same object among multiple cache instances. When running in optimistic locking mode, the space uses a versioning mechanism to ensure the coherency of the updated data, and to synchronize concurrent updates.
-
-## How it Works
-
-The following diagram illustrates versioned cache flow. In this diagram, we use two cache instances: cache1 and cache2. Initially, both cache instances contain the same object instance with the same version.
-
-{{% indent %}}
-![optimistick_lock1.jpg](/attachment_files/optimistick_lock1.jpg)
-{{% /indent %}}
-
-Cache1 updates the object in the cache successfully. As a result of this operation, the version of the object is updated to 1.
-
-Cache2 attempts to update the same object with an older version of this object. The cache detects this conflict, and throws a runtime exception that indicates a version conflict. In order for Cache2 to succeed, it needs to read the updated version from the master cache, and then repeat the update operation.
-
-## Versioned Cache Restrictions
-
-Some restrictions apply when using the Map interface:
-
-- In the versioned mode, the value must not be a `null` value.
-- The `com.j_spaces.map.IMap` assigns a UID based on the Entry key of an internal class object. This object is called an envelope, and holds the map's Entry key and value. The key object `toString ()` method must return a unique value to ensure a unique UID. The UID is assigned when the Entry is written to the master space at the client side. This ensures that there aren't two or more clients creating the same map Entry (a new Entry) with the same data at the same time. If that happens, one of the clients fails and attempts to update the Entry. This generates an updated version of the Entry into the space, with an incremented version ID.
-{{% /comment %}}
 
 # Scenario Example
 

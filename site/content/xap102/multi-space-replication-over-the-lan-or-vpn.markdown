@@ -95,9 +95,7 @@ Note that when there are no backups running any failure of the primary might cau
 
 A gateway needs to be deployed as a processing unit per space (though, one gateway processing unit can be used to replicate into more than one space), and it is composed by the sink component which is in charge of dispatching incoming replication from remote spaces into the targeted space.
 
-{{% comment %}}
-![wan_gatway_archi.jpg](/attachment_files/wan_gatway_archi.jpg)
-{{% /comment %}}
+
 
 ## Gateway Basic Configuration
 
@@ -114,9 +112,6 @@ Following the above example, here we demonstrate how to configure the gateway pr
 </os-gateway:sink>
 {{% /highlight %}}
 
-{{% comment %}}
-{{% refer %}}For full details and available configuration please refer to [Replication Gateway Components](./replication-gateway-components.html){{% /refer %}}
-{{% /comment %}}
 
 ## Gateway and the Mirror Service
 

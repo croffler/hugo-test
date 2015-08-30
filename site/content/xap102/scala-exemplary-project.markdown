@@ -42,10 +42,6 @@ Please note that Scala is not required to build the project, since requried libr
 
 Sometimes, having immutable state is a desired feature. This requirement is covered in XAP Scala by classes that use constructor based properties, in case of the `common` module it is the `Verification` class. It is written only once to the `Space` and never changed (instances can be removed).
 
-{{%comment%}}
- because the goal of a single object is to remember appearance of a certain, unchangeable:
-{{%/comment%}}
-
 {{% highlight scala %}}
 case class Verification @SpaceClassConstructor() (
   @BeanProperty

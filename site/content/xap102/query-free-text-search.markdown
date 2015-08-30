@@ -43,9 +43,6 @@ All the Query options are supported both with `rlike` and `like` queries.
 It is important you index `String` type fields used with regular expression queries. Not indexing such fields may result slow query execution and garbage creation.
 {{% /note %}}
 
-{{% comment %}}
-To search for specific words in a specific order within the free text field you should use the indexed field and regular expression with another field that stores the free text.
-{{% /comment %}}
 
 # Free text search
 
@@ -140,9 +137,6 @@ public class MyData {
 The same approach can be implemented also with the [SpaceDocument](./document-overview.html).
 {{% /refer %}}
 
-{{% comment %}}
-To search for specific words in a specific order within the free text field you should use the indexed field and regular expression with another field that stores the free text.
-{{% /comment %}}
 
 # Case Insensitive Query
 

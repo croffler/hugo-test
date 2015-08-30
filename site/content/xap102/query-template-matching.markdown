@@ -6,11 +6,6 @@ parent: querying-the-space.html
 weight: 200
 ---
 
-{{%comment%}}
-{{% ssummary %}}How to query the space using Template Matching{{% /ssummary %}}
-
-# Overview
-{{%/comment%}}
 
 {{%ssummary%}}{{%/ssummary%}}
 

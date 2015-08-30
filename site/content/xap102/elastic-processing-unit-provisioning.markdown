@@ -104,12 +104,6 @@ With the above the `mySpace` EPU will be deployed only into agents associated wi
 
 # Automatic Machine Provisioning
 
-{{%comment%}}
-
-The EPU supports automatic Virtual Machines provisioning through custom plugins. The plugins are open source [http://svn.openspaces.org/cvi/trunk](http://svn.openspaces.org/cvi/trunk) and provide an implementation of [ElasticMachineProvisioningConfig](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/ElasticMachineProvisioningConfig.html) and [ElasticMachineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/grid/gsm/machines/plugins/ElasticMachineProvisioning.html).
-
-{{%/comment%}}
-
 When deploying an EPU pass an instance of [ElasticMachineProvisioningConfig](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/ElasticMachineProvisioningConfig.html) as the [machineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/topology/ElasticDeploymentTopology.html) deployment property.
 
 {{% highlight java %}}
@@ -183,9 +177,6 @@ ProcessingUnit pu = gsm.deploy(
 
 # Shared Machine Provisioning
 
-{{%comment%}}
-![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
-{{%/comment%}}
 
 In the code examples above, we showed the usage of `.dedicatedMachineProvisioning`. 'Dedicated' machine provisioning means that the whole machine is 'reserved' for instances of a single processing unit. In other words, other processing units are denied to co-exist on the same machine. This policy is useful if one processing unit should not be affected by other resource consuming processes.
 

@@ -14,11 +14,7 @@ weight: 600
 {{% anchor 0 %}}
 Follow these steps to prepare your development environment:
 
-{{% comment %}}
-------------------------------------------------
-Ensure you have JDK installed
-------------------------------------------------
-{{% /comment %}}
+
 
 - **Ensure you have a JDK installed** - you will need version 1.6 or higher, latest Java 1.6 is recommended.
 
@@ -48,28 +44,15 @@ If your installed JDK version is lower then 1.5 or none is installed, see below 
 
 - To install JDK 1.6, download and install [**JDK 6 Update X**](http://java.sun.com/javase/downloads/index.jsp)
 
-{{% comment %}}
-- The `JAVA_HOME` environment variable points to the correct JDK (not JRE) directory before running GigaSpaces. For example, `D:\Java\jdk1.6`.
-- The `JAVA_HOME` environment variable should be added to the beginning of the `Path` environment variable. For example, `%JAVA_HOME%;SystemRoot%\system32;%SystemRoot%;%SystemRoot%`
-- Your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](Multicast Configuration) section for details on how to enable multicast.
-{{% /comment %}}
+
 
 {{% anchor 1 %}}
 
-{{% comment %}}
-------------------------------------------------
-Download and install GigaSpaces zip
-------------------------------------------------
-{{% /comment %}}
 
 - **Download and unzip the latest XAP release** from the [downloads page](http://www.gigaspaces.com/LatestProductVersion).
 {{% anchor 2 %}}
 
-{{% comment %}}
-------------------------------------------------
-Download and install Eclipse zip
-------------------------------------------------
-{{% /comment %}}
+
 
 - **Install a Java IDE**: If you don't have an IDE installed, you can [download and unzip the Eclipse IDE for Java Developers](http://www.eclipse.org/downloads), or the [IntelliJ IDEA](http://www.jetbrains.com/idea/download/index.html) IDE (we recommend the Ultimate Edition because of its excellent Spring framework support).
 If you're using Eclipse, it is also recommended to install the [Spring Tool Suite plugin for Eclipse](http://www.springsource.com/developer/sts).

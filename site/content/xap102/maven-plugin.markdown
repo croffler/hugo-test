@@ -158,9 +158,6 @@ The project, created by the `default` template, consists of a main project and t
 
 The main project and each of the modules contain a project-descriptor file called `pom.xml`; which contains information about the project's properties, dependencies, build configuration, and so on. A module is considered a Processing Unit module if its `pom.xml` file contains the property `gsType=PU`. In this case, only the feeder and the processor are considered Processing Unit modules.
 
-{{% comment %}}
-For a full overview of the XAP Maven plugin project templates, refer to: _link will be added soon._
-{{% /comment %}}
 
 # Compiling the Processing Unit Project
 

@@ -24,21 +24,6 @@ XAP allows applications to interact with the space and cache data using the Map 
 
 
 
-{{% comment %}}
-# Connecting to the space with the Map API
-
-Using the Map API requires two layers:
-
-- The Map component that provides the clustered proxy capabilities. A clustered proxy is a smart proxy that performs operations against the whole cluster.
-- The GigaMap Interface which provides enriched JCache (JSR-107)API including declarative transactions, coherent runtime exception hierarchy, and more.
-In general, you would use the Map component to create the proxy layer, and then wrap it with a GigaMap instance and do all the operations against this instance.
---------
-
-{{% ssummary page%}}Using XAP as a distributed cache. Interacting with the space using the Hashtable API.{{% /ssummary %}}
-{{% /comment %}}
-
-
-
 
 There are multiple runtime configurations you may use when caching your data within the space:
 

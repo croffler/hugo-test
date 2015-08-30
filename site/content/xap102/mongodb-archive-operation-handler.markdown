@@ -112,13 +112,3 @@ Include the following in your `pom.xml`
 |config | MongoClientConfiguration reference used to handle the mongodb driver configuration. see [MongoClient](http://api.mongodb.org/java/2.11.2/com/mongodb/MongoClient.html)|
 |db | mongodb database name|
 
-
-{{%comment%}}
-## XSD Schema
-
-- <os-archive:mongo-archive-handler> schema:
-
-{{% indent %}}
-![mongodb-archive-handler-schema-9-7-0.png](/attachment_files/mongodb-archive-handler-schema-9-7-0.png)
-{{% /indent %}}
- {{%/comment%}}

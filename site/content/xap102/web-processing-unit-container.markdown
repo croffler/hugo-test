@@ -19,9 +19,7 @@ The integration allows you to make use of the following Service Grid features:
 - Management of the instances running (if a GSC fails, the web application instances running on it will be instantiated on a different GSC).
 - SLA monitor based dynamic allocation and de-allocation of web application instances.
 
-{{%comment%}}
-![archi_web.jpg](/attachment_files/archi_web.jpg)
-{{%/comment%}}
+
 
 The web application itself is a pure, JEE based, web application. The application can be the most generic web application, and automatically make use of the Service Grid features. The web application can define a Space (either embedded or remote) very easily (either using Spring or not).
 

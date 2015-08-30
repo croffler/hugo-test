@@ -7,9 +7,6 @@ weight: 900
 ---
 
 
-{{%comment%}}
-# Migrating Legacy Hibernate API Applications to XAP API
-{{%/comment%}}
 
 To benefit from data caching and other capabilities, it is worthwhile to migrate a legacy application that uses the Hibernate API, to the GigaSpace or GigaMap API. In such cases, these applications can benefit from the ability to scale when using the GigaSpaces Data Grid. This is achieved by partitioning the data across different spaces running on different machines, and having the business logic colocated with each partition. This allows the space and the business logic to run in same memory address, eliminating remote calls when accessing the data.
 
@@ -43,17 +40,6 @@ The space can be used as a [Hibernate second level cache](/sbp/gigaspaces-for-hi
 
 With the [All In Cache policy]({{%currentadmurl%}}/all-in-cache-cache-policy.html), the assumption is the Space holds the entire data in memory. In this case, the space communicated with the data source at startup, and loads all the data. If data within the space is updated/added/removed, the space is calling the [`SpaceSynchronizationEndpoint`](./space-synchronization-endpoint-api.html) implementation to update the underlying data source. All data activities leveraging the data in memory.
 
-{{% comment %}}
-### Delegating Queries Directly to the Data Source
-
-When using `readMultiple` with `Integer.MAX_VALUE` or very large value as the maximum amount of objects to be retrieved, having the space acting as a caching layer would not provide any performance or scalability boost. The application will always access the database (indirectly via the space) and load data into the space that will never be reused. With a partitioned space and a query/template that does not include a value for the routing field, all the partitions will access the database in parallel and will try to load relevant data that may generate an extra load on the database.
-
-A better approach in such a case would be to delegate queries into the database directly based on the query type and the content of the data within the space. For example, if the data within the space in 3 days old, and the query looking for data that is few hours old, the query should be delegated to the space.
-
-![query-service.jpg](/attachment_files/query-service.jpg)
-
-You should have such delegation implemented at the application level or via a "Query Service" that will handle all the queries executed by the different applications. The "Query Service" can be accessed using [Task Executors](./task-execution-over-the-space.html) or [remoting](./executor-based-remoting.html). In such a case you should run the space in ALL_IN_CACHE policy and implement one of the [eviction patterns](/sbp/custom-eviction.html).
-{{% /comment %}}
 
 ## LRU Cache Policy - Read-Ahead
 

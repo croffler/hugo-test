@@ -6,10 +6,6 @@ parent: querying-the-space.html
 weight: 400
 ---
 
-{{%comment%}}
-{{% ssummary %}}Query nested properties, maps and collections using SQL queries {{% /ssummary %}}
-# Overview
-{{%/comment%}}
 
 {{% ssummary %}}{{% /ssummary %}}
 

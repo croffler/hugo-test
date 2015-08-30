@@ -102,10 +102,6 @@ By default, the change result will only contain the number of entries which were
  	}
 {{% /highlight %}}
 
-{{%comment%}}
-For the common use case you can use the [Change Extension](./change-extension.html) class which provide helper methods which simplify the most common use cases and allow you to do simple operation such as an atomic `addAndGet` operation. This extension are a syntactic sugaring on top of the above API.
-{{%/comment%}}
-
 # Change and Replication Filters
 
 When using [Replication Filter]({{%currentadmurl%}}/cluster-replication-filters.html), one can extract the `DataSyncChangeSet` from the `IReplicationFilterEntry` in the same way as extracting it from a `DataSyncOperation` by using the

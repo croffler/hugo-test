@@ -6,12 +6,6 @@ parent: space-based-remoting-overview.html
 weight: 100
 ---
 
-{{%comment%}}
-{{% ssummary %}}Remoting allows you to use remote invocations of POJO services, with the space as the transport layer.{{% /ssummary %}}
-
-# Overview
-{{%/comment%}}
-
 
 
 Spring provides support for [various remoting technologies](http://static.springframework.org/spring/docs/2.0.x/reference/remoting.html). GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol.

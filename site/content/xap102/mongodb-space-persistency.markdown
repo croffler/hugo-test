@@ -7,10 +7,6 @@ weight: 100
 ---
 
 
-{{%comment%}}
-{{% ssummary %}} A MongoDB Space Persistency Solution {{% /ssummary %}}
-{{%/comment%}}
-
 
 XAP comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html)
  for MongoDB, called `MongoSpaceDataSource` and `MongoSpaceSynchronizationEndpoint`, respectively.
@@ -19,10 +15,6 @@ XAP comes with built in implementations of [Space Data Source](./space-data-sour
 
 ![mongodbPersistence.jpg](/attachment_files/mongodbPersistence.jpg)
 
-
-{{% comment %}}
-For information about the two see: [MongoDB Space Data Source](./mongodb-space-data-source.html) and [MongoDB Space Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html).
-{{% /comment %}}
 
 For further details about the persistency APIs used see [Space Persistency](./space-persistency.html).
 

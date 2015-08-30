@@ -190,16 +190,6 @@ If `auto-generate` is declared as `false`, the field is indexed automatically. I
 |:-------------------|:-----|:------------|
 | `name` | string | Specifies the name of the property holding the version's ID. |
 
-{{% comment %}}
-# persist Field-Level Element - Not supported yet
-
-{: .table .table-bordered .table-condensed}
-| XML Attribute Name | Type | Description |
-|:-------------------|:-----|:------------|
-| `name` | string | Specifies the name of the property holding the `persist` flag. |
-
-{{% /comment %}}
-
 # routing
 
 The `routing` element routes the field value under this element to the relevant space. This is done using hash-based load-balancing.

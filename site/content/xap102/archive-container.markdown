@@ -396,16 +396,6 @@ public class ExpiredTweetsFilter {
 {{% /inittab %}}
 
 
-{{%comment%}}
-# Schema
-
-- <os-archive:archive-container> schema:
-
-{{% indent %}}
-![archive-container-schema-9-1-1.png](/attachment_files/archive-container-schema-9-1-1.png)
-{{% /indent %}}
-
-{{%/comment%}}
 
 
 - Spring pu.xml file header

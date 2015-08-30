@@ -214,22 +214,7 @@ gs> scale -name myPU -memory-capacity 32g
 {{% /tabcontent %}}
 {{% /inittab %}}
 
-{{% comment %}}
 
-{: .table .table-bordered .table-condensed}
-| memoryCapacityPerContainer | Number of partitions | Instances per container | Total memory |
-|:---------------------------|:---------------------|:------------------------|:-------------|
-| 6GB | 2 | 1 |  (2\* 2/ 1)\*6GB = 24GB |
-| 1GB | 12 | 1 | (2\*12/ 1)\*1GB = 24GB |
-| 6GB | 2 | 2 |  (2\* 2/ 2)\*6GB = 12GB |
-| 1GB | 12 | 2 | (2\*12/ 2)\*1GB = 12GB |
-| 1GB | 12 | 3 | (2\*12/ 3)\*1GB =  8GB |
-| 1GB | 12 | 4 | (2\*12/ 4)\*1GB =  6GB |
-| 1GB | 12 | 6 | (2\*12/ 6)\*1GB =  4GB |
-| 1GB | 12 | 8 | (2\*12/ 8)\*1GB =  3GB |
-| 1GB | 12 | 12 |(2\*12/12)\*1GB =  2GB |
-
-{{% /comment %}}
 
 Specifying number of partitions explicitly is recommended only when fine grained scale triggers are required. The example below illustrating 12 partitions system (12 primaries + 12 backups = 24 instances). See how the system scales to have increased total memory capacity as a function of the number of Containers and `memoryCapacityPerContainer`:
 
@@ -272,10 +257,6 @@ Specifying number of partitions explicitly is recommended only when fine grained
 {{% note %}}
 Having larger number of partitions will provide you better flexibility in terms of having more scaling "check points". Having too many partitions (hundreds) will impact the system performance since in some point this will generate some overhead due to the internal monitoring required for each partition.
 {{%/note%}}
-
-{{% comment %}}
-A deployment of 12 instances per container may incur some memory and thread context switching overhead. Under the assumption that the system scales-in as the load decreases, then this overhead should not be significant. Real world performance results of-course depend on the specific use case.
-{{% /comment %}}
 
 # Deployment on a Single Machine (for development purposes)
 

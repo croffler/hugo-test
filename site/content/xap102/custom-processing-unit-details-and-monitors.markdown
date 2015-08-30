@@ -87,9 +87,6 @@ public class AdminTest {
 
 # Custom Properties in the Web Based Dashboard
 
-{{%comment%}}
-![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
-{{%/comment%}}
 
 For the service monitors to be shown in the [web based dashboard]({{%currentadmurl%}}/web-management-console.html), a bean class which is declared in your [processing unit's `pu.xml`](./configuring-processing-unit-elements.html) should extend one or both of the `CustomServiceDetails` and `CustomServiceMonitors` interfaces. The system will expose the data provided by these interface via the admin API and the web based dashboard.
 `CustomServiceDetails` and `CustomServiceMonitors` must have same id. Both of them must have default constructor.

@@ -6,25 +6,8 @@ parent: query-paging-support.html
 weight: 100
 ---
 
-{{% ssummary %}}{{% /ssummary %}}
+{{% ssummary %}}Reading large number of objects using multiple queries in one call in a continuous manner.{{% /ssummary %}}
 
-{{%comment%}}
-{{% ssummary %}}Reading large number of objects using multiple queries in one call in a continuous manner. {{% /ssummary %}}
-
-# Overview
-
-
-{{%section%}}
-{{%column width="70%" %}}
-The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?com/j_spaces/core/client/GSIterator.html)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
-
-There are scenarios where the conventional read operation that returns a single space object does not fit and there is a need to return a collection of entries from the space. Generally, an iterator should be used in cases where returning all the entries in one result with the `readMultiple` operation will consume too much memory on the client or introduce too much latency before the first space object could be processed.
-{{%/column%}}
-{{%column width="30%" %}}
-![paging-iteratorBuilder.jpg](/attachment_files/paging-iteratorBuilder.jpg)
-{{%/column%}}
-{{%/section%}}
-{{%/comment%}}
 
 The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?com/j_spaces/core/client/GSIterator.html)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
 
@@ -95,30 +78,7 @@ A leased iterator which expires is considered as invalidated. A canceled iterato
 
 Between the time an iterator is created and the time it reaches a terminal state, objects may be added by the space. However, an object that is removed by a next call may be added back to the iterator if its uniqueness is equivalent. The space may also update or remove objects that haven't yet been returned by a `next` call, and are not part of the buffered set.
 
-{{% comment %}}
 
-A match set becomes exhausted or invalidated specified by the operation that created it under the following conditions:
-
-- An exhausted match set is empty and will have no more entries added. Calling next on an exhausted match set must always return `null`.
-- Calling next on an invalidated match set may return a `non-null` value, or it may return a `NoSuchObjectException` to indicate that the match set has been invalidated. Once next throws a `NoSuchObjectException`, all future next calls on that instance will throw `NoSuchObjectException`.
-- Calling next on an invalidated match set does not return `null`.
-- Entries are not added to an invalidated match set.
-
-Between the time a match set is created and the time it reaches a terminal state, entries may be added by the space. However, a space object that is removed by a `next` call must not be added back to a match set (though if there is a distinct but equivalent object in the space it may be added). The space may also remove Entries independent of next calls. The conditions under which Entries will be removed independent of next calls or added after the initial creation of the match set are specified by the operation that created the match set.
-
-An active lease on a match set serves as a hint to the space that the client is still interested in the match set, and as a hint to the client that the match set is still functioning, i.e., if a match set is leased and the lease is active, `GSIterator` will maintain the match set and will not invalidate it.
-
-If the iterator lease expires or is canceled, `GSIterator` will invalidate the match set. Clients should not assume that the resources associated with a leased match set will be freed automatically if the match set reaches the exhausted state, but should explicitly cancel the lease.
-
-The `GSIterator` constructed using the following parameters:
-
-- Collection of SQLQuery or templates.
-- Including or excluding existing matched Entries in the space.
-- Limit.
-- Lease, Renew Lease, Cancel Lease.
-- Next (returns Entry).
-- Blocking Next (next with timeout).
-{{% /comment %}}
 
 ## Using GSIterator with SQLQuery
 
@@ -132,30 +92,7 @@ The following operators **are not supported** when using `GSIterator`:
 - `GROUP BY`
 - `ORDER BY`
 
-{{% comment %}}
-# API - Constructor Summary
 
-{{% highlight java %}}
-GSIterator(com.j_spaces.core.IJSpace space, java.util.Collection collectionTemplates)
-GSIterator with default Iterator Buffer size (100 entries), without History property,
-and Lease.FOREVER as the iterator lease.
-GSIterator(com.j_spaces.core.IJSpace space, java.util.Collection collectionTemplates,
-int bufferSize, boolean withHistory, long lease)
-GSIterator Constructor
-{{% /highlight %}}
-
-{: .table .table-bordered}
-| Return Value | Method |
-|:-------------|:-------|
-| `void` | `cancel()` {{% wbr %}}Used by the lease holder to indicate that it is no longer interested in the iterator. |
-| `long` | `getExpiration()`{{% wbr %}}Returns the absolute time that the lease will expire, represented as milliseconds from the beginning of the epoch, relative to the local clock. |
-| `boolean` | `hasNext()`{{% wbr %}}Returns `true` if the iterator has more elements. |
-| `net.jini.core.entry.Entry` | `next()`{{% wbr %}}Returns the next matching-template Entry in the iterator. |
-| `net.jini.core.entry.Entry` | `next(long timeout)`{{% wbr %}}Blocking next with timeout -- returns the next matching-template Entry in the iterator, under the timeout limitation. |
-| `void` | `notify(net.jini.core.event.RemoteEvent event)`{{% wbr %}}For internal use. |
-| `void` | `renew`(long duration) {{% wbr %}}Used to renew a lease for an additional period of time, specified in milliseconds. |
-| `net.jini.core.entry.Entry` | `snapshot()`{{% wbr %}} Returns a snapshot of the Entry returned by the last next call, as defined in section JS.2.6 of the [JavaSpaces specification](http://www.sun.com/software/jini/specs/js2_0.pdf#search=%22javaspaces%20specification%22). |
-{{% /comment %}}
 
 ## Initialization
 
@@ -183,17 +120,4 @@ In most cases, the iterator will be leased and the lease proxy object can be obt
 
 Iterating through the matched set does not lock the object. Objects that are under transaction and match the specified template/SQLQuery will not be included as part of the matched set.
 
-{{% comment %}}
-## snapshot
 
-The snapshot method returns a snapshot of the Entry returned by the last next call (see section JS.2.6 of the [JavaSpaces specification](http://www.sun.com/software/jini/specs/js2_0.pdf#search=%22javaspaces%20specification%22)). If the last next call returned `null` or failed with an exception or error, the snapshot will throw an `IllegalStateException.` It is important to note that the `GSIterator.snapshot()`, unlike the `JavaSpace.snapshot()`, does not throw a `RemoteException`.
-
-{{% tip %}}
-The `GSIterator` uses the following `NotifyModifiers`:
-
-- `NotifyModifiers.NOTIFY_WRITE` -- updates the Iterator with a new Entry.
-- `NotifyModifiers.NOTIFY_TAKE and NotifyModifiers.NOTIFY_LEASE_EXPIRATION` -- removes an Entry from the Iterator.
-
-Updates do affect the iterator.
-{{% /tip %}}
-{{% /comment %}}

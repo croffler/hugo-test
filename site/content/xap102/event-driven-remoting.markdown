@@ -8,11 +8,13 @@ weight: 300
 
 {{% ssummary%}}{{%/ssummary%}}
 
-{{%comment%}}
-{{% ssummary  %}}Event Driven Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using a polling container on the space side to process the invocations{{% /ssummary %}}
 
 # Overview
-{{%/comment%}}
+
+Event Driven Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using a polling container on the space side to process the invocations
+
+
+
 
 Event Driven remoting is characterized by the nature of how the client communicates with the server. Under the wires, event driven remoting uses the space write and take capabilities. The client writes an internal invocation Entry, that holds the different invocation information (such as service name, method name, and arguments) and then waits for a response (by using blocking take on an expected response). The server, meanwhile, waits (by using OpenSpaces event containers) for internal invocation entries, and once one arrives, it executes the requested service and writes back a response.
 
