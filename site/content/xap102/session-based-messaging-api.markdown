@@ -483,7 +483,7 @@ When writing the following objects, only `msg1` is delivered to the client who r
 {{%/highlight  %}}
 
 {{%note%}}
-The `INotifyDelegatorFilter` implementation class should be part of the space classpath.
+The INotifyDelegatorFilter implementation class should be part of the space classpath.
 {{%/note%}}
 
 {{% /tabcontent   %}}

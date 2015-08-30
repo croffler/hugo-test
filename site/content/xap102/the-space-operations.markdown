@@ -60,7 +60,7 @@ The interface includes the following main operations:
 
 {{%section%}}
 {{%column width="50%" %}}
-{{%panel "title=Other operations:%"}}
+{{%panel title="Other operations:"%}}
 [aggregation](#aggregators)  across the Space<br>
 [count](#count) objects in Space<br>
 [counters](#counters) increment and decrement
@@ -91,14 +91,4 @@ public interface GigaSpace {
 In the example above, the take operation can be performed without specifying a timeout. The default take timeout is `0` (no wait), and can be overridden when configuring the `GigaSpace` factory. In a similar manner, the read timeout and write lease can be specified.
 
 
-
-
-{{% include /COM/xap102/ops-write.markdown %}}
-{{% include /COM/xap102/ops-change.markdown %}}
-{{% include /COM/xap102/ops-read.markdown %}}
-{{% include /COM/xap102/ops-take.markdown %}}
-{{% include /COM/xap102/ops-clear.markdown %}}
-{{% include /COM/xap102/ops-count.markdown %}}
-{{% include /COM/xap102/ops-counters.markdown %}}
-{{% include /COM/xap102/ops-aggregation.markdown %}}
-{{% include /COM/xap102/ops-async-extension.markdown %}}
+INCLUDEME

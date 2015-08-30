@@ -915,7 +915,9 @@ When a network failure occurs and the space can't communicate with the client, t
 </os-core:embedded-space>
 {{% /highlight %}}
 
-{{% include /COM/notify-recovery.markdown %}}
+
+INCLUDEME
+
 
 
 # Triggering Notifications on Backup Instances
@@ -1167,6 +1169,4 @@ public class BatchListener {
 The default values for all of the notify container configuration parameters, such as `perform-take-on-notify, ignore-event-on-null-take` and others can be found in the JavaDoc (and sources) of the class [SimpleNotifyEventListenerContainer](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/events/notify/SimpleNotifyEventListenerContainer.html) and its super class, namely [AbstractNotifyEventListenerContainer](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/events/notify/AbstractNotifyEventListenerContainer.html).
 For example, `perform-take-on-notify` default value is documented in the method `SimpleNotifyEventListenerContainer.setPerformTakeOnNotify(boolean)`.
 
-
-
-{{% include /COM/notify-verses-polling.markdown %}}
+INCLUDEME

@@ -98,7 +98,7 @@ public class Employee {
 
 {: .table-responsive  .table-condensed   .table-bordered}
 |Syntax     |  SpaceIndex type |
-|Argument   |  [SpaceIndexType]({{%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}})  |
+|Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})  |
 |Description| Querying indexed fields speeds up read and take operations. The `@SpaceIndex` annotation should be used to specify an indexed field.|
 
 <br>
@@ -145,7 +145,7 @@ public class User {
 
 {: .table-responsive  .table-condensed   .table-bordered}
 |Syntax     |  SpaceIndex type , unique  |
-|Argument   |  [SpaceIndexType]({{%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}})  |
+|Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
 |Note |   The uniqueness is enforced per partition and not over the whole cluster. |
 
@@ -177,7 +177,7 @@ public class Person
 
 {: .table-responsive  .table-condensed   .table-bordered}
 |Syntax     |  SpaceIndex path  ,type  |
-|Argument   |  [SpaceIndexType]({{%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}})<br> path - indexed attribute|
+|Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})<br> path - indexed attribute|
 |Description| The `path()` attribute represents the path of the indexed property within a nested object. |
 
 <br>
@@ -333,7 +333,7 @@ public class MyData {
 
 {: .table-responsive  .table-condensed   .table-bordered}
 |Syntax     | SpaceStorageType storageType|
-|Argument   | [StorageType]({{% javadoc com/gigaspaces/metadata/StorageType %}})          |
+|Argument   | [StorageType]({{% javadoc "com/gigaspaces/metadata/StorageType" %}})          |
 |Default    | StorageType.OBJECT |
 |Description| This annotation is used to specify how the attribute is stored in the space. |
 
@@ -355,7 +355,7 @@ public class Message {
 }
 {{%/highlight%}}
 
-{{%learn "./storage-types---controlling-serialization.html%}}
+{{%learn "./storage-types---controlling-serialization.html"%}}
 
 
 # SpaceFifoGroupingProperty
@@ -384,7 +384,7 @@ public class FlightReservation
 }
 {{%/highlight%}}
 
-{{%learn "./fifo-grouping.html"%}
+{{%learn "./fifo-grouping.html"%}}
 
 
 # SpaceFifoGroupingIndex
@@ -409,7 +409,7 @@ Example:
 
 {{%/highlight%}}
 
-{{%learn "./fifo-grouping.html"%}
+{{%learn "./fifo-grouping.html"%}}
 
 
 
@@ -445,7 +445,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn "./dynamic-properties.html"%}
+{{%learn "./dynamic-properties.html"%}}
 
 
 # SpaceDocumentSupport
@@ -470,7 +470,7 @@ public class Person {
 }
 {{%/highlight%}}
 
-{{%learn "./document-pojo-interoperability.html#deep-interoperability"%}
+{{%learn "./document-pojo-interoperability.html#deep-interoperability"%}}
 
 
 

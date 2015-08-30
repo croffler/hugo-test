@@ -70,7 +70,7 @@ Example:
 
 {: .table   .table-condensed  .table-bordered}
 |Syntax     | fifo-support  |
-|Argument   | [FifoSupport]({{% javadoc com/gigaspaces/annotation/pojo/FifoSupport %}})|
+|Argument   | [FifoSupport]({{% javadoc "com/gigaspaces/annotation/pojo/FifoSupport" %}})|
 |Default    | not_set|
 |Description| Enabling  FIFO operations.     |
 
@@ -90,7 +90,7 @@ Example:
 
 {: .table   .table-condensed  .table-bordered}
 |Syntax     | storage-type |
-|Argument   | [StorageType]({{% javadoc com/gigaspaces/metadata/StorageType %}})          |
+|Argument   | [StorageType]({{% javadoc "com/gigaspaces/metadata/StorageType" %}})          |
 |Default    | object |
 |Description| To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.|
 

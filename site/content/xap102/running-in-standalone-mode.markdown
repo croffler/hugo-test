@@ -39,7 +39,7 @@ GigaSpaces comes with the `puInstance` shell script, which uses the `StandaloneP
 
 Here are some examples of using the `puInstance` script in order to run a processing unit:
 
-{{% inittab os_simple_space|bottom %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Unix %}}
 
 {{% highlight java %}}
@@ -58,7 +58,7 @@ puInstance.bat -cluster schema=partitioned total_members=2 id=1 data-processor.j
 
 The above example starts a processing unit (which includes an embedded space) in a partitioned cluster schema, with two members and `id=1`. In order to run the full cluster, another `puInstance` has to be started with `id=2`.
 
-{{% inittab os_simple_space|bottom %}}
+{{% inittab os_simple_space %}}
 {{% tabcontent Unix %}}
 
 {{% highlight java %}}

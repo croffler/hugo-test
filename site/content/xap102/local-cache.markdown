@@ -268,19 +268,14 @@ The Client Local Cache eviction can be monitored by setting the client applicati
 The logging level of `com.gigaspaces.core.memorymanager` can be changed while the client application is running using JConsole.
 {{%/note%}}
 
-{{% include /COM/jconsolejmapwarning.markdown %}}
+INCLUDEME
+
 
 # Local Cache Performance
 
 Below is the result of a simple benchmark comparing [Ehcache](http://ehcache.org)'s `get()` operation with the local cache using the `GigaSpace.readById()` operation. With this benchmark the local cache/ehcache size can accommodate the entire data set for the application.
 
 ![ehcache_vs_localcache.jpg](/attachment_files/ehcache_vs_localcache.jpg)
-
-{{%comment%}}
-{{% tip %}}
-Tests of the **local cache** with XAP 7.0 having 10 client threads using a local cache resulted in 20M read/sec using a server with eight cores.
-{{% /tip %}}
-{{%/comment%}}
 
 
 # Local Cache Properties

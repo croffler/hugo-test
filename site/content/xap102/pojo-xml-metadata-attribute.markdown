@@ -75,7 +75,7 @@ Example:
 
 {: .table   .table-condensed  .table-bordered}
 |Syntax     | storage-type|
-|Argument   | [StorageType]({{% javadoc com/gigaspaces/metadata/StorageType %}})          |
+|Argument   | [StorageType]({{% javadoc "com/gigaspaces/metadata/StorageType" %}})          |
 |Default    | object |
 |Description| This tag is used to specify how the property is stored in the space. |
 
@@ -90,13 +90,13 @@ Example:
 </gigaspaces-mapping>
 {{% /highlight %}}
 
-{{%learn ./storage-types---controlling-serialization.html%}
+{{%learn "./storage-types---controlling-serialization.html"%}}
 
 ### SpaceIndex
 
 {: .table   .table-condensed  .table-bordered}
 |Syntax     |  index type|
-|Argument   |  [SpaceIndexType]({{%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}})  |
+|Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})  |
 |Description| Querying indexed fields speeds up read and take operations. The `index` tag should be used to specify an indexed field.|
 
 Example:
@@ -118,13 +118,13 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn ./indexing.html%}
+{{%learn "./indexing.html"%}}
 
 ### SpaceIndex Path
 
 {: .table   .table-condensed  .table-bordered}
 |Syntax     |  path type|
-|Argument   |  [SpaceIndexType]({{%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}})<br> path - indexed attribute|
+|Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})<br> path - indexed attribute|
 |Description| The `path` attribute represents the path of the indexed property within a nested object. |
 
 Example:
@@ -140,14 +140,14 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn ./indexing-nested-properties.html%}
+{{%learn "./indexing-nested-properties.html"%}}
 
 
 ### Unique Index
 
 {: .table   .table-condensed  .table-bordered}
 |Syntax     |  index type unique|
-|Argument   |  [SpaceIndexType]({{%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}})  |
+|Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
 |Note |   The uniqueness is enforced per partition and not over the whole cluster. |
 
@@ -171,7 +171,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn ./indexing.html%}
+{{%learn "./indexing.html"%}}
 
 
 ### SpaceFifoGroupingIndex
@@ -197,7 +197,7 @@ Example:
 
 {{%/highlight%}}
 
-{{%learn ./fifo-grouping.html%}
+{{%learn "./fifo-grouping.html"%}}
 
 
 
@@ -231,7 +231,7 @@ Example:
 {{%/highlight%}}
 
 
-{{%learn ./space-object-id-operations.html%}
+{{%learn "./space-object-id-operations.html"%}}
 
 
 # SpaceRouting
@@ -255,7 +255,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn {{%currentadmurl%}}/data-partitioning.html%}
+{{%learn "{{%currentadmurl%}}/data-partitioning.html"%}}
 
 # Class Reference
 
@@ -317,7 +317,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn ./transaction-optimistic-locking.html%}
+{{%learn "./transaction-optimistic-locking.html"%}}
 
 
 
@@ -367,7 +367,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn ./leases-automatic-expiration.html%}
+{{%learn "./leases-automatic-expiration.html"%}}
 
 # SpaceFifoGroupingProperty
 
@@ -388,7 +388,7 @@ Example:
 
 {{%/highlight%}}
 
-{{%learn ./fifo-grouping.html%}
+{{%learn "./fifo-grouping.html"%}}
 
 
 # SpaceDynamicProperties
@@ -414,7 +414,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn ./dynamic-properties.html%}
+{{%learn "./dynamic-properties.html"%}}
 
 
 # SpaceDocumentSupport
@@ -436,7 +436,7 @@ Example:
 </gigaspaces-mapping>
 {{%/highlight%}}
 
-{{%learn ./document-pojo-interoperability.html#deep-interoperability%}
+{{%learn "./document-pojo-interoperability.html#deep-interoperability"%}}
 
 
 

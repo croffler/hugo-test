@@ -8,9 +8,6 @@ weight: 400
 
 {{% ssummary %}}This section explains the different data grid metadata.{{% /ssummary %}}
 
-
-
-
 # GigaSpaceContext
 
 {: .table .table-bordered}
@@ -18,8 +15,9 @@ weight: 400
 |Description         | In previous Spring releases, Spring only allowed you to inject the GigaSpace instance using setter injection or constructor injection. XAP extended this injection mechanism by allowing you to use annotations to inject a GigaSpace instance. As of Spring 2.5, this is no longer required since Spring support annotation based injection using the @Resource or @Autowired annotations.  |
 
 
-{{% togglecloak id=1 %}}**Annotation**{{% endtogglecloak %}}
-{{% gcloak 1 %}}
+{{% accordion acc1%}}
+{{% accord title="**Annotation**" parent="acc1"%}}
+
 {{%highlight java%}}
 
 //There can be more than one GigaSpace instance defined
@@ -33,12 +31,13 @@ public class MyService {
     private GigaSpace clusteredGigaSpace;
 }
 {{%/highlight%}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
 There is no need to have a setter for the GigaSpace instance, and by annotating it with GigaSpaceContext, a GigaSpace instance is automatically injected. In order to enable this feature, the following element needs to be configured in the Spring application context:
 
-{{% togglecloak id=11 %}}**Spring Configuration**{{% endtogglecloak %}}
-{{% gcloak 11 %}}
+{{% accordion acc2%}}
+{{% accord title="**Spring Configuration**" parent="acc2"%}}
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
@@ -56,7 +55,7 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
  {{% /highlight %}}
 
  {{% /tabcontent %}}
- {{% tabcontent Plain XML %}}
+ {{% tabcontent "Plain XML" %}}
 
  {{% highlight xml %}}
 
@@ -80,7 +79,8 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 
 {{% /tabcontent %}}
 {{% /inittab %}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
 
 # GigaSpaceLateContext
@@ -90,8 +90,9 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 |Attribute Annotation| @GigaSpaceLateContext  |
 |Description         |  XAP allows you to define beans (such as filters), that are later injected to the actual space. If such beans require access to the GigaSpace instance, a cyclic dependency occurs (GigaSpace requires the Space, but the Space requires the filter injection). XAP allows you to use the same annotation-based injection mechanism in order to inject the GigaSpace instance at a different lifecycle stage. |
 
-{{% togglecloak id=2 %}}**Annotation**{{% endtogglecloak %}}
-{{% gcloak 2 %}}
+{{% accordion acc22%}}
+{{% accord title="**Annotation**" parent="acc22"%}}
+
 {{%highlight java%}}
 public class MyService {
 
@@ -100,12 +101,14 @@ public class MyService {
 
 }
 {{%/highlight%}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
 There is no need to have a setter for the `GigaSpace` instance, and by annotating it with `GigaSpaceLateContext`, a `GigaSpace` instance is automatically injected. In order to enable this feature, the following element needs to be configured in the Spring application context:
 
-{{% togglecloak id=21 %}}**Spring Configuration**{{% endtogglecloak %}}
-{{% gcloak 21 %}}
+{{% accordion acc21%}}
+{{% accord title="**Spring Configuration**" parent="acc21"%}}
+
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
@@ -121,7 +124,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 
@@ -140,7 +143,8 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 
 {{% /tabcontent %}}
 {{% /inittab %}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
 
 # ClusterInfoContext
@@ -150,8 +154,9 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 |Description         | This annotation injects cluster information into the class.  |
 
 
-{{% togglecloak id=3 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 3 %}}
+{{% accordion acc3 %}}
+{{% accord title="**Example**" parent="acc3" %}}
+
 {{%highlight java%}}
 public class Process {
 
@@ -161,16 +166,8 @@ public class Process {
     Integer instanceId = clusterInfo.getInstanceId();
 }
 {{%/highlight%}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
-
-
-
-
-
-
-{{%comment%}}
-/the-space-component.html#TheSpaceComponent-PrimaryBackupNotifications
-{{%/comment%}}
 
 

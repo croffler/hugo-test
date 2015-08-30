@@ -329,9 +329,9 @@ When using transactions with archive container a special care should be taken wi
 
 Adding transaction support is done by injecting a transaction manager into the archive-container and giga-space beans. See the example at the [Configuration](#Configuration) section.
 
-{{% note %}}
+{{<note>}}
 Note the timeout value is in seconds as per Spring spec for TransactionDefinition.
-{{%/note%}}
+{{</note>}}
 
 # Default Values of Archive Container Configuration Parameters
 

@@ -1222,5 +1222,4 @@ The default values for all of the polling container configuration parameters suc
 For example, `concurrent-consumers` default value is documented in the method `SimplePollingEventListenerContainer.setConcurrentConsumers(int)`
 
 
-
-{{% include /COM/notify-verses-polling.markdown %}}
+INCLUDEME

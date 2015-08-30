@@ -57,7 +57,7 @@ The space filter business logic impacts the space responsiveness to client reque
 The following example illustrates a space Filter POJO and a Bean that performs some space operations:
 
 {{% inittab example %}}
-{{% tabcontent The Space Filter POJO %}}
+{{% tabcontent "The Space Filter POJO" %}}
 
 {{% highlight java %}}
 package com.test;
@@ -182,7 +182,7 @@ public class MySpaceFilter implements InitializingBean{
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent The Bean %}}
+{{% tabcontent "The Bean" %}}
 
 {{% highlight java %}}
 package com.test;
@@ -265,7 +265,7 @@ public class MyBean implements InitializingBean{
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent The Beans Definitions %}}
+{{% tabcontent "The Beans Definitions" %}}
 
 {{% highlight xml %}}
 <bean id="mySpaceFilter" class="com.test.MySpaceFilter" />
@@ -283,7 +283,7 @@ public class MyBean implements InitializingBean{
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent The Space Class %}}
+{{% tabcontent "The Space Class" %}}
 
 {{% highlight java %}}
 package com.test;
@@ -319,7 +319,7 @@ public class Message {
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent The Space Task %}}
+{{% tabcontent "The Space Task" %}}
 
 {{% highlight java %}}
 package com.test;
@@ -339,11 +339,9 @@ public class MyTask implements Task<Serializable>{
 {{% /tabcontent %}}
 {{% /inittab %}}
 
-{{%comment%}}
-## The expected output
-{{%/comment%}}
 
-{{% togglecloak id=1 %}} Here is how the expected output should look like:{{% endtogglecloak %}} {{% gcloak 1 %}}
+{{% accordion  acc1 %}}
+{{% accord title="Here is how the expected output should look like:"%}}
 
 {{% highlight java %}}
 
@@ -398,7 +396,8 @@ afterNotifyTrigger called  Class Message - Object ID:1 data:AAAA
 afterAllNotifyTrigger called  Class Message - Object ID:1 data:AAAA
 {{% /highlight %}}
 
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
 
 # Advanced Options

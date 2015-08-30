@@ -38,7 +38,7 @@ Include the following in your `pom.xml`
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent hector using java.util.logging %}}
+{{% tabcontent "hector using java.util.logging" %}}
 
 {{% highlight xml %}}
 <dependency>

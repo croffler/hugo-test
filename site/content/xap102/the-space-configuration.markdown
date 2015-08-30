@@ -140,7 +140,7 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -201,7 +201,7 @@ The general properties are used to override various components such as the space
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -257,7 +257,7 @@ Here is an example on how to create the proxy:
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 <os-core:embedded-space id="space" name="space">
@@ -336,7 +336,7 @@ Here is an example of the `GigaSpace` Bean:
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 
@@ -445,7 +445,7 @@ You may configure default modifiers for the different operations in the `GigaSpa
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 
@@ -499,12 +499,12 @@ gigaSpace.write(someObject, gigaSpace.getDefaultWriteModifiers().add(WriteModifi
 
 For further details on each of the available modifiers see:
 
-- [ReadModifiers]({{%javadoc com/gigaspaces/client/ReadModifiers %}})
-- [WriteModifiers]({{%javadoc com/gigaspaces/client/WriteModifiers%}})
-- [TakeModifiers]({{%javadoc com/gigaspaces/client/TakeModifiers%}})
-- [CountModifiers]({{%javadoc com/gigaspaces/client/CountModifiers%}})
-- [ClearModifiers]({{%javadoc com/gigaspaces/client/ClearModifiers%}})
-- [ChangeModifiers]({{%javadoc com/gigaspaces/client/ChangeModifiers%}})
+- [ReadModifiers]({{%javadoc "com/gigaspaces/client/ReadModifiers" %}})
+- [WriteModifiers]({{%javadoc "com/gigaspaces/client/WriteModifiers"%}})
+- [TakeModifiers]({{%javadoc "com/gigaspaces/client/TakeModifiers"%}})
+- [CountModifiers]({{%javadoc "com/gigaspaces/client/CountModifiers"%}})
+- [ClearModifiers]({{%javadoc "com/gigaspaces/client/ClearModifiers"%}})
+- [ChangeModifiers]({{%javadoc "com/gigaspaces/client/ChangeModifiers"%}})
 
 # Exception Hierarchy
 

@@ -891,10 +891,3 @@ OperatingSystems.setStatisticsInterval(3l, TimeUnit.MINUTES);
 ProcessingUnits.setStatisticsInterval(30l, TimeUnit.SECONDS);
 {{%/highlight%}}
 
-
-{{%comment%}}
-# System Properties
-
-{{% include /COM/xap102/config-admin.markdown %}}
-
-{{%/comment%}}

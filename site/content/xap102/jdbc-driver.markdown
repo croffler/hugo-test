@@ -293,34 +293,22 @@ The following information represents the SQL to Java mapping conducted at runtim
 - Column aliases.
 
 
+{{% accordion acc %}}
+{{% accord title="Click to see the code example1:" parent="acc"%}}
 
 
-{{% togglecloak id=2 %}}Click here for example...{{% endtogglecloak %}}
-{{% gcloak 2 %}}
-{{% highlight java %}}
 Connection conn;
 Statement stmt = conn.createStatement();
 ResultSet rs = stmt.executeQuery("SELECT ID AS Identifier, NAME AS FullName FROM PERSON WHERE Identifier = 210");
-{{% /highlight %}}
 
-{{% endgcloak %}}
+
+{{% /accord %}}
+{{% /accordion%}}
 
 - Table aliases -- tables are allowed to use aliases throughout the query.
 - Using a sub-query in the `FROM` clause.
 
-{{% togglecloak id=3 %}}Click here for example...{{% endtogglecloak %}}
-{{% gcloak 3 %}}
-{{% highlight java %}}
-Connection conn;
-Statement stmt = conn.createStatement();
-ResultSet rs = stmt.executeQuery("SELECT * FROM STUDENT WHERE GRADE >= (SELECT AVG(GRADE) FROM STUDENT)");
-{{% /highlight %}}
 
-{{% warning %}}
-Joined sub-queries are not supported.
-{{% /warning %}}
-
-{{% endgcloak %}}
 
 - `sysdate` - a keyword suggesting current time and date.
 - `rownum` - a keyword to use in `WHERE` clauses, setting the number of rows to select.
@@ -330,19 +318,7 @@ Joined sub-queries are not supported.
 - Batch Processing.
 - Increment a field in an UPDATE statement.
 
-{{% togglecloak id=1 %}}Click here for example...{{% endtogglecloak %}}
-{{% gcloak 1 %}}
-{{% highlight java %}}
-Connection conn;
-Statement stmt = conn.createStatement();
-int result = stmt.executeUpdate("UPDATE PERSON SET VERSION = VERSION + 1 WHERE ID = 10000");
-{{% /highlight %}}
 
-{{% warning %}}
-Field incrementing is only supported for `Integer` fields using a '+' operator.
-{{% /warning %}}
-
-{{% endgcloak %}}
 
 - A statement caching mechanism is provided to speed up statement parsing.
 - Meta Data API.

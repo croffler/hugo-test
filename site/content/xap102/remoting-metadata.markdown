@@ -18,8 +18,8 @@ weight: 400
 |Method argument     | @Routing |
 
 
-{{% togglecloak id=1 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 1 %}}
+{{% accordion acc1 %}}
+{{%accord tithe="**Example**" parent="acc1" %}}
 {{%highlight java%}}
 // Service Implementation
 @RemotingService
@@ -46,8 +46,10 @@ public interface MyService {
     void doSomething(@Routing int param1, int param2);
 }
 {{%/highlight%}}
-{{% endgcloak %}}
-{{%learn ./space-based-remoting.html%}
+{{% /accord %}}
+{{% /accordion %}}
+
+{{%learn "./space-based-remoting.html"%}}
 
 
 # ExecutorProxy
@@ -57,8 +59,9 @@ public interface MyService {
 |Description         | Spring provides support for various remoting technologies. GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol |
 
 
-{{% togglecloak id=2 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 2 %}}
+{{% accordion acc2 %}}
+{{%accord tithe="**Example**" parent="acc2" %}}
+
 {{%highlight java%}}
 // Client remoting proxy
 public class DataRemoting {
@@ -69,8 +72,10 @@ public class DataRemoting {
     // ...
 }
 {{%/highlight%}}
-{{% endgcloak %}}
-{{%learn ./space-based-remoting.html%}
+{{% /accord %}}
+{{% /accordion %}}
+
+{{%learn "./space-based-remoting.html"%}}
 
 
 # Routing
@@ -81,8 +86,8 @@ public class DataRemoting {
 
 
 
-{{% togglecloak id=3 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 3 %}}
+{{% accordion acc3 %}}
+{{%accord title="**Example**" parent="acc3" %}}
 {{%highlight java%}}
 // Service Implementation
 @RemotingService
@@ -93,6 +98,7 @@ public class DataRemoting {
     void doSomething(@Routing int param1, int param2);
 }
 {{%/highlight%}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
-{{%learn ./space-based-remoting.html%}
+{{%learn "./space-based-remoting.html"%}}

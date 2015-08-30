@@ -278,8 +278,11 @@ goodguy = winnebago:drive:eagle5
 {{%/accord%}}
 
 {{%accord title="Session Sharing Configuration Example For Secured Application Using Spring Security..."  parent="acc0"%}}
-{{% note %}}Note that in order to use Spring Security you still have to provide `shiro.ini` configuration file.
-<br>The configuration should be similar to the one in the **Non-Secured Application** example above. {{% /note %}}
+
+{{% note %}}
+Note that in order to use Spring Security you still have to provide `shiro.ini` configuration file.<br>
+The configuration should be similar to the one in the **Non-Secured Application** example above.
+{{% /note %}}
 
 Below is an example for the spring-security.xml that should be located under `WEB-INF` folder.
 {{% highlight xml %}}
@@ -340,8 +343,6 @@ In addition, you need to add the following in your web.xml file:
 {{% /highlight %}}
 
 {{%/accord%}}
-
-
 {{%/accordion%}}
 
 <br>
@@ -429,66 +430,8 @@ connector.password = pass
 Examples of using the XAP HTTP Session can be found [here]({{%currentjavatuturl%}}/http-session-sharing.html)
 {{%/refer%}}
 
-{{% comment %}}
-
-The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish). It demonstrates Single Application Session Sharing configuration.
-
-1. Download the demo web application {{%download "/download_files/demo-app.war"%}}.
-2. Deploy a space named **sessionSpace**. You may have a single instance Space or deploy a clustered Space using the command line , GS-UI or the Web-UI.
-3. Deploy the `demo-app.war` into Tomcat (or any other app server).
-4. Start your browser and access the web application via the following URL: http://localhost:8080/demo-app
-
-{{% note %}}
-The URL above assumes the Web Server is configured to use port 8080.
-{{% /note %}}
 
 
-{{%panel title=Set some attributes with their name and value and click the **Update Session** button.%}}
-![httpSessionSharing4.jpg](/attachment_files/http-session-sharing-single-1.png)
-{{%/panel%}}
-
-
-{{%panel title=View the session updated within the space via the GS-UI or Web-UI.%}}
-![httpSessionSharing4.jpg](/attachment_files/http-session-sharing-single-2.png)
-{{%/panel%}}
-
-{{%panel title=Identify the Session ID%}}
-![httpSessionSharing4.jpg](/attachment_files/http-session-sharing-single-3.png)
-{{%/panel%}}
-
-{{%tip%}}
-Restart your web application and refresh the page. The session will be reloaded from the data grid.
-{{%/tip%}}
-
-{{%/comment%}}
-{{%comment%}}
-### Multi-Web Servers Deployment
-
-You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
-
-{{%panel%}}
-{{%section%}}
-{{%column width="50%" %}}
-![httpSessionSharing8.jpg](/attachment_files/httpSessionSharing8.jpg)
-{{%/column%}}
-{{%column width="50%" %}}
-![httpSessionSharing9.jpg](/attachment_files/httpSessionSharing9.jpg)
-{{%/column%}}
-{{%/section%}}
-
-
-{{%tip%}}
-Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the Space.
-{{%/tip%}}
-
-{{%/panel%}}
-
-{{% note %}}
-When deploying the web application WAR file please make sure the web app context will be identical.
-{{% /note %}}
-
-
-{{%/comment%}}
 
 # Considerations
 

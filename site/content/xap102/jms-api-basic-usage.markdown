@@ -36,9 +36,10 @@ In JMS 1.0.2, each domain used a separate set of interfaces. JMS 1.1 presents th
 
 ### Using Unified Messaging Model (JMS 1.1)
 
-{{% togglecloak id=X %}}{{% color #6999cb %}}**Click to see the code example:**{{% endcolor %}}{{% endtogglecloak %}}
-{{% gcloak X %}}
-{{% panel bgColor=white|borderStyle=none %}}
+{{% accordion acc1 %}}
+{{% accord title="**Click to see the code example:**" parent="acc1"%}}
+
+{{% panel  %}}
 
 {{% highlight java %}}
 ConnectionFactory connectionFactory = // obtain
@@ -78,15 +79,17 @@ connection.close();
 {{% /highlight %}}
 
 {{% /panel %}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion%}}
 
 ### Using Separate Domains (JMS 1.0.2)
 
 #### Publish/Subscribe
 
-{{% togglecloak id=y %}}{{% color #6999cb %}}**Click to see the code example:**{{% endcolor %}}{{% endtogglecloak %}}
-{{% gcloak y %}}
-{{% panel bgColor=white|borderStyle=none %}}
+{{% accordion acc2 %}}
+{{% accord title="**Click to see the code example:**" parent="acc2"%}}
+
+{{% panel  %}}
 
 {{% highlight java %}}
 TopicConnectionFactory topicConnectionFactory = // obtain
@@ -127,13 +130,15 @@ topicConnection.close();
 {{% /highlight %}}
 
 {{% /panel %}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
 #### Point to Point
 
-{{% togglecloak id=z %}}{{% color #6999cb %}}**Click to see the code example:**{{% endcolor %}}{{% endtogglecloak %}}
-{{% gcloak z %}}
-{{% panel bgColor=white|borderStyle=none %}}
+{{% accordion acc3 %}}
+{{% accord title="**Click to see the code example:**" parent="acc3"%}}
+
+{{% panel  %}}
 
 {{% highlight java %}}
 QueueConnectionFactory queueConnectionFactory = // obtain
@@ -174,4 +179,5 @@ queueConnection.close();
 {{% /highlight %}}
 
 {{% /panel %}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion%}}

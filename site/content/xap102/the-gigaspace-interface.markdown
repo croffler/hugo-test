@@ -20,7 +20,7 @@ The space is accessed via a programmatic interface which supports the following 
 - Take – get the value from the space and delete its content.
 - Notify – alert when the contents of an entry of interest have registered changes.
 
-{{%learn ./the-space-operations.html%}
+{{%learn "./the-space-operations.html"%}}
 
 
 
@@ -53,7 +53,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpa
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 
@@ -106,7 +106,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace"
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 
@@ -166,7 +166,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
@@ -183,7 +183,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 
 {{% /inittab %}}
 
-{{%learn ./local-cache.html%}
+{{%learn "./local-cache.html"%}}
 
 
 # Local View
@@ -227,7 +227,7 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
@@ -253,7 +253,7 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {{% /tabcontent %}}
 {{% /inittab %}}
 
-{{%learn ./local-view.html%}
+{{%learn "./local-view.html"%}}
 
 
 # Resource cleanup
@@ -323,7 +323,7 @@ A secured space should be configured with a security context so that it can be a
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 
@@ -354,7 +354,7 @@ Here is an example of how to define security with an embedded space. In this cas
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 
@@ -374,7 +374,7 @@ Here is an example of how to define security with an embedded space. In this cas
 
 It is possible to configure the space to be secured using deploy time properties (bean level properties), without declaring the security element. The `security.username` and `security.password` can be provided, and the spaces defined within the processing unit are automatically secured.
 
-{{%learn %}}{{%currentsecurl%}}{{%/learn %}}
+{{%learn "{{%currentsecurl%}}" %}}
 
 
 # Persistency
@@ -419,7 +419,7 @@ When constructing a space, it is possible to provide [Space Persistency](./space
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 

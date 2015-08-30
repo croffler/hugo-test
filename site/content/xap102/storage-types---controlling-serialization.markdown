@@ -18,13 +18,13 @@ Each non-primitive space object property can be assigned a storage type decorati
 - `COMPRESSED`, which means that the property will be stored in a compressed serialized form in the space.
 
 {{% inittab %}}
-{{% tabcontent Object Mode %}}
+{{% tabcontent "Object Mode" %}}
 ![storage-type-object.jpg](/attachment_files/storage-type-object.jpg)
 {{% /tabcontent %}}
-{{% tabcontent Binary Mode %}}
+{{% tabcontent "Binary Mode" %}}
 ![storage-type-binary.jpg](/attachment_files/storage-type-binary.jpg)
 {{% /tabcontent %}}
-{{% tabcontent Compressed Mode %}}
+{{% tabcontent "Compressed Mode" %}}
 ![storage-type-compressed.jpg](/attachment_files/storage-type-compressed.jpg)
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -82,7 +82,7 @@ In remote mode, the Object's non-primitive fields are serialized where the seria
 
 Specifying space level storage type can be done using any of the following:
 
-{{% inittab Space-Level Storage Type %}}
+{{% inittab "Space-Level Storage Type" %}}
 {{% tabcontent Namespace %}}
 
 {{% highlight xml %}}
@@ -97,7 +97,7 @@ Specifying space level storage type can be done using any of the following:
 {{% /highlight %}}
 
 {{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% tabcontent "Plain XML" %}}
 
 {{% highlight xml %}}
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">

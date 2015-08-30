@@ -47,9 +47,9 @@ Here is how the space should be started:
 
 XAP has a built in [Hibernate Space Persistency](./hibernate-space-persistency.html) implementation which is a `SpaceSynchronizationEndpoint` extension. You can implement your own Mirror very easily to accommodate your exact needs. See example below:
 
-{{% togglecloak id=custom %}}{{% color #88aed2 %}}Show code...{{% endcolor %}}{{% endtogglecloak %}}
-{{% gcloak custom %}}
-{{% panel bgColor=white|borderStyle=none %}}
+{{%accordion accord1 %}}
+{{% accord title="Show code..." parent="accord1" %}}
+{{% panel%}}
 
 {{% highlight java %}}
 package mypackage;
@@ -84,14 +84,15 @@ public class MirrorSpaceSynchronizationEndpoint extends SpaceSynchronizationEndp
 }
 {{% /highlight %}}
 
-{{% /panel %}}
-{{% endgcloak %}}
+{{%/panel%}}
+{{%/accord%}}
+{{%/accordion%}}
 
 And here is how this can be configured within the mirror configuration:
 
-{{% togglecloak id=config %}}{{% color #88aed2 %}}Show configuration...{{% endcolor %}}{{% endtogglecloak %}}
-{{% gcloak config %}}
-{{% panel bgColor=white|borderStyle=none %}}
+{{%accordion accord2 %}}
+{{% accord title="Show configuration..." parent="accord2" %}}
+{{% panel%}}
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
@@ -124,11 +125,12 @@ And here is how this can be configured within the mirror configuration:
 {{% /inittab %}}
 
 {{% /panel %}}
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
 In order to use the data source as the read mechanism for the cluster Space that connects to the mirror, a `SpaceDataSource` extension needs to be implemented.
 
-{{% warning title=Handling Mirror Failures %}}
+{{% warning title="Handling Mirror Failures" %}}
 Throwing `java.lang.RuntimeException` from the `onTransactionSynchronization` or `onOperationsBatchSynchronization` methods of the `SpaceSynchronizationEndpoint` implementation will signal the primary to keep the replicated data within its redo log and retry the replication operation. Your code should support this in case it fails (for example database transaction failure).
 {{% /warning %}}
 
@@ -170,7 +172,7 @@ To override and extend this behavior, you can implement an exception handler tha
 
 With the above, we use the `SpaceSynchronizationEndpointExceptionHandler`, and wrap the `DefaultHibernateSpaceSynchronizationEndpoint` with it (and pass that to the space). On the `SpaceSynchronizationEndpointExceptionHandler`, we set our own implementation of the `ExceptionHandler`, to be called when there is an exception. With the `ExceptionHandler` you can decide what to do with the Exception: "swallow it", execute some logic, or re-throw it.
 
-{{% warning title=It's critical to _test your persistence in the mirror_.%}}
+{{% warning title="It's critical to _test your persistence in the mirror_."%}}
 
 A configured mirror will repeatedly try to store things in the DB. In the case on unrecoverable failure (imagine an invalid mapping or a constraint issue), this can cause the redo log to grow, eventually resulting in overflow of the redo to disk, and then, when the predefined disk capacity is exhausted, leading to a rejection of any non-read space operation (similar to how the memory manager works). The exception that clients will see in this case is `RedologCapacityExceededException` (which inherits from `ResourceCapacityExceededException`).
 
@@ -472,29 +474,29 @@ Logging is divided according to `java.util.logging.Level` as follows:
 This section describes how the GigaSpaces Mirror Service handles different failure scenarios. The following table lists the services involved, and how the failure is handled in the cluster.
 
 Active services are
-{{% color green %}}green{{% endcolor %}}, while failed services are {{% color red %}}red{{% endcolor %}}.
+{{% color green %}}green{{% /color %}}, while failed services are {{% color red %}}red{{% /color %}}.
 
 {: .table .table-bordered .table-condensed}
 | Active/Failed Services | Cluster Behavior |
 |:-----------------------|:-----------------|
-| * {{% color green %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color green %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color green %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color green %}}Database{{% endcolor %}}{{% wbr %}}| * The primary and backup spaces, each include a copy of the mirror replication queue (which is created in the backup, as part of the synchronized replication between the primary and the backup). {{% wbr %}}- The mirror doesn't acknowledge the replication until the data is successfully committed to the database.{{% wbr %}}- Every time the primary gets an acknowledgment from the mirror, it notifies the backup of the last exact point in the replication queue where replication to the mirror was successful.{{% wbr %}}- This way, the primary and backup space include the same copy of the data and are also in sync with whatever data was replicated to the mirror and written to the database. |
-| * {{% color red %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color green %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color green %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color green %}}Database{{% endcolor %}}{{% wbr %}}| * The backup space holds all the information in-memory, since the replication channel between them is synchronous. {{% wbr %}}- The backup space is constantly notified of the last exact point in the replication queue where replication to the mirror was successful. This means that it knows specifically when the failure occurred. Therefore, it replicates the data received from that point onwards, to the mirror.{{% wbr %}}- One possible scenario is that the same Entry is sent to the mirror, both by the primary and the backup space. However, the mirror handles this situation, so no data is lost or duplicated.{{% wbr %}}- If the primary space is restarted (typically by the Service Grid infrastructure), it recovers all of the data from the backup space. Once the primary has retrieved all data from the backup, it continues replicating as usual. No data is lost. |
-| * {{% color green %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color red %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color green %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color green %}}Database{{% endcolor %}}{{% wbr %}}| * The primary keeps functioning as before: replicating data to the mirror and persisting data asynchronously, so no data is lost. {{% wbr %}}- The primary space is constantly notified of the last exact point in the replication queue where replication to the mirror was successful. This means that it knows specifically when the failure occurred. Therefore, it replicates the data received from that point onwards to the mirror.{{% wbr %}}- One possible scenario is that the same Entry is sent to the mirror both by the primary and the backup space. However, the mirror handles this situation, so no data is lost or duplicated.{{% wbr %}}- If the backup space is restarted (typically by the Service Grid infrastructure), it recovers all of the data from the primary space. Once the backup has retrieved all data from the primary, it continues replicating as usual. No data is lost. |
-| * {{% color green %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color green %}}Back Up{{% endcolor %}}{{% wbr %}}- {{% color red %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color green %}}Database{{% endcolor %}}{{% wbr %}}| * The primary and backup spaces accumulate the Entries and replicate them to their mirror replication queue (which is highly available since they both share it). {{% wbr %}}- When the mirror is restarted, replication is resumed from the point it was stopped, prior to the failure. No data is lost. |
-| * {{% color green %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color green %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color green %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color red %}}Database{{% endcolor %}}{{% wbr %}}| * The primary space is constantly synchronized with the mirror, which stops sending acknowledgments or starts sending errors to it. {{% wbr %}}- The primary and backup spaces accumulate the Entries and replicate them to their mirror replication queue (which is highly available since they both share it). {{% wbr %}}- When the database is restarted, the mirror reconnects to it and persistency is resumed from the point it was stopped, prior to the failure. No data is lost. |
+| * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * The primary and backup spaces, each include a copy of the mirror replication queue (which is created in the backup, as part of the synchronized replication between the primary and the backup). {{% wbr %}}- The mirror doesn't acknowledge the replication until the data is successfully committed to the database.{{% wbr %}}- Every time the primary gets an acknowledgment from the mirror, it notifies the backup of the last exact point in the replication queue where replication to the mirror was successful.{{% wbr %}}- This way, the primary and backup space include the same copy of the data and are also in sync with whatever data was replicated to the mirror and written to the database. |
+| * {{% color red %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * The backup space holds all the information in-memory, since the replication channel between them is synchronous. {{% wbr %}}- The backup space is constantly notified of the last exact point in the replication queue where replication to the mirror was successful. This means that it knows specifically when the failure occurred. Therefore, it replicates the data received from that point onwards, to the mirror.{{% wbr %}}- One possible scenario is that the same Entry is sent to the mirror, both by the primary and the backup space. However, the mirror handles this situation, so no data is lost or duplicated.{{% wbr %}}- If the primary space is restarted (typically by the Service Grid infrastructure), it recovers all of the data from the backup space. Once the primary has retrieved all data from the backup, it continues replicating as usual. No data is lost. |
+| * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color red %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * The primary keeps functioning as before: replicating data to the mirror and persisting data asynchronously, so no data is lost. {{% wbr %}}- The primary space is constantly notified of the last exact point in the replication queue where replication to the mirror was successful. This means that it knows specifically when the failure occurred. Therefore, it replicates the data received from that point onwards to the mirror.{{% wbr %}}- One possible scenario is that the same Entry is sent to the mirror both by the primary and the backup space. However, the mirror handles this situation, so no data is lost or duplicated.{{% wbr %}}- If the backup space is restarted (typically by the Service Grid infrastructure), it recovers all of the data from the primary space. Once the backup has retrieved all data from the primary, it continues replicating as usual. No data is lost. |
+| * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Back Up{{% /color %}}{{% wbr %}}- {{% color red %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * The primary and backup spaces accumulate the Entries and replicate them to their mirror replication queue (which is highly available since they both share it). {{% wbr %}}- When the mirror is restarted, replication is resumed from the point it was stopped, prior to the failure. No data is lost. |
+| * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color red %}}Database{{% /color %}}{{% wbr %}}| * The primary space is constantly synchronized with the mirror, which stops sending acknowledgments or starts sending errors to it. {{% wbr %}}- The primary and backup spaces accumulate the Entries and replicate them to their mirror replication queue (which is highly available since they both share it). {{% wbr %}}- When the database is restarted, the mirror reconnects to it and persistency is resumed from the point it was stopped, prior to the failure. No data is lost. |
 
 # Unlikely Failure Scenarios
 
 The following failure scenarios are highly unlikely. However, it might be useful to understand how such scenarios are handled by GigaSpaces. This is detailed in the table below.
 
-Active services are {{% color green %}}green{{% endcolor %}}, while failed services are {{% color red %}}red{{% endcolor %}}.
+Active services are {{% color green %}}green{{% /color %}}, while failed services are {{% color red %}}red{{% /color %}}.
 
 {: .table .table-bordered .table-condensed}
 | Active/Failed Services | Cluster Behavior |
 |:-----------------------|:-----------------|
-| * {{% color red %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color green %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color red %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color green %}}Database{{% endcolor %}}{{% wbr %}}| * Data which has already been saved in the database is safe.{{% wbr %}}- Data held in the mirror replication queue still exists in the backup, so no data is lost. |
-| * {{% color red %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color green %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color green %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color red %}}Database{{% endcolor %}}{{% wbr %}}| * Data which has already been saved in the database is safe. {{% wbr %}}- Data held in the mirror replication queue still exists in the backup, so no data is lost. |
-| * {{% color green %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color red %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color red %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color green %}}Database{{% endcolor %}}{{% wbr %}}| Same as above -- no data is lost. |
-| * {{% color green %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color red %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color green %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color red %}}Database{{% endcolor %}}{{% wbr %}}| Same as above -- no data is lost. |
-| * {{% color green %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color green %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color red %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color red %}}Database{{% endcolor %}}{{% wbr %}}| * Data which has already been saved in the database is safe. {{% wbr %}}- Data queued in the mirror replication queue still exists in the primary and the backup, so no data is lost. |
-| * {{% color red %}}Primary{{% endcolor %}}{{% wbr %}}- {{% color red %}}Backup{{% endcolor %}}{{% wbr %}}- {{% color green %}}Mirror{{% endcolor %}}{{% wbr %}}- {{% color green %}}Database{{% endcolor %}}{{% wbr %}}| * All data that was successfully replicated to the mirror (and hence persisted to the database) is safe.{{% wbr %}}- Data queued in the mirror replication queue in the primary and backup spaces is lost. {{% wbr %}}- If you encounter this scenario, a configuration with two backups per partition should be considered. |
+| * {{% color red %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color red %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * Data which has already been saved in the database is safe.{{% wbr %}}- Data held in the mirror replication queue still exists in the backup, so no data is lost. |
+| * {{% color red %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color red %}}Database{{% /color %}}{{% wbr %}}| * Data which has already been saved in the database is safe. {{% wbr %}}- Data held in the mirror replication queue still exists in the backup, so no data is lost. |
+| * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color red %}}Backup{{% /color %}}{{% wbr %}}- {{% color red %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| Same as above -- no data is lost. |
+| * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color red %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color red %}}Database{{% /color %}}{{% wbr %}}| Same as above -- no data is lost. |
+| * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color red %}}Mirror{{% /color %}}{{% wbr %}}- {{% color red %}}Database{{% /color %}}{{% wbr %}}| * Data which has already been saved in the database is safe. {{% wbr %}}- Data queued in the mirror replication queue still exists in the primary and the backup, so no data is lost. |
+| * {{% color red %}}Primary{{% /color %}}{{% wbr %}}- {{% color red %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * All data that was successfully replicated to the mirror (and hence persisted to the database) is safe.{{% wbr %}}- Data queued in the mirror replication queue in the primary and backup spaces is lost. {{% wbr %}}- If you encounter this scenario, a configuration with two backups per partition should be considered. |
