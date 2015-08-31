@@ -511,7 +511,7 @@ char timestamp long clob blob empty_clob() empty_blob() lob true false
 
 The JDBC Driver should be configured using the following properties. These should be part of the [The Space Component](./the-space-configuration.html#proxy) configuration when deployed:
 
-{: .table .table-bordered .table-condensed}
+
 | Parameter | Description | Default Value |
 |:----------|:------------|:--------------|
 |space-config.QueryProcessor.space_read_lease_time|Read timeout. Millisec units.|0|
