@@ -11,7 +11,7 @@ weight: 400
 
 # RemotingService
 
-{: .table .table-bordered}
+
 |Class Annotation    | @RemotingService|
 |Description         | Spring provides support for various remoting technologies. GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol |
 |Attribute Annotation| @ExecutorProxy  |
@@ -54,7 +54,7 @@ public interface MyService {
 
 # ExecutorProxy
 
-{: .table .table-bordered}
+
 |Attribute Annotation| @ExecutorProxy  |
 |Description         | Spring provides support for various remoting technologies. GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol |
 
@@ -80,7 +80,7 @@ public class DataRemoting {
 
 # Routing
 
-{: .table .table-bordered}
+
 |Method argument     | @Routing |
 |Description         | Spring provides support for various remoting technologies. GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol |
 

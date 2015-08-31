@@ -25,7 +25,7 @@ The `StandaloneProcessingUnitContainer` provides an executable `main()` method t
 
 The `StandaloneProcessingUnitContainer` class provides an executable `main()` method, allowing you to run it directly via a shell script for example. The `main()` method uses the `StandaloneProcessingUnitContainerProvider` class and program arguments in order to create the `StandaloneProcessingUnitContainer`. The following is a list of all the possible program arguments that can be specified to the `StandaloneProcessingUnitContainer`:
 
-{: .table .table-bordered .table-condensed}
+
 | Option | Description |
 |:-------|:------------|
 |-config [configLocation] | Allows you to set/add a processing unit deployment descriptor location.{{% wbr %}}Follows the Spring [Resource Loader](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-resourceloader) including [ant style patterns](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-app-ctx-wildcards-in-resource-paths). This parameter can be specified multiple times.{{% wbr %}}The default is **classpath*:/META-INF/spring/pu.xml**. |

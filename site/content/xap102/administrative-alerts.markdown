@@ -40,7 +40,7 @@ The following diagram illustrates a simple flow of events/statistics sent to the
 
 XAP is packaged with a number of predefined alerts whose thresholds are configurable. XAP does not currently allow for custom alerts defined by the user. Alerts can be either raised or resolved. For example, a CPU alert can be raised when the CPU utilization on a certain host crosses a certain threshold (say 80%) for a predefined amount of time. This alert can be resolved when the CPU utilization goes below another threshold (say 30%) for a predefined amount of time.
 
-{: .table .table-bordered}
+
 | Alert Type| Default Thresholds|
 |:----------|:------------------|
 | CPU Utilization Alert | - Raise an alert if CPU utilization is above 80% for 1 minute{{% wbr %}}- Resolve alert if CPU utilization is below 60% for 1 minute |
@@ -123,7 +123,7 @@ The `alertTriggered` method is called upon each alert triggered.
 
 The `org.openspaces.admin.alert.Alert` instance includes the following set of properties:
 
-{: .table .table-bordered}
+
 | Name | Description | Value |
 |:-----|:------------|:------|
 | Description | The readable description of the alert | e.g. CPU Utilization crossed a threshold of 80% |

@@ -221,7 +221,7 @@ Specifying number of partitions explicitly is recommended only when fine grained
 {{% inittab memoryCapacityPerContainer %}}
 {{% tabcontent memoryCapacityPerContainer 6G %}}
 
-{: .table .table-bordered .table-condensed}
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 6GB = 12GB|
@@ -232,7 +232,7 @@ Specifying number of partitions explicitly is recommended only when fine grained
 {{% /tabcontent %}}
 {{% tabcontent memoryCapacityPerContainer 12G %}}
 
-{: .table .table-bordered .table-condensed}
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 12GB = 24GB|
@@ -243,7 +243,7 @@ Specifying number of partitions explicitly is recommended only when fine grained
 {{% /tabcontent %}}
 {{% tabcontent memoryCapacityPerContainer 24G %}}
 
-{: .table .table-bordered .table-condensed}
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 24GB = 48GB|

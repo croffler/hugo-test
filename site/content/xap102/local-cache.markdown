@@ -218,7 +218,7 @@ When using a local cache with `GigaSpace`, the cache policy is set to `LRU` and 
 
 In order to properly configure the local cache eviction mechanism, you should consider tuning the following configuration elements:
 
-{: .table .table-bordered}
+
 |Parameter|Suggested Value|
 |:--------|:--------------|
 |space-config.engine.cache_size|5000000|
@@ -280,7 +280,7 @@ Below is the result of a simple benchmark comparing [Ehcache](http://ehcache.org
 
 # Local Cache Properties
 
-{: .table .table-bordered .table-condensed}
+
 | Property | Description | Default Value | Unit |
 |:---------|:------------|:--------------|:-----|
 |<nobr>max-disconnection-duration</nobr>| If local cache disconnection duration exceeds this value, the local cache enters a **disconnected** state, wherein each operation throws an exception stating the cache is disconnected| 60000 | milliseconds |

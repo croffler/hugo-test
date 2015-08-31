@@ -168,7 +168,7 @@ Copy the `xap-cassandra.jar` from `lib\optional\datasource\cassandra` to `lib\op
 
 ### `CassandraSpaceDataSource` Properties
 
-{: .table .table-bordered}
+
 |Property|Description|Default|
 |:-------|:----------|:------|
 |cassandraDataSource|A configured `org.apache.cassandra.cql.jdbc.CassandraDataSource` bean. Must be configured to use CQL 2.0.0.| |

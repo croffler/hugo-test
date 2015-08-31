@@ -148,7 +148,7 @@ archiveContainer.destroy();
 
 #### CassandraArchiveOperationHandler Properties
 
-{: .table .table-bordered .table-condensed}
+
 |Property|Description|
 |:-------|:----------|
 |gigaSpace| GigaSpace reference used for type descriptors. see [Archive Container#Configuration](./archive-container.html#Configuration)|

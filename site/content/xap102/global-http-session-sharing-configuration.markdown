@@ -48,7 +48,7 @@ The following should be located under **main** section.
 ###Space Connector - Manages connections with the space
 
 
-{: .table   .table-condensed   .table-bordered}
+
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |connector| wrap SpaceProxy and perform operation against space|Yes|`com.gigaspaces.httpsession.SpaceConnector`|
@@ -61,7 +61,7 @@ The following should be located under **main** section.
 
 ###Store Mode - Configure how changes are saved to the space
 
-{: .table   .table-condensed   .table-bordered}
+
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |listener|Fully qualified class name implementing `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No|`com.gigaspaces.httpsession.policies.TraceListener`|
@@ -72,7 +72,7 @@ The following should be located under **main** section.
 
 ###Session Manager - XAP Session Manager Implementation
 
-{: .table   .table-condensed   .table-bordered}
+
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |sessionDAO|Provides a transparent caching layer between the components that use it and the underlying EIS (Enterprise Information System) session backing store |Yes|org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO|
@@ -83,7 +83,7 @@ The following should be located under **main** section.
 
 ###Session Policy - Authentication settings
 
-{: .table   .table-condensed   .table-bordered}
+
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |policy|Provides functionality of session policy to apply e.g. with and without authentication. |Yes| Options:<br>1.`com.gigaspaces.httpsession.policies.SessionPolicyWithLogin` <br>2.`com.gigaspaces.httpsession.policies.SessionPolicyWithoutLogin` |
@@ -92,7 +92,7 @@ The following should be located under **main** section.
 
 ###Serializer
 
-{: .table   .table-condensed   .table-bordered}
+
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |serializer|Provides serialization functionality|Yes| use one of the following options: 	1.`com.gigaspaces.httpsession.serialize.KryoSerializerImpl` (recomended)	2.`com.gigaspaces.httpsession.serialize.XStreamSerializerImpl` <br> 3. Custom - an implementation of the `com.gigaspaces.httpsession.serialize.Serializer` interface
@@ -101,7 +101,7 @@ The following should be located under **main** section.
 
 ###Cache Manager - XAP Cache Manager Implementation
 
-{: .table   .table-condensed   .table-bordered}
+
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |compressor|Provides compress functionality|No| Provides your own `com.gigaspaces.httpsession.serialize.Compressor` implementation or use one of the out of the box option:<br> 1.`com.gigaspaces.httpsession.serialize.CompressorImpl`<br>2.`com.gigaspaces.httpsession.serialize.NonCompressCompressor`|

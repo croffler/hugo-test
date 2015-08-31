@@ -71,7 +71,7 @@ Once you have an implementation that supports some or all of the change operatio
 
 Here is the full list of change operations:
 
-{: .table .table-bordered .table-condensed}
+
 |ChangeSet operation|Mirror Change Support Name|ChangeOperation class|Comment|
 |:------------------|:-------------------------|:--------------------|:------|
 |**ChangeSet.set**|set|SetOperation| |

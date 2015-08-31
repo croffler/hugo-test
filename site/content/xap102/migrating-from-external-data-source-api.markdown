@@ -41,7 +41,7 @@ Please note that the new two classes `SpaceDataSource` and `SpaceSynchronization
 One of the advantages the `SpaceDataSource` and `SpaceSynchronizationEndpoint` is the fact that it defines a single API for the purpose of persistency so instead of implementing many interfaces, one should extend only the the classes and methods which matches the requested functionality.
 The following table lists the EDS interfaces methods replaced by the new Space Persistency classes:
 
-{: .table .table-bordered}
+
 |EDS Method|Space Persistency Method|
 |:---------|:-----------------------|
 |ManagedDataSource.init|Properties injected via Spring|

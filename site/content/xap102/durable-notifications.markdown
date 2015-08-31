@@ -36,7 +36,7 @@ Durable notifications are always sent as batches over the network (even if the c
 EventSessionConfig#setBatch(int size, long delay, int pendingThreshold)
 {{% /highlight %}}
 
-{: .table .table-bordered}
+
 |Property| Description | Default | Unit |
 |:-------|:------------|:--------|:-----|
 |size|The upper bound for the amount of notifications sent in each batch (Note: events that occurred under transactions will be sent on commit and the entire transaction is counted as one operation for the upper bound).|5000| |
@@ -58,7 +58,7 @@ setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener)
 setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener, long renewExpiration, long renewDuration, long renewRTT)
 {{% /highlight %}}
 
-{: .table .table-bordered}
+
 |Property|Description|Default|Unit|
 |:-------|:----------|:------|:---|
 |renew|Must be set to `true` in order to receive disconnection notifications.|false| |

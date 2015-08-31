@@ -33,7 +33,7 @@ The REST API exposing HTTP based interface Space. It is leveraging the [XAP API]
 
 
 
-{: .table .table-bordered .table-condensed}
+
 |Description |Introduce the specific type to space. |
 |Request URL| PUT http://localhost:8080/{Type}/_introduce_type  |
 
@@ -97,7 +97,7 @@ Response Schema:
 
 Predefined types and their conversion:
 
-{: .table .table-bordered .table-condensed}
+
 | Type name | Java class |
 |:-----|:----------|:-----------|
 | int32 | java.lang.Integer |
@@ -122,7 +122,7 @@ curl -XPUT -H "Content-Type: application/json" -d '{"idProperty":{"propertyName"
 # Write
 
 
-{: .table .table-bordered .table-condensed}
+
 |Description | Write single entry to the space.|
 |Request URL | POST http://localhost:8080/{Type}/ |
 |Request Headers|Content-Type: application/json   |
@@ -145,7 +145,7 @@ curl -XPOST -H "Content-Type: application/json" -d '{"id":1, "name":"myName", "a
 
 # Write Multiple
 
-{: .table .table-bordered .table-condensed}
+
 |Description| Write multiple entries to the space. |
 |Request URL|POST http://localhost:8080/{Type}/ |
 |Request Headers|Content-Type: application/json |
@@ -170,7 +170,7 @@ curl -XPOST -H "Content-Type: application/json" -d '[{"id":2, "name":"John", "ag
 
 # Count
 
-{: .table .table-bordered .table-condensed}
+
 |Description| Returns the number of entries in space of the specified type|
 |Request URL|GET http://localhost:8080/{Type}/count  |
 
@@ -191,7 +191,7 @@ curl -XGET http://localhost:8080/{Type}/count
 
 # Read Multiple
 
-{: .table .table-bordered .table-condensed}
+
 |Description| Read multiple entries from space that matches the query. |
 |Request URL|GET http://localhost:8080/{Type}/ |
 |Request Query Parameters|query - a [SQLQuery](./query-sql.html) that is a SQL-like syntax <br>max - the maximum amount of entries to read |
@@ -226,7 +226,7 @@ curl -XGET http://localhost:8080/MyObject/?query=id=%271%27%20or%20id=%272%27%20
 
 # Read By Id
 
-{: .table .table-bordered .table-condensed}
+
 |Description|  Read entry from space with the provided id  |
 |Request URL|GET http://localhost:8080/{Type}/{id}  |
 
@@ -251,7 +251,7 @@ curl -XGET http://localhost:8080/MyObject/3
 
 # Update Multiple
 
-{: .table .table-bordered .table-condensed}
+
 |Description|  Update entries in space  |
 |Request URL|POST http://localhost:8080/{Type}  |
 
@@ -277,7 +277,7 @@ curl http://localhost:8080/MyObject/?query=age=11
 
 # Take Multiple
 
-{: .table .table-bordered .table-condensed}
+
 |Description| Gets and deletes entries from space that matches the query. |
 |Request URL|DELETE http://localhost:8080/{Type}/  |
 |Request Query Parameters|query - a [SQLQuery](./query-sql.html) that is a SQL-like syntax  |
@@ -315,7 +315,7 @@ curl -XGET http://localhost:8080/MyObject/?query=id=%271%27%20or%20id=%272%27%20
 
 # Take By Id
 
-{: .table .table-bordered .table-condensed}
+
 |Description|  Gets and deletes the entry from space with the provided id |
 |Request URL|DELETE http://localhost:8080/{Type}/{id}   |
 

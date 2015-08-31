@@ -105,7 +105,7 @@ GigaSpaces JDBC Driver supports the following transaction managers:
 
 The transaction manager type can be configured via JDBC's connection properties (there are additional properties for lookup distributed tx manager):
 
-{: .table .table-bordered .table-condensed}
+
 |Property|Description|
 |:-------|:----------|
 | gs.tx_manager_type | Transaction manager type: "local"/"distributed"/"lookup_distributed" |
@@ -256,7 +256,7 @@ The GigaSpaces JDBC Driver translates in runtime a Space object into a relationa
 
 The following information represents the SQL to Java mapping conducted at runtime when a table is created via the JDBC driver.
 
-{: .table .table-bordered .table-condensed}
+
 |SQL Type|Java Type|
 |:-------|:--------|
 | VARCHAR, VARCHAR2 | java.lang.String |

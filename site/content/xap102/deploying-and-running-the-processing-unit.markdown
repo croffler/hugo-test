@@ -24,7 +24,7 @@ Note that both the integrated processing unit container and the standalone one r
 
 The following table summarizes when to use each of the runtime modes
 
-{: .table .table-bordered}
+
 | You Would Like to... | Runtime Mode | Processing Unit Container Name |
 |:---------------------|:-------------|:-------------------------------|
 |  Unit test your processing unit within your IDE | [Embedded in IDE](./running-and-debugging-within-your-ide.html) | Integrated Processing Unit Container |

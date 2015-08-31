@@ -152,7 +152,7 @@ Once a lease is given to a lease renewal manager, the manager will continue to r
 
 LeaseRenewalManager supports [Configuration](http://www.gigaspaces.com/docs/JiniApi/net/jini/config/Configuration.html) entries, with component "net.jini.lease.LeaseRenewalManager":
 
-{: .table .table-bordered}
+
 | Property | Type | Default | Description |
 |:---------|:-----|:--------|:------------|
 | roundTripTime | long| 10 * 1000 // 10 seconds | The worst-case latency, expressed in milliseconds, between client and GigaSpace cluster (call to renew a lease). The value must be greater than zero. Unrealistically low values for this entry may result in failure to renew a lease. Leases managed by this manager should have durations exceeding the roundTripTime. This entry is obtained in the constructor.|

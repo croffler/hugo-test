@@ -212,7 +212,7 @@ public class Data {
 
 The Hibernate Space Persistency implementation includes the following properties:
 
-{: .table .table-bordered .table-condensed}
+
 |Property|Description|Default|
 |:-------|:----------|:------|
 |fetchSize|Sets the fetch size that will be used when working with scrollable results. |100|

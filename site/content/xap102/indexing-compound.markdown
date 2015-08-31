@@ -28,7 +28,7 @@ public class Data {
 
 The benchmark has a space with different sets of space objects data:
 
-{: .table .table-bordered .table-condensed}
+
 |Condition|Scenario 1 matching objects|Scenario 2 matching objects|Scenario 3 matching objects|
 |:--------|:--------------------------|:--------------------------|:--------------------------|
 |data1 = 'A' |401,000| 410,000 | 400,000 |

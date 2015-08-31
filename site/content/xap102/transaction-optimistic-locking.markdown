@@ -344,7 +344,7 @@ When there are more than 2 clients (or 2 threads within the same client) that mi
 
 Suppose that you have two applications, Application_1 and Application_2, which are both working with the same Object A. The following sequence of events describes a simple optimistic locking scenario.
 
-{: .table .table-bordered .table-condensed}
+
 | Time | Action | Application\_1 | Application\_2 |
 |:-----|:-------|:---------------|:---------------|
 | T=1 | Initial conditions: both applications read the object from the space. | Object A `VersionID=1`{{% wbr %}}`Value1=X`{{% wbr %}} `Value2=Y` | Object A{{% wbr %}}`VersionID=1`{{% wbr %}}`Value1=X`{{% wbr %}}`Value2=Y` |

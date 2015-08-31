@@ -100,7 +100,7 @@ Allow from 127.0.0.1
 
 
 
-{: .table .table-bordered .table-condensed}
+
 |Command Line parameter|Description|Default Value|
 |:---------------------|:----------|:------------|
 |-apache `location`|The installation location of apache (`apache root folder`).|windows/unix common locations|

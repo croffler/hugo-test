@@ -202,7 +202,7 @@ Creating a Local View directly from the space url is deprecated - use `LocalView
 
 This properties can be configured on the space side and they will affect all the local views which are created on top of that space.
 
-{: .table .table-bordered .table-bordered}
+
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | cluster-config.groups.group.repl-policy.redo-log-local-view-capacity | Specifies the total capacity of replication packets the redo log can hold for a local view replication target | 150000 |

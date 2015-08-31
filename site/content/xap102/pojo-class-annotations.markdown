@@ -17,7 +17,7 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 
 # Persistence
 
-{: .table   .table-condensed  .table-bordered}
+
 |Syntax     | persist |
 |Argument   | boolean          |
 |Default    | false|
@@ -37,7 +37,7 @@ public class Person {
 
 # Include Properties
 
-{: .table   .table-condensed  .table-bordered}
+
 |Syntax     | includeProperties|
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | IncludeProperties.IMPLICIT|
@@ -54,7 +54,7 @@ public class Person {
 
 # FIFO Support
 
-{: .table   .table-condensed  .table-bordered}
+
 |Syntax     | fifoSupport |
 |Argument   | [FifoSupport]({{% javadoc "com/gigaspaces/annotation/pojo/FifoSupport" %}})|
 |Default    | FifoSupport.NOT_SET|
@@ -74,7 +74,7 @@ public class Person {
 
 # Inherit Index
 
-{: .table   .table-condensed  .table-bordered}
+
 |Syntax     | inheritIndexes |
 |Argument   | boolean          |
 |Default    | true|
@@ -93,7 +93,7 @@ public class Person {
 
 # Storage Type
 
-{: .table   .table-condensed  .table-bordered}
+
 |Syntax     | storageType |
 |Argument   | [StorageType]({{% javadoc "com/gigaspaces/metadata/StorageType" %}})          |
 |Default    | StorageType.OBJECT |
@@ -113,7 +113,7 @@ public class Person {
 
 # Replication
 
-{: .table   .table-condensed  .table-bordered}
+
 |Syntax     | replicate |
 |Argument   | boolean          |
 |Default    | true|
@@ -135,7 +135,7 @@ public class Person {
 
 # Compound Index
 
-{: .table   .table-condensed  .table-bordered}
+
 |Syntax     | CompoundSpaceIndexes CompoundSpaceIndex paths  |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
@@ -163,7 +163,7 @@ public class User {
 
 # Blob Store
 
-{: .table   .table-condensed  .table-bordered}
+
 |Syntax     | blobstoreEnabled  |
 |Argument | boolean          |
 |Default | true|

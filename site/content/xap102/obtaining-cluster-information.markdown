@@ -18,7 +18,7 @@ This mechanism is also used internally by the platform to maintain the clusterin
 
 As mentioned above the cluster information is passed to the components of each processing unit instance via an instance of the `org.openspaces.core.cluster.ClusterInfo` class, which holds the following information:
 
-{: .table .table-bordered .table-condensed}
+
 | Attribute Name | Description | Method |
 |:---------------|:------------|:-------|
 | Cluster schema | If the processing unit contains an embedded space, the cluster schema of that space | `getSchema()`|
@@ -87,7 +87,7 @@ public class MyBean {
 
 The [Space component](./the-space-configuration.html) implements the `ClusterInfoAware`, and uses it in order to construct an embedded space by mapping `ClusterInfo` properties to Space URL properties (if provided). Here is a mapping from `ClusterInfo` to Space URL properties:
 
-{: .table .table-bordered .table-condensed}
+
 |ClusterInfo|Space URL|
 |:----------|:--------|
 | ClusterInfo#getSchema | cluster_schema |
@@ -109,7 +109,7 @@ When running the processing unit in any of the [runtime modes](./deploying-and-r
 
 In the above example, the value of the `connectionUrl` property of `myBean` is  built based on the `runningNumber` provided by the `ClusterInfo` instance. Here is a list mapping the `ClusterInfo` properties to their equivalent `${clusterInfo.*`} syntax:
 
-{: .table .table-bordered .table-condensed}
+
 |ClusterInfo|Space URL|
 |:----------|:--------|
 | ClusterInfo#getSchema | clusterInfo.schema |

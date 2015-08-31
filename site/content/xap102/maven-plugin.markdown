@@ -130,7 +130,7 @@ mvn os:create
     -Dtemplate=<project-template>
 {{% /highlight %}}
 
-{: .table .table-bordered .table-condensed}
+
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `groupId` | The project package name | No | `com.mycompany.app` |
@@ -187,7 +187,7 @@ mvn os:run
     -Dmodule=<module-name>
 {{% /highlight %}}
 
-{: .table .table-bordered .table-condensed}
+
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
 | `cluster` | Cluster properties | No| * `schema` -- the cluster schema name{{% wbr %}}- `total_members` -- a list of the cluster members, separated by a comma{{% wbr %}}- `id` -- the cluster ID{{% wbr %}}- `backup_id` -- the backup ID | * `schema=partitioned`{{% wbr %}}- `total_members=1,1`{{% wbr %}}- `id=1`{{% wbr %}}- `backup_id=1` |
@@ -242,7 +242,7 @@ If not specified explicitly, unit tests are executed when packaging the Processi
 
 To suppress the execution of unit tests, add one of the following arguments to the command line: `skipTests` or `maven.test.skip`:
 
-{: .table .table-bordered .table-condensed}
+
 | Argument | Description |
 |:---------|:------------|
 | `skipTests` | Skips the unit test execution, but still performs unit test compilation |
@@ -274,7 +274,7 @@ mvn os:run-standalone
     -Dmodule=<module-name>
 {{% /highlight %}}
 
-{: .table .table-bordered .table-condensed}
+
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
 | `cluster` | Cluster properties | No| * `schema` -- the cluster schema name{{% wbr %}}- `total_members` -- a list of the cluster members, separated by a comma{{% wbr %}}- `id` -- the cluster ID{{% wbr %}}- `backup_id` -- the backup ID | * `schema=partitioned`{{% wbr %}}- `total_members=1,1`{{% wbr %}}- `id=1`{{% wbr %}}- `backup_id=1` |
@@ -325,7 +325,7 @@ mvn os:deploy
     -Dmodule=<module-name>
 {{% /highlight %}}
 
-{: .table .table-bordered .table-condensed}
+
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `sla` | The SLA policy | No | |
@@ -357,7 +357,7 @@ mvn os:undeploy
     -Dmodule=<module-name>
 {{% /highlight %}}
 
-{: .table .table-bordered .table-condensed}
+
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `groups` | Comma-delimited list of lookup group names | No | gigaspaces-\<VERSION\> |
@@ -476,7 +476,7 @@ mvn os:hsql-ui
     -Dhelp
 {{% /highlight %}}
 
-{: .table .table-bordered .table-condensed}
+
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `driver` | JDBC driver class | No | org.hsqldb.jdbcDriver |

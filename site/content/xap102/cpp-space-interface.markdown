@@ -327,7 +327,7 @@ The c++ worker implementation must derive from the `ICppWorker` class, so that t
 
 The `ICppWorker` includes the following methods:
 
-{: .table .table-bordered}
+
 | Return value | Method |
 |:-------------|:-------|
 | `virtual` | `\~ICppWorker()` -- destructor |

@@ -372,7 +372,7 @@ The following example demonstrates how to set the timeout for waiting for distri
 
 Distributed transaction participants' data will be processed individually if ten seconds have passed and all of the participants data has **not** arrived or if 20 new operations were executed after the distributed transaction.
 
-{: .table .table-bordered .table-condensed}
+
 |Attribute|Default Value|
 |:--------|:------------|
 |space-config.mirror-service.distributed-transaction-processing.wait-timeout|60000 milliseconds|
@@ -460,7 +460,7 @@ Logging is divided according to `java.util.logging.Level` as follows:
 
 {{% indent %}}
 
-{: .table .table-bordered .table-condensed}
+
 | Level | Description |
 |:------|:------------|
 | `INFO` | The default level for informative messages. |
@@ -476,7 +476,7 @@ This section describes how the GigaSpaces Mirror Service handles different failu
 Active services are
 {{% color green %}}green{{% /color %}}, while failed services are {{% color red %}}red{{% /color %}}.
 
-{: .table .table-bordered .table-condensed}
+
 | Active/Failed Services | Cluster Behavior |
 |:-----------------------|:-----------------|
 | * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * The primary and backup spaces, each include a copy of the mirror replication queue (which is created in the backup, as part of the synchronized replication between the primary and the backup). {{% wbr %}}- The mirror doesn't acknowledge the replication until the data is successfully committed to the database.{{% wbr %}}- Every time the primary gets an acknowledgment from the mirror, it notifies the backup of the last exact point in the replication queue where replication to the mirror was successful.{{% wbr %}}- This way, the primary and backup space include the same copy of the data and are also in sync with whatever data was replicated to the mirror and written to the database. |
@@ -491,7 +491,7 @@ The following failure scenarios are highly unlikely. However, it might be useful
 
 Active services are {{% color green %}}green{{% /color %}}, while failed services are {{% color red %}}red{{% /color %}}.
 
-{: .table .table-bordered .table-condensed}
+
 | Active/Failed Services | Cluster Behavior |
 |:-----------------------|:-----------------|
 | * {{% color red %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color red %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * Data which has already been saved in the database is safe.{{% wbr %}}- Data held in the mirror replication queue still exists in the backup, so no data is lost. |

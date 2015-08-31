@@ -19,7 +19,7 @@ With XAP, it is possible for the JMS application to control and decide exactly w
 
 To summarize, the table below shows which operations are supported, allowing interoperability between the JMS and space API.
 
-{: .table .table-bordered}
+
 | Operation | JMS Application | Space Application |
 |:----------|:---------------:|:-----------------:|
 | Write JMS messages to space | {{% oksign %}} | {{% oksign %}} |

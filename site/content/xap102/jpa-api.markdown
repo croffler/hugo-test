@@ -231,7 +231,7 @@ An entity class must meet the following requirements:
 
 GigaSpaces JPA Entities must have both JPA and GigaSpaces annotations for the following annotations:
 
-{: .table .table-bordered .table-condensed}
+
 |GigaSpaces|JPA|
 |:---------|:--|
 | @SpaceId| @Id/@EmbeddedId|

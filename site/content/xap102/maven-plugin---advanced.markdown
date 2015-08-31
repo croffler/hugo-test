@@ -68,7 +68,7 @@ When defining a dependency for an artifact (module), you can specify the depende
 
 Maven defines the following scopes:
 
-{: .table .table-bordered .table-condensed}
+
 | Scope | Description |
 |:------|:------------|
 | **compile** | Indicates that the dependency is available for the classpaths of all phases. **This is the default scope**. |

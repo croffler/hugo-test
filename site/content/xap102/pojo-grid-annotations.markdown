@@ -10,7 +10,7 @@ weight: 400
 
 # GigaSpaceContext
 
-{: .table .table-bordered}
+
 |Attribute Annotation| @GigaSpaceContext  |
 |Description         | In previous Spring releases, Spring only allowed you to inject the GigaSpace instance using setter injection or constructor injection. XAP extended this injection mechanism by allowing you to use annotations to inject a GigaSpace instance. As of Spring 2.5, this is no longer required since Spring support annotation based injection using the @Resource or @Autowired annotations.  |
 
@@ -85,7 +85,7 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 
 # GigaSpaceLateContext
 
-{: .table .table-bordered}
+
 |Class Annotation    |  |
 |Attribute Annotation| @GigaSpaceLateContext  |
 |Description         |  XAP allows you to define beans (such as filters), that are later injected to the actual space. If such beans require access to the GigaSpace instance, a cyclic dependency occurs (GigaSpace requires the Space, but the Space requires the filter injection). XAP allows you to use the same annotation-based injection mechanism in order to inject the GigaSpace instance at a different lifecycle stage. |
@@ -149,7 +149,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 
 # ClusterInfoContext
 
-{: .table .table-bordered}
+
 |Attribute Annotation| @ClusterInfoContext  |
 |Description         | This annotation injects cluster information into the class.  |
 

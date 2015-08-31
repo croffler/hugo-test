@@ -76,7 +76,7 @@ Here is the structure of the class loaders when several web applications are dep
 
 The following table shows which user controlled locations end up in which class loader, and the important JAR files that exist within each one:
 
-{: .table .table-bordered}
+
 |Class Loader|User Locations|Built in Jar Files|
 |:-----------|:-------------|:-----------------|
 |Common|\[GSRoot\]/lib/platform/ext/*.jar|gs-runtime.jar|

@@ -48,7 +48,7 @@ or
 
 ####\<os-core:rest\> attributes
 
-{: .table .table-bordered .table-condensed}
+
 | Attribute name | Use | Description |
 |:-----|:----------|
 | port | required | The port which the rest service will be available on. {{% wbr %}}If there are multiple instances, the port for each instance will be port+runningNumber (starting from 0) |

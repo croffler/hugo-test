@@ -42,7 +42,7 @@ XAP comes with several built-in Aggregators you may use. The aggregation process
 
 <br>
 
-{: .table .table-bordered .table-condensed}
+
 | Name | Description |
 |:-----|:------------|
 |min| Returns the minimum value for a set of data grid entries for a given field (path) based on a given query.|

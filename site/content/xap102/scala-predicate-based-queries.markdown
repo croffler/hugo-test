@@ -56,7 +56,7 @@ case class Person @SpaceClassConstructor() (
 
 ## Translations
 
-{: .table .table-bordered}
+
 |Predicate Query|Translated SQL Query|
 |:--------------|:-------------------|
 |`==` <br> predicateGigaSpace read { person: Person =><br>  person.name == "john"<br> } | `=` {{% wbr %}} gigaSpace read new SQLQuery(classOf[Person], {{% wbr %}}  "name = ?", "john"{{% wbr %}}) |
