@@ -60,7 +60,7 @@ Current version : {{<currentversion>}}
 
 # Code Highlight
 
-{{<shighlight>}}
+{{%shighlight%}}
 @SpaceClass
 public class User {
   private Long id;
@@ -77,9 +77,15 @@ public class User {
 	return id;
   }
 }
-{{</shighlight>}}
+{{%/shighlight%}}
 
-
+{{%shighlight%}}
+<import resource="classpath*:/applicationContext-component.xml" />
+<import resource="classpath*:/applicationContext-matching.xml"/>
+<import resource="classpath*:/applicationContext-services.xml"/>
+<import resource="classpath*:/applicationContext-jmx.xml" />
+<import resource="classpath*:/applicationContext-containers.xml"/>
+{{%/shighlight%}}
  
 
 
