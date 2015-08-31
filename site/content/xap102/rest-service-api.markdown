@@ -35,6 +35,7 @@ The REST API exposing HTTP based interface Space. It is leveraging the [XAP API]
 
 
 |Description |Introduce the specific type to space. |
+|----|--------------|
 |Request URL| PUT http://localhost:8080/{Type}/_introduce_type  |
 
 Request Schema:
