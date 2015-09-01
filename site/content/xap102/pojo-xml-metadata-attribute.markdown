@@ -14,10 +14,11 @@ All the properties are written automatically into space. If the field is a refer
 
 # Property
 
-
-|Syntax     | property name |
-|Argument   |  name of the attribute          |
-|Description| contains mapping info for a property of a class |
+|Property | Description|
+|---|---|
+|Syntax|property name|
+|Argument|name of the attribute|
+|Description|contains mapping info for a property of a class|
 
 Example:
 
@@ -33,6 +34,8 @@ Example:
 ### SpaceProperty
 
 
+|SpaceProperty | Description|
+|---|---|
 |Syntax     | null-value |
 |Description| Specifies that an attribute value be treated as `null` when the object is written to the space and no value is assigned to the attribute. (where `-1` functions as a `null` value in case of an int)|
 
@@ -50,7 +53,8 @@ Example:
 
 ### Reference
 
-
+|Reference | Description|
+|---|---|
 |Syntax     | reference |
 |Argument   | class name         |
 |Description| contains mapping information for a property of a class that is not primitive, but references another entity object. |
@@ -73,7 +77,8 @@ Example:
 
 ### SpaceStorageType
 
-
+|SpaceStorageType | Description|
+|---|---|
 |Syntax     | storage-type|
 |Argument   | [StorageType]({{% javadoc "com/gigaspaces/metadata/StorageType" %}})          |
 |Default    | object |
@@ -94,8 +99,10 @@ Example:
 
 ### SpaceIndex
 
-
+|SpaceIndex | Description|
+|---|---|
 |Syntax     |  index type|
+|--|--|
 |Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})  |
 |Description| Querying indexed fields speeds up read and take operations. The `index` tag should be used to specify an indexed field.|
 
@@ -122,8 +129,10 @@ Example:
 
 ### SpaceIndex Path
 
-
+| SpaceIndex Path| Description|
+|---|---|
 |Syntax     |  path type|
+|--|--|
 |Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})<br> path - indexed attribute|
 |Description| The `path` attribute represents the path of the indexed property within a nested object. |
 
@@ -145,8 +154,10 @@ Example:
 
 ### Unique Index
 
-
+|Unique Index | Description|
+|---|---|
 |Syntax     |  index type unique|
+|--|--|
 |Argument   |  [SpaceIndexType]({{%javadoc "com/gigaspaces/metadata/index/SpaceIndexType" %}})  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
 |Note |   The uniqueness is enforced per partition and not over the whole cluster. |
@@ -176,8 +187,10 @@ Example:
 
 ### SpaceFifoGroupingIndex
 
-
+|SpaceFifoGroupingIndex | Description|
+|---|---|
 |Syntax     | fifo-grouping-index path|
+|--|--|
 |Description| This tag is used to define a space FIFO grouping Index. |
 |Note |This tag can be declared on several properties in a class in order to assist in efficient traversal.<br>If defined, there must be a property in the class, marked with the `@SpaceFifoGroupingProperty` annotation.<br>A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.   |
 
@@ -210,8 +223,10 @@ Example:
 
 # SpaceId
 
-
+|SpaceId | Description|
+|---|---|
 |Syntax     | id  |
+|--|--|
 |Argument   | auto-generate |
 |Default    | false |
 |Description| Defines whether this field value is used when generating the Object ID. The field value should be unique -- i.e., no multiple objects with the same value should be written into the space (each object should have a different field value). When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Object ID is created, based on the `id` field value.<br>Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. If `autoGenerate` is declared as `false`, the field is indexed automatically. If `autoGenerate` is declared as `true`, the field isn't indexed. If `autoGenerate` is `true`, the field must be of the type `java.lang.String`. |
@@ -236,8 +251,10 @@ Example:
 
 # SpaceRouting
 
-
+|SpaceRouting | Description|
+|---|---|
 |Syntax     | routing  |
+|--|--|
 |Description| The `routing` tag specifies a get method for the field to be used to calculate the target space for the space operation (read , write...). The `routing` field value hash code is used to calculate the target space when the Space is running in **partitioned mode**.<br>The field value hash code is used to calculate the target space when the space is running in **partitioned mode**. |
 
 Example:
@@ -259,8 +276,10 @@ Example:
 
 # Class Reference
 
-
+|Class Reference | Description|
+|---|---|
 |Syntax     | class-ref  |
+|--|--|
 |Argument   | class name   |
 |Description| Contains the full qualified name of the specified class. |
 
@@ -277,8 +296,10 @@ Example:
 
 # SpacePersist
 
-
+|SpacePersist | Description|
+|---|---|
 |Syntax     | persist name=""|
+|--|--|
 |Description| This specifies a getter method for holding the persistency mode of the object overriding the class level persist declaration. This field should be of the boolean data type.<br>If the persist class level annotation is true, all objects of this class type will be persisted into the underlying data store (Mirror, ExternalDataSource, Storage Adapter).|
 |Note       | When using this option, you must have the space class level `persist` decoration specified.|
 
@@ -295,7 +316,8 @@ Example:
 
 # SpaceVersion
 
-
+|SpaceVersion | Description|
+|---|---|
 |Syntax     |  version  |
 |Description| This tag is used for object versioning used for optimistic locking. |
 |Note       | The attribute must be an `int` data type. |
@@ -323,7 +345,8 @@ Example:
 
 # SpaceExclude
 
-
+| SpaceExclude| Description|
+|---|---|
 |Syntax     |  exclude  |
 |Description| When this tag is specified the property is not written into the space.|
 |Note | - When `include-properties` is defined as `implicit`, `exclude` should   be used. This is because `implicit` instructs the system to take all POJO fields into account.<br>- When `include-properties` is defined as `explicit`, there is no need to use `exclude`.<br>- `exclude` can still be used, even if `include-properties` is not defined.  |
@@ -347,7 +370,8 @@ Example:
 
 # SpaceLeaseExpiration
 
-
+|SpaceLeaseExpiration | Description|
+|---|---|
 |Syntax     |  lease-expiration   |
 |Description|This tag specifies the property for holding the timestamp of when the instance's lease expires (this is a standard Java timestamp based on the 1/1/1970 epoch). This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
 
@@ -371,7 +395,8 @@ Example:
 
 # SpaceFifoGroupingProperty
 
-
+| SpaceFifoGroupingProperty| Description|
+|---|---|
 |Syntax     | fifo-grouping-property   path|
 |Argument   | path          |
 |Description| This tag is used to define a space FIFO grouping property. |
@@ -393,7 +418,8 @@ Example:
 
 # SpaceDynamicProperties
 
-
+|SpaceDynamicProperties | Description|
+|---|---|
 |Syntax     | dynamic-properties |
 |Description| Allows adding properties freely to a class without worrying about the schema.|
 
@@ -419,7 +445,8 @@ Example:
 
 # SpaceDocumentSupport
 
-
+|SpaceDocumentSupport | Description|
+|---|---|
 |Syntax     | document-support |
 |Description|  If the POJO contains properties which are POJO themselves, the space will implicitly convert these properties to space documents as needed.This works the other way around as well - if a Space document is created with a nested space document property, it will be converted to a POJO with a nested POJO property when read as a POJO. You can disable this implicit conversion and preserve the nested POJO instance within document entries by setting it to `copy`|
 
@@ -443,7 +470,8 @@ Example:
 
 # Space sequence number
 
-
+|Space sequence number | Description|
+|---|---|
 |Syntax     | sequence-number|
 |Description| A sequence number (like a data-base sequence-number/autoincrement column) is a property that is given a unique incrementing value when the entry is written to the Space. The sequence-number is unique per-partition.  The property is of type Long.   |
 

@@ -43,7 +43,7 @@ XAP is packaged with a number of predefined alerts whose thresholds are configur
 
 | Alert Type| Default Thresholds|
 |:----------|:------------------|
-| CPU Utilization Alert | - Raise an alert if CPU utilization is above 80% for 1 minute{{% wbr %}}- Resolve alert if CPU utilization is below 60% for 1 minute |
+| CPU Utilization Alert | - Raise an alert if CPU utilization is above 80% for 1 minute<br>- Resolve alert if CPU utilization is below 60% for 1 minute |
 | Physical Memory Utilization Alert | - Raise an alert if physical memory utilization is above 80% for 1 minute{{% wbr %}}- Resolve alert if physical memory utilization is below 60% for 1 minute |
 | Heap Memory Utilization Alert | - Raise an alert if JVM heap memory utilization is above 80% for 1 minute{{% wbr %}}- Resolve alert if JVM heap memory utilization is below 60% for 1 minute |
 | Garbage Collection Alert | - Raise an alert if a GC pause takes more than 10 seconds{{% wbr %}}- Resolve alert if GC pause takes less than 1 second |
