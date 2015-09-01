@@ -25,7 +25,6 @@ public class Person {
     private String name;
     private Integer id;
     private DocumentProperties extraInfo;
-
     public String getName() {return name}
     public void setName(String name) {this.name=name}
 
@@ -65,7 +64,6 @@ public class Person {
     private String name;
     private Integer id;
     private DocumentProperties extraInfo;
-
     public String getName() {return name}
     public void setName(String name) {this.name=name}
 

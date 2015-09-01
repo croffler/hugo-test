@@ -6,13 +6,13 @@ parent: client-side-caching.html
 weight: 100
 ---
 
-{{% ssummary page %}}{{% /ssummary %}}
+{{% ssummary %}}{{% /ssummary %}}
 
 A **Local Cache** is a Client Side Cache that maintains a subset of the master space's data based on the client application's recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master space and caches the result locally for future queries.
 
-{{% indent %}}
+
 ![local_cache.jpg](/attachment_files/local_cache.jpg)
-{{% /indent %}}
+
 
 
 # Usage
@@ -231,9 +231,11 @@ In order to properly configure the local cache eviction mechanism, you should co
 |space-config.engine.memory_usage.explicit-gc|false|
 |space-config.engine.memory_usage.retry_yield_time|100|
 
+
 {{%refer%}}
-See the [Memory Management Facilities]({{%currentadmurl%}}/memory-management-facilities.html) for additional details on these configuration properties.
+See the [Memory Management Facilities](/xap102adm/memory-management-facilities.html) for additional details on these configuration properties.
 {{%/refer%}}
+
 
 {{% tip %}}
 Having the property `space-config.engine.memory_usage.explicit-gc` set to 'enabled' is recommended only in extreme cases when there is high load on the system, with large amount of concurrent users accessing the local cache and when the amount of CPUs/Cores is relatively small.

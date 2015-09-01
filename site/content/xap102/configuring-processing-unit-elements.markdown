@@ -106,6 +106,7 @@ Here's a sample `pu.xml` configuration file. Note the comments in the file which
 To import one more more xml files into your pu.xml you can use the following:
 
 {{% highlight xml %}}
+<?xml version="1.0" encoding="UTF-8"?>
 <import resource="classpath*:/applicationContext-component.xml" />
 <import resource="classpath*:/applicationContext-matching.xml"/>
 <import resource="classpath*:/applicationContext-services.xml"/>

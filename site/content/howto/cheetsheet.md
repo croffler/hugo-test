@@ -60,7 +60,7 @@ Current version : {{<currentversion>}}
 
 # Code Highlight
 
-{{%shighlight%}}
+{{%shighlight java%}}
 @SpaceClass
 public class User {
   private Long id;
