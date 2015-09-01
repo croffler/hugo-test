@@ -11,7 +11,10 @@ title = "Panels"
  
 
 
-{{%warning title="Caution"%}}This is an warning panel{{%/warning%}}
+{{%warning title="Caution"%}}
+This type is a type-safe replacement for the old `NotifyModifiers` constants.
+Notifications for expired objects sent both from the primary and the backup space (in case you have such).
+{{%/warning%}}
 
 {{%tip title="Tip"%}}This is an Tip panel{{%/tip%}}
 

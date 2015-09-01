@@ -99,7 +99,7 @@ DataEventSession newDataEventSession(EventSessionConfig, Transaction)
 {{%/highlight%}}
 {{% /tabcontent   %}}
 
-{{% tabcontent  Simple Template Registration%}}
+{{% tabcontent  "Simple Template Registration"%}}
 Here is an example for getting an `EventSessionFactory`, generating a `DataEventSession`, and registering for notifications using simple template and cancelling the registration:
 
 {{%highlight java%}}
@@ -119,7 +119,7 @@ public class DataSessionEventExample implements RemoteEventListener
 {{%/highlight%}}
 {{% /tabcontent   %}}
 
-{{% tabcontent SQLQuery Template Registration%}}
+{{% tabcontent "SQLQuery Template Registration"%}}
 Here is an example for getting an `EventSessionFactory`, generating a `DataEventSession`, and registering for notifications using a `SQLQuery}`template and cancelling the registration:
 
 {{%highlight java%}}
@@ -365,7 +365,7 @@ When a partitioned space is started each partition getting list of existing noti
 
 # Cancelling Registration and Closing the Session
 {{% inittab %}}
-{{% tabcontent Cancelling Notify Registration%}}
+{{% tabcontent "Cancelling Notify Registration"%}}
 
 To cancel the notify registration, call the following:
 {{%highlight java%}}
@@ -375,7 +375,7 @@ To cancel the notify registration, call the following:
 This frees the relevant resources allocated to manage the notify registration, such as cancelling the automatic lease renewal, un exporting object client stubs, and releasing the client FIFO thread.
 {{% /tabcontent   %}}
 
-{{% tabcontent Closing the Session%}}
+{{% tabcontent "Closing the Session"%}}
 To close the session, call the following:
 {{%highlight java%}}
  DataEventSession.close();
@@ -414,7 +414,7 @@ public interface INotifyDelegatorFilter extends Serializable
 {{%/highlight  %}}
 {{% /tabcontent   %}}
 
-{{% tabcontent INotifyDelegatorFilter Implementation Example%}}
+{{% tabcontent "INotifyDelegatorFilter Implementation Example"%}}
 Below is an example for the `INotifyDelegatorFilter` implementation, where the `process()` method allows only messages with the value `aaa` to be delivered to the client:
 
 {{%highlight java%}}

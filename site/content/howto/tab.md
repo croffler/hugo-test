@@ -5,6 +5,17 @@ title = "Tab"
 
 +++
 
+
+{{%inittab %}}
+{{%tabcontent%}}
+This is tabcontent
+
+
+{{%/tabcontent%}}
+{{/%inittab%}}
+
+
+
 <!-- http://twitter.github.com/bootstrap/components.html#navs -->
 <div class="tabbable">
 <ul class="nav nav-tabs">

@@ -24,15 +24,7 @@ relationships | no       | relationships | Used for specifying the [relationship
 
 # Short Code 
 
-{{%table%}}
 
-{{%row "skdsjdsdsdsjkd"   "dkjsdjksjdksjdkskd"%}}
-{{%row "skdsjdsdsdsjkd"   "dkjsdjksjdksjdkskd"%}}
-{{%row "skdsjdsdsdsjkd"   "dkjsdjksjdksjdkskd"%}}
-{{%row "skdsjdsdsdsjkd"   "dkjsdjksjdksjdkskd"%}}
-{{%row "skdsjdsdsdsjkd"   "dkjsdjksjdksjdkskdsasahsghagshgas"%}}
-
-{{%/table%}}
 
 
 ## Option
