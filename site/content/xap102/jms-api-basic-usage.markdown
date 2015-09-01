@@ -37,9 +37,7 @@ In JMS 1.0.2, each domain used a separate set of interfaces. JMS 1.1 presents th
 ### Using Unified Messaging Model (JMS 1.1)
 
 {{% accordion acc1 %}}
-{{% accord title="**Click to see the code example:**" parent="acc1"%}}
-
-{{% panel  %}}
+{{% accord title="**Click to see the code example:**" parent="acc1" id="tab1" id="tab1"%}}
 
 {{% highlight java %}}
 ConnectionFactory connectionFactory = // obtain
@@ -78,7 +76,7 @@ connection.start();
 connection.close();
 {{% /highlight %}}
 
-{{% /panel %}}
+
 {{% /accord %}}
 {{% /accordion%}}
 
@@ -87,9 +85,9 @@ connection.close();
 #### Publish/Subscribe
 
 {{% accordion acc2 %}}
-{{% accord title="**Click to see the code example:**" parent="acc2"%}}
+{{% accord title="**Click to see the code example:**" parent="acc2" id="tab2" id="tab2"%}}
 
-{{% panel  %}}
+
 
 {{% highlight java %}}
 TopicConnectionFactory topicConnectionFactory = // obtain
@@ -129,17 +127,14 @@ topicConnection.start();
 topicConnection.close();
 {{% /highlight %}}
 
-{{% /panel %}}
+
 {{% /accord %}}
 {{% /accordion %}}
 
 #### Point to Point
 
 {{% accordion acc3 %}}
-{{% accord title="**Click to see the code example:**" parent="acc3"%}}
-
-{{% panel  %}}
-
+{{% accord title="**Click to see the code example:**" parent="acc3" id="tab3"%}}
 {{% highlight java %}}
 QueueConnectionFactory queueConnectionFactory = // obtain
 QueueConnection queueConnection = queueConnectionFactory.createQueueConnection();
@@ -178,6 +173,6 @@ queueConnection.start();
 queueConnection.close();
 {{% /highlight %}}
 
-{{% /panel %}}
+
 {{% /accord %}}
 {{% /accordion%}}

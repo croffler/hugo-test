@@ -273,7 +273,7 @@ Here are examples on how to use the Java8 dates:
 
 {{%accordion id="acc10"%}}
 
-{{%accord title="LocalDate" parent="acc10"%}}
+{{%accord title="LocalDate" parent="acc10" id="tab1"%}}
 
 {{%inittab%}}
 {{%tabcontent LocalDatePojo%}}
@@ -330,7 +330,7 @@ public void testLocalDate() {
 
 {{%/accord%}}
 
-{{%accord title="LocalTime" parent="acc10"%}}
+{{%accord title="LocalTime" parent="acc10" id="tab2"%}}
 
 {{%inittab%}}
 {{%tabcontent LocalTimePojo%}}
@@ -386,7 +386,7 @@ public class LocalTimePojo {
 
 {{%/accord%}}
 
-{{%accord title="LocalDateTime" parent="acc10"%}}
+{{%accord title="LocalDateTime" parent="acc10" id="tab3"%}}
 
 {{%inittab%}}
 {{%tabcontent LocalDateTimePojo%}}

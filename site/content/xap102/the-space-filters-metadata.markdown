@@ -341,7 +341,7 @@ public class MyTask implements Task<Serializable>{
 
 
 {{% accordion  acc1 %}}
-{{% accord title="Here is how the expected output should look like:"%}}
+{{% accord title="Here is how the expected output should look like:" id="tab1"%}}
 
 {{% highlight java %}}
 

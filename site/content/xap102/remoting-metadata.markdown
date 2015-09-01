@@ -19,7 +19,7 @@ weight: 400
 
 
 {{% accordion acc1 %}}
-{{%accord tithe="**Example**" parent="acc1" %}}
+{{%accord tithe="**Example**" parent="acc1" id="tab1"%}}
 {{%highlight java%}}
 // Service Implementation
 @RemotingService
@@ -60,7 +60,7 @@ public interface MyService {
 
 
 {{% accordion acc2 %}}
-{{%accord tithe="**Example**" parent="acc2" %}}
+{{%accord tithe="**Example**" parent="acc2" id="tab2"%}}
 
 {{%highlight java%}}
 // Client remoting proxy
@@ -87,7 +87,7 @@ public class DataRemoting {
 
 
 {{% accordion acc3 %}}
-{{%accord title="**Example**" parent="acc3" %}}
+{{%accord title="**Example**" parent="acc3"  id="tab3"%}}
 {{%highlight java%}}
 // Service Implementation
 @RemotingService

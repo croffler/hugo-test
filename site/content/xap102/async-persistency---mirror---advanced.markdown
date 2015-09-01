@@ -48,7 +48,7 @@ Here is how the space should be started:
 XAP has a built in [Hibernate Space Persistency](./hibernate-space-persistency.html) implementation which is a `SpaceSynchronizationEndpoint` extension. You can implement your own Mirror very easily to accommodate your exact needs. See example below:
 
 {{%accordion accord1 %}}
-{{% accord title="Show code..." parent="accord1" %}}
+{{% accord title="Show code..." parent="accord1" id="tab1"%}}
 {{% panel%}}
 
 {{% highlight java %}}
@@ -91,7 +91,7 @@ public class MirrorSpaceSynchronizationEndpoint extends SpaceSynchronizationEndp
 And here is how this can be configured within the mirror configuration:
 
 {{%accordion accord2 %}}
-{{% accord title="Show configuration..." parent="accord2" %}}
+{{% accord title="Show configuration..." parent="accord2" id="tab2"%}}
 {{% panel%}}
 
 {{% inittab os_simple_space %}}

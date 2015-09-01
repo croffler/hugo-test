@@ -9,7 +9,7 @@ title = "Accordion"
 
 {{%accordion test%}}
 
-{{%accord title="accordion1" parent="test"%}}
+{{%accord title="accordion1" parent="test" id="test1"%}}
 {{%highlight java%}} 
 
 private int age;
@@ -18,7 +18,7 @@ private String name;
 {{%/highlight%}}
 {{%/accord%}}
 
-{{%accord title="accordion2" parent="test"%}}
+{{%accord title="accordion2" parent="test" id="test2"%}}
  
  fdslfsdkfldkfdsf
  dsfsdf
@@ -27,7 +27,7 @@ private String name;
 {{%/accord%}}
 
 
-{{%accord title="accordion3" parent="test"%}}
+{{%accord title="accordion3" parent="test" id="test3"%}}
  
  fdslfsdkfldkfdsf
  dsfsdf
@@ -39,50 +39,5 @@ private String name;
  
 
 
-
-{{%accordion test1%}}
-
-{{%accord title="accordion11" parent="test1"%}}
-{{%highlight java%}}
-
-private int age;
-private String name;
-
-{{%/highlight%}}
-{{%/accord%}}
-
-{{%accord title="accordion21" parent="test1"%}}
-
- fdslfsdkfldkfdsf
- dsfsdf
- sdfsdfdsf
-
-{{%/accord%}}
-
-
-
-{{%accord title="accordion31" parent="test1"%}}
-
- fdslfsdkfldkfdsf
- dsfsdf
- sdfsdfdsf
-
-{{%/accord%}}
-
-{{%/accordion%}}
-
-
-{{% accordion acc %}}
-{{% accord title="Click to see the code example1:" parent="acc"%}}
-
-
-Connection conn;
-Statement stmt = conn.createStatement();
-ResultSet rs = stmt.executeQuery("SELECT ID AS Identifier, NAME AS FullName FROM PERSON WHERE Identifier = 210");
-
-
-{{% /accord %}}
-{{% /accordion%}}
- 
 
  

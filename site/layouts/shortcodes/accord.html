@@ -2,10 +2,10 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
       	<h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#{{ .Get "parent"}}" href="#{{ .Get "title"}}">{{ .Get "title"}}</a>
+          <a data-toggle="collapse" data-parent="#{{ .Get "parent"}}" href="#{{ .Get "id"}}">{{ .Get "title"}}</a>
       	</h4>
     </div>
-    <div id="{{.Get "title"}}" class="panel-collapse collapse">
+    <div id="{{.Get "id"}}" class="panel-collapse collapse">
    		<div class="panel-body"> 
    			{{ .Inner }}
    		</div>

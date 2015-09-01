@@ -45,7 +45,7 @@ The web application requires a couple of configuration changes to the `web.xml` 
 In order to enable the **GigaSpacesHttpSession** you need to set shiro.ini configuration file first.
 The following should be located under **main** section.
 
-###Space Connector - Manages connections with the space
+### Space Connector - Manages connections with the space
 
 
 
@@ -59,7 +59,7 @@ The following should be located under **main** section.
 |connector.readTimeout|Read timeout in milliseconds <br>Default to 300000|No|Any positive interger. Millisecond time unit|
 |connector.sessionBaseName| Fully qualified type name that holds the session attributes in space.<br>Default is `com.gigaspaces.httpsession.models.DefaultSpaceSessionStore`|Yes|
 
-###Store Mode - Configure how changes are saved to the space
+### Store Mode - Configure how changes are saved to the space
 
 
 |Property|Description|Required|Optional Values|
@@ -70,7 +70,7 @@ The following should be located under **main** section.
 |storeMode.connector| Space connector to be used<br>See [Space Connector Section](#connector---manages-connections-with-the-space)|Yes|$connector|
 |storeMode.listener|Provides changes notification functionality. it must extends `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No| $listener |
 
-###Session Manager - XAP Session Manager Implementation
+### Session Manager - XAP Session Manager Implementation
 
 
 |Property|Description|Required|Optional Values|
@@ -81,7 +81,7 @@ The following should be located under **main** section.
 |sessionManager.storeMode|Configure how changes are saved to the space. See [Store Mode Section](#store-mode---configure-how-changes-are-saved-to-the-space)|Yes|$storeMode|
 |securityManager.sessionManager|Ensure the securityManager uses our native SessionManager|Yes|$sessionManager|
 
-###Session Policy - Authentication settings
+### Session Policy - Authentication settings
 
 
 |Property|Description|Required|Optional Values|
@@ -90,7 +90,7 @@ The following should be located under **main** section.
 |policy.connector|Instance of space connector implementation<br>See [Space Connector Section](#connector---manages-connections-with-the-space)|Yes|$connector|
 |policy.storeMode|Instance of space storeMode implementation<br>See [Store Mode Section](#store-mode---configure-how-changes-are-saved-to-the-space)|Yes|$storeMode|
 
-###Serializer
+### Serializer
 
 
 |Property|Description|Required|Optional Values|
@@ -99,7 +99,7 @@ The following should be located under **main** section.
 |serializer.logLevel|internal kryo logging level <br>Default to `LEVEL_INFO = 3`|No| 1. `NONE = 6` disables all logging.<br> 2. `ERROR = 5` is for critical errors. The application may no longer work correctly.<br> 3. `WARN = 4` is for important warnings. The application will continue to work correctly.<br> 4.`INFO = 3` is for informative messages. Typically used for deployment.<br> 5. `DEBUG = 2` is for debug messages. This level is useful during development.<br> 6. `TRACE = 1` is for trace messages. A lot of information is logged, so this level is usually only needed when debugging a problem. |
 |serializer.classes|comma separate list full qualified class names to be loaded at the initialization of the Kryo Serializer|No||
 
-###Cache Manager - XAP Cache Manager Implementation
+### Cache Manager - XAP Cache Manager Implementation
 
 
 |Property|Description|Required|Optional Values|
@@ -121,9 +121,9 @@ The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below 
 {{%accordion id="acc0"%}}
 
 
-{{%accord title="Session Sharing Configuration For Non-Secured Application ..." parent="acc0"%}}
+{{%accord title="Session Sharing Configuration For Non-Secured Application ..." parent="acc0" id="tab1"%}}
 
-{{% highlight ini %}}
+{{% highlight bash %}}
 
 [main]
 # space proxy wraper
@@ -187,9 +187,13 @@ securityManager.cacheManager=$cacheManager
 {{% /highlight %}}
 {{%/accord%}}
 
-{{%accord title="Session Sharing Configuration Example For Secured Application Using Shiro Security..."  parent="acc0"%}}
-{{% note %}}Note that this example uses the basic authentication configuration but, Shiro has various authenticator types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html) {{% /note %}}
-{{% highlight ini %}}
+{{%accord title="Session Sharing Configuration Example For Secured Application Using Shiro Security..."  parent="acc0" id="tab2"%}}
+
+{{% note %}}
+Note that this example uses the basic authentication configuration but, Shiro has various authenticator types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html)
+{{% /note %}}
+
+{{% highlight bash %}}
 
 [main]
 # space proxy wraper
@@ -277,7 +281,7 @@ goodguy = winnebago:drive:eagle5
 {{% /highlight %}}
 {{%/accord%}}
 
-{{%accord title="Session Sharing Configuration Example For Secured Application Using Spring Security..."  parent="acc0"%}}
+{{%accord title="Session Sharing Configuration Example For Secured Application Using Spring Security..."  parent="acc0" id="tab3"%}}
 
 {{% note %}}
 Note that in order to use Spring Security you still have to provide `shiro.ini` configuration file.<br>
@@ -285,6 +289,7 @@ The configuration should be similar to the one in the **Non-Secured Application*
 {{% /note %}}
 
 Below is an example for the spring-security.xml that should be located under `WEB-INF` folder.
+
 {{% highlight xml %}}
 <beans:beans xmlns="http://www.springframework.org/schema/security"
 			 xmlns:beans="http://www.springframework.org/schema/beans"

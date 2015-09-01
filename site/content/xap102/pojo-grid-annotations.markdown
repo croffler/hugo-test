@@ -16,7 +16,7 @@ weight: 400
 
 
 {{% accordion acc1%}}
-{{% accord title="**Annotation**" parent="acc1"%}}
+{{% accord title="**Annotation**" parent="acc1" id="tab1"%}}
 
 {{%highlight java%}}
 
@@ -37,7 +37,7 @@ public class MyService {
 There is no need to have a setter for the GigaSpace instance, and by annotating it with GigaSpaceContext, a GigaSpace instance is automatically injected. In order to enable this feature, the following element needs to be configured in the Spring application context:
 
 {{% accordion acc2%}}
-{{% accord title="**Spring Configuration**" parent="acc2"%}}
+{{% accord title="**Spring Configuration**" parent="acc2" id="tab2"%}}
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
@@ -91,7 +91,7 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 |Description         |  XAP allows you to define beans (such as filters), that are later injected to the actual space. If such beans require access to the GigaSpace instance, a cyclic dependency occurs (GigaSpace requires the Space, but the Space requires the filter injection). XAP allows you to use the same annotation-based injection mechanism in order to inject the GigaSpace instance at a different lifecycle stage. |
 
 {{% accordion acc22%}}
-{{% accord title="**Annotation**" parent="acc22"%}}
+{{% accord title="**Annotation**" parent="acc22" id="tab3"%}}
 
 {{%highlight java%}}
 public class MyService {
@@ -107,7 +107,7 @@ public class MyService {
 There is no need to have a setter for the `GigaSpace` instance, and by annotating it with `GigaSpaceLateContext`, a `GigaSpace` instance is automatically injected. In order to enable this feature, the following element needs to be configured in the Spring application context:
 
 {{% accordion acc21%}}
-{{% accord title="**Spring Configuration**" parent="acc21"%}}
+{{% accord title="**Spring Configuration**" parent="acc21" id="tab4"%}}
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
@@ -155,7 +155,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 
 
 {{% accordion acc3 %}}
-{{% accord title="**Example**" parent="acc3" %}}
+{{% accord title="**Example**" parent="acc3" id="tab5"%}}
 
 {{%highlight java%}}
 public class Process {
