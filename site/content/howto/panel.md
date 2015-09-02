@@ -25,6 +25,8 @@ Notifications for expired objects sent both from the primary and the backup spac
 
 {{%vbar title="VBar"%}}This is an vbar panel{{%/vbar%}}
 
+{{%primary title="Primary"%}}This is an primary panel{{%/primary%}}
+
 
 {{%refer%}} Please refer to this section if you need more info [docs](http://docs.gigaspaces.com) {{%/refer%}}
 
