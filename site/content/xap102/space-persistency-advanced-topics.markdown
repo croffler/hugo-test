@@ -17,6 +17,7 @@ This sections covers advanced options related to Space Persistency.
 
 Here are the Space Persistency Properties:
 
+<center>
 
 | Property | Description | Default |
 |:---------|:------------|:--------|
@@ -25,6 +26,8 @@ Here are the Space Persistency Properties:
 |space-config.external-data-source.init-properties-file| This properties file content is passed directly to the data source implementation in the `init()` method. This file can be used to pass any custom parameters to the data source. | |
 |cluster-config.cache-loader.external-data-source| Provides cluster-wide support. |true|
 |cluster-config.cache-loader.central-data-source| Provides clustered database wide support. |true|
+
+</center>
 
 {{% anchor TR %}}
 

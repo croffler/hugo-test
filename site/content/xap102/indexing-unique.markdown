@@ -29,12 +29,15 @@ When the system encounters a unique constraint violation in one of the index-cha
 The operation which caused the violation is rolled back with the following effects:
 
 
+<center>
 
 | Operation | Action |
 |:--------------|:------------|
 |write|the entry is removed|
 |update|the original value is restored|
 |change|the original value is restored|
+
+</center>
 
 {{%note%}}If the operation(write or update) is performed under a transaction, the unique value check is done when the operation is performed (eager mode) and not when the transaction is committed. {{%/note%}}
 
