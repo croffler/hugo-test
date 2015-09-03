@@ -6,19 +6,18 @@ title: Tabs test
 
 {{%tabs%}}
 {{%tab Java%}}
-```
+
 public class hello{
 
 }
-```
 {{%/tab%}}
 
 {{%tab XML%}}
-```
+
 public class hello{
 
 }
-```
+
 {{%/tab%}}
 {{%/tabs%}}
 
@@ -45,9 +44,7 @@ public class hello{
         </div>
         <div title="Contact" data-options="tabWidth:110" style="padding:10px">
         <p>
-            ```
             Hello there
-            ```
             </p>
         </div>
     </div>
