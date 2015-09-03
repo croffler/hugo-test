@@ -20,8 +20,8 @@ A processing unit runs the `JMSDataFeeder` that writes `Data` objects with raw d
 
 The `JMSDataFeeder` is similar to the `DataFeeder`. The difference between the beans is that the `JMSDataFeeder` uses Spring's [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) on top of the GigaSpaces JMS implementation to write the `Data` objects to the space; no space API is used directly. This is possible due to the usage of a `MessageConverter` that converts JMS messages into any required POJO type, in this case, `Data`. In this example, we configure the `ConnectionFactory` to use the `ObjectMessage2ObjectConverter` that comes with the GigaSpaces JMS implementation. The `ObjectMessage2ObjectConverter` receives a JMS `ObjectMessage` and returns the message's content (body) as the object to write to the space. The JMS `ObjectMessage` itself, including headers, properties etc., is not written. The `JMSDataFeeder` uses Spring's [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) and `MessageCreator` to send `ObjectMessages` that contain the `Data` objects, and the converter makes sure that only the contained `Data` objects are written.
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Code %}}
+{{% tabs os_simple_space %}}
+{{% tab Code %}}
 
 ```java
 public class JMSDataFeeder implements InitializingBean, DisposableBean {
@@ -37,20 +37,20 @@ public class JMSDataFeeder implements InitializingBean, DisposableBean {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Configuration %}}
+{{% /tab %}}
+{{% tab Configuration %}}
 
 ```xml
 <bean id="jmsDataFeeder" class="org.openspaces.example.data.feeder.JMSDataFeeder"/>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The `JMSDataFeeder` is injected with a Spring [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html). The [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) is injected with a JMS `ConnectionFactory` and a destination of type `Queue`. Unlike the `DataFeeder`, the `JMSDataFeeder` does not declare an instance of `GigaSpace`. `GigaSpace` is injected into the `ConnectionFactory` bean, and is used behind the scenes by the JMS layer. In addition, the `ConnectionFactory` is injected with a [MessageConverter](./jms-space-interoperability.html) of type `ObjectMessage2ObjectConverter`.
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Code %}}
+{{% tabs os_simple_space %}}
+{{% tab Code %}}
 
 ```java
 public class JMSDataFeeder implements InitializingBean, DisposableBean {
@@ -64,8 +64,8 @@ public class JMSDataFeeder implements InitializingBean, DisposableBean {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Configuration %}}
+{{% /tab %}}
+{{% tab Configuration %}}
 
 ```xml
 <bean id="jmsDataFeeder" class="org.openspaces.example.data.feeder.JMSDataFeeder">
@@ -86,7 +86,7 @@ public class JMSDataFeeder implements InitializingBean, DisposableBean {
 <bean id="messageConverter" class="com.j_spaces.jms.utils.ObjectMessage2ObjectConverter" />
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Because the `JMSDataFeeder` implements Spring's `InitializingBean` and `DisposableBean` interfaces, its `afterPropertiesSet()` and `destroy()` methods are called when it is created or destroyed, respectively.

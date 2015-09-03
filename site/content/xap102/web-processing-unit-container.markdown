@@ -122,8 +122,8 @@ There are several ways that a Space (and other components) can be used, and conf
 
 A typical usage pattern is connecting remotely to a Space. Here is an example (either using Spring within the web application Spring context file, or using pure Java code):
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Spring Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Spring Namespace %}}
 
 ```xml
 
@@ -131,8 +131,8 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 <os-core:giga-space id="gigaSpace" space="space"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Spring Plain XML %}}
+{{% /tab %}}
+{{% tab Spring Plain XML %}}
 
 ```xml
 
@@ -144,8 +144,8 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -159,8 +159,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 spaceConfigurer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Using pu.xml
 
@@ -168,16 +168,16 @@ A web application is still just a processing unit. This means that a **META-INF/
 
 Here is an example that starts an embedded Space as part of the web application within the `pu.xml`. The following is the content of the `pu.xml`
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Spring Namespace %}}
+{{% tabs os_simple_space%}}
+{{% tab Spring Namespace %}}
 
 ```xml
 <os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Spring Plain XML %}}
+{{% /tab %}}
+{{% tab Spring Plain XML %}}
 
 ```xml
 
@@ -193,8 +193,8 @@ Here is an example that starts an embedded Space as part of the web application 
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Here is an example of a simple JSP that uses it:
 

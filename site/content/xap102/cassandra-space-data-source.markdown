@@ -55,8 +55,8 @@ include the following in your `pom.xml`
 An example of how the Cassandra Space Data Source can be configured for a space that loads data back from Cassandra once initialized and
 also asynchronously persists the data using a mirror (see [Cassandra Space Synchronization Endpoint](./cassandra-space-synchronization-endpoint.html)).
 
-{{% inittab Configuration Examples %}}
-{{% tabcontent Spring %}}
+{{% tabs Configuration Examples %}}
+{{% tab Spring %}}
 
 ```xml
 <?xml version="1.0"?>
@@ -121,8 +121,8 @@ also asynchronously persists the data using a mirror (see [Cassandra Space Synch
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 HectorCassandraClient hectorClient = new HectorCassandraClientConfigurer()
@@ -155,8 +155,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpa
   .space()).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 For more details about different configurations see [Space Persistency](./space-persistency.html).
 

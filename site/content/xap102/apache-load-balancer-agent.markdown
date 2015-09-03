@@ -50,13 +50,13 @@ By default, the script assumes that Apache is installed under `PROGRAM_FILES/Apa
 
 Linux:
 
-```bash
+```
 apache-lb-agent.sh -apache /opt/apache
 ```
 
 Windows:
 
-```bash
+```
 apache-lb-agent.bat -apache c:\Apache2.2
 ```
 
@@ -66,7 +66,7 @@ The specific location of the configuration directory where the load-balancer con
 
 Linux:
 
-```bash
+```
 apache-lb-agent.sh -apache /opt/apache -conf-dir /var/apache/conf/gigaspaces
 ```
 

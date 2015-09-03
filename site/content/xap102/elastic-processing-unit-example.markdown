@@ -32,7 +32,7 @@ Download the example {{%download "/download_files/EPUScaleDemo.zip"%}} and extra
 #### Step 2. Start gs-agent<br>
 Start gs-agent using the following command:
 
-```bash
+```
 gs-agent gsa.esm 1 gsa.gsc 0 gsa.lus 1 gsa.gsm 1
 ```
 
@@ -41,7 +41,7 @@ This will start an agent without any running GSCs.
 #### Step 3. Run the Client Application<br>
 Run the Client Application using the following command:
 
-```bash
+```
 call C:\gigaspaces-xap-premium-8.0.0-ga\bin\setenv.bat
 java -cp bin;%GS_JARS% -Djava.rmi.server.hostname=127.0.0.1 -DlocalMachineDemo=true com.test.scaledemo.ScaleDemoMain
 ```
@@ -56,53 +56,53 @@ When running the GS-UI you will have the following displayed:
 
 
 
-{{% inittab epu_demo %}}
-{{% tabcontent Initial State %}}
+{{% tabs epu_demo %}}
+{{% tab Initial State %}}
 Initial State - agent without any GSCs running:
 
 {{%popup "/attachment_files/epu_demo1.JPG" %}}
 
-{{% /tabcontent %}}
-{{% tabcontent After initial Deploy %}}
+{{% /tab %}}
+{{% tab After initial Deploy %}}
 After initial Deploy:
 
 
 {{%popup "/attachment_files/epu_demo2.JPG" %}}
 
 
-{{% /tabcontent %}}
-{{% tabcontent After Scaling to 128 MB %}}
+{{% /tab %}}
+{{% tab After Scaling to 128 MB %}}
 After Scaling from 64.0 MB to 128 MB:
 
 
 {{%popup "/attachment_files/epu_demo3.JPG" %}}
 
 
-{{% /tabcontent %}}
-{{% tabcontent After Scaling to 256 MB %}}
+{{% /tab %}}
+{{% tab After Scaling to 256 MB %}}
 After Scaling from 128.0 MB to 256 MB:
 
 
 {{%popup "/attachment_files/epu_demo4.JPG" %}}
 
 
-{{% /tabcontent %}}
-{{% tabcontent After Scaling to 64 MB %}}
+{{% /tab %}}
+{{% tab After Scaling to 64 MB %}}
 After Scaling from 256.0 MB to 64 MB:
 
 
 {{%popup "/attachment_files/epu_demo5.JPG" %}}
 
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Expected Output
 
 The Client application will display the following output:
 
-{{% inittab epu_demo_output %}}
-{{% tabcontent Initial State %}}
+{{% tabs epu_demo_output %}}
+{{% tab Initial State %}}
 
 ```console
 Welcome to GigaSpaces scalability Demo
@@ -120,9 +120,9 @@ Tue Mar 01 12:35:17 EST 2011>> Total Memory used:64.0 MB - Progress:100.0 % done
 Initial Deploy done! - Time to deploy system:32 seconds
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Scaling to 128 MB %}}
+{{% tab Scaling to 128 MB %}}
 
 ```console
 About to start changing data-grid memory capacity from 64.0 MB to 128 MB
@@ -141,9 +141,9 @@ Tue Mar 01 12:37:27 EST 2011>> Total Memory used:128.0 MB - Progress:100.0 % don
 Data-Grid Memory capacity change done! - Time to scale system:27 seconds
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Scaling to 256 MB %}}
+{{% tab Scaling to 256 MB %}}
 
 ```console
 About to start changing data-grid memory capacity from 128.0 MB to 256 MB
@@ -171,9 +171,9 @@ Tue Mar 01 12:39:11 EST 2011>> Total Memory used:256.0 MB - Progress:100.0 % don
 Data-Grid Memory capacity change done! - Time to scale system:51 seconds
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Scaling to 64 MB %}}
+{{% tab Scaling to 64 MB %}}
 
 ```console
 About to start changing data-grid memory capacity from 256.0 MB to 64 MB
@@ -192,6 +192,6 @@ Tue Mar 01 12:40:42 EST 2011>> Total Memory used:64.0 MB - Progress:100.0 % done
 Data-Grid Memory capacity change done! - Time to scale system:33 seconds
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 

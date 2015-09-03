@@ -38,8 +38,8 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 
 {{% accordion acc2%}}
 {{% accord title="**Spring Configuration**" parent="acc2" id="tab2"%}}
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
  ```xml
 
@@ -54,8 +54,8 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
  <bean id="myService" class="eg.MyService" />
  ```
 
- {{% /tabcontent %}}
- {{% tabcontent "Plain XML" %}}
+ {{% /tab %}}
+ {{% tab "Plain XML" %}}
 
  ```xml
 
@@ -77,8 +77,8 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
  <bean id="myService" class="eg.MyService" />
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 {{% /accord %}}
 {{% /accordion %}}
 
@@ -109,8 +109,8 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 {{% accordion acc21%}}
 {{% accord title="**Spring Configuration**" parent="acc21" id="tab4"%}}
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -123,8 +123,8 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 <bean id="myService" class="eg.MyService" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -141,8 +141,8 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 <bean id="myService" class="eg.MyService" />
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 {{% /accord %}}
 {{% /accordion %}}
 

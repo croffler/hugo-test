@@ -230,8 +230,8 @@ In this case, New York's site will be the active site while London and Hong Kong
 
 Like all GigaSpaces Processing Units, the configuration details of each of the above components is placed in a `pu.xml` file. Here are the contents of the files for each of the components:
 
-{{% inittab %}}
-{{% tabcontent New York Space %}}
+{{% tabs %}}
+{{% tab New York Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -258,8 +258,8 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent New York Gateway %}}
+{{% /tab %}}
+{{% tab New York Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -301,8 +301,8 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent London Space %}}
+{{% /tab %}}
+{{% tab London Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -326,8 +326,8 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent London Gateway %}}
+{{% /tab %}}
+{{% tab London Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -366,8 +366,8 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Hong Kong Space %}}
+{{% /tab %}}
+{{% tab Hong Kong Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -392,8 +392,8 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Hong Kong Gateway %}}
+{{% /tab %}}
+{{% tab Hong Kong Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -437,8 +437,8 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Multi-Master Topology
 
@@ -452,8 +452,8 @@ With the example below we will have only New York and London as the two active s
 
 Here are the contents of the files for each of the components:
 
-{{% inittab %}}
-{{% tabcontent New York Space %}}
+{{% tabs %}}
+{{% tab New York Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -480,8 +480,8 @@ Here are the contents of the files for each of the components:
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent New York Gateway %}}
+{{% /tab %}}
+{{% tab New York Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -530,8 +530,8 @@ Here are the contents of the files for each of the components:
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent London Space %}}
+{{% /tab %}}
+{{% tab London Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -559,8 +559,8 @@ Here are the contents of the files for each of the components:
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent London Gateway %}}
+{{% /tab %}}
+{{% tab London Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -608,8 +608,8 @@ Here are the contents of the files for each of the components:
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Symmetric Gateway Config %}}
+{{% /tab %}}
+{{% tab Symmetric Gateway Config %}}
 In this example, the gateway `pu.xml` is quite symmetric, the only difference is the local gateway name and the target gateway name. In such cases, it may be more convenient to create a single gateway `pu.xml` and use place holders to override the relevant properties at deploy time by injecting values for these properties:
 
 ```xml
@@ -665,8 +665,8 @@ In this example, the gateway `pu.xml` is quite symmetric, the only difference is
 ```
 
 In the above we have configured both LONDON and NEWYORK at the sources of the sink and as delegation target, the delegator and the sink will filter a gateway target and source if they match their local name. Using the above technique may simplify scenarios which are symmetric but it is not recommended when the scenarios are **not** symmetric as it can be unnecessarily confusing.
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% refer %}}
 **Multi-Master Running example**

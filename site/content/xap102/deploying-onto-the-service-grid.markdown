@@ -46,8 +46,8 @@ Downloading the processing unit archive to the GSC is the recommended option, bu
 
 GigaSpaces provides several options to deploy a processing unit onto the Service Grid. Below you can find a simple deployment example with the various deployment tools for deploying a processing unit archive called `myPU.jar` located in the `/opt/gigaspaces` directory:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Admin API %}}
+{{% tabs os_simple_space %}}
+{{% tab Admin API %}}
 Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc]({{%javadoc%}}) of the Admin API.
 
 ```java
@@ -57,8 +57,8 @@ ProcessingUnit pu = admin.getGridServiceManagers().deploy(
     new ProcessingUnitDeployment(puArchive));
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Ant %}}
+{{% /tab %}}
+{{% tab Ant %}}
 Deploying with Ant is based on the `org.openspaces.pu.container.servicegrid.deploy.Deploy` class (in fact, all of the deployment tools use this class although it is not exposed directly to the end user).
 
 In the below example we create an Ant macro using this class and use it to deploy our processing unit. The deploy class is executable via its `main()` method, and can accept various parameters to control the deployment process. These parameters are identical to these of the `deploy` CLI command, for a complete list of the available parameters please consult the [`deploy` CLI reference documentation.]({{%currentadmurl%}}/deploy-command-line-interface.html).
@@ -81,22 +81,22 @@ In the below example we create an Ant macro using this class and use it to deplo
 </macrodef>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent GigaSpaces CLI %}}
+{{% /tab %}}
+{{% tab GigaSpaces CLI %}}
 Deploying via the CLI is based on the `deploy` command. This command accepts various parameters to control the deployment process. These parameters are documented in full in the [`deploy` CLI reference documentation.]({{%currentadmurl%}}/deploy-command-line-interface.html).
 
 ```java
 > <XAP root>/bin/gs.sh(bat) deploy myPU.jar
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent GigaSpaces UI %}}
+{{% /tab %}}
+{{% tab GigaSpaces UI %}}
 
 - Open the GigaSpaces UI by launching `<XAP root>/bin/gs-ui.sh(bat)
 - Click the "Deploy Application" button ![deploy_processing_unit_button.jpg](/attachment_files/deploy_processing_unit_button.jpg) at the top left of the window
 - In the deployment wizard, click **...** to select your processing unit archive, and then click **Deploy**
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Elastic Processing Unit Deployment using the Admin API
 
@@ -106,8 +106,8 @@ When deploying a partitioned Processing Unit or a partitioned Space it is recomm
 
 You should have **one GigaSpaces agent** running the ESM. No GSCs should be started.
 
-{{% inittab deckName1 %}}
-{{% tabcontent Windows %}}
+{{% tabs deckName1 %}}
+{{% tab Windows %}}
 
 ```java
 rem Agent deployment that potentially can start management processes
@@ -116,9 +116,9 @@ set JSHOMEDIR=d:\gigaspaces
 start cmd /c "%JSHOMEDIR%\bin\gs-agent.bat gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 gsa.global.lus 2"
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Linux %}}
+{{% tab Linux %}}
 
 ```java
 # Agent deployment that potentially can start management processes
@@ -128,8 +128,8 @@ export JSHOMEDIR=~/gigaspaces
 nohup ${JSHOMEDIR}/bin/gs-agent.sh gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 gsa.global.lus 2 > /dev/null 2>&1 &
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Step 2 - Run the deployment code:
 
@@ -191,23 +191,23 @@ Since we are un deploying an Elastic Processing Unit, this will also terminate a
 
 Running the deployment code from the command line is very convenient. Rename the java file extension to groovy, and run it using the following command:
 
-{{% inittab deckName2 %}}
-{{% tabcontent Windows %}}
+{{% tabs deckName2 %}}
+{{% tab Windows %}}
 
 ```java
 %JSHOMEDIR%\tools\groovy\bin\groovy deploy.groovy
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Linux %}}
+{{% tab Linux %}}
 
 ```java
 ${JSHOMEDIR}tools/groovy/bin/groovy deploy.groovy
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Hot Deploy
 
@@ -338,8 +338,8 @@ The feeder instance is deployed only after the space is deployed
 
 The sample code below deploys an application named "data-app" which consists of a space and a feeder processing unit. The feeder processing unit instances are deployed only after the space deployment is complete (each partition has both a primary and a backup space instance).
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Admin API %}}
+{{% tabs os_simple_space %}}
+{{% tab Admin API %}}
 
 ```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -362,8 +362,8 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Admin API and XML %}}
+{{% /tab %}}
+{{% tab Admin API and XML %}}
 
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
@@ -412,8 +412,8 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent GigaSpaces CLI and XML %}}
+{{% /tab %}}
+{{% tab GigaSpaces CLI and XML %}}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
 ```java
@@ -445,9 +445,9 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 </beans>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 The reason for imposing this dependency is that the space proxy bean in the feeder processing unit would fail to initialize if the space is not available. However, this restriction could be too severe since the feeder is a singleton processing unit. For example, if a container with the feeder and a space instance fails, the space is still available (the backup is elected to primary). However the feeder is not re-deployed until the space has all instances running, which will not happen unless a container is (re)started.
 
@@ -455,8 +455,8 @@ The reason for imposing this dependency is that the space proxy bean in the feed
 
 The feeder can relax this restriction, by specifying a dependency of at least one instance per partition. Now the feeder is redeployed as long as the space has a minimum of one instance per partition. The downside of this approach is that during initial deployment there is a small time gap in which the feeder writes data to the space while there is only one copy of the data (one instance per partition).
 
-{{% inittab adaptive_sla %}}
-{{% tabcontent Admin API %}}
+{{% tabs adaptive_sla %}}
+{{% tab Admin API %}}
 
 ```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -482,8 +482,8 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Admin API with XML %}}
+{{% /tab %}}
+{{% tab Admin API with XML %}}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
 {{%comment%}}
@@ -531,8 +531,8 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent GigaSpaces CLI with XML %}}
+{{% /tab %}}
+{{% tab GigaSpaces CLI with XML %}}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
 ```java
@@ -564,9 +564,9 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 </beans>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 ## Undeployment Order
 

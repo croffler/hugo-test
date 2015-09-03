@@ -54,8 +54,8 @@ public class SimpleListener implements SpaceDataEventListener {
 
 Here is how it can be configured:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -68,8 +68,8 @@ Here is how it can be configured:
 </os-events>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -82,8 +82,8 @@ Here is how it can be configured:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # POJO Event Listener Adapters
 
@@ -101,8 +101,8 @@ public class SimpleListener {
 
 The `myEventHandler` is marked using the `SpaceDataEvent` annotation as a callback that needs to be called in case of an event. Here is the XML configuration of the mentioned event listener:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -119,8 +119,8 @@ The `myEventHandler` is marked using the `SpaceDataEvent` annotation as a callba
 </os-events>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -137,13 +137,13 @@ The `myEventHandler` is marked using the `SpaceDataEvent` annotation as a callba
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 If we do not wish to use annotations, we can use the method adapter where method listing is used to define which methods are to be invoked. We can reuse the same SimpleListener (simply without the annotation) and configure it in the following manner:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -160,8 +160,8 @@ If we do not wish to use annotations, we can use the method adapter where method
 </os-events>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -179,8 +179,8 @@ If we do not wish to use annotations, we can use the method adapter where method
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Adapter Method Parameter's
 
@@ -216,8 +216,8 @@ public class SimpleListener {
 
 and the following is the configuration of such a listener using the annotation adapter:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -234,8 +234,8 @@ and the following is the configuration of such a listener using the annotation a
 </os-events>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -254,8 +254,8 @@ and the following is the configuration of such a listener using the annotation a
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Multiple Event Methods
 
@@ -284,8 +284,8 @@ When using a single event method, the event adapter will cache the reflection in
 
 OpenSpaces comes with an event adapter that allows you to delegate the execution of an event listener to a different task executor (a thread pool). It is handy when using the notify container and wanting to release the notification thread. Here is how it can be configured:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -306,8 +306,8 @@ OpenSpaces comes with an event adapter that allows you to delegate the execution
 </os-events>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -330,7 +330,7 @@ OpenSpaces comes with an event adapter that allows you to delegate the execution
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The default task executor uses Spring's `SimpleAsyncTaskExecutor` which creates a thread for each execution. Other [Task Executors](http://docs.spring.io/spring/docs/2.0.x/reference/scheduling.html) can be used by setting it on the `taskExecutor` property.

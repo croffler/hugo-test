@@ -140,8 +140,8 @@ Routing information can also be defined at the `Task`-level, in two ways:
 1. Provide an instance property and annotate the getter with the `@SpaceRouting` annotation.
 1. Implement the `TaskRoutingProvider` interface (for non annotations based configuration). 
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 
@@ -164,8 +164,8 @@ public class MyTask implements Task<Integer> {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Interface %}}
+{{% /tab %}}
+{{% tab Interface %}}
 
 ```java
 
@@ -187,8 +187,8 @@ public class MyTask implements Task<Integer> implements TaskRoutingProvider {
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Using either mechanism to define routing at the the `Task`-level removes the need for the routing parameter:
 
@@ -337,8 +337,8 @@ See the [Elastic Distributed Risk Analysis Engine](/sbp/elastic-distributed-calc
 
 The most common scenario for using executors is by interacting with the collocated Space on which the task is executed. A `GigaSpace` instance, which works against a collocated Space can be easily injected either using annotations or using an interface. Here is an example:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 
@@ -370,8 +370,8 @@ public class TemplateCountTask implements DistributedTask<Integer, Long> {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Interface %}}
+{{% /tab %}}
+{{% tab Interface %}}
 
 ```java
 
@@ -406,8 +406,8 @@ public class TemplateCountTask implements DistributedTask<Integer, Long>, TaskGi
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Injecting a Clustered Space Proxy
 

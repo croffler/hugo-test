@@ -54,8 +54,8 @@ include the following in your `pom.xml`
 An example of how the MongoDB Space Data Source can be configured for a space that loads data back from MongoDB once initialized and 
 also asynchronously persists the data using a mirror (see [MongoDB Space Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html))). 
 
-{{% inittab Configuration Examples %}}
-{{% tabcontent Spring %}}```xml
+{{% tabs Configuration Examples %}}
+{{% tab Spring %}}```xml
 <?xml version="1.0" encoding="utf-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -105,8 +105,8 @@ also asynchronously persists the data using a mirror (see [MongoDB Space Synchro
 
 
 ```
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 ```java
 
 	MongoClient config = new MongoClient(host, port);
@@ -130,8 +130,8 @@ also asynchronously persists the data using a mirror (see [MongoDB Space Synchro
 	.space()).gigaSpace(); 
 
 ```
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 For more details about different configurations see [Space Persistency](./space-persistency.html). 
 

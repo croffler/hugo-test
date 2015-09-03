@@ -54,8 +54,8 @@ Include the following in your `pom.xml`
 
 An example of how the MongoDB Space Synchronization Endpoint can be configured within a mirror. 
 
-{{% inittab Configuration Examples %}}
-{{% tabcontent Spring %}}
+{{% tabs Configuration Examples %}}
+{{% tab Spring %}}
 
 ```xml
 
@@ -101,8 +101,8 @@ An example of how the MongoDB Space Synchronization Endpoint can be configured w
 
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -127,8 +127,8 @@ An example of how the MongoDB Space Synchronization Endpoint can be configured w
 
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 For more details about different configurations see [Space Persistency](./space-persistency.html).
 

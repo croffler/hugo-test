@@ -20,8 +20,8 @@ The output-filter can be used also to modify the replicated data before it is ar
 
 With the example below a replication filter is used with the source space (output-filter). The New-York space is configured not to replicate the Stock object type to London site. This Stock object type still being replicated to all other location replication targets (backup/mirror) and also to the remote Hong Kong gateway. The filtering can be determined also based on the content of the replicated object or any other custom business logic.
 
-{{% inittab %}}
-{{% tabcontent New York Space %}}
+{{% tabs %}}
+{{% tab New York Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -54,8 +54,8 @@ With the example below a replication filter is used with the source space (outpu
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Replication Filter Implementation %}}
+{{% /tab %}}
+{{% tab Replication Filter Implementation %}}
 
 ```java
 public class LondonReplicationFilter implements IReplicationFilter {
@@ -76,6 +76,6 @@ public class LondonReplicationFilter implements IReplicationFilter {
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 

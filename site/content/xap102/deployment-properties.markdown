@@ -26,8 +26,8 @@ Below you can find an example of an XML configuration which defines to property 
 Note that for property place holders we use the `${placeholder name}` notation.
 {{%/tip%}}
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -48,8 +48,8 @@ Note that for property place holders we use the `${placeholder name}` notation.
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain %}}
+{{% /tab %}}
+{{% tab Plain %}}
 
 ```xml
 
@@ -71,8 +71,8 @@ Note that for property place holders we use the `${placeholder name}` notation.
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The various [processing unit runtime modes](./deploying-and-running-the-processing-unit.html) all provide support for injecting property values instead of place holders. There are several ways to define the values for the property place holders, depending on how you choose to run/deploy your processing unit.
 
@@ -123,16 +123,16 @@ These expression can also be included in all of the above mentioned property inj
 
 Here's an example for a space configured within the processing unit, and a property injection overriding its schema name:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
  <os-core:embedded-space id="space" name="mySpace" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain %}}
+{{% /tab %}}
+{{% tab Plain %}}
 
 ```xml
 
@@ -141,7 +141,7 @@ Here's an example for a space configured within the processing unit, and a prope
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 When deploying the space you should use `-properties space embed://gs.space.url.arg.schema=persistent`. This instructs the runtime to override the configuration of the bean named "space" in your pu.xml file with the specified value. You may also configure the space directly inside your processing unit using direct property injection on the space bean.

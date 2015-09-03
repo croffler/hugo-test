@@ -19,8 +19,8 @@ In order to receive events using multiple consumer threads, in the same order th
 
 Here is an example of a polling container with 3 concurrent consumers and 5 maximum concurrent consumers:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Polling(concurrentConsumers = 3, maxConcurrentConsumers = 5)
@@ -40,8 +40,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -51,8 +51,8 @@ public class SimpleListener {
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -63,13 +63,13 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Sometimes, it is very convenient to have a listener instance per concurrent polling thread. This allows a thread-safe instance variable to be constructed without worrying about concurrent access. In such a case, the `prototype` Spring scope can be used in conjunction with a `listenerRef` bean name injection. Here is an example:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -85,8 +85,8 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -103,6 +103,6 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 

@@ -16,8 +16,8 @@ When using transactions, only the event listener operations are rolled back. The
 
 Transaction support can be configured as follows:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```xml
 
@@ -52,8 +52,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -83,8 +83,8 @@ public class SimpleListener {
 </os-events:notify-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -122,6 +122,6 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 

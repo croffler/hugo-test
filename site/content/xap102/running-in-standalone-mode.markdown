@@ -39,43 +39,43 @@ GigaSpaces comes with the `puInstance` shell script, which uses the `StandaloneP
 
 Here are some examples of using the `puInstance` script in order to run a processing unit:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Unix %}}
+{{% tabs os_simple_space %}}
+{{% tab Unix %}}
 
 ```java
 puInstance.sh -cluster schema=partitioned total_members=2 id=1 data-processor.jar
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Windows %}}
+{{% /tab %}}
+{{% tab Windows %}}
 
 ```java
 puInstance.bat -cluster schema=partitioned total_members=2 id=1 data-processor.jar
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The above example starts a processing unit (which includes an embedded space) in a partitioned cluster schema, with two members and `id=1`. In order to run the full cluster, another `puInstance` has to be started with `id=2`.
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Unix %}}
+{{% tabs os_simple_space %}}
+{{% tab Unix %}}
 
 ```java
 puInstance.sh -cluster schema=partitioned-sync2backup total_members=1,1 id=1 backup_id=1
 -properties runtime.properties data-processor.jar
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Windows %}}
+{{% /tab %}}
+{{% tab Windows %}}
 
 ```java
 puInstance.bat -cluster schema=partitioned-sync2backup total_members=1,1 id=1 backup_id=1
 -properties runtime.properties data-processor.jar
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The above example starts a processing unit instance (with an embedded space) in a partitioned-sync2backup cluster schema, with one primary and one backup. It also uses an external properties file to inject property values at startup time.
 

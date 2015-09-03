@@ -15,8 +15,8 @@ In order to have GigaSpace transactional, the transaction manager must be provid
 For example (using the distributed transaction manager):
 {{%/note%}}
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -27,8 +27,8 @@ For example (using the distributed transaction manager):
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -46,8 +46,8 @@ For example (using the distributed transaction manager):
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% refer %}}
 It is highly recommended to read the [transaction management chapter](http://static.springframework.org/spring/docs/3.0.x/reference/transaction.html) in the Spring reference documentation.
@@ -76,8 +76,8 @@ gigaSpace.getSpace().take(obj, gigaSpace.getCurrentTransaction(), 1000);
 
 GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED` and `REPEATABLE_READ` (default). When using `GigaSpace`, the default isolation level that it will perform under can be defined in the following manner:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -86,8 +86,8 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 <os-core:giga-space id="gigaSpace" space="space" default-isolation="READ_COMMITTED"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -101,8 +101,8 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -113,8 +113,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space)
                           .gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 In addition, Spring allows you to define the isolation level on the transaction definition itself:
 

@@ -48,8 +48,8 @@ A unique attribute is added to the `@SpaceIndex` annotation. Unique = true will 
 
 Example:
 
-{{% inittab Java %}}
-{{% tabcontent Java %}}
+{{% tabs Java %}}
+{{% tab Java %}}
 ```java
 
 @SpaceClass
@@ -66,9 +66,9 @@ public class Person
  .
  .
 ```
-{{% /tabcontent%}}
+{{% /tab%}}
 
-{{% tabcontent XML %}}
+{{% tab XML %}}
 ```xml
 
 <gigaspaces-mapping>
@@ -85,8 +85,8 @@ public class Person
     </class>
 </gigaspaces-mapping>
 ```
-{{% /tabcontent%}}
-{{% /inittab%}}
+{{% /tab%}}
+{{% /tabs%}}
 
 # Limitations
 

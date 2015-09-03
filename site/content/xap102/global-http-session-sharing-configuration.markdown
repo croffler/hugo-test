@@ -123,7 +123,7 @@ The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below 
 
 {{%accord title="Session Sharing Configuration For Non-Secured Application ..." parent="acc0" id="tab1"%}}
 
-```bash
+```
 
 [main]
 # space proxy wraper
@@ -193,7 +193,7 @@ securityManager.cacheManager=$cacheManager
 Note that this example uses the basic authentication configuration but, Shiro has various authenticator types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html)
 {{% /note %}}
 
-```bash
+```
 
 [main]
 # space proxy wraper
@@ -403,7 +403,7 @@ Another option is to use Maven:
 
 The XAP IMDG should be deployed using one of the [topologies](/product_overview/space-topologies.html).
 
-```bash
+```
 # To deploy the IMDG called `sessionSpace` start the XAP agent using:
 <XAP-HOME>/bin/gs-agent
 

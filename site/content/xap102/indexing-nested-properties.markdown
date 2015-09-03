@@ -17,8 +17,8 @@ The **`path()`** attribute represents the path of the property within the nested
 
 Below is an example of defining an index on a nested property:
 
-{{% inittab example %}}
-{{% tabcontent Single Index Annotation %}}
+{{% tabs example %}}
+{{% tab Single Index Annotation %}}
 
 ```java
 @SpaceClass
@@ -52,8 +52,8 @@ public static class Address implements Serializable {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Multiple Indexes Annotation %}}
+{{% /tab %}}
+{{% tab Multiple Indexes Annotation %}}
 
 ```java
 @SpaceClass
@@ -100,8 +100,8 @@ public static class Address implements Serializable {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent XML %}}
+{{% /tab %}}
+{{% tab XML %}}
 
 ```xml
 <gigaspaces-mapping>
@@ -114,8 +114,8 @@ public static class Address implements Serializable {
 </gigaspaces-mapping>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The following is an example of query code that automatically triggers this index:
 

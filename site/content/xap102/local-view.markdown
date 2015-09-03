@@ -29,8 +29,8 @@ The Local view can be used with financial applications (e.g. trading , market da
 
 Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-interface.html) instance, except the space should be wrapped with a local view before exposing it as a `GigaSpace`. The local view can be configured via Spring using `LocalViewSpaceFactoryBean` or the `<os-core:local-view>` Spring tag, or in code using `LocalViewSpaceConfigurer`. For example:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent   Namespace   %}}
+{{% tabs os_simple_space %}}
+{{% tab   Namespace   %}}
 
 ```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
@@ -51,8 +51,8 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
 <os-core:giga-space id="localView" space="localViewSpace"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain   XML %}}
+{{% /tab %}}
+{{% tab Plain   XML %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
@@ -76,8 +76,8 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 // Initialize remote space configurer:
@@ -101,8 +101,8 @@ LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(urlC
 GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Read Only Cache
 

@@ -52,8 +52,8 @@ public class SimpleFilter implements ISpaceFilter {
 
 The following Spring configuration registers this filter for before write (`0`), before read (`2`), and before take (`3`) operations:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -69,8 +69,8 @@ The following Spring configuration registers this filter for before write (`0`),
 </os-core:embedded-space>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -96,8 +96,8 @@ The following Spring configuration registers this filter for before write (`0`),
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Delegate Filters
 
@@ -165,8 +165,8 @@ When either annotations or explicit method listings are used, only a single meth
 
 The delegate filter shown above, can be configured in Spring using the following XML:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -180,8 +180,8 @@ The delegate filter shown above, can be configured in Spring using the following
 </os-core:embedded-space>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -198,13 +198,13 @@ The delegate filter shown above, can be configured in Spring using the following
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The following Spring configuration XML shows how the filter can be configured, using explicit method listings. (In this case, annotations are not required.)
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space%}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -220,8 +220,8 @@ The following Spring configuration XML shows how the filter can be configured, u
 </os-core:embedded-space>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -244,8 +244,8 @@ The following Spring configuration XML shows how the filter can be configured, u
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Accessing a Space within a Space Filter
 
@@ -280,8 +280,8 @@ public class SimpleReplicationFilter implements IReplicationFilter {
 
 The following configuration shows how it can be injected:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -295,8 +295,8 @@ The following configuration shows how it can be injected:
 </os-core:embedded-space>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -313,5 +313,5 @@ The following configuration shows how it can be injected:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}

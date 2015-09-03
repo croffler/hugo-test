@@ -49,8 +49,8 @@ The distributed [Jini Transaction Manager](http://river.apache.org/doc/specs/htm
 
 Below is an example of how it can be defined in a Spring application context:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -61,8 +61,8 @@ Below is an example of how it can be defined in a Spring application context:
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -78,8 +78,8 @@ Below is an example of how it can be defined in a Spring application context:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
@@ -87,8 +87,8 @@ PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().transa
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Timeout Values
 
@@ -96,8 +96,8 @@ The Jini distributed (mahalo) transaction manager allows to set the default time
 
 For example, to change the default timeout to 2 minutes, use the following configuration:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -108,8 +108,8 @@ For example, to change the default timeout to 2 minutes, use the following confi
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -127,8 +127,8 @@ For example, to change the default timeout to 2 minutes, use the following confi
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
@@ -136,8 +136,8 @@ PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().defaul
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% info %}}
 Time based Parameters Units:
@@ -156,8 +156,8 @@ The Jini Transaction Manager Lookup allows you to use the Jini lookup mechanism 
 
 Below is an example of how it can be defined in a Spring application context:
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space%}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -168,8 +168,8 @@ Below is an example of how it can be defined in a Spring application context:
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -187,8 +187,8 @@ Below is an example of how it can be defined in a Spring application context:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
@@ -196,16 +196,16 @@ PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().lookupTimeo
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 ## Timeout Values
 
 The Jini lookup transaction manager allows to set the default timeout value for transactions. A timeout value is used when a transaction is not committed/rolled back (for example due to a JVM crash) to control when the transaction will be discarded. By default the timeout value is 60 Sec and is set in seconds. Controlling the timeout value can be done using:
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space%}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -216,8 +216,8 @@ The Jini lookup transaction manager allows to set the default timeout value for 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -235,8 +235,8 @@ The Jini lookup transaction manager allows to set the default timeout value for 
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
@@ -244,8 +244,8 @@ PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().defaultTime
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% info %}}
 When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [below](#spring-transactiondefinition-mapping-to-gigaspaces-readmodifiers).
@@ -265,8 +265,8 @@ Jini transactions allow you to configure automatic renewing of ongoing transacti
 
 Here is an example of how this can be configured:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -279,8 +279,8 @@ Here is an example of how this can be configured:
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -304,8 +304,8 @@ Here is an example of how this can be configured:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
@@ -317,8 +317,8 @@ PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().leaseR
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The above configuration creates a Distributed Transaction Manager with a pool of 2 transaction (lease) renewal managers (a single manager can handle multiple transactions, more managers allow for better concurrency). Each transaction is renewed every 1 second (1000 milliseconds) with an expected round trip time of 500 milliseconds. This means that a transaction with a timeout of 10 seconds is renewed 10 times (approximately) and if the JVM crashes, the transaction expires within a second (at most).
 
@@ -328,8 +328,8 @@ More information regarding Lease Renewal Manager can be found [here](./leases-au
 
 GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API allows you to work with Spring's `JTATransactionManager` and provides support for declarative transaction management. Here is an example of how OpenSpaces JTA support can be used (using JOTM):
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space%}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -344,8 +344,8 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -365,8 +365,8 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 UserTransaction userTransaction = ... //get UserTransaction via JDNI / instantiation
@@ -375,8 +375,8 @@ EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gig
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% info%}}
 Since version 8.0.1, GigaSpaces JTA implementation supports both local and distributed transaction managers. That means that you can enlist multiple space partitions as a single XA resource in an XA transaction.

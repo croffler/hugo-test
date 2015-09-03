@@ -86,9 +86,9 @@ Starting with XAP 8.0.6 Local view using the replication mechanism to update the
 
 
 # Register for Notifications
-{{% inittab %}}
+{{% tabs %}}
 
-{{% tabcontent  EventSessionFactory %}}
+{{% tab  EventSessionFactory %}}
 The `EventSessionFactory` creates `DataEventSession` objects. The `EventSessionFactory` is associated with a space, and is required in order to create a factory. Once a factory has been created, it can be used to create sessions. Every session is configured according to an `EventSessionConfig` object and is bounded to a transaction.
 
 The `EventSessionFactory` includes the following methods:
@@ -97,9 +97,9 @@ EventSessionFactory getFactory(IJSpace)
 DataEventSession newDataSession(IJSpace, Transaction, String)
 DataEventSession newDataEventSession(EventSessionConfig, Transaction)
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent  "Simple Template Registration"%}}
+{{% tab  "Simple Template Registration"%}}
 Here is an example for getting an `EventSessionFactory`, generating a `DataEventSession`, and registering for notifications using simple template and cancelling the registration:
 
 ```java
@@ -117,9 +117,9 @@ public class DataSessionEventExample implements RemoteEventListener
  }
 }
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent "SQLQuery Template Registration"%}}
+{{% tab "SQLQuery Template Registration"%}}
 Here is an example for getting an `EventSessionFactory`, generating a `DataEventSession`, and registering for notifications using a `SQLQuery}`template and cancelling the registration:
 
 ```java
@@ -138,9 +138,9 @@ public class DataSessionEventExample implements RemoteEventListener
  }
 }
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent Batch Notification Registration%}}
+{{% tab Batch Notification Registration%}}
 When a client expects to receive a large amount of events, it is recommended to deliver the events from the space into the client in batches. Batch notifications minimize the amount of remote calls the space needs to perform in order to deliver the events to the client. The downside when using this approach is the potential of some latency issues when delivering the events to the client.
 
 ```java
@@ -165,9 +165,9 @@ public class DataSessionEventExample implements RemoteEventListener
  }
 }
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent EventSession %}}
+{{% tab EventSession %}}
 The session-based API defines an entity called `EventSession` -- a stateful registration service that is used to register/un-register listeners to the space. The `EventSession` is created using the `EventSessionFactory`, and configured using the `EventSessionConfig` entity.
 
 The `EventSessionConfig` can be configured using:
@@ -190,9 +190,9 @@ EventSessionConfig getSessionConfig();
 void close() throws RemoteException, UnknownLeaseException;
 }
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent DataEventSession%}}
+{{% tab DataEventSession%}}
 The `DataEventSession` is a unified class that encapsulate the capabilities of the:
 * `NotifyDelegator`
 * `NotifyDelegatorMultiplextor`
@@ -230,9 +230,9 @@ public interface DataEventSession extends EventSession
   void removeListener(EventRegistration registration) throws RemoteException, UnknownLeaseException;
 }
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent EventRegistration%}}
+{{% tab EventRegistration%}}
 
 The `EventRegistration` is a utility class used as a return value for event-interest registration methods. Objects in this class encapsulate the information needed by a client in order to identify a notification as a response to a registration request, and to maintain that registration request. It is not mandatory for an event-interest registration method to use this class.
 
@@ -257,9 +257,9 @@ long getSequenceNumber()
 Object getSource()
 }
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent EventSessionConfig %}}
+{{% tab EventSessionConfig %}}
 
 This class is used to configure an `EventSession`. It contains a set of configuration parameters that influence the way event listeners are registered with the space, and how event notifications are processed.
 
@@ -280,15 +280,15 @@ The names of the parameters that can be used in the `Properties` object or file:
 * `renewExpiration` -- specifies the time of expiration of the registration. Used when `autoRenew=true`.
 * `renewDuration` -- specifies the time for each renew. Used when `autoRenew=true`.
 * `renewRTT` -- specifies the time that takes the Lease to renew. Used when `autoRenew=true`.
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 
 # Receive the Event
 
-{{% inittab %}}
-{{% tabcontent RemoteEventListener%}}
+{{% tabs %}}
+{{% tab RemoteEventListener%}}
 
 The `RemoteEventListener` interface should to be implemented to receive the notification from the space. The class implementing this interface does not need to be the object that originally registered interest in the occurrence of an event. To allow the notification of an event's occurrence to be sent to an entity other than the one that made the interest registration, the registration call needs to accept a destination parameter, which indicates to which object the notification should be sent. This parameter must be an object which supports the `RemoteEventListener` interface.
 
@@ -317,9 +317,9 @@ public void notify(RemoteEvent theEvent) throws UnknownEventException, RemoteExc
  }
 }
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent EntryArrivedRemoteEvent%}}
+{{% tab EntryArrivedRemoteEvent%}}
 
 The `EntryArrivedRemoteEvent` allows you to retrieve the object that triggered the event, as well as retrieving additional meta data about the event.
 
@@ -356,16 +356,16 @@ The `EntryArrivedRemoteEvent` includes the following methods:
 
 ```
 
-{{% /tabcontent   %}}
-{{% /inittab %}}
+{{% /tab   %}}
+{{% /tabs %}}
 
 # Notify-Recovery
 When a partitioned space is started each partition getting list of existing notify registrations from the other partitions. This is useful when the partition fails and restarted. This avoids the client side to re-issue a new notify registrations against the restarted partition. If you are not using notifications or running a partitioned space with backups you may disable this mechanism using the cluster-config.notify-recovery property (boolean property). This will speed up the space deployment time since when a partition looking for the other partitions and these have not been started yet, it might take some time for the entire clustered space to be fully available. By default this property is enabled (true).
 
 
 # Cancelling Registration and Closing the Session
-{{% inittab %}}
-{{% tabcontent "Cancelling Notify Registration"%}}
+{{% tabs %}}
+{{% tab "Cancelling Notify Registration"%}}
 
 To cancel the notify registration, call the following:
 ```java
@@ -373,17 +373,17 @@ To cancel the notify registration, call the following:
 ```
 
 This frees the relevant resources allocated to manage the notify registration, such as cancelling the automatic lease renewal, un exporting object client stubs, and releasing the client FIFO thread.
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent "Closing the Session"%}}
+{{% tab "Closing the Session"%}}
 To close the session, call the following:
 ```java
  DataEventSession.close();
 ```
 
 This cancels all the registrations done with the `DataEventSession`. You need to start a new session in order to register for new events.
-{{% /tabcontent   %}}
-{{% /inittab %}}
+{{% /tab   %}}
+{{% /tabs %}}
 
 
 
@@ -391,8 +391,8 @@ This cancels all the registrations done with the `DataEventSession`. You need to
 # Filtering Events
 The session messaging API allows for space-side notify filtering. To control the events delivered to the client, implement the `INotifyDelegatorFilter` interface, pass the object implementing the `INotifyDelegatorFilter`, and return a `false` value from the `INotifyDelegatorFilter.process` for events you do not want to be sent to the registered client.
 
-{{%inittab%}}
-{{% tabcontent INotifyDelegatorFilter%}}
+{{%tabs%}}
+{{% tab INotifyDelegatorFilter%}}
 
 The `INotifyDelegatorFilter` allows you to execute business logic at the space side before the event is delivered to the client. The `INotifyDelegatorFilter` might prevent a specific event from being delivered to the client registered for the matching event, by returning `false` from the process method.
 
@@ -412,9 +412,9 @@ public interface INotifyDelegatorFilter extends Serializable
  public void close();
 }
 ```
-{{% /tabcontent   %}}
+{{% /tab   %}}
 
-{{% tabcontent "INotifyDelegatorFilter Implementation Example"%}}
+{{% tab "INotifyDelegatorFilter Implementation Example"%}}
 Below is an example for the `INotifyDelegatorFilter` implementation, where the `process()` method allows only messages with the value `aaa` to be delivered to the client:
 
 ```java
@@ -482,8 +482,8 @@ When writing the following objects, only `msg1` is delivered to the client who r
 The INotifyDelegatorFilter implementation class should be part of the space classpath.
 {{%/note%}}
 
-{{% /tabcontent   %}}
-{{%/inittab%}}
+{{% /tab   %}}
+{{%/tabs%}}
 
 
 

@@ -16,11 +16,17 @@ To enforce a sole reader and sole updater for the object we explicitly lock the 
 
 When performing read operations without locking the object via a transaction, users can immediately perform an update operation, without having to wait for other users to complete their transaction (since there is none). However, there is no guarantee that the update operation will be performed on the latest version of the object.
 
-{{% note %}} The optimistic locking protocol assumes that a client that retrieved an object from the space, might or might not update the object, so it never locks the object when it is reading it. This makes the object accessible for large amount of users avoiding the need to wait for the lock to be released. Using the optimistic locking protocol when every object that is read is also updated, will consume unnecessary resources at the client and space side since all the clients will try to get the latest version of the object when updating it.{{%/note%}}
+{{% note %}}
+The optimistic locking protocol assumes that a client that retrieved an object from the space, might or might not update the object,
+so it never locks the object when it is reading it. This makes the object accessible for large amount of users avoiding the need to wait for the lock to be released.
+Using the optimistic locking protocol when every object that is read is also updated, will consume unnecessary resources at the client and space side since all the clients will try to get the latest version of
+the object when updating it.
+{{%/note%}}
 
 
-{{%note title="To implement the pessimistic locking protocol you should have the following:"%}}
+To implement the pessimistic locking protocol you should have the following:
 
+{{%note%}}
 - Start a transaction. You may use spring automatic transaction demarcation by annotating the method as `@Transactional`.
 - Read the object using the `Exclusive read Lock` modifier.  This will block other transactions from reading the same object. If there is another transaction locking the object, the read operation will wait for the transaction (according to the specified timeout) to be completed (commit or abort) and return the latest version of the object. You may read multiple objects during this phase.
 - Modify the object data. Execute your business logic. This might involve calculations, etc.
@@ -40,33 +46,26 @@ See below example illustrating the usage of the exclusive locking mode implement
 public void executeOrders(Integer orderIDs[]) throws Exception
 {
 	Order orders[] = new Order [orderIDs[].length];
-	for (int i=0;i<orderIDs.length;i++)
-	{
+	for (int i=0;i<orderIDs.length;i++){
 		orders[i]= space.readById(Order.class, orderIDs[i],orderIDs[i],5000,ReadModifiers.EXCLUSIVE_READ_LOCK);
                 if (orders[i] != null)
 		     orders[i].setStatus(DONE);
 	}
 	Object rets[] = space.updateMultiple(orders, new long[orderIDs.size()], UpdateModifiers.UPDATE_ONLY);
 
-	for (int i=0;i<rets.length;i++)
-	{
-		if (rets[i] == null)
-		{
+	for (int i=0;i<rets.length;i++){
+		if (rets[i] == null){
 			throw (new ReadTimeOutException("can't update object " + orders[i]));
 		}
 
-		if (rets[i] instanceof Exception)
-		{
-			if (rets[i] instanceof EntryNotInSpaceException)
-			{
+		if (rets[i] instanceof Exception){
+			if (rets[i] instanceof EntryNotInSpaceException){
 				throw (EntryNotInSpaceException)rets[i];
 			}
-			else if (rets[i] instanceof OperationTimeoutException )
-			{
+			else if (rets[i] instanceof OperationTimeoutException ){
 				throw (OperationTimeoutException)rets[i];
 			}
-			else
-			{
+			else{
 				throw (Exception)rets[i];
 			}
 		}

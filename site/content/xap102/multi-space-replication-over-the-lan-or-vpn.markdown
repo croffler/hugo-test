@@ -189,8 +189,8 @@ In this case, New York's space will be the active space while London and Hong Ko
 
 Like all GigaSpaces Processing Units, the configuration details of each of the above components is placed in a `pu.xml` file. Here are the contents of the files for each of the components:
 
-{{% inittab %}}
-{{% tabcontent New York Space %}}
+{{% tabs %}}
+{{% tab New York Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -217,9 +217,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent London Space %}}
+{{% tab London Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -243,9 +243,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent London Gateway %}}
+{{% tab London Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -275,9 +275,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Hong Kong Space %}}
+{{% tab Hong Kong Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -301,9 +301,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Hong Kong Gateway %}}
+{{% tab Hong Kong Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -332,9 +332,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 # Multi-Master Topology
 
@@ -352,8 +352,8 @@ With the example below we will have only New York and London as the two active s
 
 Here are the contents of the files for each of the components:
 
-{{% inittab %}}
-{{% tabcontent New York Space %}}
+{{% tabs %}}
+{{% tab New York Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -380,8 +380,8 @@ Here are the contents of the files for each of the components:
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent New York Gateway %}}
+{{% /tab %}}
+{{% tab New York Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -411,8 +411,8 @@ Here are the contents of the files for each of the components:
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent London Space %}}
+{{% /tab %}}
+{{% tab London Space %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -440,8 +440,8 @@ Here are the contents of the files for each of the components:
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent London Gateway %}}
+{{% /tab %}}
+{{% tab London Gateway %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -471,8 +471,8 @@ Here are the contents of the files for each of the components:
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Symmetric Gateway Config %}}
+{{% /tab %}}
+{{% tab Symmetric Gateway Config %}}
 In this example, the gateway `pu.xml` is quite symmetric, the only difference is the local gateway name and the target gateway name. In such cases, it may be more convenient to create a single gateway `pu.xml` and use place holders to override the relevant properties at deploy time by injecting values for these properties:
 
 ```xml
@@ -509,8 +509,8 @@ In this example, the gateway `pu.xml` is quite symmetric, the only difference is
 ```
 
 In the above we have configured both LONDON and NEWYORK at the sources of the sink, the sink will filter a gateway target and source if they match their local name. Using the above technique may simplify scenarios which are symmetric but it is not recommended when the scenarios are **not** symmetric as it can be unnecessarily confusing.
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Filtering Replication Between Gateways
 

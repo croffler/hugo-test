@@ -70,8 +70,8 @@ public class SimpleEventExceptionHandler implements EventExceptionHandler {
 
 Here is how it can be configured:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 
@@ -98,8 +98,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -112,8 +112,8 @@ public class SimpleListener {
 </os-events>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -126,8 +126,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Using the Event Exception Handler
 
@@ -149,8 +149,8 @@ Its important to note that the exception handler `onException` and `onSuccess` o
 Here is an example where we create Purchase Orders that need to be processed. The `NewOrderProcessor` will try to process the Purchase Order. If the processing fails it will retry two times. If it can't process the order a `PoProcessException` is thrown that will be handled by the `PoEventExceptionHandler`.
 The PoEventExceptionHandler will update the `state` of the PurchaseOrder to `UNPROCESSABLE` and write it back into the Space. The order will not be seen by the `NewOrderProcessor` again since its template specified the status to be `NEW`.
 
-{{%inittab%}}
-{{%tabcontent Program %}}
+{{%tabs%}}
+{{%tab Program %}}
 ```java
 public class Program {
 
@@ -199,9 +199,9 @@ public class Program {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent PurchaseOrder %}}
+{{%tab PurchaseOrder %}}
 ```java
 @SpaceClass
 public class PurchaseOrder {
@@ -254,9 +254,9 @@ public class PurchaseOrder {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent NewOrderProcessor %}}
+{{%tab NewOrderProcessor %}}
 ```java
 @EventDriven
 @Polling(gigaSpace = "sandboxSpace")
@@ -311,9 +311,9 @@ public class NewOrderProcessor {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent PoEventExceptionHandler %}}
+{{%tab PoEventExceptionHandler %}}
 ```java
 public class PoEventExceptionHandler implements
 		EventExceptionHandler<PurchaseOrder> {
@@ -341,9 +341,9 @@ public class PoEventExceptionHandler implements
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent PoProcessingException %}}
+{{%tab PoProcessingException %}}
 ```java
 public class PoProcessingException extends Exception{
 
@@ -352,18 +352,18 @@ public class PoProcessingException extends Exception{
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent EPurchaseOrderState %}}
+{{%tab EPurchaseOrderState %}}
 ```java
 public enum EPurchaseOrderState {
   NEW, PROCESSED, UNPROCESSABLE
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
 
-{{%/inittab%}}
+{{%/tabs%}}
 
 
 When you run the above example you will see the following output:

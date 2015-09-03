@@ -113,8 +113,8 @@ When pre-loading the space via the [External Data Source initial-load](./space-p
 
 With the following example the `Counter` class wraps the `GigaSpace.change` operation providing simple `increment`,`decrement`,`get` and `unset` methods to manage counters. The example using an [extended SpaceDocument](./document-extending.html) as the space object storing the counters data. To retrieve the counter existing value a [Task](./task-execution-over-the-space.html) is used. To launch the example run the `CounterTest` unit test.
 
-{{%inittab%}}
-{{%tabcontent "CounterTest.java"%}}
+{{%tabs%}}
+{{%tab "CounterTest.java"%}}
 ```java
 package org.openspaces;
 import org.junit.Before;
@@ -170,9 +170,9 @@ public class CounterTest {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent Counter%}}
+{{%tab Counter%}}
 
 ```java
 package org.openspaces;
@@ -222,9 +222,9 @@ public class Counter {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent CounterData%}}
+{{%tab CounterData%}}
 ```java
 package org.openspaces;
 
@@ -256,7 +256,7 @@ public class CounterData extends SpaceDocument{
 		}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
 
-{{%/inittab%}}
+{{%/tabs%}}

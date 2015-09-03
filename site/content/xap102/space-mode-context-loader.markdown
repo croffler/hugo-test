@@ -34,8 +34,8 @@ public class SpaceModeContextBean implements InitializingBean, DisposableBean {
 
 and the following Spring XML definition constructing this bean (stored in a separate XML file than the Processing Unit definition called `mode.xml`):
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space%}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -44,8 +44,8 @@ and the following Spring XML definition constructing this bean (stored in a sepa
 <bean id="spaceModeContextBean" class="org.openspaces.example.data.processor.SpaceModeContextBean"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -57,13 +57,13 @@ and the following Spring XML definition constructing this bean (stored in a sepa
 <bean id="spaceModeContextBean" class="org.openspaces.example.data.processor.SpaceModeContextBean"/>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 with the following Processing Unit definition:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -79,8 +79,8 @@ with the following Processing Unit definition:
 <os-core:context-loader id="modeExample" location="classpath:/META-INF/spring/mode/mode.xml"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -102,8 +102,8 @@ with the following Processing Unit definition:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% tip %}}
 If there is more then one gigaSpace proxy in the pu you should bind the context to the gigaSpace instance by setting the giga-space property e.g.:

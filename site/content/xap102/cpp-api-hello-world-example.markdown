@@ -47,8 +47,8 @@ To verify the JVM version, run the following command: `>java -version`
 
 You can build and run the application using the provided scripts or using the Visual Studio IDE.
 
-{{% inittab Building_and_running %}}
-{{% tabcontent Using Scripts %}}
+{{% tabs Building_and_running %}}
+{{% tab Using Scripts %}}
 
 {{% info %}}
 `<Example Root>` below refers to the path: `<XAP Root>\cpp\examples\HelloWorld`.
@@ -129,8 +129,8 @@ clean:
 {{% note title="Debugging in Linux" %}}
 When debugging the code in Linux, you may receive the signal SIGSEGV (segmentation fault). It is recommended to instruct the debugger to ignore these signals ("`handle SIGSEGV nostop noprint`" in gdb, "`ignore SIGSEGV`" in most versions of dbx).
 {{% /note %}}
-{{% /tabcontent %}}
-{{% tabcontent "Using Visual Studio" %}}
+{{% /tab %}}
+{{% tab "Using Visual Studio" %}}
 
 
 Step 6. Start Visual Studio using the `<XAP Root>\cpp\GigaVisualStudio.bat` script.
@@ -188,15 +188,15 @@ Step 14. This is what you should see:
 To reduce the compilation time of the examples you may remove the **TestRead1** and **TestRead1Classes** projects from the examples project.
 {{% /tip %}}
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Environment Settings
 
 The above scripts and the Visual Studio solution define several environment settings that are necessary to build and run the example. This section lists these settings. Choose the tab below that matches your platform.
 
-{{% inittab Environment_Settings %}}
-{{% tabcontent Windows %}}
+{{% tabs Environment_Settings %}}
+{{% tab Windows %}}
 
 ## Environment Variables
 
@@ -235,8 +235,8 @@ You can also run the `<XAP Root>\cpp\env.cmd` file to define these variables to 
 
     gscpplib.lib
 
-{{% /tabcontent %}}
-{{% tabcontent Linux %}}
+{{% /tab %}}
+{{% tab Linux %}}
 
 ## Environment Variables
 
@@ -282,8 +282,8 @@ Libraries:
 -lgscpplib -lACE -lxerces-c -ljvm
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Code Walkthrough
 

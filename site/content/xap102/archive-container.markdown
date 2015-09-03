@@ -49,8 +49,8 @@ In cases where the same type is handled by both, configure the Archive Container
 
 Here is a simple example of an archive container configuration:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 ```xml
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
@@ -89,8 +89,8 @@ public class ExpiredTweetsArchiveContainer {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -134,8 +134,8 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -175,8 +175,8 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -216,8 +216,8 @@ cassandraArchiveHandler.destroy();
 configurer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{%note%}}
 For all possible Spring configuration options see the [schema definitions](/api_documentation/xap-{{%currentversion%}}.html#schemas)
@@ -245,8 +245,8 @@ This mostly applies when working with an embedded space directly with a cluster 
 
 When removing objects from the space, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./query-sql.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @Archive
@@ -262,8 +262,8 @@ public class ProcessedTweetsFilter {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -280,8 +280,8 @@ public class ProcessedTweetsFilter {
 
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -300,8 +300,8 @@ public class ProcessedTweetsFilter {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Dynamic Template Definition
 
@@ -352,8 +352,8 @@ In order to archive objects using multiple consumer threads, in the same order t
 
 Here is an example of an archive container with 3 concurrent consumers and 5 maximum concurrent consumers and fifo grouping enabled:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @Archive(batchSize = 100, concurrentConsumers = 3, maxConcurrentConsumers = 5, useFifoGrouping = true)
@@ -367,8 +367,8 @@ public class ExpiredTweetsFilter {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -378,8 +378,8 @@ public class ExpiredTweetsFilter {
 </os-archive:archive-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -392,8 +392,8 @@ public class ExpiredTweetsFilter {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 
 

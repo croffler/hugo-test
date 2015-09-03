@@ -60,8 +60,8 @@ When a FG template locks a group, its first entry is locked under a transaction 
 
 Specifying which property of a class is the FG property is done using annotations or gs.xml.
 
-{{% inittab %}}
-{{% tabcontent Annotations %}}
+{{% tabs %}}
+{{% tab Annotations %}}
 
 ```java
 @SpaceClass
@@ -77,8 +77,8 @@ public class FlightReservation
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent XML %}}
+{{% /tab %}}
+{{% tab XML %}}
 
 ```xml
 <gigaspaces-mapping>
@@ -88,15 +88,15 @@ public class FlightReservation
 </gigaspaces-mapping>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Setting FIFO Grouping index
 
 Specifying which properties of a class are a FG index is done using annotations or gs.xml.
 
-{{% inittab %}}
-{{% tabcontent Annotations %}}
+{{% tabs %}}
+{{% tab Annotations %}}
 
 ```java
 @SpaceFifoGroupingIndex
@@ -107,8 +107,8 @@ public Person getCustomer() {return customer;}
 public void setCustomer (Person customer) {this.customer = customer;}
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent XML %}}
+{{% /tab %}}
+{{% tab XML %}}
 
 ```xml
 <gigaspaces-mapping>
@@ -122,8 +122,8 @@ public void setCustomer (Person customer) {this.customer = customer;}
 </gigaspaces-mapping>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Working Patterns
 

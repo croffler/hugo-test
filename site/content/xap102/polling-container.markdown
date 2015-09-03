@@ -29,8 +29,8 @@ The polling container life cycle events described below. You may implement each 
 
 Here is a simple example of polling event container configuration:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```xml
 
@@ -63,8 +63,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -87,8 +87,8 @@ public class SimpleListener {
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -120,8 +120,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -145,8 +145,8 @@ pollingEventListenerContainer.start();
 pollingEventListenerContainer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% tip %}}
  `@EventDriven` , `@Polling` , `@Notify` can't be placed on interface classes. You should place these on the implementation class.
@@ -171,8 +171,8 @@ The FIFO Grouping designed to allow efficient processing of events with partial 
 
 When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./query-sql.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Polling
@@ -191,8 +191,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -209,8 +209,8 @@ public class SimpleListener {
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -233,8 +233,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% tip %}}
 A polling container or notify container could have only one template. If you need multiple event handlers you will need to create another polling container or notify container. If you use multiple polling containers make sure the different templates does not overlap each other.
@@ -293,8 +293,8 @@ SimplePollingEventListenerContainer pollingEventListenerContainer =
 When performing polling receive operations, a dynamic template can be used. A method providing a dynamic template is called before each receive operation, and can return a different object in each call.
 The event template object has the same syntax rules as with @EventTemplate.
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space%}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Polling
@@ -315,8 +315,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -347,8 +347,8 @@ public class ExpiredDataTemplateProvider implements DynamicEventTemplateProvider
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -379,8 +379,8 @@ public class ExpiredDataTemplateProvider implements DynamicEventTemplateProvider
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% tip %}}
 Only polling containers support dynamic templates. Notify containers do not support dynamic templates.
@@ -429,8 +429,8 @@ When using the `ExclusiveReadReceiveOperationHandler` or even the `SingleReadRec
 
 Here is an example of how the receive operation handler can be configured with `MultiTakeReceiveOperationHandler`:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Polling
@@ -457,8 +457,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -487,8 +487,8 @@ public class SimpleListener {
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -524,8 +524,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Non-Blocking Receive Handler
 
@@ -552,8 +552,8 @@ Step 2  - Workers generating results which are consumed by the Master:
 
 Here is an example of how a Non-Blocking mode can be configured:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Polling (receiveTimeout=10000)
@@ -581,8 +581,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -614,8 +614,8 @@ public class SimpleListener {
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -656,8 +656,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The above example uses a receive timeout of 10 seconds (10000 milliseconds). The `SingleTakeReceiveOperationHandler` is configured to be non-blocking with a non-blocking factor of 10. This means that the receive handler performs 10 non-blocking takes within 10 seconds and sleeps the rest of the time (~1 second each time).
 
@@ -752,8 +752,8 @@ public interface TriggerOperationHandler {
 
 OpenSpaces comes with a built-in implementation of this interface, called `ReadTriggerOperationHandler`. It performs a single blocking read operation (using the provided receive timeout), thus "peeking" into the space for relevant event data. If the read operation returns a value, this means that there is higher probability that the receive operation will succeed, and the transaction won't be started without a purpose. Here is how it can be configured:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Polling @TransactionalEvent
@@ -779,8 +779,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -813,8 +813,8 @@ public class SimpleListener {
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -853,8 +853,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% refer %}}
 Learn more using about `TriggerOperationsHandler` using an example application on the [Patterns wiki](/sbp/dynamic-polling-container-templates-using-triggeroperationhandler.html)

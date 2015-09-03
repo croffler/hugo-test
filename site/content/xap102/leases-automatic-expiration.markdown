@@ -217,8 +217,8 @@ The TaskManager that manages the renewal threads has a bound on the number of si
 
 Following example shows a client writing `Order`'s to the space with a limited lease. It uses a LeaseRenewalManager to renew the Lease for the `Order`. It also uses a LeaseListener which is triggered in case LeaseRenewalManager runs into errors renewing a lease. Example source can be downloaded from [here](/download_files/LeaseRenewalManager.zip).
 
-{{% inittab os_simple_space %}}
-{{% tabcontent LeaseManagerClient %}}
+{{% tabs os_simple_space %}}
+{{% tab LeaseManagerClient %}}
 
 ```java
 ...
@@ -284,8 +284,8 @@ public class LeaseManagerClient {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Using Custom LeaseRenewalManager Configuration %}}
+{{% /tab %}}
+{{% tab Using Custom LeaseRenewalManager Configuration %}}
 
 ```java
 public LeaseManagerClient(String url) {
@@ -349,8 +349,8 @@ private static final class LeaseRenewalConfiguration implements Configuration {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent LeaseListener %}}
+{{% /tab %}}
+{{% tab LeaseListener %}}
 
 ```java
 public class MyLeaseListener implements LeaseListener{
@@ -367,8 +367,8 @@ public class MyLeaseListener implements LeaseListener{
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Order %}}
+{{% /tab %}}
+{{% tab Order %}}
 
 ```java
 public class Order implements Serializable {
@@ -404,8 +404,8 @@ public class Order implements Serializable {
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 API page for [LeaseRenewalManager](http://www.gigaspaces.com/docs/JiniApi/net/jini/lease/LeaseRenewalManager.html) has additional information.
 

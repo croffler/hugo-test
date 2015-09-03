@@ -50,8 +50,8 @@ Reading data from the data source is explained in the [Space Data Source API](./
 
 Space synchronization endpoint configuration can be done using a Spring bean or via code as shown in the following examples:
 
-{{% inittab Configuration Examples %}}
-{{% tabcontent Spring %}}
+{{% tabs Configuration Examples %}}
+{{% tab Spring %}}
 
 ```xml
 <?xml version="1.0"?>
@@ -72,8 +72,8 @@ Space synchronization endpoint configuration can be done using a Spring bean or 
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 SpaceSynchronizationEndpoint spaceSynchronizationEndpoint = new MySpaceSynchronizationEndpoint();
@@ -84,8 +84,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space
   .space()).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # The Space Synchronization Endpoint API
 

@@ -122,16 +122,16 @@ In embedded mode, the space factory bean registers with the space for space mode
 
 Space mode registration can be overridden and explicitly set within the space factory configuration. Here is an example of how it can be set (it cannot register for notifications even though it is an embedded space):
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
 <os-core:embedded-space id="space" name="space" register-for-space-mode-notifications="false" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -141,8 +141,8 @@ Space mode registration can be overridden and explicitly set within the space fa
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -156,8 +156,8 @@ IJSpace space = spaceConfigurer.space();
 spaceConfigurer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ### Primary Backup Notifications
 
@@ -222,22 +222,22 @@ class MyBean {
 
 In order to enable this feature, the following should be placed within the application context configuration:
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space%}}
+{{% tab Namespace %}}
 
 ```xml
 <os-core:annotation-support />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 <bean id="coreAnntoationSupport" class="org.openspaces.core.config.AnnotationSupportBeanDefinitionParser" />
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 
 When there is more than one Proxy (e.g: embedded, remote, ...), the following should be done in order to be sure that the Primary Backup Notifications arrived from the current Space instance:

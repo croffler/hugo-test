@@ -44,8 +44,8 @@ The `Data` object should be `Serializable`, or better yet, `Externalizable` (for
 
 Next, an implementation of this contract needs to be provided. This implementation will "live" on the server side. Here is a sample implementation:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @RemotingService
@@ -58,8 +58,8 @@ public class DataProcessor implements IDataProcessor {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent XML %}}
+{{% /tab %}}
+{{% tab XML %}}
 
 ```java
 public class DataProcessor implements IDataProcessor {
@@ -71,8 +71,8 @@ public class DataProcessor implements IDataProcessor {
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The XML tab corresponds to exporting the service using xml configuration. The Annotation tab corresponds to exporting the service using annotations.
 
@@ -80,8 +80,8 @@ The XML tab corresponds to exporting the service using xml configuration. The An
 
 The next step is exporting the service over the space. Exporting the service is done on the server side. As with other Spring remoting support, exporting the service and the method of exporting the service is a configuration time decision. Here is an example of a Spring XML configuration:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```xml
 
@@ -104,8 +104,8 @@ The next step is exporting the service over the space. Exporting the service is 
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -126,8 +126,8 @@ The next step is exporting the service over the space. Exporting the service is 
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -154,8 +154,8 @@ The next step is exporting the service over the space. Exporting the service is 
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Exporting the service as a remote space service uses the [event polling container](./polling-container.html). The polling container automatically listens to internal `EventDrivenSpaceRemotingEntry` objects, and writes back an updated `EventDrivenSpaceRemotingEntry` to the space. All polling event container features, such as transactions and different receive handlers can be used with Space remoting.
 
@@ -211,8 +211,8 @@ public class DataRemoting {
 
 Configuring the `IDataProcessor` proxy can be done in the following manner:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -229,8 +229,8 @@ Configuring the `IDataProcessor` proxy can be done in the following manner:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -253,8 +253,8 @@ Configuring the `IDataProcessor` proxy can be done in the following manner:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
@@ -270,8 +270,8 @@ DataRemoting dataRemoting = new DataRemoting();
 dataRemoting.setDataProcessor(dataProcessor);
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The above example uses the `event-driven-proxy` bean in order to create the remoting proxy, which can then be injected into the `DataRemoting` object. OpenSpaces remoting also allows you to inject the remoting proxy directly into the remoting service property using annotations. Here is an example using the `DataRemoting` class:
 
@@ -289,24 +289,24 @@ If there are more than one `GigaSpace` beans defined within the application cont
 
 In order to enable this feature, the following element needs to be added to the application context XML:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
 <os-remoting:annotation-support />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
 <bean id="space" class="org.openspaces.remoting.RemotingAnnotationBeanPostProcessor" />
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Remote Routing Handler
 
@@ -340,8 +340,8 @@ public class DataRemoteRoutingHandler implements RemoteRoutingHandler<Long> {
 
 Finally, the wiring is done in the following manner:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -361,8 +361,8 @@ Finally, the wiring is done in the following manner:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -388,8 +388,8 @@ Finally, the wiring is done in the following manner:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
@@ -406,8 +406,8 @@ DataRemoting dataRemoting = new DataRemoting();
 dataRemoting.setDataProcessor(dataProcessor);
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Routing Annotation
 
@@ -496,8 +496,8 @@ public interface RemoteInvocationAspect<T> {
 
 An implementation of such an aspect can be configured as follows:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -517,8 +517,8 @@ An implementation of such an aspect can be configured as follows:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -543,8 +543,8 @@ An implementation of such an aspect can be configured as follows:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
@@ -561,8 +561,8 @@ DataRemoting dataRemoting = new DataRemoting();
 dataRemoting.setDataProcessor(dataProcessor);
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The instance of the class that implements the `RemoteInvocationAspect` interface will be called by the framework prior to the invocation on the client side. Note that it is up to the aspect implementation to decide whether or not the call should proceed.
 If the aspect implementation decides to proceed with the call it should call `method.invoke()` on the provided `method argument`. Otherwise the call to the server will not be performed.
@@ -591,8 +591,8 @@ public interface ServiceExecutionAspect {
 
 An implementation of such an aspect can be configured as follows:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -616,8 +616,8 @@ An implementation of such an aspect can be configured as follows:
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -647,8 +647,8 @@ An implementation of such an aspect can be configured as follows:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The instance of the class that implements the `ServiceExecutionAspect` interface will be called by the framework prior to the invocation of the service bean on the server side. Note that it is up to the aspect implementation to decide whether or not the call should proceed.
 If the aspect implementation decides to proceed with the call it should call `method.invoke()` on the provided `method` argument. Otherwise the call to the service bean will not be performed.
@@ -672,8 +672,8 @@ public interface MetaArgumentsHandler {
 
 The following snippets show how to plug a custom meta arguments handler to the client side remote proxy. The `Object` array returned by the implementation of the `MetaArgumentsHandler` interface will be sent along with the invocation to server side.
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -693,8 +693,8 @@ The following snippets show how to plug a custom meta arguments handler to the c
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -719,8 +719,8 @@ The following snippets show how to plug a custom meta arguments handler to the c
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
@@ -737,8 +737,8 @@ DataRemoting dataRemoting = new DataRemoting();
 dataRemoting.setDataProcessor(dataProcessor);
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The way to access the meta arguments on the server side is to configure a [server side execution aspect](#serverExecutionApect) by implementing the `ServiceExecutionAspect` and wiring it on the server side as shown [above](#serverExecutionApect). To access the meta arguments, you should call `SpaceRemotingInvocation.getMetaArguments()` on the `invocation` argument provided to the server side aspect.
 

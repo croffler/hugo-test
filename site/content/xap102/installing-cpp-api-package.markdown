@@ -43,8 +43,8 @@ Where the `gigaspaces-cpp-9.X.X-ga-linux-amd64-gcc-4.1.2.tar.gz` should be locat
 
 There are several environment settings that are necessary to build and run the examples that come with this package. This section lists these settings. Choose the tab below that matches your platform.
 
-{{% inittab Environment_Settings %}}
-{{% tabcontent Windows %}}
+{{% tabs Environment_Settings %}}
+{{% tab Windows %}}
 
 ## Environment Variables
 
@@ -83,8 +83,8 @@ If you don't want to set these variables globally (by defining System Variables)
 
 {{% tip %}} You might need to edit these files to include the correct values for the `PATH` , `JAVA_HOME` and `JSHOMEDIR` environment variables and the correct location of Visual Studio and the jvm.dll.{{%/tip%}}
 
-{{% /tabcontent %}}
-{{% tabcontent Linux %}}
+{{% /tab %}}
+{{% tab Linux %}}
 
 ## Environment Variables
 
@@ -105,8 +105,8 @@ Example:
 If you don't want to set these variables globally the GigaSpaces C++ package includes the following script file that help set the environment:
 
 - **`<XAP Root>/cpp/setenv.sh`** -- Running this file defines these variables to match your platform.
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Testing the Installation
 

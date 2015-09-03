@@ -36,8 +36,8 @@ You might need to construct an ID that will be comprised from a user defined Obj
 
 See below example:
 
-{{% inittab The CompoundId %}}
-{{% tabcontent The CompoundId %}}
+{{% tabs The CompoundId %}}
+{{% tab The CompoundId %}}
 
 ```java
 import java.io.Serializable;
@@ -90,9 +90,9 @@ public class CompoundId implements Serializable{
 }
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent The Space Class %}}
+{{% tab The Space Class %}}
 
 ```java
 import com.gigaspaces.annotation.pojo.SpaceClass;
@@ -125,8 +125,8 @@ public class MySpaceClass {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent The Application Code %}}
+{{% /tab %}}
+{{% tab The Application Code %}}
 
 ```java
 GigaSpace space = new GigaSpaceConfigurer (new SpaceProxyConfigurer("space")).gigaSpace();
@@ -145,8 +145,8 @@ space.write(obj);
 MySpaceClass ret = space.readById(MySpaceClass.class, id);
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 
 {{% refer %}}

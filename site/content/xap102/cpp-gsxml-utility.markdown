@@ -16,7 +16,7 @@ The gsxml2cpp utility is usually called by a custom build tool. See below exampl
 ![gsxml2cpp.jpg](/attachment_files/gsxml2cpp.jpg)
 
 ## Syntax
-```bash
+```
 gs> gsxml2cpp <XML input file> <Package name> <output serializer file (.cpp)> <output classes file (.h)> <POJO output directory [optional]> <PONO output directory [optional]>
 ```
 
@@ -38,6 +38,6 @@ The `gsxml2cpp` command has the following parameters:
 
 ## Example
 
-```bash
+```
 $gsxml2cpp ../serializer/helloWorld.gs.xml HelloWorld ../serializer/HelloWorldMessage.cpp ../serializer/HelloWorldMessage.h
 ```

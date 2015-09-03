@@ -47,8 +47,8 @@ We also decide that **CatalogNumber** will be a primary key, partitioning will b
 
 The following is an example of how to introduce a new document type:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Spring Namespace Configuration %}}
+{{% tabs os_simple_space %}}
+{{% tab Spring Namespace Configuration %}}
 
 ```xml
 <os-core:embedded-space id="space" name="mySpace"  >
@@ -63,8 +63,8 @@ The following is an example of how to introduce a new document type:
 
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain Spring XML %}}
+{{% /tab %}}
+{{% tab Plain Spring XML %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -106,8 +106,8 @@ The following is an example of how to introduce a new document type:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 public void registerProductType(GigaSpace gigaspace) {
@@ -123,8 +123,8 @@ public void registerProductType(GigaSpace gigaspace) {
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Note that this code does not reflect the complete model - most of the properties does not need to be introduced to the schema. Only properties with special roles (ID, Routing) are part of the schema definition. These meta model **settings cannot be changed** without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
 
@@ -306,8 +306,8 @@ SpaceTypeDescriptor employeeDescriptor = new SpaceTypeDescriptorBuilder(
 
 Here is an example:
 
-{{%inittab%}}
-{{%tabcontent Program%}}
+{{%tabs%}}
+{{%tab Program%}}
 ```
 	public static void main(String[] args) {
 
@@ -356,9 +356,9 @@ Here is an example:
 
 	}
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent RegisterDocument%}}
+{{%tab RegisterDocument%}}
 ```java
 	static public void registerDocument(GigaSpace space) {
 		SpaceTypeDescriptor personDescriptor = new SpaceTypeDescriptorBuilder(
@@ -372,8 +372,8 @@ Here is an example:
 		space.getTypeManager().registerTypeDescriptor(employeeDescriptor);
 	}
 ```
-{{%/tabcontent%}}
-{{%/inittab%}}
+{{%/tab%}}
+{{%/tabs%}}
 
 
 # Indexing
@@ -392,8 +392,8 @@ Event containers (both [polling container](./polling-container.html) and [notify
 
 Here is a simple example of a polling event container configuration using a `Document`:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```xml
 <!-- Enable scan for OpenSpaces and Spring components -->
@@ -432,8 +432,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 <os-core:embedded-space id="space" name="mySpace">
@@ -470,8 +470,8 @@ public class SimpleListener {
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -509,8 +509,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -531,15 +531,15 @@ SimplePollingEventListenerContainer pollingEventListenerContainer = new SimplePo
 pollingEventListenerContainer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # FIFO
 
 [FIFO support](./fifo-support.html) is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Spring Namespace Configuration %}}
+{{% tabs os_simple_space %}}
+{{% tab Spring Namespace Configuration %}}
 
 ```xml
 <os-core:embedded-space id="space" name="mySpace">
@@ -550,8 +550,8 @@ pollingEventListenerContainer.destroy();
 <os-core:giga-space id="gigaSpace" space="space"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain Spring XML %}}
+{{% /tab %}}
+{{% tab Plain Spring XML %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -575,8 +575,8 @@ pollingEventListenerContainer.destroy();
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 // Create type descriptor:
@@ -588,8 +588,8 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% note %}} Changing FIFO support after a type has been registered is not supported.{{%/note%}}
 
@@ -603,8 +603,8 @@ Transactions and isolation modifiers semantics is identical to the POJO semantic
 
 Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Spring Namespace Configuration %}}
+{{% tabs os_simple_space %}}
+{{% tab Spring Namespace Configuration %}}
 
 ```xml
 <os-core:embedded-space id="space" name="mySpace">
@@ -615,8 +615,8 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 <os-core:giga-space id="gigaSpace" space="space"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain Spring XML %}}
+{{% /tab %}}
+{{% tab Plain Spring XML %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -640,8 +640,8 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 // Create type descriptor:
@@ -653,8 +653,8 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% note %}} Changing optimistic locking after a type has been registered is not supported. {{%/note%}}
 
@@ -673,8 +673,8 @@ If you intend to use local cache or local view in a mixed POJO-Document environm
 External Data Source is supported for space documents.
 Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 
-{{% inittab example %}}
-{{% tabcontent Configuration %}}
+{{% tabs example %}}
+{{% tab Configuration %}}
 
 ```xml
 <bean id="documentDataSource" class="com.test.DocumentEDS"/>
@@ -692,9 +692,9 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 </os-core:embedded-space>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent The EDS Implementation %}}
+{{% tab The EDS Implementation %}}
 
 ```java
 package com.test;
@@ -749,8 +749,8 @@ public class DocumentEDS
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Different document database can be used to implement the document persistency - MongoDB, CouchDB and others.
 Pojos can be persisted via document EDS as well, in the same way.

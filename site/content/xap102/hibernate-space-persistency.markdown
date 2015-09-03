@@ -33,9 +33,9 @@ The `Hibernate Space Persistency Implementation` is used both with the [Synchron
 
 See below example for `Hibernate Space Persistency` that is configured having a Space connected to a central data source using Hibernate configuration files decorating the Space Classes:
 
-{{% inittab simple_space %}}
+{{% tabs simple_space %}}
 
-{{% tabcontent Namespace %}}
+{{% tab Namespace %}}
 ```xml
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
@@ -82,8 +82,8 @@ See below example for `Hibernate Space Persistency` that is configured having a 
     </os-core:properties>
 </os-core:embedded-space>
 ```
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 ```xml
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
@@ -133,9 +133,9 @@ See below example for `Hibernate Space Persistency` that is configured having a 
     </property>
 </bean>
 ```
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 When using annotations to decorate the Space Classes the `sessionFactory` would have the following:
 

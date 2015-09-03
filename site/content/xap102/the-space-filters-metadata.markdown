@@ -56,8 +56,8 @@ The space filter business logic impacts the space responsiveness to client reque
 
 The following example illustrates a space Filter POJO and a Bean that performs some space operations:
 
-{{% inittab example %}}
-{{% tabcontent "The Space Filter POJO" %}}
+{{% tabs example %}}
+{{% tab "The Space Filter POJO" %}}
 
 ```java
 package com.test;
@@ -181,8 +181,8 @@ public class MySpaceFilter implements InitializingBean{
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "The Bean" %}}
+{{% /tab %}}
+{{% tab "The Bean" %}}
 
 ```java
 package com.test;
@@ -264,8 +264,8 @@ public class MyBean implements InitializingBean{
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "The Beans Definitions" %}}
+{{% /tab %}}
+{{% tab "The Beans Definitions" %}}
 
 ```xml
 <bean id="mySpaceFilter" class="com.test.MySpaceFilter" />
@@ -282,8 +282,8 @@ public class MyBean implements InitializingBean{
 <os-core:giga-space-late-context />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "The Space Class" %}}
+{{% /tab %}}
+{{% tab "The Space Class" %}}
 
 ```java
 package com.test;
@@ -318,8 +318,8 @@ public class Message {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "The Space Task" %}}
+{{% /tab %}}
+{{% tab "The Space Task" %}}
 
 ```java
 package com.test;
@@ -336,8 +336,8 @@ public class MyTask implements Task<Serializable>{
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 
 {{% accordion  acc1 %}}

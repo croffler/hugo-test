@@ -16,8 +16,8 @@ Each machine requires a single running [GigaSpaces Agent](/product_overview/serv
 
 That means that potentially any machine could be a management machine:
 
-{{% inittab deckName1 %}}
-{{% tabcontent Windows %}}
+{{% tabs deckName1 %}}
+{{% tab Windows %}}
 
 ```java
 rem Agent deployment that potentially can start management processes
@@ -26,9 +26,9 @@ set JSHOMEDIR=d:\gigaspaces
 start cmd /c "%JSHOMEDIR%\bin\gs-agent.bat gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 gsa.global.lus 2"
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Linux %}}
+{{% tab Linux %}}
 
 ```java
 
@@ -38,8 +38,8 @@ export JSHOMEDIR=~/gigaspaces
 nohup ${JSHOMEDIR}/bin/gs-agent.sh gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 gsa.global.lus 2 > /dev/null 2>&1 &
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{%note%}} Basic assumption: When using the ESM component, each machine must have exactly one Grid Service Agent{{%/note%}}
 
@@ -47,8 +47,8 @@ nohup ${JSHOMEDIR}/bin/gs-agent.sh gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 g
 
 In case you prefer having dedicated management machines, start GigaSpaces agents with the above settings on two machines, and start the rest of the GigaSpaces agents with the settings below. The command line parameters instruct the GigaSpaces agents not to start managers. It does not start any containers automatically. The EPU starts containers on demand:
 
-{{% inittab deckName2 %}}
-{{% tabcontent Windows %}}
+{{% tabs deckName2 %}}
+{{% tab Windows %}}
 
 ```java
 rem Agent that does not start management processes
@@ -57,9 +57,9 @@ set JSHOMEDIR=d:\gigaspaces
 start cmd /c "%JSHOMEDIR%\bin\gs-agent.bat gsa.global.esm 0 gsa.gsc 0 gsa.global.gsm 0 gsa.global.lus 0"
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Linux %}}
+{{% tab Linux %}}
 
 ```java
 
@@ -69,8 +69,8 @@ export JSHOMEDIR=~/gigaspaces
 nohup ${JSHOMEDIR}/bin/gs-agent.sh gsa.global.esm 0 gsa.gsc 0 gsa.global.gsm 0 gsa.global.lus 0 > /dev/null 2>&1 &
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Configure the EPU scale config to use `dedicatedManagementMachines`, and reduce the `reservedMemoryCapacityPerMachine`. For more information consult the [discovered machine provisioning configuration JavaDoc](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/config/DiscoveredMachineProvisioningConfigurer.html).
 

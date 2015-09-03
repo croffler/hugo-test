@@ -120,8 +120,8 @@ SpaceTypeDescriptor employeeDescriptor = new SpaceTypeDescriptorBuilder(
 
 Here is an example:
 
-{{%inittab%}}
-{{%tabcontent PersonDoc%}}
+{{%tabs%}}
+{{%tab PersonDoc%}}
 ```java
 public class PersonDoc extends SpaceDocument {
 
@@ -162,9 +162,9 @@ public class PersonDoc extends SpaceDocument {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent EmployeeDoc%}}
+{{%tab EmployeeDoc%}}
 ```java
 public class EmployeeDoc extends PersonDoc {
 
@@ -185,9 +185,9 @@ public class EmployeeDoc extends PersonDoc {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent RegisterDocument%}}
+{{%tab RegisterDocument%}}
 ```java
 	static public void registerDocument(GigaSpace space) {
 		SpaceTypeDescriptor personDescriptor = new SpaceTypeDescriptorBuilder(
@@ -202,9 +202,9 @@ public class EmployeeDoc extends PersonDoc {
 		space.getTypeManager().registerTypeDescriptor(employeeDescriptor);
 	}
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent Program%}}
+{{%tab Program%}}
 ```java
 public static void main(String[] args) {
 
@@ -248,5 +248,5 @@ public static void main(String[] args) {
 }
 
 ```
-{{%/tabcontent%}}
-{{%/inittab%}}
+{{%/tab%}}
+{{%/tabs%}}

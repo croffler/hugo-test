@@ -19,8 +19,8 @@ A **Local Cache** is a Client Side Cache that maintains a subset of the master s
 
 Creating a local cache is similar to creating a GigaSpace, except that we wrap the space with a local cache before handing it to the GigaSpace. The local cache can be configured at design time using `LocalCacheSpaceFactoryBean`, or at runtime using `LocalCacheSpaceConfigurer`. For example:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent  Namespace   %}}
+{{% tabs os_simple_space %}}
+{{% tab  Namespace   %}}
 
 ```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
@@ -43,8 +43,8 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 <os-core:giga-space id="localCache" space="localCacheSpace"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain   XML %}}
+{{% /tab %}}
+{{% tab Plain   XML %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
@@ -57,8 +57,8 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 // Initialize remote space configurer:
@@ -71,8 +71,8 @@ LocalCacheSpaceConfigurer localCacheConfigurer =
 GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 #### Transactional Operations
 

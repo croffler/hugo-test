@@ -30,8 +30,8 @@ The notify container life cycle events described below. You may implement each o
 
 Here is a simple example of a notify event container configuration:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```xml
 
@@ -62,8 +62,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -86,8 +86,8 @@ public class SimpleListener {
 </os-events:notify-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -116,8 +116,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -141,8 +141,8 @@ notifyEventListenerContainer.start();
 notifyEventListenerContainer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% tip %}}
  `@EventDriven` , `@Polling` , `@Notify` can't be placed on interface classes. You should place these on the implementation class.
@@ -166,8 +166,8 @@ Notifications for expired objects (NOTIFY_LEASE_EXPIRATION type) are sent both f
 
 When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./query-sql.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Notify
@@ -186,8 +186,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -204,8 +204,8 @@ public class SimpleListener {
 </os-events:notify-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -228,8 +228,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% tip %}}
 A polling container or notify container could have only one template. If you need multiple event handlers you will need to create another polling container or notify container or use the [Session Based Messaging API](./session-based-messaging-api.html#Registering Large Number of Listeners) that support multiple listeners with one Session. If you use multiple polling containers make sure the different templates does not overlap each other.
@@ -297,128 +297,6 @@ SimpleNotifyEventListenerContainer notifyEventListenerContainer =
 
 To free the resources used by the notify container make sure you close it properly. A good life cycle event to place the `destroy()` call would be within the `@PreDestroy` or `DisposableBean.destroy()` method.
 
-{{%comment%}}
-
-# Transaction Support
-
-The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
-
-{{% note %}}
-When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. In case this behavior is required, please consider using the [Polling Event Container](./polling-container.html).
-{{%/note%}}
-
-Transaction support can be configured as follows:
-
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
-
-```xml
-
-<!-- Enable scan for OpenSpaces and Spring components -->
-<context:component-scan base-package="com.mycompany"/>
-
-<!-- Enable support for @Polling annotation -->
-<os-events:annotation-support />
-
-<os-core:embedded-space  id="space" name="mySpace"/>
-
-<os-core:distributed-tx-manager id="transactionManager" />
-
-<os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-```
-
-```java
-@EventDriven @Notify @TransactionalEvent
-public class SimpleListener {
-
-    @EventTemplate
-    Data unprocessedData() {
-        Data template = new Data();
-        template.setProcessed(false);
-        return template;
-    }
-
-    @SpaceDataEvent
-    public Data eventListener(Data event) {
-        //process Data here
-    }
-}
-```
-
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
-
-```xml
-
-<os-core:embedded-space  id="space" name="mySpace"/>
-
-<os-core:distributed-tx-manager id="transactionManager" />
-
-<os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-
-<bean id="simpleListener" class="SimpleListener" />
-
-<os-events:notify-container id="eventContainer" giga-space="gigaSpace">
-
-    <os-events:tx-support tx-manager="transactionManager"/>
-
-    <os-core:template>
-        <bean class="org.openspaces.example.data.common.Data">
-            <property name="processed" value="false"/>
-        </bean>
-    </os-core:template>
-
-    <os-events:listener>
-        <os-events:annotation-adapter>
-            <os-events:delegate ref="simpleListener"/>
-        </os-events:annotation-adapter>
-    </os-events:listener>
-</os-events:notify-container>
-```
-
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
-
-```xml
-
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
-</bean>
-
-<bean id="transactionManager" class="org.openspaces.core.transaction.manager.LocalJiniTransactionManager">
-	<property name="space" ref="space" />
-</bean>
-
-<bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
-    <property name="space" ref="space" />
-	<property name="transactionManager" ref="transactionManager" />
-</bean>
-
-<bean id="simpleListener" class="SimpleListener" />
-
-<bean id="eventContainer" class="org.openspaces.events.notify.SimpleNotifyEventListenerContainer">
-    <property name="transactionManager" ref="transactionManager" />
-
-    <property name="gigaSpace" ref="gigaSpace" />
-
-    <property name="template">
-        <bean class="org.openspaces.example.data.common.Data">
-            <property name="processed" value="false"/>
-        </bean>
-    </property>
-
-    <property name="eventListener">
-    	<bean class="org.openspaces.events.adapter.AnnotationEventListenerAdapter">
-    	    <property name="delegate" ref="simpleListener" />
-    	</bean>
-    </property>
-</bean>
-```
-
-{{% /tabcontent %}}
-{{% /inittab %}}
-
-{{%/comment%}}
 
 # Masking Notifications
 
@@ -436,8 +314,8 @@ The notify container allows you to mask which operations performed against the s
 
 Here is an example of the notify container configured to trigger notifications for both write and update operations:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Notify
@@ -458,8 +336,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -481,8 +359,8 @@ public class SimpleListener {
 </os-events:notify-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -509,8 +387,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## The UNMATCHED NotifyActionType
 
@@ -626,8 +504,8 @@ Below is an example how batch notification should be configured. With this examp
 Make sure you set a reasonable batch size to avoid overloading the listener with a large burst of events to process. A value under 100 will be acceptable for most cases.
 {{% /tip %}}
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space%}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Notify
@@ -648,8 +526,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -671,8 +549,8 @@ public class SimpleListener {
 </os-events:notify-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -697,8 +575,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Pass Array as is
 
@@ -740,8 +618,8 @@ For full FIFO support, the actual template also has to be marked as FIFO. For mo
 
 Here is an example of how FIFO events can be configured with the notify container:
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space%}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Notify(fifo = true)
@@ -761,8 +639,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -782,8 +660,8 @@ public class SimpleListener {
 </os-events:notify-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -807,8 +685,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Re-Register after complete space shutdown and restart
 
@@ -816,9 +694,9 @@ The Notify Container can recover from partial disconnections (e.g failover) auto
 
 To get a notification about such disconnections, the *Auto Renew* feature needs to be enabled, and the container needs to implement a `LeaseListener` and register if to be triggered when the container becomes disconnected. For example:
 
-{{% inittab register_notifications%}}
+{{% tabs register_notifications%}}
 
-{{% tabcontent Notify Container Creation %}}
+{{% tab "Notify Container Creation" %}}
 
 ```java
 
@@ -864,9 +742,9 @@ public class NotifyHAMain {
 }
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent The LeaseListener Implementation %}}
+{{% tab "The LeaseListener Implementation" %}}
 
 ```java
 
@@ -891,9 +769,9 @@ public class MyLeaseListener implements LeaseListener {
 }
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 {{% tip %}}
 To make sure the client application will manage to reconnect automatically to the space cluster once it was restarted you may want to change the default configuration. See the [Proxy Connectivity]({{%currentadmurl%}}/tuning-proxy-connectivity.html) for details.
@@ -945,8 +823,8 @@ This means that during this very short period of time, the registered client mig
 
 Durable notifications allows configuring the notify container to withstand failover and short network disconnections with no notifications lost.
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Notify(durable = true)
@@ -966,8 +844,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -987,8 +865,8 @@ public class SimpleListener {
 </os-events:notify-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -1012,8 +890,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 
 
@@ -1040,8 +918,8 @@ Pojo properties should implement `hashcode` and `equals` methods for matching to
 
 Here is how the notify container can be configured:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Annotation %}}
+{{% tabs os_simple_space %}}
+{{% tab Annotation %}}
 
 ```java
 @EventDriven @Notify(performTakeOnNotify = true, ignoreEventOnNullTake = true)
@@ -1061,8 +939,8 @@ public class SimpleListener {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -1083,8 +961,8 @@ public class SimpleListener {
 </os-events:notify-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -1109,8 +987,8 @@ public class SimpleListener {
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Event meta data
 

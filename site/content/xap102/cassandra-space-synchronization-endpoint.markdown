@@ -14,8 +14,8 @@ A Cassandra based implementation of the [Space Synchronization Endpoint](./space
 The Cassandra Space Synchronization Endpoint uses the [Hector Library](http://hector-client.github.com/hector/build/html/index.html) For communicating with the Cassandra cluster.
 Include the following in your `pom.xml`
 
-{{% inittab %}}
-{{% tabcontent "hector using log4j" %}}
+{{% tabs %}}
+{{% tab "hector using log4j" %}}
 
 ```xml
 <dependency>
@@ -37,8 +37,8 @@ Include the following in your `pom.xml`
 </dependency>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "hector using java.util.logging" %}}
+{{% /tab %}}
+{{% tab "hector using java.util.logging" %}}
 
 ```xml
 <dependency>
@@ -77,15 +77,15 @@ Include the following in your `pom.xml`
 </dependency>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ### Setup
 
 An example of how the Cassandra Space Synchronization Endpoint can be configured within a mirror.
 
-{{% inittab "Configuration Examples" %}}
-{{% tabcontent Spring %}}
+{{% tabs "Configuration Examples" %}}
+{{% tab Spring %}}
 
 ```xml
 <?xml version="1.0"?>
@@ -128,8 +128,8 @@ An example of how the Cassandra Space Synchronization Endpoint can be configured
 </beans>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 HectorCassandraClient hectorClient = new HectorCassandraClientConfigurer()
@@ -152,8 +152,8 @@ IJSpace mirror = new EmbeddedSpaceConfigurer("mirror-service")
     .create();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 For more details about different configurations see [Space Persistency](./space-persistency.html).
 

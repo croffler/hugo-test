@@ -258,15 +258,15 @@ Internally dates are stored as a **TimeStamp**. This means that both time (hour/
 XAP supports the `LocalDate`, `LocalTime` and `LocalDateTime` classes. The following Space properties need to be defined in order to use the classes in queries:
 
 ```xml
-	<os-core:embedded-space id="space" name="sandboxSpace">
-		<os-core:properties>
-			<props>
-				<prop key="space-config.QueryProcessor.date_format">yyyy-MM-dd HH:mm:ss</prop>
-				<prop key="space-config.QueryProcessor.time_format">HH:mm:ss</prop>
-				<prop key="space-config.QueryProcessor.datetime_format">yyyy-MM-dd HH:mm:ss</prop>
-			</props>
-		</os-core:properties>
-	</os-core:embedded-space>
+<os-core:embedded-space id="space" name="sandboxSpace">
+    <os-core:properties>
+        <props>
+            <prop key="space-config.QueryProcessor.date_format">yyyy-MM-dd HH:mm:ss</prop>
+            <prop key="space-config.QueryProcessor.time_format">HH:mm:ss</prop>
+            <prop key="space-config.QueryProcessor.datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+        </props>
+    </os-core:properties>
+</os-core:embedded-space>
 ```
 
 Here are examples on how to use the Java8 dates:
@@ -275,8 +275,8 @@ Here are examples on how to use the Java8 dates:
 
 {{%accord title="LocalDate" parent="acc10" id="tab1"%}}
 
-{{%inittab%}}
-{{%tabcontent LocalDatePojo%}}
+{{%tabs%}}
+{{%tab LocalDatePojo%}}
 ```java
 public class LocalDatePojo {
 	private LocalDate myData;
@@ -302,11 +302,10 @@ public class LocalDatePojo {
 		this.id = id;
 	}
 }
-
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent Program%}}
+{{%tab Program%}}
 ```java
 public void testLocalDate() {
 	LocalDate d = LocalDate.now();
@@ -325,15 +324,15 @@ public void testLocalDate() {
 	pojo = dateSpace.read(q);
 }
 ```
-{{%/tabcontent%}}
-{{%/inittab%}}
+{{%/tab%}}
+{{%/tabs%}}
 
 {{%/accord%}}
 
 {{%accord title="LocalTime" parent="acc10" id="tab2"%}}
 
-{{%inittab%}}
-{{%tabcontent LocalTimePojo%}}
+{{%tabs%}}
+{{%tab LocalTimePojo%}}
 ```java
 public class LocalTimePojo {
 	private LocalTime myTime;
@@ -360,9 +359,9 @@ public class LocalTimePojo {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent Program%}}
+{{%tab Program%}}
 ```java
 	public void testLocalTime() {
 		LocalTime t = LocalTime.now();
@@ -381,15 +380,15 @@ public class LocalTimePojo {
 		pojo = dateSpace.read(q);
 	}
 ```
-{{%/tabcontent%}}
-{{%/inittab%}}
+{{%/tab%}}
+{{%/tabs%}}
 
 {{%/accord%}}
 
 {{%accord title="LocalDateTime" parent="acc10" id="tab3"%}}
 
-{{%inittab%}}
-{{%tabcontent LocalDateTimePojo%}}
+{{%tabs%}}
+{{%tab LocalDateTimePojo%}}
 ```java
 public class LocalDateTimePojo {
 	private LocalDateTime myData;
@@ -416,9 +415,9 @@ public class LocalDateTimePojo {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent Program%}}
+{{%tab Program%}}
 ```java
 public void testLocalDateTime() {
 	LocalDateTime d = LocalDateTime.now();
@@ -438,8 +437,8 @@ public void testLocalDateTime() {
 	pojo = dateSpace.read(q);
  }
 ```
-{{%/tabcontent%}}
-{{%/inittab%}}
+{{%/tab%}}
+{{%/tabs%}}
 {{%/accord%}}
 
 {{%/accordion%}}

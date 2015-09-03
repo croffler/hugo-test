@@ -37,8 +37,8 @@ A client communicating with a remote space performs all its operation via a remo
 
 Here is a very simple example how a client application can create a `GigaMap` interface interacting with a remote space:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 <os-core:space-proxy id="space" name="mySpace"/>
@@ -46,8 +46,8 @@ Here is a very simple example how a client application can create a `GigaMap` in
 <os-core:giga-map id="gigaMap" map="map" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
@@ -63,16 +63,16 @@ Here is a very simple example how a client application can create a `GigaMap` in
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space()).createMap();
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## GigaMap with an Embedded Space
 
@@ -84,8 +84,8 @@ A client communicating with a an embedded space performs all its operation via l
 
 To create a `GigaMap` for a co-located (embedded) space the space URL should use embedded space URL format:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 <os-core:embedded-space  id="space" name="mySpace"/>
@@ -93,8 +93,8 @@ To create a `GigaMap` for a co-located (embedded) space the space URL should use
 <os-core:giga-map id="gigaMap" map="map" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -110,18 +110,18 @@ To create a `GigaMap` for a co-located (embedded) space the space URL should use
 </bean>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Code %}}
+{{% tab Code %}}
 
 ```java
 IMap map = new MapConfigurer(new EmbeddedSpaceConfigurer("space").space()).createMap();
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 The Embedded space can be used in a distributed architecture such as the replicated or partitioned clustered space:
 
@@ -141,8 +141,8 @@ The `GigaMap` support [Local Cache](./local-cache.html) (near cache) configurati
 
 Here is an example for a `GigaMap` construct with a local cache:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -159,8 +159,8 @@ Here is an example for a `GigaMap` construct with a local cache:
 <os-core:giga-map id="gigaMap" map="map" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -189,8 +189,8 @@ Here is an example for a `GigaMap` construct with a local cache:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 FIFOEvictionStrategy evictionStrategy = new FIFOEvictionStrategy();
@@ -207,8 +207,8 @@ IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space())
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The local cache support the following properties:
 
@@ -279,8 +279,8 @@ gigaMap.getMap().put("key", "value", gigaMap.getCurrentTransaction(), 1000);
 
 GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED` and `REPEATABLE_READ` (default). When using `GigaMap`, the default isolation level it is performed under can be defined in the following manner:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 <os-core:space-proxy id="space" name="mySpace"/>
@@ -288,8 +288,8 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 <os-core:giga-map id="gigaMap" map="map" default-isolation-level="READ_COMMITTED"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
@@ -306,8 +306,8 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 IMap map = // get IMap either by injection or code creation
@@ -315,8 +315,8 @@ GigaMap gigaMap = new GigaMapConfigurer(map).defaultIsolationLevel(TransactionDe
                                             .gigaMap();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 In addition, Spring allows you to define the isolation level on the transaction definition itself:
 
@@ -436,8 +436,8 @@ Many times, especially when working with a Processing Unit that starts an embedd
 The decision of working directly with a cluster member or against the whole cluster is done in the GigaMap level. The `MapFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (i.e. `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol i.e.
     jini://*/*/space
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -448,8 +448,8 @@ The decision of working directly with a cluster member or against the whole clus
 <os-core:map id="clusteredMap" space="space" clustered="true"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -468,8 +468,8 @@ The decision of working directly with a cluster member or against the whole clus
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -478,8 +478,8 @@ IMap directMap = new MapConfigurer(space).createMap();
 IMap clusteredMap = new MapConfigurer(space).clustered(true).createMap();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The above example shows a typical scenario where the clustered flag is used. Within a Processing Unit, an application might need to access both the cluster member and the whole cluster directly.
 

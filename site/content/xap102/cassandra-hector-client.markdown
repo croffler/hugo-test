@@ -20,8 +20,8 @@ See [Hector library dependencies](./cassandra-space-synchronization-endpoint.htm
 
 ## Setup
 
-{{% inittab Configuration Examples %}}
-{{% tabcontent Spring %}}
+{{% tabs Configuration Examples %}}
+{{% tab Spring %}}
 
 ```xml
 <bean id="hectorClient"
@@ -39,8 +39,8 @@ See [Hector library dependencies](./cassandra-space-synchronization-endpoint.htm
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 HectorCassandraClient hectorClient = new HectorCassandraClientConfigurer()
@@ -50,8 +50,8 @@ HectorCassandraClient hectorClient = new HectorCassandraClientConfigurer()
     .create();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## `HectorCassandraClient` Properties
 

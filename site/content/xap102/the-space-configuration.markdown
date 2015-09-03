@@ -132,15 +132,15 @@ The `UrlSpaceFactoryBean` allows you to set different URL properties, either exp
 
 Here is an example of a space working in FIFO mode, using specific lookup groups:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 <os-core:embedded-space id="space" name="space" lookup-groups="test" lookup-timeout="10000"  lookup-locators="myHost" versioned="true" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -152,8 +152,8 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -175,8 +175,8 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
    spaceConfigurer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ### Overriding Default Configuration Using General Properties
 
@@ -186,8 +186,8 @@ The space allows you to override specific schema configuration element values us
 The general properties are used to override various components such as the space, space container, cluster schema properties, space proxy/client configuration, space URL attributes and other system and environmental properties.
 {{% /tip %}}
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -200,8 +200,8 @@ The general properties are used to override various components such as the space
 </os-core:embedded-space>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -214,8 +214,8 @@ The general properties are used to override various components such as the space
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -228,8 +228,8 @@ The general properties are used to override various components such as the space
    spaceConfigurer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Popular overrides:
 
@@ -248,16 +248,16 @@ The `GigaSpace` Spring Bean provides a simple way to configure a proxy to be inj
 
 Here is an example on how to create the proxy:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 <os-core:embedded-space id="space" name="space" />
   </os-core:giga-space id="mySpace" space="space" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 <os-core:embedded-space id="space" name="space">
@@ -266,8 +266,8 @@ Here is an example on how to create the proxy:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -281,8 +281,8 @@ Here is an example on how to create the proxy:
    spaceConfigurer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% note %}}
 The application is always injected with `os-core:giga-space` bean that wraps always a `os-core:space`.
@@ -312,8 +312,8 @@ The `GigaSpace` Bean can have the following elements:
 
 Here is an example of the `GigaSpace` Bean:
 
-{{% inittab gigaspace %}}
-{{% tabcontent Namespace %}}
+{{% tabs gigaspace %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -335,8 +335,8 @@ Here is an example of the `GigaSpace` Bean:
   	</os-core:giga-space>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -361,8 +361,8 @@ Here is an example of the `GigaSpace` Bean:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 
 
@@ -425,8 +425,8 @@ The application is always injected with `os-core:giga-space` bean that wraps alw
 
 You may configure default modifiers for the different operations in the `GigaSpace` interface. The default modifiers can be configured in the following manner:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -444,8 +444,8 @@ You may configure default modifiers for the different operations in the `GigaSpa
 </<os-core:giga-space>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -470,8 +470,8 @@ You may configure default modifiers for the different operations in the `GigaSpa
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -487,8 +487,8 @@ You may configure default modifiers for the different operations in the `GigaSpa
   .gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Any operation on the configured proxy will be treated as if the default modifiers were explicitly passed. If a certain operation requires passing an explicit modifier and also wishes to merge the existing default modifiers, the following  pattern should be used:
 

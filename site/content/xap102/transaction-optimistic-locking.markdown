@@ -141,8 +141,8 @@ public class Employee
 }
 ```
 
-{{% inittab code_exmple %}}
-{{% tabcontent Non-Transactional Update %}}
+{{% tabs code_exmple %}}
+{{% tab Non-Transactional Update %}}
 This example illustrates optimistic locking usage without using a transactional update:
 
 ```java
@@ -196,8 +196,8 @@ perform Update again.. Client Object version:2
 Update Successful! Object version in Space:3
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Transactional Update %}}
+{{% /tab %}}
+{{% tab Transactional Update %}}
 The read and the transactional update methods:
 
 ```java
@@ -270,9 +270,9 @@ perform Update again.. Client Object version:2
 Update Successful! Object version in Space:3
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Multiple Objects Update %}}
+{{% tab Multiple Objects Update %}}
 In general, when calling the `updateMultiple()` you should check every returned object from the returned array.
 
 If one of the returned objects is a `SpaceOptimisticLockingFailureException`, this indicates that the update failed. In this case you should re-read the relevant object, and call the update operation again.
@@ -332,8 +332,8 @@ while (true)
 }
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% tip %}}
 When there are more than 2 clients (or 2 threads within the same client) that might update space objects at the same time, before re-reading the space objects, you should have a short sleep with a random duration. This allows one of the threads to complete the update successfully. Without such a sleep, you might have a contention with the update activity.

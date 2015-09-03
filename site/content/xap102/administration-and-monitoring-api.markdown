@@ -13,8 +13,8 @@ weight: 100
 
 Before diving into the Admin API, here are some code examples showing how the Admin API can be used to display information on the currently deployed services / components:
 
-{{% inittab admin_test%}}
-{{% tabcontent GSA %}}
+{{% tab admin_test%}}
+{{% tab GSA %}}
 
 ```java
 public void gsa() {
@@ -32,8 +32,8 @@ public void gsa() {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent GSM %}}
+{{% /tab %}}
+{{% tab GSM %}}
 
 ```
 
@@ -48,8 +48,8 @@ public void gsm() {
 
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent GSC %}}
+{{% /tab %}}
+{{% tab GSC %}}
 
 ```
 public void gsc() {
@@ -68,8 +68,8 @@ public void gsc() {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Processing Unit %}}
+{{% /tab %}}
+{{% tab Processing Unit %}}
 
 ```java
 
@@ -114,8 +114,8 @@ public void pu() {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Space %}}
+{{% /tab %}}
+{{% tab Space %}}
 
 ```java
 
@@ -153,8 +153,8 @@ public void space() {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Virtual Machine %}}
+{{% /tab %}}
+{{% tab Virtual Machine %}}
 
 ```java
 public void virtualMachine() {
@@ -193,8 +193,8 @@ public void virtualMachine() {
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Machine %}}
+{{% /tab %}}
+{{% tab Machine %}}
 
 ```java
 public void machine() {
@@ -226,15 +226,15 @@ public void machine() {
 
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tab %}}
 
 
 Obtaining information about the currently deployed services / components via the started `GridServiceAgents`.
 
-{{%inittab%}}
+{{%tab%}}
 
-{{%tabcontent GSC %}}
+{{%tab GSC %}}
 ```java
 	public void findStartedGridServiceContainers() {
 		Admin admin = new AdminFactory().createAdmin();
@@ -249,9 +249,9 @@ Obtaining information about the currently deployed services / components via the
 		}
 	}
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent GSM %}}
+{{%tab GSM %}}
 ```java
 	public void findStartedGridServiceManagers() {
 		Admin admin = new AdminFactory().createAdmin();
@@ -267,9 +267,9 @@ Obtaining information about the currently deployed services / components via the
 	}
 
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent LUS %}}
+{{%tab LUS %}}
 ```java
 	public void findStartedLookupServices() {
 		Admin admin = new AdminFactory().createAdmin();
@@ -285,9 +285,9 @@ Obtaining information about the currently deployed services / components via the
 	}
 
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent ESM %}}
+{{%tab ESM %}}
 ```java
 	public void findStartedElasticServiceManagers() {
 		Admin admin = new AdminFactory().createAdmin();
@@ -302,9 +302,9 @@ Obtaining information about the currently deployed services / components via the
 		}
 
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%/inittab%}}
+{{%/tab%}}
 
 
 {{% refer %}}
@@ -738,8 +738,8 @@ You may monitor the remote communication activity via the Administration and Mon
 It is possible to receive notifications about the deployment status of a Processing Unit. An event listener can be attached to the Admin that delivers events describing the current and previous [DeploymentStatus](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/index.html?org/openspaces/admin/pu/DeploymentStatus.html) of a Processing Unit.
 Here is an example:
 
-{{%inittab%}}
-{{%tabcontent ChangeStatus%}}
+{{%tabs%}}
+{{%tab ChangeStatus%}}
 ```java
 public class ProcessingUnitStatusChanged {
 
@@ -753,9 +753,9 @@ public class ProcessingUnitStatusChanged {
 	}
 }
 ```
-{{%/tabcontent%}}
+{{%/tab%}}
 
-{{%tabcontent Listener%}}
+{{%tab Listener%}}
 ```java
 public class MyProcessingUnitStatusChangedEventListener implements
 		ProcessingUnitStatusChangedEventListener {
@@ -773,8 +773,8 @@ public class MyProcessingUnitStatusChangedEventListener implements
 	}
 }
 ```
-{{%/tabcontent%}}
-{{%/inittab%}}
+{{%/tab%}}
+{{%/tabs%}}
 
 # Processing Unit health monitoring
 

@@ -94,8 +94,8 @@ And here is how this can be configured within the mirror configuration:
 {{% accord title="Show configuration..." parent="accord2" id="tab2"%}}
 {{% panel%}}
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 <bean id="mirrorSpaceSynchronizationEndpoint" class="mypackage.MirrorSpaceSynchronizationEndpoint">
@@ -106,8 +106,8 @@ And here is how this can be configured within the mirror configuration:
     space-sync-endpoint="mirrorSpaceSynchronizationEndpoint" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 <bean id="mirrorSpaceSynchronizationEndpoint" class="mypackage.MirrorSpaceSynchronizationEndpoint">
@@ -121,8 +121,8 @@ And here is how this can be configured within the mirror configuration:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{% /panel %}}
 {{% /accord %}}

@@ -35,16 +35,16 @@ A client communicating with a an embedded space performs all its operation via l
 
 Here is an example how to create an embedded space. The `EmbeddedSpaceConfigurer` is used to configure the space url:
 
-{{% inittab os_space_emb %}}
-{{% tabcontent Code %}}
+{{% tabs os_space_emb %}}
+{{% tab Code %}}
 
 ```java
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpace")).gigaSpace();
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% tabcontent Namespace %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -52,8 +52,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpa
 <os-core:giga-space id="gigaSpace" space="space"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -65,8 +65,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpa
 	<property name="space" ref="space" />
 </bean>
 ```
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The Embedded space can be used in a distributed architecture such as the replicated or partitioned clustered space:
 
@@ -88,16 +88,16 @@ A client communicating with a remote space performs all its operation via a remo
 
 Here is an example how a client application can create a proxy to interacting with a remote space:
 
-{{% inittab os_space_remote %}}
-{{% tabcontent Code %}}
+{{% tabs os_space_remote %}}
+{{% tab Code %}}
 
 ```java
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Namespace %}}
+{{% /tab %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -105,8 +105,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace"
 <os-core:giga-space id="gigaSpace" space="space"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -119,9 +119,9 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace"
 </bean>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 {{%refer%}}
 A full description of the Space URL Properties can be found [here.](./the-space-configuration.html)
@@ -143,8 +143,8 @@ XAP supports a [Local Cache](./local-cache.html) (near cache) configuration. Thi
 
 Here is an example for a `GigaSpace` construct with a local cache:
 
-{{% inittab os_local_cache %}}
-{{% tabcontent Code %}}
+{{% tabs os_local_cache %}}
+{{% tab Code %}}
 
 ```java
 // Initialize remote space configurer:
@@ -156,8 +156,8 @@ LocalCacheSpaceConfigurer localCacheConfigurer = new LocalCacheSpaceConfigurer(u
 GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent   Namespace   %}}
+{{% /tab %}}
+{{% tab   Namespace   %}}
 
 ```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
@@ -165,8 +165,8 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 <os-core:giga-space id="localCache" space="localCacheSpace"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
@@ -179,9 +179,9 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 </bean>
 ```
 
-{{% /tabcontent %}}
+{{% /tab %}}
 
-{{% /inittab %}}
+{{% /tabs %}}
 
 {{%learn "./local-cache.html"%}}
 
@@ -196,8 +196,8 @@ XAP supports a [Local View](./local-view.html) configuration. This provides a fr
 
 Here is an example for a `GigaSpace` construct with a local cache:
 
-{{% inittab os_local_view %}}
-{{% tabcontent Code %}}
+{{% tabs os_local_view %}}
+{{% tab Code %}}
 
 ```java
 // Initialize remote space configurer:
@@ -212,8 +212,8 @@ LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(conf
 GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent   Namespace   %}}
+{{% /tab %}}
+{{% tab   Namespace   %}}
 
 ```xml
 <os-core:space-proxy id="space" name="mySpace" />
@@ -226,8 +226,8 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 <os-core:giga-space id="localView" space="localViewSpace"/>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
@@ -250,8 +250,8 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
     </property>
 </bean>
 ```
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 {{%learn "./local-view.html"%}}
 
@@ -312,8 +312,8 @@ LRMIManager.shutdown();
 
 A secured space should be configured with a security context so that it can be accessed (when connecting to it remotely). Here is an example of how this can be configured:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -322,8 +322,8 @@ A secured space should be configured with a security context so that it can be a
 </os-core:space-proxy>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -338,13 +338,13 @@ A secured space should be configured with a security context so that it can be a
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 Here is an example of how to define security with an embedded space. In this case, we enable security and specify the username and password.
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -353,8 +353,8 @@ Here is an example of how to define security with an embedded space. In this cas
 </os-core:space-proxy>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -369,8 +369,8 @@ Here is an example of how to define security with an embedded space. In this cas
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 It is possible to configure the space to be secured using deploy time properties (bean level properties), without declaring the security element. The `security.username` and `security.password` can be provided, and the spaces defined within the processing unit are automatically secured.
 
@@ -381,8 +381,8 @@ It is possible to configure the space to be secured using deploy time properties
 
 When constructing a space, it is possible to provide [Space Persistency](./space-persistency.html) extensions using Spring-based configuration (instead of using the space schema). Here is an example of how it can be defined:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -418,8 +418,8 @@ When constructing a space, it is possible to provide [Space Persistency](./space
 <os-core:space-proxy  id="space" name="mySpace" schema="persistent" space-data-source="hibernateSpaceDataSource" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -460,8 +460,8 @@ When constructing a space, it is possible to provide [Space Persistency](./space
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The above example uses Spring built-in support for configuring both a custom JDBC `DataSource` and a Hibernate `SessionFactory` to define and use the GigaSpaces built-in `HibernateSpaceDataSource`. The GigaSpaces data source is then injected into the space construction (note the specific schema change), and causes the space to use it.
 

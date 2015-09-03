@@ -27,8 +27,8 @@ The [Archive Container](./archive-container.html) can be configured to work agai
 The Cassandra Archive Operation Handler uses the [Hector Library](http://hector-client.github.com/hector/build/html/index.html) for communicating with the Cassandra cluster.
 Include the following in your `pom.xml`
 
-{{% inittab %}}
-{{% tabcontent "hector using log4j" %}}
+{{% tabs %}}
+{{% tab "hector using log4j" %}}
 
 ```xml
 <dependency>
@@ -50,8 +50,8 @@ Include the following in your `pom.xml`
 </dependency>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "hector using java.util.logging" %}}
+{{% /tab %}}
+{{% tab "hector using java.util.logging" %}}
 
 ```xml
 <dependency>
@@ -90,13 +90,13 @@ Include the following in your `pom.xml`
 </dependency>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 #### Setup
 
-{{% inittab os_simple_space%}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space%}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -109,8 +109,8 @@ Include the following in your `pom.xml`
 />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 
@@ -123,8 +123,8 @@ Include the following in your `pom.xml`
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -143,8 +143,8 @@ ArchiveOperationHandler cassandraArchiveHandler =
 archiveContainer.destroy();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 #### CassandraArchiveOperationHandler Properties
 

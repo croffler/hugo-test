@@ -17,17 +17,17 @@ Each non-primitive space object property can be assigned a storage type decorati
 - `BINARY`, which means that the property will be stored in it's serialized form in the space.
 - `COMPRESSED`, which means that the property will be stored in a compressed serialized form in the space.
 
-{{% inittab %}}
-{{% tabcontent "Object Mode" %}}
+{{% tabs %}}
+{{% tab "Object Mode" %}}
 ![storage-type-object.jpg](/attachment_files/storage-type-object.jpg)
-{{% /tabcontent %}}
-{{% tabcontent "Binary Mode" %}}
+{{% /tab %}}
+{{% tab "Binary Mode" %}}
 ![storage-type-binary.jpg](/attachment_files/storage-type-binary.jpg)
-{{% /tabcontent %}}
-{{% tabcontent "Compressed Mode" %}}
+{{% /tab %}}
+{{% tab "Compressed Mode" %}}
 ![storage-type-compressed.jpg](/attachment_files/storage-type-compressed.jpg)
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The default storage type can be determined for the entire space and/or for a specific space class. If a default storage type is not defined for the space, then the default value is OBJECT. Each property for which a storage type was not defined gets the class's default storage type if that exists and the space storage type if it doesn't.
 
@@ -82,8 +82,8 @@ In remote mode, the Object's non-primitive fields are serialized where the seria
 
 Specifying space level storage type can be done using any of the following:
 
-{{% inittab "Space-Level Storage Type" %}}
-{{% tabcontent Namespace %}}
+{{% tabs "Space-Level Storage Type" %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -96,8 +96,8 @@ Specifying space level storage type can be done using any of the following:
 </os-core:embedded-space>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent "Plain XML" %}}
+{{% /tab %}}
+{{% tab "Plain XML" %}}
 
 ```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
@@ -110,8 +110,8 @@ Specifying space level storage type can be done using any of the following:
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -120,15 +120,15 @@ GigaSpace gigaspace= new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space"
 	String.valueOf(StorageType.BINARY.getCode()))).gigaSpace();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Setting Property-Level Storage Type
 
 Specifying property level storage type can be done using annotations or via the `gs.xml` file:
 
-{{% inittab %}}
-{{% tabcontent Annotations %}}
+{{% tabs %}}
+{{% tab Annotations %}}
 
 ```java
 @SpaceClass
@@ -155,8 +155,8 @@ public class Person
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent XML %}}
+{{% /tab %}}
+{{% tab XML %}}
 
 ```xml
 <gigaspaces-mapping>
@@ -167,8 +167,8 @@ public class Person
 </gigaspaces-mapping>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 - The id property will default to `OBJECT` storage type because it is primitive. Note that **every** primitive (or primitive wrapper) and String property will have `OBJECT` storage type regardless of the one specified.
 - The blog property will default to `OBJECT` storage type because no storage type was specified for that property or for its containing class (assuming that the space serialization type is `OBJECT`).
@@ -177,8 +177,8 @@ public class Person
 
 Specifying call level storage type can be done using annotations or via the `gs.xml` file:
 
-{{% inittab %}}
-{{% tabcontent Annotations %}}
+{{% tabs %}}
+{{% tab Annotations %}}
 
 ```java
 @SpaceClass(storageType=StorageType.BINARY)
@@ -188,8 +188,8 @@ public class Person
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent XML %}}
+{{% /tab %}}
+{{% tab XML %}}
 
 ```xml
 <gigaspaces-mapping>
@@ -197,8 +197,8 @@ public class Person
 </gigaspaces-mapping>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # Setting a Storage Type for Document Properties
 

@@ -39,8 +39,8 @@ The index type is determined by the **`SpaceIndexType`** enumeration. The index 
 
 Specifying which properties of a class are indexed is done using annotations or gs.xml.
 
-{{% inittab %}}
-{{% tabcontent Annotations %}}
+{{% tabs %}}
+{{% tab Annotations %}}
 
 ```java
 @SpaceClass
@@ -65,8 +65,8 @@ public class Person
 }
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent XML %}}
+{{% /tab %}}
+{{% tab XML %}}
 
 ```java
 <gigaspaces-mapping>
@@ -84,8 +84,8 @@ public class Person
 </gigaspaces-mapping>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 ## Inheritance
 

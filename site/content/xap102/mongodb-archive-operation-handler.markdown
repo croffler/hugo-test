@@ -65,11 +65,11 @@ Include the following in your `pom.xml`
 
 #### Setup
 
-{{% inittab os_simple_space %}}
+{{% tabs os_simple_space %}}
 
 
 
-{{% tabcontent Plain %}}
+{{% tab Plain %}}
 
 ```xml
 
@@ -81,8 +81,8 @@ Include the following in your `pom.xml`
 	
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 
 ```java
 
@@ -100,8 +100,8 @@ Include the following in your `pom.xml`
 
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 #### MongoArchiveOperationHandler Properties
 

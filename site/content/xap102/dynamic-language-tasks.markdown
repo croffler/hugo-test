@@ -15,8 +15,8 @@ The following section goes through the steps needed in order to execute dynamic 
 
 The first step in using scripting is exposing the built in scripting service over the Space. Here is a simple example:
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -38,8 +38,8 @@ The first step in using scripting is exposing the built in scripting service ove
 </os-events:polling-container>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -69,8 +69,8 @@ The first step in using scripting is exposing the built in scripting service ove
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The next simple step is using the exposed scripting service on the client side, here is a groovy example :
 
@@ -95,8 +95,8 @@ public class MyRemoting {
 
 On the client side Spring XML configuration, the following needs to be defined (mainly to define the connection to the Space as the transport layer, and define the scripting annotation processor):
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -109,8 +109,8 @@ On the client side Spring XML configuration, the following needs to be defined (
 <bean id="myRemoting" class="MyRemoting" />
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -127,8 +127,8 @@ On the client side Spring XML configuration, the following needs to be defined (
 <bean id="myRemoting" class="MyRemoting" />
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 # What is a Script
 
@@ -219,8 +219,8 @@ Using scripting on the client side is very similar to how similar remoting servi
 
 Here is the xml definition of an async scripting proxy (the sync proxy is exactly the same except for the tag/class name of the proxy):
 
-{{% inittab os_simple_space %}}
-{{% tabcontent Namespace %}}
+{{% tabs os_simple_space %}}
+{{% tab Namespace %}}
 
 ```xml
 
@@ -238,8 +238,8 @@ Here is the xml definition of an async scripting proxy (the sync proxy is exactl
 </os-remoting:event-driven-proxy>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Plain XML %}}
+{{% /tab %}}
+{{% tab Plain XML %}}
 
 ```xml
 
@@ -258,8 +258,8 @@ Here is the xml definition of an async scripting proxy (the sync proxy is exactl
 </bean>
 ```
 
-{{% /tabcontent %}}
-{{% tabcontent Code %}}
+{{% /tab %}}
+{{% tab Code %}}
 Asynchronous scripting executor:
 
 ```java
@@ -276,8 +276,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace"
 ScriptingExecutor  executor = new ExecutorScriptingProxyConfigurer (gigaSpace).scriptingExecutor();
 ```
 
-{{% /tabcontent %}}
-{{% /inittab %}}
+{{% /tab %}}
+{{% /tabs %}}
 
 The different components implemented by scripting basically enables all the different scripting client side features which we will cover in the next sections. The annotation based injection is a much simplified way to use scripting on the client side and is shown in the Overview section.
 

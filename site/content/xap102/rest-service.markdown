@@ -135,7 +135,7 @@ In order to do so, you will need to do the following:
 4. Deploy the war file as a Web Processing Unit
 
 For example:
-```bash
+```
 #Specify the space parameters using the following properties:
 spaceName=mySpace
 lookupGroups=myGroups
