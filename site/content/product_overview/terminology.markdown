@@ -19,7 +19,7 @@ parent: none
 {{%  column width="30%" %}}
 ![term_space.gif](/attachment_files/term_space.gif)
 {{%  /column %}}
-{{%  column width=70% %}}
+{{%  column width="70%" %}}
 The GigaSpaces cache instance that holds data objects in memory.
 {{%  /column %}}
 {{%  /section %}}
@@ -69,7 +69,7 @@ A combination of service beans and/or an embedded space instance. This is the fu
 {{%  column width="30%" %}}
 ![term_pu_with_space.gif](/attachment_files/term_pu_with_space.gif)
 {{%  /column %}}
-{{%  column width=70% %}}
+{{%  column width="70%" %}}
 A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a [Data Grid](#Data Grid).
 {{%  /column %}}
 {{%  /section %}}

@@ -164,9 +164,9 @@ Here is an example for a Space Domain class with its Hibernate decorations. See 
 {{% info %}}
 Make sure your POJO @SpaceId is defined on the same property as the Hibernate @Id. This is necessary for proper object mapping.
 {{% /info %}}
-See the [POJO Metadata](./modeling-your-data.html) for details about these decorations.
+See the [POJO Metadata](./modeling-your-data.html) for details about these decorations
 
-{{% highlight java %}}
+```java
 package com.mycompany.app.common;
 
 import com.gigaspaces.annotation.pojo.SpaceClass;
@@ -198,7 +198,7 @@ public class Data {
 	...
     }
 }
-{{% /highlight %}}
+```
 
 {{% tip %}}
 

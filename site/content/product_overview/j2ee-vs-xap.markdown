@@ -33,8 +33,8 @@ Here is a simple mapping between the J2EE common components and equivalent XAP c
 
 |Functionality|J2EE|XAP|
 |:------------|:---|:--|
-|Queue|JMS Queue|Polling Container {{% latestjavanet polling-container.html%}}|
-|Topic|JMS Topic|Notify Container  {{% latestjavanet notify-container.html%}}|
+|Queue|JMS Queue|Polling Container {{%latestjavanet "polling-container.html"%}}|
+|Topic|JMS Topic|Notify Container  {{%latestjavanet "notify-container.html"%}}|
 |Unit of Order|JMS UOO|[XAP Unit Of Work](/sbp/unit-of-work.html)|
 |Queue Partitioning|JMS Service Activator Aggregator Strategy|[XAP Parallel Queue](/sbp/parallel-queue-pattern.html)|
 |Distributed Priority Queue|JMS Quality of Service|[XAP Priority Based Queue](/sbp/priority-based-queue.html)|

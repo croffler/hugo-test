@@ -43,10 +43,10 @@ Logging Gateway for Administrative alerts.
 #### Additional Resources
 
 {{%section%}}
-{{%column%}}
+{{%column width="30%"%}}
 {{<youtube "j3FfHBqtj1o" "Admin API">}}
 {{%/column%}}
-{{%column%}}
-{{<youtube "2jI6Z1z4UrU" "Administrative Events">}}
+{{%column width="30%"%}}
+{{%youtube "2jI6Z1z4UrU" "Administrative Events"%}}
 {{%/column%}}
 {{%/section%}}

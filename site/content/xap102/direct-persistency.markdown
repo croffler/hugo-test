@@ -53,7 +53,7 @@ With the central database topology, a single database instance is used to store 
 
 A Data-Grid running in Direct persistency mode using central database topology, having all data within the IMDG would have the following configuration:
 
-{{% highlight xml %}}
+```xml
 <bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSource">
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
@@ -72,7 +72,7 @@ A Data-Grid running in Direct persistency mode using central database topology, 
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% anchor distributed %}}
 
@@ -82,7 +82,7 @@ With the distributed databases topology, each IMDG instance uses its own databas
 
 A Data-Grid running in Direct persistency mode using distributed databases topology (non-central), having all the data within the IMDG would have the following configuration:
 
-{{% highlight xml %}}
+```xml
 <bean id="hibernateDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSource">
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
@@ -101,7 +101,7 @@ A Data-Grid running in Direct persistency mode using distributed databases topol
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% refer %}}See the [Space Persistency](./space-persistency.html) section for full details about the properties you may configure.{{% /refer %}}
 

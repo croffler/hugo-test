@@ -42,7 +42,7 @@ The OpenSpaces API is divided into four parts:
 
 ## Core API
 
-The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "Space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as Space {{% latestjavanet the-gigaspace-interface-overview.html%}} construction, simplified API using the GigaSpace  interface including Transaction Management {{% latestjavanet transaction-overview.html%}} and declarative transaction support. Core components also include support for [Map/Cache]({{<latestjavaurl>}}/map-api.html) construction and a simplified API using [GigaMap]({{<latestjavaurl>}}/map-api.html).
+The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "Space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as Space {{% latestjavanet "the-gigaspace-interface-overview.html"%}} construction, simplified API using the GigaSpace  interface including Transaction Management {{% latestjavanet "transaction-overview.html"%}} and declarative transaction support. Core components also include support for [Map/Cache]({{<latestjavaurl>}}/map-api.html) construction and a simplified API using [GigaMap]({{<latestjavaurl>}}/map-api.html).
 
 {{%  anchor Events%}}
 
@@ -52,13 +52,13 @@ The events package is built on top of the core package, and provides simple obje
 
 Another alternative for events is the usage of JMS 1.1 on top of GigaSpaces, which is supported within the product and is recommended for client applications integrating with SBA applications.
 
-The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling]({{% latestjavaurl%}}/data-event-listener.html) and provide two mechanisms for event-generation: a Polling Container {{% latestjavanet polling-container-overview.html%}} uses polling received operations against the space, and a Notify Container {{% latestjavanet notify-container-overview.html %}} which uses the space's built-in notification support.
+The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling]({{% latestjavaurl%}}/data-event-listener.html) and provide two mechanisms for event-generation: a Polling Container {{% latestjavanet "polling-container-overview.html"%}} uses polling received operations against the space, and a Notify Container {{% latestjavanet "notify-container-overview.html" %}} which uses the space's built-in notification support.
 
 {{%  anchor Space-Based-Remoting%}}
 
 ## Space Based Remoting
 
-The Remoting {{% latestjavanet space-based-remoting-overview.html %}} package provides capabilities for clients to access remote services. Remoting in GigaSpaces XAP is implemented on top of the data grid's clustering model, which provides location transparency, fail-over, and performance to remote service invocations. XAP implements remoting , using the space as the transport layer, similar to [other Spring remoting components](http://static.springframework.org/spring/docs/3.0.x/reference/remoting.html).
+The Remoting {{% latestjavanet "space-based-remoting-overview.html" %}} package provides capabilities for clients to access remote services. Remoting in GigaSpaces XAP is implemented on top of the data grid's clustering model, which provides location transparency, fail-over, and performance to remote service invocations. XAP implements remoting , using the space as the transport layer, similar to [other Spring remoting components](http://static.springframework.org/spring/docs/3.0.x/reference/remoting.html).
 
 Remoting can be viewed as the alternative to Java EE Session Beans, or Java RMI, as it provides all of their capabilities as well as supporting synchronous and asynchronous invocations, and dynamic scripting languages - enabling you to use Groovy or Ruby in your space-based applications.
 
@@ -163,8 +163,8 @@ The messaging grid aspect of the space provides messaging capabilities such as:
 1. Event-Driven capabilities - the ability to build event-driven processing applications. This model enables fast (in-memory-based) asynchronous modular processing, resulting in a very efficient and scalable processing paradigm.
 1. Asynchronous production and consumption of information.
 1. One-to-one, Many-to-One, One-to-Many and Many-to-Many relationships.
-1. FIFO  ordering. {{% latestjavanet fifo-overview.html%}}
-1. Transaction Management {{% latestjavanet transaction-overview.html%}}.
+1. FIFO  ordering. {{% latestjavanet "fifo-overview.html"%}}
+1. Transaction Management {{% latestjavanet "transaction-overview.html"%}}.
 
 The core APIs used for messaging are the OpenSpaces [Notify]({{% latestjavaurl%}}/notify-container.html) and [Polling]({{% latestjavaurl%}}/polling-container.html) Containers. In addition, a [JMS 1.1 implementation]({{% latestjavaurl%}}/messaging-support.html) API is available to be used with existing JMS based applications. More information can be found in the [Messaging and Events]({{% latestjavaurl%}}/messaging-support.html) section.
 
@@ -291,7 +291,7 @@ Usually, a single GSA is deployed on each individual machine. The GSA spawns [Gr
 
 {{%  note %}}
 Though [Grid Service Manager](./service-grid.html#gsm), [Grid Service Container](./service-grid.html#gsc), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
-{{% endnote%}}
+{{% /note%}}
 
 {{%  anchor gsm %}}
 

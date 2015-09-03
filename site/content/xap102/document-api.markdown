@@ -132,7 +132,7 @@ Note that this code does not reflect the complete model - most of the properties
 
 To create a document create a `Map<String,Object>` with the requested properties, create a `SpaceDocument` object using the type name and properties, and write it to the space using the regular `GigaSpace` write method:
 
-{{% highlight java %}}
+```
 public void writeProduct1(GigaSpace gigaspace) {
     // 1. Create the properties:
     Map<String, Object> properties = new HashMap<String, Object>();
@@ -163,11 +163,11 @@ public void writeProduct1(GigaSpace gigaspace) {
     // 3. Write the document to the space:
     gigaspace.write(document);
 }
-{{% /highlight %}}
+```
 
 Another way is to use the `DocumentProperties` class provided, which extends HashMap to provide fluent coding:
 
-{{% highlight java %}}
+```java
 public void writeProduct2(GigaSpace gigaspace) {
     // 1. Create the properties:
     DocumentProperties properties = new DocumentProperties()
@@ -193,7 +193,7 @@ public void writeProduct2(GigaSpace gigaspace) {
     // 3. Write the document to the space:
     gigaspace.write(document);
 }
-{{% /highlight %}}
+```
 
 {{% note %}}
 - The `GigaSpace.writeMultiple` method can be used to write a batch of documents.
@@ -210,7 +210,7 @@ There are three types of document queries:
 This type of query uses a SpaceDocument with _type_ and any other set of properties values as a template for the query
 For example: Read a document of type **Product** whose **Name** is **Anvil**:
 
-{{% highlight java %}}
+```
 public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
     // Create template:
     SpaceDocument template = new SpaceDocument("Product");
@@ -219,14 +219,14 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
     SpaceDocument result = gigaSpace.read(template);
     return result;
 }
-{{% /highlight %}}
+```
 
 ## SQL Query
 
 You can use the [SQLQuery](././query-sql.html) to search for matching `SpaceDocument` entries.
 For example: Read a document of type **Product** whose **Price** is greater than 15:
 
-{{% highlight java %}}
+```
 public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
     // Create query:
     SQLQuery<SpaceDocument> query =
@@ -236,7 +236,7 @@ public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
     SpaceDocument result = gigaSpace.read(query);
     return result;
 }
-{{% /highlight %}}
+```
 
 {{% tip %}}
 Consider indexing properties used in queries to boost performance.
@@ -244,7 +244,7 @@ Consider indexing properties used in queries to boost performance.
 
 Queries on nested properties are supported. For example, to read products manufactured by **Acme**:
 
-{{% highlight java %}}
+```java
 public SpaceDocument[] readProductBySQLNested(GigaSpace gigaSpace) {
     // Create query:
     SQLQuery<SpaceDocument> query =
@@ -254,28 +254,28 @@ public SpaceDocument[] readProductBySQLNested(GigaSpace gigaSpace) {
     SpaceDocument[] result = gigaSpace.readMultiple(query, 10);
     return result;
 }
-{{% /highlight %}}
+```
 
 ## ID Based Query
 
 For example: Read a document of type **Product** whose ID is **hw-1234**:
 
-{{% highlight java %}}
+```
 public SpaceDocument readProductById(GigaSpace gigaSpace) {
     return gigaSpace.readById(new IdQuery<SpaceDocument>("Product", "hw-1234"));
 }
-{{% /highlight %}}
+```
 
 Queries by multiple Ids are supported. For example:
 
-{{% highlight java %}}
+```
 public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
     Object[] ids = new Object[] {"hw-1234", "av-9876"};
     ReadByIdsResult<SpaceDocument> result =
         gigaSpace.readByIds(new IdsQuery<SpaceDocument>("Product", ids));
     return result.getResultsArray();
 }
-{{% /highlight %}}
+```
 
 {{%tip%}}
 - All other `GigaSpace` query operations (readIfExists, readMultiple, take, takeIfExists, takeMultiple, count, clear) are supported for documents entries as well.
@@ -299,16 +299,16 @@ It's highly recommended to use `DocumentProperties` for nested documents since i
 
 SpaceDocument query supports hierarchical relationships so that entries of a child are visible in the context of the parent document, but not the other way around. For example, a document with name `Employee`   can register its parent document `Person` in the following way:
 
-{{%highlight java%}}
+```
 SpaceTypeDescriptor employeeDescriptor = new SpaceTypeDescriptorBuilder(
 				"Child Document Type Name", parentSpaceTypeDescriptor).create();
-{{%/highlight%}}
+```
 
 Here is an example:
 
 {{%inittab%}}
 {{%tabcontent Program%}}
-{{%highlight java%}}
+```
 	public static void main(String[] args) {
 
 		// Create the Space
@@ -355,7 +355,7 @@ Here is an example:
 		System.exit(1);
 
 	}
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent RegisterDocument%}}

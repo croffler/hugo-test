@@ -70,14 +70,14 @@ This is sometimes considered a subset of Operational intelligence and is also id
 {{% refer%}}
 Related Topics
 
-- [Aggregators API]({{% latestjavaurl%}}/aggregators.html)
-- Counters aAPI {{% latestjavanet the-space-counters.html %}}
-- [Map reduce API]({{% latestjavaurl%}}/task-execution-over-the-space.html)
-- Document-Schemaless API {{% latestjavanet document-api.html %}}
-- Query API {{% latestjavanet querying-the-space.html %}}
-- Processing API {{% latestjavanet event-processing.html%}}
-- BlobStore Storage Model [MemoryXtend]({{% latestadmurl%}}/memoryxtend.html)
-- [Big Data Integration]({{% latestjavaurl%}}/big-data.html)
+- [Aggregators API]( {{%latestjavaurl%}}/aggregators.html)
+- Counters aAPI {{%latestjavanet "the-space-counters.html" %}}
+- [Map reduce API]({{%latestjavaurl%}}/task-execution-over-the-space.html)
+- Document-Schemaless API {{%latestjavanet "document-api.html" %}}
+- Query API {{%latestjavanet "querying-the-space.html" %}}
+- Processing API {{%latestjavanet "event-processing.html"%}}
+- BlobStore Storage Model [MemoryXtend]({{%latestadmurl%}}/memoryxtend.html)
+- [Big Data Integration]({{%latestjavaurl%}}/big-data.html)
 - [Time Series](/sbp/time-series.html)
 - [Storm Integration](/sbp/storm-integration.html)
 - [Kafka Integration](/sbp/kafka-integration.html)

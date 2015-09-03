@@ -63,9 +63,9 @@ Because of this mismatch, an intermediate object-relational mapping (ORM) step i
 
 
 
-{{%  column %}}
+
 The Hibernate library, an ORM persistence and query service for the Java language, can provide this service for RDBMS. Hibernate allows you to express queries in its own portable SQL extension (HQL), as well as in native SQL. However, Hibernate is restricted to run at the client level, and does not relate to read/write-through caching.
-{{%  /column %}}
+
 
 
 

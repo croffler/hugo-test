@@ -58,36 +58,6 @@ Current version : {{<currentversion>}}
 
 
 
-# Code Highlight
-
-{{%shighlight java%}}
-@SpaceClass
-public class User {
-  private Long id;
-  private String name;
-  private Double balance;
-  private Double creditLimit;
-
-  public User() {
-  }
-
-  @SpaceRouting
-  @SpaceId(autoGenerate = false)
-  public Long getId() {
-	return id;
-  }
-}
-{{%/shighlight%}}
-
-{{%shighlight%}}
-<import resource="classpath*:/applicationContext-component.xml" />
-<import resource="classpath*:/applicationContext-matching.xml"/>
-<import resource="classpath*:/applicationContext-services.xml"/>
-<import resource="classpath*:/applicationContext-jmx.xml" />
-<import resource="classpath*:/applicationContext-containers.xml"/>
-{{%/shighlight%}}
- 
-
 
 # Color
 
