@@ -26,13 +26,13 @@ In order to use the XAP Maven plugin, Maven needs to be installed on the machine
 All you need to do is add the Maven `bin` directory to the system `PATH` variable, and you are ready to go. To test whether the Maven command is accessible, open a command line window, type `mvn \-version`, and press Enter.
 The following message should be displayed:
 
-{{% highlight bash %}}
+```bash
 >mvn -version
 
 Apache Maven 3.0 (r1004208; 2010-10-04 13:50:56+0200)
 Java version: 1.6.0_23
 OS name: "windows 7" version: "6.1" arch: "x86" Family: "windows"
-{{% /highlight %}}
+```
 
 {{% note %}}
  **First uses of Maven require internet connection** in order for the local repository to be populated with required libraries. Once all required libraries are in the local repository the internet connection is not mandatory. {{%/note%}}
@@ -47,9 +47,9 @@ To install the XAP Maven plugin:
 
 Run the `installmavenrep` script from the `<XAP Home>\tools\maven` directory:
 
-{{% highlight console %}}
+```console
 D:<XAP Home>\tools\maven>installmavenrep.bat
-{{% /highlight %}}
+```
 
 This installs the XAP libraries and the XAP Maven plugin into the local Maven repository. Once the installation is finished, the Maven plugin is ready to be used.
 
@@ -65,7 +65,7 @@ This installs the XAP libraries and the XAP Maven plugin into the local Maven re
 
 ### Dependencies
 
-{{% highlight xml %}}
+```xml
 <dependency>
   <artifactId>gs-runtime</artifactId>
   <groupId>com.gigaspaces</groupId>
@@ -76,7 +76,7 @@ This installs the XAP libraries and the XAP Maven plugin into the local Maven re
   <groupId>com.gigaspaces</groupId>
   <version>{{%version maven-version %}}</version>
 </dependency>
-{{% /highlight %}}
+```
 
 ### Local Repository Location
 
@@ -86,20 +86,20 @@ By default, Maven creates the local repository under the your home directory: `<
 
 You can install the XAP artifacts using a public repository:
 
-{{% highlight xml %}}
+```xml
 <repository>
    <id>org.openspaces</id>
    <url>http://maven-repository.openspaces.org</url>
 </repository>
-{{% /highlight %}}
+```
 
 # Using Available Project Templates
 
 You may view list of available project templates and their description using the following command:
 
-{{% highlight console %}}
+```console
 mvn os:create
-{{% /highlight %}}
+```
 
 The result is a list of available template names and descriptions:
 
@@ -115,20 +115,20 @@ The result is a list of available template names and descriptions:
 <br>
 Use the -Dtemplate=`<template>` argument to specify a project template. Example:
 
-{{% highlight bash %}}
+```bash
 mvn os:create -Dtemplate=basic-async-persistency
-{{% /highlight %}}
+```
 
 # Creating Processing Unit Project
 
 The XAP Maven plugin can create Processing Unit projects. It generates the resources and the appropriate directory structure, making it easy to immediately start working on the Processing Units. Projects can be created in any directory. Before creating the project change to the directory where the project should be created. To create a Processing Unit project, use the following command-line:
 
-{{% highlight bash %}}
+```bash
 mvn os:create
     -DgroupId=<group-id>
     -DartifactId=<artifact-id>
     -Dtemplate=<project-template>
-{{% /highlight %}}
+```
 
 
 | Argument | Description | Required | Default |
@@ -163,9 +163,9 @@ The main project and each of the modules contain a project-descriptor file calle
 
 In order to compile the Processing Unit project, use the following command line from the main project's directory.
 
-{{% highlight bash %}}
+```bash
 mvn compile
-{{% /highlight %}}
+```
 
 This compiles each module and puts the output files under the modules' _target_ directory.
 
@@ -178,14 +178,14 @@ Sometimes, during development, the developer might want to run the Processing Un
 Make sure you are in the directory of the project.
 To run Processing Unit modules, use the following command-line (found in the `artifactId` folder):
 
-{{% highlight bash %}}
+```bash
 mvn os:run
     -Dcluster=<"cluster-properties">
     -Dgroups=<groups>
     -Dlocators=<locators>
     -Dproperties=<"context-level-properties-location">
     -Dmodule=<module-name>
-{{% /highlight %}}
+```
 
 
 | Argument | Description | Required | Properties | Example |
@@ -198,9 +198,9 @@ mvn os:run
 
 **Example:**
 
-{{% highlight bash %}}
+```bash
 mvn compile os:run -Dcluster="schema=partitioned total_members=1,1 id=1" -Dproperties="embed://prop1=value1" -Dmodule=feeder
-{{% /highlight %}}
+```
 
 ## Determining Module Execution
 
@@ -228,9 +228,9 @@ In order to deploy Processing Units, you need to package them in a distributable
 Make sure you are in the directory of the project.
 To package the Processing Units, use the following command-line from the main project directory:
 
-{{% highlight bash %}}
+```bash
 mvn package
-{{% /highlight %}}
+```
 
 The Processing Units' distributable bundles are generated for each module, under the directory `target`. For example, the distributables of a module named `feeder` are generated under `<proj-dir>\feeder\target`.
 
@@ -250,13 +250,13 @@ To suppress the execution of unit tests, add one of the following arguments to t
 
 For example:
 
-{{% highlight bash %}}
+```bash
 >mvn package -DskipTests
 
  .. or ..
 
 >mvn package -Dmaven.test.skip
-{{% /highlight %}}
+```
 
 # Running Processing Units
 
@@ -265,14 +265,14 @@ After packaging the Processing Units, you might want to test the validity of the
 Make sure you are in the directory of the project.
 To run Processing Units as standalone modules, use the following command-line:
 
-{{% highlight bash %}}
+```bash
 mvn os:run-standalone
     -Dcluster=<"cluster-properties">
     -Dgroups=<groups>
     -Dlocators=<locators>
     -Dproperties=<"context-level-properties-location">
     -Dmodule=<module-name>
-{{% /highlight %}}
+```
 
 
 | Argument | Description | Required | Properties | Example |
@@ -285,10 +285,10 @@ mvn os:run-standalone
 
 **Example:**
 
-{{% highlight bash %}}
+```bash
 mvn os:run-standalone -Dcluster="schema=partitioned total_members=1,1
 id=1" -Dproperties="embed://prop1=value1" -Dmodule=feeder
-{{% /highlight %}}
+```
 
 ## Determining Processing Unit Execution
 
@@ -311,7 +311,7 @@ XAP supports two forms of Processing Unit distributable: A single JAR archive an
 Make sure you are in the directory of the project.
 Once your Processing Units are packaged, use the following command-line to deploy them to the Service Grid:
 
-{{% highlight bash %}}
+```bash
 mvn os:deploy
     -Dsla=<sla>
     -Dcluster=<cluster>
@@ -323,7 +323,7 @@ mvn os:deploy
     -Dmax-instances-per-vm=<max-instances-per-vm>
     -Dmax-instances-per-machine=<max-instances-per-machine>
     -Dmodule=<module-name>
-{{% /highlight %}}
+```
 
 
 | Argument | Description | Required | Default |
@@ -349,13 +349,13 @@ If the current directory is the main project directory and the `pu-name` argumen
 
 The XAP Maven plugin makes it simple to undeploy Processing Units from the Service Grid. Make sure you are in the directory of the project. To undeploy a Processing Unit from the Service Grid, use the following command-line:
 
-{{% highlight bash %}}
+```bash
 mvn os:undeploy
     -Dgroups=<groups>
     -Dlocators=<locators>
     -Dtimeout=<timeout>
     -Dmodule=<module-name>
-{{% /highlight %}}
+```
 
 
 | Argument | Description | Required | Default |
@@ -394,7 +394,7 @@ For example, to add `commons-logging` version 1.1.1 as a dependency to the proce
 
 {{% anchor xml %}}
 
-{{% highlight xml %}}
+```xml
 <project>
     ...
     <dependencies>
@@ -410,7 +410,7 @@ For example, to add `commons-logging` version 1.1.1 as a dependency to the proce
     </dependencies>
     ...
 </project>
-{{% /highlight %}}
+```
 
 ## Private Dependencies
 
@@ -428,9 +428,9 @@ It is possible to import a Processing Unit project into the Eclipse environment.
 
 Execute the following command from the project root directory:
 
-{{% highlight bash %}}
+```bash
 mvn eclipse:eclipse
-{{% /highlight %}}
+```
 
 This generates a `.project` file under each module's base directory.
 
@@ -467,14 +467,14 @@ When running a Processing Unit that uses persistency, e.g when using the _basic-
 
 To start the HSQLDB viewer use the following command-line:
 
-{{% highlight bash %}}
+```bash
 mvn os:hsql-ui
     -Ddriver=<driver-class>
     -Durl=<url>
     -Duser=<user>
     -Dpassword=<password>
     -Dhelp
-{{% /highlight %}}
+```
 
 
 | Argument | Description | Required | Default |

@@ -23,12 +23,12 @@ When working with documents, the user is in charge of creating and registering t
 
 If the POJO's class is in the application's classpath, or the POJO is already registered in the space, there's no need to register it again - the application will retrieve it automatically when it's used for the first time. For example:
 
-{{% highlight java %}}
+```java
 // Create a document template using the POJO class name:
 SpaceDocument template = new SpaceDocument(MyPojo.class.getName());
 // Count all entries matching the template:
 int count = gigaSpace.count(template);
-{{% /highlight %}}
+```
 
 If the POJO's class is not available in the classpath or in the data grid, the application will throw an exception indicating that there is no type descriptor registered for the specified type. In that case, it is possible to manually create a matching type descriptor using the `SpaceTypeDescriptorBuilder` and register it in the space. However, that's not recommended since it essentially requires you to duplicate all the POJO settings and maintain them if the POJO changes.
 
@@ -44,13 +44,13 @@ Template query result types are determined by the template class - if the templa
 
 For example:
 
-{{% highlight java %}}
+```java
 // Read all product entries as POJOs:
 Product[] objects = gigaSpace.readMultiple(new Product(), Integer.MAX_VALUE);
 // Read all product entries as Dcouments:
 SpaceDocument[] documents = gigaSpace.readMultiple(
     new SpaceDocument(Product.class.getName()), Integer.MAX_VALUE);
-{{% /highlight %}}
+```
 
 #### SQL Query
 
@@ -62,7 +62,7 @@ The `SQLQuery` class has been enhanced with a `QueryResultType` parameter. The f
 
 For example:
 
-{{% highlight java %}}
+```java
 // Read a POJO using an SQL query - same as always:
 Product pojo = gigaSpace.read(
     new SQLQuery<Product>(Product.class, "name='Dynamite'"));
@@ -77,7 +77,7 @@ SpaceDocument document = gigaSpace.read(
 SpaceDocument document = gigaSpace.read(
     new SQLQuery<SpaceDocument>(Product.class.getName(),
         "name='Dynamite'", QueryResultType.DOCUMENT));
-{{% /highlight %}}
+```
 
 This strategy both preserves backwards compatibility and simplifies non-interoperability scenarios, which are more common than interoperability scenarios.
 
@@ -87,7 +87,7 @@ In order to support ID queries for documents, the `IdQuery` class has been intro
 
 For example:
 
-{{% highlight java %}}
+```java
 // Read a POJO by id - same as always:
 Product pojo = gigaSpace.readById(new IdQuery<Product>(Product.class, 7));
 
@@ -101,11 +101,11 @@ SpaceDocument document = gigaSpace.readById(
 SpaceDocument document = gigaSpace.readById(
     new IdQuery<SpaceDocument>(Product.class.getName(), 7,
         QueryResultType.DOCUMENT));
-{{% /highlight %}}
+```
 
 Respectively, to support multiple ids queries, `IdsQuery` was also introduced, with new signatures for `readByIds` and `takeByIds`. For example:
 
-{{% highlight java %}}
+```java
 Object[] ids = new Object[] {7, 8, 9};
 // Read POJOs by ids - same as always:
 Product[] pojos = gigaSpace.readByIds(
@@ -121,7 +121,7 @@ SpaceDocument[] documents = gigaSpace.readByIds(
 SpaceDocument[] documents = gigaSpace.readByIds(
     new IdsQuery<SpaceDocument>(Product.class.getName(),
         ids, QueryResultType.DOCUMENT)).getResultsArray();
-{{% /highlight %}}
+```
 
 {{% info %}}
 The original `readById` (and related methods) signatures are not suited for document types, since they require a concrete java class. They always return POJO(s).
@@ -139,7 +139,7 @@ It is possible to manually create a `SpaceTypeDescriptor` of the POJO using the 
 If the POJO contains properties which are POJO themselves, the space will implicitly convert these properties to space documents as needed.
 For example:
 
-{{% highlight java %}}
+```java
 // Create a POJO entry with a POJO property and write it to space:
 Person personPojo = new Person()
     .setName("smith")
@@ -153,13 +153,13 @@ SpaceDocument template = new SpaceDocument(Person.class.getName())
 SpaceDocument personDoc = gigaSpace.read(template);
 // Get address document from person document:
 SpaceDocument addressDoc = personDoc.getProperty("address");
-{{% /highlight %}}
+```
 
 This works the other way around as well - if a space document is created with a nested space document property, it will be converted to a POJO with a nested POJO property when read as a POJO.
 
 If you prefer to disable this implicit conversion and preserve the nested POJO instance within document entries, use the `@SpaceProperty` annotation and set `documentSupport` to `COPY`:
 
-{{% highlight java %}}
+```java
 public class Person {
     ...
     @SpaceProperty(documentSupport = SpaceDocumentSupport.COPY)
@@ -167,11 +167,11 @@ public class Person {
     public Person setAddress(Address address) {...}
     ...
 }
-{{% /highlight %}}
+```
 
 In that case the result would be:
 
-{{% highlight java %}}
+```java
 // Write POJO entry same as before
 ...
 // Read POJO entry as a document:
@@ -180,7 +180,7 @@ SpaceDocument template = new SpaceDocument(Person.class.getName())
 SpaceDocument personDoc = gigaSpace.read(template);
 // Get address POJO from person document:
 Address addressPojo = personDoc.getProperty("address");
-{{% /highlight %}}
+```
 
 The `SpaceDocumentSupport` can be one of the following:
 

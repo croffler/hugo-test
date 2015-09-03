@@ -32,19 +32,19 @@ Download the example {{%download "/download_files/EPUScaleDemo.zip"%}} and extra
 #### Step 2. Start gs-agent<br>
 Start gs-agent using the following command:
 
-{{% highlight bash %}}
+```bash
 gs-agent gsa.esm 1 gsa.gsc 0 gsa.lus 1 gsa.gsm 1
-{{% /highlight %}}
+```
 
 This will start an agent without any running GSCs.
 
 #### Step 3. Run the Client Application<br>
 Run the Client Application using the following command:
 
-{{% highlight bash %}}
+```bash
 call C:\gigaspaces-xap-premium-8.0.0-ga\bin\setenv.bat
 java -cp bin;%GS_JARS% -Djava.rmi.server.hostname=127.0.0.1 -DlocalMachineDemo=true com.test.scaledemo.ScaleDemoMain
-{{% /highlight %}}
+```
 
 - You should replace the XAP root folder and your machine IP with the relevant values.
 - You will find a `run.bat` script you may use to run the client.
@@ -104,7 +104,7 @@ The Client application will display the following output:
 {{% inittab epu_demo_output %}}
 {{% tabcontent Initial State %}}
 
-{{% highlight console %}}
+```console
 Welcome to GigaSpaces scalability Demo
 Log file: C:\gigaspaces-xap-premium-X.x-ga\logs\2011-03-01~12.34-gigaspaces-service-127.0.0.1-6760.log
 Created Admin - OK!
@@ -118,13 +118,13 @@ Tue Mar 01 12:35:09 EST 2011>> Total Memory used:0.0 MB - Progress:0.0 % done - 
 Tue Mar 01 12:35:13 EST 2011>> Total Memory used:0.0 MB - Progress:0.0 % done - Total Containers:2
 Tue Mar 01 12:35:17 EST 2011>> Total Memory used:64.0 MB - Progress:100.0 % done - Total Containers:2
 Initial Deploy done! - Time to deploy system:32 seconds
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Scaling to 128 MB %}}
 
-{{% highlight console %}}
+```console
 About to start changing data-grid memory capacity from 64.0 MB to 128 MB
 Hit enter to scale the data grid...
 
@@ -139,13 +139,13 @@ Tue Mar 01 12:37:21 EST 2011>> Total Memory used:96.0 MB - Progress:75.0 % done 
 Tue Mar 01 12:37:25 EST 2011>> Total Memory used:96.0 MB - Progress:75.0 % done - Total Containers:4
 Tue Mar 01 12:37:27 EST 2011>> Total Memory used:128.0 MB - Progress:100.0 % done - Total Containers:4
 Data-Grid Memory capacity change done! - Time to scale system:27 seconds
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Scaling to 256 MB %}}
 
-{{% highlight console %}}
+```console
 About to start changing data-grid memory capacity from 128.0 MB to 256 MB
 Hit enter to scale the data grid...
 
@@ -169,13 +169,13 @@ Tue Mar 01 12:39:05 EST 2011>> Total Memory used:224.0 MB - Progress:87.5 % done
 Tue Mar 01 12:39:09 EST 2011>> Total Memory used:224.0 MB - Progress:87.5 % done - Total Containers:8
 Tue Mar 01 12:39:11 EST 2011>> Total Memory used:256.0 MB - Progress:100.0 % done - Total Containers:8
 Data-Grid Memory capacity change done! - Time to scale system:51 seconds
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Scaling to 64 MB %}}
 
-{{% highlight console %}}
+```console
 About to start changing data-grid memory capacity from 256.0 MB to 64 MB
 Hit enter to scale the data grid...
 
@@ -190,7 +190,7 @@ Tue Mar 01 12:40:36 EST 2011>> Total Memory used:96.0 MB - Progress:66.7 % done 
 Tue Mar 01 12:40:38 EST 2011>> Total Memory used:96.0 MB - Progress:66.7 % done - Total Containers:3
 Tue Mar 01 12:40:42 EST 2011>> Total Memory used:64.0 MB - Progress:100.0 % done - Total Containers:3
 Data-Grid Memory capacity change done! - Time to scale system:33 seconds
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

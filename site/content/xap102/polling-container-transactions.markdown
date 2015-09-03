@@ -17,7 +17,7 @@ For example:
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
@@ -30,9 +30,9 @@ For example:
 <os-core:distributed-tx-manager id="transactionManager" />
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling @TransactionalEvent
 public class SimpleListener {
 
@@ -48,12 +48,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -78,12 +78,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -115,12 +115,12 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 GigaSpace gigaSpace = ...//create a GigaSpace instance
 
@@ -136,7 +136,7 @@ SimplePollingEventListenerContainer pollingContainer configurer = new SimplePoll
                 .transactionManager(ptm)
                 .receiveTimeout(1000)
                 .pollingContainer();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -156,7 +156,7 @@ Here is an example how timeout value (and transaction isolation) can be set with
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
@@ -169,9 +169,9 @@ Here is an example how timeout value (and transaction isolation) can be set with
 <os-core:distributed-tx-manager id="transactionManager"/>
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling @TransactionalEvent(isolation = Isolation.READ_COMMITTED, timeout = 1000)
 public class SimpleListener {
 
@@ -187,12 +187,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -217,12 +217,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -256,7 +256,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

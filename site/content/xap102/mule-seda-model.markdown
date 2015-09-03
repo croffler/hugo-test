@@ -17,13 +17,13 @@ XAP's Mule model integration comes with two main features. The first is the abil
 
 To use this model, we have to add `os-seda` to the namespaces.
 
-{{% highlight xml %}}
+```xml
 < ...
 xmlns:os-seda="http://www.openspaces.org/schema/mule/os-seda"
 ...
 xsi:schemaLocation="
 http://www.openspaces.org/schema/mule/os-seda http://www.openspaces.org/schema/8.0/mule/3.1/mule-os-seda.xsd>
-{{% /highlight %}}
+```
 
 # Space Mode Aware Service
 
@@ -31,7 +31,7 @@ When working in an SBA architecture, where each Mule Processing Unit works with 
 
 This is easily achieved using OpenSpaces extensions to the Mule SEDA model. Here is an example:
 
-{{% highlight xml %}}
+```xml
 <spring:beans>
 	<os-core:embedded-space id="space" name="mySpace"/>
 	<os-core:giga-space id="gigaSpace" space="space" />
@@ -53,7 +53,7 @@ This is easily achieved using OpenSpaces extensions to the Mule SEDA model. Here
     </service>
 
 </os-seda:model>
-{{% /highlight %}}
+```
 
 In the above example we have two services: `spaceAwareService` and `plainService`. `spaceAwareService` only starts if the Space it is working against is a primary cluster member. `plainService` works in any case (which is fine if it uses the `clusteredGigaSpace` bean).
 
@@ -69,7 +69,7 @@ In such a topology, SEDA queue content is replicated from the primary cluster me
 
 Here is an example of how it can be configured:
 
-{{% highlight xml %}}
+```xml
 <spring:beans>
 	<os-core:embedded-space id="space" name="mySpace" lookup-groups="${user.name}"/>
 	<os-core:giga-space id="gigaSpace" space="space" />
@@ -110,7 +110,7 @@ Here is an example of how it can be configured:
     </os-seda:service>
 
 </model>
-{{% /highlight %}}
+```
 
 In the above example, the fact that we are using the `os-seda:model`, and in it `os-seda:service` means that the `os-seda:service` instance queue is a virtualized queue stored in the Space.
 
@@ -120,7 +120,7 @@ The operations performed on the Space when working with the SEDA virtualized que
 
 Here is an example of how working with `os-seda` using the Space Local Transaction Manager can be configured:
 
-{{% highlight xml %}}
+```xml
 <spring:beans>
    <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -155,6 +155,6 @@ Here is an example of how working with `os-seda` using the Space Local Transacti
 
     </os-seda:service>
 </os-seda:model>
-{{% /highlight %}}
+```
 
 The above example defines a Mule `transactionFactory`, which is used to handle transactions within Mule. Since the `giga-space` bean is aware of it, any operations performed on it using `os-seda` result in joining an existing transaction if one is in progress.

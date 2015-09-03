@@ -39,7 +39,7 @@ In JMS 1.0.2, each domain used a separate set of interfaces. JMS 1.1 presents th
 {{% accordion acc1 %}}
 {{% accord title="**Click to see the code example:**" parent="acc1" id="tab1" id="tab1"%}}
 
-{{% highlight java %}}
+```java
 ConnectionFactory connectionFactory = // obtain
 Connection connection = connectionFactory.createConnection();
 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
@@ -74,7 +74,7 @@ connection.start();
 
 // release resources
 connection.close();
-{{% /highlight %}}
+```
 
 
 {{% /accord %}}
@@ -89,7 +89,7 @@ connection.close();
 
 
 
-{{% highlight java %}}
+```java
 TopicConnectionFactory topicConnectionFactory = // obtain
 TopicConnection topicConnection = topicConnectionFactory.createTopicConnection();
 TopicSession topicSession = topicConnection.createTopicSession
@@ -125,7 +125,7 @@ topicConnection.start();
 
 // release resources
 topicConnection.close();
-{{% /highlight %}}
+```
 
 
 {{% /accord %}}
@@ -135,7 +135,7 @@ topicConnection.close();
 
 {{% accordion acc3 %}}
 {{% accord title="**Click to see the code example:**" parent="acc3" id="tab3"%}}
-{{% highlight java %}}
+```java
 QueueConnectionFactory queueConnectionFactory = // obtain
 QueueConnection queueConnection = queueConnectionFactory.createQueueConnection();
 QueueSession queueSession = queueConnection.createQueueSession
@@ -171,7 +171,7 @@ queueConnection.start();
 
 // release resources
 queueConnection.close();
-{{% /highlight %}}
+```
 
 
 {{% /accord %}}

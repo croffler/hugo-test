@@ -31,11 +31,11 @@ Workaround:
 1. Extract the file: DefaultConfig_ClusteredJMS.xml from JSpaces.jar\config to the JS_HOME\config.
 1. Edit DefaultConfig_ClusteredJMS.xml to contain the required Queue:
 
-{{% highlight java %}}
+```java
 <queues>
     <queue-names>MyQueue,TempQueue,gs.Queue1</queue-names>
 </queues>
-{{% /highlight %}}
+```
 
 1. Restart the cluster.
 This should make the required queue available in the RMI registry of all spaces in the cluster.

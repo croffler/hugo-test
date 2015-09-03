@@ -17,11 +17,11 @@ XAP allows to configure, package and deploy a [Processing Unit](./the-processing
 
 In order to run Mule as a Processing Unit within the `pu.xml` file (which is a Spring application context), the following needs to be defined:
 
-{{% highlight xml %}}
+```xml
 <bean class="org.openspaces.esb.mule.pu.OpenSpacesMuleContextLoader">
     <property name="location" value="/META-INF/spring/mule.xml"/>
 </bean>
-{{% /highlight %}}
+```
 
 In the example above, the `OpenSpacesMuleContextLoader` loads a Mule application as defined in the `mule.xml` configuration file. The `location` parameter is optional and defaults to the value specified in the example above.
 
@@ -56,7 +56,7 @@ Since version 10.1 XAP is using spring 4.1.1 jars and Mule does not support spri
 
 In the [Mule ESB example](/sbp/mule-esb-example.html), the following jars are required and should be placed under <XAP Root>\lib\platform\mule
 
-{{% highlight console %}}
+```console
 commons-beanutils-1.8.0.jar
 commons-cli-1.2.jar
 commons-io-1.4.jar
@@ -83,7 +83,7 @@ mule-transport-vm-3.5.0.jar
 quartz-1.8.5.jar
 uuid-3.4.0.jar
 wrapper-3.2.3.jar
-{{% /highlight %}}
+```
 
 # Running/Deploying
 

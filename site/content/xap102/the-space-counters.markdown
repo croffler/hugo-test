@@ -35,50 +35,50 @@ If the counter property does not exists, the delta will be set as its initial st
 
 Incrementing a Counter done using the `ChangeSet().increment` call:
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id);
 space.change(idQuery, new ChangeSet().increment("mycounter", 1));
-{{% /highlight %}}
+```
 
 # Decrementing
 
 Decrementing a Counter done using the `ChangeSet().decrement` call:
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id);
 space.change(idQuery, new ChangeSet().decrement("mycounter", 1));
-{{% /highlight %}}
+```
 
 # Clearing
 
 Clearing the Counter value done using the `ChangeSet().unset` call:
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id);
 space.change(idQuery, new ChangeSet().unset("mycounter"));
-{{% /highlight %}}
+```
 
 # Getting the value
 
 Getting the Counter value done via the read call:
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id);
 WordCount wordount = space.readById(WordCount.class , idQuery);
 int counterValue = wordount.getMycounter();
-{{% /highlight %}}
+```
 
 Another way getting the Counter value without reading the space object back to the client would be via a [Task](./task-execution-over-the-space.html):
 
-{{% highlight java %}}
+```java
 public class GetCounterTask implements Task<Integer> {
 
 	String id ;
@@ -96,14 +96,14 @@ public class GetCounterTask implements Task<Integer> {
 		return wordount.getMycounter();
   }
 }
-{{% /highlight %}}
+```
 
 Call the execute method to fetch the current Counter value:
 
-{{% highlight java %}}
+```java
 AsyncFuture<Integer> future = gigaSpace.execute(new GetCounterTask("myID"), routingValue);
 int counterValue= future.get();
-{{% /highlight %}}
+```
 
 # Pre-Loading
 
@@ -115,7 +115,7 @@ With the following example the `Counter` class wraps the `GigaSpace.change` oper
 
 {{%inittab%}}
 {{%tabcontent "CounterTest.java"%}}
-{{% highlight java %}}
+```java
 package org.openspaces;
 import org.junit.Before;
 import org.junit.Test;
@@ -169,12 +169,12 @@ public class CounterTest {
 		assertEquals(counterValue , null);
 	}
 }
-{{% /highlight %}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent Counter%}}
 
-{{% highlight java %}}
+```java
 package org.openspaces;
 
 import org.openspaces.core.GigaSpace;
@@ -221,11 +221,11 @@ public class Counter {
 		return new IdQuery<SpaceDocument>(CounterData.TYPE_NAME, id);
 	}
 }
-{{% /highlight %}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent CounterData%}}
-{{% highlight java %}}
+```java
 package org.openspaces;
 
 import org.openspaces.core.GigaSpace;
@@ -255,7 +255,7 @@ public class CounterData extends SpaceDocument{
 		    gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 		}
 }
-{{% /highlight %}}
+```
 {{%/tabcontent%}}
 
 

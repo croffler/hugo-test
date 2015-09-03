@@ -19,7 +19,7 @@ Adding or removing a site without down time is done in three stages.
 1. The relevant Gateway PUs of the existing sites needs to be updated with the new setting, this is done by updating the corresponding `pu.xml` to reflect the new deployment sites state, either adding or removing a site and including all the required lookup attributes. Since a Gateway pu is stateless, they can be undeployed and redeployed with the new updated `pu.xml` configuration during runtime without affecting the spaces state, you will observe a disconnection between the sites which communicate through this gateway but it will be restored once the gateway PU is redeployed with the updated configuration.
 1. Updating the relevant existing space (or spaces) with the new gateway targets state. Once again this is done by updating the corresponding `pu.xml` (in GSMs deploy folder) space with the added or removed site. However, a space is stateful, hence simply redeploying it with the updated configuration will cause downtime. Therefore the admin provides an API for adding or removing a Gateway target to and from a Space, it should be used as follows:
 
-{{% highlight java %}}
+```java
 
 //Adding a gateway target
 Admin admin = // obtain an admin.
@@ -35,6 +35,6 @@ space.getReplicationManager().addGatewayTarget(gatewayTarget);
 ...
 //Removing a gateway target
 space.getReplicationManager().removeGatewayTarget("removed site name");
-{{% /highlight %}}
+```
 
 Both methods will block until the configuration change is propagated to the entire space instances of the relevant space.

@@ -42,24 +42,24 @@ There are many memcached clients for Java; the one GigaSpaces' example applicati
 
 ### If you use Maven, you can include spymemcached as a dependency, by adding a repository reference and a dependency:
 
-{{% highlight xml %}}
+```xml
 <dependency>
   <groupId>com.googlecode.xmemcached</groupId>
   <artifactId>xmemcached</artifactId>
   <version>1.2.6.2</version>
 </dependency>
-{{% /highlight %}}
+```
 
 
 To connect to a memcached instance, you would first deploy a memcached space in GigaSpaces. For the sake of example, let's assume the memcached instance is deployed on two IPs: 192.168.0.10 (on a server named "memcached1") and 192.168.0.11 ("memcached2").
 
 The code to connect to a server is:
 
-{{% highlight java %}}
+```java
 MemcachedClientBuilder builder = new XMemcachedClientBuilder(
                         AddrUtil.getAddresses("memcached1:11211 memcached2:11211"));
 MemcachedClient c = builder.build();
-{{% /highlight %}}
+```
 
 {{% warning %}}
 Traditional memcached servers shard data by running multiple instances as unassociated peers. Clients connect to each of them, and manually determine which of the server instances data is sent to.
@@ -69,20 +69,20 @@ XAPs memcached service would run access points on each of the servers - memcache
 
 Setting data and retrieving it is very simple:
 
-{{% highlight java %}}
+```java
 int secondsToLive=60; // 60 seconds
 c.set("key", secondsToLive, "value");
 
 String value=(String)c.get("key");
 
 // note that async versions of get exist as well
-{{% /highlight %}}
+```
 
 # Deploying
 
 Deploying memcached requires a single parameter, which is the space to use for the memcached data. The parameter is the space url, and can either be an embedded space, or a remote connection url to an already deployed url. Here are some examples to deploy memcached using the CLI:
 
-{{% highlight java %}}
+```java
 # use the gs-memcached script to start a memcached instance at /./memcached, port 11211
 
 $ gs-memcached.sh
@@ -106,11 +106,11 @@ $ gs.sh deploy-memcached -cluster total_members=5 jini://*/*/mySpace
 # deploy a memcached instance as local cache connecting to a remote space
 
 $ gs.sh deploy-memcached jini://*/*/mySpace
-{{% /highlight %}}
+```
 
 Deploying using the Admin API is similar:
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 
 admin.getGridServiceManagers().waitFor(1);
@@ -133,13 +133,13 @@ while (true) {
              ": Gets [" + instance.getStatistics().getMemcached().getGetCmds() + "]");
     }
 }
-{{% /highlight %}}
+```
 
 # Deployment Descriptor
 
 The memcached deployment descriptor looks as follows, for deployment with a GigaSpaces processing unit:
 
-{{% highlight xml %}}
+```xml
 <!--
     Spring property configurer which allows us to use system properties (such as user.name).
 -->
@@ -170,7 +170,7 @@ The memcached deployment descriptor looks as follows, for deployment with a Giga
     <property name="portRetries" value="${portRetries}" />
     <property name="threaded" value="${threaded}" />
 </bean>
-{{% /highlight %}}
+```
 
 The deployment defined a space, with the provided deployment url (so it can be embedded or remote). It defines a local cache on top of the space, and that local cache is passed to the `MemCacheDaemon`.
 
@@ -189,9 +189,9 @@ The results below compares native memcached with GigaSpaces memcached:
 
 The command used to generate the results is:
 
-{{% highlight java %}}
+```java
 memslap --concurrency=$i --test=get --servers=$SERVER:$PORT
-{{% /highlight %}}
+```
 
 ## Test Setup
 
@@ -199,7 +199,7 @@ memslap --concurrency=$i --test=get --servers=$SERVER:$PORT
 - memcached Server:CentOS 5 , Intel(R) Xeon(R) CPU X5570  @ 2.93GHz , CISCO USC
 - Space Configuration: one instance. No backup. Deploy command:
 
-{{% highlight java %}}
+```java
 gs.sh deploy-memcached /./mySpace
-{{% /highlight %}}
+```
 

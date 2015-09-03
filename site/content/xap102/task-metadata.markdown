@@ -17,7 +17,7 @@ weight: 400
 
 Example:
 
-{{%highlight java%}}
+```java
 public class MyTask implements Task<Integer>  {
 
     @TaskGigaSpace
@@ -28,7 +28,7 @@ public class MyTask implements Task<Integer>  {
     }
 ....
 }
-{{%/highlight%}}
+```
 
 
 {{%learn "./task-execution-overview.html"%}}
@@ -43,7 +43,7 @@ public class MyTask implements Task<Integer>  {
 
 Example:
 
-{{%highlight java%}}
+```java
 public class MyTask implements Task<Integer>  {
 
     @SpaceRouting
@@ -52,6 +52,6 @@ public class MyTask implements Task<Integer>  {
     }
 ....
 }
-{{%/highlight%}}
+```
 
 {{%learn "./task-execution-overview.html"%}}

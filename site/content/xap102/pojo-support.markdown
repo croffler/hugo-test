@@ -48,7 +48,7 @@ If you use primitives make sure you define the following for your POJO class:
 
 Here is a sample POJO class:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person {
     private Integer id;
@@ -75,7 +75,7 @@ public class Person {
 
     .......
 }
-{{% /highlight %}}
+```
 
 
 

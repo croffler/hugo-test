@@ -69,7 +69,7 @@ Here are some aggregation examples using the [QueryExtension](http://www.gigaspa
 
 {{% inittab %}}
 {{% tabcontent Application %}}
-{{% highlight java %}}
+```java
 import static org.openspaces.extensions.QueryExtension.*;
 ...
 SQLQuery<Person> query = new SQLQuery<Person>(Person.class,"country=? OR country=? ");
@@ -88,10 +88,10 @@ Double averageAge = average(space, query, "age");
 Person oldestPersonInSpace = maxEntry(space, query, "age");
 /// Retrieve the space object with the lowest value for the field "age".
 Person youngestPersonInSpace = minEntry(space, query, "age");
-{{% /highlight %}}
+```
 {{% /tabcontent%}}
 {{% tabcontent Space Class %}}
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person {
     private Long id;
@@ -127,7 +127,7 @@ public class Person {
         return this;
     }
 }
-{{% /highlight %}}
+```
 {{% /tabcontent%}}
 {{%/inittab%}}
 
@@ -145,7 +145,7 @@ Compound aggregation will execute multiple aggregation operations across the spa
 
 <br>
 
-{{% highlight java %}}
+```java
 import static org.openspaces.extensions.QueryExtension.*;
 ...
 SQLQuery<Person> query = new SQLQuery<Person>(Person.class,"country=? OR country=? ");
@@ -162,7 +162,7 @@ Long sum = (Long) aggregationResult.get(2);
 Double average = (Double) aggregationResult.get(3);
 Long min = (Long) aggregationResult.get(4);
 Long max = (Long) aggregationResult.get(5);
-{{% /highlight %}}
+```
 
 # Nested Fields Aggregation
 
@@ -170,7 +170,7 @@ Aggregation against the members of embedded space classes (nested field) is supp
 
 {{% inittab %}}
 {{% tabcontent Application %}}
-{{% highlight java %}}
+```java
 import static org.openspaces.extensions.QueryExtension.*;
 ...
 SQLQuery<Person> query = new SQLQuery<Person>(Person.class,"country=? OR country=? ");
@@ -179,10 +179,10 @@ query.setParameter(2, "U.S.A");
 
 // retrieve the maximum value stored in the field "age"
 Integer maxAgeInSpace = max(space, personSQLQuery, "demographics.age");
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 {{% tabcontent Person Space Class %}}
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person {
     private String id;
@@ -223,10 +223,10 @@ public class Person {
         this.demographics = demographics;
     }
 }
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 {{% tabcontent Demographic Space Class %}}
-{{% highlight java %}}
+```java
 public class Demographics     {
     private Integer age;
     private char gender;
@@ -247,7 +247,7 @@ public class Demographics     {
         this.gender = gender;
     }
 }
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 {{% /inittab %}}
 
@@ -258,7 +258,7 @@ public class Demographics     {
 The [GroupByAggregator](http://www.gigaspaces.com/docs//JavaDoc{{%currentversion%}}/index.html?com/gigaspaces/query/aggregators/GroupByAggregator.html) is used in conjunction with the aggregate functions to group the result-set by one or more columns. Here is an example:
 
 
-{{%highlight java%}}
+```java
 import static org.openspaces.extensions.QueryExtension.*;
 import com.gigaspaces.query.aggregators.GroupByAggregator;
 import com.gigaspaces.query.aggregators.GroupByFilter;
@@ -280,12 +280,12 @@ for (GroupByValue group : groupByResult) {
 	long maxSalary = group.getLong("max(salary)");
 	long minSalary = group.getLong("min(salary)");
 }
-{{%/highlight%}}
+```
 
 
 You can also use the [GroupByFilter](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/index.html?com/gigaspaces/query/aggregators/GroupByFilter.html) to restrict the groups of selected objects to only those whose condition is TRUE similar to the SQL `HAVING` Clause.
 
-{{%highlight java%}}
+```java
 // Select AVG(Salary) , Count(*) from Employees Where companyId = 10 group by Department Having AVG(Salary) > 18,000
 SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"companyId = 10");
 
@@ -305,14 +305,14 @@ for (GroupByValue group : groupByResult) {
 	double avgSalary = group.getDouble("avg(salary)");
 	long count = group.getLong("count(*)");
 }
-{{%/highlight%}}
+```
 
 # Distinct Aggregation
 
 
 The [DistinctAggregator](http://www.gigaspaces.com/docs//JavaDoc{{%currentversion%}}/index.html?com/gigaspaces/query/aggregators/DistinctAggregator.html) is used in conjunction with the aggregate functions to perform a distinct select by one or more columns. Here is an example:
 
-{{%highlight java%}}
+```java
 import static org.openspaces.extensions.QueryExtension.distinct;
 
 public void selectDistinct()
@@ -326,7 +326,7 @@ public void selectDistinct()
 
 	List<Person> persons = distinct(sandboxSpace, query, aggregator);
 }
-{{%/highlight%}}
+```
 
 # Routing
 
@@ -334,7 +334,7 @@ When running on a partitioned space, it is important to understand how routing i
 If the routing property is part of the criteria expression with an equality operand and without ORs, its value is used for routing.
 In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). This can be done via the `setRouting` method:
 
-{{%highlight java%}}
+```java
 // Select AVG(Salary) , Count(*) from Employees Where companyId = 10 group by Department Having AVG(Salary) > 18,000
 SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"companyId = 10");
 query.setRouting(1);
@@ -356,7 +356,7 @@ for (GroupByValue group : groupByResult) {
 	long count = group.getLong("count(*)");
 }
 
-{{%/highlight%}}
+```
 
 
 {{<learn "./query-sql.html#routing">}}
@@ -374,15 +374,15 @@ The `aggregateIntermediateResult` method is called at the client side (only once
 
 Executing the Aggregation logic:
 
-{{%highlight java%}}
+```java
 AggregationResult result = gigaSpace.aggregate(query, new AggregationSet().add(new ConcatAggregator("name")));
 String concatResult = result.getString("concat(name)");
 System.out.println(concatResult);
-{{%/highlight%}}
+```
 
 The `ConcatAggregator` Aggregation logic extending the `SpaceEntriesAggregator`:
 
-{{%highlight java%}}
+```java
 import com.gigaspaces.query.aggregators.SpaceEntriesAggregator;
 import com.gigaspaces.query.aggregators.SpaceEntriesAggregatorContext;
 
@@ -426,7 +426,7 @@ public class ConcatAggregator extends SpaceEntriesAggregator<String> {
     }
 }
 
-{{%/highlight%}}
+```
 
 Detailed Flow:
 

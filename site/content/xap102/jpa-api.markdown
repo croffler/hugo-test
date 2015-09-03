@@ -22,7 +22,7 @@ It is also recommended that you take the [XAP PetClinic JPA Tutorial](/sbp/first
 OpenJPA's jar file is included with the XAP distribution (provided under `<XAP root>/lib/platform/jpa`), and the XAP-specific JPA implementation classes are part of the OpenSpaces jar (located under `<XAP root>/lib/required/gs-openspaces.jar`).
 Maven users should define the following dependency in their `pom.xml` file:
 
-{{% highlight xml %}}
+```xml
 <dependencies>
   <dependency>
     <groupId>org.apache.openjpa</groupId>
@@ -30,7 +30,7 @@ Maven users should define the following dependency in their `pom.xml` file:
     <version>{{%version openjpa%}}</version>
   </dependency>
 </dependencies>
-{{% /highlight %}}
+```
 
 
 
@@ -52,7 +52,7 @@ Instead, make sure to set the "BrokerFactory" property to "org.openspaces.jpa.Br
 
 The following is an example of a XAP JPA persistence.xml configuration file:
 
-{{% highlight xml %}}
+```xml
 <persistence-unit name="gigaspaces" transaction-type="RESOURCE_LOCAL">
 	<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 	<properties>
@@ -61,9 +61,9 @@ The following is an example of a XAP JPA persistence.xml configuration file:
             <property name="LockManager" value="none"/>
 	</properties>
 </persistence-unit>
-{{% /highlight %}}
+```
 
-{{% highlight xml %}}
+```xml
 <persistence-unit name="gigaspaces" transaction-type="RESOURCE_LOCAL">
 	<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 	<properties>
@@ -71,15 +71,15 @@ The following is an example of a XAP JPA persistence.xml configuration file:
             <property name="LockManager" value="none"/>
 	</properties>
 </persistence-unit>
-{{% /highlight %}}
+```
 
 #### Transaction Read Lock Level
 
 XAP JPA default read lock level is set to "read" which is equivalent to XAP' ReadModifiers.REPEATABLE_READ.In order to use ReadModifiers.EXCLUSIVE_READLOCK the "ReadLockLevel" property should be set to "write":
 
-{{% highlight xml %}}
+```xml
   <property name="ReadLockLevel" value="write"/>
-{{% /highlight %}}
+```
 
 ### Space Connection Injection
 
@@ -89,12 +89,12 @@ Specifying a space connection URL or a space instance can be done in one of the 
 
 Specifying a space instance is possible when creating an `EntityManagerFactory` in the following way:
 
-{{% highlight java %}}
+```java
 GigaSpace gigaspace = ...
 Properties properties = new Properties();
 properties.put("ConnectionFactory", gigaspace.getSpace());
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("gigaspaces", properties);
-{{% /highlight %}}
+```
 
 #### Injection using Spring
 
@@ -102,7 +102,7 @@ It is possible to inject either an `EntityManager` or `EntityManagerFactory` usi
 In the following example we'll see how to inject a space-based `EntityManagerFactory`.
 The following Spring xml configuration file declares a space, an `EntityManagerFactory`, a transaction manager and a JPA service bean (this is our DAO):
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -145,11 +145,11 @@ The following Spring xml configuration file declares a space, an `EntityManagerF
     <!-- JPA example service definition -->
 	<bean id="jpaService" class="org.openspaces.jpa.JpaService" />
 </beans>
-{{% /highlight %}}
+```
 
 Note that in our DAO, we'll have Spring inject the `EntityManager` using the `@PersistentContext` annotation. Spring will make sure to create an `EntityManager` using the `EntityManagerFactory` we have defined at the beginning of every transaction.
 
-{{% highlight java %}}
+```java
 @Repository
 @Transactional
 public class JpaService {
@@ -164,7 +164,7 @@ public class JpaService {
         em.persist(...);
     }
 }
-{{% /highlight %}}
+```
 
 Detailed information regarding persistence.xml can be found in [OpenJPA's Manual](http://openjpa.apache.org/builds/2.0.0/apache-openjpa-2.0.0/docs/manual/jpa_overview_persistence.html#jpa_overview_persistence_xml).
 
@@ -180,16 +180,16 @@ When working with persistent classes, you have a number of ways to make the JPA 
 - When not using Spring, you have two options:
     - Point to an `orm.xml` file your `persistence.xml` file
 
-{{% highlight xml %}}
+```xml
   <persistence-unit name="gigaspaces" transaction-type="RESOURCE_LOCAL">
     <mapping-file>META-INF/orm.xml</mapping-file>
     <exclude-unlisted-classes/>
   </persistence-unit>
-{{% /highlight %}}
+```
 
     - Use the `<class>` tag in your `pesistence.xml` file. For example, if you're going to use the classes: `Trade`, `Book` & `Author`, you should list them in your `persistence.xml` file as follows:
 
-{{% highlight xml %}}
+```xml
 <persistence-unit name="gigaspaces" transaction-type="RESOURCE_LOCAL">
 	<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
         <class>org.openspaces.objects.Trade</class>
@@ -201,7 +201,7 @@ When working with persistent classes, you have a number of ways to make the JPA 
         <property name="LockManager" value="none"/>
 	</properties>
 </persistence-unit>
-{{% /highlight %}}
+```
 
 ### Enhancing Your Classes
 
@@ -246,7 +246,7 @@ Examples can be found on the [JPA Relationships](./jpa-relationships.html) page.
 
 Here's an example of a basic JPA Entity:
 
-{{% highlight java %}}
+```java
 @Entity
 public class Trade {
   private Long id;
@@ -288,7 +288,7 @@ public class Trade {
   /* Additional Getters & Setters... */
 
 }
-{{% /highlight %}}
+```
 
 {{%refer%}}
 For auto generated Id declaration and complex object Id declaration refer to [JPA Entity Id](./jpa-entity-id.html).
@@ -296,7 +296,7 @@ For auto generated Id declaration and complex object Id declaration refer to [JP
 
 Example of a JPA Owner entity with one to many relationship:
 
-{{% highlight java %}}
+```java
 @Entity
 public class Owner {
     //
@@ -337,7 +337,7 @@ public class Owner {
         this.pets = pets;
     }
 }
-{{% /highlight %}}
+```
 
 ## Non-Indexed Fields
 
@@ -349,18 +349,18 @@ GigaSpaces JPA supports a subset of JPQL. Here are a few examples of the support
 
 #### Querying on Properties of Nested Objects
 
-{{% highlight java %}}
+```java
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("gigaspaces");
 EntityManager em = emf.createEntityManager();
 Query query = em.createQuery("SELECT c from org.openspaces.objects.Customer c WHERE c.address.country = 'United States'");
 List<Customer> customers = (List<Customer>) query.getResultList();
 em.close();
 emf.close();
-{{% /highlight %}}
+```
 
 #### JOIN support for one to many relationship (Owner --> List<Pet>)
 
-{{% highlight java %}}
+```java
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("gigaspaces");
 EntityManager em = emf.createEntityManager();
 Query query = em.createQuery("SELECT o FROM org.openspaces.objects.Owner o JOIN o.pets p WHERE p.name = :name");
@@ -368,7 +368,7 @@ query.setParameter("name", "Whiskey");
 Owner owner = (Owner) query.getSingleResult();
 em.close();
 emf.close();
-{{% /highlight %}}
+```
 
 {{% info %}}
 When specifying entity names in GigaSpaces JPQL the full class qualified name should be used as shown in the above examples.
@@ -379,7 +379,7 @@ When specifying entity names in GigaSpaces JPQL the full class qualified name sh
 It's possible to make a collection property persistent by using the `@ElementCollection` annotation.
 In the following example we have an entity with a collection of Integers:
 
-{{% highlight java %}}
+```java
 @Entity
 public class Card {
   // ...
@@ -398,11 +398,11 @@ public class Card {
 
   // ...
 }
-{{% /highlight %}}
+```
 
 In order to query the Card entity using a specific Integer in the numbers collection we use JPQL's `"MEMBER OF"`:
 
-{{% highlight java %}}
+```java
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("gigaspaces");
 EntityManager em = emf.createEntityManager();
 Query query = em.createQuery("SELECT c FROM org.openspaces.objects.Card c WHERE :number MEMBER OF c.numbers");
@@ -410,13 +410,13 @@ query.setParameter("number", "10");
 Card card = (Card) query.getSingleResult();
 em.close();
 emf.close();
-{{% /highlight %}}
+```
 
 # Persisting Enum Properties
 
 JPA allows to persist Enum properties using the `@Enumerated` annotation, as shown below:
 
-{{% highlight java %}}
+```java
 // A Vehicle entity which has an Enum property
 @Entity
 public class Vehicle {
@@ -448,7 +448,7 @@ public class Vehicle {
   /* Additional Getters & Setters */
 
 }
-{{% /highlight %}}
+```
 
 We used the `@Enumerated` annotation for persisting an Enum property.
 Please note that specifying a value for the `@Enumerated.value()` attribute has no effect since Enums are saved in GigaSpaces as is.
@@ -457,7 +457,7 @@ Please note that specifying a value for the `@Enumerated.value()` attribute has 
 
 It's possible to query according to an Enum property by setting an Enum parameter or by using the Enum's value in the query string:
 
-{{% highlight java %}}
+```java
 EntityManager em = emf.createEntityManager();
 
 // Query using an Enum parameter
@@ -468,14 +468,14 @@ Vehicle result1 = (Vehicle) query1.getSingleResult();
 // Query using an Enum in query's string
 Query query2 = em.createQuery("SELECT vehicle FROM com.gigaspaces.objects.Vehicle vehicle WHERE vehicle.type = 'BIKE'");
 Vehicle result2 = (Vehicle) query2.getSingleResult();
-{{% /highlight %}}
+```
 
 # Interoperability
 
 One of the nice benefits of the GigaSpaces JPA implementation is that its fully interoperable with the GigaSpaces [native POJO API](./pojo-support.html).
 For instance, we can persist a JPA entity and read it using the native POJO-driven Space API:
 
-{{% highlight java %}}
+```java
 @Entity
 public class Author {
   private Integer id;
@@ -557,7 +557,7 @@ result = gigaspace.read(query);
 // Or by a certain book..
 query = new SQLQuery<Author>(Author.class, "books[*].id = 10");
 result = gigaspace.read(query);
-{{% /highlight %}}
+```
 
 # Native Query Execution
 
@@ -573,7 +573,7 @@ GigaSpaces JPA native query execution is a powerful feature used for executing:
 
 SQLQuery execution using JPA native query API is pretty simple and made in the following way:
 
-{{% highlight java %}}
+```java
 // SQLQuery execution
 EntityManager em = emf.createEntityManagerFactory();
 Query query = em.createNativeQuery("name = 'John Doe'", Author.class);
@@ -583,7 +583,7 @@ Author author = (Author) query.getSingleResult();
 query = em.createNativeQuery("name = ?", Author.class);
 query.setParameter(1, "John Doe");
 author = (Author) query.getSingleResult();
-{{% /highlight %}}
+```
 
 For more details on the SQLQuery syntax, refer to the [SQLQuery](./query-sql.html) page.
 
@@ -591,7 +591,7 @@ For more details on the SQLQuery syntax, refer to the [SQLQuery](./query-sql.htm
 
 Using GigaSpaces JPA native query API it is possible to execute tasks over the space in the following manner:
 
-{{% highlight java %}}
+```java
 // Task definition
 public class MyTask implements Task<Integer> {
 
@@ -617,7 +617,7 @@ public class MyTask implements Task<Integer> {
 Query query = em.createNativeQuery("execute ?");    // Special syntax for task execution
 query.setParameter(1, new MyTask(1));               // We pass our task instance as a parameter to the query
 Integer result = (Integer) query.getSingleResult(); // Task execution always returns a single result
-{{% /highlight %}}
+```
 
 {{% info %}}
 Please note that task execution using JPA's native query API is always synchronous.
@@ -628,7 +628,7 @@ Please note that task execution using JPA's native query API is always synchrono
 Its possible to get an EntityManagerFactory instance (according to the bean definition in pu.xml) by implementing the ApplicationContextAware interface.
 For example:
 
-{{% highlight java %}}
+```java
 public class MyTask implements Task<Integer>, ApplicationContextAware {
 
   private transient EntityManagerFactory emf;
@@ -651,7 +651,7 @@ public class MyTask implements Task<Integer>, ApplicationContextAware {
   }
 
 }
-{{% /highlight %}}
+```
 
 Another option instead of using the ApplicationContextAware interface is to annotate your Task with the @AutowireTask annotation and annotate the EntityManagerFactory property with a @Resource annotation.
 
@@ -664,23 +664,23 @@ For more information about GigaSpaces tasks refer to [Task Execution over the Sp
 In addition to Task execution, GigaSpaces JPA native query execution also offers the ability to execute dynamic scripts such as Groovy, JavaScript & JRuby over the space.
 Dynamic Script execution over the space is based on Task execution & remoting and therefore its required that your PU will have a remoting scripting executor service:
 
-{{% highlight xml %}}
+```xml
 <!-- The service exporter exposing the scripting service -->
 <os-remoting:service-exporter id="serviceExporter">
      <os-remoting:service ref="scriptingExecutor"/>
 </os-remoting:service-exporter>
-{{% /highlight %}}
+```
 
 The next step is using the exposed scripting service on the client side using JPA's native query API:
 
-{{% highlight java %}}
+```java
 // Dynamic Script execution
 Script script = new StaticScript("GroovyScript", "groovy", "println 'Dynamic Script Execution using JPA'; return 0");
 
 Query query = em.createNativeQuery("execute ?");     // Special syntax for script execution (similar to task execution)
 query.setParameter(1, script);                       // We pass our script as a parameter to the query
 Integer result = (Integer) query.getSingleResult();  // Script execution always returns a single result
-{{% /highlight %}}
+```
 
 {{%refer%}}
 For more information about dynamic script execution refer to [Dynamic Language Tasks](./dynamic-language-tasks.html).

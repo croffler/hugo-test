@@ -70,9 +70,9 @@ This attribute is used to add include file declaration to your generated c++ cod
 
 For example:
 
-{{% highlight cpp %}}
+```cpp
 <include-header file="UserMessage.h"/>
-{{% /highlight %}}
+```
 
 # property
 
@@ -147,23 +147,23 @@ Types that can be used with the `ref-property` attribute:
 
 For example:
 
-{{% highlight xml %}}
+```xml
 <class name="com.gigaspaces.tests.test_refNode" persist="true" replicate="true" fifo="false" >
     <property name="intIndex"  type="int" null-value="0" index="true"/>
     <ref-property class-ref="com.gigaspaces.tests.test_refChildNode" name="children" type="array"></ref-property>
     <ref-property class-ref="com.gigaspaces.tests.test_refChildNode" name="leftChild" type="boost::shared_ptr"></ref-property>
     <ref-property class-ref="com.gigaspaces.tests.test_refChildNode" name="rightChild" type="boost::shared_ptr"></ref-property>
 </class>
-{{% /highlight %}}
+```
 
 # id
 
 **Usage**:
 
-{{% highlight xml %}}
+```xml
 <property name="idField" type="string" null-value="" />
 <id name="idField" auto-generate="true" />
-{{% /highlight %}}
+```
 
 Defines whether this field value is used when generating the Entry's UID. The field value should be unique - i.e. multiple objects with the same value cannot be written into the space. Each object should have a different field value. When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Entry's UID is created based on the `id` field value.
 
@@ -205,7 +205,7 @@ When working with a partitioned persistent space that persists into a central da
 
 # Example
 
-{{% highlight xml %}}
+```xml
 <class name="com.gigaspaces.tests.completeType" persist="true" replicate="true" fifo="false" >
     <property name="idField" type="string" null-value="" />
     <id name="idField" auto-generate="true" />
@@ -226,6 +226,6 @@ When working with a partitioned persistent space that persists into a central da
     <property name="floatField"    type="float" null-value="0" />
     <property name="doubleField"   type="double" null-value="0" />
 </class>
-{{% /highlight %}}
+```
 
 

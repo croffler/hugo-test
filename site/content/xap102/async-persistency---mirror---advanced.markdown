@@ -23,14 +23,14 @@ The Mirror Service name is used as part of the space config, specified via the `
 
 As an example, let's say we would like to call my mirror service `mymirror-service` (instead of the default `mirror-service`). Here is how the mirror service should be started:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="myMirror-service" schema="mirror"
     space-sync-endpoint="mirrorSynchronizationEndpoint" />
-{{% /highlight %}}
+```
 
 Here is how the space should be started:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace" schema="persistent"
     mirror="true" space-data-source="spaceDataSource">
     <os-core:properties>
@@ -41,7 +41,7 @@ Here is how the space should be started:
         </props>
     </os-core:properties>
 </os-core:space>
-{{% /highlight %}}
+```
 
 # Implementing a Custom Mirror Data Source
 
@@ -51,7 +51,7 @@ XAP has a built in [Hibernate Space Persistency](./hibernate-space-persistency.h
 {{% accord title="Show code..." parent="accord1" id="tab1"%}}
 {{% panel%}}
 
-{{% highlight java %}}
+```java
 package mypackage;
 
 public class MirrorSpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {
@@ -82,7 +82,7 @@ public class MirrorSpaceSynchronizationEndpoint extends SpaceSynchronizationEndp
         }
     }
 }
-{{% /highlight %}}
+```
 
 {{%/panel%}}
 {{%/accord%}}
@@ -97,19 +97,19 @@ And here is how this can be configured within the mirror configuration:
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="mirrorSpaceSynchronizationEndpoint" class="mypackage.MirrorSpaceSynchronizationEndpoint">
     <property name="parameter" value="some value"/>
 </bean>
 
 <os-core:embedded-space id="space" name="mirror-service" schema="mirror"
     space-sync-endpoint="mirrorSpaceSynchronizationEndpoint" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="mirrorSpaceSynchronizationEndpoint" class="mypackage.MirrorSpaceSynchronizationEndpoint">
     <property name="parameter" value="some value"/>
 </bean>
@@ -119,7 +119,7 @@ And here is how this can be configured within the mirror configuration:
     <property name="schema" value="mirror" />
     <property name="spaceSyncEndpoint" ref="mirrorSpaceSynchronizationEndpoint" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -152,7 +152,7 @@ By default, these errors are propagated to the replicating space (primary space 
 
 To override and extend this behavior, you can implement an exception handler that will be called when an exception is thrown from the Mirror back to the primary space. This exception handler can log the exception at the mirror side, throw it back to the space, ignore it or execute any user specific code. Here is an example of how this is done using the `org.openspaces.persistency.patterns.SpaceSynchronizationEndpointExceptionHandler` provided with OpenSpaces:
 
-{{% highlight xml %}}
+```xml
 <bean id="hibernateSpaceSynchronizationEndpoint"
     class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceSynchronizationEndpointFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
@@ -168,7 +168,7 @@ To override and extend this behavior, you can implement an exception handler tha
 
 <os-core:embedded-space id="space" name="mirror-service" schema="mirror"
     space-sync-endpoint="exceptionHandlingSpaceSynchronizationEndpoint"/>
-{{% /highlight %}}
+```
 
 With the above, we use the `SpaceSynchronizationEndpointExceptionHandler`, and wrap the `DefaultHibernateSpaceSynchronizationEndpoint` with it (and pass that to the space). On the `SpaceSynchronizationEndpointExceptionHandler`, we set our own implementation of the `ExceptionHandler`, to be called when there is an exception. With the `ExceptionHandler` you can decide what to do with the Exception: "swallow it", execute some logic, or re-throw it.
 
@@ -189,7 +189,7 @@ This can be achieved by :
 
 1. Setting the following property in the mirror configuration:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mirror-service" schema="mirror" space-sync-endpoint="spaceSynchronizationEndpoint">
     <os-core:properties>
 	<props>
@@ -199,7 +199,7 @@ This can be achieved by :
 	</props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 By default this property is set to `group-by-replication-bulk` and `executeBulk()` groups several transactions and executes them together. The group size is defined by the mirror replication `bulk-size`.
 
@@ -209,7 +209,7 @@ Setting this property will cause a `SpaceSynchronizationEndpoint.onTransactionSy
 
 The following demonstrates how the transaction metadata can be retrieved:
 
-{{% highlight java %}}
+```java
 public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {
 	public void onTransactionSynchronization(TransactionData transactionData) {
 	    TransactionParticipantMetaData metaData = transactionData.getTransactionParticipantMetaData();
@@ -219,7 +219,7 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
 	    // ...
 	}
 }
-{{% /highlight %}}
+```
 
 Notes:
 
@@ -229,7 +229,7 @@ Notes:
 
 Starting with XAP 9.0.1 a new transaction participant meta data interface has been introduced. The new interface describing the transaction's unique id which consists of the transaction's id and the transaction manager id who have created it:
 
-{{% highlight java %}}
+```java
 /**
  * Represents a transaction meta data for a specific transaction participant.
  * @since 9.0.1
@@ -253,9 +253,9 @@ public interface TransactionParticipantMetaData {
      */
     public TransactionUniqueId getTransactionUniqueId();
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 /**
  * Represents a transaction unique id constructed from the transaction manager which created the transaction
  * Uuid and the transaction id.
@@ -273,7 +273,7 @@ public interface TransactionUniqueId
      */
     Object getTransactionId();
 }
-{{% /highlight %}}
+```
 
 ## Mirror Distributed Transaction Consolidation - Atomic Transaction Delegation
 
@@ -287,7 +287,7 @@ In the following example we configure a space using its `pu.xml` to have transac
 Since 9.1.0 - Distributed transaction consolidation is enabled by default.
 {{% /info %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace">
   <os-core:properties>
     <props>
@@ -297,7 +297,7 @@ Since 9.1.0 - Distributed transaction consolidation is enabled by default.
     </props>
   </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 As specified in the example above, it is required to set the `cluster-config.groups.group.repl-policy.processing-type` property to `multi-source`.
 
@@ -308,7 +308,7 @@ The `cluster-config.groups.group.repl-policy.processing-type` may have the follo
 
 In order to take advantage of this feature, mirror operation grouping should be set to `group-by-space-transaction` in mirror `pu.xml`:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mirror-service"
   schema="mirror" space-sync-endpoint="spaceSynchronizationEndpoint">
   <os-core:properties>
@@ -319,11 +319,11 @@ In order to take advantage of this feature, mirror operation grouping should be 
     </props>
   </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 ##### Distributed Transaction Consolidation Example:
 
-{{% highlight java %}}
+```java
 public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {
 
 @Override
@@ -344,7 +344,7 @@ public void onTransactionConsolidationFailure(ConsolidationParticipantData parti
 }
 
 }
-{{% /highlight %}}
+```
 
 With the above example the 'participantData.commit()` call assumes the logic accepting each transaction participant data to be persist separately despite a failure with the transaction consolidation. 'participantData.abort()' indicates the logic must have all transaction participant's data to be fully consolidated. 
 
@@ -356,7 +356,7 @@ Please note that while waiting for a distributed transaction to entirely arrive 
 
 The following example demonstrates how to set the timeout for waiting for distributed transaction data to arrive, it is also possible to set the amount of new operations to perform before processing data individually for each participant:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mirror-service"  schema="mirror" space-sync-endpoint="spaceSynchronizationEndpoint">
   <os-core:properties>
     <props>
@@ -368,7 +368,7 @@ The following example demonstrates how to set the timeout for waiting for distri
     </props>
   </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 Distributed transaction participants' data will be processed individually if ten seconds have passed and all of the participants data has **not** arrived or if 20 new operations were executed after the distributed transaction.
 
@@ -452,9 +452,9 @@ Here is a schematic flow of how two partitions (each a primary-backup pair) asyn
 
 The space persistency logging level can be modified as part of the `<XAP Root>\config\gs_logging.properties` file. By default, it is set to `java.util.logging.Level.INFO`:
 
-{{% highlight java %}}
+```java
 com.gigaspaces.persistent.level = INFO
-{{% /highlight %}}
+```
 
 Logging is divided according to `java.util.logging.Level` as follows:
 

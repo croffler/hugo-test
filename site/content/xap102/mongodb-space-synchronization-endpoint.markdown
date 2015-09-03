@@ -12,7 +12,7 @@ A MongoDB based implementation of the [Space Synchronization Endpoint](./space-s
 The MongoDB Space Synchronization Endpoint uses the [MongoDB Driver](http://docs.mongodb.org/ecosystem/drivers/java/) For communicating with the MongoDB cluster. 
 Include the following in your `pom.xml` 
 
-{{% highlight xml %}}
+```xml
 
 	<!-- currently the MongoDB library is not the central maven repository --> 
 	<repositories>
@@ -48,7 +48,7 @@ Include the following in your `pom.xml`
 		...
 	</dependencies>
 
-{{% /highlight %}}
+```
 
 ### Setup 
 
@@ -57,7 +57,7 @@ An example of how the MongoDB Space Synchronization Endpoint can be configured w
 {{% inittab Configuration Examples %}}
 {{% tabcontent Spring %}}
 
-{{% highlight xml %}}
+```xml
 
 	<?xml version="1.0" encoding="utf-8"?> 
 	<beans xmlns="http://www.springframework.org/schema/beans" 
@@ -99,12 +99,12 @@ An example of how the MongoDB Space Synchronization Endpoint can be configured w
 		</bean> 
 	</beans> 
 
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 		MongoClient config = new MongoClient(host, port);
 		
@@ -125,7 +125,7 @@ An example of how the MongoDB Space Synchronization Endpoint can be configured w
 		.addProperty("space-config.mirror-service.cluster.backups-per-partition", String.valueOf(numOfBackups)) 
 		.create();
 
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

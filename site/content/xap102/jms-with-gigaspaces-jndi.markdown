@@ -18,35 +18,35 @@ It is not possible to configure connection factories.
 
 When JMS services in JNDI are enabled, the space creates and binds the following connection factories:
 
-{{% highlight java %}}
+```java
 Connectionfactory           GigaSpaces;ContainerName;SpaceName;GSConnectionFactoryImpl
 TopicConnectionfactory      GigaSpaces;ContainerName;SpaceName;GSTopicConnectionFactoryImpl
 QueueConnectionfactory      GigaSpaces;ContainerName;SpaceName;GSQueueConnectionFactoryImpl
-{{% /highlight %}}
+```
 
 To obtain a connection factory, the application uses JNDI lookup:
 
-{{% highlight java %}}
+```java
 // get a connection factory (unified model)
 InitialContext context = new InitialContext();
 ConnectionFactory factory = (ConnectionFactory)context.lookup("GigaSpaces;ContainerName;SpaceName;GSConnectionFactoryImpl");
-{{% /highlight %}}
+```
 
 or:
 
-{{% highlight java %}}
+```java
 // get a topic connection factory (publish/subscribe)
 InitialContext context = new InitialContext();
 TopicConnectionFactory factory = (TopicConnectionFactory)context.lookup("GigaSpaces;ContainerName;SpaceName;GSTopicConnectionFactoryImpl");
-{{% /highlight %}}
+```
 
 or:
 
-{{% highlight java %}}
+```java
 // get a queue connection factory (point to point)
 InitialContext context = new InitialContext();
 QueueConnectionFactory factory = (QueueConnectionFactory)context.lookup("GigaSpaces;ContainerName;SpaceName;GSQueueConnectionFactoryImpl");
-{{% /highlight %}}
+```
 
 # Configuring JMS Destinations
 
@@ -58,12 +58,12 @@ To enable JMS services in GigaSpaces JNDI, change the space schema file as follo
 
 For example:
 
-{{% highlight java %}}
+```java
 com.j_spaces.core.container.directory_services.jms_services.enabled=true
 
 space-config.jms.administrated-destinations.topics.topic-names=MyTopic,TempTopic
 space-config.jms.administrated-destinations.queues.queue-names=MyQueue,TempQueue
-{{% /highlight %}}
+```
 
 The example above:
 
@@ -75,12 +75,12 @@ The example above:
 When configuring destination as described above, the space binds the destinations to the following names:
 {{%/note%}}
 
-{{% highlight java %}}
+```java
 GigaSpaces;ContainerName;spaceName;jms;destinations;MyTopic
 GigaSpaces;ContainerName;spaceName;jms;destinations;TempTopic
 GigaSpaces;ContainerName;spaceName;jms;destinations;MyQueue
 GigaSpaces;ContainerName;spaceName;jms;destinations;TempQueue
-{{% /highlight %}}
+```
 
 # Obtaining JMS Destinations from JNDI
 
@@ -88,15 +88,15 @@ The application uses a JNDI context to get the destinations from JNDI.
 
 For example, to get the `MyTopic` Topic:
 
-{{% highlight java %}}
+```java
 InitialContext context = new InitialContext();
 Topic myTopic = (Topic)context.lookup("GigaSpaces;containername;spaceName;jms;destinations;MyTopic");
-{{% /highlight %}}
+```
 
 {{% info %}}
 To get the resource, use the full binding name. If you configure `MyTopic` in the space configuration, the space binds it to the name:
 {{%/info%}}
 
-{{% highlight java %}}
+```java
 GigaSpaces;ContainerName;spaceName;jms;destinations;MyTopic.
-{{% /highlight %}}
+```

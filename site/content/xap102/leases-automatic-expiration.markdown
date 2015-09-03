@@ -32,7 +32,7 @@ Few other ways Lease can be managed include,
 
 Leases can be used for objects written to GigaSpaces cluster. All the write operations in [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/GigaSpace.html) interface support Lease. Lease duration is an argument that is passed to the write operations and they return a Lease Context which can be used to manage the Leases.
 
-{{% highlight java %}}
+```java
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
 
 MyMessage message1 = new MyMessage();
@@ -49,13 +49,13 @@ MyMessage message3 = new MyMessage();
 
 // Writes the message with Lease of Lease.FOREVER
 LeaseContext<MyMessage> lease3 = gigaSpace.write(message3, Lease.FOREVER);
-{{% /highlight %}}
+```
 
 # Getting Lease Expiration Date
 
 You may use the `Lease.getExpiration` to retrieve the time where the space object will expire. See below simple example - It writes a space into the space with 10 seconds lease and later prints how much time is left for the space object to remain in space before it will expire:
 
-{{% highlight java %}}
+```java
 GigaSpace space = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space")).gigaSpace();
 
 // Writing object into the space with 10 seconds lease time
@@ -69,13 +69,13 @@ while(true)
 	if (expiredDue <= 0) break;
 	Thread.sleep(1000);
 }
-{{% /highlight %}}
+```
 
 # Manually Managing Space Object Lease
 
 GigaSpaces API returns the `LeaseContext` after every write operation/update operation. Space Object Leases can be renewed or cancelled based on the application needs.
 
-{{% highlight java %}}
+```java
 LeaseContext<Order> lease;
 
 ...
@@ -88,11 +88,11 @@ lease = gigaSpace.write(singleOrder);
 public void cancelLease() {
 ...
 lease.cancel();
-{{% /highlight %}}
+```
 
 Another alternative to using LeaseContext objects is to retrieve the objects and updating the Lease to desired duration.
 
-{{% highlight java %}}
+```java
 //Retrieve all processed low priority orders and expire the lease
 Order template = new Order();
 
@@ -105,7 +105,7 @@ Order[] processedLowPriorityOrders = gigaSpace.readMultiple(template, 1000);
 gigaSpace.writeMultiple(processedLowPriorityOrders,
 		1000,					// Update the Lease to 1 second
 		UpdateModifiers.UPDATE_OR_WRITE); // Update existing object
-{{% /highlight %}}
+```
 
 {{% anchor LeaseRenewalManager %}}
 
@@ -165,7 +165,7 @@ The time at which a lease is scheduled for renewal is based on the expiration ti
 
 The following pseudo code was derived from the code which computes the renewal time. In this code, rtt represents the value of the roundTripTime:
 
-{{% highlight java %}}
+```java
   endTime = lease.getExpiration();
   delta = endTime - now;
   if (delta <= rtt * 2) {
@@ -180,7 +180,7 @@ The following pseudo code was derived from the code which computes the renewal t
 	delta = 1000 * 60 * 60 * 24 * 3;
   }
   renew = endTime - delta;
-{{% /highlight %}}
+```
 
 It is important to note that delta is never less than rtt when the renewal time is computed. A lease which would expire within this time range will be scheduled for immediate renewal.
 
@@ -190,7 +190,7 @@ It is important to note that delta is never less than rtt when the renewal time 
 
 If an attempt to renew a lease fails with an indefinite exception, a renewal is rescheduled with an updated renewal time as computed by the following pseudo code:
 
-{{% highlight java %}}
+```java
   delta = endTime - renew;
   if (delta > rtt) {
 	  if (delta <= rtt * 3) {
@@ -206,7 +206,7 @@ If an attempt to renew a lease fails with an indefinite exception, a renewal is 
 	  }
 	  renew += delta;
   }
-{{% /highlight %}}
+```
 
 Client leases are maintained in a collection sorted by descending renewal time. A renewal thread is spawned whenever the renewal time of the last lease in the collection is reached. This renewal thread examines all of the leases in the collection whose renewal time falls within renewBatchTimeWindow milliseconds of the renewal time of the last lease. If any of these leases can be batch renewed with the last lease (as determined by calling the canBatch method of the last lease) then a LeaseMap is created, all eligible leases are added to it and the LeaseMap.renewAll() method is called.
 
@@ -220,7 +220,7 @@ Following example shows a client writing `Order`'s to the space with a limited l
 {{% inittab os_simple_space %}}
 {{% tabcontent LeaseManagerClient %}}
 
-{{% highlight java %}}
+```java
 ...
 
 public class LeaseManagerClient {
@@ -282,12 +282,12 @@ public class LeaseManagerClient {
     }
 
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Using Custom LeaseRenewalManager Configuration %}}
 
-{{% highlight java %}}
+```java
 public LeaseManagerClient(String url) {
 
 ... // Same as previous one
@@ -347,12 +347,12 @@ private static final class LeaseRenewalConfiguration implements Configuration {
 		return defaultValue;
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent LeaseListener %}}
 
-{{% highlight java %}}
+```java
 public class MyLeaseListener implements LeaseListener{
 
 	Logger logger = Logger.getLogger(this.getClass().getName());
@@ -365,12 +365,12 @@ public class MyLeaseListener implements LeaseListener{
 		logger.info("LeaseRenewalEvent failed. Received the Event " + event);
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Order %}}
 
-{{% highlight java %}}
+```java
 public class Order implements Serializable {
 
 	private String id;
@@ -402,7 +402,7 @@ public class Order implements Serializable {
 		this.processed = processed;
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -413,17 +413,17 @@ API page for [LeaseRenewalManager](http://www.gigaspaces.com/docs/JiniApi/net/ji
 
 Getting events once the space object lease expired can be done using the [Notify Container](./notify-container.html). See example below:
 
-{{% highlight java %}}
+```java
 SimpleListener myListenr = new SimpleListener();
 SimpleNotifyEventListenerContainer notifyEventListenerContainer = new SimpleNotifyContainerConfigurer(
 	gigaSpace).notifyLeaseExpire(true).
 	template(new MyData()).eventListener(myListenr)
 	.notifyContainer();
-{{% /highlight %}}
+```
 
 The `Listener`:
 
-{{% highlight java %}}
+```java
 public class SimpleListener implements SpaceDataEventListener<MyData> {
 	public void onEvent(MyData data, GigaSpace gigaSpace,
 			TransactionStatus txStatus, Object source) {
@@ -435,11 +435,11 @@ public class SimpleListener implements SpaceDataEventListener<MyData> {
 				+ data.getId() );
 	}
 }
-{{% /highlight %}}
+```
 
 And with Java8 lambda syntax:
 
-{{% highlight java %}}
+```java
 SimpleNotifyEventListenerContainer notifyEventListenerContainer = new SimpleNotifyContainerConfigurer(space)
 	.template(new MyData())
     .eventListener((data, gigaSpace, txStatus, source) -> {
@@ -455,7 +455,7 @@ SimpleNotifyEventListenerContainer notifyEventListenerContainer = new SimpleNoti
         System.out.println("Got matching event! - " + data);
     })
     .notifyContainer();
-{{% /highlight %}}
+```
 
 Notifications for expired space objects are delivered both from the primary and backup space instances. In some cases you may want to handle notifications sent only from the primary instances. The [lease expiration notification example](/download_files/LeaseExpirationNotificationExample.zip) show how you can identify from which instance (primary or a backup) the lease expiration notifications has been sent.
 
@@ -473,9 +473,9 @@ Once an object's lease expires the underlying persistence store:
 
 You can control how often this thread invokes the invalidation process. This involves iterating through all the expired space objects since the last invalidation cycle, and allowing the JVM garbage collector to release the memory consumed for the object. To configure the Lease Manager interval use the following:
 
-{{% highlight java %}}
+```java
 space-config.lease_manager.expiration_time_interval=10000
-{{% /highlight %}}
+```
 
 - When writing objects into the space using a short lease time, it is recommended to configure the lease manager interval to be short.
 - The `NOTIFY_LEASE_EXPIRATION` notification is called when the Lease Manager invalidates the object.

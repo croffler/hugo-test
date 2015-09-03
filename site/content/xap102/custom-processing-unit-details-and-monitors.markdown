@@ -25,19 +25,19 @@ A [ServiceMonitors](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}
 
 One implementation class a processing unit can extend is the [PlainServiceMonitors](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/pu/service/PlainServiceMonitors.html) class. This is a simple straight forward implementation of the `ServiceMonitors` interface, which takes care of fast serialization using Externalizable, provides a handy toString, etc.
 
-{{% highlight java %}}
+```java
 public interface ServiceMonitors extends Serializable {
     String getId();
     ServiceDetails getDetails();
     Map<String, Object> getMonitors();
 }
-{{% /highlight %}}
+```
 
 Notice that the `ServiceMonitors.getDetails()` provides the Service Details. When using `PlainServiceMonitors` the details are set with the initial value fetched when the processing unit instance was discovered.
 
 You can also extends the CustomServiceMonitors in order to get your own monitoring:
 
-{{% highlight java %}}
+```java
 public class MyMonitor extends CustomServiceMonitors {
 	public MyMonitor() {
 		this("mymonitor");
@@ -48,9 +48,9 @@ public class MyMonitor extends CustomServiceMonitors {
 		getMonitors().put("myvalue2", new Long(2));
 	}
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 public class SystemServiceMonitors implements ServiceMonitorsProvider {
 	Logger log = Logger.getLogger("SystemServiceMonitors");
 	public SystemServiceMonitors() {
@@ -66,9 +66,9 @@ public class SystemServiceMonitors implements ServiceMonitorsProvider {
 
 	}
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 public class AdminTest {
 	public static void main(String[] args) {
 		Admin admin = new AdminFactory().addGroup("my_oup").createAdmin();
@@ -83,7 +83,7 @@ public class AdminTest {
 		admin.close();
 	}
 }
-{{% /highlight %}}
+```
 
 # Custom Properties in the Web Based Dashboard
 

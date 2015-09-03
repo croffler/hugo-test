@@ -20,7 +20,7 @@ For service reloading to work, common classes have to be copied to the <GigaSpac
 
 Lets assume we have business logic that we would like to reload at some point in time after our Processing Unit has been deployed. Here is an example of such business logic:
 
-{{% highlight java %}}
+```java
 public class RefreshableBean implements InitializingBean, DisposableBean {
 
     @GigaSpaceContext(name = "gigaSpace")
@@ -34,18 +34,18 @@ public class RefreshableBean implements InitializingBean, DisposableBean {
         System.out.println("BEAN DESTROYED, SPACE [" + gigaSpace + "]");
     }
 }
-{{% /highlight %}}
+```
 
 We then need to define it in a specific Spring XML file (lets assume it is named `refreshable-beans.xml`):
 
-{{% highlight xml %}}
+```xml
 <beans ... >
 
     <os-core:giga-space-context />
 
     <bean id="refreshableBean" class="org.openspaces.example.data.processor.RefreshableBean"/>
 </beans>
-{{% /highlight %}}
+```
 
 {{% tip %}}
 This Spring XML file is a fully functional Spring definition and can hold several bean definitions, as well as other OpenSpaces components.
@@ -53,13 +53,13 @@ This Spring XML file is a fully functional Spring definition and can hold severa
 
 To enable service reloading, in our processing unit `pu.xml` file, we reference the `refreshable-beans.xml` file in the following manner:
 
-{{% highlight xml %}}
+```xml
 <beans ...>
 	...
 
 	<os-core:refreshable-context-loader id="refreshableExample" location="classpath:/META-INF/spring/refreshable-beans.xml"/>
 </beans>
-{{% /highlight %}}
+```
 
 {{% tip %}}
 `refreshable-beans.xml` has its parent application context set to the `pu.xml`, allowing it to access any bean defined in its parent `pu.xml`. Also, the `refreshable-context-loader` only starts if the space is in primary mode (when working with a remote space, it is always in primary mode).
@@ -67,7 +67,7 @@ To enable service reloading, in our processing unit `pu.xml` file, we reference 
 
 Above configuration will let you refresh the code defined in the refreshable context. Actual execution of this reloading of context can be done using OpenSpaces sync remoting, which allows you to broadcast the reload operation to all active cluster members. Here is how this is configured:
 
-{{% highlight xml %}}
+```xml
 <beans ...>
 
         ...
@@ -77,15 +77,15 @@ Above configuration will let you refresh the code defined in the refreshable con
 	</os-remoting:service-exporter>
 
 </beans>
-{{% /highlight %}}
+```
 
 # Reloading Business Logic
 
 When there is a change in business logic for any beans defined in the refreshable context and these changes are ready to be applied to the cluster, copy the new classes into the GigaSpaces deploy folder of GSM machine(s) and work folder of each cluster node (default location, <GigaSpacesRoot>/work/processing-units/<puInstance>) and execute the reload command as below:
 
-{{% highlight java %}}
+```java
 java -cp [list of jar files, including JSpace, openspaces and spring] RefreshContextLoaderExecutor jini://*/*/space
-{{% /highlight %}}
+```
 
 As a result of the above command, all the beans defined in the refreshable context are destroyed and fresh copies of these beans are re-created using the new class definitions in the work folder. Your new version of business logic is now ready without brining down the cluster.
 

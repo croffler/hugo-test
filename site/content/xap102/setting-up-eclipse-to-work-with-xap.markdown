@@ -26,17 +26,17 @@ To check your installed Java version:
 1. Run **`set JAVA_HOME`**
 1. A response similar to this suggests you have a JDK installed:
 
-{{% highlight java %}}
+```java
 JAVA_HOME=C:\jdk1.6
-{{% /highlight %}}
+```
 
 To check the JDK version, run `%JAVA_HOME%\bin\java \-version`. A response like this from `Java` indicates you have a valid JDK installed:
 
-{{% highlight java %}}
+```java
 java version "1.6.0_23"
 Java(TM) SE Runtime Environment (build 1.6.0_23-b05)
 Java HotSpot(TM) Client VM (build 11.0-b16, mixed mode, sharing)
-{{% /highlight %}}
+```
 
 If your installed JDK version is lower then 1.5 or none is installed, see below on how to install one.
 

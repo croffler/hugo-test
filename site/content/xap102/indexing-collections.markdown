@@ -10,7 +10,7 @@ An index can be defined on a Collection property (java.util.Collection implement
 
 The following example shows how to define an index on a List of Integers:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class CollectionIndexingExample {
   private Integer id;
@@ -24,15 +24,15 @@ public class CollectionIndexingExample {
   }
 
 }
-{{% /highlight %}}
+```
 
 The following query shows how to use the index:
 
-{{% highlight java %}}
+```java
 SQLQuery<CollectionIndexingExample> sqlQuery = new SQLQuery<CollectionIndexingExample>(
     CollectionIndexingExample.class, "numbers[*] = 30");
 CollectionIndexingExample[] result = gigaspace.readMultiple(sqlQuery);
-{{% /highlight %}}
+```
 
 {{% refer %}}
 See the [Free Text Search](./query-sql.html#Free Text Search) section for more details.
@@ -44,7 +44,7 @@ Its also possible to index a nested property within a collection.
 
 The following example shows how to define an index on Book.id property which resides in a Collection property in Author:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Author {
   private String name;
@@ -68,18 +68,18 @@ public class Book {
     return this.id;
   }
 }
-{{% /highlight %}}
+```
 
 The following query shows how to take advantage of the defined index:
 
-{{% highlight java %}}
+```java
 SQLQuery<Author> sqlQuery = new SQLQuery<Author>(Author.class, "books[*].id = 57");
 Author result = gigaspace.read(sqlQuery);
-{{% /highlight %}}
+```
 
 Setting an index on a Collection within a nested property is also accepted:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Employee {
   private Long id;
@@ -105,7 +105,7 @@ public class Information {
   }
 
 }
-{{% /highlight %}}
+```
 
 {{% info %}}
 Both @SpaceIndex(type=SpaceIndexType.BASIC) and @SpaceIndex(type=SpaceIndexType.EXTENDED) are supported.

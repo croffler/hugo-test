@@ -19,9 +19,9 @@ In order to locate a space you need to specify its URL. The SpaceURL is used as 
 
 The general format of the space URL is:
 
-{{%highlight xml%}}
+```xml
 <protocol>://<lookup service hostname>:<port>/<space container name>/<space name>?<properties>
-{{%/highlight%}}
+```
 
 The following parameters can be defined:
 
@@ -42,22 +42,22 @@ Make sure your network and machines running GigaSpaces are configured to have mu
 ### Examples
 
 **Accessing Remote Space Using Jini Lookup Service - Unicast Discovery**
-{{%highlight console%}}
+```console
 jini://LookupServiceHostname/*/mySpace
-{{%/highlight%}}
+```
 
 
 **Accessing Remote Space Using the Jini Lookup Service - Multicast Discovery**
-{{%highlight console%}}
+```console
 jini://*/*/mySpace
-{{%/highlight%}}
+```
 
 **Starting Embedded Space Using the Java Protocol**
-{{%highlight console%}}
+```console
 /./mySpace (which translates to java://localhost:10098/containerName/mySpace?schema=default)
 /./mySpace?schema=cache (which translates to java://localhost:10098/containerName/mySpace?schema=cache)
 java://LookupServiceHostName:port/myContainerName/spaceName
-{{%/highlight%}}
+```
 
 
 **Distributed Unicast-Based Lookup Service Support**<br>
@@ -65,12 +65,12 @@ In environments that do not support multicast, you can use the `locators` space 
 
 The following URL formats are supported:<br>
 
-{{%highlight console%}}
+```console
 jini://*/*/space_name?locators=h1:port,h2:port,h3:port
 jini://LookupServiceHostName1:port1,....LookupServiceHostName n:port n/*/space_name
 jini://LookupServiceHostName1:port1,....LookupServiceHostName n:port n/*/space_name?locators=LookupServiceHostName1:port,LookupServiceHostName2:port,LookupServiceHostName3:port
 jini://LookupServiceHostName1:port1/*/space name?locators=LookupServiceHostName1:port,LookupServiceHostName2:port,LookupServiceHostName3:port
-{{%/highlight%}}
+```
 
 
 ###  Space Container Notation
@@ -78,18 +78,18 @@ jini://LookupServiceHostName1:port1/*/space name?locators=LookupServiceHostName1
 The Space URL uses the following notation to start a space: `/./<Space Name>`. For example: `/./mySpace`
 
 When using that space URL the system will instantiate (create) a space instance named `mySpace` using the default schema configuration. The default schema is set to transient space configuration and it is equivalent to using the following URL:
-{{%highlight console%}}
+```console
 java://localhost:10098/mySpace_container/mySpace?schema=default
-{{%/highlight%}}
+```
 
 {{% tip %}}
 You can use "." as the container name in the space URL. A value of "." as the container name will be translated to `<space name>_container` name. In the above example the container name is explicitly defined as `mySpace_container`.
 {{% /tip %}}
 
 When a URL is provided without the protocol (java) and host name (localhost), the following URL is created /./mySpace as:
-{{%highlight console%}}
+```console
 java://localhost:10098/mySpace_container/mySpace?schema=default
-{{%/highlight%}}
+```
 
 {{%anchor url properties%}}
 
@@ -121,11 +121,11 @@ The following are optional property string values:
 
 Example for space URL using options:
 
-{{% highlight java %}}
+```java
 jini://*/*/mySpace?useLocalCache&versioned=false
 
 /./mySpace?cluster_schema=partitioned&total_members=4&id=1
-{{% /highlight %}}
+```
 
 
 The `UrlSpaceFactoryBean` allows you to set different URL properties, either explicitly using explicit properties, or using a custom `Properties` object. All of the current URL properties are exposed using explicit properties, in order to simplify the configuration.
@@ -135,14 +135,14 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="space" lookup-groups="test" lookup-timeout="10000"  lookup-locators="myHost" versioned="true" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
     <property name="versioned" value="true" />
@@ -150,12 +150,12 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
     <property name="lookupTimeout" value="20000" />
     
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
    // Create the url
    EmbeddedSpaceConfigurer spaceConfigurer = new EmbeddedSpaceConfigurer("space").lookupGroups("test").lookupTimeout(20000);
@@ -173,7 +173,7 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 
    // shutting down / closing the Space
    spaceConfigurer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -189,7 +189,7 @@ The general properties are used to override various components such as the space
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="space">
     <os-core:properties>
@@ -198,12 +198,12 @@ The general properties are used to override various components such as the space
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
     <property name="properties">
@@ -212,12 +212,12 @@ The general properties are used to override various components such as the space
         </props>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
    EmbeddedSpaceConfigurer spaceConfigurer = new EmbeddedSpaceConfigurer("space").addProperty("space-config.engine.cache_policy", "0");
 
@@ -226,7 +226,7 @@ The general properties are used to override various components such as the space
    .......
    // shutting down / closing the Space
    spaceConfigurer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -251,25 +251,25 @@ Here is an example on how to create the proxy:
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="space" />
   </os-core:giga-space id="mySpace" space="space" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="space">
 <bean id="mySpace" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
    // Create the URL
    EmbeddedSpaceConfigurer spaceConfigurer = new EmbeddedSpaceConfigurer("mySpace");
@@ -279,7 +279,7 @@ Here is an example on how to create the proxy:
 
    // shutting down -- closing the Space
    spaceConfigurer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -315,7 +315,7 @@ Here is an example of the `GigaSpace` Bean:
 {{% inittab gigaspace %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
  <os-core:space id="mySpace" name="space"/>
 
@@ -333,12 +333,12 @@ Here is an example of the `GigaSpace` Bean:
   	 <os-core:write-modifier value="PARTIAL_UPDATE"/>
   	 <os-core:write-modifier value="UPDATE_ONLY"/>
   	</os-core:giga-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
  	 <property name="space" ref="space" />
@@ -359,7 +359,7 @@ Here is an example of the `GigaSpace` Bean:
  	 </array>
  	 </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -372,37 +372,37 @@ Here are some examples on how to configure the Space URL and the proxy:
 
 Declaring a remote space with a transaction manager:
 
-{{% highlight xml %}}
+```xml
 <tx:annotation-driven transaction-manager="transactionManager"/>
 
 <os-core:space-proxy id="space" name="space" />
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
 
 Declaring a remote space with a transaction manager and creating an embedded space:
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy id="spaceRemote" name="space" />
 <os-core:giga-space id="gigaSpaceRemote" space=" spaceRemote"  tx-manager="transactionManager1"/>
 
 <os-core:space id="spaceEmbed" name="space" />
 <os-core:giga-space id="gigaSpaceEmbed" space="spaceEmbed"  tx-manager="transactionManager2"/>
-{{% /highlight %}}
+```
 
 Declaring a remote space creating a local view:
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy id="spaceRemote" name="space" />
 <os-core:local-view id="localViewSpace" space="spaceRemote">
 	<os-core:view-query class="com.example.Message1" where="processed = true"/>
 </os-core:local-view>
 <os-core:giga-space id="gigaSpaceLocalView" space="localViewSpace"/>
-{{% /highlight %}}
+```
 
 Declaring a remote space with a local view , a regular remote space (without a view) and an embedded space:
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy id="spaceRemote" name="space" />
 	<os-core:local-view id="localViewSpace" space="spaceRemote">
 	<os-core:view-query class="com.example.Message1" where="processed = true"/>
@@ -413,7 +413,7 @@ Declaring a remote space with a local view , a regular remote space (without a v
 
 <os-core:space id="spaceEmbed" name="space" />
 <os-core:giga-space id="gigaSpaceEmbed" space="spaceEmbed"  tx-manager="transactionManager2"/>
-{{% /highlight %}}
+```
 
 {{% note %}}
 The application is always injected with `os-core:giga-space` bean that wraps always a `os-core:space`.
@@ -428,7 +428,7 @@ You may configure default modifiers for the different operations in the `GigaSpa
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="space" />
 <os-core:giga-space id="gigaSpace" space="space">
@@ -442,12 +442,12 @@ You may configure default modifiers for the different operations in the `GigaSpa
   <os-core:write-modifier value="PARTIAL_UPDATE"/>
   <os-core:write-modifier value="UPDATE_ONLY"/>
 </<os-core:giga-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
   <property name="name" value="space" />
@@ -468,12 +468,12 @@ You may configure default modifiers for the different operations in the `GigaSpa
     </array>
   </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
   EmbeddedSpaceConfigurer spaceConfigurer = new EmbeddedSpaceConfigurer("space");
 
@@ -485,17 +485,17 @@ You may configure default modifiers for the different operations in the `GigaSpa
   .defaultCountModifiers(CountModifiers.READ_COMMITTED)
   .defaultTakeModifiers(TakeModifiers.FIFO)
   .gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 Any operation on the configured proxy will be treated as if the default modifiers were explicitly passed. If a certain operation requires passing an explicit modifier and also wishes to merge the existing default modifiers, the following  pattern should be used:
 
-{{% highlight java %}}
+```java
 GigaSpace gigaSpace = ...
 gigaSpace.write(someObject, gigaSpace.getDefaultWriteModifiers().add(WriteModifiers.WRITE_ONLY));
-{{% /highlight %}}
+```
 
 For further details on each of the available modifiers see:
 
@@ -512,12 +512,12 @@ OpenSpaces is built on top of the Spring [consistent exception hierarchy](http:/
 
 OpenSpaces provides a pluggable exception translator using the following interface:
 
-{{% highlight java %}}
+```java
 public interface ExceptionTranslator {
 
     DataAccessException translate(Throwable e);
 }
-{{% /highlight %}}
+```
 
 A default implementation of the exception translator is automatically used, which translates most of the relevant exceptions into either Spring data access exceptions, or concrete OpenSpaces runtime exceptions (in the `org.openspaces.core` package).
 

@@ -16,7 +16,7 @@ Following is a short demo of what can be done with the XAP scala shell. It shoul
 
 # The Demo
 
-{{% highlight scala %}}
+```scala
 java version "1.8.0_45"
 Java(TM) SE Runtime Environment (build 1.8.0_45-b14)
 Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
@@ -28,56 +28,56 @@ Type :help for more information.
 Please enjoy the predefined 'admin' val.
 
 xap>
-{{% /highlight %}}
+```
 
 We'll start by deploying a single space to the service grid, notice we already have an admin instance in scope to simplify this process:
 
-{{% highlight scala %}}
+```scala
 xap> val gsm = admin.getGridServiceManagers.waitForAtLeastOne
 gsm: org.openspaces.admin.gsm.GridServiceManager = org.openspaces.admin.internal.gsm.DefaultGridServiceManager@ca43aa97
 
 xap> gsm.deploy(new org.openspaces.admin.space.SpaceDeployment("mySpace"))
 res0: org.openspaces.admin.pu.ProcessingUnit = org.openspaces.admin.internal.pu.DefaultProcessingUnit@59479eba
-{{% /highlight %}}
+```
 
 We'll use some helper method that is imported into the session scope (from `org.openspaces.scala.repl.GigaSpacesScalaReplUtils`) to get a `GigaSpace` proxy:
 
-{{% highlight scala %}}
+```scala
 xap> val Some(gigaSpace) = getGigaSpace("mySpace")
 gigaSpace: org.openspaces.core.GigaSpace = mySpace_container:mySpace
-{{% /highlight %}}
+```
 
 Now we'll execute a task using another helper method:
 
-{{% highlight scala %}}
+```scala
 xap> execute(gigaSpace) { holder => holder.clusterInfo.getNumberOfInstances}
 
 res1: com.gigaspaces.async.AsyncFuture[Integer] = org.openspaces.core.transaction.internal.InternalAsyncFuture@f1423ba
 
 xap> val numberOfInstances = res1.get
 numberOfInstances: Integer = 1
-{{% /highlight %}}
+```
 
 Let's define a new case class and write an entry to the space:
 
-{{% highlight scala %}}
+```scala
 xap> case class Data @SpaceClassConstructor() (@BeanProperty @SpaceId id: String = null, @BeanProperty content: String = null)
 defined class Data
 
 xap> gigaSpace.write(Data(id = "id1", content = "my data content"))
 res2: com.j_spaces.core.LeaseContext[Data] = SpaceEntryLease[uid=-792314720^58^id1^0^0,typeName=Data,routingValue=id1,expirationTime=9223372036854775807]
-{{% /highlight %}}
+```
 
 Now execute a task that reads this entry and returns is `content` property:
 
-{{% highlight scala %}}
+```scala
 xap> execute(gigaSpace) { holder =>holder.gigaSpace.read(Data()).content}
 
 res3: com.gigaspaces.async.AsyncFuture[String] = org.openspaces.core.transaction.internal.InternalAsyncFuture@7c767c0d
 
 xap> val dataContent = res3.get
 dataContent: String = my data content
-{{% /highlight %}}
+```
 
 # Configuration
 

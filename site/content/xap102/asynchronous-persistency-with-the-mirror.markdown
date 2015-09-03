@@ -65,7 +65,7 @@ In the case of transactions that leverage batch operations, a single redo log en
 
 The Data-Grid Space settings would look like this:
 
-{{% highlight xml %}}
+```xml
 <bean id="hibernateDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
@@ -88,7 +88,7 @@ The Data-Grid Space settings would look like this:
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 The above example:
 
@@ -121,7 +121,7 @@ The Mirror settings includes the following options:
 
 The following configuration shows how to configure a processing unit, to act as the Mirror Service:
 
-{{% highlight xml %}}
+```xml
 <os-sla:sla number-of-instances="1" />
 
 <bean id="hibernateSpaceSynchronizationEndpoint" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceSynchronizationEndpointFactoryBean">
@@ -131,11 +131,11 @@ The following configuration shows how to configure a processing unit, to act as 
 <os-core:mirror id="mirror" name="mirror-service" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" operation-grouping="group-by-replication-bulk">
     <os-core:source-space name="mySpace" partitions="2" backups="1"/>
 </os-core:mirror>
-{{% /highlight %}}
+```
 
 The OpenSpaces mirror name space is a syntactic sugar and it is equivalent to the following configuration using regular space properties:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mirror-service" schema="mirror" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint">
     <os-core:properties>
 	<props>
@@ -146,7 +146,7 @@ The OpenSpaces mirror name space is a syntactic sugar and it is equivalent to th
 	</props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 - The above configuration constructs a Mirror Service using GigaSpaces built-in [Hibernate Space Persistency](./hibernate-space-persistency.html). The `hibernateSpaceSynchronizationEndpoint` should have its `sessionFactory` injected.
 - The name of the Mirror Space is important. The `mirror-service` is the default name for a mirror Space, which is then used by the IMDG to connect to its mirror.
@@ -157,12 +157,12 @@ The OpenSpaces mirror name space is a syntactic sugar and it is equivalent to th
 
 The Mirror processing unit structure is shown below:
 
-{{% highlight java %}}
+```java
 -- example-mirror
 ------ META-INF
 ---------- spring
 -------------- pu.xml
-{{% /highlight %}}
+```
 
 See the [The Processing Unit Structure and Configuration](./the-processing-unit-structure-and-configuration.html) for more information on the processing unit structure.
 
@@ -173,13 +173,13 @@ The relevant Hibernate JAR file and its third party dependencies should be avail
 When cluster is un deployed, the mirror service must be un deployed last. This will ensure that all data is persisted properly through mirror async persistency.
 Before primary space is un deployed/redeployed, all data changes are flushed to mirror. This operation is limited by timeout that can be configured using the following property:
 
-{{% highlight xml %}}
+```xml
 <!-- default value is 5 minutes -->
 <prop
     key="cluster-config.groups.group.repl-policy.async-replication.async-channel-shutdown-timeout">
     300000
 </prop>
-{{% /highlight %}}
+```
 
 # Optimizing the Mirror Activity
 
@@ -192,11 +192,11 @@ You might want to tune the IMDG and the Mirror activity to push data into the da
 - Optimize the Space Class structure to include fewer fields. Less fields means less overhead when the IMDG replicates the data to the Mirror Service.
 - Tune the `bulk-size`, `interval-millis` and `interval-opers` to perform the replication in larger batches and less frequently. This means you should increase the `bulk-size`, `interval-millis` and `interval-opers` to have larger values than the defaults. The exact values depends with the network speed, the average size of the objects and the database configuration and machine speed. Here is an example for a configuration that is relevant for IMDG with relatively small objects (less than one K) and high rate of operations (more than 10,000 operations per second for partition):
 
-{{% highlight xml %}}
+```xml
 <prop key="cluster-config.mirror-service.bulk-size">10000</prop>
 <prop key="cluster-config.mirror-service.interval-millis">5000</prop>
 <prop key="cluster-config.mirror-service.interval-opers">50000</prop>
-{{% /highlight %}}
+```
 
 With the above configuration the primary partition will replicate its redo log activities to the Mirror service every 5 seconds or every 50,000 operations. The replication will occur in batches of 10,000 objects per batch.
 
@@ -209,9 +209,9 @@ With the above configuration the primary partition will replicate its redo log a
 - Use PARTIAL_UPDATE (see [Partial Update](./pojo-support.html)). Updates to an object that are performed using the PARTIAL_UPDATE modifier can be executed on the mirror as partial update as well. This can increase the performance in case a lot of updates are performed on a large object.
 To use this optimization you need to set the following space property:
 
-{{% highlight xml %}}
+```xml
 <prop key="cluster-config.mirror-service.supports-partial-update">true</prop>
-{{% /highlight %}}
+```
 
 If you are using a custom implementation of the data source you also need to implement how the partial update is persisted.
 See com.gigaspaces.sync.DataSyncOperation for more details.

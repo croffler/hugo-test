@@ -23,27 +23,27 @@ In such a scenario, the backup services probably shouldn't run at all and should
 
 In order to use the OpenSpaces queue provider, the following namespaces should be defined:
 
-{{% highlight xml %}}
+```xml
 <mule xmlns="
 ...
 xmlns:os-queue=http://www.openspaces.org/schema/mule/os-queue
 
 xsi:schemaLocation="...
 http://www.openspaces.org/schema/mule/os-queue http://www.openspaces.org/schema/{{%currentversion%}}/mule/3.1/mule-os-queue.xsd">
-{{% /highlight %}}
+```
 
 # Connector
 
 The OpenSpaces queue connector is used to define the Space this queue transport works against. It uses OpenSpaces `GigaSpace` bean in order to interact with the Space. Here is an example of how it can be defined:
 
-{{% highlight xml %}}
+```xml
 <spring:beans>
     <os-core:embedded-space id="space" name="mySpace"/>
 
     <os-core:giga-space id="gigaSpace" space="space" />
 </spring:beans>
 <os-queue:connector name="queueConnector" giga-space="gigaSpace"  fifo="false"  persistent="false" />
-{{% /highlight %}}
+```
 
 The `giga-space` attribute is optional and is used if only one `GigaSpace` bean is defined in the Spring application context. The `fifo` flag defines whether the messages works in a FIFO mode or not. The `persistent` flag defines whether the messages are backed up to an external data source (if configured) using the Space.
 
@@ -56,7 +56,7 @@ For any adapters that wraps a non-Serializable object such as JMS , EMail, Servl
 
 The OpenSpaces queue inbound component is very simple once the queue connector is set. Here is an example:
 
-{{% highlight xml %}}
+```xml
 <model>
     <service name="Appender1">
 
@@ -67,13 +67,13 @@ The OpenSpaces queue inbound component is very simple once the queue connector i
         <!-- outbound transport ... -->
     </service>
 </model>
-{{% /highlight %}}
+```
 
 # Outbound Component
 
 The OpenSpaces queue outbound component is very simple to configure once the queue connector is set. Here is an example:
 
-{{% highlight xml %}}
+```xml
 <model>
     <service name="Appender1">
 
@@ -86,14 +86,14 @@ The OpenSpaces queue outbound component is very simple to configure once the que
         </outbound-router>
     </service>
 </model>
-{{% /highlight %}}
+```
 
 # Mule Messaging Styles Support
 
 The queue supports the mule messaging styles - request-response and one-way.
 The messaging style can be configured on the endpoints in the following way:
 
-{{% highlight xml %}}
+```xml
 <model>
     <service name="Appender1">
         <!-- inbound transport ... -->
@@ -104,7 +104,7 @@ The messaging style can be configured on the endpoints in the following way:
         </outbound-router>
     </service>
 </model>
-{{% /highlight %}}
+```
 
 By default the exchange-pattern is set to request-response.
 
@@ -116,7 +116,7 @@ Operations performed on the Space when working with a virtualized queue are all 
 
 Here is an example of how to configure working with queues using the Distributed Transaction Manager:
 
-{{% highlight xml %}}
+```xml
 <spring:beans>
     <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -145,7 +145,7 @@ Here is an example of how to configure working with queues using the Distributed
         </outbound-router>
     </service>
 </model>
-{{% /highlight %}}
+```
 
 The above example defines a Mule `transactionFactory`, which is used to handle transactions within Mule. Since the `giga-space` bean is aware of it, any operations performed on it using the `os-queue` result in joining an existing transaction if one is in progress.
 
@@ -153,7 +153,7 @@ The above example defines a Mule `transactionFactory`, which is used to handle t
 
 The example below will uses two components: `Appender1` and `Appender2`. The 2 services that wrap the components use the OpenSpaces queue transport as both the inbound and outbound transports.
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:os-events="http://www.openspaces.org/schema/events"
@@ -211,14 +211,14 @@ The example below will uses two components: `Appender1` and `Appender2`. The 2 s
         </service>
     </model>
 </mule>
-{{% /highlight %}}
+```
 
 In order to complete the example, the `MuleClient` can be used to interact with the services.
 
-{{% highlight java %}}
+```java
 muleClient.dispatch("os-queue://test1", "testme", null);
 
 MuleMessage message = muleClient.request("os-queue://test3", 5000);
-{{% /highlight %}}
+```
 
 The above code dispatches a message to a virtualized queue named `test1`. As a result, the `Appender1` service receives the message, processes it, and passes it to a virtualized queue named `test2`. In turn, the `Appender2` service receives the message, processes it, and sends it to a virtualized queue named `test3`. `muleClient` is used to receive a message from `test3` with a timeout of 5 seconds. This results in any receiving processed messages `Appender2` produces.

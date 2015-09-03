@@ -37,15 +37,15 @@ To enable Space Persistency logging, edit the `<XAP Root>\config\gs_logging.prop
 
 - `CONFIG` messages are intended to provide a variety of static configuration information, and to assist in debugging problems that may be associated with particular configurations.
 
-{{% highlight console %}}
+```console
 com.gigaspaces.persistent.level = CONFIG
-{{% /highlight %}}
+```
 
 - `FINER` messages log calls for entering, returning, or throwing an exception to and from the cache interface implementations.
 
-{{% highlight console %}}
+```console
 com.gigaspaces.persistent.level = FINER
-{{% /highlight %}}
+```
 
 {{% anchor ISL %}}
 

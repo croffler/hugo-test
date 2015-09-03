@@ -27,7 +27,7 @@ Please note that this feature allows dynamic class loading the first time a task
 
 The `Task` interface is defined as follows:
 
-{{% highlight java %}}
+```java
 public interface Task<T extends Serializable> extends Serializable {
 
   /**
@@ -38,11 +38,11 @@ public interface Task<T extends Serializable> extends Serializable {
    */
   T execute() throws Exception;
 }
-{{% /highlight %}}
+```
 
 Here is a simple implementation of a task that accepts a value that will be returned in the execute phase.
 
-{{% highlight java %}}
+```java
 public class MyTask implements Task<Integer> {
 
   private int value;
@@ -55,14 +55,14 @@ public class MyTask implements Task<Integer> {
     return value;
   }
 }
-{{% /highlight %}}
+```
 
 Executing the task uses the `GigaSpace` API with a routing value of 2 (the second parameter):
 
-{{% highlight java %}}
+```java
 AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2), 2);
 int result = future.get();
-{{% /highlight %}}
+```
 
 # Async API
 
@@ -70,7 +70,7 @@ int result = future.get();
 
 Here are the interfaces for both `AsyncFuture` and `AsyncFutureListener`:
 
-{{% highlight java %}}
+```java
 public interface AsyncFuture<V> extends Future<V> {
 
     void setListener(AsyncFutureListener<V> listener);
@@ -83,13 +83,13 @@ public interface AsyncFutureListener<T> {
      */
     void onResult(AsyncResult<T> result);
 }
-{{% /highlight %}}
+```
 
 Passing the listener can be done by setting it on the `AsyncFuture` or when executing a `Task` using the `GigaSpace` API as an additional parameter.
 
 `AsyncResult` can be used to extract the result or the exception of the execution:
 
-{{% highlight java %}}
+```java
 public interface AsyncResult<T> {
 
     /**
@@ -105,20 +105,20 @@ public interface AsyncResult<T> {
      */
     Exception getException();
 }
-{{% /highlight %}}
+```
 
 # Task Routing
 
 When executing a single `Task`, there are several ways its routing can be controlled. Passing the routing information as a parameter to the execute command is the simplest form:
 
-{{% highlight java %}}
+```java
 AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2), 2);
 int result = future.get();
-{{% /highlight %}}
+```
 
 Alternatively, it is sufficient to define a POJO property annotated `@SpaceRouting`. The value of that property will be used to route any `Tasks` defined in this way. For example:
 
-{{% highlight java %}}
+```java
 public void Order {
 
   // ...
@@ -133,7 +133,7 @@ public void Order {
 Order order = new Order();
 AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2), order);
 int result = future.get();
-{{% /highlight %}}
+```
 
 Routing information can also be defined at the `Task`-level, in two ways:
 
@@ -143,7 +143,7 @@ Routing information can also be defined at the `Task`-level, in two ways:
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 
 public class MyTask implements Task<Integer> {
 
@@ -162,12 +162,12 @@ public class MyTask implements Task<Integer> {
     return this.value;
   }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Interface %}}
 
-{{% highlight java %}}
+```java
 
 public class MyTask implements Task<Integer> implements TaskRoutingProvider {
 
@@ -185,17 +185,17 @@ public class MyTask implements Task<Integer> implements TaskRoutingProvider {
     return this.value;
   }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 Using either mechanism to define routing at the the `Task`-level removes the need for the routing parameter:
 
-{{% highlight java %}}
+```java
 AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2));
 int result = future.get();
-{{% /highlight %}}
+```
 
 # DistributedTask API
 
@@ -214,7 +214,7 @@ Phase 2 - Getting the results back to be reduced:
 
 Here is the `DistributedTask` API:
 
-{{% highlight java %}}
+```java
 public interface AsyncResultsReducer<T, R> {
 
   R reduce(List<AsyncResult<T>> results) throws Exception;
@@ -223,13 +223,13 @@ public interface AsyncResultsReducer<T, R> {
 
 public interface DistributedTask<T extends Serializable, R> extends Task<T>, AsyncResultsReducer<T, R> {
 }
-{{% /highlight %}}
+```
 
 The distributed task interface extends both `Task` and `AsyncResultsReducer`. The `Task` interface is used to execute a specific execution of the distributed task (there will be several executions of it), and the `AsyncResultsReducer` is used to reduce the results of all the executions.
 
 Lets write a (very) simple example of a `DistributedTask`:
 
-{{% highlight java %}}
+```java
 public class MyDistTask implements DistributedTask<Integer, Long> {
 
   public Integer execute() throws Exception {
@@ -247,25 +247,25 @@ public class MyDistTask implements DistributedTask<Integer, Long> {
     return sum;
   }
 }
-{{% /highlight %}}
+```
 
 `MyDistTask` returns `1` for each of its `execute` operations, and the reducer sums all of the executions. If there was an exception thrown during the `execute` operation (in our case, it will never happen), the exception will be throws back to the user during the `reduce` operation.
 
 A `DistributedTask` can be broadcast to all primary nodes of the cluster or routed selectively. Executing a distributed task on several nodes could be done as follows:
 
-{{% highlight java %}}
+```java
 AsyncFuture<Long> future = gigaSpace.execute(new MyDistTask(), 1, 4, 6, 7);
 long result = future.get(); // result will be 4
-{{% /highlight %}}
+```
 
 In this case, `MyDistTask` is executed concurrently and asynchronously on the nodes that correspond to routing values of `1`, `4`, `6`, and `7`.
 
 Broadcasting the execution to all current primary nodes can be done by simply executing **just** the `DistributedTask`. Here is an example:
 
-{{% highlight java %}}
+```java
 AsyncFuture<Long> future = gigaSpace.execute(new MyDistTask());
 long result = future.get(); // result will be the number of primary spaces
-{{% /highlight %}}
+```
 
 In this case, the `DistributedTask` is executed on all primary spaces of the cluster.
 
@@ -273,7 +273,7 @@ In this case, the `DistributedTask` is executed on all primary spaces of the clu
 
 When executing a distributed task, results arrive in an asynchronous manner and once all the results have arrived, the `AsyncResultsReducer` is used to reduce them. The `AsyncResultFitler` can be used to as a callback and filter mechanism to be invoked for each result that arrives.
 
-{{% highlight java %}}
+```java
 public interface AsyncResultFilter<T> {
 
     /**
@@ -304,7 +304,7 @@ public interface AsyncResultFilter<T> {
      */
     Decision onResult(AsyncResultFilterEvent<T> event);
 }
-{{% /highlight %}}
+```
 
 The filter can be used to control if a result should be used or not (the `SKIP` decision). If a we have enough results and we can move to the reduce phase (the `BREAK` decision). Or, if we should continue accumulating results (the `CONTINUE` decision).
 
@@ -316,14 +316,14 @@ The executor builder API allows to combine several task executions (both distrib
 
 ![executorBuilder.jpg](/attachment_files/executorBuilder.jpg)
 
-{{% highlight java %}}
+```java
 AsyncFuture<Integer> future = gigaSpace.executorBuilder(new SumReducer<Integer, Integer>(Integer.class))
                                 .add(new MyTask(2))
                                 .add(new MyOtherTask(), 3)
                                 .add(new MyDistTask())
                                 .execute();
 Integer result = future.get();
-{{% /highlight %}}
+```
 
 In the above case, there are several tasks that are "added" to the `ExecutorBuilder`, executed (in a similar manner to a single distributed task) and then reduced using a sum reducer that is provided when building the `ExecutorBuilder`.
 
@@ -340,7 +340,7 @@ The most common scenario for using executors is by interacting with the collocat
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 
 public class TemplateCountTask implements DistributedTask<Integer, Long> {
 
@@ -368,12 +368,12 @@ public class TemplateCountTask implements DistributedTask<Integer, Long> {
     return sum;
   }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Interface %}}
 
-{{% highlight java %}}
+```java
 
 public class TemplateCountTask implements DistributedTask<Integer, Long>, TaskGigaSpaceAware {
 
@@ -404,7 +404,7 @@ public class TemplateCountTask implements DistributedTask<Integer, Long>, TaskGi
     return sum;
   }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -413,7 +413,7 @@ public class TemplateCountTask implements DistributedTask<Integer, Long>, TaskGi
 
 You may use the `ApplicationContextAware` interface to inject a clustered proxy into the Task implementation. This is useful when the Task should access other partitions. See below example:
 
-{{% highlight java %}}
+```java
 public class MyTask implements Task<Integer>, ApplicationContextAware {
 
     @TaskGigaSpace
@@ -429,14 +429,14 @@ public class MyTask implements Task<Integer>, ApplicationContextAware {
     }
 ....
 }
-{{% /highlight %}}
+```
 
 where the pu.xml should have:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
-{{% /highlight %}}
+```
 
 # Task Resource Injection
 
@@ -444,7 +444,7 @@ A task might need to make use of resources defined within the processing unit it
 
 In order to enable resource injection, the Task must either be annotated with `AutowireTask` or implement the marker interface `AutowireTaskMarker`. Here is an example of injecting a resource of type `OrderDao` registered under the bean name `orderDao`. The `OrderDao` is then used to count the number of orders for each node.
 
-{{% highlight java %}}
+```java
 @AutowireTask
 public class OrderCountTask implements DistributedTask<Integer, Long> {
 
@@ -468,7 +468,7 @@ public class OrderCountTask implements DistributedTask<Integer, Long> {
     return sum;
   }
 }
-{{% /highlight %}}
+```
 
 (remember to add context:annotation-config to the pu)
 
@@ -482,21 +482,21 @@ You can inject a collocated `GigaSpace` instance to the task using the `@TaskGig
 
 OpenSpaces comes with several built in reducers and distributed tasks that can be used to perform common reduce operations (such as Min, Max, Avg and Sum). For example, if you use a simple `Task`:
 
-{{% highlight java %}}
+```java
 public class MyTask implements Task<Integer> {
 
   public Integer execute() throws Exception {
     return 1;
   }
 }
-{{% /highlight %}}
+```
 
 We can easily make a distributed task out of it that sums all the results using the `SumTask`:
 
-{{% highlight java %}}
+```java
 AsyncFuture<Integer> future = gigaSpace.execute(new SumTask<Integer, Integer>(Integer.class, new MyTask()));
 int result = future.get(); // returns the number of active cluster members
-{{% /highlight %}}
+```
 
 In the above case, `SumTask` is a distributed task that wraps a simple `Task`. It automatically implements the `reduce` operation by summing all the results. This execution will result in executing a distributed task against all the primaries.
 
@@ -520,21 +520,21 @@ When executing distributed tasks or tasks that executed on more than one node wi
 
 OpenSpaces executors support allows to easily implement java.util.concurrent.ExecutorService which allows to support the `ExecutorService` API and executed `Callable` and `Runnable` as tasks within the Space. Here is an example of how to get an `ExecutorService` implementation based on OpenSpaces executors and use it:
 
-{{% highlight java %}}
+```java
 ExecutorService executorService = TaskExecutors.newExecutorService(gigaSpace);
 Future<Integer> future = executorService.submit(new MyCallable());
 int result = future.get();
-{{% /highlight %}}
+```
 
 The `java.util.concurrent` support also comes with built in adapters from `Callable`/`Runnable` to `Task`/`DistributedTask`. The adapters are used internally to implement the `ExecutorService`, but can be used on their own. The adapters can be constructed easily using utility methods found within the `TaskExecutors` factory. Here is an example:
 
-{{% highlight java %}}
+```java
 // convert a simple callable to task
 Task<Integer> task1 = TaskExecutors.task(new MyCallable());
 // convert a simple callable to distributed task
 DistributedTask<Integer> task2 = TaskExecutors.task(new MyCallable(),
                                       new SumReducer<Integer, Integer>(Integer.class));
-{{% /highlight %}}
+```
 
 
 {{% refer %}}

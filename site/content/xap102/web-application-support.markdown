@@ -59,7 +59,7 @@ A Web Application deployed into the Service Grid is, at the end of the day, just
 
 Here is the structure of the class loaders when several web applications are deployed on the Service Grid:
 
-{{% highlight java %}}
+```java
               Bootstrap (Java)
                   |
                System (Java)
@@ -69,7 +69,7 @@ Here is the structure of the class loaders when several web applications are dep
             JEE Container
              /        \
         WebApp1     WebApp2
-{{% /highlight %}}
+```
 
 The following table shows which user controlled locations end up in which class loader, and the important JAR files that exist within each one:
 
@@ -115,16 +115,16 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 {{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:space-proxy id="space" name="mySpace" />
 <os-core:giga-space id="gigaSpace" space="space"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Spring Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
@@ -132,12 +132,12 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
 	<property name="space" ref="space" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("mySpace");
 
@@ -147,7 +147,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 // shutting down / closing the Space
 spaceConfigurer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -161,17 +161,17 @@ Here is an example that starts an embedded Space as part of the web application 
 {{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Spring Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -183,16 +183,16 @@ Here is an example that starts an embedded Space as part of the web application 
 	<property name="space" ref="space" />
 	<property name="clustered" ref="true" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 Here is an example of a simple JSP that uses it:
 
-{{% highlight java %}}
+```java
 GigaSpace gigaSpace = (GigaSpace) getServletContext().getAttribute("clusteredGigaSpace");
-{{% /highlight %}}
+```
 
 # Embedded Space
 

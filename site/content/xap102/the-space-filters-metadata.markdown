@@ -59,7 +59,7 @@ The following example illustrates a space Filter POJO and a Bean that performs s
 {{% inittab example %}}
 {{% tabcontent "The Space Filter POJO" %}}
 
-{{% highlight java %}}
+```java
 package com.test;
 
 import org.openspaces.core.GigaSpace;
@@ -179,12 +179,12 @@ public class MySpaceFilter implements InitializingBean{
 		System.out.println("space "+space);
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "The Bean" %}}
 
-{{% highlight java %}}
+```java
 package com.test;
 
 import org.openspaces.core.GigaSpace;
@@ -262,12 +262,12 @@ public class MyBean implements InitializingBean{
 	}
 
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "The Beans Definitions" %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="mySpaceFilter" class="com.test.MySpaceFilter" />
 <bean id="myBean" class="com.test.MyBean" />
 
@@ -280,12 +280,12 @@ public class MyBean implements InitializingBean{
 <os-core:giga-space id="gigaSpace" space="space"/>
 <os-core:giga-space-context/>
 <os-core:giga-space-late-context />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "The Space Class" %}}
 
-{{% highlight java %}}
+```java
 package com.test;
 
 import com.gigaspaces.annotation.pojo.SpaceClass;
@@ -316,12 +316,12 @@ public class Message {
 		return " Class Message - Object ID:" + id + " data:" + data;
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "The Space Task" %}}
 
-{{% highlight java %}}
+```java
 package com.test;
 
 import java.io.Serializable;
@@ -334,7 +334,7 @@ public class MyTask implements Task<Serializable>{
 		return null;
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -343,7 +343,7 @@ public class MyTask implements Task<Serializable>{
 {{% accordion  acc1 %}}
 {{% accord title="Here is how the expected output should look like:" id="tab1"%}}
 
-{{% highlight java %}}
+```java
 
 MySpaceFilter Space Filter initialized
 INFO [com.gigaspaces.core.common] - Space [space_container:space] with url
@@ -394,7 +394,7 @@ beforeNotifyTrigger called  Class Message - Object ID:1 data:AAAA
 SpaceDataEvent event called
 afterNotifyTrigger called  Class Message - Object ID:1 data:AAAA
 afterAllNotifyTrigger called  Class Message - Object ID:1 data:AAAA
-{{% /highlight %}}
+```
 
 {{% /accord %}}
 {{% /accordion %}}

@@ -42,7 +42,7 @@ Configuration is made in the Sink component's element using the 'error-handling'
 
 The conflict resolver implementation should be an extension of "com.gigaspaces.cluster.replication.gateway.conflict.ConflictResolver".
 
-{{% highlight xml %}}
+```xml
 <!-- gateway Sink component -->
 <os-gateway:sink id="sink" local-gateway-name="NEW-YORK" gateway-lookups="gatewayLookups"
           local-space-url="jini://*/*/localSpace">
@@ -58,13 +58,13 @@ The conflict resolver implementation should be an extension of "com.gigaspaces.c
 
 <!-- A conflict resolver implementation -->
 <bean id="conflictResolver" class="com.gigaspaces.gateway.sink.MyConflictResolver" />
-{{% /highlight %}}
+```
 
 # Conflict Resolver Implementation
 
 Lets examine the following conflict resolver implementation which aborts all conflicts executed from a source named "LONDON" and for other sources aborts on entry version conflict:
 
-{{% highlight java %}}
+```java
 public class MyConflictResolver extends com.gigaspaces.cluster.replication.gateway.conflict.ConflictResolver {
 
   @Override
@@ -85,7 +85,7 @@ public class MyConflictResolver extends com.gigaspaces.cluster.replication.gatew
   }
 
 }
-{{% /highlight %}}
+```
 
 We distinguish between two cases when processing DataConflict operations.
 
@@ -95,7 +95,7 @@ When a single operation faces a conflict, the DataConflict will only hold this p
 
 For example, if our local site LONDON replicates data to a site named NEW-YORK:
 
-{{% highlight java %}}
+```java
 // The following is executed on a cluster at LONDON
 londonGigaSpace.write(new Person("John Doe"));
 londonGigaSpace.write(new Person("Jane Doe"));
@@ -104,7 +104,7 @@ londonGigaSpace.write(new Person("Jane Doe"));
 // of the operations will face a conflict, the conflict resolver will be invoked twice
 // and on each of the invocations the conflict.getOperations() will hold the single
 // conflicting operations.
-{{% /highlight %}}
+```
 
 In case the conflict resolver didn't resolve an operation (abort or override was not called for this operation) the operation will be aborted.
 
@@ -115,7 +115,7 @@ When a transaction is committed, its enough that one of the transaction operatio
 For example, We have a local site named LONDON which replicates data to a site named NEW-YORK. We write three Person objects to LONDON which will be replicated to NEW-YORK. If at least one of these operations will fail, all three operations will appear in DataConflict.getOperations()
 when the conflict resolver onDataConflict method will be invoked.
 
-{{% highlight java %}}
+```java
 // The following is executed on a cluster at LONDON
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().transactionManager();
 GigaSpace londonGigaSpace = new GigaSpaceConfigurer(...).transactionManager(ptm).gigaSpace();
@@ -132,7 +132,7 @@ persons[2].setName("George Woo");
 londonGigaSpace.writeMultiple(persons);
 
 ptm.commit(status);
-{{% /highlight %}}
+```
 
 If no decision was taken regarding any of the conflicts presented in the DataConflict all of the operations will be aborted.
 Otherwise, if a decision has been made for at least one conflicting operation, only conflicting operations which had no decision made for them
@@ -141,7 +141,7 @@ will be aborted.
 Since all of the transaction operations appear in the DataConflict, it's also possible to take action for operations which didn't have a conflict.
 For example:
 
-{{% highlight java %}}
+```java
 // The following is executed on a cluster at LONDON
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().transactionManager();
 GigaSpace londonGigaSpace = new GigaSpaceConfigurer(...).transactionManager(ptm).gigaSpace();
@@ -164,11 +164,11 @@ londonGigaSpace.takeById(Person.class, 5);   // No conflict..
 londonGigaSpace.write(personToUpdate, Lease.FOREVER, 0, UpdateModifiers.UPDATE_ONLY);
 
 ptm.commit(status);
-{{% /highlight %}}
+```
 
 Now, lets examine a conflict resolver implementation which will abort the two first operations (write and take) and override the last (write) operation:
 
-{{% highlight java %}}
+```java
 public class MyConflictResolver extends com.gigaspaces.cluster.replication.gateway.conflict.ConflictResolver {
 
   @Override
@@ -193,7 +193,7 @@ public class MyConflictResolver extends com.gigaspaces.cluster.replication.gatew
   }
 
 }
-{{% /highlight %}}
+```
 
 # Overriding Operations
 
@@ -213,7 +213,7 @@ The table below describes override behavior for each case:
 It is possible to change the entry data before overriding the conflicting operation. In the following example, we have gateway replication from NEW-YORK to LONDON. We'll attempt to write a Person object to NEW-YORK which already exists in LONDON and we'll change the conflicting Person
 object properties before overriding the operation:
 
-{{% highlight java %}}
+```java
 // Write a Person object to NEW-YORK
 Person person = new Person();
 person.setId(1000);
@@ -241,7 +241,7 @@ public class MyConflictResolver extends com.gigaspaces.cluster.replication.gatew
   }
 
 }
-{{% /highlight %}}
+```
 
 # Metadata Conflicts
 
@@ -249,7 +249,7 @@ For both register type descriptor and add indexes conflicts it is not possible t
 though you can identify such conflicts using the conflict resolver's onRegisterTypeDescriptorConflict and onAddIndexConflict methods.
 For example:
 
-{{% highlight java %}}
+```java
 public class MyConflictResolver extends com.gigaspaces.cluster.replication.gateway.conflict.ConflictResolver {
 
   @Override
@@ -263,7 +263,7 @@ public class MyConflictResolver extends com.gigaspaces.cluster.replication.gatew
   }
 
 }
-{{% /highlight %}}
+```
 
 # Limitations
 

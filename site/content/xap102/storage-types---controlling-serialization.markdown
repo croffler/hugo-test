@@ -85,7 +85,7 @@ Specifying space level storage type can be done using any of the following:
 {{% inittab "Space-Level Storage Type" %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
@@ -94,12 +94,12 @@ Specifying space level storage type can be done using any of the following:
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
     <property name="properties">
@@ -108,17 +108,17 @@ Specifying space level storage type can be done using any of the following:
         </props>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 GigaSpace gigaspace= new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space").
 	addProperty("space-config.serialization-type",
 	String.valueOf(StorageType.BINARY.getCode()))).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -130,7 +130,7 @@ Specifying property level storage type can be done using annotations or via the 
 {{% inittab %}}
 {{% tabcontent Annotations %}}
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person
 {
@@ -153,19 +153,19 @@ public class Person
         public File getBlog () {return blog;}
    	public void setBlog (File blog) {this.blog = blog;}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent XML %}}
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.Person">
         <property name="name" storage-type="binary" />
         <property name="address" storage-type="compressed" />
     </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -180,22 +180,22 @@ Specifying call level storage type can be done using annotations or via the `gs.
 {{% inittab %}}
 {{% tabcontent Annotations %}}
 
-{{% highlight java %}}
+```java
 @SpaceClass(storageType=StorageType.BINARY)
 public class Person
 {
 	...
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent XML %}}
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.Person" storage-type="binary" />
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -204,7 +204,7 @@ public class Person
 
 Specifying a document property's storage type done by passing it as a parameter to the `SpaceTypeDescriptorBuilder.addFixedProperty` method when creating the type descriptor:
 
-{{% highlight java %}}
+```java
 public SpaceTypeDescriptor getTypeDescriptor()
 {
     return new SpaceTypeDescriptorBuilder("Person")
@@ -213,11 +213,11 @@ public SpaceTypeDescriptor getTypeDescriptor()
      .addFixedProperty("address", Address.class, SpaceDocumentSupport.DEFAULT, StorageType.COMPRESSED)
      .create();
 }
-{{% /highlight %}}
+```
 
 - Specifying a class-level storage type done by passing it as a parameter to the `SpaceTypeDescriptorBuilder.storageType` method when creating the type descriptor:
 
-{{% highlight java %}}
+```java
 public SpaceTypeDescriptor getTypeDescriptor()
 {
     return new SpaceTypeDescriptorBuilder("Person")
@@ -226,7 +226,7 @@ public SpaceTypeDescriptor getTypeDescriptor()
      .storageType(StorageType.COMPRESSED)
      .create();
 }
-{{% /highlight %}}
+```
 
 - When creating a document using a POJO, the property storage types will be determined by the POJO definition.
 
@@ -258,9 +258,9 @@ If a storage type is declared with one of these annotations, an exception will b
 - Only an `OBJECT` storage type property can be queried:
 For example, if the `address` property of a certain class is marked as having the `COMPRESSED` storage type, the following will throw an exception:
 
-{{% highlight java %}}
+```java
 gigaSpace.read(new SQLQuery<Person>(Person.class,"address.country='USA'"));
-{{% /highlight %}}
+```
 
 (Address should have `OBJECT` storage type for the query to succeed).
 

@@ -13,23 +13,23 @@ The default space behavior is non-FIFO. The reason is that FIFO support comes at
 
 Setting FIFO support for a class can be done via the `fifoSupport` attribute on the `@SpaceClass` annotation:
 
-{{% highlight java %}}
+```java
 @SpaceClass(fifoSupport=FifoSupport.OPERATION)
 public class Person
 {
     ...
 }
-{{% /highlight %}}
+```
 
 or when using gs.xml via the `fifo-support` attribute on the `class` element:
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.Person" fifo-support="operation">
         ...
     </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 The `FifoSupport` modes are:
 
@@ -43,9 +43,9 @@ The `FifoSupport` modes are:
 
 To execute read/take operations with FIFO, use the `ReadModifiers.FIFO` modifier. For example:
 
-{{% highlight java %}}
+```java
 Person result = space.take(new Person(), timeout, ReadModifiers.FIFO);
-{{% /highlight %}}
+```
 
 If class `Person` is not set to support FIFO, an exception will be thrown.
 
@@ -73,7 +73,7 @@ For e.g., if a transactional polling container consumes data and throws an excep
 
 When registering for events, use `EventSessionConfig.setFifo(true)` to instruct the space that events should be sent to the client in FIFO order. For example:
 
-{{% highlight java %}}
+```java
 // Create an event session configuration with FIFO:
 EventSessionConfig sessionConfig = new EventSessionConfig();
 sessionConfig.setFifo(true);
@@ -82,7 +82,7 @@ EventSessionFactory sessionFactory = EventSessionFactory.getFactory(space.getSpa
 DataEventSession session = sessionFactory.newDataEventSession(sessionConfig, null);
 // Subscribe to an event:
 session.addListener(new Person(), listener);
-{{% /highlight %}}
+```
 
 {{% info %}}
 When using FIFO the client will use a single thread to invoke the listener callback method, so the events are both received and processed in FIFO order (i.e. if the client receives an event but the callback method haven't finished processing the previous event, the new event will be blocked until the previous one finishes). This is contrary to non-FIFO events, which are forwarded to the callback method as soon as they arrive, and thus might invoke the callback methods in parallel via multiple threads.
@@ -106,13 +106,13 @@ result set is not guaranteed to be in FIFO order (however, each subset of a spec
 
 - Space class using old GigaSpaces releases migrating to XAP 8 using the following:
 
-{{% highlight java %}}
+```java
 @SpaceClass(fifo = false)
-{{% /highlight %}}
+```
 
 Should use the following instead:
 
-{{% highlight java %}}
+```java
 @SpaceClass(fifoSupport=FifoSupport.ALL)
-{{% /highlight %}}
+```
 

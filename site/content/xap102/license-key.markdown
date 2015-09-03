@@ -33,7 +33,7 @@ The activation license key is in the following form:
 
 To install the license, insert the license string between the license key tags:
 
-{{% highlight xml %}}
+```xml
 <com>
   <j_spaces>
         <kernel>
@@ -41,7 +41,7 @@ To install the license, insert the license string between the license key tags:
        </kernel>
   </j_spaces>
 </com>
-{{% /highlight %}}
+```
 
 # License Key File Search path
 
@@ -52,8 +52,8 @@ XAP search for the license key using the following search path:
 1. `com.gs.home` system property.
 1. Using the `com.gs.licensekey` system property. Example:
 
-{{% highlight console %}}
+```console
 export EXT_JAVA_OPTIONS=-Dcom.gs.licensekey=Nov 16, 2020~user@XXXXXXX#PREMIUM^{{%version xap-version%}}XAPPremium%UNBOUND+UNLIMITED
 ./gs-agent.sh &
-{{% /highlight %}}
+```
 

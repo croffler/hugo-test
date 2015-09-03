@@ -29,7 +29,7 @@ Note that for property place holders we use the `${placeholder name}` notation.
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- The PropertyPlaceholderConfigurer must be present in order to define default value
      for properties.
@@ -46,12 +46,12 @@ Note that for property place holders we use the `${placeholder name}` notation.
 <bean id="connBean" class="MyConnection">
     <property name="timeout" value="${connectionTimeout}" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- Define sensible defaults -->
 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -69,7 +69,7 @@ Note that for property place holders we use the `${placeholder name}` notation.
 <bean id="connBean" class="MyConnection">
     <property name="timeout" value="${connectionTimeout}" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -85,9 +85,9 @@ If you would like your properties to be configured in a dedicated file this can 
 - External `.properties` file. The file can have any name, as long as it's accessible to the deployment tool (UI, CLI, etc.) or specified when [running the processing unit within your IDE](./running-and-debugging-within-your-ide.html) or in [standalone mode](./running-in-standalone-mode.html).
 When deploying through the [CLI]({{%currentadmurl%}}/command-line-interface.html) or [running within the IDE](./running-and-debugging-within-your-ide.html), you specify the location of the file using `-properties <location>` as a command line argument with the CLI or a program argument within the IDE.
 
-{{% highlight java %}}
+```java
 gs deploy -properties file://myConfigFolder/pu.properties data-processor.jar
-{{% /highlight %}}
+```
 
 By default, the location is a file-system-based location of a properties file (follows Spring [Resource Loader](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-resourceloader) syntax).
 
@@ -98,9 +98,9 @@ When deploying via the UI, the file can be loaded into the deployment wizard by 
 - Direct property injection. This can also be done via one of the deployment tools (UI, CLI) or specified when [running the processing unit within your IDE](./running-and-debugging-within-your-ide.html).
 When deploying through the [CLI]({{%currentadmurl%}}/command-line-interface.html) or [running within the IDE](./running-and-debugging-within-your-ide.html), you specify property values by using the following syntax:
 
-{{% highlight java %}}
+```java
 -properties embed://spaceSchema=persistent;connectionTimeout=15000
-{{% /highlight %}}
+```
 
 This can be specified as part of the command line arguments or as a program argument when running within your IDE.
 When deploying via the UI, click "Next" in the first screen of the deployment wizard and then "+" to add properties. Any property you specify here will be injected to the appropriate property place holder (if such exists) and will override the `pu.properties` within the processing unit.
@@ -126,20 +126,20 @@ Here's an example for a space configured within the processing unit, and a prope
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
  <os-core:embedded-space id="space" name="mySpace" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

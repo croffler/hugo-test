@@ -40,16 +40,16 @@ Here is a very simple example how a client application can create a `GigaMap` in
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -61,15 +61,15 @@ Here is a very simple example how a client application can create a `GigaMap` in
 <bean id="gigaMap" class="org.openspaces.core.GigaMapFactoryBean">
     <property name="map" ref="map" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space()).createMap();
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -87,16 +87,16 @@ To create a `GigaMap` for a co-located (embedded) space the space URL should use
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space  id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -108,16 +108,16 @@ To create a `GigaMap` for a co-located (embedded) space the space URL should use
 <bean id="gigaMap" class="org.openspaces.core.GigaMapFactoryBean">
     <property name="map" ref="map" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 IMap map = new MapConfigurer(new EmbeddedSpaceConfigurer("space").space()).createMap();
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -144,7 +144,7 @@ Here is an example for a `GigaMap` construct with a local cache:
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:space-proxy id="space" name="mySpace"/>
 
@@ -157,12 +157,12 @@ Here is an example for a `GigaMap` construct with a local cache:
 	put-first="false" size-limit="100000" update-mode="PULL" versioned="true" />
 </os-core:map>
 <os-core:giga-map id="gigaMap" map="map" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
@@ -187,12 +187,12 @@ Here is an example for a `GigaMap` construct with a local cache:
 <bean id="gigaMap" class="org.openspaces.core.GigaMapFactoryBean">
     <property name="map" ref="map" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 FIFOEvictionStrategy evictionStrategy = new FIFOEvictionStrategy();
 evictionStrategy.setBatchSize(1000);
 IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space())
@@ -205,7 +205,7 @@ IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space())
 .createMap();
 
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -229,7 +229,7 @@ You mat have several `GigaMap` used with your application, each with different c
 
 The [GigaMap](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/GigaMap.html) provides the exact semantic as the [java.util.Map](http://java.sun.com/j2se/1.5.0/docs/api/java/util/Map.html) interface: clear, containsKey, put, putAll, get and remove methods. In addition it includes the lock , putAndUnlock , and the unlock methods.
 
-{{% highlight java %}}
+```java
 IMap map = // get IMap either by injection or code creation
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 gigaMap.put(key , value);
@@ -237,16 +237,16 @@ Object value = gigaMap.get(key);
 Object value = gigaMap.remove(key);
 gigaMap.lock(key);
 gigaMap.unlock(key);
-{{% /highlight %}}
+```
 
 # Time to Live - TTL
 
 An entry within the cache is immortal by default. You can specify as part of the put operation a specific time for the entry to be alive within the cache. Once this time elapsed, it will be expired automatically. The time unit to specify the TTL is milliseconds.
 
-{{% highlight java %}}
+```java
 GigaMap gigaMap = ...
 gigaMap.put(key , value , 5000);
-{{% /highlight %}}
+```
 
 # Declarative Transactions
 
@@ -260,20 +260,20 @@ It is highly recommended to read the [transaction management chapter](http://sta
 
 OpenSpaces provides a pluggable transaction provider using the following interface:
 
-{{% highlight java %}}
+```java
 public interface TransactionProvider {
     Transaction getCurrentTransaction(Object transactionalContext, IJSpace space);
     int getCurrentTransactionIsolationLevel(Object transactionalContext);
 }
-{{% /highlight %}}
+```
 
 OpenSpaces comes with a default transaction provider implementation, which uses Spring and its transaction manager in order to obtain the currently running transactions, and automatically use them under transactional operations.
 
 `GigaMap` allows access to current running transactions using the transaction provider. The following code example shows how the `put` operation can be performed using `IMap` (users normally won't be required to do so):
 
-{{% highlight java %}}
+```java
 gigaMap.getMap().put("key", "value", gigaMap.getCurrentTransaction(), 1000);
-{{% /highlight %}}
+```
 
 ## Transaction Isolation Level
 
@@ -282,16 +282,16 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" default-isolation-level="READ_COMMITTED"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -304,23 +304,23 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
     <property name="map" ref="map" />
     <property name="defaultIsolationLevelName" value="READ_COMMITTED" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 IMap map = // get IMap either by injection or code creation
 GigaMap gigaMap = new GigaMapConfigurer(map).defaultIsolationLevel(TransactionDefinition.ISOLATION_READ_COMMITTED)
                                             .gigaMap();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 In addition, Spring allows you to define the isolation level on the transaction definition itself:
 
-{{% highlight java %}}
+```java
 @Transactional(readOnly = true)
 public class DefaultFooService implements FooService {
 
@@ -340,7 +340,7 @@ public class DefaultFooService implements FooService {
         // do something
     }
 }
-{{% /highlight %}}
+```
 
 In the above example, any operation performed using `GigaMap` in the `updateFoo` method automatically works under the `READ_COMMITTED` isolation level.
 
@@ -348,17 +348,17 @@ In the above example, any operation performed using `GigaMap` in the `updateFoo`
 
 The `GigaMap` support the Lock API allowing you to establish a distributed lock on a global key. The `GigaMap` Lock API include the following methods:
 
-{{% highlight java %}}
+```java
 LockHandle lock(Object key)
 LockHandle lock(Object key,long lockTimeToLive,long waitingForLockTimeout)
 void unlock(Object key)
 boolean isLocked(Object key)
 void putAndUnlock(Object key,Object value)
-{{% /highlight %}}
+```
 
 Here is a simple example using the Lock API:
 
-{{% highlight java %}}
+```java
 IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space()).createMap();
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 String key = "myKey";
@@ -367,7 +367,7 @@ gigaMap.lock(key);
 System.out.println("After Lock:Is key "  + key+ " locked:" + gigaMap.isLocked(key));
 gigaMap.unlock(key);
 System.out.println("After unLock:Is key "  + key+ " locked:" + gigaMap.isLocked(key));
-{{% /highlight %}}
+```
 
 {{% tip %}}
 The Lock API using transactions to ensure isolation and data consistency.
@@ -439,19 +439,19 @@ The decision of working directly with a cluster member or against the whole clus
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space  id="space" name="mySpace"/>
 
 <!-- By default, since we are starting in embedded mode, clustered=false -->
 <os-core:map id="directMap" space="space"/>
 <os-core:map id="clusteredMap" space="space" clustered="true"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -466,17 +466,17 @@ The decision of working directly with a cluster member or against the whole clus
 	<property name="space" ref="space" />
 	<property name="clustered" value="true" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 IJSpace space = // get Space either by injection or code creation (using /./space url)
 IMap directMap = new MapConfigurer(space).createMap();
 IMap clusteredMap = new MapConfigurer(space).clustered(true).createMap();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -489,10 +489,10 @@ OpenSpaces is built on top of the Spring [consistent exception hierarchy](http:/
 
 OpenSpaces provides a pluggable exception translator using the following interface:
 
-{{% highlight java %}}
+```java
 public interface ExceptionTranslator {
     DataAccessException translate(Throwable e);
 }
-{{% /highlight %}}
+```
 
 A default implementation of the exception translator is automatically used, which translates most of the relevant exceptions into either Spring data access exceptions, or concrete OpenSpaces runtime exceptions (in the `org.openspaces.code` package).

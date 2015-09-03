@@ -72,7 +72,7 @@ To help you make the right decision when deploying your application below are so
 
 Here is an example for the POCO decoration xml config:
 
-{{% highlight xml %}}
+```xml
 <class name="myPOCO">
     <property name="routingField" type="int" index="true"/>
     <routing  name="routingField"/>
@@ -80,7 +80,7 @@ Here is an example for the POCO decoration xml config:
     <property name="uid" type="string"/>
     <id name="uid" auto-generate="true" />
   </class>
-{{% /highlight %}}
+```
 
 The `routingField` value hash code will be used to rout write/read operations to the correct partition.
 
@@ -94,7 +94,7 @@ Note: for fail-safe operations, a partition may have one or more dedicated backu
 
 The c++ business logic deployed into the SLA-driven container should inherit from a c++ base class called ICppWorker.  The ICppWorker includes a few methods you must implement:
 
-{{% highlight java %}}
+```java
 class CommandObject;
 typedef boost::shared_ptr<CommandObject> CommandObjectPtr;
 class IWorkerPeer;
@@ -149,7 +149,7 @@ public:
 	*/
 	virtual bool  Destroy() = 0;
 };
-{{% /highlight %}}
+```
 
 The `Initialize` method will be called once the object is instantiated by the SLA container.
 
@@ -170,7 +170,7 @@ Here is what each phase should include:
 
 Here is a simple example - The `MyRequest` class represents the space class that stores the data and also includes to logic to be executed. The `MyResult` class represents the space class that stores the outcome of the executed logic:
 
-{{% highlight java %}}
+```java
 CommandObjectPtr CppService::run(CommandObjectPtr Object)
 {
       genericVector     replyParams = Object->getParameters();
@@ -187,7 +187,7 @@ CommandObjectPtr CppService::run(CommandObjectPtr Object)
             proxy->write(result, NULL_TX, Lease::FOREVER);
        }
 }
-{{% /highlight %}}
+```
 
 Advanced implementations might use the `takeMultiple` operation instead of the `take` operation to consume and execute several requests in one logical processing cycle/transaction. `MyRequest` and `MyResult` typically will include some `ID` and application specific items. Their implementation is not described here.
 
@@ -202,7 +202,7 @@ The processing unit is declared using a simple xml file that follows the Spring 
 
 See below an example:
 
-{{% highlight xml %}}
+```xml
 <beans>
      <os-core:embedded-space id="space" name="space" />
     <os-core:giga-space id="gigaSpace" space="space" />
@@ -211,7 +211,7 @@ See below an example:
                <property name="workerName" value="CppService" />
     </bean>
 </beans>
-{{% /highlight %}}
+```
 
 The `url="/./space"` instructs the GigaSpaces runtime to start the c++ worker with a collocated space instance running within the same process.  This will allow the c++ worker to perform space operations in-memory without any remote calls involved.  If a cluster SLA declared, accessing other remote cluster members will involve remote calls.
 
@@ -232,7 +232,7 @@ Optional settings you may include as part of the processing unit declaration:
 
 Here is an example for a processing unit with a c++ worker deployed, using a clustered SLA-driven container that is running in a partitioned topology with one backup:
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -254,7 +254,7 @@ Here is an example for a processing unit with a c++ worker deployed, using a clu
     <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="2" number-of-backups="1"
             max-instances-per-vm="1"/>
 </beans>
-{{% /highlight %}}
+```
 
 # Multiple c++ Workers within the Same Processing Unit
 
@@ -262,7 +262,7 @@ In some cases your business logic may involve multiple c++ workers running withi
 
 Here is an example for a processing unit declaration that introduces a processing unit with two c++ workers:
 
-{{% highlight xml %}}
+```xml
 <bean id="cppWorker1" class="com.gigaspaces.javacpp.openspaces.CXXBean">
         <property name="gigaSpace" ref="gigaSpace" />
         <property name="workerName" value="CppService1" />
@@ -272,7 +272,7 @@ Here is an example for a processing unit declaration that introduces a processin
         <property name="gigaSpace" ref="gigaSpace" />
         <property name="workerName" value="CppService2" />
 </bean>
-{{% /highlight %}}
+```
 
 # Deploying the c++ Processing Unit
 
@@ -284,18 +284,18 @@ Deploying your c++ processing unit requires 2 steps:
 
 Here is how your processing unit deployed folder should look like:
 
-{{% highlight xml %}}
+```xml
 <XAP Root>deploy\cppPUexample
 
 - META-INF
        spring <-- Here you should place your processing unit declaration - called pu.xml
 
 - lib
-{{% /highlight %}}
+```
 
 Run `<XAP Root>\bin\gsm` and  `<XAP Root>\bin\gsc` and deploy your processing unit using the following command:
 
-{{% highlight console %}}
+```console
 <XAP Root>\bin\gs pudeploy cppPUexample
-{{% /highlight %}}
+```
 

@@ -54,7 +54,7 @@ There are many features that are exposed and can control how the plain instantia
 
 The first part of the **jetty.plain.pu.xml** is the different deploy time properties that can be used to control it, with their respective default values.
 
-{{% highlight xml %}}
+```xml
 <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="properties">
         <props>
@@ -74,7 +74,7 @@ The first part of the **jetty.plain.pu.xml** is the different deploy time proper
         </props>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 All the above properties can be controlled during deployment (or by adding a **META-INF/spring/pu.properties** file). What they actually control (though very evident from the name) is explained in the following sections.
 
@@ -84,7 +84,7 @@ Controlling the size of the data a client can push to the server can be done usi
 
 ## Port Numbers
 
-{{% highlight xml %}}
+```xml
 <bean id="port" class="org.openspaces.pu.container.jee.PortGenerator">
     <property name="basePort" value="${web.port}" />
     <property name="portOffset" value="${clusterInfo.runningNumber}" />
@@ -94,7 +94,7 @@ Controlling the size of the data a client can push to the server can be done usi
     <property name="basePort" value="${web.sslPort}" />
     <property name="portOffset" value="${clusterInfo.runningNumber}" />
 </bean>
-{{% /highlight %}}
+```
 
 The above xml fragment from the **jetty.plain.xml** controls the port numbers that are used by the Jetty instance started. The `PortGenerator` is a utility class that does not do more than expose itself as the sum of the `basePort` property and the `portOffset` property. In our case, each instance of a web application that is deployed in plain mode, will have a unique port (that, by default, starts from 8080). For example, if a web application is deployed with 2 instances, the first instance will start on port 8080, the second instance will start on port 8081 (regardless of the host).
 
@@ -102,15 +102,15 @@ The above xml fragment from the **jetty.plain.xml** controls the port numbers th
 In this case, if another web application is deployed on the same GSC, the `web.port` property should be changed (for example, to start from 9090), so there won't be any port clashes between the two web applications. By default, if a port is taken on the same host, the subsequent port will be used with up to 20 retries. To limit the number of retries, for example to 10 (instead of the default 20), you must define a bean named **retryPortCount** of class `Integer` and the value as the number of attempts. Setting a value of 1, will only try once using the `basePort` and `portOffset`.
 {{%/note%}}
 
-{{% highlight xml %}}
+```xml
 <bean id="retryPortCount" class="java.lang.Integer">
     <constructor-arg value="10" />
 </bean>
-{{% /highlight %}}
+```
 
 ## Jetty Instance
 
-{{% highlight xml %}}
+```xml
 <bean id="jettyHolder"
 	class="org.openspaces.pu.container.jee.jetty.holder.SharedJettyHolder">
 	<constructor-arg ref="jetty" />
@@ -150,7 +150,7 @@ In this case, if another web application is deployed on the same GSC, the `web.p
 	</property>
 </bean>
 </beans>
-{{% /highlight %}}
+```
 
 The above shows how the Jetty instance is configured. The **Jetty** bean is actually the Jetty server configured. Most of the parameters can be controlled using deploy time properties.
 
@@ -160,7 +160,7 @@ The bean that is actually used (and expected to be defined) within the configura
 
 ## Web Context
 
-{{% highlight xml %}}
+```xml
 <<bean id="webAppContext" class="org.eclipse.jetty.webapp.WebAppContext">
  <property name="contextPath" ref="context" />
  <property name="war" value="${jee.deployPath}" />
@@ -180,7 +180,7 @@ The bean that is actually used (and expected to be defined) within the configura
  	</list>
  </property>
  </bean>
-{{% /highlight %}}
+```
 
 This bean controls the actual web context that corresponds to the web application instance being deployed. Its context path is the property `web.context`, which defaults to `clusterInfo.name`. (The `clusterInfo.name` is the name of the processing unit, defaults to the war file name, but can be overridden using the override-name feature).
 
@@ -194,7 +194,7 @@ If you are using Maven to create, compile, package and run unit tests, execute a
 
 For example:
 
-{{%highlight xml%}}
+```xml
 <dependency>
 	<groupId>com.gigaspaces</groupId>
 	<artifactId>gs-openspaces</artifactId>
@@ -206,7 +206,7 @@ For example:
 		</exclusion>
 	<exclusions>
 </dependency>
-{{%/highlight%}}
+```
 
 
 
@@ -232,7 +232,7 @@ There are many features that are exposed and can control how the shared instanti
 
 The first part of the **jetty.shared.pu.xml** is the different deploy time properties that can be used to control it, with their respective default values.
 
-{{% highlight xml %}}
+```xml
 <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="properties">
         <props>
@@ -254,13 +254,13 @@ The first part of the **jetty.shared.pu.xml** is the different deploy time prope
         </props>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 All the above properties can be controlled during deployment (or by adding a **META-INF/spring/pu.properties** file). What they actually control (though very evident from the name) will be explained in the following sections.
 
 ## Port Numbers
 
-{{% highlight xml %}}
+```xml
 <bean id="port" class="org.openspaces.pu.container.jee.PortGenerator">
     <property name="basePort" value="${web.port}" />
 </bean>
@@ -268,21 +268,21 @@ All the above properties can be controlled during deployment (or by adding a **M
 <bean id="confidentialPort" class="org.openspaces.pu.container.jee.PortGenerator">
     <property name="basePort" value="${web.sslPort}" />
 </bean>
-{{% /highlight %}}
+```
 
 Since the shared mode actually starts a single Jetty instance, the port numbers are not based on the instance of the web application, but simply on the `web.port` deployment property (which defaults to 8080). The first web application that is deployed in a GSC will control on which port number the shared Jetty instance is created. Other web applications deployed on the same GSC will have no affect on the GSC (actually, on any aspect of the Jetty server).
 
 In case more than one GSC is running on the same machine, and a web application is deployed on both, the first will use port 8080. The second web application instance, deployed on the second GSC, will try to use port 8080, identify that it is used, and automatically try the next one, which is 8081. By default, if a port is taken on the same host, the subsequent port will be used with up to 20 retries. To limit the number of retries, for example to 10 (instead of the default 20), you must define a bean named **retryPortCount** of class `Integer` and the value as the number of attempts. Setting a value of 1, will only try once using the `basePort` and `portOffset`.
 
-{{% highlight xml %}}
+```xml
 <bean id="retryPortCount" class="java.lang.Integer">
     <constructor-arg value="10" />
 </bean>
-{{% /highlight %}}
+```
 
 ## Jetty Instance
 
-{{% highlight xml %}}
+```xml
 <bean id="jettyHolder" class="org.openspaces.pu.container.jee.jetty.SharedJettyHolder">
     <constructor-arg ref="jetty" />
 </bean>
@@ -322,7 +322,7 @@ In case more than one GSC is running on the same machine, and a web application 
         </bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 The above shows how the Jetty instance is configured. The **Jetty** bean is actually the Jetty server configured. Most of the parameters can be controlled using deploy time properties.
 
@@ -334,7 +334,7 @@ this means that the first deployed web application in a shared mode will control
 
 ## Web Context
 
-{{% highlight xml %}}
+```xml
 <bean id="context" class="org.openspaces.pu.container.jee.SharedContextFactory">
     <property name="context" value="${web.context}" />
     <property name="unique" value="${web.context.unique}" />
@@ -357,7 +357,7 @@ this means that the first deployed web application in a shared mode will control
         </list>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 This `webAppContext` bean controls the actual web context that corresponds to the web application instance being deployed. Its context path is controlled by the `context` bean, represented by the `SharedContextFactory` class.
 
@@ -371,7 +371,7 @@ In this section, we will show how the plain mode can be configured with Apache a
 
 The second step (as per the link to jetty documentation) is to set the workerName property of the session id manager. The jetty integration automatically sets the workerName (if it is not set explicitly) to be the clusterInfo name and the clusterInfo running number. In case one wishes to override it, it can be done by configuring the `jetty-web.xml`. The following is how the `jetty-web.xml` workerName gets set automatically (if it was configured explicitly):
 
-{{% highlight xml %}}
+```xml
 <Configure class="org.mortbay.jetty.webapp.WebAppContext">
   <Get name="sessionHandler">
     <Get name="sessionManager">
@@ -385,11 +385,11 @@ The second step (as per the link to jetty documentation) is to set the workerNam
     </Get>
   </Get>
 </Configure>
-{{% /highlight %}}
+```
 
 Then, the Apache httpd.conf should be modified to enable load balancing, here is an example:
 
-{{% highlight console %}}
+```console
 ProxyPass /balancer !
 ProxyPass /petclinic balancer://petclinic_cluster/ stickysession=JSESSIONID nofailover=On
 
@@ -418,7 +418,7 @@ Order Deny,Allow
 Deny from all
 Allow from all
 </Location>
-{{% /highlight %}}
+```
 
 The above configuration configures the load balancer to direct traffic to `/petclinic` on `machine1` and `machine2`. On both machines, the ports used are `8080` and `8081`. This is because of the dynamic nature of the Service Grid, where web application instance number 1 (which corresponds to port `8080`) might be deployed on `machine1` or `machine2`.
 
@@ -430,7 +430,7 @@ The above provides an overview of how to configure apache load balancer by hand.
 
 Web Applications running inside the Jetty container can use SSL. Here is an example that defines SSLConnector,
 
-{{% highlight xml %}}
+```xml
 <property name="connectors">
      <list>
          <bean class="org.eclipse.jetty.server.ssl.SslSelectChannelConnector">
@@ -445,7 +445,7 @@ Web Applications running inside the Jetty container can use SSL. Here is an exam
          </bean>
     </list>
 </property>
-{{% /highlight %}}
+```
 
 You can find a complete Jetty container definition [here](/download_files/jetty.pu.xml) and the associated properties file [here](/download_files/pu.properties)
 
@@ -475,7 +475,7 @@ Attached [example](/download_files/webapp-hash-security.zip) shows a web process
 
 Jetty configuration should include SecurityHandler configuration (`HashLoginService`) which will be something like below,
 
-{{% highlight xml %}}
+```xml
 <property name="securityHandler">
 	<bean class="org.eclipse.jetty.security.ConstraintSecurityHandler">
 		<property name="loginService">
@@ -487,7 +487,7 @@ Jetty configuration should include SecurityHandler configuration (`HashLoginServ
 		</property>
 	</bean>
 </property>
-{{% /highlight %}}
+```
 
 Web.xml file should include security-constraint, login-config and roles.
 
@@ -497,7 +497,7 @@ Attached [example](/download_files/webapp-jaas.zip) shows a web processing unit 
 
 Jetty configuration should include SecurityHandler configuration (`JAASLoginService`) which will be something like below,
 
-{{% highlight xml %}}
+```xml
 <property name="securityHandler">
 	<bean class="org.eclipse.jetty.security.ConstraintSecurityHandler">
 		<property name="loginService">
@@ -510,16 +510,16 @@ Jetty configuration should include SecurityHandler configuration (`JAASLoginServ
 		</property>
 	</bean>
 </property>
-{{% /highlight %}}
+```
 
 Login module definition is a configuration file that maps the module name to a Java class implementation and will be something like below,
 
-{{% highlight console %}}
+```console
 AASLogin {
           com.gigaspaces.web.jaas.MySecurityModule required
           debug="true" file="/realm.properties";
       };
-{{% /highlight %}}
+```
 
 Above configuration file should be passed as a JVM system property, `java.security.auth.login.config` for all the GSC's that host the web application instances (`-Djava.security.auth.login.config=\Dev\webapp-jaas\config\login.config`)
 
@@ -535,7 +535,7 @@ To install Jetty 9.1.3.v20140225 follow these steps:
 
 With this version the connector configuration has changed. Here is a complete example on how to configure `jetty.pu.xml` .
 
-{{%highlight xml%}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -705,4 +705,4 @@ With this version the connector configuration has changed. Here is a complete ex
         </property>
     </bean>
 </beans>
-{{%/highlight%}}
+```

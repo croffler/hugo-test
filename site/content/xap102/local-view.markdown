@@ -32,7 +32,7 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
 {{% inittab os_simple_space %}}
 {{% tabcontent   Namespace   %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:local-view id="localViewSpace" space="space">
@@ -49,12 +49,12 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
 </os-core:local-view>
 
 <os-core:giga-space id="localView" space="localViewSpace"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain   XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -74,12 +74,12 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
         </list>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 // Initialize remote space configurer:
 SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("mySpace");
 // Initialize local view configurer
@@ -99,7 +99,7 @@ LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(urlC
 	.addViewQuery(new SQLQuery(com.example.Message2.class, "priority > 3"));
 // Create local view:
 GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -150,11 +150,11 @@ Setting lower values for batch size and timeout will reduce data staleness but i
 
 Batch settings can be configured using `LocalViewSpaceFactoryBean` for Spring, or using `LocalViewSpaceConfigurer` at runtime. For example:
 
-{{% highlight xml %}}
+```xml
 <os-core:local-view id="localViewSpace" space="space" batch-size="1000" batch-timeout="100">
     <os-core:view-query class="com.example.Message1" where="processed = true"/>
 </os-core:local-view>
-{{% /highlight %}}
+```
 
 #### Recovering From Disconnection
 
@@ -166,11 +166,11 @@ When the connection to the remote master space is restored, the local view reloa
 
 The maximum disconnection duration can be configured using `LocalViewSpaceFactoryBean` for Spring, or using `LocalViewSpaceConfigurer` at runtime (default is 1 minute). For example:
 
-{{% highlight xml %}}
+```xml
 <os-core:local-view id="localViewSpace" space="space" max-disconnection-duration="60000">
     <os-core:view-query class="com.example.Message1" where="processed = true"/>
 </os-core:local-view>
-{{% /highlight %}}
+```
 
 {{% info %}}
 When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.

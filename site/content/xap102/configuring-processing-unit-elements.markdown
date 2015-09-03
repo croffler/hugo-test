@@ -52,7 +52,7 @@ Throughout this guide, every configuration example will be provided in all of th
 
 Here's a sample `pu.xml` configuration file. Note the comments in the file which describe the various elements that appear in it.
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     top level element of the Spring configuration. Note the multiple namespace definition for both
@@ -99,17 +99,17 @@ Here's a sample `pu.xml` configuration file. Note the comments in the file which
     <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 
 </beans>
-{{% /highlight %}}
+```
 
 # Importing xml files into the pu.xml
 
 To import one more more xml files into your pu.xml you can use the following:
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <import resource="classpath*:/applicationContext-component.xml" />
 <import resource="classpath*:/applicationContext-matching.xml"/>
 <import resource="classpath*:/applicationContext-services.xml"/>
 <import resource="classpath*:/applicationContext-jmx.xml" />
 <import resource="classpath*:/applicationContext-containers.xml"/>
-{{% /highlight %}}
+```

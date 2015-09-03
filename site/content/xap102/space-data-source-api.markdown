@@ -33,7 +33,7 @@ Space data source configuration can be done using a Spring bean or via code as s
 {{% inittab Configuration Examples %}}
 {{% tabcontent Spring %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -46,19 +46,19 @@ Space data source configuration can be done using a Spring bean or via code as s
     <os-core:embedded-space id="space" name="dataSourceSpace"  space-data-source="spaceDataSource"  />
     <os-core:giga-space id="gigaSpace" space="space" />
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 SpaceDataSource spaceDataSource = new MySpaceDataSource();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space")
   .schema("persistent")
   .cachePolicy(new LruCachePolicy())
   .spaceDataSource(spaceDataSource)
   .space()).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -79,7 +79,7 @@ POJOs introduction is done automatically so there's no need to generate space ty
 
 The following example shows how a custom derived SpaceDocument type is introduced to the space on its initialization:
 
-{{% highlight java %}}
+```java
 public class DocumentBasedSpaceDataSource extends SpaceDataSource {
   @Override
   public DataIterator<SpaceTypeDescriptor> initialMetadataLoad() {
@@ -96,7 +96,7 @@ public class DocumentBasedSpaceDataSource extends SpaceDataSource {
     return new DefaultDataIterator(personTypeDescriptor, studentTypeDescriptor);
   }
 }
-{{% /highlight %}}
+```
 
 # Reading From The Data Source
 
@@ -104,7 +104,7 @@ When the space needs to read data from the data source the `SpaceDataSource.getD
 
 The following example shows a `SpaceDataSource.getDataItereator` implementation:
 
-{{% highlight java %}}
+```java
 public class MySpaceDataSource extends SpaceDataSource {
   @Override
   public DataIterator<Object> getDataIterator(DataSourceQuery query) {
@@ -127,7 +127,7 @@ public class MySpaceDataSource extends SpaceDataSource {
     return null;
   }
 }
-{{% /highlight %}}
+```
 
 # Read From Data Source By Id
 
@@ -137,7 +137,7 @@ This is great because many data source solutions, mainly NoSQL ones, are optimiz
 
 The following example shows a `SpaceDataSource.getById` implementation which creates an SQL query from the provided `DataSourceIdQuery` parameter:
 
-{{% highlight java %}}
+```java
   public class SpaceDataSourceImpl extends SpaceDataSource {
     @Override
     public Object getById(DataSourceIdQuery idQuery) {
@@ -152,7 +152,7 @@ The following example shows a `SpaceDataSource.getById` implementation which cre
       return ...
   }
 }
-{{% /highlight %}}
+```
 
 # Data Types Inheritance
 

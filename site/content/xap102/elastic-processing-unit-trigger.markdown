@@ -24,7 +24,7 @@ Here is an example how you can scale a deployed EPU memory and CPU capacity.
 
 We deploy the PU having 512GB as the maximum total amount of memory utilized both for primary and backup instances where the entire system should consume maximum of 32 cores. At start only 128GB and 8 cores will be utilized.
 
-{{% highlight java %}}
+```java
 ProcessingUnit pu = gsm.deploy(
         new ElasticStatefulProcessingUnitDeployment(new File("myPU.jar"))
            .memoryCapacityPerContainer(16,MemoryUnit.GIGABYTES)
@@ -39,11 +39,11 @@ ProcessingUnit pu = gsm.deploy(
 
 // Wait until the deployment is complete.
 pu.waitForSpace().waitFor(pu.getTotalNumberOfInstances());
-{{% /highlight %}}
+```
 
 #### Step 2 - Increase the memory capacity from 128GB to 256GB and number of cores from 8 to 16:
 
-{{% highlight java %}}
+```java
 ProcessingUnit pu = admin.getProcessingUnits().waitFor("myPU", 5,TimeUnit.SECONDS); //get the PU
 // increasing the memory capacity will start new containers
 // existing machines if enough free memory is available
@@ -51,11 +51,11 @@ pu.scale(new ManualCapacityScaleConfigurer()
          .memoryCapacity(256,MemoryUnit.GIGABYTES)
          .numberOfCpuCores(16)
          .create());
-{{% /highlight %}}
+```
 
 #### Step 3 - Increase the memory capacity from 256GB to 512GB and number of cores from 16 to 32:
 
-{{% highlight java %}}
+```java
 ProcessingUnit pu = admin.getProcessingUnits().waitFor("myPU", 5,TimeUnit.SECONDS); //get the PU
 // scales out to more CPU cores (existing containers are terminated on existing machines and
 // new are started on new machines if not enough CPU cores are available on existing machines)
@@ -63,32 +63,32 @@ pu.scale(new ManualCapacityScaleConfigurer()
          .memoryCapacity(512,MemoryUnit.GIGABYTES)
          .numberOfCpuCores(32)
          .create());
-{{% /highlight %}}
+```
 
 #### Step 4 - Decrease the memory capacity and CPU capacity:
 
-{{% highlight java %}}
+```java
 ProcessingUnit pu = admin.getProcessingUnits().waitFor("myPU", 5,TimeUnit.SECONDS); //get the PU
 pu.scale(new ManualCapacityScaleConfigurer()
          .memoryCapacity(128,MemoryUnit.GIGABYTES)
          .numberOfCpuCores(8)
          .create());
-{{% /highlight %}}
+```
 
 # Eager Scale Trigger
 
 Eager trigger scales the EPU on all available machines and new machines joining the GigaSpaces Grid. Each new machine running a GigaSpaces agent automatically starts a new container hosting the EPU partition instance(s) relocated from some other container. To use the Eager Scale Trigger you should scale the EPU using the `EagerScaleConfigurer`:
 
-{{% highlight java %}}
+```java
 pu.scale(new EagerScaleConfigurer().create());
-{{% /highlight %}}
+```
 
 The Eager trigger has the following limitations:
 
 - Number of maximum machines is limited to the number of partitions calculated/defined during the deployment time. This limitation does not exist for stateless processing units.
 - Multiple Eager EPUs can run on the same [Lookup Service](/product_overview/service-grid.html#lus) but on different machines. Machines are marked by starting a Grid Service Agent with a specific zone (With a command line argument -Dcom.gs.zones=zone1).
 
-{{% highlight java %}}
+```java
 ProcessingUnit pu1 = gsm.deploy(
 		new ElasticSpaceDeployment("eagerspace1")
 		.maxMemoryCapacity(10, MemoryUnit.GIGABYTES)
@@ -122,7 +122,7 @@ ProcessingUnit pu2 = gsm.deploy(
 		.scale(new EagerScaleConfigurer()
 		       .create())
 );
-{{% /highlight %}}
+```
 
 The differences between the Eager scale trigger and a Manual capacity trigger in terms of the maximum amount of memory and CPU are:
 

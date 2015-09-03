@@ -22,7 +22,7 @@ XAP provides a single interface for Space Data event listeners used by different
 
 At their core, all different event containers should support raising event to an implementation of `SpaceDataEventContainer`. It is a simple interface described below:
 
-{{% highlight java %}}
+```java
 public interface SpaceDataEventListener {
     /**
      * An event callback with the actual data object of the event.
@@ -39,25 +39,25 @@ public interface SpaceDataEventListener {
      */
     void onEvent(Object data, GigaSpace gigaSpace, TransactionStatus txStatus, Object source);
 }
-{{% /highlight %}}
+```
 
 If we take the following simple implementation of the event listener interface:
 
-{{% highlight java %}}
+```java
 public class SimpleListener implements SpaceDataEventListener {
 
     public void onEvent(Object data, GigaSpace gigaSpace, TransactionStatus txStatus, Object source) {
         // process event
     }
 }
-{{% /highlight %}}
+```
 
 Here is how it can be configured:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -66,12 +66,12 @@ Here is how it can be configured:
 
     <os-events:listener ref="simpleListener" />
 </os-events>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -80,7 +80,7 @@ Here is how it can be configured:
 
     <property name="eventListener" ref="simpleListener" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -89,7 +89,7 @@ Here is how it can be configured:
 
 OpenSpaces comes with two built in event adapters, the first supporting annotations and the second supporting method listing. Here is a simple example of an event listener implementation using annotations:
 
-{{% highlight java %}}
+```java
 public class SimpleListener {
 
     @SpaceDataEvent
@@ -97,14 +97,14 @@ public class SimpleListener {
         // process event
     }
 }
-{{% /highlight %}}
+```
 
 The `myEventHandler` is marked using the `SpaceDataEvent` annotation as a callback that needs to be called in case of an event. Here is the XML configuration of the mentioned event listener:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -117,12 +117,12 @@ The `myEventHandler` is marked using the `SpaceDataEvent` annotation as a callba
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -135,7 +135,7 @@ The `myEventHandler` is marked using the `SpaceDataEvent` annotation as a callba
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -145,7 +145,7 @@ If we do not wish to use annotations, we can use the method adapter where method
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -158,12 +158,12 @@ If we do not wish to use annotations, we can use the method adapter where method
         </os-events:method-adapter>
     </os-events:listener>
 </os-events>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -177,7 +177,7 @@ If we do not wish to use annotations, we can use the method adapter where method
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -186,7 +186,7 @@ If we do not wish to use annotations, we can use the method adapter where method
 
 The adapter method callback can accept zero or more parameters following the same order and types of the `SpaceDataEventListener`. Since the different adapters use reflection to invoke the event method, specific types can be used as the data event (based on the template provided to the event container). For example, if we define a template that matches `Trade` objects, our listener can use it directly:
 
-{{% highlight java %}}
+```java
 public class SimpleListener {
 
     @SpaceDataEvent
@@ -194,7 +194,7 @@ public class SimpleListener {
         // process event
     }
 }
-{{% /highlight %}}
+```
 
 ## Adapter Method Return Value
 
@@ -204,7 +204,7 @@ By default, an update-or-write operation will be performed. This flag can be set
 
 Here is an example of an event listener that returns an array of `Order` as a result of a `Trade`:
 
-{{% highlight java %}}
+```java
 public class SimpleListener {
 
     @SpaceDataEvent
@@ -212,14 +212,14 @@ public class SimpleListener {
         // process event
     }
 }
-{{% /highlight %}}
+```
 
 and the following is the configuration of such a listener using the annotation adapter:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -232,12 +232,12 @@ and the following is the configuration of such a listener using the annotation a
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -252,7 +252,7 @@ and the following is the configuration of such a listener using the annotation a
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -261,7 +261,7 @@ and the following is the configuration of such a listener using the annotation a
 
 A single class can have several method event listeners all with the same name. This allows for automatic matching based on the data event type. Here is an example using annotations:
 
-{{% highlight java %}}
+```java
 public class SimpleListener {
 
     @SpaceDataEvent
@@ -274,7 +274,7 @@ public class SimpleListener {
         // process event
     }
 }
-{{% /highlight %}}
+```
 
 {{% tip %}}
 When using a single event method, the event adapter will cache the reflection information in order to invoke the method. In case multiple methods are used, no caching of the reflection information can be done, so a slight performance impact can be experienced.
@@ -287,7 +287,7 @@ OpenSpaces comes with an event adapter that allows you to delegate the execution
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -304,12 +304,12 @@ OpenSpaces comes with an event adapter that allows you to delegate the execution
         </bean>
     </os-events:listener>
 </os-events>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleListener" class="SimpleListener" />
 
@@ -328,7 +328,7 @@ OpenSpaces comes with an event adapter that allows you to delegate the execution
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

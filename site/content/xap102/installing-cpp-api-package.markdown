@@ -25,9 +25,9 @@ The current supported platforms and compilers are:
 1. Download the c++ API file that suits your platform.
 1. Unzip the file into your `<XAP Root>` directory (download GigaSpaces [here](http://www.gigaspaces.com/LatestProductVersion)), using your favorite unzip tool (.e.g WinZip). For example - On linux you should run the following to install the C++ libraries:
 
-{{% highlight console %}}
+```console
 tar -xzvf gigaspaces-cpp-{{%version xap-version %}}-ga-linux-amd64-gcc-4.1.2.tar.gz
-{{% /highlight %}}
+```
 
 Where the `gigaspaces-cpp-9.X.X-ga-linux-amd64-gcc-4.1.2.tar.gz` should be located at the `/gigaspaces-xap-premium-9.X.X-ga` folder.
 
@@ -57,22 +57,22 @@ The following environment variables need to be defined:
 
 For example:
 
-{{%highlight console%}}
+```console
 set JSHOMEDIR=C:\{{%version gshome-directory %}}
 set PLATFORM=win32
 set COMPILER=VS9.0
-{{%/highlight%}}
+```
 
 In addition, for windows 32 bit the **`PATH`** variable should be updated to include:
-{{%highlight console%}}
+```console
 %JSHOMEDIR%\cpp\lib\%PLATFORM%\%COMPILER%;%JSHOMEDIR%\cpp\bin\%PLATFORM%\%COMPILER%;%JAVA_HOME%\jre\bin\client
-{{%/highlight%}}
+```
 
 For windows 64 bit the **`PATH`** variable should be updated to include:
 
-{{%highlight console%}}
+```console
 %JSHOMEDIR%\cpp\lib\%PLATFORM%\%COMPILER%;%JSHOMEDIR%\cpp\bin\%PLATFORM%\%COMPILER%;%JAVA_HOME%\jre\bin\server
-{{%/highlight%}}
+```
 
 ## Environment Script Files
 

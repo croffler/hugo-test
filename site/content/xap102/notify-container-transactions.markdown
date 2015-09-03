@@ -19,7 +19,7 @@ Transaction support can be configured as follows:
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
@@ -32,9 +32,9 @@ Transaction support can be configured as follows:
 <os-core:distributed-tx-manager id="transactionManager" />
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify @TransactionalEvent
 public class SimpleListener {
 
@@ -50,12 +50,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space  id="space" name="mySpace"/>
 
@@ -81,12 +81,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -120,7 +120,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

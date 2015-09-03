@@ -12,7 +12,7 @@ A MongoDB based implementation of the [Space Data Source](./space-data-source-ap
 The MongoDB Space Data Source uses [MongoDB Driver](http://docs.mongodb.org/ecosystem/drivers/java/) For communicating with the MongoDB cluster.
  
 include the following in your `pom.xml`
-{{% highlight xml %}}
+```xml
 
 	<!-- currently the MongoDB library is not the central maven repository --> 
 	<repositories>
@@ -47,7 +47,7 @@ include the following in your `pom.xml`
 		...
 	</dependencies>
 
-{{% /highlight %}}
+```
 
 ### Setup 
 
@@ -55,7 +55,7 @@ An example of how the MongoDB Space Data Source can be configured for a space th
 also asynchronously persists the data using a mirror (see [MongoDB Space Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html))). 
 
 {{% inittab Configuration Examples %}}
-{{% tabcontent Spring %}}{{% highlight xml %}}
+{{% tabcontent Spring %}}```xml
 <?xml version="1.0" encoding="utf-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -104,10 +104,10 @@ also asynchronously persists the data using a mirror (see [MongoDB Space Synchro
 </beans>
 
 
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
-{{% highlight java %}}
+```java
 
 	MongoClient config = new MongoClient(host, port);
 
@@ -129,7 +129,7 @@ also asynchronously persists the data using a mirror (see [MongoDB Space Synchro
 	.spaceDataSource(spaceDataSource) 
 	.space()).gigaSpace(); 
 
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 {{% /inittab %}}
 

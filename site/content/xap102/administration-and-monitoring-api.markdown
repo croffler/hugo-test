@@ -16,7 +16,7 @@ Before diving into the Admin API, here are some code examples showing how the Ad
 {{% inittab admin_test%}}
 {{% tabcontent GSA %}}
 
-{{% highlight java %}}
+```java
 public void gsa() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 	// wait till things get discovered (you can also use specific waitFor)
@@ -30,12 +30,12 @@ public void gsa() {
 		}
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent GSM %}}
 
-{{% highlight java %}}
+```
 
 public void gsm() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
@@ -46,12 +46,12 @@ public void gsm() {
 	}
 }
 
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent GSC %}}
 
-{{% highlight java %}}
+```
 public void gsc() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 	// wait till things get discovered (you can also use specific waitFor)
@@ -66,12 +66,12 @@ public void gsc() {
 		}
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Processing Unit %}}
 
-{{% highlight java %}}
+```java
 
 public void pu() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
@@ -112,12 +112,12 @@ public void pu() {
 		}
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Space %}}
 
-{{% highlight java %}}
+```java
 
 public void space() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
@@ -151,12 +151,12 @@ public void space() {
 		}
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Virtual Machine %}}
 
-{{% highlight java %}}
+```java
 public void virtualMachine() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 		// wait till things get discovered (you can also use specific waitFor)
@@ -191,12 +191,12 @@ public void virtualMachine() {
 			}
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Machine %}}
 
-{{% highlight java %}}
+```java
 public void machine() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 		// wait till things get discovered (you can also use specific waitFor)
@@ -224,7 +224,7 @@ public void machine() {
 	}
 }
 
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -235,7 +235,7 @@ Obtaining information about the currently deployed services / components via the
 {{%inittab%}}
 
 {{%tabcontent GSC %}}
-{{%highlight java%}}
+```java
 	public void findStartedGridServiceContainers() {
 		Admin admin = new AdminFactory().createAdmin();
 
@@ -248,11 +248,11 @@ Obtaining information about the currently deployed services / components via the
 			}
 		}
 	}
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent GSM %}}
-{{%highlight java%}}
+```java
 	public void findStartedGridServiceManagers() {
 		Admin admin = new AdminFactory().createAdmin();
 
@@ -266,11 +266,11 @@ Obtaining information about the currently deployed services / components via the
 		}
 	}
 
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent LUS %}}
-{{%highlight java%}}
+```java
 	public void findStartedLookupServices() {
 		Admin admin = new AdminFactory().createAdmin();
 
@@ -284,11 +284,11 @@ Obtaining information about the currently deployed services / components via the
 		}
 	}
 
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent ESM %}}
-{{%highlight java%}}
+```java
 	public void findStartedElasticServiceManagers() {
 		Admin admin = new AdminFactory().createAdmin();
 
@@ -301,7 +301,7 @@ Obtaining information about the currently deployed services / components via the
 			}
 		}
 
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%/inittab%}}
@@ -567,27 +567,27 @@ There are two ways the Admin API can be used to access information the Admin API
 
 If we want to register, for example, for Grid Service Container additions, we can use the following code (note, removing the event listener is not shown here for clarity):
 
-{{% highlight java %}}
+```java
 admin.getGridServiceContainers().getGridServiceContainerAdded().add(new GridServiceContainerAddedEventListener() {
     public void gridServiceContainerAdded(GridServiceContainer gridServiceContainer) {
         // do something here
     }
 });
-{{% /highlight %}}
+```
 
 Removals are done in similar manner:
 
-{{% highlight java %}}
+```java
 admin.getGridServiceContainers().getGridServiceContainerRemoved().add(new GridServiceContainerRemovedEventListener() {
     public void gridServiceContainerRemoved(GridServiceContainer gridServiceContainer) {
         // do something here
     }
 });
-{{% /highlight %}}
+```
 
 Since both removals and additions are common events that we would like to register for in one go, we can use:
 
-{{% highlight java %}}
+```java
 admin.getGridServiceContainers().addLifecycleListener(new GridServiceContainerLifecycleEventListener() {
     public void gridServiceContainerAdded(GridServiceContainer gridServiceContainer) {
         // do something here
@@ -597,11 +597,11 @@ admin.getGridServiceContainers().addLifecycleListener(new GridServiceContainerLi
         // do something here
     }
 });
-{{% /highlight %}}
+```
 
 All other data structures use similar API to register for events. Some might have specific events that goes beyond just additions and removals, but they still use the same model. For example, here is how we can register for Space Mode change events across all currently running Space topologies and Space Instances:
 
-{{% highlight java %}}
+```java
 admin.getSpaces().getSpaceModeChanged().add(new SpaceModeChangedEventListener() {
     public void spaceModeChanged(SpaceModeChangedEvent event) {
         System.out.println("Space [" + event.getSpaceInstance().getSpace().getName() + "] " +
@@ -610,7 +610,7 @@ admin.getSpaces().getSpaceModeChanged().add(new SpaceModeChangedEventListener() 
 		"changed mode from [" + event.getPreviousMode() + "] to [" + event.getNewMode() + "]");
     }
 });
-{{% /highlight %}}
+```
 
 Of course, we can register the same listener on a specific `Space` topology or event on a specific `SpaceInstance`.
 
@@ -644,7 +644,7 @@ The space maintains statistics information about all the data types (e.g. space 
 
 If you are monitoring the space class instance count with some monitoring tool you should use the approach below rather calling the `GigaSpace.Count()`.
 
-{{% highlight java %}}
+```java
 public static void printAllClassInstanceCountForAllPartitions (Admin admin , String spaceName) throws Exception
 {
 	Space space = admin.getSpaces().waitFor(spaceName, 10 , TimeUnit.SECONDS);
@@ -691,14 +691,14 @@ static class SpacePartitionsComperator implements Comparator<SpacePartition>{
 			return 1;
 	}
 }
-{{% /highlight %}}
+```
 
 # Monitoring the Mirror Service
 
 You may monitor various aspects of the mirror service using the administration and monitoring API.
 The mirror statistics are available using the `SpaceInstance` statistics. They can be used to monitor the state of the mirror space and whether or not it is functioning properly. These statistics are relevant only for a mirror space instance, and are not available for ordinary space instances. The code below traverses all the space instances and finds the mirror space by retrieving the mirror statistics object (if it isn't null this means it's a mirror space). It then prints out some of the available statistics.
 
-{{% highlight java %}}
+```java
 for (Space space : admin.getSpaces()) {
     System.out.println("Space [" + space.getUid() + "] numberOfInstances [" +
      space.getNumberOfInstances() + "] numberOfbackups [" +
@@ -723,7 +723,7 @@ for (Space space : admin.getSpaces()) {
 
 }
 
-{{% /highlight %}}
+```
 
 {{%refer%}}
 For more information please refer to the API documentation: **[MirrorStatistics](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/com/gigaspaces/cluster/replication/async/mirror/MirrorStatistics.html)**
@@ -740,7 +740,7 @@ Here is an example:
 
 {{%inittab%}}
 {{%tabcontent ChangeStatus%}}
-{{%highlight java  %}}
+```java
 public class ProcessingUnitStatusChanged {
 
 	public void processingUnitStatusChanged() {
@@ -752,11 +752,11 @@ public class ProcessingUnitStatusChanged {
 		admin.addEventListener(listener);
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent Listener%}}
-{{%highlight java  %}}
+```java
 public class MyProcessingUnitStatusChangedEventListener implements
 		ProcessingUnitStatusChangedEventListener {
 
@@ -772,7 +772,7 @@ public class MyProcessingUnitStatusChangedEventListener implements
 		}
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 {{%/inittab%}}
 
@@ -780,7 +780,7 @@ public class MyProcessingUnitStatusChangedEventListener implements
 
 For monitoring purposes, the processing unit can be queried to show its deployment status, number of actual instances vs. planned, and more details per processing unit instance. Note that the plan vs. actual represent current state, and querying this API returns an updated result each time a scheduled update is done by the underlying Admin. A plan changes on increments, decrements, restart and relocation of instances. 
 
-{{%highlight java  %}}
+```java
 ProcessingUnit processingUnit = admin.getProcessingUnits().getProcessingUnit("myProceessingUnitName");
 Properties properties = new Properties();
 properties.put("Name", processingUnit.getName());
@@ -788,7 +788,7 @@ properties.put("Status", processingUnit.getStatus());
 properties.put("Type", processingUnit.getType());
 properties.put("Actual/Planned", processingUnit.getInstances().length + "/" + processingUnit.getPlannedNumberOfInstances());
 properties.put("SLA", processingUnit.getNumberOfInstances() + (processingUnit.getNumberOfBackups()>0 ? "," + processingUnit.getNumberOfBackups(): ""));
-{{%/highlight%}}
+```
 
 {{%anchor servicemonitors%}}
 
@@ -809,7 +809,7 @@ The admin API also allows you to monitor XAP services. The information is availa
 
 Here is an example how you can obtain this information:
 
-{{%highlight java%}}
+```java
 public void serviceMonitors() {
     Admin admin = new AdminFactory().createAdmin();
 
@@ -836,12 +836,12 @@ public void serviceMonitors() {
 		}
 	}
 }
-{{%/highlight%}}
+```
 
 
 You can also attach a [ProcessingUnitInstanceStatisticsChangedEventListener](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/index.html?org/openspaces/admin/pu/events/ProcessingUnitInstanceStatisticsChangedEventListener.html) to process units that will fire by default every 5 second.
 
-{{%highlight java%}}
+```java
 public void serviceMonitorsEventListeners() {
 	Admin admin = new AdminFactory().createAdmin();
 
@@ -863,23 +863,23 @@ public void serviceMonitorsEventListeners() {
 		}
 	});
 }
-{{%/highlight%}}
+```
 
 By default the listener will fire  every 5 second. You can change this in the following general way:
 
-{{%highlight java%}}
+```java
 public void changeServiceMonitorsTimer() {
 	Admin admin = new AdminFactory().createAdmin();
     admin. setStatisticsInterval(30l, TimeUnit.SECONDS);
 }
-{{%/highlight%}}
+```
 
 This will set the timer on the following objects: `Spaces`,`VirtualMachines`,`Transports`,`OperatingSystems`,`ProcessingUnits`
 
 
 You can also change the intervals individually:
 
-{{%highlight java%}}
+```java
 Spaces.setStatisticsInterval(30l, TimeUnit.SECONDS);
 
 VirtualMachines.setStatisticsInterval(10l, TimeUnit.MINUTES);
@@ -889,5 +889,5 @@ Transports.setStatisticsInterval(10l, TimeUnit.SECONDS);
 OperatingSystems.setStatisticsInterval(3l, TimeUnit.MINUTES);
 
 ProcessingUnits.setStatisticsInterval(30l, TimeUnit.SECONDS);
-{{%/highlight%}}
+```
 

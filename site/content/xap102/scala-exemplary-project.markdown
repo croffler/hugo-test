@@ -42,7 +42,7 @@ Please note that Scala is not required to build the project, since requried libr
 
 Sometimes, having immutable state is a desired feature. This requirement is covered in XAP Scala by classes that use constructor based properties, in case of the `common` module it is the `Verification` class. It is written only once to the `Space` and never changed (instances can be removed).
 
-{{% highlight scala %}}
+```scala
 case class Verification @SpaceClassConstructor() (
   @BeanProperty
   @SpaceId
@@ -53,11 +53,11 @@ case class Verification @SpaceClassConstructor() (
 
   override def toString: String = s"id[$id] dataId[$dataId]"
 }
-{{%/highlight%}}
+```
 
 The other class (`Data`) has been rewritten in Scala. However, its behavior has not been modified (apart from adding a new field needed by the `verifier` module):
 
-{{% highlight scala %}}
+```scala
 case class Data (
   @BeanProperty @SpaceId(autoGenerate = true) var id: String = null,
   @BeanProperty @SpaceRouting @SpaceProperty(nullValue = "-1") var `type`: Long = -1,
@@ -72,23 +72,23 @@ case class Data (
 
   override def toString: String = s"id[${id}] type[${`type`}] rawData[${rawData}] data[${data}] processed[${processed}] verified[${verified}]"
 }
-{{%/highlight%}}
+```
 
 ## Predicate based queries
 
 The `verifier` module extends the pipeline presented in the baseline project (the one created by the `OpenSpaces Maven plugin`). The `Verifier` picks up processed `Data` instances and tries to verify them. The objects that pass the verification process are then modified (`verified` set to `true`) and saved along with a new, immutable `Verification` object. The objects that failed during verification process are removed from the Space. The `verifier` uses the new feature - predicate based queries - to access the Space in a more readable and natural way (especially for functional languages such as Scala):
 
-{{% highlight scala %}}
+```scala
 @GigaSpaceContext private var gigaSpace: GigaSpace = _ // injected
 // ...
 
 // data instances to process further are obtained in the following way
 val unverifiedData = gigaSpace.predicate.readMultiple { data: Data => data.processed == true && data.verified == false }
-{{%/highlight%}}
+```
 
 Pu.xml contains a standard description of gigaSpace:
 
-{{% highlight xml %}}
+```xml
 ...
 <os-core:giga-space-context/>
 
@@ -96,7 +96,7 @@ Pu.xml contains a standard description of gigaSpace:
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 ...
-{{%/highlight%}}
+```
 
 {{%note%}}
 Please note that `gigaSpace` from the code above is an instance of ScalaEnhancedGigaSpaceWrapper - a wrapper around GigaSpace introduced in XAP Scala.
@@ -110,7 +110,7 @@ The build configuration in Scala or Java/Scala modules is almost as simple in ca
 
 The `common` module is a pure Scala module. The `maven-compiler-plugin` has been replaced by `scala-maven-plugin`. The build configuration from the `pom.xml` for the `common` has the following form:
 
-{{% highlight xml %}}
+```xml
 <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
     <plugins>
@@ -133,7 +133,7 @@ The `common` module is a pure Scala module. The `maven-compiler-plugin` has been
     </plugins>
     <finalName>gs-openspaces-scala-example-common</finalName>
 </build>
-{{%/highlight%}}
+```
 where `scalaBinaryVersion` is a property defined in a parent pom file (in this case it is `2.11`).
 
 ## Java-Scala module
@@ -142,7 +142,7 @@ The `verifier` module is a mixed Java-Scala module, where Scala classes call Jav
 
 In such a configuration, the Scala compiler has to 'somehow' reach Java compiled classes. This is where a `build-helper-maven-plugin` is used - it adds Java classes to the source, then they are compiled and finally the Scala compiler uses them during Scala code compilation. The build configuration of the `verifier` module is as follows:
 
-{{% highlight xml %}}
+```xml
 <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
 
@@ -184,4 +184,4 @@ In such a configuration, the Scala compiler has to 'somehow' reach Java compiled
         </plugin>
     </plugins>
 </build>
-{{%/highlight%}}
+```

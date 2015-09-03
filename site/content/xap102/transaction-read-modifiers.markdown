@@ -64,7 +64,7 @@ Sometimes it is desirable for non-transactional read operations to have full vis
 
 ## Code Example
 
-{{% highlight java %}}
+```java
 // write something under txn X and commit, making it publicly visible
 space.write( something, txnX, Lease.FOREVER);
 txnX.commit();
@@ -78,7 +78,7 @@ space.update( newSomething, txnY, Lease.FOREVER, IJSpace.NO_WAIT);
 space.read( tmpl, null, ReadModifiers.DIRTY_READ);
 
 // Note: using the same txn (txn Y) will return matches that are visible under the transaction
-{{% /highlight %}}
+```
 
 # Read Committed
 
@@ -125,7 +125,7 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 
 The examples below assumes you are using `IJSpace` interface that is available via the `GigaSpaces.getSpace()`. If you are using the `GigaSpaces` interface and Spring automatic transaction demarcation, you will not need to specify the transaction object explicitly. Still, the blocking rules will be enforced.
 
-{{% highlight java %}}
+```java
 GigaSpace space= ...
 // write an object under txn X and commit, making it publicly visible
 space.write( something, txnX, Lease.FOREVER);
@@ -139,7 +139,7 @@ space.update( newSomething, txnY, Lease.FOREVER, Space.NO_WAIT);
 space.read( tmpl, txnZ, ReadModifiers.READ_COMMITTED);
 
 // Note: using the same txn (txn Y) will return matches that are visible under the transaction
-{{% /highlight %}}
+```
 
 # Exclusive Read Lock
 
@@ -162,7 +162,7 @@ Starting with XAP 7.1.2 GigaSpaces throws `java.lang.IllegalArgumentException: U
 
 ## Code Example
 
-{{% highlight java %}}
+```java
 IJSpace space = ...
 space.setReadModifiers(ReadModifiers.EXCLUSIVE_READ_LOCK);
 // this will allow all read operations with this proxy to use Exclusive Read Lock mode
@@ -177,7 +177,7 @@ Lock lock1 = (Lock) space.read(lock_template1, txn1, 1000);
 If (lock1!= null)
 	System.out.println("Transaction " + txn1.id + " Got exclusive Read Lock on Entry:"
 		+ lock1.getId());
-{{% /highlight %}}
+```
 
 ### MATCH_BY_ID & THROW_PARTIAL_FAILURE
 

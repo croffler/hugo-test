@@ -50,7 +50,7 @@ Example:
 
 {{% inittab Java %}}
 {{% tabcontent Java %}}
-{{%highlight java%}}
+```java
 
 @SpaceClass
 public class Person
@@ -65,11 +65,11 @@ public class Person
   private Integer age;
  .
  .
-{{%/highlight%}}
+```
 {{% /tabcontent%}}
 
 {{% tabcontent XML %}}
-{{%highlight xml %}}
+```xml
 
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.Person" persist="false" replicate="false" fifo="false" >
@@ -84,7 +84,7 @@ public class Person
         </property>
     </class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 {{% /tabcontent%}}
 {{% /inittab%}}
 

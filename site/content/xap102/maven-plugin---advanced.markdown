@@ -15,7 +15,7 @@ The XAP maven plugin uses the maven assembly plugin to generate the processing u
 
 **assembly.xml**
 
-{{% highlight xml %}}
+```xml
 <assembly>
   <id>assemble-pu</id>
   <formats>
@@ -53,7 +53,7 @@ The XAP maven plugin uses the maven assembly plugin to generate the processing u
     </dependencySet>
   </dependencySets>
 </assembly>
-{{% /highlight %}}
+```
 
 ## Dependencies Target Locations
 
@@ -91,7 +91,7 @@ To instruct Maven to use this assembly descriptor to generate the processing uni
 
 **pom.xml**
 
-{{% highlight xml %}}
+```xml
 <build>
   ...
   <finalName>testing-feeder</finalName>
@@ -119,7 +119,7 @@ To instruct Maven to use this assembly descriptor to generate the processing uni
   </plugins>
   ...
 </build>
-{{% /highlight %}}
+```
 
 ## Further Information
 

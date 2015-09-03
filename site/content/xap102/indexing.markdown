@@ -42,7 +42,7 @@ Specifying which properties of a class are indexed is done using annotations or 
 {{% inittab %}}
 {{% tabcontent Annotations %}}
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person
 {
@@ -63,12 +63,12 @@ public class Person
     public Integer getAge() {return age;}
     public void setAge(Integer age) {this.age = age;}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent XML %}}
 
-{{% highlight java %}}
+```java
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.Person" persist="false" replicate="false" fifo="false" >
         <property name="lastName">
@@ -82,7 +82,7 @@ public class Person
         </property>
     </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -95,10 +95,10 @@ By default, a property's index is inherited in sub classes (i.e. if a property i
 
 Indexes can be added dynamically at run-time using the GigaSpaces Management Center GUI or via API using the `GigaSpaceTypeManager` interface in conjunction with `SpaceIndexFactory`. See example below:
 
-{{% shighlight java%}}
+```java
    gigaspace.getTypeManager().asyncAddIndex("MyDataType",
    SpaceIndexFactory.createPropertyIndex("myProperty", SpaceIndexType.BASIC));
-{{%/shighlight%}}
+```
 
 
 

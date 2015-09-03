@@ -35,16 +35,16 @@ Porting existing JDBC code to the space is certainly doable (but would require s
 
 In order to get the XAP JDBC connection you should use the following JDBC Driver classname:
 
-{{% highlight java %}}
+```java
 Class.forName("com.j_spaces.jdbc.driver.GDriver");
-{{% /highlight %}}
+```
 
 The connection URL should include :`jdbc:gigaspaces:url:<Space URL>` -- e.g.:
 
-{{% highlight java %}}
+```java
 
 Connection con = DriverManager.getConnection("jdbc:gigaspaces:url:jini://*/*/mySpace");
-{{% /highlight %}}
+```
 
 {{% tip %}}
 You may use the GigaSpaces JDBC driver with remote or embedded space
@@ -54,7 +54,7 @@ You may use the GigaSpaces JDBC driver with remote or embedded space
 
 Example:
 
-{{% highlight java %}}
+```java
 Connection conn;
 Class.forName("com.j_spaces.jdbc.driver.GDriver").newInstance();
 String url = "jdbc:gigaspaces:url:jini://*/*/mySpace";
@@ -72,7 +72,7 @@ while (rs.next()) {
 	float n = rs.getFloat("PRICE");
 	System.out.println(s + "   " + n);
 }
-{{% /highlight %}}
+```
 
 {{% tip %}}
 There is no need to deal with JDBC connection polling when using GigaSpaces JDBC driver.
@@ -83,13 +83,13 @@ There is no need to deal with JDBC connection polling when using GigaSpaces JDBC
 By default, the Query Processor is running server side.
 It is possible to set the Query Processor to run embedded within the application by passing a parameter to the JDBC driver:
 
-{{% highlight java %}}
+```java
 Class.forName("com.j_spaces.jdbc.driver.GDriver").newInstance();
 String url = "jdbc:gigaspaces:url:jini://*/*/mySpace";
 Properties properties = new Properties();
 properties.put("com.gs.embeddedQP.enabled", "true");
 conn = DriverManager.getConnection(url, properties);
-{{% /highlight %}}
+```
 
 {{% tip %}}
 It is also possible to set the "com.gs.embeddedQP.enabled" connection property as a System property (connection property overrides the system property).
@@ -116,31 +116,31 @@ The transaction manager type can be configured via JDBC's connection properties 
 
 Transaction Manager Type Configuration Example:
 
-{{% highlight java %}}
+```java
 Class.forName("com.j_spaces.jdbc.driver.GDriver");
 Properties props = new Properties();
 props.put("gs.tx_manager_type", "distributed");
 Connection conn = DriverManager.getConnection("jdbc:gigaspaces:url:jini://*/*/mySpace", props);
-{{% /highlight %}}
+```
 
 # Getting JDBC connection from a Space Proxy
 
 You can get a GigaSpaces JDBC connection from a space proxy using the `com.j_spaces.jdbc.driver.GConnection`. See below example:
 
-{{% highlight java %}}
+```java
 IJSpace gsSpaceProxy;  //your space proxy. You can get it using GigaSpace.getSpace()
 GConnection connection = GConnection.getInstance(gsSpaceProxy);
 connection.setUseSingleSpace(true); //false = cluster, true=single
-{{% /highlight %}}
+```
 
 The `setUseSingleSpace` method allows you to get a JDBC connection that encapsulates a clustered proxy or to an embedded space proxy.
 
 You can also use the following `GConnection` method to set the user and password for a secured space:
 
-{{% highlight java %}}
+```java
 public static Connection getInstance(IJSpace space, String username, String password)
     throws SQLException
-{{% /highlight %}}
+```
 
 # Mixing Space API with the JDBC API
 
@@ -148,23 +148,23 @@ The following example using the Space API [DistributedTask](./task-execution-ove
 
 With the example below we execute the following query:
 
-{{% highlight java %}}
+```java
 Select FIELD from CLASS group by FIELD sort by FIELD
-{{% /highlight %}}
+```
 
 The query is executed in two phases:
 
 Step 1. A `DistributedTask` is sent to each partition to execute the following JDBC query:
 
-{{% highlight java %}}
+```java
 Select FIELD from CLASS group by FIELD
-{{% /highlight %}}
+```
 
 The result is then sent into the reducer running at the client side.
 
 Step 2. The `DistributedTask.reduce` method running at the client side aggregating the results from all the partitions and sort the final set.
 
-{{% highlight java %}}
+```java
 public class JDBCTask implements DistributedTask<String[], String[]>{
 
 	public JDBCTask(String queryStr){
@@ -236,14 +236,14 @@ public class JDBCTask implements DistributedTask<String[], String[]>{
 		return connection;
 	}
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 GigaSpace gigapace =new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
 AsyncFuture<String[]> result= gigapace.execute(new JDBCTask("select str from " +MyClass.class.getName() + " group by str"));
 String[] result_str = result.get();
 System.out.println("The Result:" + Arrays.asList(result_str));
-{{% /highlight %}}
+```
 
 # SQL to Java Type Mapping
 
@@ -341,11 +341,11 @@ Querying the space using the [Java Regular Expression](http://docs.oracle.com/ja
 
 When you search for space objects with String fields that includes a **single quote** your query should use Parameterized Query - with the following we are searching for all `Data` objects that include the value `today's` with their `myTextField`:
 
-{{% highlight java %}}
+```java
 PreparedStatement st = con.prepareStatement("select id,text,text2 from MyData WHERE text rlike ?");
 st.setString(1, "today\u0027s.*");
 ResultSet rs = st.executeQuery();
-{{% /highlight %}}
+```
 
 # Indexing
 
@@ -365,7 +365,7 @@ In order to partition the data and rout operations to the correct partition you 
 
 You may use as part of the JDBC select statement nested fields. These could be a Map type fields or user defined data type fields within the Space object. See below example for a space class with a nested Map and a nested object fields. Both are indexed:
 
-{{% highlight java %}}
+```java
 public class MyData implements Serializable{
 
 	public MyData(){}
@@ -373,9 +373,9 @@ public class MyData implements Serializable{
 	String data2;
 	// getter and setter methods
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class MyClass {
 	public MyClass (){}
@@ -428,11 +428,11 @@ public class MyClass {
 		this.data = data;
 	}
 }
-{{% /highlight %}}
+```
 
 Here is an example for a JDBC query call you may use with the above Space object. Both the nested Map and nested object fields are used with the JDBC query below:
 
-{{% highlight sql %}}
+```sql
 String queryString =
 "select uid,
 map.key1.data1, map.key1.data2,
@@ -452,7 +452,7 @@ ResultSet rs = stmt.executeQuery(queryString );
 while (rs.next()) {
 	...
 }
-{{% /highlight %}}
+```
 
 
 # Unsupported Features
@@ -487,25 +487,25 @@ Here is a list of JDBC reserved keywords, data types, separators and operators:
 
 ## Keywords
 
-{{% highlight java %}}
+```java
 ALTER ADD AND ASC BETWEEN BY CREATE CALL DROP DEFAULT_NULL DESC DISTINCT
 END FROM GROUP IN IS LIKE RLIKE MAX MIN NOT NULL OR ORDER SELECT SUBSTR SUM SYSDATE
 UPPER WHERE COUNT DELETE EXCEPTION ROWNUM INDEX INSERT INTO SET TABLE TO_CHAR
 TO_NUMBER FOR_UPDATE UPDATE UNION VALUES COMMIT ROLLBACK PRIMARY_KEY UID USING
-{{% /highlight %}}
+```
 
 ## Data Types
 
-{{% highlight java %}}
+```java
 date datetime  time float double number decimal boolean integer varchar varchar2
 char timestamp long clob blob empty_clob() empty_blob() lob true false
-{{% /highlight %}}
+```
 
 ## Separators and operators
 
-{{% highlight java %}}
+```java
 :=  || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}
-{{% /highlight %}}
+```
 
 # Configuration
 
@@ -528,7 +528,7 @@ The JDBC Driver should be configured using the following properties. These shoul
 
 Example:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space  id="space" name="space" >
     <os-core:properties>
         <props>
@@ -537,7 +537,7 @@ Example:
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 # JDBC Error Codes
 

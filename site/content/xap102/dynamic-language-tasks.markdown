@@ -18,7 +18,7 @@ The first step in using scripting is exposing the built in scripting service ove
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- The scripting built in service executor -->
 <bean id="scriptingExecutor" class="org.openspaces.remoting.scripting.DefaultScriptingExecutor" />
@@ -36,12 +36,12 @@ The first step in using scripting is exposing the built in scripting service ove
 <os-events:polling-container id="eventContainer" giga-space="gigaSpace">
     <os-events:listener ref="serviceExporter">
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- The scripting built in service executor -->
 <bean id="scriptingExecutor" class="org.openspaces.remoting.scripting.DefaultScriptingExecutor" />
@@ -67,14 +67,14 @@ The first step in using scripting is exposing the built in scripting service ove
 <bean id="eventContainer" class="org.openspaces.events.polling.SimplePollingEventListenerContainer">
     <property name="eventListener" ref="serviceExporter">
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 The next simple step is using the exposed scripting service on the client side, here is a groovy example :
 
-{{% highlight java %}}
+```java
 public class MyRemoting {
 
     @EventDrivenScriptingExecutor
@@ -91,14 +91,14 @@ public class MyRemoting {
                                                                "println 'Sync Hello Groovy'"));
     }
 }
-{{% /highlight %}}
+```
 
 On the client side Spring XML configuration, the following needs to be defined (mainly to define the connection to the Space as the transport layer, and define the scripting annotation processor):
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:space-proxy id="space" name="mySpace"/>
 
@@ -107,12 +107,12 @@ On the client side Spring XML configuration, the following needs to be defined (
 <os-remoting:annotation-support />
 
 <bean id="myRemoting" class="MyRemoting" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
@@ -125,7 +125,7 @@ On the client side Spring XML configuration, the following needs to be defined (
 <bean id="remotingAnnotationSupport" class="org.openspaces.remoting.RemotingAnnotationBeanPostProcessor" />
 
 <bean id="myRemoting" class="MyRemoting" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -134,7 +134,7 @@ On the client side Spring XML configuration, the following needs to be defined (
 
 `Script` is a simple interface that is defined within the OpenSpaces scripting over remoting support. It has the following basic methods:
 
-{{% highlight java %}}
+```java
 public interface Script extends BroadcastIndicator {
 
     /**
@@ -175,7 +175,7 @@ public interface Script extends BroadcastIndicator {
      */
     Object[] getMetaArguments();
 }
-{{% /highlight %}}
+```
 
 There are several implementations of this class which is covered more in the client section. OpenSpaces comes with three different implementations of the `Script` interface, they are:
 
@@ -222,7 +222,7 @@ Here is the xml definition of an async scripting proxy (the sync proxy is exactl
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-remoting:event-driven-proxy id="eventDrivenScriptingExecutor" giga-space="gigaSpace"
                          interface="org.openspaces.remoting.scripting.ScriptingExecutor">
@@ -236,12 +236,12 @@ Here is the xml definition of an async scripting proxy (the sync proxy is exactl
         <bean class="org.openspaces.remoting.scripting.ScriptingMetaArgumentsHandler" />
     </os-remoting:meta-arguments-handler>
 </os-remoting:event-driven-proxy>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventDrivenScriptingExecutor" class="org.openspaces.remoting.EventDrivenSpaceRemotingProxyFactoryBean">
     <property name="gigaSpace" ref="gigaSpace" />
@@ -256,25 +256,25 @@ Here is the xml definition of an async scripting proxy (the sync proxy is exactl
         <bean class="org.openspaces.remoting.scripting.ScriptingMetaArgumentsHandler" />
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 Asynchronous scripting executor:
 
-{{% highlight java %}}
+```java
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
 ScriptingExecutor  executor = new EventDrivenScriptingProxyConfigurer (gigaSpace).scriptingExecutor();
-{{% /highlight %}}
+```
 
 Executor based scripting executor:
 
-{{% highlight java %}}
+```java
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
 ScriptingExecutor  executor = new ExecutorScriptingProxyConfigurer (gigaSpace).scriptingExecutor();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -285,9 +285,9 @@ The different components implemented by scripting basically enables all the diff
 
 The `Script` interface allows to set a routing index which controls, both in async and sync mode (not in broadcast mode), where the execution of the script is directed. Here is a simple example of it:
 
-{{% highlight java %}}
+```java
 asyncScriptingExecutor.execute(new StaticScript("myScript", "groovy","println 'Hello Groovy'").routing(1));
-{{% /highlight %}}
+```
 
 This causes the routing to go the the second member (assuming hash based routing is configured). Naturally, most often a business level routing will be used, for example, direct a script that executed on a certain share to a partition based on the share symbol.
 
@@ -295,8 +295,8 @@ This causes the routing to go the the second member (assuming hash based routing
 
 The `StaticResourceScript` holds the actual script contents and it gets passed for each execution of the script. If script supports caching, there is no need to pass the actual contents of the script on each execution, since once the script was compiled, only its parameters and other values are required, not the actual script. The `LazyLoadingRemoteInvocationAspect` aspect (on the client side) with the `ResourceLazyLoadingScript` script type allow for such behavior. As an example:
 
-{{% highlight java %}}
+```java
 asyncScriptingExecutor.execute(new ResourceLazyLoadingScript("test4", "groovy", "classpath:test.groovy").cache(true));
-{{% /highlight %}}
+```
 
 The above code only loads the `test.groovy` file if it is required on the server side. By default it is not sent, and if the server has not compiled it, it returns to the client and request the actual script content. The script is then loaded and sent again to the server. This logic is implemented by the `LazyLoadingRemoteInvocationAspect`.

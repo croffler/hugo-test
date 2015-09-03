@@ -15,7 +15,7 @@ Since Mule configuration uses Spring, the event container transport can be easil
 
 In order to use the event container transport (using XML namespaces), the following XML headers need to be defined:
 
-{{% highlight xml %}}
+```xml
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:os-events="http://www.openspaces.org/schema/events"
       xmlns:os-core="http://www.openspaces.org/schema/core"
@@ -33,13 +33,13 @@ In order to use the event container transport (using XML namespaces), the follow
        <!-- Mule configuration comes here ... -->
 
 </mule>
-{{% /highlight %}}
+```
 
 To configure OpenSpaces inbound or outbound components within Mule configuration file, we first have to configure the space. Declaring pure Spring beans within the Mule configuration file should be made between Spring bean tags.
 
 The `space` and `giga-space` are declared just like any other typical OpenSpaces Spring configuration, for example:
 
-{{% highlight xml %}}
+```xml
     <spring:beans>
         <!--
             A bean representing a space (an IJSpace implementation).
@@ -55,19 +55,19 @@ The `space` and `giga-space` are declared just like any other typical OpenSpaces
 		....
 
     </spring:beans>
-{{% /highlight %}}
+```
 
 When configuring inbound or outbound OpenSpaces event container endpoints, we must also configure an `OpenSpacesConnector` explicitly. This connector acts as a bridge between the inbound and outbound transports and the Spring application context. The application context is then used to get a reference to the `GigaSpace` bean and the specific polling or notify container beans.
 
-{{% highlight xml %}}
+```xml
 <os-eventcontainer:connector name="gigaSpacesConnector"/>
-{{% /highlight %}}
+```
 
 # Inbound Component
 
 OpenSpaces inbound component is based on either the polling event container or the notify event container. It registers itself as a listener to one of them. Here is an example of configuring a polling event container within the `spring:beans` Mule definition:
 
-{{% highlight xml %}}
+```xml
 <spring:beans>
 		......
 		......
@@ -80,13 +80,13 @@ OpenSpaces inbound component is based on either the polling event container or t
         </os-core:template>
     </os-events:polling-container>
 </spring:beans>
-{{% /highlight %}}
+```
 
 Unlike common polling/notify container configuration, this container lacks an event listener. This is due to the fact that the actual inbound transport acts as the event container listener.
 
 We then configure the inbound transport as defined in the example below. The `os-eventcontainer://<eventContainerBeanId>` address means that this is an inbound endpoint that receives messages from the OpenSpaces polling/notify container registered under the bean name `<eventContainerBeanId>`. Here is an example that uses the `helloPollingEventContainer` defined above.
 
-{{% highlight xml %}}
+```xml
 <model name="helloSample">
 
     <service name="MessageReaderUMO">
@@ -99,7 +99,7 @@ We then configure the inbound transport as defined in the example below. The `os
     </service>
 
 </model>
-{{% /highlight %}}
+```
 
 ## Threading Model
 
@@ -111,7 +111,7 @@ The outbound endpoint is used for updating or writing POJO messages back to the 
 
 We configure the outbound as defined in the example below. The `os-eventcontainer://< gigaSpacebeanId>` address means that this is an outbound endpoint that sends (writes) messages to the Space using the `GigaSpace` beans registered under the bean name `<gigaSpacebeanId>`. Here is an example:
 
-{{% highlight xml %}}
+```xml
 
 <model name="helloSample">
     <service name="MessageReaderUMO">
@@ -125,7 +125,7 @@ We configure the outbound as defined in the example below. The `os-eventcontaine
 	    </outbound-router>
     </service>
 </model>
-{{% /highlight %}}
+```
 
 There is option to configure `writeLease` (defaults to `FOREVER`), `updateOrWrite` (defaults to `true`), and `updateTimeout` (defaults to `0`) parameters.
 
@@ -137,7 +137,7 @@ Any operation performed using the `GigaSpace` interface joins the ongoing transa
 
 This means that any outbound component operating within a Spring managed transaction automatically joins the transaction since it uses `GigaSpace`. For outbound components that are used with a different inbound component (such as JMS), the Mule Spring transaction manager can be used. Here is an example (note the custom-transaction tag in the inbound and outbound transports):
 
-{{% highlight xml %}}
+```xml
 <spring:beans>
    <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -177,7 +177,7 @@ This means that any outbound component operating within a Spring managed transac
     </service>
 
 </model>
-{{% /highlight %}}
+```
 
 In the above example, the Mule transaction factory used is Spring-based, wrapping the Spring `PlatformTransactionManager`. For more information regarding OpenSpaces support for transactions (including XA), see the [OpenSpaces Core Component - Transaction Manager](./transaction-management.html) section.
 
@@ -185,7 +185,7 @@ In the above example, the Mule transaction factory used is Spring-based, wrappin
 
 In this example, POJO messages are received (`SimpleMessage`) from the Space, with their `read` flag set to `false`. The `MessageReader` service then processes the messages (and among other operations, sets the `read` flag to `true`). Finally, the `MessageReader` result is written back to the Space.
 
-{{% highlight xml %}}
+```xml
 
 <?xml version="1.0" encoding="UTF-8"?>
 <mule xmlns="http://www.mulesoft.org/schema/mule/core"
@@ -244,7 +244,7 @@ In this example, POJO messages are received (`SimpleMessage`) from the Space, wi
     </model>
 
 </mule>
-{{% /highlight %}}
+```
 
 # Message Metadata
 
@@ -258,7 +258,7 @@ If the returned object is not the payload within the `UMOMessage`, the transform
 
 Here is an example:
 
-{{% highlight java %}}
+```java
 public class MessageTransformer extends OpenSpacesTransformer {
 
     protected Object getResultPayload(UMOMessage message, String outputEncoding) {
@@ -268,13 +268,13 @@ public class MessageTransformer extends OpenSpacesTransformer {
         return pMsg;
     }
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 public class ProcessedMessage extends AbstractMessageHeader implements Message {
 
     private String message;
 		....
 		....
 }
-{{% /highlight %}}
+```

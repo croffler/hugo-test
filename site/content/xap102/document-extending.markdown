@@ -23,7 +23,7 @@ Let's create a type-safe document wrapper for the **Product** type described in 
 
 Here's an example (only parts of the properties have been implemented to keep the example short):
 
-{{% highlight java %}}
+```java
 public class ProductDocument extends SpaceDocument {
     private static final String TYPE_NAME = "Product";
     private static final String PROPERTY_CATALOG_NUMBER = "CatalogNumber";
@@ -58,14 +58,14 @@ public class ProductDocument extends SpaceDocument {
         return this;
     }
 }
-{{% /highlight %}}
+```
 
 # Registration
 
 If your only intention is to write/update document entries, creating the extension class is sufficient - from the space's perspective it is equivalent to a `SpaceDocument` instance. However, if you attempt to read/take entries from the space, the results will be `SpaceDocument` instances, and the cast to `ProductDocument` will throw an exception.
 To overcome that, we need to include the document wrapper class in the type introduction:
 
-{{% highlight java %}}
+```java
 public void registerProductType(GigaSpace gigaspace) {
     // Create type descriptor:
     SpaceTypeDescriptor typeDescriptor =
@@ -76,7 +76,7 @@ public void registerProductType(GigaSpace gigaspace) {
     // Register type:
     gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 }
-{{% /highlight %}}
+```
 
 This wrapper type-registration is kept in the proxy and not propagated to the server, so that from the server's perspective this is still a virtual document type with no affiliated POJO class.
 
@@ -84,7 +84,7 @@ This wrapper type-registration is kept in the proxy and not propagated to the se
 
 The following code snippet demonstrate usage of the `ProductDocument` extensions we've created to write and read documents from the space.
 
-{{% highlight java %}}
+```java
 public void example(GigaSpace gigaSpace) {
     // Create a product document:
     ProductDocument product = new ProductDocument()
@@ -105,7 +105,7 @@ public void example(GigaSpace gigaSpace) {
     // Read product document by ID:
     ProductDocument result3 = gigaSpace.readById(new IdQuery<ProductDocument>("Product", "hw-1234"));
 }
-{{% /highlight %}}
+```
 
 
 # Inheritance  Support
@@ -113,16 +113,16 @@ public void example(GigaSpace gigaSpace) {
 SpaceDocument query supports inheritance relationships so that entries of a sub-class are visible in the context of the super class, but not the other way around. For example, suppose class EmployeeDoc extends class PersonDoc and PersonDoc extends from `SpaceDocument`, you can register
 the the sub classes in the following way:
 
-{{%highlight java%}}
+```java
 SpaceTypeDescriptor employeeDescriptor = new SpaceTypeDescriptorBuilder(
 				"Subclass Document Type Name", parentSpaceTypeDescriptor).create();
-{{%/highlight%}}
+```
 
 Here is an example:
 
 {{%inittab%}}
 {{%tabcontent PersonDoc%}}
-{{%highlight java%}}
+```java
 public class PersonDoc extends SpaceDocument {
 
 	public static final String TYPE_ID = "ID";
@@ -161,11 +161,11 @@ public class PersonDoc extends SpaceDocument {
 		super.setProperty(LAST_NAME, name);
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent EmployeeDoc%}}
-{{%highlight java%}}
+```java
 public class EmployeeDoc extends PersonDoc {
 
 	public static final String TYPE_NAME = "EmployeeDoc";
@@ -184,11 +184,11 @@ public class EmployeeDoc extends PersonDoc {
 		super.setProperty(EMPLOYE_NUMBER, number);
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent RegisterDocument%}}
-{{%highlight java%}}
+```java
 	static public void registerDocument(GigaSpace space) {
 		SpaceTypeDescriptor personDescriptor = new SpaceTypeDescriptorBuilder(
 				PersonDoc.TYPE_NAME).documentWrapperClass(PersonDoc.class).
@@ -201,11 +201,11 @@ public class EmployeeDoc extends PersonDoc {
 		// Register type:
 		space.getTypeManager().registerTypeDescriptor(employeeDescriptor);
 	}
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent Program%}}
-{{%highlight java%}}
+```java
 public static void main(String[] args) {
 
 		// Create the Space
@@ -247,6 +247,6 @@ public static void main(String[] args) {
 		System.out.println(result2.length);
 }
 
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 {{%/inittab%}}

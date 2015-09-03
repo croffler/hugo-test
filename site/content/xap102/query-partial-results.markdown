@@ -31,7 +31,7 @@ This approach reduces network overhead, garbage memory generation and CPU overhe
 
 Projection supports using a [SQLQuery](./query-sql.html) or [Id Queries](./query-by-id.html). Below is a simple example reading a `Person` Object where only the 'firstName' and 'lastName' properties are returned in the array or results. All other `Person` properties will not be populated:
 
-{{% highlight java %}}
+```java
 public class Person
 {
   ...
@@ -46,13 +46,13 @@ public class Person
 GigaSpace gigaSpace = //... obtain a gigaspace reference.
 Long id = //... obtain the space object ID.
 Person result = gigaSpace.read<Person>(new IdQuery<Person>(Person.class, id).setProjections("firstName", "lastName"));
-{{% /highlight %}}
+```
 
 With the above example a specific Person is being read but only its 'firstName' and 'lastName' will contains values and all the other properties will contain a `null` value.
 
 You may use the same approach with the `SQLQuery` or `IdsQuery`:
 
-{{% highlight java %}}
+```java
 SQLQuery<Person> query = new SQLQuery<Person>(Person.class,"").
 		setProjections("firstName", "lastName");
 Person result[] = gigaSpace.readMultiple(query);
@@ -60,26 +60,26 @@ Person result[] = gigaSpace.readMultiple(query);
 IdsQuery<Person> idsQuery = new IdsQuery<Person>(Person.class, new Long[]{id1,id2}).
 		setProjections("firstName", "lastName");
 Person result[] = space.readByIds(idsQuery).getResultsArray();
-{{% /highlight %}}
+```
 
 
 
 
 The [SpaceDocument API](./document-api.html) supports projection as well:
 
-{{% highlight java %}}
+```java
 SQLQuery<SpaceDocument> docQuery = new SQLQuery<SpaceDocument>(Person.class.getName() ,"",
 	QueryResultType.DOCUMENT).setProjections("firstName", "lastName");
 SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
-{{% /highlight %}}
+```
 
 You can also use projection for nested properties:
 
-{{% highlight java %}}
+```java
 SQLQuery<SpaceDocument> docQuery = new SQLQuery<SpaceDocument>(Person.class.getName() ,"",
 	QueryResultType.DOCUMENT).setProjections("user.address.street", "user.address.zipCode");
 SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
-{{% /highlight %}}
+```
 
 
 # Supported Operations

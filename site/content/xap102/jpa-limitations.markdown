@@ -77,7 +77,7 @@ Functionalities that are not supported by the XAP JPA API.
 - Lazy loading is not supported and therefore entities are always Eagerly loaded.
 - Optimistic locking is not supported and therefore the LockManager property should always be set to "none" in persistence.xml (Supported in 8.0.1):
 
-{{% highlight xml %}}
+```xml
   <property name="LockManager" value="none"/>
-{{% /highlight %}}
+```
 

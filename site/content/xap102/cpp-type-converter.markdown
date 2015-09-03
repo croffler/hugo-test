@@ -28,13 +28,13 @@ To write and implement your conversion code:
 
 Step 1. Add the attribute `[custom-serialization="true"]` to the `class` element in the `gs.xml` file:
 
-{{% highlight xml %}}
+```xml
 <class name="UserMessage" custom-serialization="true" persist="false" replicate="false" fifo="false" >
-{{% /highlight %}}
+```
 
 Step 2. Write the type conversion code (use `<Example Root>\UserMessageSerializerPackaging.cpp` as an example):
 
-{{% highlight cpp %}}
+```cpp
 #define DONT_INCLUDE_SERIALIZER_EXPORTS
 
 #include "UserMessageSerializer.cpp"
@@ -68,7 +68,7 @@ void	UserMessageSerializer::PostDeserialize(IEntry* pNewObject)
 	p->buffer2.clear();
 
 };
-{{% /highlight %}}
+```
 
 {{% info %}}
 These functions extend the functionality of the generated serializer (`UserMessageSerializer.cpp`). The first function `PreSerialize` converts the map field to two vectors before the serialization. The second function `PostDeserialize` converts the two vectors back to a map field after the de serialization.
@@ -84,7 +84,7 @@ Step 4. **Rebuild** and run your code.
 
 The console will have the following output:
 
-{{%highlight console%}}
+```console
 
     Retrieved a space proxy
     Did snapshot for UserMessage class
@@ -109,4 +109,4 @@ The console will have the following output:
     map[key1] = ALPHA
     map[key2] = BETA
     Press Enter to end this example...
-{{%/highlight%}}
+```

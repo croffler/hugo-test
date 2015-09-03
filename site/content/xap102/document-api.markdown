@@ -50,7 +50,7 @@ The following is an example of how to introduce a new document type:
 {{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace Configuration %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace"  >
       <os-core:space-type type-name="Product" >
 		<os-core:id property="CatalogNumber"/>
@@ -61,12 +61,12 @@ The following is an example of how to introduce a new document type:
 </os-core:embedded-space>
 <os-core:giga-space id="gigaSpace" space="space"/>
 
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain Spring XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
     <property name="spaceTypes" >
@@ -104,12 +104,12 @@ The following is an example of how to introduce a new document type:
    	      </list>
         </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 public void registerProductType(GigaSpace gigaspace) {
     // Create type descriptor:
     SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
@@ -121,7 +121,7 @@ public void registerProductType(GigaSpace gigaspace) {
     // Register type:
     gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -359,7 +359,7 @@ Here is an example:
 {{%/tabcontent%}}
 
 {{%tabcontent RegisterDocument%}}
-{{%highlight java%}}
+```java
 	static public void registerDocument(GigaSpace space) {
 		SpaceTypeDescriptor personDescriptor = new SpaceTypeDescriptorBuilder(
 				"Person").idProperty("Id").create();
@@ -371,7 +371,7 @@ Here is an example:
 		// Register type:
 		space.getTypeManager().registerTypeDescriptor(employeeDescriptor);
 	}
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 {{%/inittab%}}
 
@@ -395,7 +395,7 @@ Here is a simple example of a polling event container configuration using a `Doc
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight xml %}}
+```xml
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
 
@@ -412,9 +412,9 @@ Here is a simple example of a polling event container configuration using a `Doc
 </os-core:embedded-space>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling
 public class SimpleListener {
 
@@ -430,12 +430,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace">
   <os-core:space-type type-name="Product" >
 		<os-core:id property="CatalogNumber"/>
@@ -468,12 +468,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -507,12 +507,12 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 GigaSpace gigaSpace = // either create the GigaSpace or get it by injection
 
@@ -529,7 +529,7 @@ SimplePollingEventListenerContainer pollingEventListenerContainer = new SimplePo
 
 // when needed close the polling container
 pollingEventListenerContainer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -541,19 +541,19 @@ pollingEventListenerContainer.destroy();
 {{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace Configuration %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace">
     <os-core:space-type type-name="Product" fifo-support="OPERATION" >
 		<!-- other properties definition -->
     </os-core:space-type>
 </os-core:embedded-space>
 <os-core:giga-space id="gigaSpace" space="space"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain Spring XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
     <property name="spaceTypes" >
@@ -573,12 +573,12 @@ pollingEventListenerContainer.destroy();
         <property name="fifoSupport" value="OPERATION"/>
 
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 // Create type descriptor:
 SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
     // Other type descriptor settings.
@@ -586,7 +586,7 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
     .create();
 // Register type:
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -606,19 +606,19 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 {{% inittab os_simple_space %}}
 {{% tabcontent Spring Namespace Configuration %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace">
       <os-core:space-type type-name="Product" optimistic-lock="true" >
 		<!-- other properties definition -->
       </os-core:space-type>
 </os-core:embedded-space>
 <os-core:giga-space id="gigaSpace" space="space"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain Spring XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
     <property name="spaceTypes" >
@@ -638,12 +638,12 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
         <!-- other properties definition -->
         <property name="optimisticLock" value="true"/>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 // Create type descriptor:
 SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
     // Other type descriptor settings.
@@ -651,7 +651,7 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
     .create();
 // Register type:
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -676,7 +676,7 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 {{% inittab example %}}
 {{% tabcontent Configuration %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="documentDataSource" class="com.test.DocumentEDS"/>
 
 <os-core:embedded-space id="space" name="mySpace" schema="persistent" external-data-source="documentDataSource">
@@ -690,13 +690,13 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent The EDS Implementation %}}
 
-{{% highlight java %}}
+```java
 package com.test;
 
 public class DocumentEDS
@@ -747,7 +747,7 @@ public class DocumentEDS
     }
 
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

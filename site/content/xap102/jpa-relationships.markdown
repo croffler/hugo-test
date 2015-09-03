@@ -17,13 +17,13 @@ within a Collection in Author.
 When defining a One-to-one/One-to-many relationship the cascading type should be set to CascadeType.ALL using the relationship's annotation cascade attribute since no-cascading is unsupported.
 Setting cascading globally can also be done in orm.xml:
 
-{{% highlight xml %}}
+```xml
 <persistence-unit-metadata>
   <persistence-unit-defaults>
     <cascade-persist/>
   </persistence-unit-defaults>
 </persistence-unit-metadata>
-{{% /highlight %}}
+```
 {{% /vbar %}}
 
 {{%refer%}}
@@ -35,7 +35,7 @@ Further information can be found on the [Modeling your data](/sbp/modeling-your-
 In the following example we have a Store entity which has an embedded Address property.
 In this case, the Address property is saved as is within Store.
 
-{{% highlight java %}}
+```java
 // An Embeddable Address object
 @Embeddable
 public class Address implements Serializable {
@@ -86,7 +86,7 @@ public class Store {
   /* Additional Getters & Setters */
 
 }
-{{% /highlight %}}
+```
 
 We created an Embeddable Address object and used it as a property in our Store object.
 
@@ -96,11 +96,11 @@ Please note that Embeddable classes must be Serializable since they're transferr
 
 It's possible to query a Store entity by an Address property in the following way:
 
-{{% highlight java %}}
+```java
 EntityManager em = emf.createEntityManager();
 Query query = em.createQuery("SELECT store FROM com.gigaspaces.objects.Store store WHERE s.address.city = 'London'");
 List<Store> result = (List<Store>) query.getResultList();
-{{% /highlight %}}
+```
 
 # One-to-one
 
@@ -111,7 +111,7 @@ As with Embeddable classes, owned entities in a relationship should always be Se
 
 In the following example we show a One-to-one relationship between two entities, Order & Invoice:
 
-{{% highlight java %}}
+```java
 @Entity
 public class Order {
   private Long id;
@@ -164,15 +164,15 @@ public class Invoice implements Serializable {
   // Additional Getters & Setters...
 
 }
-{{% /highlight %}}
+```
 
 For One-to-one relationship we can use an Inner Join for querying:
 
-{{% highlight java %}}
+```java
 EntityManager em = emf.createEntityManager();
 Query query = em.createQuery("SELECT order FROM com.gigaspaces.objects.Order order JOIN o.invoice invoice WHERE invoice.sum > 499.99");
 List<Order> orders = (List<Order>) query.getResultList();
-{{% /highlight %}}
+```
 
 {{% tip %}}
 We defined an extended index on Invoice.sum and therefore the above query takes advantage of the defined index.
@@ -186,7 +186,7 @@ As with One-to-one, owned entities in a relationship should always be Serializab
 
 Lets examine the following example:
 
-{{% highlight java %}}
+```java
 // An Author entity which will be the owner of a relationship.
 @Entity
 public class Author {
@@ -238,15 +238,15 @@ public class Book implements Serializable {
   // Additional Getters & Setters..
 
 }
-{{% /highlight %}}
+```
 
 We can use a JPQL Inner Join for querying an Author by a specific Book id:
 
-{{% highlight java %}}
+```java
 EntityManager em = emf.createEntityManager();
 Query query = em.createQuery("SELECT author FROM com.gigaspaces.objects.Author author JOIN author.books book WHERE book.id = 100");
 Author result = (Author) query.getSingleResult();
-{{% /highlight %}}
+```
 
 {{% tip %}}
 We defined an index on Book.id and therefore the above query takes advantage of the defined index.

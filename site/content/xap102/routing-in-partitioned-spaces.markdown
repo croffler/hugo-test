@@ -29,14 +29,14 @@ Note that in such a configuration, the different spaces defined as partitions ar
 
 In order to accomplish that a **routing property** can be defined on the entry type. When the proxy is asked to write an entry, it uses the entry's routing property's hash code to determine the relevant partition for it:
 
-{{% highlight java %}}
+```java
 Target partition space ID = safeABS(routing field hashcode) % (number of partitions)
 
 int safeABS( int value)
 {
      return value == Integer.MIN_VALUE ? Integer.MAX_VALUE : Math.abs(value);
 }
-{{% /highlight %}}
+```
 
 The routing property can be explicitly set using the `@SpaceRouting` annotation for [POJO entries](./pojo-support.html) or via the `SpaceTypeDescriptorBuilder` for [document entries](./document-api.html). If the routing property is not explicitly set, the space id property is used for routing. If the space id property is not defined, the first indexed property (alphabetically) is used for routing, otherwise the first property (alphabetically) is used for routing.
 

@@ -23,7 +23,7 @@ The rest of the interface is for deploying the service and we just need to chang
 
 
 
-{{% highlight cpp %}}
+```cpp
 #include <windows.h>
 #endif
 
@@ -142,7 +142,7 @@ extern "C" EXPORT ICppWorker* getWorkerByClass(const char* className)
 	std::cout<<  "---- className: " << className << std::endl;
 	return (0 == strcmp(className, "CppService")) ? new CppService : 0;
 }
-{{% /highlight %}}
+```
 
 
 
@@ -154,7 +154,7 @@ The CPP PU following the standard [Processing Unit Configuration](./the-processi
 
 The Processing Unit configuration file (`<XAP Root>\cpp\examples\CppServiceOpenSpaces\src\META-INF\spring\pu.xml`) includes the following:
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -187,7 +187,7 @@ The Processing Unit configuration file (`<XAP Root>\cpp\examples\CppServiceOpenS
 		<property name="workerName" value="CppService" />
     </bean>
 </beans>
-{{% /highlight %}}
+```
 
 
 
@@ -197,20 +197,20 @@ The Processing Unit configuration file (`<XAP Root>\cpp\examples\CppServiceOpenS
 - Select the _Release_ configuration and rebuild the solution.
 - Run:
 
-{{% highlight console %}}
+```console
 <XAP Root>\bin\gs-agent.bat/sh
-{{% /highlight %}}
+```
 
 The build and configuration files are located in `<XAP Root>\cpp\examples\CppServiceOpenSpaces` folder.
 To deploy the processing unit , move to the above folder and run the following:
 
-{{% highlight console %}}
+```console
 build deploy-local-cppexample
-{{% /highlight %}}
+```
 
 The following output will be displayed:
 
-{{% highlight console %}}
+```console
 D:\gigaspaces-xap-premium-7.1.0-ga\cpp\examples\CppServiceOpenSpaces>build.bat deploy-local-cppexample
 Buildfile: build.xml
 
@@ -242,11 +242,11 @@ deploy-local-cppexample:
 
 BUILD SUCCESSFUL
 Total time: 26 seconds
-{{% /highlight %}}
+```
 
 The gs-agent console will have the following output:
 
-{{% highlight console %}}
+```console
 [gsc][5/5352]   ----Find Proxy ------
 [gsc][5/5352]   -- Snapshot Done
 [gsc][5/5352]   *****Worker Running*****
@@ -259,7 +259,7 @@ The gs-agent console will have the following output:
 [gsc][5/5352]   -- Write Message Done
 [gsc][5/5352]   -- Read Message Done
 [gsc][5/5352]   -- Take Message Done
-{{% /highlight %}}
+```
 
 To view the deployed CPP PU start the GS-UI:
 

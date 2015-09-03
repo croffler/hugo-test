@@ -39,9 +39,9 @@ There are several ways to configure Space session based support, depending on th
 
 Here is how you can deploy an existing WAR file without changing it (or use Spring) to use XAP HTTP Session Management:
 
-{{% highlight java %}}
+```java
 gs deploy -properties embed://jetty.sessions.spaceUrl=jini://*/*/sessionSpace?useLocalCache myWar.war
-{{% /highlight %}}
+```
 
 ## Using Spring
 

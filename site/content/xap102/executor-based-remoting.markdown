@@ -36,7 +36,7 @@ The `executor-proxy` include the following properties:
 |interface | Class | Yes | | The interface (fully qualified class name) that this remoting proxy implements. Also controls which service will be invoked in the "server" (Processing Unit).| |
 
 Example:
-{{% highlight xml %}}
+```xml
 <bean id="dataProcessor" class="org.openspaces.remoting.ExecutorSpaceRemotingProxyFactoryBean">
     <property name="gigaSpace" ref="gigaSpace" />
     <property name="timeout" value="60000" />
@@ -60,13 +60,13 @@ Example:
         <bean class="org.openspaces.example.data.feeder.support.DataRemoteRoutingHandler"/>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 # Defining the Contract
 
 In order to support remoting, the first step is to define the contract between the client and the server. In our case, the contract is a simple Java interface. Here is an example:
 
-{{% highlight java %}}
+```java
 public interface IDataProcessor {
 
     /**
@@ -74,7 +74,7 @@ public interface IDataProcessor {
      */
     Data processData(Data data);
 }
-{{% /highlight %}}
+```
 
 {{% exclamation %}} The `Data` object should be `Serializable`, or better yet, `Externalizable` (for better performance).
 
@@ -85,7 +85,7 @@ Next, an implementation of this contract needs to be provided. This implementati
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @RemotingService
 public class DataProcessor implements IDataProcessor {
 
@@ -94,12 +94,12 @@ public class DataProcessor implements IDataProcessor {
     	return data;
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent XML %}}
 
-{{% highlight java %}}
+```java
 public class DataProcessor implements IDataProcessor {
 
     public Data processData(Data data) {
@@ -107,7 +107,7 @@ public class DataProcessor implements IDataProcessor {
     	return data;
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -121,7 +121,7 @@ The next step is exporting the service over the space. Exporting the service is 
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight xml %}}
+```xml
 <!-- Support @RemotingService component scanning -->
 <context:component-scan base-package="com.demo"/>
 
@@ -133,12 +133,12 @@ The next step is exporting the service over the space. Exporting the service is 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
 <os-remoting:service-exporter id="serviceExporter" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -148,12 +148,12 @@ The next step is exporting the service over the space. Exporting the service is 
 <os-remoting:service-exporter id="serviceExporter">
      <os-remoting:service ref="dataProcessor"/>
 </os-remoting:service-exporter>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -171,7 +171,7 @@ The next step is exporting the service over the space. Exporting the service is 
         </list>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -186,7 +186,7 @@ Exporting services is done on a Processing Unit (or a Spring application context
 
 In order to use the exported `IDataProcessor` on the client side, beans should use the `IDataProcessor` interface directly:
 
-{{% highlight java %}}
+```java
 public class DataRemoting {
 
     private IDataProcessor dataProcessor;
@@ -196,14 +196,14 @@ public class DataRemoting {
 
     }
 }
-{{% /highlight %}}
+```
 
 Configuring the `IDataProcessor` proxy can done in the following manner:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -215,12 +215,12 @@ Configuring the `IDataProcessor` proxy can done in the following manner:
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -237,12 +237,12 @@ Configuring the `IDataProcessor` proxy can done in the following manner:
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
@@ -253,14 +253,14 @@ IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcesso
 DataRemoting dataRemoting = new DataRemoting();
 
 dataRemoting.setDataProcessor(dataProcessor);
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 The example above uses the `executor-proxy` bean in order to create the remoting proxy which can later be injected into the `DataRemoting` object. OpenSpaces remoting also allows injection of the remoting proxy into the remoting service property using annotations. Here is an example of annotating the `DataRemoting` class:
 
-{{% highlight java %}}
+```java
 public class DataRemoting {
 
     @ExecutorProxy
@@ -268,7 +268,7 @@ public class DataRemoting {
 
     // ...
 }
-{{% /highlight %}}
+```
 
 If there are more than one `GigaSpace` beans defined within the application context, the ID of the `giga-space` bean should be defined explicitly on the annotations via the `name` attribute.
 
@@ -277,16 +277,16 @@ In order to enable this feature, the following element needs to be added to the 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-remoting:annotation-support />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.remoting.RemotingAnnotationBeanPostProcessor" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -295,7 +295,7 @@ In order to enable this feature, the following element needs to be added to the 
 
 Many times, space remoting is done by exporting services in a space with a partitioned cluster topology. The service is exported when working directly with a cluster member (and not against the whole space cluster). When working with such a topology, the client side remoting automatically generates a random routing index value. In order to control the routing index, the following interface can be implemented:
 
-{{% highlight java %}}
+```java
 public interface RemoteRoutingHandler<T> {
 
     /**
@@ -304,11 +304,11 @@ public interface RemoteRoutingHandler<T> {
      */
     T computeRouting(SpaceRemotingInvocation remotingEntry);
 }
-{{% /highlight %}}
+```
 
 Here is a sample implementation which uses the first parameter `Data` object type as the routing index.
 
-{{% highlight java %}}
+```java
 public class DataRemoteRoutingHandler implements RemoteRoutingHandler<Long> {
 
     public Long computeRouting(SpaceRemotingInvocation remotingEntry) {
@@ -319,14 +319,14 @@ public class DataRemoteRoutingHandler implements RemoteRoutingHandler<Long> {
         return null;
     }
 }
-{{% /highlight %}}
+```
 
 Finally, the wiring is done in the following manner:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -341,12 +341,12 @@ Finally, the wiring is done in the following manner:
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -366,12 +366,12 @@ Finally, the wiring is done in the following manner:
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
@@ -383,7 +383,7 @@ IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcesso
 DataRemoting dataRemoting = new DataRemoting();
 
 dataRemoting.setDataProcessor(dataProcessor);
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -392,21 +392,21 @@ dataRemoting.setDataProcessor(dataProcessor);
 
 The option, above, using the remote routing handler is very handy when not using annotations (broadcasting). OpenSpaces remoting also supports the `@Routing` annotation in order to define which parameter controls the routing. Here is an example:
 
-{{% highlight java %}}
+```java
 public interface MyService {
 
     void doSomething(@Routing int param1, int param2);
 }
-{{% /highlight %}}
+```
 
 In the example above, the routing is done using the param1 value. In complex objects, a method name can be specified to be invoked on the parameter, in order to get the actual routing index. Here is an example:
 
-{{% highlight java %}}
+```java
 public interface MyService {
 
     void doSomething(@Routing("getProperty") Value param1, int param2);
 }
-{{% /highlight %}}
+```
 
 In the example, the `getProperty` method is called on the `Value` object, and its return value is subsequently used to extract the routing index.
 
@@ -424,25 +424,25 @@ Since the definition of the interface acts as the contract between the client an
 
 The client and the server can have a different service interface definition under the same package and under the same name. The server includes the actual implementation:
 
-{{% highlight java %}}
+```java
 public interface SimpleService {
 
     String say(String message);
 
     int calc(int value1, int value2);
 }
-{{% /highlight %}}
+```
 
 The client has the same method except it returns a future:
 
-{{% highlight java %}}
+```java
 public interface SimpleService {
 
     AsyncFuture<String> say(String message);
 
     int calc(int value1, int value2);
 }
-{{% /highlight %}}
+```
 
 In the above example, the `say()` method uses a `Future` in order to receive the result, while the `calc` method remains synchronous.
 
@@ -454,14 +454,14 @@ When using different services, it is important to include the interface definiti
 
 Both the client and server share the same interface, with the interface holding both synchronous and asynchronous services. Here is an example:
 
-{{% highlight java %}}
+```java
 public interface SimpleService {
 
     String say(String message);
 
     AsyncFuture<String> asyncSay(String message);
 }
-{{% /highlight %}}
+```
 
 In the above case, the server implementation does not need to implement the `asyncSay` method (simply return `null` for the `asyncSay` method). The client side can choose which service to invoke.
 You should note the naming convention and the signature of the asynchronous method in this case.
@@ -474,17 +474,17 @@ In other words, the regular method should be prefixed with `async` and the retur
 
 Each parameter of a remote service can be dynamically injected as if it were a bean defined within the server side (where the service is actually executed) context. This allows you to utilize server side resources and state, within the actual invocation. In order to enable such injection the service interface should either be annotated with `AutowireArguments` annotation, or implement the marker interface `AutowireArgumentsMarker`. Let's see an example:
 
-{{% highlight java %}}
+```java
 @AutowireArguments
 public interface MyService {
 
     void doSomething(Value param1);
 }
-{{% /highlight %}}
+```
 
 The above service exposes a service which accepts a `Value` as a parameter. The `Value` parameter, if needed, can be injected dynamically with server side resources and state. For example, if the server side execution needs to be aware of the `ClusterInfo`, the `Value` parameter can implement the `ClusterInfoAware` interface. Here is what it looks like:
 
-{{% highlight java %}}
+```java
 public class Value implements ClusterInfoAware {
 
     private transient ClusterInfo clusterInfo;
@@ -493,7 +493,7 @@ public class Value implements ClusterInfoAware {
         this.clusterInfo = clusterInfo;
     }
 }
-{{% /highlight %}}
+```
 
 {{% info %}}
 Note the fact that `clusterInfo` is transient, so it won't be marshaled after injection back to the client.
@@ -501,13 +501,13 @@ Note the fact that `clusterInfo` is transient, so it won't be marshaled after in
 
 Another example is injecting another service that is defined in the server side directly into the parameter, for example, using Spring `@Autowired` annotation.
 
-{{% highlight java %}}
+```java
 public class Value implements ClusterInfoAware {
 
     @Autowired
     private transient AnotherService anotherService;
 }
-{{% /highlight %}}
+```
 
 # Transactional Execution
 
@@ -519,7 +519,7 @@ Here is a simple example how the Client and the Service should be configured:
 
 Client pu.xml
 
-{{% highlight xml %}}
+```xml
 <context:component-scan base-package="com.demo"/>
 <os-core:space-proxy id="space" name="mySpace"/>
 
@@ -541,11 +541,11 @@ Client pu.xml
 	   <property name="myService" ref="myService" />
 	   <property name="gigaspace" ref="gigaspace" />
 </bean>
-{{% /highlight %}}
+```
 
 Client Implementation
 
-{{% highlight java %}}
+```java
 @Transactional(readOnly = true , value="myTransactionManager")
 public class Client{
 	GigaSpace gigaspace ;
@@ -565,21 +565,21 @@ public class Client{
 		System.out.println("Service Call Done! - Result:"+ret);
 	}
 }
-{{% /highlight %}}
+```
 
 Service pu.xml
 
-{{% highlight xml %}}
+```xml
 <context:component-scan base-package="com.demo"/>
 <os-remoting:annotation-support />
 <os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 <os-remoting:service-exporter id="serviceExporter" />
-{{% /highlight %}}
+```
 
 Service Implementation
 
-{{% highlight java %}}
+```java
 @RemotingService
 @Transactional(readOnly = true)
 public class MyService implements IMyService {
@@ -595,7 +595,7 @@ public class MyService implements IMyService {
 		System.out.println("Service - TX:" + gigaSpace.getCurrentTransaction());
 	}
 }
-{{% /highlight %}}
+```
 
 # Execution Aspects
 
@@ -605,7 +605,7 @@ Space based remoting allows you to inject "aspects" that can wrap the invocation
 
 The client invocation aspect interface is shown below. You should implement this interface and wire and instance of the implementing class to the client side remote proxy, as explained below:
 
-{{% highlight java %}}
+```java
 public interface RemoteInvocationAspect<T> {
 
     /**
@@ -615,14 +615,14 @@ public interface RemoteInvocationAspect<T> {
      */
     T invoke(MethodInvocation methodInvocation, RemotingInvoker remotingInvoker) throws Throwable;
 }
-{{% /highlight %}}
+```
 
 An implementation of such an aspect can be configured as follows:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -637,12 +637,12 @@ An implementation of such an aspect can be configured as follows:
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -662,12 +662,12 @@ An implementation of such an aspect can be configured as follows:
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
@@ -679,7 +679,7 @@ IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcesso
 DataRemoting dataRemoting = new DataRemoting();
 
 dataRemoting.setDataProcessor(dataProcessor);
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -693,7 +693,7 @@ If the aspect implementation decides to proceed with the call it should call `me
 
 The server side invocation aspect interface is shown below. You should implement this interface and wire and instance of the implementing class to the server side service exporter (this is the component that is responsible for exposing your service bean to remote clients):
 
-{{% highlight java %}}
+```java
 public interface ServiceExecutionAspect {
 
     /**
@@ -707,14 +707,14 @@ public interface ServiceExecutionAspect {
     Object invoke(SpaceRemotingInvocation invocation, Method method, Object service)
                                   throws InvocationTargetException, IllegalAccessException;
 }
-{{% /highlight %}}
+```
 
 An implementation of such an aspect can be configured as follows:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -727,12 +727,12 @@ An implementation of such an aspect can be configured as follows:
      </os-remoting:aspect>
      <os-remoting:service ref="dataProcessor"/>
 </os-remoting:service-exporter>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -753,7 +753,7 @@ An implementation of such an aspect can be configured as follows:
         </list>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -767,7 +767,7 @@ When executing a service using Space based remoting, a set of one or more metada
 
 To create the meta arguments on the client side you should implement the following interface and inject an instance of the implementing class to the client side proxy:
 
-{{% highlight java %}}
+```java
 public interface MetaArgumentsHandler {
 
     /**
@@ -776,14 +776,14 @@ public interface MetaArgumentsHandler {
      */
     Object[] obtainMetaArguments(SpaceRemotingInvocation remotingEntry);
 }
-{{% /highlight %}}
+```
 
 The following snippets show how to plug a custom meta arguments handler to the client side remote proxy. The `Object` array returned by the implementation of the `MetaArgumentsHandler` interface will be sent along with the invocation to server side.
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:space-proxy  id="space" name="mySpace"/>
 
@@ -799,12 +799,12 @@ The following snippets show how to plug a custom meta arguments handler to the c
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
@@ -825,12 +825,12 @@ The following snippets show how to plug a custom meta arguments handler to the c
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
@@ -842,7 +842,7 @@ IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcesso
 DataRemoting dataRemoting = new DataRemoting();
 
 dataRemoting.setDataProcessor(dataProcessor);
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -864,7 +864,7 @@ The configuration of enabling broadcasting is done on the client level, by setti
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -876,12 +876,12 @@ The configuration of enabling broadcasting is done on the client level, by setti
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -899,12 +899,12 @@ The configuration of enabling broadcasting is done on the client level, by setti
 <bean id="dataRemoting" class="DataRemoting">
     <property name="dataProcessor" ref="dataProcessor" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
@@ -916,7 +916,7 @@ IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcesso
 DataRemoting dataRemoting = new DataRemoting();
 
 dataRemoting.setDataProcessor(dataProcessor);
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -925,7 +925,7 @@ dataRemoting.setDataProcessor(dataProcessor);
 
 When broadcasting remote invocations to all active cluster members, and the remote method returns a result, on the client side an array of all remote results needs to be processed. By default, the first result is returned, and it can be overridden using the `return-first-result` flag (which will then return the array of responses). The executor remoting proxy allows for a pluggable remote result reducer that can reduce a collection of remoting results into a single one. Here is the defined interface:
 
-{{% highlight java %}}
+```java
 public interface RemoteResultReducer<T, Y> {
 
     /**
@@ -942,7 +942,7 @@ public interface RemoteResultReducer<T, Y> {
      */
     T reduce(SpaceRemotingResult<Y>[] results, SpaceRemotingInvocation remotingInvocation) throws Exception;
 }
-{{% /highlight %}}
+```
 
 # Failover
 
@@ -952,7 +952,7 @@ Executor proxy is aware of each partition in the cluster and connection with the
 
 If the backup space does not become ready to accept requests within the configured number of retries, execute request will fail with an Exception. In case of a broadcast request, `SpaceRemotingResult` for failed partition will have an exception. Following example shows how to inspect for exceptions in Reducer,
 
-{{% highlight java %}}
+```java
 public class DataProcessorServiceReducer implements RemoteResultReducer<Integer, Integer>{
 
 	public Integer reduce(SpaceRemotingResult<Integer>[] results,
@@ -973,7 +973,7 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Integer,
 		return total_result/results.length  ;
 	}
 }
-{{% /highlight %}}
+```
 
 # Working Examples
 

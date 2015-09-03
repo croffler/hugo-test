@@ -30,7 +30,7 @@ Include the following in your `pom.xml`
 {{% inittab %}}
 {{% tabcontent "hector using log4j" %}}
 
-{{% highlight xml %}}
+```xml
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-clientutil</artifactId>
@@ -48,12 +48,12 @@ Include the following in your `pom.xml`
     <artifactId>hector-core</artifactId>
     <version>{{%version hector-core%}}</version>
 </dependency>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "hector using java.util.logging" %}}
 
-{{% highlight xml %}}
+```xml
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-clientutil</artifactId>
@@ -88,7 +88,7 @@ Include the following in your `pom.xml`
     <artifactId>slf4j-jdk14</artifactId>
     <version>{{%version slf4j-jdk14%}}</version>
 </dependency>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -98,7 +98,7 @@ Include the following in your `pom.xml`
 {{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-archive-cassandra:cassandra-archive-handler id="cassandraArchiveHandler"
   giga-space="gigaSpace"
@@ -107,12 +107,12 @@ Include the following in your `pom.xml`
   keyspace="mykeyspace"
   write-consistency="QUORUM"
 />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="cassandraArchiveHandler" class="org.openspaces.persistency.cassandra.archive.CassandraArchiveOperationHandler">
 	<property name="gigaSpace" ref="gigaSpace"/>
@@ -121,12 +121,12 @@ Include the following in your `pom.xml`
 	<property name="keyspace" value="mykeyspace" />
 	<property name="writeConsistency" value="QUORUM" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 ArchiveOperationHandler cassandraArchiveHandler =
     new CassandraArchiveOperationHandlerConfigurer()
@@ -141,7 +141,7 @@ ArchiveOperationHandler cassandraArchiveHandler =
 // A good life cycle event to place the destroy() call would be within the @PreDestroy or DisposableBean#destroy() method.
 
 archiveContainer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -171,10 +171,10 @@ By default when serializing object/document properties to column values, the fol
 It is possible to override this default behavior by providing a custom implementation of [PropertyValueSerializer](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?org/openspaces/persistency/cassandra/meta/types/dynamic/PropertyValueSerializer.html).
 This interface is defined by these 2 methods:
 
-{{% highlight java %}}
+```java
 ByteBuffer toByteBuffer(Object value);
 Object fromByteBuffer(ByteBuffer byteBuffer);
-{{% /highlight %}}
+```
 
 Properties will only be serialized by the custom serializer if their type does not match a primitive type in Cassandra.
 

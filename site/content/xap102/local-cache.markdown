@@ -22,7 +22,7 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 {{% inittab os_simple_space %}}
 {{% tabcontent  Namespace   %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
 <os-core:local-cache id="localCacheSpace" space="space">
     <os-core:properties>
@@ -41,12 +41,12 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 </os-core:local-cache>
 
 <os-core:giga-space id="localCache" space="localCacheSpace"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain   XML %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -55,12 +55,12 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
     class="org.openspaces.core.space.cache.LocalCacheSpaceFactoryBean">
     <property name="space" ref="space" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 // Initialize remote space configurer:
 SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("mySpace");
 
@@ -69,7 +69,7 @@ LocalCacheSpaceConfigurer localCacheConfigurer =
     new LocalCacheSpaceConfigurer(urlConfigurer);
 // Create local cache:
 GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -172,9 +172,9 @@ In general, `Push` is usually recommended for applications that perform more rea
 
 The update policy can be configured using `LocalCacheSpaceFactoryBean` for Spring, or using `LocalCacheSpaceConfigurer` at runtime. The default update policy is "pull." For example:
 
-{{% highlight xml %}}
+```xml
 <os-core:local-cache id="localCacheSpace" space="space" update-mode="PULL"/>
-{{% /highlight %}}
+```
 
 #### Batch Synchronization
 
@@ -187,10 +187,10 @@ Setting lower values for batch size and timeout will reduce data staleness but i
 
 Batch settings can be configured using `LocalCacheSpaceFactoryBean` for Spring, or using `LocalCacheSpaceConfigurer` at runtime. For example:
 
-{{% highlight xml %}}
+```xml
 <os-core:local-cache id="localCacheSpace" space="space"
     batch-size="1000" batch-timeout="100"/>
-{{% /highlight %}}
+```
 
 #### Recovering From Disconnection
 
@@ -198,11 +198,11 @@ When the connection between a local cache and remote master space is disrupted, 
 
 The maximum disconnection duration can be configured using `LocalCacheSpaceFactoryBean` for Spring, or using `LocalCacheSpaceConfigurer` at runtime (default is one minute, or 60000 milliseconds). For example:
 
-{{% highlight xml %}}
+```xml
 <!-- duration time is given in milliseconds -->
 <os-core:local-cache id="localCacheSpace"
     space="space" max-disconnection-duration="60000"/>
-{{% /highlight %}}
+```
 
 #### Advanced Notification
 
@@ -247,7 +247,7 @@ There might be cases when the local cache would not be able to evict its data fa
 
 You should catch this Exception and check its cause. If the cause is `MemoryShortageException` you should sleep for a while and let the client JVM release the evicted memory and retry the operation. See below an example for this:
 
-{{% highlight java %}}
+```java
 GigaSpace gigaspace;
 while(true)
 {
@@ -260,7 +260,7 @@ while(true)
             Thread.sleep(1000);
     }
 }
-{{% /highlight %}}
+```
 
 #### Monitoring the Client Local Cache Eviction
 

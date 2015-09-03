@@ -42,15 +42,15 @@ To use Mahalo, you must first enable the Mahalo service in GigaSpaces.
 
 To enable Mahalo, set the following XPath property in the `<XAP Root>\config\gs.properties` file:
 
-{{% highlight java %}}
+```java
 com.j_spaces.core.container.embedded-services.mahalo.start-embedded-mahalo=true
-{{% /highlight %}}
+```
 
 To use Mahalo transactions in JMS transacted sessions, add the following system property:
 
-{{% highlight java %}}
+```java
 com.gs.jms.use_mahalo=true
-{{% /highlight %}}
+```
 
 {{% info %}}
 You can avoid using distributed transactions by:

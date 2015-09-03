@@ -19,24 +19,24 @@ That means that potentially any machine could be a management machine:
 {{% inittab deckName1 %}}
 {{% tabcontent Windows %}}
 
-{{% highlight java %}}
+```java
 rem Agent deployment that potentially can start management processes
 set LOOKUPGROUPS=myGroup
 set JSHOMEDIR=d:\gigaspaces
 start cmd /c "%JSHOMEDIR%\bin\gs-agent.bat gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 gsa.global.lus 2"
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Linux %}}
 
-{{% highlight java %}}
+```java
 
 1. Agent deployment that potentially can start management processes
 export LOOKUPGROUPS=myGroup
 export JSHOMEDIR=~/gigaspaces
 nohup ${JSHOMEDIR}/bin/gs-agent.sh gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 gsa.global.lus 2 > /dev/null 2>&1 &
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -50,24 +50,24 @@ In case you prefer having dedicated management machines, start GigaSpaces agents
 {{% inittab deckName2 %}}
 {{% tabcontent Windows %}}
 
-{{% highlight java %}}
+```java
 rem Agent that does not start management processes
 set LOOKUPGROUPS=myGroup
 set JSHOMEDIR=d:\gigaspaces
 start cmd /c "%JSHOMEDIR%\bin\gs-agent.bat gsa.global.esm 0 gsa.gsc 0 gsa.global.gsm 0 gsa.global.lus 0"
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Linux %}}
 
-{{% highlight java %}}
+```java
 
 1. Agent that does not start management processes
 export LOOKUPGROUPS=myGroup
 export JSHOMEDIR=~/gigaspaces
 nohup ${JSHOMEDIR}/bin/gs-agent.sh gsa.global.esm 0 gsa.gsc 0 gsa.global.gsm 0 gsa.global.lus 0 > /dev/null 2>&1 &
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -78,14 +78,14 @@ Configure the EPU scale config to use `dedicatedManagementMachines`, and reduce 
 
 The EPU can be deployed into specific zone. This allows you to determine the specific locations of the EPU instances. You may have multiple EPU deployed, each into a difference zone. To specify the agent zone you should set the zone name before starting the agent - here is an example how to set the agent zone to **ZoneX**:
 
-{{% highlight java %}}
+```java
 export GSA_JAVA_OPTIONS="-Dcom.gs.zones=zoneX ${GSA_JAVA_OPTIONS}"
 gs-agent.sh gsa.global.lus 1 gsa.lus 0 gsa.global.gsm 1 gsa.gsm 0 gsa.gsc 0 gsa.global.esm 1
-{{% /highlight %}}
+```
 
 When deploying the EPU you should specify the zone you would like the EPU will be deployed into:
 
-{{% highlight java %}}
+```java
 ProcessingUnit pu1 = gsm.deploy(
 		new ElasticSpaceDeployment("mySpace")
 		.maxMemoryCapacity(512, MemoryUnit.GIGABYTES)
@@ -98,7 +98,7 @@ ProcessingUnit pu1 = gsm.deploy(
 			.scale(new ManualCapacityScaleConfigurer()
 	         	.memoryCapacity(256,MemoryUnit.GIGABYTES)
 	         	.create())
-{{% /highlight %}}
+```
 
 With the above the `mySpace` EPU will be deployed only into agents associated with **zoneX** where other agents without a zone specified will be ignored.
 
@@ -106,7 +106,7 @@ With the above the `mySpace` EPU will be deployed only into agents associated wi
 
 When deploying an EPU pass an instance of [ElasticMachineProvisioningConfig](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/ElasticMachineProvisioningConfig.html) as the [machineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/topology/ElasticDeploymentTopology.html) deployment property.
 
-{{% highlight java %}}
+```java
 ProcessingUnit pu = gsm.deploy(
         new ElasticStatefulProcessingUnitDeployment(new File("myPU.jar"))
            .memoryCapacityPerContainer(16,MemoryUnit.GIGABYTES)
@@ -115,7 +115,7 @@ ProcessingUnit pu = gsm.deploy(
            //automatically start new virtual machines on demand
            .dedicatedMachineProvisioning(new XenServerMachineProvisioning("xenserver.properties"))
 );
-{{% /highlight %}}
+```
 
 When deploying Gigaspaces XAP on the management machine(s) place the plug-in JAR file under `/gigaspaces-xap/lib/platform/esm` folder. The ESM then loads classes specified by the `machineProvisioning` configuration. These classes need to implement either [ElasticMachineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/grid/gsm/machines/plugins/ElasticMachineProvisioning.html) or [NonBlockingElasticMachineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/grid/gsm/machines/plugins/NonBlockingElasticMachineProvisioning.html). That class must also implement [Bean](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/bean/Bean.html) which has resemblance to the Spring Bean.
 
@@ -148,24 +148,24 @@ GigaSpaces adjust the high-availability SLA dynamically to cope with the current
 - When manual capacity scale is used, the specified memory capacity and CPU cores must be provisioned before the re-balancing takes place. As long as the available machines do not meet the specified memory capacity or CPU cores re-balancing does not take place.
 - The maximum number of CPU cores that can be occupied by the Processing Unit primary instances is:
 
-{{% highlight java %}}
+```java
 numberOfPartitions X numberOfCpuCoresPerMachine
-{{% /highlight %}}
+```
 
 .
 
 - The maximum amount of memory that can be used by the primary and backup instances is:
 
-{{% highlight java %}}
+```java
 numberOfPartitions X ( 1 + numberOfBackupsPerPartition ) X memoryCapacityPerContainer
-{{% /highlight %}}
+```
 
 .
 
 - During relocation of a specific instance, primary election takes place. For a few seconds, operations on that partition and operations on the whole cluster is denied. Internally, the client proxy retries the operation until the primary election takes place and masks the failure, but the delay exists.
 This delay can be reduced by modifying configuration settings as explained in [Failure Detection]({{%currentadmurl%}}/troubleshooting-failure-detection.html). Overriding the default value of these context properties is achieved with the [addContextProperty](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/topology/ElasticDeploymentTopology.html) deployment property. For example:
 
-{{% highlight java %}}
+```java
 ProcessingUnit pu = gsm.deploy(
  new ElasticStatefulProcessingUnitDeployment(new File("myPU.jar"))
   .memoryCapacityPerContainer(16,MemoryUnit.GIGABYTES)
@@ -173,7 +173,7 @@ ProcessingUnit pu = gsm.deploy(
   .maxNumberOfCpuCores(32)
   .addContextProperty("cluster-config.groups.group.fail-over-policy.active-election.yield-time","300")
 );
-{{% /highlight %}}
+```
 
 # Shared Machine Provisioning
 
@@ -186,7 +186,7 @@ To simulate a 'public' sharing policy, use the same _sharing ID_ for all deploym
 
 The following example, shows two elastic stateless processing units that may share each others machine resources.
 
-{{% highlight java %}}
+```java
 // Deploy the Elastic Stateless Processing Unit on "site1"
 ProcessingUnit puA = gsm.deploy(
 	new ElasticStatelessProcessingUnitDeployment("servlet.war")
@@ -212,5 +212,5 @@ ProcessingUnit puB = gsm.deploy(
          	.create())
            .sharedMachineProvisioning("site1", machineProvisioningConfig)
 );
-{{% /highlight %}}
+```
 

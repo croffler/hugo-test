@@ -16,31 +16,31 @@ The space can be queried for entries using [Template Matching](./query-template-
 
 When you would like to access an object using its ID for read and take operations you should first specify the ID field. You can specify it via `@SpaceId (autogenerate=false)` annotation:
 
-{{% highlight java %}}
+```java
 @SpaceId (autoGenerate=false)
 public String getEmployeeID() {
     return employeeID;
 }
-{{% /highlight %}}
+```
 
 or via the gs.xml configuration:
 
-{{% highlight java %}}
+```java
 <id name="employeeID" auto-generate="false" />
-{{% /highlight %}}
+```
 
 Here is how you can read the object back from the space using its ID and the `readById` operation:
 
-{{% highlight java %}}
+```java
 GigaSpace gigaSpace;
 Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routingValue);
-{{% /highlight %}}
+```
 
 # Reading Multiple Entries by IDs
 
 The following shows how to read multiple objects using their IDs:
 
-{{% highlight java %}}
+```java
 GigaSpace gigaSpace;
 
 // Initialize an ids array
@@ -56,7 +56,7 @@ ReadByIdsResult<Employee> result = gigaSpace.readByIds(Employee.class, ids, rout
 for (Employee employee : result) {
   // ...
 }
-{{% /highlight %}}
+```
 
 # Getting Partial Results
 

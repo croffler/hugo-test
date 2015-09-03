@@ -26,7 +26,7 @@ Space Filters can only be used with embedded spaces.
 
 An actual implementation of the `ISpaceFilter` interface can be provided using the `SpaceFilterProviderFactory` class. Here is a very simple example of an `ISpaceFilter` implementation:
 
-{{% highlight java %}}
+```java
 public class SimpleFilter implements ISpaceFilter {
 
     public void init(IJSpace space, String filterId, String url, int priority)
@@ -48,14 +48,14 @@ public class SimpleFilter implements ISpaceFilter {
         // perform operation when filter closes
     }
 }
-{{% /highlight %}}
+```
 
 The following Spring configuration registers this filter for before write (`0`), before read (`2`), and before take (`3`) operations:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleFilter" class="eg.SimpleFilter" />
 
@@ -67,12 +67,12 @@ The following Spring configuration registers this filter for before write (`0`),
         <os-core:operation code="3" />
     </os-core:space-filter>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleFilter" class="eg.SimpleFilter" />
 
@@ -94,7 +94,7 @@ The following Spring configuration registers this filter for before write (`0`),
         </list>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -105,7 +105,7 @@ OpenSpaces comes with delegate implementations of `ISpaceFilter`, allowing you t
 
 Here is an example of a simple POJO filter using annotations:
 
-{{% highlight java %}}
+```java
 public class SimpleFilter {
 
     @OnFilterInit
@@ -153,7 +153,7 @@ public class SimpleFilter {
         // ...
     }
 }
-{{% /highlight %}}
+```
 
 This example (which also applies to explicit method listings, just without the annotations) demonstrates different options to mark methods as filter operation callbacks or filter lifecycle callbacks.
 
@@ -168,7 +168,7 @@ The delegate filter shown above, can be configured in Spring using the following
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleFilter" class="test.SimpleFilter" />
 
@@ -178,12 +178,12 @@ The delegate filter shown above, can be configured in Spring using the following
         <os-core:filter ref="simpleFilter" />
     </os-core:annotation-adapter-filter>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleFilter" class="test.SimpleFilter" />
 
@@ -196,7 +196,7 @@ The delegate filter shown above, can be configured in Spring using the following
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -206,7 +206,7 @@ The following Spring configuration XML shows how the filter can be configured, u
 {{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleFilter" class="test.SimpleFilter" />
 
@@ -218,12 +218,12 @@ The following Spring configuration XML shows how the filter can be configured, u
         <os-core:filter ref="simpleFilter"/>
     </os-core:method-adapter-filter>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleFilter" class="test.SimpleFilter" />
 
@@ -242,7 +242,7 @@ The following Spring configuration XML shows how the filter can be configured, u
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -261,7 +261,7 @@ Space replication filters can only be used with embedded spaces.
 
 A simple implementation of `IReplicationFilter` is shown below:
 
-{{% highlight java %}}
+```java
 public class SimpleReplicationFilter implements IReplicationFilter {
 
     public void init(IJSpace space, String paramUrl, ReplicationPolicy replicationPolicy) {
@@ -276,14 +276,14 @@ public class SimpleReplicationFilter implements IReplicationFilter {
         // close logic here
     }
 }
-{{% /highlight %}}
+```
 
 The following configuration shows how it can be injected:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleReplicationFilter" class="eg.SimpleReplicationFilter" />
 
@@ -293,12 +293,12 @@ The following configuration shows how it can be injected:
         <os-core:output-filter ref="simpleReplicationFilter" />
     </os-core:space-replication-filter>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleReplicationFilter" class="eg.SimpleReplicationFilter" />
 
@@ -311,7 +311,7 @@ The following configuration shows how it can be injected:
         </bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

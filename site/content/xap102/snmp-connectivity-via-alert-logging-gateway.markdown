@@ -39,17 +39,17 @@ SnmpTrapTransmitter exposes the following configuration parameters:
 **loggerName** - the name of the logger to be created.<br>
 **group** - the XAP group for which the Alert listener will be configured.
 
-{{% highlight xml %}}
+```xml
   <bean id="SnmpTrapTransmitter" class="org.openspaces.example.alert.logging.snmp.SnmpTrapTransmitter" >
     <property name="alertFileFilter" value="notify-alerts.xml" />
     <property name="loggerName" value="org.openspaces.example.alert.logging.AlertLoggingGateway" />
     <property name="group" value="group-name-here" />
   </bean>
-{{% /highlight %}}
+```
 
 Note that if you implement your own variant for this class, for other types of alert interception, you will also have to override the `construct()` method to register for alerts, the `destroy()` method to cleanup the registration, and to create your own class implementing the `AlertTriggeredEventListener` interface in which you will issue the logging calls:
 
-{{% highlight java %}}
+```java
 public class SnmpTrapTransmitter {
 
 	private Log logger;
@@ -78,13 +78,13 @@ public class SnmpTrapTransmitter {
 		alertManager.getAlertTriggered().add(atListener);
 	}
 }
-{{% /highlight %}}
+```
 
 #### SnmpTrapSender
 
 The **SnmpTrapSender** is a utility class that implements the SnmpTrapAppender's `SnmpTrapSenderFacade` interface with an implementation that queues and asynchronously transmits Alerts as SNMP traps. The SNMP transmission method - `sendTrap()` - uses snmp4j library as its underlying implementation.
 
-{{% highlight java %}}
+```java
 public class SnmpTrapSender implements SnmpTrapSenderFacade {
 
 	public void addTrapMessageVariable(String trapOID, String trapValue) {
@@ -105,14 +105,14 @@ public class SnmpTrapSender implements SnmpTrapSenderFacade {
 		snmp.send(trapPdu, target);
 	}
 
-{{% /highlight %}}
+```
 
 #### commons-logging.properties and log4j.properties
 
 The **Commons-logging.properties** file is a commons logging configuration file which re-directs its calls to a log4j logger. In our example this file contains redirection of commons-logging to log4j as the SNMP trapper we use is on top of log4j.
 **log4j.properties** is a log4j configuration file which delegates log writes to the SNMPTrapAppender, resulting in SNMP traps.
 
-{{% highlight console %}}
+```console
 log4j.rootCategory=INFO,TRAP_LOG
 log4j.appender.TRAP_LOG=org.apache.log4j.ext.SNMPTrapAppender
 log4j.appender.TRAP_LOG.ImplementationClassName=org.openspaces.example.alert.logging.snmp.SnmpTrapSender
@@ -122,7 +122,7 @@ log4j.appender.TRAP_LOG.CommunityString=public
 log4j.appender.TRAP_LOG.Threshold=INFO
 log4j.appender.TRAP_LOG.layout=org.apache.log4j.PatternLayout
 log4j.appender.TRAP_LOG.layout.ConversionPattern=%d,%p,%t,%c,%m%n
-{{% /highlight %}}
+```
 
 # Running the Example
 

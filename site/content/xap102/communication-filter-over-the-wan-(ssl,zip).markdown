@@ -31,15 +31,15 @@ the address of the other. It could be named "address-matcher.config", placed und
 It should contain a line with a regular expression matching the remote sites gateway hosting machine address, lets assume its hostname is Site-A.
 The address matcher should look like this:
 
-{{% highlight console %}}
+```console
 .*Site-A.*
-{{% /highlight %}}
+```
 
 And on Site-A the address matcher file should look like this:
 
-{{% highlight console %}}
+```console
 .*Site-B.*
-{{% /highlight %}}
+```
 
 This file can contain more than one line and can be commented using the # char at the beginning of the line.
 
@@ -47,14 +47,14 @@ This file can contain more than one line and can be commented using the # char a
 
 If you are starting your own GSC that will host the gateway processing unit, you should start it with the following system properties:
 
-{{% highlight console %}}
+```console
 -Dcom.gs.lrmi.filter.factory=<filter name>
 -Dcom.gs.lrmi.filter.address-matchers-file=config/<file name>
-{{% /highlight %}}
+```
 
 If you use the built in mechanism which spawns a GSC to host the gateway you can specify custom jvm properties to be used when spawning the GSC either on the sink or delegator component (but only one of them):
 
-{{% highlight xml %}}
+```xml
 <os-gateway:sink id="sink"  ...
   custom-jvm-properties="-Dcom.gs.lrmi.filter.factory=<filter name> -Dcom.gs.lrmi.filter.address-matchers-file=config/<file name>" />
 
@@ -62,7 +62,7 @@ or
 
 <os-gateway:delegator id="delegator" ...
   custom-jvm-properties="-Dcom.gs.lrmi.filter.factory=<filter name> -Dcom.gs.lrmi.filter.address-matchers-file=config/<file name>" />
-{{% /highlight %}}
+```
 
 {{% info %}}
 e.g. -Dcom.gs.lrmi.filter.factory=com.gigaspaces.lrmi.nio.filters.IOStreamCompressionFilterFactory

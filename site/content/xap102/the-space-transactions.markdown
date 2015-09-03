@@ -18,19 +18,19 @@ For example (using the distributed transaction manager):
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="space" />
 
 <os-core:distributed-tx-manager id="transactionManager"/>
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -44,7 +44,7 @@ For example (using the distributed transaction manager):
     <property name="space" ref="space" />
 	<property name="transactionManager" ref="transactionManager" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -57,20 +57,20 @@ It is highly recommended to read the [transaction management chapter](http://sta
 
 OpenSpaces provides a pluggable transaction provider using the following interface:
 
-{{% highlight java %}}
+```java
 public interface TransactionProvider {
     Transaction getCurrentTransaction(Object transactionalContext, IJSpace space);
     int getCurrentTransactionIsolationLevel(Object transactionalContext);
 }
-{{% /highlight %}}
+```
 
 OpenSpaces comes with a default transaction provider implementation, which uses Spring and its transaction manager in order to obtain the currently running transactions and automatically use them under transactional operations.
 
 `GigaSpace` allows access to the current running transaction using the transaction provider. The following code example shows how the take operation can be performed using `IJspace` (users normally won't be required to do so):
 
-{{% highlight java %}}
+```java
 gigaSpace.getSpace().take(obj, gigaSpace.getCurrentTransaction(), 1000);
-{{% /highlight %}}
+```
 
 # Isolation Level
 
@@ -79,17 +79,17 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="space" />
 
 <os-core:giga-space id="gigaSpace" space="space" default-isolation="READ_COMMITTED"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -99,26 +99,26 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 	<property name="space" ref="space" />
     <property name="defaultIsolationLevelName" value="READ_COMMITTED" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 IJSpace space = // get Space either by injection or code creation
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space)
                           .defaultIsolationLevel(TransactionDefinition.ISOLATION_READ_COMMITTED)
                           .gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 In addition, Spring allows you to define the isolation level on the transaction definition itself:
 
-{{% highlight java %}}
+```java
 @Transactional(readOnly = true)
 public class DefaultFooService implements FooService {
 
@@ -140,7 +140,7 @@ public class DefaultFooService implements FooService {
         // do something
     }
 }
-{{% /highlight %}}
+```
 
 In the above example, any operation performed using `GigaSpace` in the `updateFoo` method automatically works under the `READ_COMMITTED` isolation level.
 

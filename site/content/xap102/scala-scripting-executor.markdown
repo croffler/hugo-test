@@ -19,7 +19,7 @@ Here is how you would configure a processing unit to run a scripting executor wi
 
 ## Processing Unit Configuration
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -42,11 +42,11 @@ Here is how you would configure a processing unit to run a scripting executor wi
 <os-events:polling-container id="remotingContainer" giga-space="gigaSpace">
   <os-events:listener ref="serviceExporter"/>
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 ## Client Side Configuration
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -63,7 +63,7 @@ Here is how you would configure a processing unit to run a scripting executor wi
 	<bean class="org.openspaces.remoting.scripting.ScriptingMetaArgumentsHandler" />
   </os-remoting:meta-arguments-handler>
 </os-remoting:executor-proxy>
-{{% /highlight %}}
+```
 
 # Usage
 
@@ -75,7 +75,7 @@ Here is how you would configure a processing unit to run a scripting executor wi
 
 # Example
 
-{{% highlight scala %}}
+```scala
 val code = """
 val readData: Any = gigaSpace.read(null)
 val numberAsString = someNumber.toString
@@ -93,4 +93,4 @@ val script = new ScalaTypedStaticScript("myScript", "scala", code)
 val result = executor.execute(script)
 
 println("Script execution result: " + result)
-{{% /highlight %}}
+```

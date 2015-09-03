@@ -13,7 +13,7 @@ The `com.gigaspaces.annotation.pojo.SpaceClassConstructor` annotation on a const
 
 Following is an example of such data class.
 
-{{% highlight scala %}}
+```scala
 package org.openspaces.scala.example.data
 import scala.beans.BeanProperty
 
@@ -43,7 +43,7 @@ case class Data @SpaceClassConstructor() (
   data: String = null
 
 )
-{{% /highlight %}}
+```
 
 # Considerations
 

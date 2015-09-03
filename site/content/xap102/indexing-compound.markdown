@@ -14,7 +14,7 @@ Compound indexes can be defined using annotations. The `CompoundSpaceIndex` and 
 
 Example: Below a compound index with two segments using annotations. Both are properties at the root level of the space class:
 
-{{% highlight java %}}
+```java
 @CompoundSpaceIndexes(
 { @CompoundSpaceIndex(paths = {"data1", "data2"}) }
 )
@@ -24,7 +24,7 @@ public class Data {
 	String data1;
 	String data2;
 	// getter and setter methods - no properties need to be indexed
-{{% /highlight %}}
+```
 
 The benchmark has a space with different sets of space objects data:
 
@@ -35,9 +35,9 @@ The benchmark has a space with different sets of space objects data:
 |data2 = 'B' |100,000| 110,000 | 200,000 |
 |data1 = 'A' AND data2 = 'B' |1000 | 10,000 | 100,000|
 
-{{% highlight java %}}
+```java
 SQLQuery<Data> query = new SQLQuery<Data>(Data.class,"data1='A' and data2='B'");
-{{% /highlight %}}
+```
 
 With the above scenario the Compound Index will improve the query execution dramatically. See below comparison for a query execution time when comparing a Compound Index to a single or two indexed properties space class with the different data set scenarios.
 
@@ -47,35 +47,35 @@ With the above scenario the Compound Index will improve the query execution dram
 
 A Compound Index can be defined within the gs.xml configuration file. Example: The following a `gs.xml` describing a POJO named Data having a compound index composed from two segments:
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
     <class name="Data" >
         <compound-index paths="data1, data2"/>
         ...
     </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 # Space Document
 
 A Compound Space Index of a [space Document](./document-api.html) can be described by `pu.xml` configuration file. Example:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="space" >
 	<os-core:space-type type-name="Data">
 		<os-core:compound-index paths="data1,data2"/>
 	</os-core:space-type>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 # Dynamic Creation
 
 A Compound Space Index can be added dynamically using the `GigaSpaceTypeManager` interface. Example:
 
-{{% highlight java %}}
+```java
 AsyncFuture<AddTypeIndexesResult> indexesResultAsyncFuture = gigaSpace.getTypeManager()
 	.asyncAddIndex("Data", new CompoundIndex (new String[]{"data1", "data2"}));
-{{% /highlight %}}
+```
 
 As the `CompoundIndex` is a subclass of the `SpaceIndex`, the `asyncAddIndex` method signature has not been changed.
 

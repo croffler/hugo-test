@@ -76,7 +76,7 @@ The interface includes the following main operations:
 
 The `GigaSpace` interface provides a simpler space API by utilizing Java 5 generics, and allowing sensible defaults. Here are some examples of the space operations as defined within `GigaSpace`:
 
-{{% highlight java %}}
+```java
 public interface GigaSpace {
     <T> LeaseContext<T> write(T entry) throws DataAccessException;
     // ....
@@ -86,7 +86,7 @@ public interface GigaSpace {
     <T> T take(T template, long timeout) throws DataAccessException;
     // ......
 }
-{{% /highlight %}}
+```
 
 In the example above, the take operation can be performed without specifying a timeout. The default take timeout is `0` (no wait), and can be overridden when configuring the `GigaSpace` factory. In a similar manner, the read timeout and write lease can be specified.
 

@@ -63,7 +63,7 @@ Specifying which property of a class is the FG property is done using annotation
 {{% inittab %}}
 {{% tabcontent Annotations %}}
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class FlightReservation
 {
@@ -75,18 +75,18 @@ public class FlightReservation
     	public FlightInfo getFlightInfo() {return flightInfo;}
    	public void setFlightInfo(FlightInfo flightInfo) {this.flightInfo = flightInfo;}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent XML %}}
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.FlightReservation">
         	<fifo-grouping-property name="flightInfo" path=" flightNumber" />
     </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -98,19 +98,19 @@ Specifying which properties of a class are a FG index is done using annotations 
 {{% inittab %}}
 {{% tabcontent Annotations %}}
 
-{{% highlight java %}}
+```java
 @SpaceFifoGroupingIndex
 public State getProcessingState() {return processingState;}
 public void setProcessed (State processingState) {this.processingState = processingState;}
 @SpaceFifoGroupingIndex(path = "id")
 public Person getCustomer() {return customer;}
 public void setCustomer (Person customer) {this.customer = customer;}
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent XML %}}
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
 	<class name="com.gigaspaces.examples.FlightReservation />
 		<property name="processingState">
@@ -120,7 +120,7 @@ public void setCustomer (Person customer) {this.customer = customer;}
 			<fifo-grouping-index  path="id"/>
 		</property>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -151,9 +151,9 @@ FIFO Grouping designed to be used with **Polling container only**.  If you are l
 
 To execute read/take operations with FG, use the `TakeModifiers.FIFO_GROUPING_POLL` modifier. For example:
 
-{{% highlight java %}}
+```java
 space.take(new FlightReservation(), timeout, TakeModifiers.FIFO_GROUPING_POLL);
-{{% /highlight %}}
+```
 
 If class FlightReservation isn't declared with a FG property, an exception will be thrown.
 
@@ -164,7 +164,7 @@ to instruct the space that events should be sent to the client in FIFO order (gr
 
 -  **`ExclusiveReadReceiveOperationHandler` example:**
 
-{{% highlight java %}}
+```java
 AbstractFifoGroupingReceiveOperationHandler receiveOperationHandler = new ExclusiveReadReceiveOperationHandler();
 FlightReservationEventListener eventListener = new FlightReservationEventListener();
 receiveOperationHandler.setUseFifoGrouping(true);
@@ -176,11 +176,11 @@ SimplePollingEventListenerContainer pollingEventListenerContainer =
 .eventListener(eventListener)
 .create();
 pollingEventListenerContainer.start();
-{{% /highlight %}}
+```
 
 -  **`ExclusiveReadReceiveOperationHandler` with annotations example:**
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling(concurrentConsumers = 3, maxConcurrentConsumers = 5)
 @TransactionalEventpublic class SimpleListener
 {
@@ -199,7 +199,7 @@ pollingEventListenerContainer.start();
 		 return handler;
 	}
 }
-{{% /highlight %}}
+```
 
 # SpaceIndex
 

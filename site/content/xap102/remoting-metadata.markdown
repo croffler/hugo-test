@@ -20,7 +20,7 @@ weight: 400
 
 {{% accordion acc1 %}}
 {{%accord tithe="**Example**" parent="acc1" id="tab1"%}}
-{{%highlight java%}}
+```java
 // Service Implementation
 @RemotingService
 public class DataProcessor implements IDataProcessor {
@@ -45,7 +45,7 @@ public interface MyService {
 
     void doSomething(@Routing int param1, int param2);
 }
-{{%/highlight%}}
+```
 {{% /accord %}}
 {{% /accordion %}}
 
@@ -62,7 +62,7 @@ public interface MyService {
 {{% accordion acc2 %}}
 {{%accord tithe="**Example**" parent="acc2" id="tab2"%}}
 
-{{%highlight java%}}
+```java
 // Client remoting proxy
 public class DataRemoting {
 
@@ -71,7 +71,7 @@ public class DataRemoting {
 
     // ...
 }
-{{%/highlight%}}
+```
 {{% /accord %}}
 {{% /accordion %}}
 
@@ -88,7 +88,7 @@ public class DataRemoting {
 
 {{% accordion acc3 %}}
 {{%accord title="**Example**" parent="acc3"  id="tab3"%}}
-{{%highlight java%}}
+```java
 // Service Implementation
 @RemotingService
 
@@ -97,7 +97,7 @@ public class DataRemoting {
 
     void doSomething(@Routing int param1, int param2);
 }
-{{%/highlight%}}
+```
 {{% /accord %}}
 {{% /accordion %}}
 

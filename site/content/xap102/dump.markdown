@@ -12,7 +12,7 @@ weight: 200
 
 The dump feature of the Admin API allows to easily generate dump information out of GigaSpaces runtime environment. Here is an example:
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 
 // wait a bit for components to be discovered (or use waitFor) ...
@@ -20,7 +20,7 @@ Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 DumpResult dumpResult = admin.dump("reason comes here", null,
                                 "ssummary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/dump.zip"), null);
-{{% /highlight %}}
+```
 
 The above example will go over all the currently discovered runtime elements in GigaSpaces (GSA, GSM, GSC, LUS) and generate a dump of them (stored locally to each runtime component). Then, the `DumpResult` can be used to download all the dump information, from all the different runtime components, into a file.
 
@@ -30,7 +30,7 @@ The above example generates dump that will include a simple "ssummary" informati
 
 Most of the elements within the Admin API implement the `DumpProvider` interface, allowing to generate dump information. This include discrete elements such as `GridServiceContainer`, or `GridServiceManager`, but also includes compound elements such as `GridServiceManagers` and even `Admin`. This means that quite easily, a dump for a one or more runtime components already grouped by the Admin API can be easily performed. Here are some examples:
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 
 // wait a bit for components to be discovered (or use waitFor) ...
@@ -48,18 +48,18 @@ dumpResult.download(new File("target/gscs.zip"), null);
 dumpResult = admin.getZones().getByName("zoneA").dump("reason comes here", null,
                                 "ssummary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/zoneA.zip"), null);
-{{% /highlight %}}
+```
 
 If the natural grouping provided by the admin API is not enough, then the `CompoundDumpResult` can be used in order to accumulate dump results. Here is an example:
 
-{{% highlight java %}}
+```java
 CompoundDumpResult dumpResult = new CompoundDumpResult();
 dumpResult.add(gridServiceContainer1.dump(...));
 dumpResult.add(gridServiceManager2.dump(...));
 dumpResult.add(gridServiceAgent3.dump(...));
 
 dumpResult.download(new File("target/compound.zip", null);
-{{% /highlight %}}
+```
 
 # Dump Processors
 
@@ -74,11 +74,11 @@ The dump process occurs in stages within the runtime component. Each stage is ca
 
 The **log** process is the only processor that takes into account the context (Map<String, Object>) that can be passed as part of the dump command. It tries to find under the `logEntryMatcher` key a `LogEntryMatcher` that will be used to filter out just relevant parts of the log files to be returned. If no matcher is provided, all the log files will be returned. Here is an example of specifying a log entry matcher:
 
-{{% highlight java %}}
+```java
 Map<String, Object> context = new HashMap<String, Object>();
 context.put("logEntryMatcher", lastN(200));
 DumpResult dumpResult = admin.generateDump("test", context, "ssummary", "log");
-{{% /highlight %}}
+```
 
 The above code will generate a dump, including the just the last 200 log entries which the log dump processor will process.
 
@@ -118,7 +118,7 @@ Make sure the user that started the GS-UI has write permissions to the location 
 
 The dump file structure would look like this:
 
-{{% highlight console %}}
+```console
 dump_file.zip
 
     gsa-10.10.10.249-23610--1284928573201
@@ -174,5 +174,5 @@ dump_file.zip
         threads.txt
         logs
             2010-09-19~08.22-gigaspaces-lus_4-10.10.10.249-24127.log
-{{% /highlight %}}
+```
 

@@ -17,7 +17,7 @@ The Synchronization Endpoint Interceptor allows a custom logic to be plugged in 
 
 The interceptor is an abstract class which may be extended to provide custom behavior only on relevant methods.
 
-{{% highlight java %}}
+```java
 public abstract class SynchronizationEndpointInterceptor
 {
     /**
@@ -46,13 +46,13 @@ public abstract class SynchronizationEndpointInterceptor
     {
     }
 }
-{{% /highlight %}}
+```
 
 # How to Plug a Custom Interceptor
 
 To use a custom interceptor implementation one should first extends the `SynchronizationEndpointInterceptor` class and use the subclass in the target gateway `pu.xml` configuration:
 
-{{% highlight xml %}}
+```xml
 <bean id="interceptor" class="com.gigaspaces.examples.MyCustomSynchronizationEndpointInterceptor" />
 
 <os-gateway:sink id="sink" local-gateway-name="MY-SITE-NAME"
@@ -64,7 +64,7 @@ To use a custom interceptor implementation one should first extends the `Synchro
   ...
   <os-gateway:sync-endpoint-interceptor interceptor="interceptor"/>
 </os-gateway:sink>
-{{% /highlight %}}
+```
 
 # Handling Intercepted events
 
@@ -91,7 +91,7 @@ This event is triggered after a batch of non transactional operations were succe
 
 Each of the above intercepted events contains a data item that includes the relevant data synchronization operations. A transaction contains the operations that are executed within its boundaries. A batch of operations contains the list of operations that were synchronized in this batch. Each of this operations is a `DataSyncOperation` which expose the details of the single data synchronization operation.
 
-{{% highlight java %}}
+```java
 public interface DataSyncOperation
 {
 
@@ -141,7 +141,7 @@ public interface DataSyncOperation
      */
     boolean supportsDataAsDocument();
 }
-{{% /highlight %}}
+```
 
 This API exposes the operation type, such as Write, Update, Remove and so on, as well as the entry itself where such exists.
 Before calling each of the `getDataAsDocument`, `getDataAsObject` and `getTypeDescriptor`, the corresponding "supports" methods must be called to verify that the operation indeed applies to the current entry.
@@ -151,7 +151,7 @@ An invocation of `getDataAsObject` if the `supportsDataAsObject` methods return 
 
 The following example will demonstrate how to implement an interceptor that stores in some external data store the list of distributed transactions that failed to consolidate and aborts them for later manual decision. Note, that there is a regular case where consolidation may show a false failure as described in [Gateway and Distributed Transactions](./multi-site-replication-over-the-wan.html#Configuring and Deploying the Gateway). This example will handle this case as well.
 
-{{% highlight java %}}
+```java
 public class ExampleSynchronizationEndpointInterceptor extends SynchronizationEndpointInterceptor
 {
     ...
@@ -177,4 +177,4 @@ public class ExampleSynchronizationEndpointInterceptor extends SynchronizationEn
     }
 
 }
-{{% /highlight %}}
+```

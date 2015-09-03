@@ -16,12 +16,12 @@ weight: 100
 |Description| Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
 
 Example:
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 	<class name="model.Person">
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 
@@ -35,12 +35,12 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 	<class name="model.Person" persist="true">
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 {{%learn "./space-persistency.html"%}}
@@ -55,12 +55,12 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 	<class name="model.Person" replicate="true">
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 {{%learn "{{%currentadmurl%}}/replication.html"%}}
@@ -76,12 +76,12 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="model.Person" fifo-support="operation">
     </class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 {{%learn "./fifo-support.html"%}}
@@ -96,12 +96,12 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="model.Person" storage-type="binary" />
 </gigaspaces-mapping>
 
-{{%/highlight%}}
+```
 
 
 {{%learn "./storage-types---controlling-serialization.html"%}}
@@ -117,11 +117,11 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="model.Person" include-properties="explicit" />
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 
@@ -135,11 +135,11 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="model.Person" inherit-indexes="false" />
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 {{%learn "./indexing.html"%}}
 
@@ -154,14 +154,14 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="Data" >
         <compound-index paths="data1, data2"/>
         ...
     </class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 {{%learn "./indexing-compound.html"%}}
@@ -178,14 +178,14 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="com.test.Person" "blobstoreEnabled"="false" >
      .....
      </class>
 </gigaspaces-mapping>
 
-{{%/highlight%}}
+```
 
 
 {{%learn "{{%currentadmurl%}}//memoryxtend.html"%}}

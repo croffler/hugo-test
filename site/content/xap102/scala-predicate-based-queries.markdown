@@ -16,13 +16,13 @@ Support for predicate based queries on the `GigaSpace` proxy has been in added. 
 
 To use predicate based queries, import `import org.openspaces.scala.core.ScalaGigaSpacesImplicits._` into scope. Then call the `predicate` method on the `GigaSpace` instance as demonstrated:
 
-{{% highlight scala %}}
+```scala
 /* Import GigaSpace implicits into scope */
 import org.openspaces.scala.core.ScalaGigaSpacesImplicits._
 
 /* implicit conversion on gigaspace returns a wrapper class with predicate based query methods */
 val predicateGigaSpace = gigaSpace.predicate
-{{% /highlight %}}
+```
 
 # Supported Queries
 
@@ -30,7 +30,7 @@ val predicateGigaSpace = gigaSpace.predicate
 
 For the purpose of demonstration, we will use the following example data class
 
-{{% highlight scala %}}
+```scala
 case class Person @SpaceClassConstructor() (
 
   @BeanProperty
@@ -52,7 +52,7 @@ case class Person @SpaceClassConstructor() (
   son: Person = null
 
 )
-{{% /highlight %}}
+```
 
 ## Translations
 

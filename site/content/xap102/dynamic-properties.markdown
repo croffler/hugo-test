@@ -19,7 +19,7 @@ Starting with 8.0.1, dynamic properties can be used with POJOs as well. This pro
 
 To enable dynamic properties, add a `Map<String, Object>` property to the relevant class and annotate it with `@SpaceDynamicProperties`. For example, the following **Person** class has two fixed properties (name and id), and an additional **extraInfo** property used to host the dynamic properties:
 
-{{% highlight java %}}
+```java
 public class Person {
     public Person (){}
     private String name;
@@ -36,7 +36,7 @@ public class Person {
     public DocumentProperties getExtraInfo() {return extraInfo;}
     public void setExtraInfo(DocumentProperties extraInfo) {this.extraInfo=extraInfo;}
 }
-{{% /highlight %}}
+```
 
 {{% note %}} It is recommended to use the `DocumentProperties` class to host dynamic properties, as it provides a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface) to set properties as well as better performance and memory footprint.{{%/note%}}
 
@@ -44,7 +44,7 @@ public class Person {
 
 To write an entry with dynamic properties, simply populate them in the dynamic properties property. For example:
 
-{{% highlight java %}}
+```java
 Person p = new Person();
 p.setId(7);
 p.setName("smith");
@@ -52,13 +52,13 @@ p.setExtraInfo(new DocumentProperties()
     .setProperty("email", "smith@foo.com")
     .setProperty("age", 30));
 gigaSpace.write(p);
-{{% /highlight %}}
+```
 
 When the entry is read from the space, the dynamic properties will be populated.
 
 You can have a getter and a setter for the newly added attributes with `@SpaceExclude` annotation on the getter field. This will instruct GigaSpaces to ignore this field when assembling the POJO field meta data:
 
-{{% highlight java %}}
+```java
 public class Person {
     public Person (){}
     private String name;
@@ -84,7 +84,7 @@ public class Person {
     public void setAge(String age) {extraInfo.setProperty("age",age)}
 
 }
-{{% /highlight %}}
+```
 
 {{%warning%}}
 Only one property per class can be annotated with `@SpaceDynamicProperties`.
@@ -93,7 +93,7 @@ Only one property per class can be annotated with `@SpaceDynamicProperties`.
 
 Dynamic properties can also be used for matching. For example, suppose we want to get all persons who are not minors (age greater than 21) and email them something:
 
-{{% highlight java %}}
+```java
 Person[] people = gigaSpace.readMultiple(new SQLQuery<Person>(
     Person.class, "age > 21"), Integer.MAX_VALUE);
 for (Person person : people) {
@@ -101,7 +101,7 @@ for (Person person : people) {
     if (email != null)
         sendEmail(email);
 }
-{{% /highlight %}}
+```
 
 {{%note%}}
 - The query expression refers to 'age', not 'extraInfo.age' - the space recognizes that the extraInfo property is annotated with @SpaceDynamicProperties and treats the dynamic properties as if they were regular properties of the Person class.

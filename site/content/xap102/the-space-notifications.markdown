@@ -25,7 +25,7 @@ Space operations under transactions will trigger notifications when the transact
 In the following example we register a listener to receive notifications when an Employee instance is written or update in the space.
 The client registering the listener will receive a copy of the object written in the space as notification. The object in the space will continue to exist.
 
-{{% highlight java %}}
+```java
 @EventDriven
 @Notify
 @NotifyType(write = true, update = true)
@@ -53,8 +53,7 @@ eventListener.start();
 
 //.......
 eventListener.destroy();
-
-{{% /highlight %}}
+```
 
 {{%learn "./notify-container.html" %}}
 
@@ -63,7 +62,7 @@ eventListener.destroy();
 
 This example works just like the notification example above, except that the object is removed from the space:
 
-{{% highlight java %}}
+```java
 
   @EventDriven
   @Polling
@@ -98,7 +97,7 @@ This example works just like the notification example above, except that the obj
 
   //.......
   pollingListener.destroy();
-{{% /highlight %}}
+```
 
 {{<learn "./polling-container.html">}}
 
@@ -126,26 +125,26 @@ Space mode registration can be overridden and explicitly set within the space fa
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="space" register-for-space-mode-notifications="false" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
     <property name="registerForSpaceModeNotifications" value="false" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 EmbeddedSpaceConfigurer spaceConfigurer =
               new EmbeddedSpaceConfigurer("space").registerForSpaceModeNotifications(false);
@@ -155,7 +154,7 @@ IJSpace space = spaceConfigurer.space();
 
 // shutting down / closing the Space
 spaceConfigurer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -174,7 +173,7 @@ A bean can implement the following interfaces to get notified about space mode c
 
 
 
-{{% highlight java %}}
+```java
 class MyBean implements SpaceBeforeBackupListener, SpaceAfterPrimaryListener {
 
     // invoked before a space becomes backup
@@ -188,7 +187,7 @@ class MyBean implements SpaceBeforeBackupListener, SpaceAfterPrimaryListener {
     }
 
 }
-{{% /highlight %}}
+```
 
 
 
@@ -203,7 +202,7 @@ If the bean does not implement any of the interfaces above, another option is to
 | @PostBackup | _none_ or _AfterSpaceModeChangeEvent_ | After a space becomes backup |
 | @PostPrimary | _none_ or _AfterSpaceModeChangeEvent_ | After a space becomes primary |
 
-{{% highlight java %}}
+```java
 class MyBean {
 
     // invoked before a space becomes backup; gets the BeforeSpaceModeChangeEvent as a parameter
@@ -219,25 +218,23 @@ class MyBean {
     }
 
 }
-{{% /highlight %}}
+```
 
 In order to enable this feature, the following should be placed within the application context configuration:
 
 {{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
-
+```xml
 <os-core:annotation-support />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
-
+```xml
 <bean id="coreAnntoationSupport" class="org.openspaces.core.config.AnnotationSupportBeanDefinitionParser" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -245,7 +242,7 @@ In order to enable this feature, the following should be placed within the appli
 
 When there is more than one Proxy (e.g: embedded, remote, ...), the following should be done in order to be sure that the Primary Backup Notifications arrived from the current Space instance:
 
-{{% highlight java %}}
+```java
 class MyBean {
 
     @Resource(name="gigaSpace")
@@ -267,9 +264,8 @@ class MyBean {
 		if (SpaceUtils.isSameSpace(gigaSpace.getSpace(), event.getSpace()))
 			isPrimary = false;
 	}
-
 }
-{{% /highlight %}}
+```
 
 
 The method compareAndSet() allows you to compare the current value of the AtomicBoolean to an expected value.
@@ -277,7 +273,7 @@ If the current value is equal to the expected value, a new value can be set on t
 The compareAndSet() method is atomic, so only a single thread can execute it at the same time.
 Thus, the compareAndSet() method can be used to implement a simple synchronization like lock.
 
-{{% highlight java %}}
+```java
 class MyBean {
 
     @Resource(name="gigaSpace")
@@ -301,9 +297,8 @@ class MyBean {
 		if (SpaceUtils.isSameSpace(gigaSpace.getSpace(), event.getSpace()))
 			isPrimary = false;
 	}
-
 }
-{{% /highlight %}}
+```
 
 
 
@@ -313,17 +308,17 @@ When a remote client is interested to receive events when a space instance chang
 
 Registering for the event using the [Administration API](./administration-and-monitoring-api.html):
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().createAdmin();
 Space space = admin.getSpaces().waitFor(spaceName, 10, TimeUnit.SECONDS);
 SpaceModeChangedEventManager modeManager =  space.getSpaceModeChanged();
 MySpaceModeListener spaceModeListener = new MySpaceModeListener (space);
 modeManager.add(spaceModeListener);
-{{% /highlight %}}
+```
 
 The `MySpaceModeListener` should implement the `SpaceModeChangedEventListener` - see below simple example:
 
-{{% highlight java %}}
+```java
 public class MySpaceModeListener implements SpaceModeChangedEventListener{
 
 	Space space ;
@@ -342,6 +337,6 @@ public class MySpaceModeListener implements SpaceModeChangedEventListener{
 			" moved into " + event.getNewMode());
 	}
 }
-{{% /highlight %}}
+```
 
 

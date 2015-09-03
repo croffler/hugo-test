@@ -50,12 +50,12 @@ GigaSpaces provides several options to deploy a processing unit onto the Service
 {{% tabcontent Admin API %}}
 Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc]({{%javadoc%}}) of the Admin API.
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
 File puArchive = new File("/opt/gigaspaces/myPU.jar");
 ProcessingUnit pu = admin.getGridServiceManagers().deploy(
     new ProcessingUnitDeployment(puArchive));
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Ant %}}
@@ -63,7 +63,7 @@ Deploying with Ant is based on the `org.openspaces.pu.container.servicegrid.depl
 
 In the below example we create an Ant macro using this class and use it to deploy our processing unit. The deploy class is executable via its `main()` method, and can accept various parameters to control the deployment process. These parameters are identical to these of the `deploy` CLI command, for a complete list of the available parameters please consult the [`deploy` CLI reference documentation.]({{%currentadmurl%}}/deploy-command-line-interface.html).
 
-{{% highlight xml %}}
+```xml
 <deploy file="/opt/gigaspaces/myPU.jar" />
 
 <macrodef name="deploy">
@@ -79,15 +79,15 @@ In the below example we create an Ant macro using this class and use it to deplo
         </java>
     </sequential>
 </macrodef>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent GigaSpaces CLI %}}
 Deploying via the CLI is based on the `deploy` command. This command accepts various parameters to control the deployment process. These parameters are documented in full in the [`deploy` CLI reference documentation.]({{%currentadmurl%}}/deploy-command-line-interface.html).
 
-{{% highlight java %}}
+```java
 > <XAP root>/bin/gs.sh(bat) deploy myPU.jar
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent GigaSpaces UI %}}
@@ -109,31 +109,31 @@ You should have **one GigaSpaces agent** running the ESM. No GSCs should be star
 {{% inittab deckName1 %}}
 {{% tabcontent Windows %}}
 
-{{% highlight java %}}
+```java
 rem Agent deployment that potentially can start management processes
 set LOOKUPGROUPS=myGroup
 set JSHOMEDIR=d:\gigaspaces
 start cmd /c "%JSHOMEDIR%\bin\gs-agent.bat gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 gsa.global.lus 2"
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Linux %}}
 
-{{% highlight java %}}
+```java
 # Agent deployment that potentially can start management processes
 
 export LOOKUPGROUPS=myGroup
 export JSHOMEDIR=~/gigaspaces
 nohup ${JSHOMEDIR}/bin/gs-agent.sh gsa.global.esm 1 gsa.gsc 0 gsa.global.gsm 2 gsa.global.lus 2 > /dev/null 2>&1 &
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 ## Step 2 - Run the deployment code:
 
-{{% highlight java %}}
+```java
 // Wait for the discovery of the managers and at least one agent
 Admin admin = new AdminFactory().addGroup("myGroup").create();
 admin.getGridServiceAgents().waitForAtLeastOne();
@@ -159,11 +159,11 @@ ProcessingUnit pu = gsm.deploy(
 
 // Wait until the deployment is complete.
 pu.waitForSpace().waitFor(pu.getTotalNumberOfInstances());
-{{% /highlight %}}
+```
 
 ## Step 3 - Scale the PU by increasing the memory and CPU capacity:
 
-{{% highlight java %}}
+```java
 // Scale in runtime to the desired memory and CPU capacity
 pu.scale(
     new ManualCapacityScaleConfigurer()
@@ -171,11 +171,11 @@ pu.scale(
        .numberOfCpuCores(16)
        .create()
 );
-{{% /highlight %}}
+```
 
 ## Step 4 - To undeploy the Processing Unit run the following:
 
-{{% highlight java %}}
+```java
 // Wait up to 10 seconds for the processing unit to be discovered
 ProcessingUnit pu = admin.getProcessingUnits()
    .waitFor("myPU",10,TimeUnit.SECONDS);
@@ -185,7 +185,7 @@ if (pu != null) {
    // For versions prior to 8.0.5 (7.x - 8.0.4) use pu.undeploy()
    pu.undeployAndWait(3, TimeUnit.MINUTES);
 }
-{{% /highlight %}}
+```
 
 Since we are un deploying an Elastic Processing Unit, this will also terminate all the GSCs hosting the PU.
 
@@ -194,17 +194,17 @@ Running the deployment code from the command line is very convenient. Rename the
 {{% inittab deckName2 %}}
 {{% tabcontent Windows %}}
 
-{{% highlight java %}}
+```java
 %JSHOMEDIR%\tools\groovy\bin\groovy deploy.groovy
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Linux %}}
 
-{{% highlight java %}}
+```java
 ${JSHOMEDIR}tools/groovy/bin/groovy deploy.groovy
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -241,15 +241,15 @@ To restart a running PU (all instances) via the GS-UI you should:
 
 The [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/ProcessingUnitInstance.html) includes few `restart` methods you may use to restart a PU instance:
 
-{{% highlight java %}}
+```java
 restart()
 restartAndWait()
 restartAndWait(long timeout, TimeUnit timeUnit)
-{{% /highlight %}}
+```
 
 Here is an example code that is using the `ProcessingUnitInstance.restart` to restart the entire PU instances in an automatic manner:
 
-{{% highlight java %}}
+```java
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -310,7 +310,7 @@ public class PUReatartMain {
 		logger.info("done");
 	}
 }
-{{% /highlight %}}
+```
 
 
 {{%refer%}}
@@ -341,7 +341,7 @@ The sample code below deploys an application named "data-app" which consists of 
 {{% inittab os_simple_space %}}
 {{% tabcontent Admin API %}}
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
 File feederArchive = new File("/opt/gigaspaces/myfeeder.jar");
 
@@ -360,7 +360,7 @@ Application dataApp = admin.getGridServiceManagers().deploy(
 for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
   pu.waitFor(pu.getTotalNumberOfInstances());
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Admin API and XML %}}
@@ -371,7 +371,7 @@ Since XAP v9.0.1 the processing unit dependencies can be described using an XML 
 A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
 {{%/comment%}}
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
 //The dist zip file includes feeder.jar and application.xml file
 File application = new File("/opt/gigaspaces/examples/data/dist.zip");
@@ -385,11 +385,11 @@ Application dataApp = admin.getGridServiceManagers().deploy(
 for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
   pu.waitFor(pu.getTotalNumberOfInstances());
 }
-{{% /highlight %}}
+```
 
 Here is the content of the application.xml file (that resides alongside feeder.jar in dist.zip):
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -410,19 +410,19 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 
 	</os-admin:application>
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent GigaSpaces CLI and XML %}}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
-{{% highlight java %}}
+```java
 > <XAP root>/bin/gs.sh(bat) deploy-application examples/data/dist.zip
-{{% /highlight %}}
+```
 
 Here is the content of the application.xml file (that resides alongside feeder.jar in dist.zip):
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -443,7 +443,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 
 	</os-admin:application>
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -458,7 +458,7 @@ The feeder can relax this restriction, by specifying a dependency of at least on
 {{% inittab adaptive_sla %}}
 {{% tabcontent Admin API %}}
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
 File feederArchive = new File("/opt/gigaspaces/myfeeder.jar");
 
@@ -480,7 +480,7 @@ Application dataApp = admin.getGridServiceManagers().deploy(
 for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
   pu.waitFor(pu.getTotalNumberOfInstances());
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Admin API with XML %}}
@@ -490,7 +490,7 @@ Since XAP v9.0.1 the processing unit dependencies can be described using an XML 
 A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
 {{%/comment%}}
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
 //The dist zip file includes feeder.jar and application.xml file
 File application = new File("/opt/gigaspaces/examples/data/dist.zip");
@@ -504,11 +504,11 @@ Application dataApp = admin.getGridServiceManagers().deploy(
 for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
   pu.waitFor(pu.getTotalNumberOfInstances());
 }
-{{% /highlight %}}
+```
 
 Here is the content of the application.xml file (that resides alongside feeder.jar in dist.zip):
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -529,19 +529,19 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 
 	</os-admin:application>
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent GigaSpaces CLI with XML %}}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
-{{% highlight java %}}
+```java
 gigaspaces/bin/gs.sh deploy-application gigaspaces/examples/data/dist.zip
-{{% /highlight %}}
+```
 
 Here is the content of the application.xml file (that resides alongside feeder.jar in dist.zip):
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -562,7 +562,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 
 	</os-admin:application>
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -587,7 +587,7 @@ The deployment progress can be monitored using the events provided by the Admin 
 1. `ProvisionStatus#FAILURE` - a failed attempt to provision an instance on an available `GridServiceContainer`
 1. `ProvisionStatus#PENDING` - a pending to provision an instance until a matching `GridServiceContainer` is discovered
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().create();
 admin.getProcessingUnits().getProcessingUnitInstanceProvisionStatusChanged().add( listener )
 //or
@@ -601,7 +601,7 @@ admin.addEventListener(new ProcessingUnitInstanceProvisionStatusChangedEventList
        ...
    }
 });
-{{% /highlight %}}
+```
 
 A compound listener (implements several interfaces) can be registered using the `Admin.addEventListener(...)`.
 
@@ -613,7 +613,7 @@ These member-alive-indicator transitions are reflected using the Admin API `Memb
 
 The `MemberAliveIndicatorStatus`  has three states: ALIVE, SUSPECTING and FAILURE. The transition from SUSPECTING to FAILURE is final. From this state the processing unit instance is considered not alive. The transition from SUSPECTING back to ALIVE can occur if one of the retries succeeded in contacting the processing unit instance.
 
-{{% highlight java %}}
+```java
 Admin admin = new AdminFactory().create();
 admin.getProcessingUnits().getProcessingUnitInstanceMemberAliveIndicatorStatusChanged().add( listener )
 //or
@@ -627,6 +627,6 @@ admin.addEventListener(new ProcessingUnitInstanceMemberAliveIndicatorStatusChang
        ...
    }
 });
-{{% /highlight %}}
+```
 
 A compound listener (implements several interfaces) can be registered using the `Admin.addEventListener(...)`.

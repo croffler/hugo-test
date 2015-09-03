@@ -29,7 +29,7 @@ For more information on setting the environment refer to [Installing C++ Package
 
 After running the example the console will have the following output:
 
-{{%highlight console%}}
+```console
 
 Retrieved a space proxy to /./APIUsageExampleEmbeddedSpace?groups=CPP-GROUP
 Did snapshot for Person class
@@ -49,7 +49,7 @@ Total number of notifications received: 100
 DONE
 Press Enter to end API Usage Example...
 
-{{%/highlight%}}
+```
 
 {{% info %}}
 The API Usage Example can work with any given space simply by providing the space URL as an argument. To do so change the project Command Arguments and specify the space URL string. For example, `jini://localhost/*/mySpace`.

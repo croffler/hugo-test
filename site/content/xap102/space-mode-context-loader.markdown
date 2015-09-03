@@ -16,7 +16,7 @@ Using the custom space mode events described in the [Space](./the-space-configur
 
 OpenSpaces provides a simpler solution, allowing you to load a Spring application context (based on a separate Spring XML configuration file) only when the Processing Unit or space is in primary mode, and unload it when the Processing Unit or space is in backup mode. If we take the following simple bean:
 
-{{% highlight java %}}
+```java
 public class SpaceModeContextBean implements InitializingBean, DisposableBean {
 
     @GigaSpaceContext(name = "gigaSpace")
@@ -30,24 +30,24 @@ public class SpaceModeContextBean implements InitializingBean, DisposableBean {
         System.out.println("SPACE MODE BEAN DESTROYED, SPACE [" + gigaSpace + "]");
     }
 }
-{{% /highlight %}}
+```
 
 and the following Spring XML definition constructing this bean (stored in a separate XML file than the Processing Unit definition called `mode.xml`):
 
 {{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:giga-space-context />
 
 <bean id="spaceModeContextBean" class="org.openspaces.example.data.processor.SpaceModeContextBean"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <!--
     Enables the usage of @GigaSpaceContext annotation based injection.
@@ -55,7 +55,7 @@ and the following Spring XML definition constructing this bean (stored in a sepa
 <bean id="gsContext" class="org.openspaces.core.context.GigaSpaceContextBeanPostProcessor" />
 
 <bean id="spaceModeContextBean" class="org.openspaces.example.data.processor.SpaceModeContextBean"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -65,7 +65,7 @@ with the following Processing Unit definition:
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="space" />
 
@@ -77,12 +77,12 @@ with the following Processing Unit definition:
 <os-core:giga-space-context/>
 
 <os-core:context-loader id="modeExample" location="classpath:/META-INF/spring/mode/mode.xml"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -100,7 +100,7 @@ with the following Processing Unit definition:
 <bean id="modeExample" class="org.openspaces.core.space.mode.SpaceModeContextLoader">
     <property name="location" value="classpath:/META-INF/spring/mode/mode.xml" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

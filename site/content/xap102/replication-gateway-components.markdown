@@ -22,14 +22,14 @@ The gateway's delegator main purpose is to delegate outgoing replication from on
 
 The delegator configuration block in the gateway `pu.xml` looks as follows:
 
-{{% highlight xml %}}
+```xml
 <os-gateway:delegator id="delegator" local-gateway-name="NEWYORK" gateway-lookups="gatewayLookups">
   <os-gateway:delegations>
     <os-gateway:delegation target="LONDON"/>
     <os-gateway:delegation target="HONGKONG"/>
   </os-gateway:delegations>
 </os-gateway:delegator>
-{{% /highlight %}}
+```
 
 In this example, we have New-York's delegator gateway which acts as a delegation point for two targets, London and Hong-Kong. This will be the mediation point for the two replication channels to London and Hong-Kong data grids. It is important to understand that the delegator is not in charge of broadcasting each packet to all the targets but it receives the relevant packet from each source channel and delegate it to the correct target according to the channel endpoint.
 
@@ -39,7 +39,7 @@ The gateway sink main purpose is to handle incoming replication activity, which 
 
 The sink configuration block in the gateway `pu.xml` looks as follows:
 
-{{% highlight xml %}}
+```xml
 <os-gateway:sink id="sink"
   local-gateway-name="NEWYORK" gateway-lookups="gatewayLookups"
   local-space-url="jini://*/*/myNYSpace">
@@ -48,7 +48,7 @@ The sink configuration block in the gateway `pu.xml` looks as follows:
     <os-gateway:source name="HONGKONG" />
   </os-gateway:sources>
 </os-gateway:sink>
-{{% /highlight %}}
+```
 
 In this example, this is the sink of New-York gateway that is open for incoming replication from London and Hong-Kong and will dispatch this incoming replication to the local data grid named "myNYSpace".
 
@@ -73,7 +73,7 @@ In most common scenarios, each site resides on a different LAN, and there is no 
 
 The configuration which specifies the discovery and communication ports, along with the lookup service machine host (which by default should be the gateway machine it self as it starts the embedded lookup service) is described in each gateway `pu.xml` as follows:
 
-{{% highlight xml %}}
+```xml
 <os-gateway:lookups id="gatewayLookups">
   <os-gateway:lookup gateway-name="NEWYORK" host="ny-gateway-host-machine"
     discovery-port="10001" communication-port="7000" />
@@ -84,7 +84,7 @@ The configuration which specifies the discovery and communication ports, along w
 </os-gateway:lookups>
 <!-- The above ports and host names are randomly selected and have no
      meaning, all sites could designate the same ports as well-->
-{{% /highlight %}}
+```
 
 The host and discovery port are used for the lookup process only, the communication port is used for the actual replication process after the relevant gateway component have discovered its target (e.g a delegator locates the target sink). The discovery and communication port should be permitted in the firewalls between the lookup services machines and between the gateway, when using the default, the lookup services are started inside the gateways, so this ports needs to be permitted between the gateway machines only.
 
@@ -96,23 +96,23 @@ If there is no firewall, and all ports are available, there is no need to specif
 
 This process of spawning a new GSC and gateway relocation done as well when the gateway is configured to start an embedded lookup service (default) and the hosting GSC is not started with the matching discovery (lookup) port. This will not happen if the gateway is not configured to start an embedded gateway and is using an already existing one that is determined by the `host` and `discovery-port` attributes. In order to disable the creation of an embedded lookup service all the gateway components in the gateway processing unit (Both delegator and sink) should be configured with the following:
 
-{{% highlight xml %}}
+```xml
 <os-gateway:delegator id="delegator" local-gateway-name=... gateway-lookups=... start-embedded-lus="false">
   ...
 </os-gateway:delegator>
-{{% /highlight %}}
+```
 
-{{% highlight xml %}}
+```xml
 <os-gateway:sink id="sink"
   local-gateway-name=... gateway-lookups=... start-embedded-lus="false" local-space-url=...>
   ...
 </os-gateway:sink>
-{{% /highlight %}}
+```
 
 In some scenarios, for example when there are many sites, it is more reasonable to use pre-started limited number of lookup services to avoid the creation of lookup services as the number of sites.
 In this case, the `start-embedded-lus="false"` should be used and the `host` and `discovery-port` of the lookup attributes should point to the existing lookup services location. For example:
 
-{{% highlight xml %}}
+```xml
 <os-gateway:lookups id="gatewayLookups">
   <os-gateway:lookup gateway-name="NEWYORK" host="lookup1-host-machine"
     discovery-port="10001" communication-port=... />
@@ -123,7 +123,7 @@ In this case, the `start-embedded-lus="false"` should be used and the `host` and
 </os-gateway:lookups>
 <!-- The above ports and host names are randomly selected and have no
      meaning, all sites could designate the same ports as well-->
-{{% /highlight %}}
+```
 
 In this case it is not that important which `host` and `discovery-port` is specified in which site, but it is recommended to use the "nearest" available lookup service configuration per site. However, each existing lookup service should appear at least once under one of the `os-gateway:lookup` entries in order for it to be used in the lookup process.
 
@@ -131,7 +131,7 @@ In this case it is not that important which `host` and `discovery-port` is speci
 
 Below is an example `pu.xml` file for the gateway of New-York
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:context="http://www.springframework.org/schema/context"
@@ -174,13 +174,13 @@ Below is an example `pu.xml` file for the gateway of New-York
   <!-- The above ports and host names are randomly selected
        and have no meaning, all sites could designate the same ports as well-->
 </beans>
-{{% /highlight %}}
+```
 
 # Indirect Delegation (Delegation via other gateways)
 
 Some topologies may require in direct delegation, for example in the above topology, there bandwidth between London and Hong-Kong be very poor or maybe there is no direct connection between this two sites but they should still replicate to each other. This replication can be delegated from London to Hong-Kong via New-York and the other way around as well. This is accomplished by chaining delegators together, in this case the delegator of London to Hong-Kong will be actually connected to the delegator of New-York to Hong-Kong thus delegating the replication communication via New-York. In this case the gateway of London should be configured as follows:
 
-{{% highlight xml %}}
+```xml
 <os-gateway:delegator id="delegator"
   local-gateway-name="LONDON" gateway-lookups="gatewayLookups">
   <os-gateway:delegations>
@@ -206,7 +206,7 @@ Some topologies may require in direct delegation, for example in the above topol
 <!-- The above ports and host names are randomly selected and
      have no meaning, all sites could designate the same ports as well-->
 </beans>
-{{% /highlight %}}
+```
 
 In this configuration we have specifies that the delegator to Hong Kong should be routed via New York. This chaining can contain one or more delegators, i.e New York delegator could have been connected to Hong Kong via some other 4th site. The Hong Kong gateway should be configured in the same way. Another important thing to notice is that the lookup entry for Hong Kong is removed in London's gateway since it should never lookup Hong Kong directly.
 
@@ -220,7 +220,7 @@ The delegator and sink components are actually isolated and can even be deployed
 
 Delegator pu.xml:
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
   ...
 
@@ -241,11 +241,11 @@ Delegator pu.xml:
   <!-- The above ports and host names are randomly selected
        and have no meaning, all sites could designate the same ports as well-->
 </beans>
-{{% /highlight %}}
+```
 
 Sink pu.xml:
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
   ...
 
@@ -268,7 +268,7 @@ Sink pu.xml:
   <!-- The above ports and host names are randomly selected
        and have no meaning, all sites could designate the same ports as well-->
 </beans>
-{{% /highlight %}}
+```
 
 It is also possible to bundle more than one sink and/or delegator in one processing unit, thus having one processing unit acting as the gateway of multiple data grids.
 It is important to understand that a gateway is a logical and not a physical term which relates to all of the deployed processing units that contains at least one of the gateway components with the same name (sink or delegator).
@@ -306,7 +306,7 @@ The following bean level properties should be set:
 
 Setting the security credentials is done using the "security" element in the "os-gateway" namespace:
 
-{{% highlight xml %}}
+```xml
 <os-gateway:delegator id="delegator" local-gateway-name="USA" gateway-lookups="gatewayLookups">
   <os-gateway:delegations>
     <os-gateway:delegation target="FRANCE" />
@@ -321,11 +321,11 @@ Setting the security credentials is done using the "security" element in the "os
   </os-gateway:sources>
   <os-gateway:security username="gs" password="1234" />
 </os-gateway:sink>
-{{% /highlight %}}
+```
 
 It is also possible to set a "com.gigaspaces.security.directory.UserDetails" implementation instead of using the username and password attributes:
 
-{{% highlight xml %}}
+```xml
 <bean id="userDetailsBean" class="com.gigaspaces.security.directory.User">
   <constructor-arg>
     <value>${username}</value>
@@ -349,4 +349,4 @@ It is also possible to set a "com.gigaspaces.security.directory.UserDetails" imp
   </os-gateway:sources>
   <os-gateway:security user-details="userDetailsBean" />
 </os-gateway:sink>
-{{% /highlight %}}
+```

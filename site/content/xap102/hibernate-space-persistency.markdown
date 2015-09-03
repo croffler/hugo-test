@@ -36,7 +36,7 @@ See below example for `Hibernate Space Persistency` that is configured having a 
 {{% inittab simple_space %}}
 
 {{% tabcontent Namespace %}}
-{{% highlight xml %}}
+```xml
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
     <property name="url" value="jdbc:hsqldb:hsql://localhost:9001"/>
@@ -81,10 +81,10 @@ See below example for `Hibernate Space Persistency` that is configured having a 
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
-{{% highlight xml %}}
+```xml
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
     <property name="url" value="jdbc:hsqldb:hsql://localhost:9001"/>
@@ -132,14 +132,14 @@ See below example for `Hibernate Space Persistency` that is configured having a 
         </props>
     </property>
 </bean>
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 
 {{% /inittab %}}
 
 When using annotations to decorate the Space Classes the `sessionFactory` would have the following:
 
-{{% highlight xml %}}
+```xml
 <bean id="sessionFactory" class="org.springframework.orm.hibernate4.annotation.AnnotationSessionFactoryBean">
     <property name="dataSource" ref="dataSource"/>
     <property name="annotatedClasses">
@@ -153,7 +153,7 @@ When using annotations to decorate the Space Classes the `sessionFactory` would 
         </props>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% info %}}
 The `external-data-source` element within the persistent schema allows for further configuration of the external data source. The values can be injected using the properties tag within the Space tag using the "xpath" notation.
@@ -234,7 +234,7 @@ Tuning the `fetchSize`, `initialLoadChunkSize`, `initialLoadThreadPoolSize` and 
 
 See example below:
 
-{{% highlight xml %}}
+```xml
 <bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
 	<property name="sessionFactory" ref="sessionFactory"/>
 	<property name="fetchSize" value="100"/>
@@ -252,4 +252,4 @@ See example below:
         	</list>
     	</property>
 </bean>
-{{% /highlight %}}
+```

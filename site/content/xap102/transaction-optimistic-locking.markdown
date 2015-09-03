@@ -35,21 +35,21 @@ Here are the steps you should execute to update data, using the optimistic locki
 
 Get a space proxy in `versioned` mode. This can be done using one of the options listed below. You may get remote or embedded space proxies. Make sure the proxy is in optimistic locking mode using the (`versioned`) option. This can be done using one of the options listed below:
 
-{{% highlight java %}}
+```java
 GigaSpace space = new GigaSpaceConfigurer( new SpaceProxyConfigurer("space").versioned(true)).gigaSpace();
-{{% /highlight %}}
+```
 
 or
 
-{{% highlight java %}}
+```java
 <os-core:space-proxy  id="space" name="mySpace"  versioned="true" />
-{{% /highlight %}}
+```
 
 #### Step 2 -- Enable the Space Class to Support Optimistic Locking
 
 You should enable the Space class to support the optimistic locking protocol, by including the `@SpaceVersion` decoration on an `int` getter field. This field stores the current object version and is maintained by GigaSpaces. See below for an example:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Employee
 {
@@ -57,7 +57,7 @@ public class Employee
 	@SpaceVersion
 	public int getVersionID(){return versionID;	}
 	public void setVersionID(int versionID)	{this.versionID=versionID;}
-{{% /highlight %}}
+```
 
 #### Step 3 -- Read Objects without using a Transaction
 
@@ -96,7 +96,7 @@ By following the above procedure, you get a shorter locking duration, that impro
 
 We use the following Space Class with our examples:
 
-{{% highlight java %}}
+```java
 import com.gigaspaces.annotation.pojo.*;
 
 @SpaceClass
@@ -139,13 +139,13 @@ public class Employee
 	public void setVersionID(int versionID)	{this.versionID= versionID;}
 
 }
-{{% /highlight %}}
+```
 
 {{% inittab code_exmple %}}
 {{% tabcontent Non-Transactional Update %}}
 This example illustrates optimistic locking usage without using a transactional update:
 
-{{% highlight java %}}
+```java
 @GigaSpaceContext (name="gigaspace")
 GigaSpace gigaspace;
 
@@ -178,11 +178,11 @@ public void simpleOL() throws Exception{
 				+ v3Employee.getVersionID());
 	}
 }
-{{% /highlight %}}
+```
 
 Here is the expected output:
 
-{{% highlight java %}}
+```java
 About to Write Version:1
 Employee ID 1 - Object version in Space:1
 About to Write Version:1
@@ -194,13 +194,13 @@ Operation=Update UID=2012775165^17^1^0^0 space entry version=2 client version=1
 re-read Object again
 perform Update again.. Client Object version:2
 Update Successful! Object version in Space:3
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Transactional Update %}}
 The read and the transactional update methods:
 
-{{% highlight java %}}
+```java
 public class MyApp {
 	@GigaSpaceContext (name="gigaspace")
 	GigaSpace gigaspace;
@@ -224,11 +224,11 @@ public class MyApp {
 		return gigaspace.write(employee);
 	}
 }
-{{% /highlight %}}
+```
 
 The calling method:
 
-{{% highlight java %}}
+```java
 public void myBizzLogic() throws Exception {
 	myapp.init();
 	Employee v1Employee = myapp.readEmployee(new Integer(1),new Integer(1));
@@ -253,11 +253,11 @@ public void myBizzLogic() throws Exception {
 	}
 	System.out.println("Done!");
 }
-{{% /highlight %}}
+```
 
 Here is the expected output:
 
-{{% highlight java %}}
+```java
 About to Write Version:1
 Employee ID 1 - Object version in Space:1
 About to Write Version:1
@@ -268,7 +268,7 @@ Entry Version ID conflict, Operation rejected. Operation=Update UID=2012775165^1
 re-read Object again
 perform Update again.. Client Object version:2
 Update Successful! Object version in Space:3
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -279,7 +279,7 @@ If one of the returned objects is a `SpaceOptimisticLockingFailureException`, th
 
 The read and update methods:
 
-{{% highlight java %}}
+```java
 @Transactional(propagation=Propagation.NEVER)
 public Employee[] readEmployees(Employee template)
 {
@@ -291,11 +291,11 @@ public Object[] writeEmployees (Employee employee[])
 {
 	return gigaspace.updateMultiple(employee,new long [employee.length]);
 }
-{{% /highlight %}}
+```
 
 This method checks if the returned result includes a `SpaceOptimisticLockingFailureException`:
 
-{{% highlight java %}}
+```java
 static boolean checkResult(Object results[])
 {
 	for (Object result : results) {
@@ -305,11 +305,11 @@ static boolean checkResult(Object results[])
 	}
 	return true;
 }
-{{% /highlight %}}
+```
 
 The application read and update logic:
 
-{{% highlight java %}}
+```java
 Employee employees1 [] = app.readEmployees(new Employee());
 Employee employees2 [] = app.readEmployees(new Employee());
 Object res1[] = app.writeEmployees(employees1);
@@ -330,7 +330,7 @@ while (true)
 		break;
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

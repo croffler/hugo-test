@@ -16,10 +16,10 @@ To solve the performance problems associated with class serialization, the seria
 
 Externalizable is an interface that consists of two methods:
 
-{{%highlight java%}}
+```java
 public void readExternal(ObjectInput in);
 public void writeExternal(ObjectOutput out);
-{{%/highlight%}}
+```
 
 The Externalization mechanism writes out the identity of the class (which boils down to the name of the class and the appropriate serialVersionUID). It also stores the superclass structure and all the information about the class hierarchy. But instead of visiting each superclass and using it to store some of the state information, it simply calls writeExternal() on the local class definition.
 The Externalization mechanism stores all the metadata, but writes out only the local instance information.
@@ -44,7 +44,7 @@ Here is an example; the Person class has an Address property that is being exter
 
 {{%inittab%}}
 {{%tabcontent Person %}}
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Person {
 
@@ -89,10 +89,10 @@ public class Person {
 		this.address = address;
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 {{%tabcontent Address %}}
-{{%highlight java%}}
+```java
 public class Address implements Externalizable {
 
 	private String street;
@@ -142,7 +142,7 @@ public class Address implements Externalizable {
 		out.writeObject(country);
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 {{%/inittab%}}
 

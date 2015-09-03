@@ -24,32 +24,32 @@ The following examples assume the default constructor of **Person** initializes 
 
 Read an entry of type **Person** whose **firstName** property is **John**:
 
-{{% highlight java %}}
+```java
 Person template = new Person();
 template.setFirstName("John");
 Person person = gigaspace.read(template);
-{{% /highlight %}}
+```
 
 Read an entry of type **Person** whose **firstName** is **John** and **lastName** is **Smith**:
 
-{{% highlight java %}}
+```java
 Person template = new Person();
 template.setFirstName("John");
 template.setLastName("Smith");
 Person person = gigaspace.read(template);
-{{% /highlight %}}
+```
 
 If none of the properties are set, all the entries of the type are matched. For example, to count all entries of type **Person**:
 
-{{% highlight java %}}
+```java
 int numOfPersons = gigaspace.count(new Person());
-{{% /highlight %}}
+```
 
 If the template class is null, all the entries in the space are matched. For example, to clear all entries from the space:
 
-{{% highlight java %}}
+```java
 gigaspace.clear(null);
-{{% /highlight %}}
+```
 
 # Indexes
 
@@ -60,14 +60,14 @@ GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (rega
 Template Matching support inheritance relationships, so that entries of a sub-class are visible in the context of the super class, but not the other way around.
 For example, suppose class **Citizen** extend class **Person**:
 
-{{% highlight java %}}
+```java
 gigaSpace.write(new Person());
 gigaSpace.write(new Citizen());
 // Count persons - should return 2:
 int numberOfPersons = gigaSpace.count(new Person());
 // Count citizends - should return 1:
 int numberOfCitizens = gigaSpace.count(new Citizen());
-{{% /highlight %}}
+```
 
 {{% info %}} Since all classes extends `Object`, a template of type `Object` will match all the entries in the space.{{%/info%}}
 
@@ -82,20 +82,20 @@ For more information see [Routing In Partitioned Spaces](./routing-in-partitione
 
 Properties with primitive types pose a problem - a primitive type cannot be set to null. For example, suppose class **Person** has property **age** of type **int**, and we wrote the following piece of code which writes and reads a person:
 
-{{% highlight java %}}
+```java
 // Create a person and write it to the space:
 Person p1 = new Person();
 p1.setAge(30);
 gigaSpace.write(p1);
 // Read person from space:
 Person p = gigaSpace.read(new Person());
-{{% /highlight %}}
+```
 
 We expect **p** to hold the person we just wrote to the space, but in fact it will be null: since **age** is primitive it is implicitly initialized to 0 (zero) and cannot be set to null either implicitly or explicitly, which means we're actually matching for Persons whose age is 0 (zero).
 
 To overcome this issue we can map a primitive value to null via the `@SpaceProperty(nullValue)` annotation. For example:
 
-{{% highlight java %}}
+```java
 public class Person {
     private int age = -1;
 
@@ -108,7 +108,7 @@ public class Person {
     }
     // The rest of the class is omitted for brevity.
 }
-{{% /highlight %}}
+```
 
 We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. Note that gs.xml can be used instead of annotations to specify metadata - for more information refer to [POJO Metadata](./modeling-your-data.html).
 

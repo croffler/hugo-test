@@ -17,7 +17,7 @@ A Cassandra based implementation of the [Space Data Source](./space-data-source-
 The Cassandra Space Data Source uses [Cassandra JDBC Driver](http://code.google.com/a/apache-extras.org/p/cassandra-jdbc/) and [Hector Library](http://hector-client.github.com/hector/build/html/index.html) when interacting with the Cassandra cluster.
 include the following in your `pom.xml`
 
-{{% highlight xml %}}
+```xml
 <!-- currently the cassandra-jdbc library is not the central maven repository -->
 <repository>
     <id>org.openspaces</id>
@@ -48,7 +48,7 @@ include the following in your `pom.xml`
     <artifactId>hector-core</artifactId>
     <version>{{%version hector-core%}}</version>
 </dependency>
-{{% /highlight %}}
+```
 
 ### Setup
 
@@ -58,7 +58,7 @@ also asynchronously persists the data using a mirror (see [Cassandra Space Synch
 {{% inittab Configuration Examples %}}
 {{% tabcontent Spring %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -119,12 +119,12 @@ also asynchronously persists the data using a mirror (see [Cassandra Space Synch
     <os-core:giga-space id="gigaSpace" space="space" />
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 HectorCassandraClient hectorClient = new HectorCassandraClientConfigurer()
             .clusterName(cluster)
             .hosts(cassandraHosts)
@@ -153,7 +153,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpa
   .addProperty("cluster-config.mirror-service.supports-partial-update", "true")
   .spaceDataSource(spaceDataSource)
   .space()).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

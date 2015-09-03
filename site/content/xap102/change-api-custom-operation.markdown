@@ -16,7 +16,7 @@ A custom change operation lets the user implement his own change operation in ca
 The implementation should extend the abstract `CustomChangeOperation` class and implement both the `getName` and `change` methods.
 See below an example of a change operation which multiplies an integer property value:
 
-{{% highlight java %}}
+```java
 public static class MultiplyIntegerChangeOperation extends CustomChangeOperation {
   private static final long serialVersionUID = 1L;
   private final String path;
@@ -50,16 +50,16 @@ public static class MultiplyIntegerChangeOperation extends CustomChangeOperation
     return newValue;
   }  
 }
-{{% /highlight %}}
+```
 
 Using it will be like any other change operation, while providing this custom implementation:
 
-{{% highlight java %}}
+```java
 gigaSpace.change(query, new ChangeSet().custom(new MultiplyIntegerChangeOperation("votes", 2)));
-{{% /highlight %}}
+```
 
 With Java 8 lambda syntax the above can be done in a simpler way and without extending the `CustomChangeOperation` interface:
-{{% highlight java %}}
+```java
 gigaSpace.change(query, new ChangeSet().custom("multiplyInt", (entry) -> {
         //Assume this is an integer property, if this is not true an exception will be thrown 
         //and the change operation will fail
@@ -68,7 +68,7 @@ gigaSpace.change(query, new ChangeSet().custom("multiplyInt", (entry) -> {
         entry.setPathValue("votes", newValue);
         return newValue;
     }));
-{{% /highlight %}}
+```
 
 
 # The Name of a Custom Change Operation 
@@ -85,7 +85,7 @@ Moreover, if you want to change a property within that value by invoking a metho
 
 Below you can find an example that adds the element 2 into an ArrayList that exists in the entry under a property named "listProperty". The result sent to client (if requested) is the size of the collection after the change. Note that we clone the ArrayList before modifying it as explained above.
 	 
-{{% highlight java %}}
+```java
 public Object change(MutableServerEntry entry) {
   ArrayList oldValue = (ArrayList)entry.getPathValue("listPropery");
   if (oldValue == null)
@@ -98,7 +98,7 @@ public Object change(MutableServerEntry entry) {
   entry.setPathValue("listProperty", newValue);
   return size;
 }
-{{% /highlight %}}
+```
 
 {{% tip %}}
 `getPathValue`, `setPathValue` operations support nested paths, it will traverse on properties and map keys if the path contains '.' in it (e.g. "myPojo.mapProperty.key")
@@ -118,7 +118,7 @@ Custom change operation lets you run custom code on the space, hence the space s
 Using a custom operation with a [Replication Filter]({{%currentadmurl%}}/cluster-replication-filters.html), [Space Filter](./the-space-filters.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) is supported
 and behaves the same as the built-in operations. You can get a reference to the instance of the `CustomChangeOperation` by checking its name (or `instanceof`) and casting to the specific type.
 
-{{% highlight java %}}
+```java
 DataSyncChangeSet dataSyncChangeSet = ChangeDataSyncOperation.getChangeSet(dataSyncOperation);
 Collection<ChangeOperation> operations = dataSyncChangeSet.getOperations();
 for(ChangeOperation operation : operations) {
@@ -129,5 +129,5 @@ for(ChangeOperation operation : operations) {
   }
   //...
 }
-{{% /highlight %}}
+```
 

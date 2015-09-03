@@ -77,7 +77,7 @@ GigaSpaces provides a built in Hibernate EDS implementation. This implementation
 
 The following example shows how to configure a space with a Hibernate `SpaceDataSource` and a Mirror service with a Hibernate `SpaceSynchronizationEndpoint`:
 
-{{% highlight xml %}}
+```xml
 <!-- SPACE -->
 <bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
@@ -100,4 +100,4 @@ The following example shows how to configure a space with a Hibernate `SpaceData
 <os-core:mirror id="mirror" url="/./mirror-service" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" operation-grouping="group-by-space-transaction">
     <os-core:source-space name="mySpace" partitions="2" backups="1"/>
 </os-core:mirror>
-{{% /highlight %}}
+```

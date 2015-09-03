@@ -22,7 +22,7 @@ To write your c++ class to the space, perform the following steps:
 
 For example, this is the file `<Example Root>\PocoFromExistingClass.gs.xml`:
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE gigaspaces-mapping SYSTEM "../../config/cpp.dtd">
 <gigaspaces-mapping>
@@ -36,13 +36,13 @@ For example, this is the file `<Example Root>\PocoFromExistingClass.gs.xml`:
     <property name="content" type="string" null-value="" index="false"/>
   </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 Note the line that informs `gsxml2cpp` about the file of your existing class:
 
-{{% highlight cpp %}}
+```cpp
 <include-header file="UserMessage.h"/>
-{{% /highlight %}}
+```
 
 # Change the user class.
 
@@ -52,25 +52,25 @@ An example of an original class can be found at `<Example Root>\UserMessage_orig
 
 Step 1. Add an include statement and namespace as shown below:
 
-{{% highlight cpp %}}
+```cpp
 #include "IEntry.h"
 using namespace OpenSpaces;
-{{% /highlight %}}
+```
 
 Step 2. Inherit from `IEntry`:
 
-{{% highlight cpp %}}
+```cpp
 class UserMessage:  public IEntry /** (GigaSpaces) need to inherit for space operations **/
-{{% /highlight %}}
+```
 
 Step 3. Implement the the `IEntry` interface (one function):
 
-{{% highlight cpp %}}
+```cpp
 virtual const char* GetSpaceClassName() const
 {
      return "UserMessage";
 }
-{{% /highlight %}}
+```
 
 {{% note %}}
 The name of the class as returned by `GetSpaceClassName` should match the name of the class in the `gs.xml` file.
@@ -78,7 +78,7 @@ The name of the class as returned by `GetSpaceClassName` should match the name o
     2. Optional -- initialize with `null values` in the constructor:
 {{%/note%}}
 
-{{% highlight cpp %}}
+```cpp
 UserMessage()
 {
 	// (GigaSpaces) Optional - initialize with null values in the class constructor
@@ -86,15 +86,15 @@ UserMessage()
 	id = -999;
 	uid = "";
 }
-{{% /highlight %}}
+```
 
 Note that these 3 fields are the ones specified in our `gs.xml` file.
 
 Step 4. Optional -- add a smart pointer:
 
-{{% highlight cpp %}}
+```cpp
 typedef boost::shared_ptr<UserMessage>    UserMessagePtr;
-{{% /highlight %}}
+```
 
 Step 5. Handle the c++ serializer code generation, build the shared library (DLL) from this code, and place the library in the appropriate directory (`<XAP Root>\lib\platform\native`).
 The following instructions show you how to do this in Visual Studio using the supplied makefile (`<Example Root>/makefileSerializer.mk`):
@@ -107,10 +107,10 @@ Step 6. Create a custom build for `PocoFromExistingClass.gs.xml`:
 
 Step 7. Type the following lines in the **Command Line** text box:
 
-{{%highlight console%}}
+```console
 "$(JSHOMEDIR)/cpp/bin/$(PLATFORM)\$(COMPILER)/gsxml2cpp" "$(InputPath)" NA "$(InputDir)\UserMessageSerializer.cpp" DummyHeaderFile
   nmake -f makefileSerializer.mk
-{{%/highlight%}}
+```
 
 {{% info %}}
 In Win64 use `makefileSerializer_win64.mk`

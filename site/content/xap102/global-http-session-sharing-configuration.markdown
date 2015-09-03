@@ -14,7 +14,7 @@ weight: 200
 
 The web application requires a couple of configuration changes to the `web.xml` file in order to enabled XAP Session sharing:
 
-{{% highlight xml %}}
+```xml
 <web-app>
 		....
 	<listener>
@@ -36,7 +36,7 @@ The web application requires a couple of configuration changes to the `web.xml` 
             <url-pattern>/*</url-pattern>
         </filter-mapping>
 </web-app>
-{{% /highlight %}}
+```
 
 {{% note %}}The **GigaSpacesHttpSessionFilter** must be the first filter defined.{{% /note %}}
 
@@ -123,7 +123,7 @@ The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below 
 
 {{%accord title="Session Sharing Configuration For Non-Secured Application ..." parent="acc0" id="tab1"%}}
 
-{{% highlight bash %}}
+```bash
 
 [main]
 # space proxy wraper
@@ -184,7 +184,7 @@ cacheManager.compressor=$compressor
 # This will use GigaSpaces for _all_ of Shiro's caching needs (realms, etc), not just for Session storage.
 securityManager.cacheManager=$cacheManager
 
-{{% /highlight %}}
+```
 {{%/accord%}}
 
 {{%accord title="Session Sharing Configuration Example For Secured Application Using Shiro Security..."  parent="acc0" id="tab2"%}}
@@ -193,7 +193,7 @@ securityManager.cacheManager=$cacheManager
 Note that this example uses the basic authentication configuration but, Shiro has various authenticator types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html)
 {{% /note %}}
 
-{{% highlight bash %}}
+```bash
 
 [main]
 # space proxy wraper
@@ -278,7 +278,7 @@ goodguy = winnebago:drive:eagle5
 ##/logout = logout
 ##/account/** = authc
 /remoting/** = authc, roles[b2bClient], perms["remote:invoke:lan,wan"]
-{{% /highlight %}}
+```
 {{%/accord%}}
 
 {{%accord title="Session Sharing Configuration Example For Secured Application Using Spring Security..."  parent="acc0" id="tab3"%}}
@@ -290,7 +290,7 @@ The configuration should be similar to the one in the **Non-Secured Application*
 
 Below is an example for the spring-security.xml that should be located under `WEB-INF` folder.
 
-{{% highlight xml %}}
+```xml
 <beans:beans xmlns="http://www.springframework.org/schema/security"
 			 xmlns:beans="http://www.springframework.org/schema/beans"
 			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -318,11 +318,11 @@ Below is an example for the spring-security.xml that should be located under `WE
 	</authentication-manager>
 
 </beans:beans>
-{{% /highlight %}}
+```
 
 In addition, you need to add the following in your web.xml file:
 
-{{% highlight xml %}}
+```xml
 
 <!-- Spring MVC -->
 <listener>
@@ -345,7 +345,7 @@ In addition, you need to add the following in your web.xml file:
     <url-pattern>/*</url-pattern>
 </filter-mapping>
   
-{{% /highlight %}}
+```
 
 {{%/accord%}}
 {{%/accordion%}}
@@ -365,7 +365,7 @@ The `gs-runtime.jar` should be replaced with the relevant XAP `gs-runtime.jar` m
 
 Another option is to use Maven:
 
-{{% highlight xml %}}
+```xml
 <repositories>
 	<repository>
 		<id>org.openspaces</id>
@@ -396,21 +396,21 @@ Another option is to use Maven:
 		<version>{{%version maven-version %}}</version>
 	</dependency>
 </dependencies>
-{{% /highlight %}}
+```
 
 
 # Deployment
 
 The XAP IMDG should be deployed using one of the [topologies](/product_overview/space-topologies.html).
 
-{{% highlight bash %}}
+```bash
 # To deploy the IMDG called `sessionSpace` start the XAP agent using:
 <XAP-HOME>/bin/gs-agent
 
 # and run the following command to deploy the session Space:
 <XAP-HOME>/bin/gs deploy-space sessionSpace
 
-{{% /highlight %}}
+```
 
 
 {{% refer %}}See the [deploy-space]({{%currentadmurl%}}/deploy-command-line-interface.html) command for details.
@@ -423,10 +423,10 @@ The `gs-session-manager-xxx.jar` located within the `\gigaspaces-xap-root\lib\op
 
 When using a [Secure XAP cluster]({{%currentsecurl%}}/securing-your-data.html) you can pass security credentials using following parameters in the `shiro.ini` file:
 
-{{%highlight ini%}}
+```console
 connector.username = user
 connector.password = pass
-{{%/highlight%}}
+```
 
 
 # Example

@@ -22,13 +22,13 @@ All the properties are written automatically into space. If the field is a refer
 
 Example:
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
 <class name="model.Person" persist="false" replicate="false">
     <property name="age" />
 </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 
 ### SpaceProperty
@@ -41,14 +41,14 @@ Example:
 
 Example:
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
 <class name="model.Person" persist="false" replicate="false">
     <property name="age" null-value="-1" />
     <property name="status" null-value="-1" />
 </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 
 ### Reference
@@ -61,14 +61,14 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 <class name="Person">
     <property name="firstName" />
     <property name="address" reference="model.Address" />
 </class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 
@@ -86,14 +86,14 @@ Example:
 
 Example:
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
 <class name="model.Person" persist="false" replicate="false">
     <property name="age" null-value="-1" />
     <property name="address" storage-type="binary" />
 </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 {{%learn "./storage-types---controlling-serialization.html"%}}
 
@@ -108,7 +108,7 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="model.Person" persist="false" replicate="false" >
         <property name="lastName">
@@ -122,7 +122,7 @@ Example:
         </property>
     </class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 {{%learn "./indexing.html"%}}
@@ -138,7 +138,7 @@ Example:
 
 Example:
 
-{{%highlight java%}}
+```java
 <gigaspaces-mapping>
     <class name="model.Person"  >
         <property name="personalInfo">
@@ -147,7 +147,7 @@ Example:
 		</property>
     </class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 {{%learn "./indexing-nested-properties.html"%}}
 
@@ -164,7 +164,7 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="model.Person" persist="false" replicate="false" >
         <property name="lastName">
@@ -179,7 +179,7 @@ Example:
     </class>
 </gigaspaces-mapping>
 
-{{%/highlight%}}
+```
 
 
 {{%learn "./indexing.html"%}}
@@ -196,7 +196,7 @@ Example:
 
 Example:
 
-{{%highlight java%}}
+```java
 <gigaspaces-mapping>
 	<class name="com.gigaspaces.examples.FlightReservation>
 		<property name="processingState">
@@ -208,7 +208,7 @@ Example:
 	</class>
 </gigaspaces-mapping>
 
-{{%/highlight%}}
+```
 
 {{%learn "./fifo-grouping.html"%}}
 
@@ -233,7 +233,7 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 	<class name="model.Person">
 	    <property name="personId" />
@@ -243,7 +243,7 @@ Example:
 		<id name="personId" auto-generate="true" />
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 {{%learn "./space-object-id-operations.html"%}}
@@ -259,7 +259,7 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 	<class name="model.Person">
 		<property name="id" />
@@ -270,7 +270,7 @@ Example:
         <routing name="type" />
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 {{%learn "{{%currentadmurl%}}/data-partitioning.html"%}}
 
@@ -285,14 +285,14 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 <class name="Person">
     <property name="firstName" />
     <property class-ref="model.Person" />
 </class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 # SpacePersist
 
@@ -305,14 +305,14 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 <class name="model.Person" persist="false" replicate="false">
     <property name="age" null-value="-1" />
     <persist name="persistence" />
 </class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 # SpaceVersion
 
@@ -324,7 +324,7 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 	<class name="model.Person">
 		<property name="id" />
@@ -337,7 +337,7 @@ Example:
         <version name="versionId" />
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 {{%learn "./transaction-optimistic-locking.html"%}}
 
@@ -353,7 +353,7 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 	<class name="model.Person">
 		<property name="id" />
@@ -365,7 +365,7 @@ Example:
         <exclude name="streetAddress" />
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 # SpaceLeaseExpiration
@@ -377,7 +377,7 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
 	<class name="model.Person">
 		<property name="id" />
@@ -389,7 +389,7 @@ Example:
         <lease-expiration name="leaseExp" />
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 {{%learn "./leases-automatic-expiration.html"%}}
 
@@ -404,14 +404,14 @@ Example:
 
 Example:
 
-{{%highlight xml%}}
+```xml
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.FlightReservation">
         	<fifo-grouping-property name="flightInfo" path=" flightNumber" />
     </class>
 </gigaspaces-mapping>
 
-{{%/highlight%}}
+```
 
 {{%learn "./fifo-grouping.html"%}}
 
@@ -426,7 +426,7 @@ Example:
 
 Example:
 
-{{%highlight java%}}
+```java
 <gigaspaces-mapping>
 	<class name="model.Person">
 		<property name="id" />
@@ -438,7 +438,7 @@ Example:
         <dynamic-properties name="personInfo" />
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 {{%learn "./dynamic-properties.html"%}}
 
@@ -453,7 +453,7 @@ Example:
 
 Example:
 
-{{%highlight java%}}
+```java
 <gigaspaces-mapping>
 	<class name="model.Person">
 		<property name="id" />
@@ -461,7 +461,7 @@ Example:
         <property name="address" document-support="copy"/>
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 {{%learn "./document-pojo-interoperability.html#deep-interoperability"%}}
 
@@ -477,7 +477,7 @@ Example:
 
 Example:
 
-{{%highlight java%}}
+```java
 <gigaspaces-mapping>
 	<class name="model.Person">
 		<property name="id" />
@@ -486,7 +486,7 @@ Example:
         <sequence-number name="sequenceNumber" />
 	</class>
 </gigaspaces-mapping>
-{{%/highlight%}}
+```
 
 
 

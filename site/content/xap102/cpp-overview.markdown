@@ -113,7 +113,7 @@ To introduce this additional metadata to the space, the c++ engineer provides a 
 
 Here is a simple example of the `gs.xml` content:
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gigaspaces-mapping>
   <class name="Message" persist="false" replicate="false" fifo="false" >
@@ -124,13 +124,13 @@ Here is a simple example of the `gs.xml` content:
     <property name="content" type="string" null-value="" index="false"/>
   </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 The same metadata decoration file is used across all languages -- the same `gs.xml` file can be used to introduce your language's independent class to the space.
 
 Here is the c++ `h` file that is generated or should be used with the above `gs.xml` file:
 
-{{% highlight cpp %}}
+```cpp
 class Message: public IEntry
 {
 public:
@@ -149,11 +149,11 @@ public:
                   }
 };
 typedef boost::shared_ptr<Message>    Message_ptr;
-{{% /highlight %}}
+```
 
 Here is the c++ code using the above class:
 
-{{% highlight cpp  %}}
+```cpp
 SpaceProxyPtr space ( finder.find("jini://*/*/mySpace") );
 Message_ptr msg( new Message() );
 msg->id = 1;
@@ -165,7 +165,7 @@ Message_ptr result (space->take(&messageTemplate, NULL_TX, 0 ));
 
 The SpaceProxyPtr includes all the familiar Space operations such as
 write , read , take , update for single and batch operations , SQL Query , Event Notifications, Transactions etc.
-{{% /highlight %}}
+```
 
 As you can see, the example above uses `boost::shared_ptr`. If you are not familiar with boost, see: [http://www.boost.org/](http://www.boost.org/).
 

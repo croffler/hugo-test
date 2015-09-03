@@ -23,7 +23,7 @@ The [XAP API](./the-gigaspace-interface-overview.html) supports  field-level dec
 <br>
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Person {
 
@@ -35,7 +35,7 @@ public class Person {
     return id;
   }
 }
-{{%/highlight%}}
+```
 
 {{%learn "./space-object-id-operations.html"%}}
 
@@ -50,7 +50,7 @@ public class Person {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Employee {
 
@@ -62,7 +62,7 @@ public class Employee {
     return departmentId;
   }
 }
-{{%/highlight%}}
+```
 
 {{%learn "./data-partitioning.html"%}}
 
@@ -79,7 +79,7 @@ public class Employee {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Employee {
 
@@ -91,7 +91,7 @@ public class Employee {
     return age;
   }
 }
-{{%/highlight%}}
+```
 
 
 # SpaceIndex
@@ -105,7 +105,7 @@ public class Employee {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class User {
 
@@ -136,7 +136,7 @@ public class User {
 		return creditLimit;
 	}
 }
-{{%/highlight%}}
+```
 
 
 {{%learn "./indexing.html"%}}
@@ -153,7 +153,7 @@ public class User {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Person
 {
@@ -168,7 +168,7 @@ public class Person
  .
  .
 }
-{{%/highlight%}}
+```
 
 
 {{%learn "./indexing.html"%}}
@@ -184,7 +184,7 @@ public class Person
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Person {
     private int id;
@@ -214,7 +214,7 @@ public static class Address implements Serializable {
 	private String street;
 	//getter and setter methods
 }
-{{%/highlight%}}
+```
 
 {{%learn "./indexing-nested-properties.html"%}}
 
@@ -231,7 +231,7 @@ public static class Address implements Serializable {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Employee {
 
@@ -243,7 +243,7 @@ public class Employee {
     return version;
   }
 }
-{{%/highlight%}}
+```
 
 {{%learn "./transaction-optimistic-locking.html"%}}
 
@@ -258,7 +258,7 @@ public class Employee {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass(persist=true)
 public class Employee {
 
@@ -270,7 +270,7 @@ public class Employee {
     return persist;
   }
 }
-{{%/highlight%}}
+```
 
 
 
@@ -285,7 +285,7 @@ public class Employee {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Employee {
 
@@ -297,7 +297,7 @@ public class Employee {
     return mothersName;
   }
 }
-{{%/highlight%}}
+```
 
 
 # SpaceLeaseExpiration
@@ -310,7 +310,7 @@ public class Employee {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass (persist=true)
 public class MyData {
     private long lease;
@@ -325,7 +325,7 @@ public class MyData {
         this.lease = lease;
     }
 }
-{{%/highlight%}}
+```
 
 {{%learn "./leases-automatic-expiration.html"%}}
 
@@ -341,7 +341,7 @@ public class MyData {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Message {
 
@@ -353,7 +353,7 @@ public class Message {
     return payLoad;
   }
 }
-{{%/highlight%}}
+```
 
 {{%learn "./storage-types---controlling-serialization.html"%}}
 
@@ -370,7 +370,7 @@ public class Message {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class FlightReservation
 {
@@ -382,7 +382,7 @@ public class FlightReservation
     public FlightInfo getFlightInfo() {return flightInfo;}
    	public void setFlightInfo(FlightInfo flightInfo) {this.flightInfo = flightInfo;}
 }
-{{%/highlight%}}
+```
 
 {{%learn "./fifo-grouping.html"%}}
 
@@ -397,7 +397,7 @@ public class FlightReservation
 <br>
 Example:
 
-{{%highlight java%}}
+```java
 
     @SpaceFifoGroupingIndex
     public State getProcessingState() {return processingState;}
@@ -407,7 +407,7 @@ Example:
     public Person getCustomer() {return customer;}
     public void setCustomer (Person customer) {this.customer = customer;}
 
-{{%/highlight%}}
+```
 
 {{%learn "./fifo-grouping.html"%}}
 
@@ -424,7 +424,7 @@ Example:
 <br>
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Person {
     public Person (){}
@@ -443,7 +443,7 @@ public class Person {
     public DocumentProperties getExtraInfo() {return extraInfo;}
     public void setExtraInfo(DocumentProperties extraInfo) {this.extraInfo=extraInfo;}
 }
-{{%/highlight%}}
+```
 
 {{%learn "./dynamic-properties.html"%}}
 
@@ -459,7 +459,7 @@ public class Person {
 <br>
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Person {
     ...
@@ -468,7 +468,7 @@ public class Person {
     public Person setAddress(Address address) {...}
     ...
 }
-{{%/highlight%}}
+```
 
 {{%learn "./document-pojo-interoperability.html#deep-interoperability"%}}
 
@@ -484,7 +484,7 @@ public class Person {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Person {
 
@@ -497,7 +497,7 @@ public class Person {
     {
     }
 }
-{{%/highlight%}}
+```
 
 
 # Space sequence number
@@ -509,7 +509,7 @@ public class Person {
 <br>
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass
 public class Person {
 
@@ -525,4 +525,4 @@ public class Person {
      return this.sequenceNumber;
    }
 }
-{{%/highlight%}}
+```

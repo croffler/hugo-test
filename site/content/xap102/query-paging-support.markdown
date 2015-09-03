@@ -21,7 +21,7 @@ A better approach is to create an iterator that iterates over the matching entri
 
 Use the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/GigaSpace.html) `iterator(template)` method to create an iterator of all the objects in the space which match the template (either [SQLQuery](./query-sql.html) or [template](./query-template-matching.html)). This results in a `SpaceIterator<T>` which implements both `Iterator<T>` and `Iterable<T>`, so a simple [for-each loop](https://docs.oracle.com/javase/1.5.0/docs/guide/language/foreach.html) can be used to iterate the results. For example:
 
-{{% highlight java %}}
+```java
 private void demoIterator(GigaSpace gigaSpace) {
     SQLQuery<MySpaceClass> query = new SQLQuery(MySpaceClass.class,"lastName = 'Smith'");
     int counter = 0;
@@ -29,17 +29,17 @@ private void demoIterator(GigaSpace gigaSpace) {
         System.out.println((counter++ ) + " " + entry.getLastName());
     }
 }
-{{% /highlight %}}
+```
 
 If you're using Java 8 or later, you may use the new 'forEach` extension with a lambda expression:
 
-{{% highlight java %}}
+```java
 private void demoForEach(GigaSpace gigaSpace) {
     SQLQuery<MySpaceClass> query = new SQLQuery(MySpaceClass.class,"lastName = 'Smith'");
     AtomicInteger counter = new AtomicInteger();
     gigaSpace.iterator(query).forEach((e) -> System.out.println(counter.incrementAndGet() + " " + e.getLastName()));
 }
-{{% /highlight %}}
+```
 
 ## Batch size
 

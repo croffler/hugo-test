@@ -15,9 +15,9 @@ Since matching and comparing expressions is executed via java's built-in `equals
 For example, suppose a user defined a class called **Version**, which encapsulates a major version and a minor version integers, and then implements a space class *Document* with a **version** property.
 The following example queries for a **Document** with a **version** greater than **2.5**:
 
-{{% highlight java %}}
+```java
 SQLQuery<Document> query = new SQLQuery<Document>(Document.class, "version > ?", new Version(2, 5));
-{{% /highlight %}}
+```
 
 In order for that query to execute correctly, the user-defined class should implement the following:
 
@@ -26,7 +26,7 @@ In order for that query to execute correctly, the user-defined class should impl
 
 Here's an example of **Version** implementing both equality and comparison requirements:
 
-{{% highlight java %}}
+```java
 public class Version implements Serializable, Comparable<Version> {
     private int major;
     private int minor;
@@ -59,6 +59,6 @@ public class Version implements Serializable, Comparable<Version> {
         return result;
     }
 }
-{{% /highlight %}}
+```
 
 

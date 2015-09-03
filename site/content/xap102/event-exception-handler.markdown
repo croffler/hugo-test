@@ -15,7 +15,7 @@ XAP provides a mechanism allowing to hook into how exception raised by event lis
 
 An event exception handler should implement the following interface:
 
-{{% highlight java %}}
+```java
 public interface EventExceptionHandler<T> {
 
     /**
@@ -50,11 +50,11 @@ public interface EventExceptionHandler<T> {
     void onException(ListenerExecutionFailedException exception, T data,
                      GigaSpace gigaSpace, TransactionStatus txStatus, Object source) throws RuntimeException;
 }
-{{% /highlight %}}
+```
 
 If we take the following simple implementation of the event listener interface:
 
-{{% highlight java %}}
+```java
 public class SimpleEventExceptionHandler implements EventExceptionHandler {
     public void onSuccess(T data, GigaSpace gigaSpace,
                           TransactionStatus txStatus, Object source) throws RuntimeException {
@@ -66,14 +66,14 @@ public class SimpleEventExceptionHandler implements EventExceptionHandler {
         // process failure
     }
 }
-{{% /highlight %}}
+```
 
 Here is how it can be configured:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 
 @EventDriven @Polling
 public class SimpleListener {
@@ -96,12 +96,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleExceptionHandler" class="SimpleEventExceptionHandler" />
 
@@ -110,12 +110,12 @@ public class SimpleListener {
 
     <os-events:exception-handler ref="simpleExceptionHandler" />
 </os-events>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="simpleExceptionHandler" class="SimpleEventExceptionHandler" />
 
@@ -124,7 +124,7 @@ public class SimpleListener {
 
     <property name="exceptionHandler" ref="simpleExceptionHandler" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -151,7 +151,7 @@ The PoEventExceptionHandler will update the `state` of the PurchaseOrder to `UNP
 
 {{%inittab%}}
 {{%tabcontent Program %}}
-{{%highlight java%}}
+```java
 public class Program {
 
 	private static Logger logger = LoggerFactory
@@ -198,11 +198,11 @@ public class Program {
 		pollingEventListenerContainer.start();
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent PurchaseOrder %}}
-{{%highlight java%}}
+```java
 @SpaceClass
 public class PurchaseOrder {
 
@@ -253,11 +253,11 @@ public class PurchaseOrder {
 				+ ", number=" + number + ", state=" + state + "]";
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent NewOrderProcessor %}}
-{{%highlight java%}}
+```java
 @EventDriven
 @Polling(gigaSpace = "sandboxSpace")
 @TransactionalEvent
@@ -310,11 +310,11 @@ public class NewOrderProcessor {
 		}
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent PoEventExceptionHandler %}}
-{{%highlight java%}}
+```java
 public class PoEventExceptionHandler implements
 		EventExceptionHandler<PurchaseOrder> {
 
@@ -340,26 +340,26 @@ public class PoEventExceptionHandler implements
 		}
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent PoProcessingException %}}
-{{%highlight java%}}
+```java
 public class PoProcessingException extends Exception{
 
 	public PoProcessingException(String string) {
 		super(string);
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent EPurchaseOrderState %}}
-{{%highlight java%}}
+```java
 public enum EPurchaseOrderState {
   NEW, PROCESSED, UNPROCESSABLE
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 
@@ -368,11 +368,11 @@ public enum EPurchaseOrderState {
 
 When you run the above example you will see the following output:
 
-{{%highlight console%}}
+```console
 18:56:58.968 [GS-SimplePollingEventListenerContainer-1] DEBUG x.s.e.e.NewOrderProcessor - handling the exception for the  1 time
 18:56:58.971 [GS-SimplePollingEventListenerContainer-1] DEBUG x.s.e.e.NewOrderProcessor - handling the exception for the 2 time
 18:56:58.971 [GS-SimplePollingEventListenerContainer-1] DEBUG x.s.e.e.NewOrderProcessor - handling the exception for the 3 time
 18:56:58.971 [GS-SimplePollingEventListenerContainer-1] DEBUG x.s.e.e.NewOrderProcessor - Max retry count reached throwing exception
 18:56:58.972 [GS-SimplePollingEventListenerContainer-1] DEBUG x.s.e.e.PoEventExceptionHandler - Dealing with the exception, change the status to UPROCESSABLE and write it back into the space
 18:56:59.968 [main] DEBUG x.s.e.e.Program - PurchaseOrder in Space PurchaseOrder [retryCounter=2, id=c47e2879-ca6a-4531-b073-3f5c09f658cd, number=null, state=UNPROCESSABLE]
-{{%/highlight%}}
+```

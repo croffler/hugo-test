@@ -27,7 +27,7 @@ In order to make [The GigaSpace Interface ](./the-gigaspace-interface.html) tran
 The following should be added to your `pu.xml` to enable the configuration of transactional behavior based on annotations:
 {{%/note%}}
 
-{{% highlight xml %}}
+```xml
 <beans ....
        xmlns:tx="http://www.springframework.org/schema/tx"
 ...
@@ -35,7 +35,7 @@ The following should be added to your `pu.xml` to enable the configuration of tr
 
        <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
-{{% /highlight %}}
+```
 
 GigaSpaces provides several transaction managers, and changing the implementation you work with is just a matter of changing the the configuration.
 
@@ -52,19 +52,19 @@ Below is an example of how it can be defined in a Spring application context:
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" />
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space"  />
@@ -76,16 +76,16 @@ Below is an example of how it can be defined in a Spring application context:
     <property name="space" ref="space" />
     <property name="transactionManager" ref="transactionManager" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -99,19 +99,19 @@ For example, to change the default timeout to 2 minutes, use the following confi
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" default-timeout="120"/>
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property  name="name" value="space" />
@@ -125,16 +125,16 @@ For example, to change the default timeout to 2 minutes, use the following confi
     <property name="space" ref="space" />
 	<property name="transactionManager" ref="transactionManager" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().defaultTimeout(120).transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -159,19 +159,19 @@ Below is an example of how it can be defined in a Spring application context:
 {{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:jini-tx-manager id="transactionManager" lookup-timeout="5000" />
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -185,16 +185,16 @@ Below is an example of how it can be defined in a Spring application context:
     <property name="space" ref="space" />
     <property name="transactionManager" ref="transactionManager" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().lookupTimeout(5000).transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -207,19 +207,19 @@ The Jini lookup transaction manager allows to set the default timeout value for 
 {{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:jini-tx-manager id="transactionManager" default-timeout="1000"/>
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -233,16 +233,16 @@ The Jini lookup transaction manager allows to set the default timeout value for 
     <property name="space" ref="space" />
 	<property name="transactionManager" ref="transactionManager" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().defaultTimeout(1000).transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -268,7 +268,7 @@ Here is an example of how this can be configured:
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -277,12 +277,12 @@ Here is an example of how this can be configured:
 </os-core:distributed-tx-manager>
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -302,12 +302,12 @@ Here is an example of how this can be configured:
     <property name="space" ref="space" />
 	<property name="transactionManager" ref="transactionManager" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 TransactionLeaseRenewalConfig config = new TransactionLeaseRenewalConfig();
 config.setPoolSize(2);
@@ -315,7 +315,7 @@ config.setRenewDuration(1000);
 config.setRenewRTT(500);
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().leaseRenewalConfig(config).transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -331,7 +331,7 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
 {{% inittab os_simple_space%}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -342,12 +342,12 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
 </bean>
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -363,17 +363,17 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
     <property name="space" ref="space" />
     <property name="transactionManager" ref="transactionManager" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 UserTransaction userTransaction = ... //get UserTransaction via JDNI / instantiation
 PlatformTransactionManager ptm = new JtaTransactionManager(userTransaction);
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gig
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -394,7 +394,7 @@ See the [JTA-XA Example](/sbp/jta-xa-example.html) for fully running demonstrati
 
 Starting with Spring 3 you may specify multiple Transaction managers within the same Spring context (pu.xml) and use the `@Transactional` annotation. If you have multiple Transaction managers used, make sure you specify the name of the transaction manager your class/method should use:
 
-{{% highlight java %}}
+```java
 <os-core:distributed-tx-manager id=" txManager1" />
 <os-core:giga-space id="gigaspace" space="space"  tx-manager="txManager1"/>
 <tx:annotation-driven transaction-manager=" txManager1" />
@@ -402,23 +402,23 @@ Starting with Spring 3 you may specify multiple Transaction managers within the 
 <os-core:distributed-tx-manager id=" txManager2" />
 <os-core:giga-space id="gigaspace2" space="space"  tx-manager="txManager2"/>
 <tx:annotation-driven transaction-manager=" txManager2" />
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @Transactional(value="txManager1")
 public String getFoo()
 {
     return dao.find("foo");
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @Transactional(value="txManager2")
 public String getFoo()
 {
     return dao.find("foo");
 }
-{{% /highlight %}}
+```
 
 # How to Demarcate Transactions in Your Code
 
@@ -431,14 +431,14 @@ There are two ways to demarcate the transaction boundaries in your code:
 
 Here is an example how a method should be annotated to support declarative transaction management:
 
-{{% highlight java %}}
+```java
 @Transactional (propagation=Propagation.REQUIRED)
 public void myTransactionalMethod(Object data) {
   gigaSpace.write(mySpaceObject);
   gigaSpace.take(mytemplate);
   ...
   }
-{{% /highlight %}}
+```
 
 To enable the declarative transaction management:
 
@@ -447,7 +447,7 @@ To enable the declarative transaction management:
 1. The `@Transactional` annotation is only going to be applied for proxied beans, i.e. beans that have been processed by the framework and injected to other beans which use them.
 1. If you try to call an annotated method from within the same class for example (e.g. calling it on `this`), no transaction will be started since your code actually accesses direct reference and not a proxied bean.
 
-{{% highlight java %}}
+```java
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -475,7 +475,7 @@ To enable the declarative transaction management:
         </bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
 </beans>
-{{% /highlight %}}
+```
 
 Note that you can also annotate beans exposed via [space based remoting](./space-based-remoting.html). If you include the `<tx:annotation-driven>` element in your `pu.xml` file, it will be processed as any other bean and the remoting mechanism will use the proxied instance, thus making the remote call to the bean transactional.
 
@@ -487,19 +487,19 @@ Here is how you should use the Transaction manager via the API:
 
 1. Get a reference to the relevant `PlatformTransactionManager`:
 
-{{% highlight java %}}
+```java
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().transactionManager();
-{{% /highlight %}}
+```
 
 or
 
-{{% highlight java %}}
+```java
 PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().lookupTimeout(5000).transactionManager();
-{{% /highlight %}}
+```
 
 2. Use the `GigaSpace` to execute space operations and rollback/commit using the `PlatformTransactionManager` created:
 
-{{% highlight java %}}
+```java
 GigaSpace gigaSpace = ...//get reference to a GigaSpace instance
 PlatformTransactionManager ptm = ... //get a reference to a GigaSpaces PlatformTransactionManager
  // instance as described in step one above.
@@ -516,7 +516,7 @@ catch (MyException e) {
     throw e;
 }
 ptm.commit(status);
-{{% /highlight %}}
+```
 
 {{%refer%}}
 You can also use Spring's [TransactionTemplate](http://static.springframework.org/spring/docs/2.5.x/api/org/springframework/transaction/support/TransactionTemplate.html) if you prefer. This is documented in full in the [Spring reference guide](http://static.springframework.org/spring/docs/2.5.x/reference/transaction.html#transaction-programmatic).

@@ -59,7 +59,7 @@ The static configuration for the predefined alerts mentioned above is defined in
 For example, the following is a snippet that represents the configuration of the **CPU Utilization Alert**.
 The alert is configured with a high threshold of 80% and a low threshold of 60% and a   period of 1 minute. An alert will be raised if CPU utilization in a certain host in the GigaSpaces cluster crosses 80% for a period of 1 minute. A raised alert will be resolved if the CPU utilization goes below 60% for 1 minute.
 
-{{% highlight xml %}}
+```xml
 ...
     <alert class="org.openspaces.admin.alert.config.CpuUtilizationAlertConfiguration"
            enabled="true">
@@ -68,7 +68,7 @@ The alert is configured with a high threshold of 80% and a low threshold of 60% 
         <property key="measurement-period-milliseconds" value="60000" />
     </alert>
 ...
-{{% /highlight %}}
+```
 
 The **`class`** attribute above is the implementation class used to configure the settings of this alert. When configuring **`enabled="false"`** alerts of this type will not be triggered, until enabled again (at runtime).
 
@@ -92,7 +92,7 @@ Alerts can be consumed using a registered event listener by registering with the
 
 Javadoc ref: [Alert](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/alert/Alert.html)&nbsp;[AlertManager](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/alert/AlertManager.html)&nbsp;[XmlAlertConfigurationParser](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/alert/config/parser/XmlAlertConfigurationParser.html)&nbsp;[AlertTriggeredEventListener](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/alert/events/AlertTriggeredEventListener.html)
 
-{{% highlight java %}}
+```java
  Admin admin = new AdminFactory().createAdmin();
 
  AlertManager alertManager = admin.getAlertManager();
@@ -105,7 +105,7 @@ Javadoc ref: [Alert](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}
                 System.out.println(alert);
             }
  });
-{{% /highlight %}}
+```
 
 {{% info title="Alert XML Configuration" %}}
 The `"alerts.xml"` file argument specifies the file which holds the configuration settings.
@@ -142,13 +142,13 @@ Javadoc ref: [AlertSeverity](http://www.gigaspaces.com/docs/JavaDoc{{% currentve
 
 The static alert configurations are parsed using the `XmlAlertConfigurationParser`. This pre-configures the alert manager with all the alerts found in the `alerts.xml`.
 
-{{% highlight java %}}
+```java
  Admin admin = new AdminFactory().createAdmin();
  AlertManager alertManager = admin.getAlertManager();
 
  alertManager.configure(new XmlAlertConfigurationParser("alerts.xml").parse());
  ...
-{{% /highlight %}}
+```
 
 Alert configuration settings can be changed (at runtime) for a pre-configured/pre-defined alert type.
 
@@ -160,58 +160,58 @@ A pre-configured but **disabled** alert can be easily enabled, but an already **
 
 For a predefined but disabled alert, enable it by specifying the alert Class type. The configuration settings that were predefined will be used.
 
-{{% highlight java %}}
+```java
 alertManager.enableAlert(CpuUtilizationAlertConfiguration.class);
-{{% /highlight %}}
+```
 
 #### Disable a Predefined Enabled Alert
 
 Too disable an existing alert (yet keep its configuration), use the following code:
 
-{{% highlight java %}}
+```java
 alertManager.disableAlert(CpuUtilizationAlertConfiguration.class);
-{{% /highlight %}}
+```
 
 #### Re-configure a predefined alert
 
 For a predefined alert, obtain the current configuration, change the settings and re-configure the `AlertManager`.
 In the background, the enabled alert will be disabled, set and re-enabled with the new configuration.
 
-{{% highlight java %}}
+```java
 CpuUtilizationAlertConfiguration config = alertManager.getConfig(CpuUtilizationAlertConfiguration.class);
 config.setHighThresholdPerc(85);
 alertManager.configure(config);
-{{% /highlight %}}
+```
 
 #### Configure and enable a predefined disabled alert
 
 If predefined settings need to be changed, get the configuration, change the settings, enable and re-configure.
 
-{{% highlight java %}}
+```java
 CpuUtilizationAlertConfiguration config = alertManager.getConfig(CpuUtilizationAlertConfiguration.class);
 config.setHighThresholdPerc(85);
 config.setEnabled(true); //don't forget
 alertManager.configure(config);
-{{% /highlight %}}
+```
 
 #### Configure an Undefined Alert
 
 For an alert which wasn't defined in the original set of alerts, create a new configuration with required settings and call configure.
 
-{{% highlight java %}}
+```java
 CpuUtilizationAlertConfiguration config = new CpuUtilizationAlertConfiguration();
 config.setHighThresholdPerc(85);
 config.setLowThresholdPerc(70);
 config.setMeasurementPeriod(60, TimeUnit.SECONDS);
 config.setEnabled(true);
 alertManager.configure(config);
-{{% /highlight %}}
+```
 
 #### Using the `AlertConfigurer`
 
 For a more fluent API, `AlertConfigurer` implementations provide chaining methods.
 
-{{% highlight java %}}
+```java
 final AlertManager alertManager = admin.getAlertManager();
 alertManager.setConfig(
       new CpuUtilizationAlertConfigurer()
@@ -220,14 +220,14 @@ alertManager.setConfig(
           .create()
 );
 alertManager.enableAlert(CpuUtilizationAlertConfiguration.class);
-{{% /highlight %}}
+```
 
 Since 8.0.2  the `enabled` indication has been added to the `AlertConfigurer` API.
 This lets you use the `AlertManager.configure(AlertConfiguration ...)` method to configure one or more alert configurations following the same fluent API usage as above.
 
 This code sample does exactly the same as the code above.
 
-{{% highlight java %}}
+```java
 final AlertManager alertManager = admin.getAlertManager();
 alertManager.setConfig(
       new CpuUtilizationAlertConfigurer()
@@ -236,5 +236,5 @@ alertManager.setConfig(
           .enabled(true) //since 8.0.2
           .create()
 );
-{{% /highlight %}}
+```
 

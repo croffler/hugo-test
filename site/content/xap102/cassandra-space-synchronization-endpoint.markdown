@@ -17,7 +17,7 @@ Include the following in your `pom.xml`
 {{% inittab %}}
 {{% tabcontent "hector using log4j" %}}
 
-{{% highlight xml %}}
+```xml
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-clientutil</artifactId>
@@ -35,12 +35,12 @@ Include the following in your `pom.xml`
     <artifactId>hector-core</artifactId>
     <version>{{%version  hector-core%}}</version>
 </dependency>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "hector using java.util.logging" %}}
 
-{{% highlight xml %}}
+```xml
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-clientutil</artifactId>
@@ -75,7 +75,7 @@ Include the following in your `pom.xml`
     <artifactId>slf4j-jdk14</artifactId>
     <version>{{%version slf4j-jdk14%}}</version>
 </dependency>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -87,7 +87,7 @@ An example of how the Cassandra Space Synchronization Endpoint can be configured
 {{% inittab "Configuration Examples" %}}
 {{% tabcontent Spring %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -126,12 +126,12 @@ An example of how the Cassandra Space Synchronization Endpoint can be configured
     </os-core:mirror>
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 HectorCassandraClient hectorClient = new HectorCassandraClientConfigurer()
     .clusterName(cluster)
     .hosts(cassandraHosts)
@@ -150,7 +150,7 @@ IJSpace mirror = new EmbeddedSpaceConfigurer("mirror-service")
     .addProperty("space-config.mirror-service.cluster.partitions", String.valueOf(numOfPartitiones))
     .addProperty("space-config.mirror-service.cluster.backups-per-partition", String.valueOf(numOfBackups))
     .create();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -187,10 +187,10 @@ For dynamic properties:
 It is possible to override this default behavior by providing a custom implementation of [PropertyValueSerializer](http://www.gigaspaces.com/docs/cassandra-docs{{%currentversion%}}/apidocs/index.html?org/openspaces/persistency/cassandra/meta/types/dynamic/PropertyValueSerializer.html).
 This interface is defined by these 2 methods:
 
-{{% highlight java %}}
+```java
 ByteBuffer toByteBuffer(Object value);
 Object fromByteBuffer(ByteBuffer byteBuffer);
-{{% /highlight %}}
+```
 
 The behavior of overriding the serialization logic is different for fixed properties and dynamic properties:
 
@@ -211,7 +211,7 @@ When a type is introduced to the `Cassandra Space Synchronzation Endpoint`, the 
 The default behavior of this mapping is explained in the following example.
 Consider the following simple POJO (could also be a `SpaceDocument`'s fixed properties):
 
-{{% highlight java %}}
+```java
 // implementation omitted for brevity
 @SpaceClass
 public class Person {
@@ -234,7 +234,7 @@ public class Address {
     public Long getStreetNumber() ...
 
 }
-{{% /highlight %}}
+```
 
 By default, the fixed properties will be mapped to the `Person` column family in Cassandra like this:
 
@@ -271,22 +271,22 @@ The implementations is used during type introspection when a type is first intro
 The interface is defined by a single method:
 
 
-{{% highlight java %}}
+```java
 boolean shouldFlatten(PropertyContext propertyContext);
-{{% /highlight %}}
+```
 
 The return value indicates whether the current introspected property should be serialized as is or should its nested properties be introspected as well.
 As for the above example, the default implementation [DefaultFlattenedPropertiesFilter](http://www.gigaspaces.com/docs/cassandra-docs{{%currentversion%}}/apidocs/index.html?org/openspaces/persistency/cassandra/meta/mapping/filter/DefaultFlattenedPropertiesFilter.html) returns `true` if and only if the property is fixed and the current introspection nesting level does not exceed 10.
 
 The [PropertyContext](http://www.gigaspaces.com/docs/cassandra-docs{{%currentversion%}}/apidocs/index.html?org/openspaces/persistency/cassandra/meta/mapping/filter/PropertyContext.html) contains the following details about the current introspected property:
 
-{{% highlight java %}}
+```java
 String getPath();
 String getName();
 Class<?> getType();
 boolean isDynamic();
 int getCurrentNestingLevel();
-{{% /highlight %}}
+```
 
 {{%anchor Column-Family-Name-Converter %}}
 
@@ -296,9 +296,9 @@ Due to implementation details of Cassandra regarding Column Families there are c
 The behavior for converting a type name to a column family name when creating a column family is defined by the interface [ColumnFamilyNameConverter](http://www.gigaspaces.com/docs/cassandra-docs{{%currentversion%}}/apidocs/index.html?org/openspaces/persistency/cassandra/meta/conversion/ColumnFamilyNameConverter.html).
 This interface is defined by 1 method:
 
-{{% highlight java %}}
+```java
 String toColumnFamilyName(String typeName);
-{{% /highlight %}}
+```
 
 The default implementation is: [DefaultColumnFamilyNameConverter](http://www.gigaspaces.com/docs/cassandra-docs{{%currentversion%}}/apidocs/index.html?org/openspaces/persistency/cassandra/meta/conversion/DefaultColumnFamilyNameConverter.html).
 

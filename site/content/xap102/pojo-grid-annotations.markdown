@@ -18,7 +18,7 @@ weight: 400
 {{% accordion acc1%}}
 {{% accord title="**Annotation**" parent="acc1" id="tab1"%}}
 
-{{%highlight java%}}
+```java
 
 //There can be more than one GigaSpace instance defined
 
@@ -30,7 +30,7 @@ public class MyService {
     @GigaSpaceContext(name="clusteredGigaSpace")
     private GigaSpace clusteredGigaSpace;
 }
-{{%/highlight%}}
+```
 {{% /accord %}}
 {{% /accordion %}}
 
@@ -41,7 +41,7 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
- {{% highlight xml %}}
+ ```xml
 
  <os-core:giga-space-context/>
 
@@ -52,12 +52,12 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
  <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
 
  <bean id="myService" class="eg.MyService" />
- {{% /highlight %}}
+ ```
 
  {{% /tabcontent %}}
  {{% tabcontent "Plain XML" %}}
 
- {{% highlight xml %}}
+ ```xml
 
  <bean id="gigaSpaceContext" class="org.openspaces.core.context.GigaSpaceContextBeanPostProcessor" />
 
@@ -75,7 +75,7 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
  </bean>
 
  <bean id="myService" class="eg.MyService" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -93,14 +93,14 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 {{% accordion acc22%}}
 {{% accord title="**Annotation**" parent="acc22" id="tab3"%}}
 
-{{%highlight java%}}
+```java
 public class MyService {
 
     @GigaSpaceLateContext
     private GigaSpace gigaSpace;
 
 }
-{{%/highlight%}}
+```
 {{% /accord %}}
 {{% /accordion %}}
 
@@ -112,7 +112,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:giga-space-late-context/>
 
@@ -121,12 +121,12 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 <os-core:giga-space id="gigaSpace" space="space"/>
 
 <bean id="myService" class="eg.MyService" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="gigaSpaceContext" class="org.openspaces.core.context.GigaSpaceLateContextBeanPostProcessor" />
 
@@ -139,7 +139,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 </bean>
 
 <bean id="myService" class="eg.MyService" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -157,7 +157,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 {{% accordion acc3 %}}
 {{% accord title="**Example**" parent="acc3" id="tab5"%}}
 
-{{%highlight java%}}
+```java
 public class Process {
 
     @ClusterInfoContext
@@ -165,7 +165,7 @@ public class Process {
 
     Integer instanceId = clusterInfo.getInstanceId();
 }
-{{%/highlight%}}
+```
 {{% /accord %}}
 {{% /accordion %}}
 

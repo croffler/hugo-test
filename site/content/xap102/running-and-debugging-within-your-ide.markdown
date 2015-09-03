@@ -34,21 +34,21 @@ The `IntegratedProcessingUnitContainer` class provides an executable `main()` me
 
 To run a clustered PU with an embedded space with 2 partitions and a backup for each partition , having a separate eclipse configuration (and a hosting JVM) for each cluster member , have 3 run configuration each have the following:
 
-{{% highlight bash %}}
+```bash
 -cluster schema=partitioned-sync2backup total_members=2,1 id=1
-{{% /highlight %}}
+```
 
-{{% highlight bash %}}
+```bash
 -cluster schema=partitioned-sync2backup total_members=2,1 id=2
-{{% /highlight %}}
+```
 
-{{% highlight bash %}}
+```bash
 -cluster schema=partitioned-sync2backup total_members=2,1 backup_id=1 id=1
-{{% /highlight %}}
+```
 
-{{% highlight bash %}}
+```bash
 -cluster schema=partitioned-sync2backup total_members=2,1 backup_id=1 id=2
-{{% /highlight %}}
+```
 
 Start these using the order above. The first 2 will be primary members and the other two will be backup members.
 You can terminate any of the primary instances to test failover scenario.
@@ -81,9 +81,9 @@ The following screenshot shows how to run a data processor instance with a parti
 {{% info title="Using Lookup Groups/Locators" %}}
 You can isolate your environment by defining [Lookup Groups/Locators](/product_overview/service-grid.html#lus). You can set lookup groups/locators in your IDE run configuration using system variables as VM arguments. If you have LOOKUPGROUPS/LOOKUPLOCATORS OS environment variables, you can use their values for the system variables. For example, to set lookup groups in Eclipse IDE using LOOKUPGROUPS environment variable you need to add the following as VM argument to the run configuration:
 
-{{% highlight bash %}}
+```bash
 -Dcom.gs.jini_lus.groups=${env_var:LOOKUPGROUPS}
-{{% /highlight %}}
+```
 
 {{% /info %}}
 
@@ -93,7 +93,7 @@ The integrated processing unit container can be created programmatically using t
 
 Here is an example of using a `IntegratedProcessingUnitContainerProvider` in order to create one:
 
-{{% highlight java %}}
+```java
 IntegratedProcessingUnitContainerProvider provider = new IntegratedProcessingUnitContainerProvider();
 // provide cluster information for the specific PU instance
 ClusterInfo clusterInfo = new ClusterInfo();
@@ -111,7 +111,7 @@ ProcessingUnitContainer container = provider.createContainer();
 // ...
 
 container.close();
-{{% /highlight %}}
+```
 
 {{% info %}}
 When using a cluster and **not** specifying an instance Id (see `setInstanceId()`), the `createContainer()` method will return a CompoundProcessingUnitContainer filled with processing unit containers (`IntegratedProcessingUnitContainer`) for each instance in the cluster.
@@ -125,9 +125,9 @@ The Java Debugger (jdb) is a dynamic, controlled, assignment-based debugging too
 
 The default JPDA options for Java applications are as follows:
 
-{{% highlight bash %}}
+```bash
 -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
-{{% /highlight %}}
+```
 
 The jdb parameters specify the way the debugger will operate. For instance `transport=dt_socket` instructs the JVM that the debugger connections will be made through a socket while the `address=1044` parameter informs it that the port number will be 1044. Similarly, if you substitute `suspend=y` , the JVM starts in suspended mode and stays suspended until a debugger is attached to it. This may be helpful if you want to start debugging as soon as the JVM starts.
 
@@ -145,27 +145,27 @@ Start a command window and set `IDE_REMOTE_DEBUG` and the `GSC_JAVA_OPTIONS` var
 {{% inittab os1%}}
 {{% tabcontent Linux %}}
 
-{{% highlight bash %}}
+```bash
 export IDE_REMOTE_DEBUG="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y"
 export GSC_JAVA_OPTIONS=$IDE_REMOTE_DEBUG
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Windows %}}
 
-{{% highlight bash %}}
+```bash
 set IDE_REMOTE_DEBUG=-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y
 set GSC_JAVA_OPTIONS=%IDE_REMOTE_DEBUG%
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 If you would like to specify a specific listening port, use the `address` parameter:
 
-{{% highlight bash %}}
+```bash
 set IDE_REMOTE_DEBUG=-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
-{{% /highlight %}}
+```
 
 ### Step 3
 
@@ -174,16 +174,16 @@ Start a GSC in debug mode:
 {{% inittab os2 %}}
 {{% tabcontent Linux %}}
 
-{{% highlight bash %}}
+```bash
 ./gsc.sh
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Windows %}}
 
-{{% highlight bash %}}
+```bash
 gsc.bat
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -194,19 +194,19 @@ If you have started the agent with a specific zone, have the GSC running in debu
 
 {{% tabcontent Linux %}}
 
-{{% highlight bash %}}
+```bash
 export GSC_JAVA_OPTIONS=-Dcom.gs.zones="myZone"
 ./gsc.sh
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Windows %}}
 
-{{% highlight bash %}}
+```bash
 set GSC_JAVA_OPTIONS=-Dcom.gs.zones="myZone"
 gsc.bat
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -214,11 +214,11 @@ gsc.bat
 
 Make sure you see the `Listening for transport dt_socket at address` message:
 
-{{% highlight bash %}}
+```bash
 D:\gigaspaces-xap-premium-8.0.1-ga\bin>gsc.bat
 
 Listening for transport dt_socket at address: 8000
-{{% /highlight %}}
+```
 
 Make sure you identify the `process id` of the newly started GSC. You will need it in step 7.
 

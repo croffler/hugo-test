@@ -24,7 +24,7 @@ The MongoDB Archive Operation Handler uses the [MongoDB driver](http://docs.mong
 Include the following in your `pom.xml`
 
 
-{{% highlight xml %}}
+```xml
 
 	<!-- currently the MongoDB library is not the central maven repository --> 
 	<repositories>
@@ -59,7 +59,7 @@ Include the following in your `pom.xml`
 		...
 	</dependencies>
 	
-{{% /highlight %}}
+```
 
 
 
@@ -71,7 +71,7 @@ Include the following in your `pom.xml`
 
 {{% tabcontent Plain %}}
 
-{{% highlight xml %}}
+```xml
 
 	<bean id="mongoArchiveHandler" class="com.gigaspaces.persistency.archive.MongoArchiveOperationHandler">
 		<property name="gigaSpace" ref="gigaSpace" />
@@ -79,12 +79,12 @@ Include the following in your `pom.xml`
 		<property name="db" value="${mongodb.db}" />
 	</bean>
 	
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 	ArchiveOperationHandler mongoArchiveHandler =
 		new MongoArchiveOperationHandlerConfigurer()
@@ -98,7 +98,7 @@ Include the following in your `pom.xml`
 
 	archiveContainer.destroy();
 
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

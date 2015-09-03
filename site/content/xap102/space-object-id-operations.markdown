@@ -39,7 +39,7 @@ See below example:
 {{% inittab The CompoundId %}}
 {{% tabcontent The CompoundId %}}
 
-{{% highlight java %}}
+```java
 import java.io.Serializable;
 
 public class CompoundId implements Serializable{
@@ -88,13 +88,13 @@ public class CompoundId implements Serializable{
 	}
 
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent The Space Class %}}
 
-{{% highlight java %}}
+```java
 import com.gigaspaces.annotation.pojo.SpaceClass;
 import com.gigaspaces.annotation.pojo.SpaceId;
 
@@ -123,12 +123,12 @@ public class MySpaceClass {
 		return "ID:" + id + " Data:"+ data;
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent The Application Code %}}
 
-{{% highlight java %}}
+```java
 GigaSpace space = new GigaSpaceConfigurer (new SpaceProxyConfigurer("space")).gigaSpace();
 
 CompoundId id = new CompoundId();
@@ -143,7 +143,7 @@ obj.setId(id);
 space.write(obj);
 
 MySpaceClass ret = space.readById(MySpaceClass.class, id);
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

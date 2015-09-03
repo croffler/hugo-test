@@ -11,21 +11,21 @@ To use the Enterprise Messaging Grid security facilities, you must specify a use
 
 - Using the unified model:
 
-{{% highlight java %}}
+```java
 Connection connection = connectionFactory.createConnection(username,password);
-{{% /highlight %}}
+```
 
 - Using the point to point domain:
 
-{{% highlight java %}}
+```java
 QueueConnection queueConnection = queueConnectionFactory.createQueueConnection(username,password);
-{{% /highlight %}}
+```
 
 - Using the publish/subscribe domain:
 
-{{% highlight java %}}
+```java
 TopicConnection topicConnection = topicConnectionFactory.createTopicConnection(username,password);
-{{% /highlight %}}
+```
 
 {{% info %}}
 To use authentication, you must define a secured space with the same user/password.

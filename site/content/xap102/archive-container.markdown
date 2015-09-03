@@ -51,7 +51,7 @@ Here is a simple example of an archive container configuration:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
-{{% highlight xml %}}
+```xml
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
 
@@ -69,11 +69,11 @@ Here is a simple example of an archive container configuration:
   hosts="${cassandra.hosts}"
   keyspace="${cassandra.keyspace}"
 />
-{{% /highlight %}}
+```
 
 
 
-{{% highlight java %}}
+```java
 @Archive(batchSize = 100)
 @TransactionalEvent(timeout = 120)
 public class ExpiredTweetsArchiveContainer {
@@ -87,12 +87,12 @@ public class ExpiredTweetsArchiveContainer {
         return dynamicTemplate
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="space" />
 
@@ -118,9 +118,9 @@ public class ExpiredTweetsArchiveContainer {
 </os-archive:archive-container>
 
 <bean id="archiveFilter" class="ExpiredTweetsFilter"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 
     @Override
@@ -132,12 +132,12 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
         return dynamicTemplate;
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -159,9 +159,9 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
   <property name="archiveHandler" ref="cassandraArchiveHandler" />
 </bean>
 <bean id="archiveFilter" class="ExpiredTweetsFilter"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 
     @Override
@@ -173,12 +173,12 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
         return dynamicTemaplte;
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 TransactionManager txManager = new DistributedJiniTxManagerConfigurer().transactionManager();
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
@@ -214,7 +214,7 @@ ArchivePollingContainer archiveContainer =
 archiveContainer.destroy();
 cassandraArchiveHandler.destroy();
 configurer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -248,7 +248,7 @@ When removing objects from the space, a template is defined, creating a virtuali
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @Archive
 public class ProcessedTweetsFilter {
 
@@ -260,12 +260,12 @@ public class ProcessedTweetsFilter {
 	  return staticTemplate;
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-archive:archive-container
   id="archiveContainer"
@@ -278,12 +278,12 @@ public class ProcessedTweetsFilter {
 
 </os-archive:archive-container>
 
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="archiveContainer" class="org.openspaces.archive.ArchivePollingContainer">
 
@@ -298,7 +298,7 @@ public class ProcessedTweetsFilter {
         </bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -355,7 +355,7 @@ Here is an example of an archive container with 3 concurrent consumers and 5 max
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @Archive(batchSize = 100, concurrentConsumers = 3, maxConcurrentConsumers = 5, useFifoGrouping = true)
 @TransactionalEvent(timeout = 120)
 public class ExpiredTweetsFilter {
@@ -365,23 +365,23 @@ public class ExpiredTweetsFilter {
    	  // ...
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-archive:archive-container id="archiveContainer" giga-space="gigaSpace" batch-size="100"
                              concurrent-consumers="3" max-concurrent-consumers="5" useFifoGrouping="true" >
     <!-- ... -->
 </os-archive:archive-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="archiveContainer" class="org.openspaces.archive.ArchivePollingContainer">
     <property name="batchSize" value="100" />
@@ -390,7 +390,7 @@ public class ExpiredTweetsFilter {
 	<property name="useFifoGrouping" value="true" />
     <!-- ... -->
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -400,7 +400,7 @@ public class ExpiredTweetsFilter {
 
 - Spring pu.xml file header
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -417,4 +417,4 @@ public class ExpiredTweetsFilter {
 ...
 
 </beans>
-{{% /highlight %}}
+```

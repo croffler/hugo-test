@@ -38,24 +38,24 @@ Here is an example how to create an embedded space. The `EmbeddedSpaceConfigurer
 {{% inittab os_space_emb %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpace")).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -64,7 +64,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpa
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
 	<property name="space" ref="space" />
 </bean>
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 {{% /inittab %}}
 
@@ -91,24 +91,24 @@ Here is an example how a client application can create a proxy to interacting wi
 {{% inittab os_space_remote %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:space-proxy  id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
@@ -117,7 +117,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace"
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
 	<property name="space" ref="space" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -146,7 +146,7 @@ Here is an example for a `GigaSpace` construct with a local cache:
 {{% inittab os_local_cache %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 // Initialize remote space configurer:
 SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("space");
 // Initialize local cache configurer
@@ -154,21 +154,21 @@ LocalCacheSpaceConfigurer localCacheConfigurer = new LocalCacheSpaceConfigurer(u
 
 // Create local cache:
 GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent   Namespace   %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy  id="space" name="mySpace"/>
 <os-core:local-cache id="localCacheSpace" space="space"/>
 <os-core:giga-space id="localCache" space="localCacheSpace"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -177,7 +177,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
     class="org.openspaces.core.space.cache.LocalCacheSpaceFactoryBean">
     <property name="space" ref="space" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -199,7 +199,7 @@ Here is an example for a `GigaSpace` construct with a local cache:
 {{% inittab os_local_view %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 // Initialize remote space configurer:
 SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
@@ -210,12 +210,12 @@ LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(conf
 
 // Create local view:
 GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent   Namespace   %}}
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy id="space" name="mySpace" />
 
 <os-core:local-view id="localViewSpace" space="space">
@@ -224,12 +224,12 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 </os-core:local-view>
 
 <os-core:giga-space id="localView" space="localViewSpace"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -249,7 +249,7 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
         </list>
     </property>
 </bean>
-{{% /highlight %}}
+```
 {{% /tabcontent %}}
 {{% /inittab %}}
 
@@ -266,7 +266,7 @@ However, if you start the space client or space instance programmatically, you m
 
 Example:
 
-{{% highlight java %}}
+```java
 
 SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("space");
  //....
@@ -280,7 +280,7 @@ localCacheConfigurer.destroy();
 LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(urlConfigurer);
 localViewConfigurer.destroy();
 
-{{%/highlight%}}
+```
 
 {{%note%}}
 When using LocalCache and LocalView you need to call the `destroy()` method on their respective configurer.
@@ -297,7 +297,7 @@ Note that if the JVM process is shut down anyway, you do not need to do explicit
 
 Example:
 
-{{% highlight java %}}
+```java
 
 SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("space");
  //....
@@ -305,7 +305,7 @@ urlConfigurer.destroy();
 
 LRMIManager.shutdown();
 
-{{%/highlight%}}
+```
 
 
 # Security
@@ -315,17 +315,17 @@ A secured space should be configured with a security context so that it can be a
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:space-proxy id="space" name="mySpace">
     <os-core:security username="sa" password="adaw@##$" />
 </os-core:space-proxy>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
@@ -336,7 +336,7 @@ A secured space should be configured with a security context so that it can be a
         </bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -346,17 +346,17 @@ Here is an example of how to define security with an embedded space. In this cas
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:space-proxy  id="space" name="mySpace">
     <os-core:security username="sa" password="adaw@##$" />
 </os-core:space-proxy>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -367,7 +367,7 @@ Here is an example of how to define security with an embedded space. In this cas
         </bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -384,7 +384,7 @@ When constructing a space, it is possible to provide [Space Persistency](./space
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
@@ -416,12 +416,12 @@ When constructing a space, it is possible to provide [Space Persistency](./space
 </bean>
 
 <os-core:space-proxy  id="space" name="mySpace" schema="persistent" space-data-source="hibernateSpaceDataSource" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent "Plain XML" %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
@@ -458,7 +458,7 @@ When constructing a space, it is possible to provide [Space Persistency](./space
     <property name="scheam" value="persistent" />
     <property name="spaceDataSource" ref="hibernateSpaceDataSource" />
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

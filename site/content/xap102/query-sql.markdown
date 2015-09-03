@@ -24,7 +24,7 @@ An `SQLQuery` is composed from the **type** of entry to query and an **expressio
 
 For example, suppose we have a class called **`MyClass`** with an `Integer` property called **num** and a `String` property called **name**:
 
-{{% highlight java %}}
+```java
 // Read an entry of type MyClass whose num property is greater than 500:
 MyClass result1 = gigaSpace.read(new SQLQuery<MyClass>(MyClass.class, "num > 500"));
 
@@ -44,7 +44,7 @@ results = gigaSpace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num IN (1
 // Read all entries of type MyClass whose num is greater than 1,
 // and order the results by the name property:
 results = gigaSpace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num > 1 ORDER BY name"));
-{{% /highlight %}}
+```
 
 {{% refer %}} For an example of `SQLQuery` with `EventSession`, refer to the [Session Based Messaging API](./session-based-messaging-api.html#SQLQuery Template Registration) section.{{% /refer %}}
 
@@ -109,7 +109,7 @@ It is highly recommended to use indexes on relevant properties to increase perfo
 
 In many cases developers prefer to separate the concrete values from the SQL criteria expression. In GigaSpaces' `SQLQuery` this can be done by placing a **'?'** symbol instead of the actual value in the expression. When executing the query, the conditions that includes **'?'** are replaced with corresponding parameter values supplied via the `setParameter`/`setParameters` methods, or  the `SQLQuery` constructor. For example:
 
-{{% highlight java %}}
+```java
 // Option 1 - Use the fluent setParameter(int index, Object value) method:
 SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(MyClass.class,"num > ? or num < ? and name = ?")
     .setParameter(1, 2)
@@ -122,24 +122,24 @@ query.setParameters(2, 3, "smith");
 
 // Option 3: Use the constructor to pass the parameters:
 SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(MyClass.class,"num > ? or num < ? and name = ?", 2, 3, "smith");
-{{% /highlight %}}
+```
 
 {{% info %}} The number of **'?'** symbols in the expression string must match the number of parameters set on the query. For example, when using `IN` condition:
 {{%/info%}}
 
-{{% highlight java %}}
+```java
 SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name = ? AND num IN (?,?,?)");
 query.setParameters("A", 1, 2, 3);
 
 // Is equivalent to:
 SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name = 'A' AND num IN (1,2,3)");
-{{% /highlight %}}
+```
 
 
 You can use the 'IN' condition with Java's `Collection` or primitive arrays. For example:
 
 
-{{% highlight java %}}
+```java
 
 Collection<Integer> collection = new HashSet<Integer>();
 collection.add(1);
@@ -150,7 +150,7 @@ SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name = ? AND num 
 query.setParameter(1,"A");
 query.setParameter(2,collection);
 
-{{% /highlight %}}
+```
 
 {{% warning %}}
 Parameter assignment to the `SQLQuery` instance is not thread safe. If the query is intended to be executed on multiple threads which may change the parameters, it is recommended to use different `SQLQuery` instances. This has an analogue in JDBC, because `PreparedStatement` is not threadsafe either.
@@ -168,12 +168,12 @@ XAP SQL syntax contains various extensions to support matching nested properties
 
 Some examples:
 
-{{% highlight java %}}
+```java
 // Query for a Person who lives in New York:
 ... = new SQLQuery<Person>(Person.class, "address.city = 'New York'");
 // Query for a Dealer which sales a Honda:
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*] = 'Honda'");
-{{% /highlight %}}
+```
 
 {{%refer%}}
 For more information see [Query Nested Properties](./query-nested-properties.html).
@@ -183,7 +183,7 @@ For more information see [Query Nested Properties](./query-nested-properties.htm
 
 An enum property can be matched either using the enum's instance value or its string representation. For example:
 
-{{% highlight java %}}
+```java
 public class Vehicle {
     public enum VehicleType { CAR, BIKE, TRUCK };
 
@@ -195,7 +195,7 @@ public class Vehicle {
 ... = new SQLQuery<Vehicle>(Vehicle.class, "type = ?", VehicleType.CAR);
 // Query for vehicles of type CAR using the enum's string representation:
 ... = new SQLQuery<Vehicle>(Vehicle.class, "type = 'CAR'");
-{{% /highlight %}}
+```
 
 {{% info %}} When using an Enum string value, the value must be identical (case sensitive) to the name of the Enum value.{{%/info%}}
 
@@ -203,26 +203,26 @@ public class Vehicle {
 
 A `Date` property can be matched either using the Date instance value or its string representation. For example:
 
-{{% highlight java %}}
+```java
 // Query using a Date instance value:
 ... = new SQLQuery<MyClass>(MyClass.class, "birthday < ?", new java.util.Date(2020, 11, 20));
 // Query using a Date string representation:
 ... = new SQLQuery<MyClass>(MyClass.class ,"birthday < '2020-12-20'");
-{{% /highlight %}}
+```
 
 Specifying date and time values as strings is error prone since it requires configuring the date and time format properties and adhering to the selected format. It is recommended to simply use `Date` instance parameters.
 
 When string representation is required, the following space properties should be used:
 
-{{% highlight xml %}}
+```xml
 space-config.QueryProcessor.date_format
 space-config.QueryProcessor.datetime_format
 space-config.QueryProcessor.time_format
-{{% /highlight %}}
+```
 
 For example:
 
-{{% highlight xml %}}
+```xml
 <beans>
     <os-core:embedded-space id="space" name="mySpace">
         <os-core:properties>
@@ -233,7 +233,7 @@ For example:
         </os-core:properties>
     </os-core:embedded-space>
 </beans>
-{{% /highlight %}}
+```
 
 These space properties should be configured with a valid Java format pattern as defined in the [official Java language documentation](http://java.sun.com/docs/books/tutorial/i18n/format/simpleDateFormat.html).
 
@@ -257,7 +257,7 @@ Internally dates are stored as a **TimeStamp**. This means that both time (hour/
 
 XAP supports the `LocalDate`, `LocalTime` and `LocalDateTime` classes. The following Space properties need to be defined in order to use the classes in queries:
 
-{{%highlight xml%}}
+```xml
 	<os-core:embedded-space id="space" name="sandboxSpace">
 		<os-core:properties>
 			<props>
@@ -267,7 +267,7 @@ XAP supports the `LocalDate`, `LocalTime` and `LocalDateTime` classes. The follo
 			</props>
 		</os-core:properties>
 	</os-core:embedded-space>
-{{%/highlight%}}
+```
 
 Here are examples on how to use the Java8 dates:
 
@@ -277,7 +277,7 @@ Here are examples on how to use the Java8 dates:
 
 {{%inittab%}}
 {{%tabcontent LocalDatePojo%}}
-{{%highlight java %}}
+```java
 public class LocalDatePojo {
 	private LocalDate myData;
 	private Integer id = null;
@@ -303,11 +303,11 @@ public class LocalDatePojo {
 	}
 }
 
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent Program%}}
-{{%highlight java %}}
+```java
 public void testLocalDate() {
 	LocalDate d = LocalDate.now();
 
@@ -324,7 +324,7 @@ public void testLocalDate() {
 				LocalDatePojo.class, "myDate < '" + inAnHourDate + "' ");
 	pojo = dateSpace.read(q);
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 {{%/inittab%}}
 
@@ -334,7 +334,7 @@ public void testLocalDate() {
 
 {{%inittab%}}
 {{%tabcontent LocalTimePojo%}}
-{{%highlight java %}}
+```java
 public class LocalTimePojo {
 	private LocalTime myTime;
 	private Integer id = null;
@@ -359,11 +359,11 @@ public class LocalTimePojo {
 		this.id = id;
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent Program%}}
-{{%highlight java %}}
+```java
 	public void testLocalTime() {
 		LocalTime t = LocalTime.now();
 
@@ -380,7 +380,7 @@ public class LocalTimePojo {
 				LocalTimePojo.class, "myTime < '" + inAnHourDate + "' ");
 		pojo = dateSpace.read(q);
 	}
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 {{%/inittab%}}
 
@@ -390,7 +390,7 @@ public class LocalTimePojo {
 
 {{%inittab%}}
 {{%tabcontent LocalDateTimePojo%}}
-{{%highlight java %}}
+```java
 public class LocalDateTimePojo {
 	private LocalDateTime myData;
 	private Integer id = null;
@@ -415,11 +415,11 @@ public class LocalDateTimePojo {
 		this.id = id;
 	}
 }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 
 {{%tabcontent Program%}}
-{{%highlight java %}}
+```java
 public void testLocalDateTime() {
 	LocalDateTime d = LocalDateTime.now();
 
@@ -437,7 +437,7 @@ public void testLocalDateTime() {
 				LocalDateTimePojo.class, "myDate > '" + inAnHourDate + "' ");
 	pojo = dateSpace.read(q);
  }
-{{%/highlight%}}
+```
 {{%/tabcontent%}}
 {{%/inittab%}}
 {{%/accord%}}
@@ -468,10 +468,10 @@ Blocking operations (i.e. `read` or `take` with `timeout` greater than `0`) are 
 - Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [Routing](#Routing).
 - Blocking operations on complex queries are not supported. For more information see [Simple Queries](#SimpleQueries) definition.
 
-{{% highlight java %}}
+```java
 long timeout = 100000;
 MyClass result = space.take(new SQLQuery<MyClass>(MyClass.class ,"num > 500"), timeout);
-{{% /highlight %}}
+```
 
 {{%anchor routing%}}
 
@@ -483,7 +483,7 @@ If the routing property is part of the criteria expression with an equality oper
 
 For example, suppose the routing property of **`MyClass`** is **`num`**:
 
-{{% highlight java %}}
+```java
 // Execute query on partition #1
 SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(MyClass.class,"num = 1");
 
@@ -492,17 +492,17 @@ SQLQuery<MyClass> query2 = new SQLQuery<MyClass>(MyClass.class,"num > 1");
 
 // Execute query on all partitions - no way to tell which partitions hold matching results:
 SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(MyClass.class,"num = 1 OR name='smith'");
-{{% /highlight %}}
+```
 
 Note that in `query1` the `num` property is used both for routing and matching.
 
 In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). This can be done via the `setRouting` method:
 
-{{% highlight java %}}
+```java
 SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"num > 3");
 query.setRouting(1);
 MyClass[] result = gigaspace.readMultiple(query);
-{{% /highlight %}}
+```
 
 
 # Best Practice
@@ -521,17 +521,17 @@ The cache size can be modified by setting `com.gs.queryCache.cacheSize` system p
 
 When using the `OR` logical operator together with `AND` logical operator as part of your query you can speed up the query execution by minimizing the number of `OR` conditions in the query. For example:
 
-{{% highlight java %}}
+```java
 (A = 'X' OR A = 'Y') AND (B > '2000-10-1' AND B < '2003-11-1')
-{{% /highlight %}}
+```
 
 would be executed much faster when changing it to be:
 
-{{% highlight java %}}
+```java
 (A = 'X' AND B > '2000-10-1' AND B < '2003-11-1')
 OR
 (A = 'Y' AND B > '2000-10-1' AND B < '2003-11-1')
-{{% /highlight %}}
+```
 
 # Projecting Partial Results
 
@@ -583,9 +583,9 @@ alter add all and asc avg between by create call drop desc bit tinyint
 If a reserved word needs to be used as a property name it needs to be escaped using ``.
 For example: if you need to query a property by the name of count, which is a reserved word, it can be done as following:
 
-{{% highlight java %}}
+```java
 new SQLQuery<MyData>(MyData.class, "`count` = 5")
-{{% /highlight %}}
+```
 
 {{%vbar title="Reserved Separators and Operators:"%}}
 := || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}

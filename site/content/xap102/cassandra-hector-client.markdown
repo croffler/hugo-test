@@ -23,7 +23,7 @@ See [Hector library dependencies](./cassandra-space-synchronization-endpoint.htm
 {{% inittab Configuration Examples %}}
 {{% tabcontent Spring %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="hectorClient"
     class="org.openspaces.persistency.cassandra.HectorCassandraClientFactoryBean">
 
@@ -37,18 +37,18 @@ See [Hector library dependencies](./cassandra-space-synchronization-endpoint.htm
     <property name="keyspaceName" value="${cassandra.keyspace}" />
 
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 HectorCassandraClient hectorClient = new HectorCassandraClientConfigurer()
     .hosts(cassandraHosts)
     .port(cassandraPort)
     .keyspaceName(cassandraKeyspaceName)
     .create();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

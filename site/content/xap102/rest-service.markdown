@@ -34,16 +34,16 @@ A pre-configured processing unit template is provided and can be found at `{XAP_
 ### Deploy REST Service as part of a custom Processing Unit
 A REST Service can be started as part of a custom processing unit by specifying the `<os-core:rest >` annotation as following:
 
-{{% highlight xml %}}
+```xml
 <os-core:space-proxy id="theSpace" name="theGigaSpace">
 <os-core:rest id="mySpaceRestService" giga-space="theGigaSpace" port="8081" />
-{{% /highlight %}}
+```
 
 or
 
-{{% highlight xml %}}
+```xml
 <os-core:rest id="mySpaceRestService" space-name="mySpace" port="8081" lookup-groups="myGroups" />
-{{% /highlight %}}
+```
 
 
 ####`\<os-core:rest\>` attributes
@@ -66,7 +66,7 @@ Date string is parsed with a different parser from XAP's parser. Therefore, a da
 
 We provide a default format `yyyy-MM-dd HH:mm:ss` but you can override it by providing the `rest.datetime_format` property in the deployment step or by specify it in the pu.xml:
 
-{{% highlight xml %}}
+```xml
 <os-core:rest id="mySpaceRestService" space-name="mySpace" port="8081" lookup-groups="myGroups">
   <os-core:properties>
     <props>
@@ -74,14 +74,14 @@ We provide a default format `yyyy-MM-dd HH:mm:ss` but you can override it by pro
     </props>
   </os-core:properties>
 </os-core:rest>
-{{% /highlight %}}
+```
 
 # Nested SpaceDocument
 
 The REST API supports writing nested SpaceDocument.
 
 The JSON representation is:
-{{% highlight json %}}
+```json
 {
   "typeName": "theTypeOfTheNestedObject-SpaceDocument",
   "version": 0, //optional
@@ -91,7 +91,7 @@ The JSON representation is:
     "prop2": "val2"
   }
 }
-{{% /highlight %}}
+```
 
 
 # API and Playground
@@ -135,10 +135,10 @@ In order to do so, you will need to do the following:
 4. Deploy the war file as a Web Processing Unit
 
 For example:
-{{% highlight bash linenos %}}
+```bash
 #Specify the space parameters using the following properties:
 spaceName=mySpace
 lookupGroups=myGroups
 #lookupLocators=
 #datetime_format=
-{{% /highlight %}}
+```

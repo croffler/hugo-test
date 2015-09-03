@@ -14,20 +14,20 @@ In order for an application to use XAP JMS without having to include XAP JAR fil
 
 1. The security policy contains:
 
-{{% highlight java %}}
+```java
 grant {
     permission java.security.AllPermission "", "";
 };
-{{% /highlight %}}
+```
 
 For example, the security policy may be set to the policy file of GigaSpaces:
 
-{{% highlight java %}}
+```java
 -Djava.security.policy=<JSHOMEDIR>\policy\policy.all
-{{% /highlight %}}
+```
 
 1. The security manager is set to be the RMISecurityManager:
 
-{{% highlight java %}}
+```java
 -Djava.security.manager=java.rmi.RMISecurityManager
-{{% /highlight %}}
+```

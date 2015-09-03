@@ -41,7 +41,7 @@ A C++ client may write and read objects from the space.
 The following code example constructs a space proxy by passing a [space URL](./the-space-configuration.html) string into the `SpaceFinder.find()` method.
 The returned object is the `SpaceProxy` object. This allows performing all space operations such as write, read, take, notify registration, etc.
 
-{{% highlight cpp %}}
+```cpp
 SpaceFinder		finder;
 // Getting space proxy using the standard Space URL
 SpaceProxyPtr spaceProxy = finder.find( "jini://lookup-host/container-name/space-name" );
@@ -72,7 +72,7 @@ personResponse.reset((Person*)spaceProxy->take( &personTemplate, NULL_TX, 1000))
 if (personResponse == NULL) {
 	std::cout << "ERROR: Failed to take person 'Jack'" << std::endl;
 }
-{{% /highlight %}}
+```
 
 # Writing Batch of Objects to Space
 
@@ -86,7 +86,7 @@ This can be used when the c++ application accesses a remote space. In this case,
 
 Below is an example for a `writeMultiple` call:
 
-{{% highlight cpp %}}
+```cpp
 // Prepare a vector (batch) of Person objects
 std::vector<IEntry*> myBatch(100);
 for (int i = 0; i < 100; i++) {
@@ -109,7 +109,7 @@ catch(XAPException &e){
 for (int i = 0; i < 100; i++) {
 	delete myBatch[i];
 }
-{{% /highlight %}}
+```
 
 # Reading Batch of Objects from Space
 
@@ -123,7 +123,7 @@ When using the `readMultiple` operation, the returned object includes all of the
 
 Below is an example of performing the `readMultiple` operation using `SQLQuery`:
 
-{{% highlight cpp %}}
+```cpp
 Person personQueryTemplate;
 personQueryTemplate.age = 30;
 // Match all Person entries where 'city' begins with 'A' and 'age' is older than 30
@@ -136,7 +136,7 @@ std::cout << "Number of persons that live in New York aged 30+ is: " << response
 for (int i = 0; i < responseBatch.size(); i++) {
 	delete responseBatch[i];
 }
-{{% /highlight %}}
+```
 
 # Receiving Notifications on Space Operations
 
@@ -153,7 +153,7 @@ Once the listener is registered with a relevant template and operation type, and
 
 Below is an example for an `IRemoteEventListener` listener implementation:
 
-{{% highlight cpp %}}
+```cpp
 // The Listener class for a Person entry
  class PersonNotifyListener : public IRemoteEventListener
  {
@@ -167,11 +167,11 @@ Below is an example for an `IRemoteEventListener` listener implementation:
  	}
 
  };
-{{% /highlight %}}
+```
 
 Below is an example for a registered listener with a template and a `WRITE` operation type:
 
-{{% highlight cpp %}}
+```cpp
 // Prepare the session
   EventSessionFactoryPtr factory( EventSessionFactory::getFactory(spaceProxy));
 
@@ -189,7 +189,7 @@ Below is an example for a registered listener with a template and a `WRITE` oper
 
   Person personTemplate;
   EventRegistrationPtr reg( session->addListener( &personTemplate, &listener, Lease::FOREVER, NotifyModifiers::NOTIFY_WRITE));
-{{% /highlight %}}
+```
 
 # Using Transactions
 
@@ -212,7 +212,7 @@ Note, this can be avoided when working with the SBA model, where each cluster me
 
 Here is an example for creating a Local Transaction:
 
-{{% highlight cpp %}}
+```cpp
 SpaceFinder spaceFinder;
 SpaceProxyPtr spaceProxy = spaceFinder.find("jini://lookup-host/container-name/space-name");
 // Get the Local Transaction Manager
@@ -221,11 +221,11 @@ ITransactionManagerPtr localTxnMgr = spaceProxy->getLocalTransactionManager();
 TransactionPtr txn = localTxnMgr->create();
 A Local Transaction can also be created directly using:
 TransactionPtr txn = spaceProxy->getLocalTransaction();
-{{% /highlight %}}
+```
 
 Here is an example of creating a Distributed Transaction based on Jini Mahalo:
 
-{{% highlight cpp %}}
+```cpp
 #define LOOKUP_GROUPS "MY-LOOKUP-GROUPS"	// Lookup groups for Jini Mahalo
 SpaceFinder spaceFinder;
 // The space must use the same lookup groups as the Jini Mahalo
@@ -236,13 +236,13 @@ IConfigPtr config(new JiniConfig("", "", LOOKUP_GROUPS));
 ITransactionManagerPtr distTxnMgr = spaceProxy-getDistributedTransactionManager(config);
 // Create a transaction
 TransactionPtr txn = distTxnMgr->create();
-{{% /highlight %}}
+```
 
 Once a transaction is created it can be used with any of the space operations until it is either committed or aborted.
 
 Here is an example of using a transaction:
 
-{{% highlight cpp %}}
+```cpp
 Person person;
 Person personTemplate;
 PersonPtr personResponse;
@@ -267,7 +267,7 @@ if (personResponse == NULL || personResponse->age != 40) {
 
 // Commit the Transaction
 txn->commit();
-{{% /highlight %}}
+```
 
 # Iterating Large Amounts of Data
 
@@ -278,7 +278,7 @@ A GSIterator is created by providing one or more matching templates. Iterating t
 
 The following example demonstrates how to create and use a GSIterator that matches `Person` entries:
 
-{{% highlight cpp %}}
+```cpp
 // Create a GSIterator using an empty Person template to match all Person entries
 Person personTemplate;
 GSIteratorPtr gsIterator(new GSIterator(spaceProxy, &personTemplate, 100, ExistingAndFutureEntries, Lease::FOREVER));
@@ -295,13 +295,13 @@ while (gsIterator->hasNext())
 		std::cout << nextPerson->name << " | " << nextPerson->city << " | " << nextPerson->age << std::endl;
 	}
 }
-{{% /highlight %}}
+```
 
 Note the use of `ExistingAndFutureEntries` argument when creating the GSIterator. It enables matching both entries that are already in space at the time of creation, as well as entries that will be written afterwards.
 
 Here is another example, this time using _blocking iteration_:
 
-{{% highlight cpp %}}
+```cpp
 // Create a GSIterator
 Person personTemplate;
 GSIteratorPtr gsIteratorBlocking(new GSIterator(spaceProxy, &personTemplate, 100, ExistingAndFutureEntries, Lease::FOREVER));
@@ -315,7 +315,7 @@ while (true)
 		break;
 	count++;
 }
-{{% /highlight %}}
+```
 
 # Parellilazing and Scaling Using the c++ Processing Unit
 

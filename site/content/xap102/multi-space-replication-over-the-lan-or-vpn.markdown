@@ -52,18 +52,18 @@ From the space's perspective, a replication from one space to a target gateway i
 
 The following snippet shows how to configure a space that resides in New York to replicate to two other spaces, one in London and one in Hong Kong:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="myNYSpace" gateway-targets="gatewayTargets"/>
 
 <os-gateway:targets id="gatewayTargets" local-gateway-name="NEWYORK">
   <os-gateway:target name="LONDON"/>
   <os-gateway:target name="HONGKONG"/>
 </os-gateway:targets>
-{{% /highlight %}}
+```
 
 Each of replication channel to the gateways can be configured with more parameters, such parameters can applied to all gateways or specifically per gateway, for example:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="myNYSpace" gateway-targets="gatewayTargets"/>
 
 <os-gateway:targets id="gatewayTargets"
@@ -72,7 +72,7 @@ Each of replication channel to the gateways can be configured with more paramete
   <os-gateway:target name="LONDON" />
   <os-gateway:target name="HONGKONG" bulk-size="100"/>
 </os-gateway:targets>
-{{% /highlight %}}
+```
 
 Here we have specified a global bulk size of 1000 but have specifically overridden it in the replication channel to Hong Kong with 100, and have a global maximum redo log capacity for both targets of 1000000.
 
@@ -83,10 +83,10 @@ Here we have specified a global bulk size of 1000 but have specifically overridd
 You should have the `partitioned-sync2backup` cluster schema used with the space to enable the replication to the Gateway.
 If you are not interested in having backups running but have the replication to the Gateway running, you should have ZERO as the number of backups. See below example of an sla.xml configuration you could use in such a case:
 
-{{% highlight xml %}}
+```xml
 <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="1" number-of-backups="0">
 </os-sla:sla>
-{{% /highlight %}}
+```
 
 Note that when there are no backups running any failure of the primary might cause a loss of data.
 {{% /vbar %}}
@@ -101,7 +101,7 @@ A gateway needs to be deployed as a processing unit per space (though, one gatew
 
 Following the above example, here we demonstrate how to configure the gateway processing unit in New York, which needs to send replication to London and Hong Kong and also receive replication from the other spaces.
 
-{{% highlight xml %}}
+```xml
 <os-gateway:sink id="sink"
   local-gateway-name="NEWYORK"
   local-space-url="jini://*/*/myNYSpace">
@@ -110,7 +110,7 @@ Following the above example, here we demonstrate how to configure the gateway pr
     <os-gateway:source name="HONGKONG" />
   </os-gateway:sources>
 </os-gateway:sink>
-{{% /highlight %}}
+```
 
 
 ## Gateway and the Mirror Service
@@ -121,7 +121,7 @@ A gateway and a [Mirror Service](./asynchronous-persistency-with-the-mirror.html
 
 By default the gateway will preserve distributed transactions atomicity (distributed transactions consolidation), this can be disabled by adding the following property to the space configuration:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="localSpace" gateway-targets="gatewayTargets">
   <os-core:properties>
     <props>
@@ -131,7 +131,7 @@ By default the gateway will preserve distributed transactions atomicity (distrib
     </props>
   </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 Distributed transaction consolidation is done by waiting for all the transaction participants data before processing is done by the Sink component.
 In some cases, certain distributed transaction participants' data might be delayed due to network delay or disconnection and therefore may cause delays in replication.
@@ -143,7 +143,7 @@ Please note that while waiting for the pieces of a distributed transaction to ar
 
 The following example demonstrates how to set the timeout for waiting for distributed transaction data to arrive. It is also possible to set the amount of new operations to perform before processing data individually for each participant
 
-{{% highlight xml %}}
+```xml
 <os-gateway:sink id="sink" local-gateway-name="NEWYORK"
   local-space-url="jini://*/*/myNYSpace">
   <os-gateway:sources>
@@ -155,7 +155,7 @@ The following example demonstrates how to set the timeout for waiting for distri
      dist-tx-wait-for-opers="20"
      dist-tx-consolidation-failure-action="commit"/> <!--or "abort"-->
 </os-gateway:sink>
-{{% /highlight %}}
+```
 
 Distributed transaction participants data will be processed individually if 10 seconds have passed and not all of the participants data  has arrived or if 20 new operations were executed after the distributed transaction.
 
@@ -192,7 +192,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 {{% inittab %}}
 {{% tabcontent New York Space %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -215,13 +215,13 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
     <os-gateway:target name="HONGKONG"/>
   </os-gateway:targets>
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent London Space %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -241,13 +241,13 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
     <!-- No gateway targets needed as this space
          is not replicating to any gateway-->
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent London Gateway %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:context="http://www.springframework.org/schema/context"
@@ -273,13 +273,13 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   </os-gateway:sink>
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Hong Kong Space %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -299,13 +299,13 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
     <!-- No gateway targets needed as this space
          is not replicating to any gateway-->
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent Hong Kong Gateway %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:context="http://www.springframework.org/schema/context"
@@ -330,7 +330,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
     </os-gateway:sources>
   </os-gateway:sink>
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -355,7 +355,7 @@ Here are the contents of the files for each of the components:
 {{% inittab %}}
 {{% tabcontent New York Space %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -378,12 +378,12 @@ Here are the contents of the files for each of the components:
         </os-gateway:targets>
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent New York Gateway %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -409,12 +409,12 @@ Here are the contents of the files for each of the components:
         </os-gateway:sink>
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent London Space %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -438,12 +438,12 @@ Here are the contents of the files for each of the components:
         </os-gateway:targets>
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent London Gateway %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -469,13 +469,13 @@ Here are the contents of the files for each of the components:
         </os-gateway:sink>
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Symmetric Gateway Config %}}
 In this example, the gateway `pu.xml` is quite symmetric, the only difference is the local gateway name and the target gateway name. In such cases, it may be more convenient to create a single gateway `pu.xml` and use place holders to override the relevant properties at deploy time by injecting values for these properties:
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -506,7 +506,7 @@ In this example, the gateway `pu.xml` is quite symmetric, the only difference is
         </os-gateway:sink>
 
 </beans>
-{{% /highlight %}}
+```
 
 In the above we have configured both LONDON and NEWYORK at the sources of the sink, the sink will filter a gateway target and source if they match their local name. Using the above technique may simplify scenarios which are symmetric but it is not recommended when the scenarios are **not** symmetric as it can be unnecessarily confusing.
 {{% /tabcontent %}}

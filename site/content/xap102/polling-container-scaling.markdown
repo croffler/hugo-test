@@ -22,7 +22,7 @@ Here is an example of a polling container with 3 concurrent consumers and 5 maxi
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling(concurrentConsumers = 3, maxConcurrentConsumers = 5)
 public class SimpleListener {
 
@@ -38,30 +38,30 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:polling-container id="eventContainer" giga-space="gigaSpace"
                              concurrent-consumers="3" max-concurrent-consumers="5">
     <!-- ... -->
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.polling.SimplePollingEventListenerContainer">
     <property name="concurrentConsumers" value="3" />
     <property name="maxConcurrentConsumers" value="5" />
     <!-- ... -->
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -71,7 +71,7 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
 {{% inittab os_simple_space %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="listener" class="eg.SimpleListener" scope="prototype" />
 
@@ -83,12 +83,12 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
     <!-- ... -->
     <os-events:listener ref="adapterListener" />
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="listener" class="eg.SimpleListener" scope="prototype" />
 
@@ -101,7 +101,7 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
     <property name="eventListenerRef" value="adapterListener" />
     <!-- ... -->
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

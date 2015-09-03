@@ -35,7 +35,7 @@ When performing read operations without locking the object via a transaction, us
 
 See below example illustrating the usage of the exclusive locking mode implementing pessimistic locking:
 
-{{% highlight java %}}
+```java
 @Transactional (propagation=Propagation.REQUIRES_NEW)
 public void executeOrders(Integer orderIDs[]) throws Exception
 {
@@ -72,7 +72,7 @@ public void executeOrders(Integer orderIDs[]) throws Exception
 		}
 	}
 }
-{{% /highlight %}}
+```
 
 # Important Considerations
 

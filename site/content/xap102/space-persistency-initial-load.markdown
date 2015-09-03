@@ -19,7 +19,7 @@ To enable the initial load activity a `SpaceDataSource` should be specified. We 
 
 Here is an example for a space configuration that performs only initial load from the database without writing back any changes into the database (replication to the Mirror service is not enabled with this example):
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="space" schema="persistent" space-data-source="hibernateSpaceDataSource">
     <os-core:properties>
         <props>
@@ -34,7 +34,7 @@ Here is an example for a space configuration that performs only initial load fro
 <bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
-{{% /highlight %}}
+```
 
 {{% info %}}
 The Initial Load is supported with the `partitioned-sync2backup` cluster schema. If you would like to pre-load a clustered space using the Initial-Load without running backups you can use the `partitioned-sync2backup` and have ZERO as the amount of backups.
@@ -48,7 +48,7 @@ By default all the entries are loaded from the database into the space, but some
 
 The `SpaceDataSource` can be configured to load only specific types by configuring the property `initialLoadEntries` with a list of fully-qualified type names. For example, to load only entries of type `MyEntry`:
 
-{{% highlight xml %}}
+```xml
 <bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
     <property name="initialLoadEntries">
@@ -58,13 +58,13 @@ The `SpaceDataSource` can be configured to load only specific types by configuri
         </list>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 ## Custom Initial Load Queries
 
 A space class can specify a method which determines which data should be loaded into the space (similar to a 'where' clause of a SQL query). For example, to load only entries whose `foo` property is greater than **50**:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class MyClass {
     private Integer foo;
@@ -82,11 +82,11 @@ public class MyClass {
         return "foo > 50";
     }
 }
-{{% /highlight %}}
+```
 
 Alternatively, for users which prefer to separate the initial load semantics from the domain class, the `SpaceInitialLoadQuery` can be specified on a method in a different class. In that case the name of the domain class must be provided within the annotation. For example:
 
-{{% highlight java %}}
+```java
 public class MyInitialLoadBean {
     @SpaceInitialLoadQuery(type="com.example.MyClass")
     public String loadMyClass() {
@@ -98,11 +98,11 @@ public class MyInitialLoadBean {
         return "bar > 60";
     }
 }
-{{% /highlight %}}
+```
 
 The system needs to be configured with a set of one ore more base packages which will be scanned for methods annotated with `SpaceInitialLoadQuery` and instantiate them to retrieve the queries. For example:
 
-{{% highlight xml %}}
+```xml
 <bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
     <property name="initialLoadQueryScanningBasePackages">
@@ -112,13 +112,13 @@ The system needs to be configured with a set of one ore more base packages which
         </list>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 ## Overriding the `initialDataLoad` method
 
 To implement your own Initial Load when using the Hibernate `SpaceDataSource` you can override the `initialDataLoad` method to construct one or more `DefaultScrollableDataIterator`. For example:
 
-{{% highlight java %}}
+```java
 public class MySpaceDataSource extends DefaultHibernateSpaceDataSource {
     @Override
     public DataIterator<Object> initialDataLoad() {
@@ -131,7 +131,7 @@ public class MySpaceDataSource extends DefaultHibernateSpaceDataSource {
         return createInitialLoadIterator(iterators);
     }
 }
-{{% /highlight %}}
+```
 
 # Partitioned Cluster
 
@@ -141,12 +141,12 @@ While this process protects the partition from storing irrelevant data, its perf
 
 Fortunately, the system has a built-in mechanism which attempts to load only entries relevant to the partition when possible. When a space entry has a routing property with a numeric type mapped to a column in the database, the system automatically generates a custom initial load query to load only entries relevant for the partition based on the routing property. This mechanism can be disabled using the `augmentInitialLoadEntries` property:
 
-{{% highlight xml %}}
+```xml
 <bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
     <property name="augmentInitialLoadEntries" value="false"/>
 </bean>
-{{% /highlight %}}
+```
 
 {{% note %}}
 This mechanism only works for entries whose routing property type is numeric.
@@ -156,7 +156,7 @@ This mechanism only works for entries whose routing property type is numeric.
 
 When an entry is configured with an explicit custom initial load query using `@SpaceInitialLoadQuery` as described above, the automatic augmentation is skipped. You can augment the query manually to match only entries for a specific partition:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class MyClass {
     private Integer routingProperty;
@@ -175,7 +175,7 @@ public class MyClass {
         return "foo > 50 AND routingProperty % " + clusterInfo.getNumberOfInstances() + " = " + (clusterInfo.getInstanceId()-1);
     }
 }
-{{% /highlight %}}
+```
 
 Note that the method annotated with `@SpaceInitialLoadQuery` can receive a `ClusterInfo`, which is then used to retrieve the current partition id and total number of partitions to perform the required calculation.
 
@@ -185,7 +185,7 @@ In addition, if you choose to override the `initialDataLoad` method, note that t
 
 The `ConcurrentMultiDataIterator` can be used for Multi-Parallel load. This will allow multiple threads to load data into each space primary partition. With the example below 4 threads will be used to load data into the space primary partition , each will handle a different `MyDataIterator`:
 
-{{% highlight java %}}
+```java
 public class MySpaceDataSource extends SpaceDataSource{
 
 	public DataIterator<Object> initialDataLoad() {
@@ -198,4 +198,4 @@ public class MySpaceDataSource extends SpaceDataSource{
 		return new ConcurrentMultiDataIterator(iterators, numOfThreads);
 	}
 }
-{{% /highlight %}}
+```

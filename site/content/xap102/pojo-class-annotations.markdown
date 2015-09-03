@@ -17,7 +17,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 
 # Persistence
 
-
+|Persistence|Description |
+|---|---|
 |Syntax     | persist |
 |Argument   | boolean          |
 |Default    | false|
@@ -25,36 +26,38 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass(persist=true)
 public class Person {
 //
 }
-{{%/highlight%}}
+```
 
 {{%learn "./space-persistency.html"%}}
 
 
 # Include Properties
 
-
+|Include Properties|Description |
+|---|---|
 |Syntax     | includeProperties|
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | IncludeProperties.IMPLICIT|
 |Description| `IncludeProperties.IMPLICIT` takes into account all POJO fields -- even if a `get` method is not declared with a `@SpaceProperty` annotation, it is taken into account as a space field.`IncludeProperties.EXPLICIT` takes into account only the `get` methods which are declared with a `@SpaceProperty` annotation. |
 
 Example:
-{{%highlight java%}}
+```java
 @SpaceClass(includeProperties=IncludeProperties.EXPLICIT)
 public class Person {
   //
 }
-{{%/highlight%}}
+```
 
 
 # FIFO Support
 
-
+|FIFO Support|Description |
+|--------|--------|
 |Syntax     | fifoSupport |
 |Argument   | [FifoSupport]({{% javadoc "com/gigaspaces/annotation/pojo/FifoSupport" %}})|
 |Default    | FifoSupport.NOT_SET|
@@ -62,19 +65,20 @@ public class Person {
 
 
 Example:
-{{%highlight java%}}
+```java
 @SpaceClass(fifoSupport=FifoSupport.OPERATION)
 public class Person {
   //
 }
-{{%/highlight%}}
+```
 
 {{%learn "./fifo-support.html"%}}
 
 
 # Inherit Index
 
-
+|Inherit Index|Description |
+|--------|--------|
 |Syntax     | inheritIndexes |
 |Argument   | boolean          |
 |Default    | true|
@@ -82,18 +86,19 @@ public class Person {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass(inheritIndexes=false)
 public class Person {
   //
 }
-{{%/highlight%}}
+```
 
 {{%learn "./indexing.html"%}}
 
 # Storage Type
 
-
+|Storage Type|Description |
+|--------|--------|
 |Syntax     | storageType |
 |Argument   | [StorageType]({{% javadoc "com/gigaspaces/metadata/StorageType" %}})          |
 |Default    | StorageType.OBJECT |
@@ -102,18 +107,19 @@ public class Person {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass(storageType=StorageType.BINARY)
 public class Person {
   //
 }
-{{%/highlight%}}
+```
 
 {{%learn "./storage-types---controlling-serialization.html"%}}
 
 # Replication
 
-
+|Replication|Description |
+|--------|--------|
 |Syntax     | replicate |
 |Argument   | boolean          |
 |Default    | true|
@@ -121,12 +127,12 @@ public class Person {
 
 Example:
 
-{{%highlight java%}}
+```java
 @SpaceClass(replicate=false)
 public class Person {
   //
 }
-{{%/highlight%}}
+```
 
 
 
@@ -135,7 +141,8 @@ public class Person {
 
 # Compound Index
 
-
+|Compound Index|Description |
+|--------|--------|
 |Syntax     | CompoundSpaceIndexes CompoundSpaceIndex paths  |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
@@ -143,7 +150,8 @@ public class Person {
 
 
 Example:
-{{%highlight java%}}
+
+```java
 @CompoundSpaceIndexes({ @CompoundSpaceIndex(paths = { "firstName", "lastName" }) })
 @SpaceClass
 public class User {
@@ -156,14 +164,14 @@ public class User {
      private Address address;
      private String[] comment;
 }
-
-{{%/highlight%}}
+```
 
 {{%learn "./indexing-compound.html"%}}
 
 # Blob Store
 
-
+|Blob Store|Description |
+|--------|--------|
 |Syntax     | blobstoreEnabled  |
 |Argument | boolean          |
 |Default | true|
@@ -171,14 +179,14 @@ public class User {
 
 
 Example:
-{{%highlight java%}}
+```java
 @SpaceClass(blobstoreEnabled = false)
 public class Person {
     .......
 }
 
-{{%/highlight%}}
+```
 
-{{%learn "{{%currentadmurl%}}/memoryxtend.html"%}}
+{{%learn "{{<currentadmurl>}}/memoryxtend.html"%}}
 
 

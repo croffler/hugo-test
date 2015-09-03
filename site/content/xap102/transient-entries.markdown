@@ -16,15 +16,15 @@ When using the [Space Persistency](./space-persistency.html) feature, you might 
 {{% /tip %}}
 
 The following example marks an entire class transient (i.e. non-persistent):
-{{% highlight java %}}
+```java
 @SpaceClass (persist=false)
 public class MyData {
 	...
 }
-{{% /highlight %}}
+```
 
 The following example marks the property which determines whether a class instance is transient or persistent:
-{{% highlight java %}}
+```java
 @SpaceClass
 public class MyData {
 	...
@@ -34,7 +34,7 @@ public class MyData {
 		return false;
 	}
 }
-{{% /highlight %}}
+```
 
 - Transient Space objects can be constructed using the `@SpacePersist` on the relevant getter method. See the [POJO Metadata](./modeling-your-data.html) for details.
 - Transient objects will be evicted from the space only by explicit take/clear operation.

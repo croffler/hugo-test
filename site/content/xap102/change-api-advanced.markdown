@@ -18,7 +18,7 @@ A `SpaceSynchronizationEndpoint` implementation can make use of the [Change API]
 Asynchronous Persistence
 ![change-space-datasource-async.jpg](/attachment_files/change-space-datasource-async.jpg)
 
-{{% highlight java %}}
+```java
 public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {
 
   @Override
@@ -51,11 +51,11 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
   ..
 
 }
-{{% /highlight %}}
+```
 
 Once you have an implementation that supports some or all of the change operations, the space need to be configured in a way which specifies which change operations are supported by the mirror, and that is in order for it to know which operations can be sent to the mirror as change and which operations needs to be converted to full update. following an example of how to configure a space with mirror which supports: `set`, `unset` and `increment` change operations.
 
-{{% highlight xml %}}
+```xml
  <os-core:embedded-space id="space" name="mySpace" mirror="true">
     <os-core:properties>
         <props>
@@ -65,7 +65,7 @@ Once you have an implementation that supports some or all of the change operatio
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 Here is the full list of change operations:
 
@@ -86,7 +86,7 @@ Here is the full list of change operations:
 
 By default, the change result will only contain the number of entries which were changed during the operation. In order to get more details (requires more network traffic) the `ChangeModifiers.RETURN_DETAILED_RESULTS` should be used. When using this modifier the result will contain the list of entries which were changed including the change affect that took place on each entry. You can use this in order to know what was the affect, for instance what is the value of a numeric property after the increment operation was applied on it.
 
-{{% highlight java %}}
+```java
  	GigaSpace space = // ... obtain a space reference
  	Uuid id = ...;
  	IdQuery<Account> idQuery = new IdQuery<Account>(Account.class, id, routing);
@@ -98,14 +98,14 @@ By default, the change result will only contain the number of entries which were
  	 double newValue = IncrementOperation.getNewValue(operationResult);
  	 ...
  	}
-{{% /highlight %}}
+```
 
 # Change and Replication Filters
 
 When using [Replication Filter]({{%currentadmurl%}}/cluster-replication-filters.html), one can extract the `DataSyncChangeSet` from the `IReplicationFilterEntry` in the same way as extracting it from a `DataSyncOperation` by using the
 `ChangeDataSyncOperation` class in the following way:
 
-{{% highlight java %}}
+```java
 public class MyReplicationFilter implements IReplicationFilter {
   ...
 
@@ -118,7 +118,7 @@ public class MyReplicationFilter implements IReplicationFilter {
      }
   }
 }
-{{% /highlight %}}
+```
 
 # Change and Space Filters
 

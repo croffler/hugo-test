@@ -21,7 +21,7 @@ The `INotifyDelegatorFilter` allows you to execute business logic at the space s
 
 The `INotifyDelegatorFilter` interface includes the following methods:
 
-{{% highlight java %}}
+```java
 public interface INotifyDelegatorFilter extends Serializable
 {
 // called when the filter created
@@ -34,12 +34,12 @@ public boolean process( EntryArrivedRemoteEvent theEvent);
 // called when the registration cancelled
 public void close();
 }
-{{% /highlight %}}
+```
 
 # INotifyDelegatorFilter Implementation Example
 Below is an example for the `INotifyDelegatorFilter` implementation, where the `process()` method allows only messages with the value `aaa` to be delivered to the client:
 
-{{% highlight java %}}
+```java
 package com.j_spaces.examples.sessionevent;
 
 import net.jini.core.entry.Entry;
@@ -77,21 +77,21 @@ public void close()
 System.out.println(" ->> closed called");
 }
 }
-{{% /highlight %}}
+```
 
 The notify registration:
 
-{{% highlight java %}}
+```java
 EventSessionFactory factory = EventSessionFactory.getFactory(space);
 EventSessionConfig config = new EventSessionConfig();
 DataEventSession session = factory.newDataEventSession(config, null);
 MyNotifyFilter filter = new MyNotifyFilter ();
 EventRegistration registration = session.addListener(new MyData(),this,Lease.FOREVER,null,filter,NotifyActionType.NOTIFY_ALL);
-{{% /highlight %}}
+```
 
 When writing the following objects, only `msg1` is delivered to the client who registered for notifications:
 
-{{% highlight java %}}
+```java
 MyData msg1 = new MyData("aaa", new Long (100 ) , new Time(10,5,20) ,
 new Date (107, 10, 40),new Integer (60 ) ,new Double (500.2));
 MyData msg2 = new MyData("bbb", new Long (100 ) , new Time(10,5,20) ,
@@ -99,7 +99,7 @@ new Date (107, 10, 40),new Integer (60 ) ,new Double (500.2));
 
 space.write(msg1, null, Lease.FOREVER);
 space.write(msg2, null, Lease.FOREVER);
-{{% /highlight %}}
+```
 
 {{% note %}}
 The `INotifyDelegatorFilter` implementation class should be part of the space classpath.

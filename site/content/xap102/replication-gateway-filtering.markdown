@@ -23,7 +23,7 @@ With the example below a replication filter is used with the source space (outpu
 {{% inittab %}}
 {{% tabcontent New York Space %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -52,12 +52,12 @@ With the example below a replication filter is used with the source space (outpu
         </os-gateway:targets>
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Replication Filter Implementation %}}
 
-{{% highlight java %}}
+```java
 public class LondonReplicationFilter implements IReplicationFilter {
 
   public void init(IJSpace space, String paramUrl, ReplicationPolicy replicationPolicy) {
@@ -74,7 +74,7 @@ public class LondonReplicationFilter implements IReplicationFilter {
   public void close() {
   }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

@@ -24,7 +24,7 @@ Matching a nested property is done by specifying a **Path** which describes how 
 
 For example, suppose we have a **Person** class and an **Address** class, and **Person** has an **address** property of type **Address**:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person {
     private Address address;
@@ -35,13 +35,13 @@ public class Address implements Serializable {
     private String city;
     // Getter and setter methods are omitted for brevity.
 }
-{{% /highlight %}}
+```
 
 The following example queries for a **Person** with an **address** whose **city** equals "**New York**":
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Person>(Person.class, "address.city = 'New York'");
-{{% /highlight %}}
+```
 
 {{% info %}}
 Note that other properties (if any) in **address** which are not part of the criteria are ignored in the matching process.
@@ -51,30 +51,30 @@ The number of levels in the path is unlimited.
 For example, suppose the **Address** class has a **Street** class which encapsulates a **name** (String) and a **houseNum** (int).
 The following example queries for a **Person** who live on "*Main**" street:
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Person>(Person.class, "address.street.name = 'Main'");
-{{% /highlight %}}
+```
 
 Naturally, any other feature of the SQL syntax can be used with paths:
 
-{{% highlight java %}}
+```java
 // Using parameters instead of fixed criteria expressions:
 ... = new SQLQuery<Person>(Person.class, "address.city = ?", "New York");
 // Using other SQL comparison operands:
 ... = new SQLQuery<Person>(Person.class, "address.street.houseNum >= 10");
 // Using SQL composition operands to express compound predicates:
 ... = new SQLQuery<Person>(Person.class, "address.city = 'New York' AND address.street.houseNum >= 10");
-{{% /highlight %}}
+```
 
 Paths can also be specified in **ORDER BY** and **GROUP BY** clauses:
 
-{{% highlight java %}}
+```java
 // Query for Persons in 'Main' street, sort results by city:
 ... = new SQLQuery<Person>(Person.class, "address.street.name = 'Main' ORDER BY address.city");
 
 // Query for Persons in 'Main' street, group results by city:
 ... = new SQLQuery<Person>(Person.class, "address.street.name = 'Main' GROUP BY address.city");
-{{% /highlight %}}
+```
 
 {{% anchor NestedObjectQueryIndexes %}}
 
@@ -83,7 +83,7 @@ Paths can also be specified in **ORDER BY** and **GROUP BY** clauses:
 Indexing plays an important role in a system's architecture - a query without indexes can slow down the system significantly. Paths can be indexed to boost performance, similar to properties.
 For example, suppose we've analyzed our queries and decided that **address.city** is commonly used and should be indexed:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person {
     private Address address;
@@ -94,7 +94,7 @@ public class Person {
     }
     // Setter method is omitted for brevity.
 }
-{{% /highlight %}}
+```
 
 {{% info%}}
 Note that since the index is specified on top of the **address** property, the `path` is "**city**" rather than "**address.city**".
@@ -112,19 +112,19 @@ The path syntax is tailored to detect `Map` objects and provide access to their 
 
 For example, suppose the **Person** class contains a **phoneNumbers** property which is a `Map`, encapsulating various phone numbers (e.g. home, work, mobile):
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person {
     private Map<String, String> phoneNumbers;
     // Getter and setter methods are omitted for brevity.
 }
-{{% /highlight %}}
+```
 
 The following example queries for a **Person** whose **phoneNumbers** property contains the key-value pair **"home" - "555-1234"**:
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Person>(Person.class, "phoneNumbers.home = '555-1234'");
-{{% /highlight %}}
+```
 
 {{% info%}}
 A path can continue traversing from 'regular' properties to maps and back to 'regular' properties as needed.
@@ -136,7 +136,7 @@ Map properties are useful for creating a flexible schema - since the keys in the
 Paths containing map keys can be indexed to boost performance, similar to 'regular' paths.
 For example, suppose we've analyzed our queries and decided that **phoneNumbers.home** is commonly used and should be indexed:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person {
     private Address address;
@@ -147,7 +147,7 @@ public class Person {
     }
     // Setter method is omitted for brevity.
 }
-{{% /highlight %}}
+```
 
 {{% info %}}
 Note that since the index is specified on top of the **phoneNumbers** property, the `path` is "**home**" rather than "**phoneNumbers.home**".
@@ -167,24 +167,24 @@ Arrays are supported as well, except for arrays of primitive types (int, boolean
 Suppose we have a type called **Dealer** with a property called **cars** (which is a list of strings).
 The following example queries for a **Dealer** whose *cars* collection property contains the **"Honda"** String:
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*] = 'Honda'");
-{{% /highlight %}}
+```
 
 Now suppose that **cars** is not a collection of Strings but of a user-defined class called **Car**, which has a string property called **company**.
 The following example queries for a **Dealer** whose **cars** collection property contains a **Car** with **company** which equals **"Honda"**:
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*].company = 'Honda'");
-{{% /highlight %}}
+```
 
 Matching collections within collections recursively is supported as well.
 Suppose the **Car** class has a collection of strings called **tags**, to store additional information.
 The following example queries for a **Dealer** which contains a **car** which contains a **tag** which equals "**Convertible**":
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*].tags[*] = 'Convertible'");
-{{% /highlight %}}
+```
 
 
 
@@ -198,32 +198,32 @@ The scope of the `[*]` operand is bounded to the predicate it participates in. W
 This behavior is useful when looking for multiple distinct items, for example: a dealer with several cars of different companies.
 The following example queries for a **Dealer** which has both a **Honda** and a **Subaru**:
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*].company = 'Honda' AND cars[*].company = 'Subaru'");
-{{% /highlight %}}
+```
 
 You can use parentheses to specify multiple conditions on the same collection item. See examples below:
 The following example queries for a **Dealer** which has a **Car** whose *company* equals "**Honda**" and **color** equals "**Red**":
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*](company = 'Honda' AND color = 'Red')");
-{{% /highlight %}}
+```
 
 {{% note title="Caution" %}}
 Writing that last query without parentheses will yield results which are somewhat confusing:
 
-{{% highlight java %}}
+```java
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*].company = 'Honda' AND cars[*].color = 'Red'");
-{{% /highlight %}}
+```
 
 
 This query will match any **Dealer** with a **Honda** car and a **Red** car, but not necessarily the same car (e.g. a blue **Honda** and a **Red** Subaru).
 {{% /note %}}
 
 The following example queries for a **Dealer** which has a **Car** whose *company* equals "**Honda**" and **color** equals "**Red**" and one of the Car nested **Tags** List equals to "Convertible":
-{{% highlight java %}}
+```java
 ... = new SqlQuery<Dealer>("Cars[*](company = 'Honda' AND color = 'Red' AND tags[*] = 'Convertible')");
-{{% /highlight %}}
+```
 
 #### Here is a graphical representation of this query:
 
@@ -232,9 +232,9 @@ The following example queries for a **Dealer** which has a **Car** whose *compan
 
 {{%warning title="The following is not supported"%}}
 
-{{%highlight java%}}
+```java
 ... = new SqlQuery<Dealer>("Cars[*](company = 'Honda' OR color = 'Red' OR tags[*] = 'Convertible')");
-{{%/highlight%}}
+```
 
 As it does not make sense to perform an OR in this case.
 {{%/warning%}}
@@ -244,12 +244,12 @@ As it does not make sense to perform an OR in this case.
 Collection properties can be indexed to boost performance, similar to 'regular' paths, except that each item in the collection is indexed.
 For example, suppose we've analyzed our queries and decided that **cars[*].company** is commonly used and should be indexed:
 
-{{% highlight java %}}
+```java
 @SpaceIndex(path = "[*].company")
 public List<Car> getCars() {
   return this.cars;
 }
-{{% /highlight %}}
+```
 
 {{% note %}}
 Note that since the index is specified on top of the **cars** property, the `path` is \[*\].company rather than cars\[*\].company**.

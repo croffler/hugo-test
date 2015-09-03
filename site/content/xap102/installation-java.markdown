@@ -48,9 +48,9 @@ Unzip the ZIP file using your favorite unzip tool (e.g., WinZip) to the location
 
 Step 1. Navigate into the directory where you want to install GigaSpaces XAP, e.g. `\opt` directory, and execute an `unzip` command using the path to the XAP zip file. For example:
 
-{{% highlight java %}}
+```java
 unzip {{%version build-filename %}}
-{{% /highlight %}}
+```
 
 Step 2. Make sure all `sh` file(s) in the `/bin` and the `/examples` directory are in executable mode, meaning you can run them from your machine. To check this, use the `ls \-all` command for the relevant directory, and make sure that `x` is included in the file permissions.
 

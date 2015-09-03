@@ -42,16 +42,16 @@ Here are some examples of using the `puInstance` script in order to run a proces
 {{% inittab os_simple_space %}}
 {{% tabcontent Unix %}}
 
-{{% highlight java %}}
+```java
 puInstance.sh -cluster schema=partitioned total_members=2 id=1 data-processor.jar
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Windows %}}
 
-{{% highlight java %}}
+```java
 puInstance.bat -cluster schema=partitioned total_members=2 id=1 data-processor.jar
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -61,18 +61,18 @@ The above example starts a processing unit (which includes an embedded space) in
 {{% inittab os_simple_space %}}
 {{% tabcontent Unix %}}
 
-{{% highlight java %}}
+```java
 puInstance.sh -cluster schema=partitioned-sync2backup total_members=1,1 id=1 backup_id=1
 -properties runtime.properties data-processor.jar
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Windows %}}
 
-{{% highlight java %}}
+```java
 puInstance.bat -cluster schema=partitioned-sync2backup total_members=1,1 id=1 backup_id=1
 -properties runtime.properties data-processor.jar
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -83,7 +83,7 @@ The above example starts a processing unit instance (with an embedded space) in 
 
 Here is an example of using a `ProcessingUnitContainerProvider` in order to create a standalone processing unit container programmatically:
 
-{{% highlight java %}}
+```java
 StandaloneProcessingUnitContainerProvider provider = new StandaloneProcessingUnitContainerProvider("/usr/gigaspaces/data-processor.jar");
 // provide cluster information for the specific PU instance
 ClusterInfo clusterInfo = new ClusterInfo();
@@ -102,6 +102,6 @@ ProcessingUnitContainer container = provider.createContainer();
 // ...
 
 container.close();
-{{% /highlight %}}
+```
 
 The `StandaloneProcessingUnitContainerProvider` is constructed with a file-system path to the processing unit jar file. It constructs a new classloader and adds all the jar files in the processing unit's `lib` directory to it automatically.

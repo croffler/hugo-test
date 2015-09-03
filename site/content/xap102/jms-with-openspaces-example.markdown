@@ -23,7 +23,7 @@ The `JMSDataFeeder` is similar to the `DataFeeder`. The difference between the b
 {{% inittab os_simple_space %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 public class JMSDataFeeder implements InitializingBean, DisposableBean {
     [..]
     Data data = new Data(Data.TYPES[counter++ % Data.TYPES.length], "FEEDER " + Long.toString(time));
@@ -35,14 +35,14 @@ public class JMSDataFeeder implements InitializingBean, DisposableBean {
     });
     [..]
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Configuration %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="jmsDataFeeder" class="org.openspaces.example.data.feeder.JMSDataFeeder"/>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -52,7 +52,7 @@ The `JMSDataFeeder` is injected with a Spring [JmsTemplate](http://static.spring
 {{% inittab os_simple_space %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 public class JMSDataFeeder implements InitializingBean, DisposableBean {
     [..]
     /** Sets the JmsTemplate */
@@ -62,12 +62,12 @@ public class JMSDataFeeder implements InitializingBean, DisposableBean {
     }
     [..]
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Configuration %}}
 
-{{% highlight xml %}}
+```xml
 <bean id="jmsDataFeeder" class="org.openspaces.example.data.feeder.JMSDataFeeder">
     <property name="instanceId" value="${clusterInfo.instanceId}" />
     <property name="numberOfTypes" value="${numberOfTypes}" />
@@ -84,7 +84,7 @@ public class JMSDataFeeder implements InitializingBean, DisposableBean {
 <os-jms:connection-factory id="connectionFactory" giga-space="gigaSpace" message-converter="messageConverter" />
 
 <bean id="messageConverter" class="com.j_spaces.jms.utils.ObjectMessage2ObjectConverter" />
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

@@ -32,7 +32,7 @@ Here is a simple example of polling event container configuration:
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
@@ -43,9 +43,9 @@ Here is a simple example of polling event container configuration:
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling
 public class SimpleListener {
 
@@ -61,12 +61,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -85,12 +85,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -118,12 +118,12 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 GigaSpace gigaSpace = // either create the GigaSpace or get it by injection
 
@@ -143,7 +143,7 @@ pollingEventListenerContainer.start();
 
 // when needed dispose of the notification container
 pollingEventListenerContainer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -174,7 +174,7 @@ When performing receive operations, a template is defined, creating a virtualize
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling
 public class SimpleListener {
 
@@ -189,12 +189,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:polling-container id="eventContainer" giga-space="gigaSpace">
 
@@ -207,12 +207,12 @@ public class SimpleListener {
     </os-events:listener>
 
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.polling.SimplePollingEventListenerContainer">
 
@@ -231,7 +231,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -244,7 +244,7 @@ A polling container or notify container could have only one template. If you nee
 
 You may use a `SQLQuery` having `IN` operator with multiple values to register a Template with multiple values. This can be a simple alternative avoiding using multiple polling containers. See below example:
 
-{{% highlight java %}}
+```java
 import com.gigaspaces.annotation.pojo.SpaceId;
 import com.gigaspaces.annotation.pojo.SpaceIndex;
 
@@ -272,11 +272,11 @@ public class MyData {
 		return "MyData [id=" + id + ", key=" + key + "]";
 	}
 }
-{{% /highlight %}}
+```
 
 The Template registration:
 
-{{% highlight java %}}
+```java
 SimplePollingEventListenerContainer pollingEventListenerContainer =
 	new SimplePollingContainerConfigurer(space)
 		.template(query)
@@ -286,7 +286,7 @@ SimplePollingEventListenerContainer pollingEventListenerContainer =
         System.out.println("Polling Container Got matching event! - " +data);
     }
 }).pollingContainer();
-{{% /highlight %}}
+```
 
 # Dynamic Template Definition
 
@@ -296,7 +296,7 @@ The event template object has the same syntax rules as with @EventTemplate.
 {{% inittab os_simple_space%}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling
 public class SimpleListener {
 
@@ -313,12 +313,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:polling-container id="eventContainer" giga-space="gigaSpace">
 
@@ -332,9 +332,9 @@ public class SimpleListener {
 
 </os-events:polling-container>
 <bean id="dynamicTemplate" class="ExpiredDataTemplateProvider"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 public class ExpiredDataTemplateProvider implements DynamicEventTemplateProvider {
 
     @Override
@@ -345,12 +345,12 @@ public class ExpiredDataTemplateProvider implements DynamicEventTemplateProvider
         return dynamicTemplate;
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.polling.SimplePollingEventListenerContainer">
 
@@ -364,9 +364,9 @@ public class ExpiredDataTemplateProvider implements DynamicEventTemplateProvider
     </property>
 </bean>
 <bean id="dynamicTemplate" class="ExpiredDataTemplateProvider"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 public class ExpiredDataTemplateProvider implements DynamicEventTemplateProvider {
 
     @Override
@@ -377,7 +377,7 @@ public class ExpiredDataTemplateProvider implements DynamicEventTemplateProvider
         return dynamicTemplate;
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -390,7 +390,7 @@ Only polling containers support dynamic templates. Notify containers do not supp
 
 The polling receive container performs receive operations. The actual implementation of the receive operation is abstracted using the following interface:
 
-{{% highlight java %}}
+```java
 public interface ReceiveOperationHandler {
 
     /**
@@ -409,7 +409,7 @@ public interface ReceiveOperationHandler {
      */
     Object receive(Object template, GigaSpace gigaSpace, long receiveTimeout) throws DataAccessException;
 }
-{{% /highlight %}}
+```
 
 XAP comes with several built-in receive operation-handler implementations:
 
@@ -432,7 +432,7 @@ Here is an example of how the receive operation handler can be configured with `
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling
 public class SimpleListener {
 
@@ -455,12 +455,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -485,12 +485,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -522,7 +522,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -555,7 +555,7 @@ Here is an example of how a Non-Blocking mode can be configured:
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling (receiveTimeout=10000)
 public class SimpleListener {
 
@@ -579,12 +579,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -612,12 +612,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -654,7 +654,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -675,7 +675,7 @@ Certain receive operation handlers might return an array as a result of the rece
 
 Here is an example for batch processing using the `passArrayAsIs` - with this example the polling container will consume a batch of objects using `takeMultiple`, modify these and write these back into the space in one operation using `writeMultiple`:
 
-{{% highlight java %}}
+```java
 @EventDriven
 @Polling(passArrayAsIs = true)
 public class SimpleBatchListener {
@@ -703,7 +703,7 @@ public class SimpleBatchListener {
 return events;
     }
 }
-{{% /highlight %}}
+```
 
 # Free Polling Container Resources
 
@@ -714,7 +714,7 @@ To free the resources used by the polling container make sure you close it prope
 
 When configuring the polling event container to perform its receive operation and event actions under a transaction, a transaction is started and rolled back for each unsuccessful receive operation, which results in a higher load on the space. The polling event container allows pluggable logic to be used in order to decide if the actual receive operation should be performed or not. This logic, called the trigger receive operation, is performed outside the receive transaction boundaries. The following interface is provided for custom implementation of this logic:
 
-{{% highlight java %}}
+```java
 public interface TriggerOperationHandler {
 
     /**
@@ -748,14 +748,14 @@ public interface TriggerOperationHandler {
      */
     boolean isUseTriggerAsTemplate();
 }
-{{% /highlight %}}
+```
 
 OpenSpaces comes with a built-in implementation of this interface, called `ReadTriggerOperationHandler`. It performs a single blocking read operation (using the provided receive timeout), thus "peeking" into the space for relevant event data. If the read operation returns a value, this means that there is higher probability that the receive operation will succeed, and the transaction won't be started without a purpose. Here is how it can be configured:
 
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Polling @TransactionalEvent
 public class SimpleListener {
 
@@ -777,12 +777,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space id="space" name="mySpace"/>
 
@@ -811,12 +811,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:polling-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -851,7 +851,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}

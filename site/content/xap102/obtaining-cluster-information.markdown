@@ -47,7 +47,7 @@ Once injected, the processing unit components can access all the information wit
 GigaSpaces provides the `ClusterInfoAware` interface, which allows beans to be injected with the `ClusterInfo` instance. This is similar to Spring's `ApplicationContextAware` interface, that allows beans to be injected with Spring's `ApplicationContext` by implementing the interface.
 Here's the `ClusterInfoAware` interface:
 
-{{% highlight java %}}
+```java
 public interface ClusterInfoAware {
 
     /**
@@ -63,7 +63,7 @@ public interface ClusterInfoAware {
      */
     void setClusterInfo(ClusterInfo clusterInfo);
 }
-{{% /highlight %}}
+```
 
 All of the processing unit [runtime modes](./deploying-and-running-the-processing-unit.html) provide support for the `ClusterInfo` and `ClusterInfoAware` interfaces by default. Built-in GigaSpaces components make use of this feature. User-defined beans can make use of this information as well (for example, to connect to a specific database based on the ID of the processing unit instance).
 
@@ -73,7 +73,7 @@ All of the processing unit [runtime modes](./deploying-and-running-the-processin
 
 Similar to the the `ClusterInfoAware` interface, this field level annotation allows beans to be injected with the `ClusterInfo` instance. Here's an example:
 
-{{% highlight java %}}
+```java
 public class MyBean {
 
     @ClusterInfoContext
@@ -81,7 +81,7 @@ public class MyBean {
 
     ...
 }
-{{% /highlight %}}
+```
 
 # Space Construction and ClusterInfo
 
@@ -100,12 +100,12 @@ The [Space component](./the-space-configuration.html) implements the `ClusterInf
 
 When running the processing unit in any of the [runtime modes](./deploying-and-running-the-processing-unit.html), `ClusterInfo` can also be used directly within the Spring XML configuration. In a similar manner, properties can be injected. Here is an example of how this can be used:
 
-{{% highlight xml %}}
+```xml
 
 <bean id="myBean" class="MyBean">
     <property name="connectionUrl" value="testconnection_${clusterInfo.runningNumber}" />
 </bean>
-{{% /highlight %}}
+```
 
 In the above example, the value of the `connectionUrl` property of `myBean` is  built based on the `runningNumber` provided by the `ClusterInfo` instance. Here is a list mapping the `ClusterInfo` properties to their equivalent `${clusterInfo.*`} syntax:
 

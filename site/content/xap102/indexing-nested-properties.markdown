@@ -20,7 +20,7 @@ Below is an example of defining an index on a nested property:
 {{% inittab example %}}
 {{% tabcontent Single Index Annotation %}}
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Person {
     private int id;
@@ -50,12 +50,12 @@ public static class Address implements Serializable {
 	private String street;
 	//getter and setter methods
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Multiple Indexes Annotation %}}
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public static class Person {
 	private int id;
@@ -98,12 +98,12 @@ public static class Address implements Serializable {
 	private String street;
 	//getter and setter methods
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent XML %}}
 
-{{% highlight xml %}}
+```xml
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.Person"  >
          <property name="personalInfo">
@@ -112,17 +112,17 @@ public static class Address implements Serializable {
 	</property>
     </class>
 </gigaspaces-mapping>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
 
 The following is an example of query code that automatically triggers this index:
 
-{{% highlight java %}}
+```java
 SQLQuery<Person> query = new SQLQuery<Person>(Person.class,
 	"personalInfo.socialSecurity<10000050L and personalInfo.socialSecurity>=10000010L");
-{{% /highlight %}}
+```
 
 {{% learn "./query-sql.html#Nested Properties"%}}
 

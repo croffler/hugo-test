@@ -52,17 +52,17 @@ You can create a custom implementation of the `MessageConverter`. The returned o
 
 This interface defines an API for message conversion:
 
-{{% highlight java %}}
+```java
 interface IMessageConverter {
 	Object toObject(javax.jms.Message m);
 }
-{{% /highlight %}}
+```
 
 Implement the `IMessageConverter` interface to return the object required to be written to the space.
 
 Following is the implementation code of `ObjectMessage2ObjectConverter`:
 
-{{% highlight java %}}
+```java
 class ObjectMessage2ObjectConverter implements IMessageConverter {
 	Object toObject(javax.jms.Message msg) {
 		if (msg != null && msg instanceof javax.jms.ObjectMessage) {
@@ -71,7 +71,7 @@ class ObjectMessage2ObjectConverter implements IMessageConverter {
 		return msg;
 	}
 }
-{{% /highlight %}}
+```
 
 When passing an `ObjectMessage` to this converter, it returns the message body, which is actually the POJO.
 
@@ -85,11 +85,11 @@ Any `MessageProducer` created under this `ConnectionFactory` uses the converter 
 
 You can configure a `ConnectionFactory` to use a `MessageConverter` in the Open Spaces Spring configuration:
 
-{{% highlight xml %}}
+```xml
 <bean id="messageConverter" class="com.j_spaces.jms.utils.ObjectMessage2ObjectConverter" />
 
 <os-jms:connection-factory id="connectionFactory" giga-space="gigaSpace" message-converter="messageConverter" />
-{{% /highlight %}}
+```
 
 In this example, a `ConnectionFactory` is configured, and an instance of `ObjectMessage2ObjectConverter` is injected into it.
 
@@ -101,13 +101,13 @@ Passing `null` as a `MessageConverter` means that the `ConnectionFactory` does n
 
 The following code uses the `ObjectMessage2ObjectConverter` to send instances of the `MyPOJO` class to the space:
 
-{{% highlight java %}}
+```java
 ObjectMessage2ObjectConverter converter = new ObjectMessage2ObjectConverter();
 ConnectionFactory connectionFactory = GSJMSAdmin.getInstance().getConnectionFactory(space, converter);
 ...
 ObjectMessage msg = session.createObjectMessage(new MyPOJO());
 producer.send(msg);
-{{% /highlight %}}
+```
 
 ## Setting MessageConverter per Message
 
@@ -117,12 +117,12 @@ This is done by setting the `JMS_GSMessageConverter` property before calling `Me
 
 For example, to use the `ObjectMessage2ObjectConvertor` on a specific message:
 
-{{% highlight java %}}
+```java
 ObjectMessage2ObjectConverter converter = new ObjectMessage2ObjectConverter();
 ObjectMessage msg = ...
 msg.setObjectProperty("JMS_GSMessageConverter", converter);
 producer.send(msg);
-{{% /highlight %}}
+```
 
 {{% note %}}
 In this case, the `MessageConverter` is used even if another `MessageConverter` is set in the `ConnectionFactory`.
@@ -166,13 +166,13 @@ No conversion is performed and the JMS messages are written as-is.
 
 To create a JMS message, use the new operator as follows:
 
-{{% highlight java %}}
+```java
 GSSimpleMessageImpl simpleMessage = new GSSimpleMessageImpl(null);
 GSTextMessageImpl   textMessage   = new GSTextMessageImpl  (null);
 GSObjectMessageImpl objectMessage = new GSObjectMessageImpl(null);
 GSMapMessageImpl    mapMessage    = new GSMapMessageImpl   (null);
 GSBytesMessageImpl  bytesMessage  = new GSBytesMessageImpl (null);
-{{% /highlight %}}
+```
 
 - Use `null` for the session argument.
 - It is preferred not to use the default constructors, because they are meant to create `null` templates of the JMS messages.
@@ -181,7 +181,7 @@ GSBytesMessageImpl  bytesMessage  = new GSBytesMessageImpl (null);
 
 Use the Message API to set the body, the header values, and the properties:
 
-{{% highlight java %}}
+```java
 // create the message
 GSTextMessage textMessage = new GSTextMessage(null);
 
@@ -193,15 +193,15 @@ textMessage.setJMSMessageID("message1");
 
 // set the message's properties
 textMessage.setBooleanProperty("processed", false);
-{{% /highlight %}}
+```
 
 ### 3. Write Message to Space
 
 Use the space API to write the message in an ordinary way:
 
-{{% highlight java %}}
+```java
 spaceProxy.write(textMessage, null, Lease.Forever);
-{{% /highlight %}}
+```
 
 {{% info %}}
 The `SpaceWriter` example that resides in `<XAP Root>\examples\Basic\helloJMS` uses this technique to write JMS messages to the space.
@@ -213,32 +213,32 @@ Like with any Entry/POJO type, to receive a JMS message from the space you need 
 
 ### 1. Create Template Based on JMS Message Classes
 
-{{% highlight java %}}
+```java
 GSSimpleMessageImpl simpleMessageTemplate = new GSSimpleMessageImpl();
 GSTextMessageImpl   textMessageTemplate   = new GSTextMessageImpl  ();
 GSObjectMessageImpl objectMessageTemplate = new GSObjectMessageImpl();
 GSMapMessageImpl    mapMessageTemplate    = new GSMapMessageImpl   ();
 GSBytesMessageImpl  bytesMessageTemplate  = new GSBytesMessageImpl ();
-{{% /highlight %}}
+```
 
 To create a generic template for all kinds of JMS messages, create an instance of `GSMessageImpl` as follows:
 
-{{% highlight java %}}
+```java
 GSMessageImpl genericMessageTemplate = new GSMessageImpl();
-{{% /highlight %}}
+```
 
 Using the default constructors creates a `null` template of the JMS message. This means that the properties map is also `null`. If you do not use the default constructor, you should set the properties map to `null` by invoking:
 
-{{% highlight java %}}
+```java
 jsmMessageTemplate.setProperties(null);
-{{% /highlight %}}
+```
 
 ### 2. Read/Take from the Space
 
 You can use the template to read or take messages from the space. The following example takes a text message from the space:
 
-{{% highlight java %}}
+```java
 GSTextMessageImpl msg = (GSTextMessageImpl ) spaceProxy.take(textMessageTemplate, null, 1000L);
-{{% /highlight %}}
+```
 
 

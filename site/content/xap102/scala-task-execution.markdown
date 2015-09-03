@@ -18,7 +18,7 @@ A wrapper around the `XAP` API provides some sugaring on top of the `GigaSpace#e
 Import `org.openspaces.scala.core.ScalaGigaSpacesImplicits.ScalaEnhancedGigaSpaceWrapper` into scope to use the methods demonstrated below.
 Some examples:
 
-{{% highlight scala %}}
+```scala
 /** Import GigaSpace implicits into scope */
 import org.openspaces.scala.core.ScalaGigaSpacesImplicits._
 
@@ -39,4 +39,4 @@ val asyncFuture2 = gigaSpace.execute(
 )
 
 println("Map reduce result: " + asyncFuture2.get())
-{{% /highlight %}}
+```

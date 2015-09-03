@@ -13,7 +13,7 @@ weight: 100
 
 Much like a JEE web application or an OSGi bundle, The Processing Unit is packaged as a .jar file and follows a certain directory structure which enables the GigaSpaces runtime environment to easily locate the deployment descriptor and load its classes and the libraries it depends on. A typical processing unit looks as follows:
 
-{{% highlight console %}}
+```console
 |----META-INF
 |--------spring
 |------------pu.xml
@@ -29,7 +29,7 @@ Much like a JEE web application or an OSGi bundle, The Processing Unit is packag
 |--------hibernate3.jar
 |--------....
 |--------commons-math.jar
-{{% /highlight %}}
+```
 
 The processing unit jar file is composed of several key elements:
 
@@ -141,7 +141,7 @@ In general, classloaders are created dynamically when deploying a PU into a GSC.
 
 Here is the structure of the class loaders when several processing units are deployed on the Service Grid (GSC):
 
-{{% highlight console %}}
+```console
 Bootstrap (Java)
                   |
                System (Java)
@@ -149,7 +149,7 @@ Bootstrap (Java)
                Common (Service Grid)
              /        \
     Service CL1     Service CL2
-{{% /highlight %}}
+```
 
 The following table shows which user controlled locations end up in which class loader, and the important JAR files that exist within each one:
 
@@ -169,15 +169,15 @@ When deploying applications using native libraries you should place the Java lib
 
 For applications that are using relatively large amount of third party libraries (PU using large amount of jars) the default permanent generation space size may not be adequate. In such a case, you should increase the permanent generation space size. Here are suggested values:
 
-{{% highlight console %}}
+```console
 -XX:PermSize=512m -XX:MaxPermSize=512m
-{{% /highlight %}}
+```
 
 # Manifest Based Classpath
 
 You may add additional jars to the processing unit classpath by having a manifest file located at `META-INF/MANIFEST.MF` and defining the property `Class-Path` as shown in the following example (using a simple `MANIFEST.MF` file):
 
-{{% highlight console %}}
+```console
 Manifest-Version: 1.0
 Class-Path: /home/user1/java/libs/user-lib.jar
  lib/platform/jdbc/hsqldb.jar
@@ -185,7 +185,7 @@ Class-Path: /home/user1/java/libs/user-lib.jar
  file:/home/user2/libs/lib.jar
 
 [REQUIRED EMPTY NEW LINE AT EOF]
-{{% /highlight %}}
+```
 
 In the previous example, the `Class-Path` property contains 4 different entries:
 

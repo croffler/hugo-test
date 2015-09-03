@@ -21,20 +21,20 @@ These differences are described in the following sections.
 
 Using the `com.gigaspaces.events.EventSessionConfig` set the durable notifications flag to true.
 
-{{% highlight java %}}
+```java
 EventSessionFactory factory = EventSessionFactory.getFactory(space);
 EventSessionConfig config = new EventSessionConfig();
 config.setDurableNotifications(true);
 DataEventSession session = factory.newDataEventSession(config);
-{{% /highlight %}}
+```
 
 # Batch Parameters
 
 Durable notifications are always sent as batches over the network (even if the client will receive them one by one), so tuning these parameters might be beneficial in certain cases.
 
-{{% highlight java %}}
+```java
 EventSessionConfig#setBatch(int size, long delay, int pendingThreshold)
-{{% /highlight %}}
+```
 
 
 |Property| Description | Default | Unit |
@@ -43,20 +43,20 @@ EventSessionConfig#setBatch(int size, long delay, int pendingThreshold)
 |delay|The maximum time to delay notifications in case there are not enough notifications to pass the pendingThreshold.|10|ms|
 |pendingThreshold|The maximum amount of notifications the server holds before he wakes up and starts sending the notifications.|100| |
 
-{{% highlight java %}}
+```java
 EventSessionConfig config = new EventSessionConfig();
 config.setDurableNotifications(true);
 config.setBatch(5000, 10, 100);
-{{% /highlight %}}
+```
 
 # Disconnection Notifications
 
 In order to receive a notification upon disconnection, use one of the following:
 
-{{% highlight java %}}
+```java
 setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener)
 setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener, long renewExpiration, long renewDuration, long renewRTT)
-{{% /highlight %}}
+```
 
 
 |Property|Description|Default|Unit|
@@ -68,7 +68,7 @@ setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener, long renewExp
 
 An example of a LeaseListener implementation:
 
-{{% highlight java %}}
+```java
 public class MyLeaseListener implements LeaseListener {
 
 	DataEventSession session;
@@ -84,7 +84,7 @@ public class MyLeaseListener implements LeaseListener {
 		System.out.println("Notify Re-registration Done!");
 	}
 }
-{{% /highlight %}}
+```
 
 Note that when adding a listener to the session with a specified lease, the maximum value between the session lease and the listener lease will be used.
 

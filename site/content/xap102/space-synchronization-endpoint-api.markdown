@@ -53,7 +53,7 @@ Space synchronization endpoint configuration can be done using a Spring bean or 
 {{% inittab Configuration Examples %}}
 {{% tabcontent Spring %}}
 
-{{% highlight xml %}}
+```xml
 <?xml version="1.0"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -70,19 +70,19 @@ Space synchronization endpoint configuration can be done using a Spring bean or 
     <os-core:giga-space id="gigaSpace" space="space" />
 
 </beans>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 SpaceSynchronizationEndpoint spaceSynchronizationEndpoint = new MySpaceSynchronizationEndpoint();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space")
   .schema("persistent")
   .cachePolicy(new AllInCachePolicy ())
   .spaceSynchronizationEndpoint(spaceSynchronizationEndpoint)
   .space()).gigaSpace();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -117,7 +117,7 @@ This API exposes the operation type, such as Write, Update, Remove and so on, as
 
 #### Batch Synchronization Event Example
 
-{{% highlight java %}}
+```java
 public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {
     @Override
     public void onOperationsBatchSynchronization(OperationsBatchData batchData) {
@@ -146,13 +146,13 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
         }
     }
 }
-{{% /highlight %}}
+```
 
 #### Getting the ID and Routing Field values
 
 The `DataSyncOperation` allows you getting the Space ID (Key) and Routing Field values using the `TypeDescriptor` and the `SpaceDocument`. See below example:
 
-{{% highlight java %}}
+```java
 public void onOperationsBatchSynchronization(OperationsBatchData operationsBatchData) {
   for(DataSyncOperation dataSyncOperation : operationsBatchData.getBatchDataItems()) {
     if (dataSyncOperation.supportsGetSpaceId()){
@@ -167,7 +167,7 @@ public void onOperationsBatchSynchronization(OperationsBatchData operationsBatch
     }
   }
 }
-{{% /highlight %}}
+```
 
 {{% note %}}
 Remove and Change operation do not contain the routing value.
@@ -175,7 +175,7 @@ Remove and Change operation do not contain the routing value.
 
 #### Transaction Synchronization Event Example
 
-{{% highlight java %}}
+```java
 public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {
     @Override
     public void onTransactionSynchronization(TransactionData transactionData) {
@@ -201,7 +201,7 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
         }
     }
 }
-{{% /highlight %}}
+```
 
 {{% refer %}}
 For implementation reference see our built in Hibernate and Cassandra implementations: [DefaultHibernateSpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?org/openspaces/persistency/hibernate/DefaultHibernateSpaceSynchronizationEndpoint.html) and [CassandraSpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?org/openspaces/persistency/cassandra/CassandraSpaceSynchronizationEndpoint.html) classes.
@@ -211,7 +211,7 @@ For implementation reference see our built in Hibernate and Cassandra implementa
 
 The following example will demonstrate how to implement a space synchronization endpoint that stores in some external data store the list of distributed transactions that failed to consolidate and aborts them for later manual decision. Note, that there is a regular case where consolidation may show a false failure as described in [Gateway and Distributed Transactions](./multi-site-replication-over-the-wan.html#Configuring and Deploying the Gateway). This example will handle this case as well.
 
-{{% highlight java %}}
+```java
 public class ExampleSpaceSynchronizationEndpointInterceptor extends SpaceSynchronizationEndpoint
 {
     ...
@@ -238,4 +238,4 @@ public class ExampleSpaceSynchronizationEndpointInterceptor extends SpaceSynchro
                           getConsolidatedDistributedTransactionMetaData().getTransactionUniqueId());
     }
 }
-{{% /highlight %}}
+```

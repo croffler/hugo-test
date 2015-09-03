@@ -28,12 +28,12 @@ The change API supports [transactions](./transaction-management.html) in the sam
 
 The following example demonstrates how to increment the property 'count' of an object of type 'WordCount' with id 'myID' by one.
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id, routing);
 space.change(idQuery, new ChangeSet().increment("count", 1));
-{{% /highlight %}}
+```
 
 # Query Template
 
@@ -46,7 +46,7 @@ The [ChangeSet](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/ind
 Each specified change may operate on any level of properties of the specified object, this is defined by specifying the path to the property that needs to be changed where '.' in the path specifies
 that this change is done on a nested property. For instance:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Account
 {
@@ -67,14 +67,14 @@ public class Balance
   public double getUsDollar();
   public void setUsDollar(double usDollar) { this.usDollar = usDollar; }
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 Uuid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(Account.class, id, routing);
 space.change(idQuery, new ChangeSet().increment("balance.euro", 5.2D));
-{{% /highlight %}}
+```
 
 ## Path Specification
 
@@ -86,7 +86,7 @@ Each operation in the change set acts on a specified string path. This path poin
 
 The following demonstrates how the path works with a map property instead of concrete properties:
 
-{{% highlight java %}}
+```java
 @SpaceClass
 public class Account
 {
@@ -96,14 +96,14 @@ public class Account
   Map<String, double> getBalance();
   void setBalance(Map<String, double>  balance){...}
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 Uuid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(Account.class, id, routing);
 space.change(idQuery, new ChangeSet().increment("balance.euro", 5.2D));
-{{% /highlight %}}
+```
 
 In this case the key euro inside the map behind the balance will be increased by 5.2.
 
@@ -130,7 +130,7 @@ With the [embedded model](/sbp/modeling-your-data.html#Embedded vs. Non-Embedded
 
 The change operations returns a [ChangeResult](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?com/gigaspaces/client/ChangeResult.html) object that provides information regarding the change operation affect.
 
-{{% highlight java %}}
+```java
 public interface ChangeResult<T>
         extends Serializable
 {
@@ -151,9 +151,9 @@ public interface ChangeResult<T>
      */
     int getNumberOfChangedEntries();
 }
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 Uuid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(Account.class, id, routing);
@@ -162,7 +162,7 @@ if (changeResult.getNumberOfChangedEntries() == 0)
 {
   // ... handle no entry found for change
 }
-{{% /highlight %}}
+```
 
 The `ChangeResult` contains the `getNumberOfChangedEntries` which specifies how many objects where changed by this operation where 0 means none were changed. The `getResults` property gives further details about the objects that were actually changes by providing a collection which gives details for each of the objects that were changed, such as their id and version after the change took affect. By default, in order to reduce network overhead, calling the getResults will throw `UnsupportedOperationException`. In order to get the more detailed result, the `ChangeModifiers.RETURN_DETAILED_RESULTS` should be passed to the `change` operation.
 
@@ -173,7 +173,7 @@ The `ChangeResult` contains the `getNumberOfChangedEntries` which specifies how 
 
 Upon any error a `ChangeException` will be thrown containing the following details:
 
-{{% highlight java %}}
+```java
 public class ChangeException extends InvalidDataAccessResourceUsageException
 {
 
@@ -198,7 +198,7 @@ public class ChangeException extends InvalidDataAccessResourceUsageException
     public Collection<Throwable> getErrors()
 
 }
-{{% /highlight %}}
+```
 
 The `getNumSuccesfullChanges` property contains the number of entries that were successfully changed.
 The `getSuccesfullChanges` property contains details for objects that were successfully changed just like the `ChangeResult.getResults` property. This property can only be used if the change operation was executed using the `ChangeModifiers.RETURN_DETAILED_RESULTS` modifier.
@@ -211,13 +211,13 @@ The `getErrors` property contains general failure reason for executing the chang
 
 One may apply multiple changes in one `change` operation by setting up multiple operation in the change set, this is done simply by chaining changes as follows:
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 IdQuery<MyPojo> idQuery = new IdQuery<MyPojo>(MyPojo.class, id, routing);
 space.change(idQuery, new ChangeSet().increment("someIntProperty", 1)
                                      .set("someStringProperty", "newStringValue)
                                      .putInMap("someNestedProperty.someMapProperty", "myKey", 2));
-{{% /highlight %}}
+```
 
 The changes will applied to the object sequentially (and atomically) keeping the order applied on the `ChangeSet`.
 
@@ -225,10 +225,10 @@ The changes will applied to the object sequentially (and atomically) keeping the
 
 By default, the change operation will not modify the existing remaining lease of the changed entries. In order to change the lease, the new lease should be specified on the `ChangeSet` using the `lease` operation.
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 space.change(idQuery, new ChangeSet().lease(1000)...);
-{{% /highlight %}}
+```
 
 The lease can be changed as part of other changes applied to the object, as well as having the `ChangeSet` include only the lease modification without any property changes.
 The lease time specified will override the existing lease with the new value relative to the current time while ignoring the current lease.
@@ -243,7 +243,7 @@ A timeout can be passed to the `change` operation, this timeout will only be use
 
 If there were no matching objects for the specified template/Query, the operation will return immediately without waiting for the timeout to elapse. This is similar to the `(read/take)IfExists` operation semantic.
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 Uuid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(Account.class, id, routing);
@@ -265,13 +265,13 @@ catch(ChangeException e)
     }
   }
 }
-{{% /highlight %}}
+```
 
 # Optimistic Locking
 
 The `change` operation has the same semantics as regular space `update` operation when it comes to [Optimistic Locking](./transaction-optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 Uuid id = ...;
 Object routing = id; // In our case the space routing property is the space id property.
@@ -295,7 +295,7 @@ catch(ChangeException e)
     }
   }
 }
-{{% /highlight %}}
+```
 
 {{% info %}}
 In order to prevent constructor overload ambiguity, when using id query with version, the space routing property needs to be specified as well. If the object has no space routing then its space id property is the routing property and it should be used as shown in the previous example.
@@ -330,7 +330,7 @@ The `change` operation has also an asynchronous API, in which the operation is d
 
 This operation behaves exactly as the synchronous `change` except for the asynchronous result and it follows java standard asynchronous semantics.
 
-{{% highlight java %}}
+```java
 //Using future to get the result
 GigaSpace space = // ... obtain a space reference
 Uuid id = ...;
@@ -338,9 +338,9 @@ IdQuery<Account> idQuery = new IdQuery<Account>(Account.class, id, routing);
 Future<ChangeResult<Account>> future = space.asyncChange(idQuery, new ChangeSet().increment("balance.euro", 5.2D));
 // ... do some other stuff
 ChangeResult<Account> changeResult = future.get();
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 //Using a listener to handle the result
 GigaSpace space = // ... obtain a space reference
 Uuid id = ...;
@@ -361,7 +361,7 @@ AsyncFutureListener<ChangeResult<Account>> myListener = new AsyncFutureListener<
     }
   }
 space.asyncChange(idQuery, new ChangeSet().increment("balance.euro", 5.2D), myListener);
-{{% /highlight %}}
+```
 
 # SpaceSynchronizationEndpoint
 
@@ -380,12 +380,12 @@ A common usage pattern is to increment a numeric property of a specific entry an
 Using the `addAndGet` operation you can do that using one method call and get an atomic add and get operation semantics.
 Following is an example of incrementing a property named `counter` inside an entry of type `WordCount`:
 
-{{% highlight java %}}
+```java
 GigaSpace space = // ... obtain a space reference
 Uuid id = ...;
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id, routing);
 Integer newCounter = ChangeExtension.addAndGet(space, idQuery, "counter", 1);
-{{% /highlight %}}
+```
 
 You should use the primitive wrapper types as the operation semantic is to return null if there is no object matching the provided id query
 

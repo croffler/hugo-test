@@ -14,7 +14,7 @@ Each space that is replicating to another space (or spaces) is actually replicat
 
 Here is an example of how this configuration should look:
 
-{{% highlight xml %}}
+```xml
  <os-core:embedded-space id="space" name="myNYSpace" gateway-targets="gatewayTargets"/>
 
 <os-gateway:targets id="gatewayTargets" local-gateway-name="NEWYORK"
@@ -22,7 +22,7 @@ Here is an example of how this configuration should look:
   <os-gateway:target name="LONDON" />
   <os-gateway:target name="HONGKONG" bulk-size="100"/>
 </os-gateway:targets>
-{{% /highlight %}}
+```
 
 Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log]({{%currentadmurl%}}/controlling-the-replication-redo-log.html).
 

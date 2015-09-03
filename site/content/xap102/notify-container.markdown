@@ -33,7 +33,7 @@ Here is a simple example of a notify event container configuration:
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
@@ -42,9 +42,9 @@ Here is a simple example of a notify event container configuration:
 <os-events:annotation-support />
 <os-core:embedded-space  id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify
 public class SimpleListener {
 
@@ -60,12 +60,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space  id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -84,12 +84,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -114,12 +114,12 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Code %}}
 
-{{% highlight java %}}
+```java
 
 GigaSpace gigaSpace = // either create the GigaSpace or get it by injection
 
@@ -139,7 +139,7 @@ notifyEventListenerContainer.start();
 
 // when needed dispose of the notification container
 notifyEventListenerContainer.destroy();
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -169,7 +169,7 @@ When performing receive operations, a template is defined, creating a virtualize
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify
 public class SimpleListener {
 
@@ -184,12 +184,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:notify-container id="eventContainer" giga-space="gigaSpace">
 
@@ -202,12 +202,12 @@ public class SimpleListener {
     </os-events:listener>
 
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.notify.SimpleNotifyEventListenerContainer">
 
@@ -226,7 +226,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -239,7 +239,7 @@ A polling container or notify container could have only one template. If you nee
 
 You may use a `SQLQuery` having `IN` operator with multiple values to register a Template with multiple values. This can be a simple alternative avoiding using multiple notify containers. See below example:
 
-{{% highlight java %}}
+```java
 import com.gigaspaces.annotation.pojo.SpaceId;
 import com.gigaspaces.annotation.pojo.SpaceIndex;
 
@@ -267,11 +267,11 @@ public class MyData {
 		return "MyData [id=" + id + ", key=" + key + "]";
 	}
 }
-{{% /highlight %}}
+```
 
 The Template registration:
 
-{{% highlight java %}}
+```java
 SQLQuery<MyData> query = new SQLQuery<MyData> (
 		MyData.class , "key IN('A' , 'B' , 'C')");
 
@@ -291,7 +291,7 @@ SimpleNotifyEventListenerContainer notifyEventListenerContainer =
         System.out.println("Got matching event! - " + (MyData)data);
     })
     .notifyContainer();
-{{% /highlight %}}
+```
 
 # Free Notify Container Resources
 
@@ -312,7 +312,7 @@ Transaction support can be configured as follows:
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight xml %}}
+```xml
 
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
@@ -325,9 +325,9 @@ Transaction support can be configured as follows:
 <os-core:distributed-tx-manager id="transactionManager" />
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-{{% /highlight %}}
+```
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify @TransactionalEvent
 public class SimpleListener {
 
@@ -343,12 +343,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-core:embedded-space  id="space" name="mySpace"/>
 
@@ -374,12 +374,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
@@ -413,7 +413,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -439,7 +439,7 @@ Here is an example of the notify container configured to trigger notifications f
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify
 @NotifyType(write = true, update = true)
 public class SimpleListener {
@@ -456,12 +456,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:notify-container id="eventContainer" giga-space="gigaSpace">
 
@@ -479,12 +479,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.notify.SimpleNotifyEventListenerContainer">
 
@@ -507,7 +507,7 @@ public class SimpleListener {
     </property>
 
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -529,7 +529,7 @@ You have to include the `UNMATCHED NotifyActionType` to receive a notification w
 To increase the number of space threads that are dealing with notification delivery you should increase the `space-config.engine.notify_max_threads` space property. Its default is 128 threads.
 Here is an example how you can configure the minimum and the maximum of the thread pool responsible for notification delivery:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space  id="space" name="mySpace">
     <os-core:properties>
         <props>
@@ -557,12 +557,12 @@ Here is an example how you can configure the minimum and the maximum of the thre
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 Note that you can always delegate the notification processing to a separate application defined thread pool, if you'd like to manage the processing thread pool yourself. This can be done by configuring a separate thread pool within your application, for example using [Spring's `TaskExecutor` abstraction](http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/scheduling.html).
 In your `pu.xml` file you can define a `ThreadPoolTaskExecutor` as follows:
 
-{{% highlight xml %}}
+```xml
 <os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
@@ -591,11 +591,11 @@ In your `pu.xml` file you can define a `ThreadPoolTaskExecutor` as follows:
   <property name="maxPoolSize" value="10" />
   <property name="queueCapacity" value="25" />
 </bean>
-{{% /highlight %}}
+```
 
 You AsyncListener class would then look as follows:
 
-{{% highlight java %}}
+```java
 public class AsyncListener {
     private TaskExecutor taskExecutor;
 
@@ -612,7 +612,7 @@ public class AsyncListener {
         }
     }
 }
-{{% /highlight %}}
+```
 
 # Batch Events
 
@@ -629,7 +629,7 @@ Make sure you set a reasonable batch size to avoid overloading the listener with
 {{% inittab os_simple_space%}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify
 @NotifyBatch(size = 10, time = 5000)
 public class SimpleListener {
@@ -646,12 +646,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:notify-container id="eventContainer" giga-space="gigaSpace">
 
@@ -669,12 +669,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.notify.SimpleNotifyEventListenerContainer">
 
@@ -695,7 +695,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -710,7 +710,7 @@ Listener argument has to be defined as Object[] when using passArrayAsIs and con
 
 For the above example when using passArrayAsIs equivalent listener code will be,
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify
 @NotifyBatch(size = 10, time = 5000, passArrayAsIs = true)
 public class SimpleListener {
@@ -728,7 +728,7 @@ public class SimpleListener {
 
     }
 }
-{{% /highlight %}}
+```
 
 # FIFO Events
 
@@ -743,7 +743,7 @@ Here is an example of how FIFO events can be configured with the notify containe
 {{% inittab os_simple_space%}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify(fifo = true)
 public class SimpleListener {
 
@@ -759,12 +759,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:notify-container id="eventContainer" giga-space="gigaSpace" fifo="true">
 
@@ -780,12 +780,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.notify.SimpleNotifyEventListenerContainer">
 
@@ -805,7 +805,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -820,7 +820,7 @@ To get a notification about such disconnections, the *Auto Renew* feature needs 
 
 {{% tabcontent Notify Container Creation %}}
 
-{{% highlight java %}}
+```java
 
 public class NotifyHAMain {
 
@@ -862,13 +862,13 @@ public class NotifyHAMain {
             .notifyContainer();
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
 {{% tabcontent The LeaseListener Implementation %}}
 
-{{% highlight java %}}
+```java
 
 public class MyLeaseListener implements LeaseListener {
 
@@ -889,7 +889,7 @@ public class MyLeaseListener implements LeaseListener {
 		System.out.println("Notify ReRegistration Done!");
 	}
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 
@@ -905,7 +905,7 @@ For more information see [Auto Renew](./session-based-messaging-api.html#disconn
 
 When a network failure occurs and the space can't communicate with the client, the space attempts to trigger the remote client listener several times. The `space-config.notifier-retries` property controls the re-try attempts. The default is 3 attempts.
 
-{{% highlight java %}}
+```java
 <os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
@@ -913,7 +913,7 @@ When a network failure occurs and the space can't communicate with the client, t
         </props>
     </os-core:properties>
 </os-core:embedded-space>
-{{% /highlight %}}
+```
 
 
 INCLUDEME
@@ -924,7 +924,7 @@ INCLUDEME
 
 By default notifications are replicated to backup instances but are not triggered. To enable notifications triggered also on backup instances the `cluster-config.groups.group.repl-policy.trigger-notify-templates` should be enabled. See below:
 
-{{% highlight xml %}}
+```xml
 <os-core:space id="space" url="/./space" >	
 	<os-core:properties>
 		<props>
@@ -932,7 +932,7 @@ By default notifications are replicated to backup instances but are not triggere
 		</props>
 	</os-core:properties>
 </os-core:space>
-{{% /highlight %}}
+```
 
 {{% note %}}
 When this option is enabled - When running collocated notify container the listener implementation should not access its collocated instance as this is blocked with backup instances.  
@@ -948,7 +948,7 @@ Durable notifications allows configuring the notify container to withstand failo
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify(durable = true)
 public class SimpleListener {
 
@@ -964,12 +964,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:notify-container id="eventContainer" giga-space="gigaSpace" durable="true">
 
@@ -985,12 +985,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.notify.SimpleNotifyEventListenerContainer">
 
@@ -1010,7 +1010,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -1043,7 +1043,7 @@ Here is how the notify container can be configured:
 {{% inittab os_simple_space %}}
 {{% tabcontent Annotation %}}
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify(performTakeOnNotify = true, ignoreEventOnNullTake = true)
 public class SimpleListener {
 
@@ -1059,12 +1059,12 @@ public class SimpleListener {
         //process Data here
     }
 }
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Namespace %}}
 
-{{% highlight xml %}}
+```xml
 
 <os-events:notify-container id="eventContainer" giga-space="gigaSpace"
                             perform-take-on-notify="true" ignore-event-on-null-take="true">
@@ -1081,12 +1081,12 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:notify-container>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% tabcontent Plain XML %}}
 
-{{% highlight xml %}}
+```xml
 
 <bean id="eventContainer" class="org.openspaces.events.notify.SimpleNotifyEventListenerContainer">
 
@@ -1107,7 +1107,7 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{{% /highlight %}}
+```
 
 {{% /tabcontent %}}
 {{% /inittab %}}
@@ -1116,17 +1116,17 @@ public class SimpleListener {
 
 When registering for notifications, using the unified event session API (or using plain notify registration), the following interface needs to be implemented:
 
-{{% highlight java %}}
+```java
 public interface RemoteEventListener extends java.rmi.Remote, java.util.EventListener {
 
     void notify(net.jini.core.event.RemoteEvent event)
                 throws net.jini.core.event.UnknownEventException, java.rmi.RemoteException;
 }
-{{% /highlight %}}
+```
 
 GigaSpaces extends this interface by providing the `EntryArrivedRemoteEvent`, which holds additional information regarding the event that occurred. The notify container, by default, uses the `EntryArrivedRemoteEvent` in order to extract the actual data event represented by the event, and passes it as the first parameter. If access to the `EntryArrivedRemoteEvent` is still needed, it is passed as the last parameter to the space data event listener. Here is an example of how it can be used:
 
-{{% highlight java %}}
+```java
 public class SimpleListener implements SpaceDataEventListener {
 
     public void onEvent(Object data, GigaSpace gigaSpace, TransactionStatus txStatus, Object source) {
@@ -1134,11 +1134,11 @@ public class SimpleListener implements SpaceDataEventListener {
         // ...
     }
 }
-{{% /highlight %}}
+```
 
 When using the different listener adapters, such as the annotation adapter, it can be accessed in the following manner (since adapters use reflection, there is no need to cast to `EntryArrivedRemoteEvent`):
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify
 public class SimpleListener {
     ...
@@ -1148,11 +1148,11 @@ public class SimpleListener {
         // process event
     }
 }
-{{% /highlight %}}
+```
 
 Or the following when using batch notification:
 
-{{% highlight java %}}
+```java
 @EventDriven @Notify
 @NotifyBatch(size = 10, time = 5000, passArrayAsIs = true)
 public class BatchListener {
@@ -1162,7 +1162,7 @@ public class BatchListener {
         // process event
     }
 }
-{{% /highlight %}}
+```
 
 # Default Values of Notify Container Configuration Parameters
 

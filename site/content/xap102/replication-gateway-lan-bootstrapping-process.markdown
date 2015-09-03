@@ -41,7 +41,7 @@ The bootstrap is initiated on the gateway sink of the space that needs to be boo
 1. At the bootstrap source there should be a gateway sink (no need to configure the bootstrap target as a source if it is not supposed to replicate into the source space).
 1. The gateway sink at the bootstrapping gateway needs to be configured with `requires-bootstrap=true`, it should look as follows:
 
-{{% highlight xml %}}
+```xml
 <os-gateway:sink id="sink" local-gateway-name="NEWYORK"
   local-space-url="jini://*/*/myNYSpace" requires-bootstrap="true">
   <os-gateway:sources>
@@ -49,30 +49,30 @@ The bootstrap is initiated on the gateway sink of the space that needs to be boo
     <os-gateway:source name="HONGKONG" />
   </os-gateway:sources>
 </os-gateway:sink>
-{{% /highlight %}}
+```
 
 After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API](./administration-and-monitoring-api.html).
 Following is an example of how to bootstrap New-York from London:
 
-{{% highlight java %}}
+```java
 //Create an admin to the local environment
 Admin admin = new AdminFactory().create();
 Gateway newyorkGateway = admin.getGateways().waitFor("NEWYORK");
 GatewaySinkSource londonSinkSource = newyorkGateway.waitForSinkSource("LONDON");
 BootstrapResult bootstrapResult = londonSinkSource.bootstrapFromGatewayAndWait, 3600, TimeUnit.SECONDS);
-{{% /highlight %}}
+```
 
 The bootstrap method will block until the bootstrap is completed and the result will specify whether the bootstrap completed successfully or some error occurred, such as timeout.
 
 When a gateway sink is started with `requires-bootstrap` state, it will not be open for incoming replication until a bootstrap was initiated, which means remote spaces incoming replication channels will be disconnected. It is possible to enable incoming replication to a gateway sink in that state without initiating a bootstrap by calling the `enableIncomingReplication`. For example:
 
-{{% highlight java %}}
+```java
 //Create an admin to the local environment
 Admin admin = new AdminFactory().create();
 Gateway newyorkGateway = admin.getGateways().waitFor("NEWYORK");
 GatewaySink sink = newyorkGateway.waitForSink("LONDON");
 sink.enableIncomingReplication();
-{{% /highlight %}}
+```
 
 Once a gateway sink has executed a bootstrap process or the `enableIncomingReplication` was called, it cannot execute a bootstrap process again because it is already open for incoming replication.
 
