@@ -190,7 +190,7 @@ In this case, New York's space will be the active space while London and Hong Ko
 Like all GigaSpaces Processing Units, the configuration details of each of the above components is placed in a `pu.xml` file. Here are the contents of the files for each of the components:
 
 {{% tabs %}}
-{{% tab New York Space %}}
+{{% tab "New York Space" %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -219,7 +219,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {{% /tab %}}
 
-{{% tab London Space %}}
+{{% tab "London Space" %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -245,7 +245,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {{% /tab %}}
 
-{{% tab London Gateway %}}
+{{% tab "London Gateway" %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -277,7 +277,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {{% /tab %}}
 
-{{% tab Hong Kong Space %}}
+{{% tab "Hong Kong Space" %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -303,7 +303,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {{% /tab %}}
 
-{{% tab Hong Kong Gateway %}}
+{{% tab "Hong Kong Gateway" %}}
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
