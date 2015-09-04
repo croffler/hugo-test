@@ -9,7 +9,7 @@ weight: 300
 <br>
 
 {{%section%}}
-{{%column width="10%" %}}
+{{%column width="20%" %}}
 ![fifo-groups.png](/attachment_files/subject/point-to-point.png)
 {{%/column%}}
 {{%column width="90%" %}}

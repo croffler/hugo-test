@@ -5,7 +5,18 @@ title = "Section"
 
 +++
 
- 
+
+ {{%section%}}
+ {{%column width="10%" %}}
+ ![fifo-groups.png](/attachment_files/subject/point-to-point.png)
+ {{%/column%}}
+ {{%column width="90%" %}}
+ <br>
+ The polling event container is an implementation of the polling consumer pattern which uses the Space to receive events.
+ A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
+ {{%/column%}}
+ {{%/section%}}
+
 
  
 # Section
@@ -19,8 +30,8 @@ title = "Section"
 
 {{%column width="60%" %}}
 <br>
-dlsakldklsdklskdlskdlskadldsajdsjadkjaskdjaskjdkasjdkjaskd
-asdsadasdkjaskdjskajdkasjd
+The polling event container is an implementation of the polling consumer pattern which uses the Space to receive events.
+ A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
 {{%/column%}}
 
 {{%/section%}}

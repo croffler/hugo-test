@@ -131,8 +131,7 @@ With the [embedded model](/sbp/modeling-your-data.html#Embedded vs. Non-Embedded
 The change operations returns a [ChangeResult](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?com/gigaspaces/client/ChangeResult.html) object that provides information regarding the change operation affect.
 
 ```java
-public interface ChangeResult<T>
-        extends Serializable
+public interface ChangeResult<T> extends Serializable
 {
     /**
      * Returns a collection of {@link ChangedEntryDetails} of the changed

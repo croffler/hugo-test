@@ -8,17 +8,10 @@ title = "Table"
 
 
 
-
-<p>
- <pre class="prettyprint lang-bash1">
- > show
- </pre>
-</p>
-
 # hello
 
-<p>
-<pre class="prettyprint lang-java">
+
+```java
 // Read an entry of type MyClass whose num property is greater than 500:
 MyClass result1 = gigaSpace.read(new SQLQuery<MyClass>(MyClass.class, "num > 500"));
 
@@ -38,17 +31,11 @@ results = gigaSpace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num IN (1
 // Read all entries of type MyClass whose num is greater than 1,
 // and order the results by the name property:
 results = gigaSpace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num > 1 ORDER BY name"));
-  </pre>
-</p>
+```
 
 # XML
 
-
-
-
-
-<pre class="prettyprint lang-xml">
-<code class=""java">
+```xml
 <beans>
     <os-core:embedded-space id="space" name="mySpace">
         <os-core:properties>
@@ -59,8 +46,6 @@ results = gigaSpace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num > 1 O
         </os-core:properties>
     </os-core:embedded-space>
 </beans>
-</code?
-
-  </pre>
+```
 
 
