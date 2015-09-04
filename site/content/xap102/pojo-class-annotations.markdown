@@ -82,7 +82,7 @@ public class Person {
 |Syntax     | inheritIndexes |
 |Argument   | boolean          |
 |Default    | true|
-|Description| Whether to use the class indexes list only, or to also include the superclass' indexes. {{% wbr %}}If the class does not define indexes, superclass indexes are used. {{% wbr %}}Options:{{% wbr %}}- `false` -- class indexes only.{{% wbr %}}- `true` -- class indexes and superclass indexes.|
+|Description| Whether to use the class indexes list only, or to also include the superclass' indexes. If the class does not define indexes, superclass indexes are used. {{% wbr %}}Options:{{% wbr %}}- `false` -- class indexes only.{{% wbr %}}- `true` -- class indexes and superclass indexes.|
 
 Example:
 
@@ -175,7 +175,7 @@ public class User {
 |Syntax     | blobstoreEnabled  |
 |Argument | boolean          |
 |Default | true|
-|Description| By default any Space Data Type is blobStore enabled. When decorating the space class with its meta data you may turn off the blobStore behavior using the @SpaceClass blobStore annotation or gs.xml blobStore tag.  |
+|Description| By default any Space Data Type is blobStore enabled. When decorating the space class with its meta data you may turn off the blobStore behavior using the `@SpaceClass` blobStore annotation or gs.xml blobStore tag.  |
 
 
 Example:

@@ -8,7 +8,9 @@ title = "Panels"
 # Info panels
 
 
- 
+
+
+
 
 
 {{%warning title="Caution"%}}

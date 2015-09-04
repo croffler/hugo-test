@@ -10,7 +10,20 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
   background: white;
   color: black;
   -webkit-text-size-adjust: none;
+    max-height:400px;
+ /*  overflow-x: scroll;
+   overflow-y: scroll;
+   */
+   overflow: auto;
+     word-wrap: normal;
+     white-space: pre;
+
+
 }
+
+/*
+This is where we change the max size of the display window for code
+*/
 
 .hljs-comment,
 .hljs-annotation,

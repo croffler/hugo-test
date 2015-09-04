@@ -47,8 +47,6 @@ The following should be located under **main** section.
 
 ### Space Connector - Manages connections with the space
 
-
-
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |connector| wrap SpaceProxy and perform operation against space|Yes|`com.gigaspaces.httpsession.SpaceConnector`|
@@ -61,11 +59,9 @@ The following should be located under **main** section.
 
 ### Store Mode - Configure how changes are saved to the space
 
-
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |listener|Fully qualified class name implementing `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No|`com.gigaspaces.httpsession.policies.TraceListener`|
-|:-------|:----------|:-------|:--------------|
 |storeMode|Provide functionality of how to save changes to the space. there is tow sessions store mode full and delta.|Yes| use on of two options:<br> 1.`com.gigaspaces.httpsession.sessions.FullStoreMode` 2.`com.gigaspaces.httpsession.sessions.DeltaStoreMode`|
 |storeMode.connector| Space connector to be used<br>See [Space Connector Section](#connector---manages-connections-with-the-space)|Yes|$connector|
 |storeMode.listener|Provides changes notification functionality. it must extends `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No| $listener |
@@ -105,7 +101,6 @@ The following should be located under **main** section.
 |Property|Description|Required|Optional Values|
 |:-------|:----------|:-------|:--------------|
 |compressor|Provides compress functionality|No| Provides your own `com.gigaspaces.httpsession.serialize.Compressor` implementation or use one of the out of the box option:<br> 1.`com.gigaspaces.httpsession.serialize.CompressorImpl`<br>2.`com.gigaspaces.httpsession.serialize.NonCompressCompressor`|
-|:-------|:----------|:-------|:--------------|
 |cacheManager|XAP extension of org.apache.shiro.cache.CacheManager Provides and maintains the lifecycles of `com.gigaspaces.httpsession.sessions.GigaSpacesCache` instances|Yes|com.gigaspaces.httpsession.sessions.GigaSpacesCacheManager|
 |cacheManager.initialCapacity|Specifies the initial capacity of the LRU used for caching session in memory.|No|1000|
 |cacheManager.maximumCapacity|Maximum capacity of the LRU used for caching session in memory.|No|10000|
@@ -114,7 +109,7 @@ The following should be located under **main** section.
 |cacheManager.serializer|Instance of the serializer implementation<br>See [Serializer Section](#serializer)|Yes|$serializer|
 |cacheManager.policy|Instance of session policy implementation<br>See [Session Policy Section](#session-policy---authentication-settings)|Yes|$policy|
 |cacheManager.connector|Instance of space connector implementation<br>See [Space Connector Section](#connector---manages-connections-with-the-space)|Yes|$connector|
-|:-------|:----------|:-------|:--------------|
+
 
 The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below examples for the `shiro.ini` file:
 
@@ -423,7 +418,7 @@ The `gs-session-manager-xxx.jar` located within the `\gigaspaces-xap-root\lib\op
 
 When using a [Secure XAP cluster]({{%currentsecurl%}}/securing-your-data.html) you can pass security credentials using following parameters in the `shiro.ini` file:
 
-```console
+```bash
 connector.username = user
 connector.password = pass
 ```
