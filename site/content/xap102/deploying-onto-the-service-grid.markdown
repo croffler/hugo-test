@@ -367,9 +367,6 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
-{{%comment%}}
-A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
-{{%/comment%}}
 
 ```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -486,9 +483,6 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 {{% tab Admin API with XML %}}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
-{{%comment%}}
-A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
-{{%/comment%}}
 
 ```java
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -576,9 +570,6 @@ In the example above, the feeder instance will complete the teardown of all the 
 
 # Monitoring Deployment Progress
 
-{{%comment%}}
-![new-in-806-ribbon.png](/attachment_files/new-in-806-ribbon.png)
-{{%/comment%}}
 
 The deployment progress can be monitored using the events provided by the Admin API. There are 4 provision events on a processing unit instance:
 

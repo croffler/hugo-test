@@ -23,7 +23,8 @@ code{
 	padding: 1px 3px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	border-radius: 2px;	
+	border-radius: 2px;
+	height: 20;
 }
 li p{
 	margin: 0.3em;

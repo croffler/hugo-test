@@ -84,7 +84,7 @@ ProcessingUnit pu = gsm.deploy(
 ```
 {{% /tab %}}
 {{% tab CLI %}}
-```
+```bash
 gs> deploy-elastic-space -memory-capacity-per-container 16g -max-memory-capacity 512g -scale strategy=manual memory-capacity=128g mySpace
 ```
 {{% /tab %}}
@@ -172,9 +172,9 @@ ProcessingUnit pu = gsm.deploy(
 ```
 {{% /tab %}}
 {{% tab CLI %}}
-    ```
-    gs> deploy-elastic-pu -type stateful -file myPU.jar -memory-capacity-per-container 16g -number-of-partitions 12
-    ```
+```
+gs> deploy-elastic-pu -type stateful -file myPU.jar -memory-capacity-per-container 16g -number-of-partitions 12
+```
 {{% /tab %}}
 {{% /tabs %}}
 
@@ -206,11 +206,11 @@ pu.scale(new ManualCapacityScaleConfigurer()
 ```
 {{% /tab %}}
 {{% tab CLI %}}
-    ```
+```
 gs> deploy-elastic-pu -type stateful -file myPU.jar -memory-capacity-per-container 16g -number-of-partitions 12 -scale strategy=manual memory-capacity=16g
 
 gs> scale -name myPU -memory-capacity 32g
-    ```
+```
 {{% /tab %}}
 {{% /tabs %}}
 
@@ -314,9 +314,9 @@ ProcessingUnit pu = gsm.deploy(
 ```
 {{% /tab %}}
 {{% tab CLI %}}
-    ```
-    gs> deploy-elastic-pu -type stateless -file myPU.jar -memory-capacity-per-container 4g -scale strategy=manual number-of-cpu-cores=10
-    ```
+```
+gs> deploy-elastic-pu -type stateless -file myPU.jar -memory-capacity-per-container 4g -scale strategy=manual number-of-cpu-cores=10
+```
 {{% /tab %}}
 {{% /tabs %}}
 

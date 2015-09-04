@@ -9,7 +9,7 @@ appearance and features of the pages. By default, excess features (and JavaScrip
 
 ### Sidebar Title & Tagline Params
 
-The sidebar can be configured with your main site config using params. For example, in ```config.toml```
+The sidebar can be configured with your main site config using params. For example, in```config.toml```
 
 ```
 [params]
@@ -18,7 +18,7 @@ The sidebar can be configured with your main site config using params. For examp
 ```
 
 Neither the title nor tagline will be shown if not set. You will want to keep these lines short since there's limited space. 
-Alternatively you could add custom HTML using the ```sidebarheader.html``` partial and keep those values empty strings.
+Alternatively you could add custom HTML using the```sidebarheader.html``` partial and keep those values empty strings.
 
 ### Menus
 

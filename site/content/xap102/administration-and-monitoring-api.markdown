@@ -36,7 +36,6 @@ public void gsa() {
 {{% tab GSM %}}
 
 ```
-
 public void gsm() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 	// wait till things get discovered (you can also use specific waitFor)
@@ -45,7 +44,6 @@ public void gsm() {
 				+ gsm.getMachine().getHostAddress());
 	}
 }
-
 ```
 
 {{% /tab %}}
@@ -72,7 +70,6 @@ public void gsc() {
 {{% tab Processing Unit %}}
 
 ```java
-
 public void pu() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 	// wait till things get discovered (you can also use specific waitFor)
@@ -118,7 +115,6 @@ public void pu() {
 {{% tab Space %}}
 
 ```java
-
 public void space() {
 	Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 
@@ -223,7 +219,6 @@ public void machine() {
 			}
 	}
 }
-
 ```
 
 {{% /tab %}}
@@ -236,54 +231,52 @@ Obtaining information about the currently deployed services / components via the
 
 {{%tab GSC %}}
 ```java
-	public void findStartedGridServiceContainers() {
-		Admin admin = new AdminFactory().createAdmin();
+public void findStartedGridServiceContainers() {
+	Admin admin = new AdminFactory().createAdmin();
 
-		// wait at least for one agent
-		admin.getGridServiceAgents().waitForAtLeastOne();
+	// wait at least for one agent
+	admin.getGridServiceAgents().waitForAtLeastOne();
 
-		for (GridServiceAgent gsa : admin.getGridServiceAgents()) {
-			for (GridServiceContainer gsc : gsa.getGridServiceContainers()) {
-				// ....
-			}
+	for (GridServiceAgent gsa : admin.getGridServiceAgents()) {
+		for (GridServiceContainer gsc : gsa.getGridServiceContainers()) {
+			// ....
 		}
 	}
+}
 ```
 {{%/tab%}}
 
 {{%tab GSM %}}
 ```java
-	public void findStartedGridServiceManagers() {
-		Admin admin = new AdminFactory().createAdmin();
+public void findStartedGridServiceManagers() {
+	Admin admin = new AdminFactory().createAdmin();
 
-		// wait at least for one agent
-		admin.getGridServiceAgents().waitForAtLeastOne();
+	// wait at least for one agent
+	admin.getGridServiceAgents().waitForAtLeastOne();
 
-		for (GridServiceAgent gsa : admin.getGridServiceAgents()) {
-			for (GridServiceManager gsm : gsa.getGridServiceManagers()) {
+	for (GridServiceAgent gsa : admin.getGridServiceAgents()) {
+		for (GridServiceManager gsm : gsa.getGridServiceManagers()) {
 				// ....
-			}
 		}
 	}
-
+}
 ```
 {{%/tab%}}
 
 {{%tab LUS %}}
 ```java
-	public void findStartedLookupServices() {
-		Admin admin = new AdminFactory().createAdmin();
+public void findStartedLookupServices() {
+	Admin admin = new AdminFactory().createAdmin();
 
-		// wait at least for one agent
-		admin.getGridServiceAgents().waitForAtLeastOne();
+	// wait at least for one agent
+	admin.getGridServiceAgents().waitForAtLeastOne();
 
-		for (GridServiceAgent gsa : admin.getGridServiceAgents()) {
-			for (LookupService ls : gsa.getLookupServices()) {
+	for (GridServiceAgent gsa : admin.getGridServiceAgents()) {
+		for (LookupService ls : gsa.getLookupServices()) {
 				// ....
-			}
 		}
 	}
-
+}
 ```
 {{%/tab%}}
 

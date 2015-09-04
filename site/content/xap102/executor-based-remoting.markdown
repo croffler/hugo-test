@@ -36,6 +36,7 @@ The `executor-proxy` include the following properties:
 |interface | Class | Yes | | The interface (fully qualified class name) that this remoting proxy implements. Also controls which service will be invoked in the "server" (Processing Unit).| |
 
 Example:
+
 ```xml
 <bean id="dataProcessor" class="org.openspaces.remoting.ExecutorSpaceRemotingProxyFactoryBean">
     <property name="gigaSpace" ref="gigaSpace" />
