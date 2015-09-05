@@ -6,9 +6,6 @@ parent: elastic-processing-unit-overview.html
 weight: 600
 ---
 
-{{% ssummary %}}{{% /ssummary %}}
-
-
 
 
 The following demo illustrates the EPU. You may run it on your development machine or on your deployment machine.
@@ -57,13 +54,13 @@ When running the GS-UI you will have the following displayed:
 
 
 {{% tabs epu_demo %}}
-{{% tab Initial State %}}
+{{% tab "Initial State" %}}
 Initial State - agent without any GSCs running:
 
 {{%popup "/attachment_files/epu_demo1.JPG" %}}
 
 {{% /tab %}}
-{{% tab After initial Deploy %}}
+{{% tab "After initial Deploy" %}}
 After initial Deploy:
 
 
@@ -71,7 +68,7 @@ After initial Deploy:
 
 
 {{% /tab %}}
-{{% tab After Scaling to 128 MB %}}
+{{% tab "After Scaling to 128 MB" %}}
 After Scaling from 64.0 MB to 128 MB:
 
 
@@ -79,7 +76,7 @@ After Scaling from 64.0 MB to 128 MB:
 
 
 {{% /tab %}}
-{{% tab After Scaling to 256 MB %}}
+{{% tab "After Scaling to 256 MB" %}}
 After Scaling from 128.0 MB to 256 MB:
 
 
@@ -87,7 +84,7 @@ After Scaling from 128.0 MB to 256 MB:
 
 
 {{% /tab %}}
-{{% tab After Scaling to 64 MB %}}
+{{% tab "After Scaling to 64 MB" %}}
 After Scaling from 256.0 MB to 64 MB:
 
 
@@ -122,7 +119,7 @@ Initial Deploy done! - Time to deploy system:32 seconds
 
 {{% /tab %}}
 
-{{% tab Scaling to 128 MB %}}
+{{% tab "Scaling to 128 MB" %}}
 
 ```console
 About to start changing data-grid memory capacity from 64.0 MB to 128 MB
@@ -143,7 +140,7 @@ Data-Grid Memory capacity change done! - Time to scale system:27 seconds
 
 {{% /tab %}}
 
-{{% tab Scaling to 256 MB %}}
+{{% tab "Scaling to 256 MB" %}}
 
 ```console
 About to start changing data-grid memory capacity from 128.0 MB to 256 MB
@@ -173,7 +170,7 @@ Data-Grid Memory capacity change done! - Time to scale system:51 seconds
 
 {{% /tab %}}
 
-{{% tab Scaling to 64 MB %}}
+{{% tab "Scaling to 64 MB" %}}
 
 ```console
 About to start changing data-grid memory capacity from 256.0 MB to 64 MB

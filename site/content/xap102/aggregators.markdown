@@ -6,7 +6,7 @@ weight: 550
 parent: the-gigaspace-interface-overview.html
 ---
 
-{{% ssummary  %}}  {{% /ssummary %}}
+
 
 
 {{%section%}}
@@ -23,7 +23,7 @@ XAP provides common functionality to perform aggregations across the space. Ther
 Built-in Aggregators allow you to perform the entire aggregation activity at the space side avoiding any data retrieval back to the client side. Only the result of each aggregation activity performed with each partition is returned back to the client side where all the results are reduced and returned to the client application. Such aggregation activity utilize the partitioned nature of the data-grid allowing each partition to execute the aggregation with its local data in parallel, where all the partitions intermediate results are fully aggregated at the client side using the relevant reducer implementation.
 
 
-## How Aggregators Works?
+# How Aggregators Works?
 
 
 Aggregators are executed by iterating the internal data grid structure that maintains the space objects. There is no materialization of the original user data grid object when performing this iteration (scan). This allows relatively fast scan. There is no need to index the aggregated fields (paths) - only the fields (paths) used to execute the query used to generate the result set scanned to calculate the aggregation. Future XAP releases may use indexes to perform the aggregation. 

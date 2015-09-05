@@ -35,25 +35,25 @@ The space has a number of determining characteristics that should be configured 
 
 
 
-### The Space Clustering Topology
+## The Space Clustering Topology
 
 The space can have a single instance, in which case it runs on a single JVM, or multiple instances, in which case it can run on multiple JVMs.
 When it has multiple instances, the space can run in a number of [topologies](./space-topologies.html) which determine how the data is distributed across those JVMs. In general, the data can be either **replicated**, which means it resides on all of the JVMs in the cluster, or **partitioned**, which means that the data is distributed across all of the JVMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
 
 ![topologies.jpg](/attachment_files/topologies.jpg)
 
-### Master-Local Space
+## Master-Local Space
 
 Regardless of the space's topology, you can also define a "local cache" for space clients, which caches space entries recently used by the client, or a predefined subset of the central space's data (this is often referred to as **Continuous Query**).
 The data cached on the client side is kept up-to-date by the server, so whenever another space client changes a space entry that resides in a certain client's local cache, the space makes sure to update that client.
 
-### The Replication Mode
+## The Replication Mode
 
 When running multiple space instances, in many cases the data should be replicated from one space instance to another. This can happen in a replicated topology (in which case every change to the data is replicated to all of the space instances that belong to the space) or in a partitioned topology (in this case you choose to have backups for each partition).
 There are two replication modes - synchronous and asynchronous. With synchronous replication, data is replicated to the target instance as it is written. So the client code which writes, updates or deletes data, waits until replication to the target is completed.
 With asynchronous replication, this replication is done in a separate thread, and the calling client does not wait for the replication to complete.
 
-### Persistency Configuration
+## Persistency Configuration
 
 The space is an in-memory data grid. As such its capacity is limited to the sum of the memory capacity of all the JVMs on which the space instances run.
 In many cases, you have to deal with larger portions of data, or load a subset of a larger data set, which resides in an external data source such as a relational database, into the space.
@@ -65,14 +65,14 @@ It supports the following options, from which you can choose:
 - Cache write through: write data to the external data source when it is written to the space.
 - Cache write behind (also known as asynchronous persistency): write data to the external data source asynchronously (yet reliably) to avoid the performance penalty.
 
-### Eviction Policy and Memory Management
+## Eviction Policy and Memory Management
 
 Since the space is memory-based, it is essential to verify that it does not overflow and crash. The space has a number of [facilities]({{% latestadmurl%}}/memory-management-facilities.html) to manage its memory and make sure it does not overflow.
 The first one is the eviction policy. The space supports two eviction policies: `ALL_IN_CACHE` and `LRU` (Least Recently Used). With the `LRU` policy, the space starts to evict the least used entries when it becomes full. The `ALL_IN_CACHE` policy never evicts anything from the space.
 The memory manager allows you to define numerous thresholds that control when entries are evicted (in case you use `LRU`), or when the space simply blocks clients from adding data to it.
 Combined, these two facilities enable you to better control your environment and make sure that the memory of the space instances in your cluster does not overflow.
 
-### Reactive Programming
+## Reactive Programming
 
 GigaSpaces and its Space-Based-Architecture embrace the [reactive programming](http://en.wikipedia.org/wiki/Reactive_programming) approach. The following falls under reactive programming with GigaSpaces:
 

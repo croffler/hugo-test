@@ -13,7 +13,7 @@ parent: none
 
 {{%  anchor Space %}}
 
-#### Space
+## Space
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -26,7 +26,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 
 {{%  anchor Execute-Read-Write-Take-and-Notify %}}
 
-#### Execute, Read, Write, Take and Notify
+## Execute, Read, Write, Take and Notify
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -39,7 +39,7 @@ A set of methods used to read, write, take, and register for notification on obj
 
 {{%  anchor Service Bean %}}
 
-#### Service Bean
+##  Service Bean
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -63,7 +63,7 @@ A combination of service beans and/or an embedded space instance. This is the fu
 {{%  /column %}}
 {{%  /section %}}
 
-#### Processing Unit configured with an embedded space
+## Processing Unit configured with an embedded space
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -75,7 +75,7 @@ A deployable package which instantiates an embedded space instance, also called 
 {{%  /section %}}
 
 
-#### Processing Unit configured with one or more services
+## Processing Unit configured with one or more services
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -87,7 +87,7 @@ A deployable package containing one or more services. In the GigaSpaces context,
 {{%  /section %}}
 
 
-#### Processing Unit configured with embedded space and embedded services
+## Processing Unit configured with embedded space and embedded services
 {{%  section %}}
 {{%  column width="30%" %}}
 ![term_pu_with_space_and_bean.gif](/attachment_files/term_pu_with_space_and_bean.gif)
@@ -104,7 +104,7 @@ Client application (which can also be other processing units) write objects to t
 
 {{%  anchor Data Grid %}}
 
-#### In Memory Data Grid - IMDG, or Enterprise Data Grid - EDG
+## In Memory Data Grid - IMDG, or Enterprise Data Grid - EDG
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -123,7 +123,7 @@ The relations between the spaces define the [Data Grid Topology](#Data Grid Topo
 
 {{%  anchor Primary Backup Data Grid %}}
 
-#### Primary Backup Data Grid
+## Primary Backup Data Grid
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -139,7 +139,7 @@ Destructive operations (write, update and take) are applied to the primary insta
 
 {{%  anchor Partitioned Data Grid %}}
 
-#### Partitioned Data Grid
+## Partitioned Data Grid
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -154,7 +154,7 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 
 {{%  anchor Routing %}}
 
-#### Routing
+## Routing
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -170,7 +170,7 @@ The routing is based on a designated attribute inside the objects that are writt
 
 {{%  anchor Primary Backup Partitioned Data Grid %}}
 
-#### Primary Backup Partitioned Data Grid
+## Primary Backup Partitioned Data Grid
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -188,7 +188,7 @@ For details about scaling a running space cluster **in runtime** see the [Elasti
 
 # Runtime Components
 
-### Processing Unit Container
+## Processing Unit Container
 
 {{%  anchor Processing Unit Container %}}
 
@@ -205,7 +205,7 @@ The Processing Unit can run only inside a hosting Processing Unit Container.
 
 ### Types of Processing Unit Containers
 
-#### Integrated Processing Unit Container
+## Integrated Processing Unit Container
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -219,7 +219,7 @@ A container that runs the Processing Unit inside an IDE (e.g. IntelliJ IDEA, Ecl
 
 {{%  anchor SGPUC %}}
 
-#### Service Grid Processing Unit Container (SLA Driven Container)
+## Service Grid Processing Unit Container (SLA Driven Container)
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -235,7 +235,7 @@ It enables running the processing unit within a [service grid](#Service Grid), w
 
 {{%  anchor Service Grid %}}
 
-### Service Grid
+## Service Grid
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -251,7 +251,7 @@ Each container can be run on a separate physical machine.
 
 {{%  anchor GSC %}}
 
-### GigaSpaces Container (GSC)
+## GigaSpaces Container (GSC)
 
 {{%  section %}}
 {{%  column width="30%" %}}
@@ -267,7 +267,7 @@ A machine can run one or more [GSC](#gsc) processes. Each GSC communicates with 
 
 {{%  anchor GSM %}}
 
-### GigaSpaces Manager (GSM)
+## GigaSpaces Manager (GSM)
 
 {{%  section %}}
 {{%  column width="30%" %}}

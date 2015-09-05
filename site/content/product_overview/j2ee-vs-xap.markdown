@@ -10,6 +10,7 @@ parent: none
 
 Here is a simple mapping between the J2EE common components and equivalent XAP components:
 
+# J2EE verses XAP
 
 |Component|J2EE|XAP|
 |:--------|:---|:--|
@@ -28,7 +29,7 @@ Here is a simple mapping between the J2EE common components and equivalent XAP c
 
 {{%  star %}} Available via [EasyBeans](http://www.easybeans.net/xwiki/bin/view/Main/WebHome), [openejb](http://openejb.apache.org), [embedded jboss](http://docs.jboss.org/ejb3/embedded/embedded.html) or [embedded-glassfish](http://embedded-glassfish.java.net).
 
-## Messaging Concepts & Patterns
+# Messaging Concepts & Patterns
 
 
 |Functionality|J2EE|XAP|
