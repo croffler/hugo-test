@@ -21,6 +21,7 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
  right:0px;
  background-color: white;
  padding: 10px 10px 10px 10px;
+ margin-left: 200px;
  }
 
 .toc.compact ul > li > ul > li > ul  { display: none; }
@@ -90,9 +91,9 @@ footer{
     text-decoration: none;
     position:fixed;
     bottom:0px;
-    right:0px;
+    right:100px;
     display:none;
-    background: url('/images/arrow-up.png') no-repeat 0px 5px;
+    background: url('/images/up-arrow.jpeg') no-repeat 0px 5px;
 }
 .scrollToTop:hover{
     text-decoration:none;
