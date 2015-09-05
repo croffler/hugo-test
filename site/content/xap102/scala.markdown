@@ -8,14 +8,11 @@ weight: 400
 
 <br>
 
-{{%section%}}
-{{%column width="10%" %}}
-![data-access.jpg](/attachment_files/subject/scala.jpeg)
-{{%/column%}}
-{{%column width="90%" %}}
+{{% imageltext "/attachment_files/subject/scala.jpeg" %}}
 Several extensions to the XAP API have been introduced to provide a more natural way of combining Scala with XAP.
-{{%/column%}}
-{{%/section%}}
+{{% /imageltext %}}
+
+
 
 <br>
 

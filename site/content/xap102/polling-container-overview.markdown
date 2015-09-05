@@ -14,7 +14,7 @@ The polling event container is an implementation of the polling consumer pattern
 A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
 {{% /imageltext %}}
 
- 
+
 
 <br>
 
