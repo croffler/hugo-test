@@ -7,6 +7,7 @@ parent: the-gigaspace-interface-overview.html
 ---
 
 
+# Overview
 
 `GigaSpace` with the different OpenSpaces [transaction managers](./transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
 
@@ -17,9 +18,7 @@ For example (using the distributed transaction manager):
 
 {{% tabs os_simple_space %}}
 {{% tab Namespace %}}
-
 ```xml
-
 <os-core:embedded-space id="space" name="space" />
 
 <os-core:distributed-tx-manager id="transactionManager"/>
@@ -31,7 +30,6 @@ For example (using the distributed transaction manager):
 {{% tab Plain XML %}}
 
 ```xml
-
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -80,7 +78,6 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {{% tab Namespace %}}
 
 ```xml
-
 <os-core:embedded-space id="space" name="space" />
 
 <os-core:giga-space id="gigaSpace" space="space" default-isolation="READ_COMMITTED"/>
@@ -90,7 +87,6 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {{% tab Plain XML %}}
 
 ```xml
-
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -105,7 +101,6 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {{% tab Code %}}
 
 ```java
-
 IJSpace space = // get Space either by injection or code creation
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space)
