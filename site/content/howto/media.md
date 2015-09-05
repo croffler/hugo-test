@@ -8,10 +8,10 @@ parent="cheetscheet.html"
  
 
 
- 
 
 
-# Image 
+
+# Image
 
 ![display image](/images/doc_api.jpg)
 
@@ -25,12 +25,29 @@ parent="cheetscheet.html"
 {{%popup  "/images/doc_api.jpg" %}}
 
 
- 
+
 ## Video Popup
 
 
 
 
-{{<youtube "gRdGWMigJBI" "Global HTTP Session sharing">}}
+### Administration and Management
 
-  
+{{%section%}}
+{{%column width="20%" %}}
+{{%youtube "9nFkfj2o5hk" "XAP UI"%}}
+{{%/column%}}
+
+
+{{%column width="20%" %}}
+{{%youtube "j3FfHBqtj1o" "Admin API"%}}
+{{%/column%}}
+
+{{%column width="20%" %}}
+{{%youtube "rb5LWyj68Zk" "Monitoring"%}}
+{{%/column%}}
+
+
+
+{{%/section%}}
+

@@ -4,7 +4,7 @@ title: Tabs test
 
 ---
 
-# test
+# Tabs
 
 {{%tabs%}}
 {{%tab Java%}}
@@ -17,7 +17,26 @@ public class hello1{
 
 {{%tab CPP%}}
 
-public class hello1{
+public class hello2{
+
+}
+{{%/tab%}}
+
+{{%/tabs%}}
+
+
+{{%tabs%}}
+{{%tab Java%}}
+
+public class hello2{
+
+}
+{{%/tab%}}
+
+
+{{%tab CPP%}}
+
+public class hello3{
 
 }
 {{%/tab%}}
