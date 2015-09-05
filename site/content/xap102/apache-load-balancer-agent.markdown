@@ -8,9 +8,9 @@ weight: 400
 
 {{%ssummary%}}{{%/ssummary%}}
 
-{{%imageltext "/attachment_files/subject/loadbalancing.png" %}}
+{{%bannerleft "/attachment_files/subject/loadbalancing.png" %}}
 XAP comes with a built-in utility allowing you to dynamically update an Apache httpd web server load-balancing configuration, based on deployed web applications.
-{{%/imageltext%}}
+{{%/bannerleft%}}
 
 
 

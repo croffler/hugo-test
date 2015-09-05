@@ -22,6 +22,7 @@ The REST service is not supported with embedded space thus we recommend using it
 <br/>
 
 ### Deploy via CLI
+
 {{%refer%}} See full instructions [here]({{%currentadmurl%}}/rest-deploy-command-line-interface.html) {{%/refer%}}
 
 <br/>
@@ -81,6 +82,7 @@ We provide a default format `yyyy-MM-dd HH:mm:ss` but you can override it by pro
 The REST API supports writing nested SpaceDocument.
 
 The JSON representation is:
+
 ```json
 {
   "typeName": "theTypeOfTheNestedObject-SpaceDocument",
@@ -98,9 +100,16 @@ The JSON representation is:
 
 Once the REST Processing Unit is deployed, you can browse the API and test its methods by accessing the main page at: `http://<rest-instance-host-address>:<rest-port>/`.
 
+{{%section%}}
+{{%column width="30%" %}}
+<br>
+<br>
 The page should look like:
-
-![rest-api-jsondoc.png](/attachment_files/rest-api-jsondoc.png)
+{{%/column%}}
+{{%column width="30%"%}}
+{{%popup "/attachment_files/rest-api-jsondoc.png" %}}
+{{%/column%}}
+{{%/section%}}
 
 {{%refer%}} Browse the offline API documentation [here](./rest-service-api.html) {{%/refer%}}
 
@@ -135,6 +144,7 @@ In order to do so, you will need to do the following:
 4. Deploy the war file as a Web Processing Unit
 
 For example:
+
 ```
 #Specify the space parameters using the following properties:
 spaceName=mySpace

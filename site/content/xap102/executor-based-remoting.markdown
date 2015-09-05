@@ -855,9 +855,11 @@ The way to access the meta arguments on the server side is to configure a [serve
 When using executor remoting, a remote invocation can be broadcasted to all active (primary) cluster members. Each Service instance is invoked and return a result to its called which in turn reduce these and pass the final result to the application.
 
 The First phase involves the Service invocation:
+
 ![Executor1.jpg](/attachment_files/Executor1.jpg)
 
 The Second phase involves reducing the results retrieved from the Services:
+
 ![Executor2.jpg](/attachment_files/Executor2.jpg)
 
 The configuration of enabling broadcasting is done on the client level, by setting the broadcast flag to `true`:

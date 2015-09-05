@@ -8,9 +8,9 @@ weight: 400
 
 <br>
 
-{{% imageltext "/attachment_files/subject/scala.jpeg" %}}
+{{% bannerleft "/attachment_files/subject/scala.jpeg" %}}
 Several extensions to the XAP API have been introduced to provide a more natural way of combining Scala with XAP.
-{{% /imageltext %}}
+{{% /bannerleft %}}
 
 
 

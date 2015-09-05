@@ -141,6 +141,7 @@ Writes are always executed on the master space. Updates are executed both on the
 
 Each change on the master space triggers a notification at the local cache. The change is processed according to one of the following update policies:
 
+
 - `Pull` - When the local cache is notified about an update, it removes the stale object from the local cache (invalidation). The next time the client tries to read the object, it will be reloaded from the master space and stored in the local cache.
 
 - `Push` - When the local cache is notified about an update, it loads the recent copy of the object from the master space and 'pushes' it into the local cache. The next time the client tries to read the object, it will be returned from the local cache without accessing the master space.
@@ -148,13 +149,16 @@ Each change on the master space triggers a notification at the local cache. The 
 - `None` - Do not register for master space updates - If an object is changed in the master space, it will remain stale in the local cache until its lease expires.
 
 {{%section%}}
-{{%column width="50%" %}}
+{{%column width="30%" %}}
+{{%/column%}}
+
+{{%column width="30%" %}}
 #### Pull Update Policy
 
 {{%popup "/attachment_files/local_cache_pull.jpg"%}}
 {{%/column%}}
 
-{{%column width="50%" %}}
+{{%column width="30%" %}}
 #### Push Update Policy
 
 {{%popup "/attachment_files/local_cache_pull.jpg"%}}

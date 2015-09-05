@@ -9,10 +9,10 @@ weight: 300
 <br>
 
 
-{{% imageltext "/attachment_files/subject/point-to-point.png" %}}
+{{% bannerleft "/attachment_files/subject/point-to-point.png" %}}
 The polling event container is an implementation of the polling consumer pattern which uses the Space to receive events.
 A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
-{{% /imageltext %}}
+{{% /bannerleft %}}
 
 
 

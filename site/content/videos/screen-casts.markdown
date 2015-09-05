@@ -9,14 +9,14 @@ parent: none
 
 <br>
 
-#### Click a thumbnail to watch the relevant video
+Click a thumbnail to watch the relevant video
 
 
 
 
 {{%anchor 1%}}
 
-### Whats new
+# Whats new
 
 {{%section%}}
 
@@ -43,7 +43,7 @@ parent: none
 
 {{%anchor 2%}}
 
-### XAP Product
+# XAP Product
 
 {{%section%}}
 {{%column width="20%" %}}
@@ -66,7 +66,7 @@ parent: none
 
 {{%anchor 3%}}
 
-### Installation
+# Installation
 
 {{%section%}}
 {{%column width="20%" %}}
@@ -90,7 +90,7 @@ parent: none
 
 {{%anchor 4%}}
 
-### XAP Interface
+# XAP Interface
 
 
 
@@ -118,7 +118,7 @@ parent: none
 
 {{%anchor 5%}}
 
-### Persistence
+# Persistence
 
 {{%section%}}
 {{%column width="20%" %}}
@@ -130,7 +130,7 @@ parent: none
 
 {{%anchor 6%}}
 
-###   Processing
+#   Processing
 
 {{%section%}}
 
@@ -158,7 +158,7 @@ parent: none
 
 {{%anchor 7%}}
 
-### Big Data
+# Big Data
 
 {{%section%}}
 
@@ -178,7 +178,7 @@ parent: none
 
 {{%anchor 8%}}
 
-### Web Application Support
+# Web Application Support
 
 {{%section%}}
 {{%column width="20%" %}}
@@ -200,7 +200,7 @@ parent: none
 
 {{%anchor 9%}}
 
-### Wan and Multi Site Replication
+# Wan and Multi Site Replication
 
 {{%section%}}
 {{%column width="20%" %}}

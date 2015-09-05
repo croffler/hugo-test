@@ -10,10 +10,10 @@ weight: 200
 
 
 
-{{% imageltext "/attachment_files/subject/pubsub.png" %}}
+{{% bannerleft "/attachment_files/subject/pubsub.png" %}}
 The notify event container uses the space inherited support for notifications (continuous query) using an XAP unified event session API.
 A notify event operation is mainly used when simulating Topic semantics.
-{{% /imageltext %}}
+{{% /bannerleft %}}
 
 <br>
 
