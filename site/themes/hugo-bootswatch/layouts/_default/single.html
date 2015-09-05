@@ -2,13 +2,11 @@
 {{ partial "navbar.html" . }}
 
 
-<div class="container">
-        <h1>{{ .Title }}</h1>
-     
-<div class="row">       
+<div class="container-fluid" style="padding-top:50px;min-height: 650px;">
 
-    <!--
-	<div class="col-sm-1">
+
+
+	<div class="col-lg-2">
     	<nav class="sidebar-nav">
         	{{ $currentNode := . }}
         	{{ range .Site.Menus.xap102 }}
@@ -16,21 +14,21 @@
         	{{ end }}
     	</nav>
  	</div>
-        -->
+
  
-	<div class="col-sm-9">
+	<div class="col-lg-8">
+		<h1>{{ .Title }}</h1>
 		{{ .Content }}
 	</div>
 
 
-	<div id="toc" class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
-		<h5> On this page </h5>
+	<div id="toc" style=" margin: 10px;background:#f6f8f9" class="col-lg-2 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
+		<center><h5> In This Article</h5></center>
 		{{ .TableOfContents }}
 	</div>
  
 
 
-</div>
 
 </div>
 

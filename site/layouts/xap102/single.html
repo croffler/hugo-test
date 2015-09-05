@@ -5,28 +5,28 @@
 <div class="container">
         <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
      
-<div class="row">       
+<div class="row">
  
-	<div class="col-sm-1">
+	<!--div class="col-sm-1">
     	<nav class="sidebar-nav">
         	{{ $currentNode := . }}
         	{{ range .Site.Menus.xap102 }}
         	<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "xap102" .) ($currentNode.HasMenuCurrent "xap102" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
         	{{ end }}
     	</nav>
- 	</div>
+ 	</div-->
 
  
 	<div class="col-sm-9">
 		{{ .Content }}
 	</div>
 
-
-	<div id="toc" class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
+	<div style="border:1px solid black; margin: 10px"></div>
+	<div id="toc"  class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
 		<h5> On this page </h5>
 		{{ .TableOfContents }}
 	</div>
- 
+
 
 
 </div>
