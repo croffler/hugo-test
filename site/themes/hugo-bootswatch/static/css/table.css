@@ -25,9 +25,10 @@ table {
 	font-size:12px;
 	text-shadow: 1px 1px 0px #fff;
 	background:#eaebec;
-	margin:20px;
+	margin:0px;
+	margin-bottom:20px;    /* XAP*/
 	border:#ccc 1px solid;
-
+	width:100%;
 
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
