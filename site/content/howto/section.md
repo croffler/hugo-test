@@ -8,7 +8,7 @@ title = "Section"
 
  {{%section%}}
  {{%column width="10%" %}}
- ![fifo-groups.png](/attachment_files/subject/point-to-point.png)
+ ![fifo-groups.png](/attachment_files/subject/index.png)
  {{%/column%}}
  {{%column width="90%" %}}
  <br>
