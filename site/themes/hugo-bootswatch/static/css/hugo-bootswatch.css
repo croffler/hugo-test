@@ -1,3 +1,13 @@
+
+/*  This is the css for the shortcods
+
+This wrappes the text around an image
+
+imagertext
+imageltext
+
+*/
+
 img.alignright { float: right; margin: 0 0 1em 1em; }
 img.alignleft { float: left; margin: 0 1em 1em 0; }
 img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
@@ -6,7 +16,7 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 
-
+/*      */
 
 body{
     padding-top:50px;
