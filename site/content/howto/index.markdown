@@ -19,6 +19,9 @@ title:  Howto Hugo
 
 [Highlight](./highlight.html){{% wbr%}}
 
+[Banner](./banner.html){{% wbr%}}
+
+
 [Table](./table.html){{% wbr%}}
 
 [Media](./media.html){{% wbr%}}
