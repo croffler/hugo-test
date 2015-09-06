@@ -57,7 +57,7 @@ The component-specific configuration specifies settings per component type, e.g.
 For example:
 
 {{% section %}}
-{{% column width=50% %}}
+{{% column width="50%" %}}
 ```xml
 Linux
 export GSA_JAVA_OPTIONS=-Xmx256m
@@ -69,7 +69,7 @@ export LUS_JAVA_OPTIONS=-Xmx1024m
 ```
 {{% /column %}}
 
-{{% column width=45% %}}
+{{% column width="45%" %}}
 ```xml
 Windows
 set GSA_JAVA_OPTIONS=-Xmx256m

@@ -16,7 +16,6 @@ Details are displayed for each Data Type -- i.e., attributes and their propertie
 {{%/column%}}
 {{%column width="20%" %}}
 {{%popup "/attachment_files/datatypeView1.jpg" %}}
-{{%include lightbox.html%}}
 {{%/column%}}
 {{%/section%}}
 
@@ -25,7 +24,7 @@ Details are displayed for each Data Type -- i.e., attributes and their propertie
 The **Data Type List** is located at the top of the panel. It displays the Data Type stored in the space, and their current instance and template count (how many objects and how many templates currently exist in the space). Data Type meta data is introduced to the space after the first write operation of one of its instances or after calling the snapshot method.
 
 {{% note %}}
-The **Data Type List* doesn't display any Data Types or objects for persistent spaces working when running in `LRU` mode. If you are working with such a space and want to turn on this option, from the top menu, select *View* > *Display Persistent LRU Space Metrics** (toggle option).
+The **Data Type List** doesn't display any Data Types or objects for persistent spaces working when running in `LRU` mode. If you are working with such a space and want to turn on this option, from the top menu, select *View* > *Display Persistent LRU Space Metrics** (toggle option).
 {{%/note%}}
 
 The following buttons appear at the bottom of the **Data Type List** (right clicking a Data Type row also displays these options):
@@ -48,9 +47,9 @@ The **Data Type Info** panel at the bottom of the panel displays the following:
 
 The **Templates Info* tab at the bottom of the *Service View** displays the number of notification templates that exist in the space; and a table of all the notification templates, specifying when the template is supposed to expire, the UID of the object the template is registered for, and if the template indicates FIFO mode.
 
-{{% indent %}}
+
 ![Pending Notify Templates Information.gif](/attachment_files/Pending Notify Templates Information.gif)
-{{% /indent %}}
+
 
 # Refresh Options
 

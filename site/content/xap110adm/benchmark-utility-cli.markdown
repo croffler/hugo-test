@@ -199,33 +199,49 @@ run -read -objecttype entry -i 1000 -s 1024
 
 The following example uses the JavaSpaces API, writes 1,000 POJOs into the space, 1K each, and takes them from the space. A remote cache is accessed.
 
-```bashrun -take -objecttype pojo -i 1000 -s 1024```
+```bash
+run -take -objecttype pojo -i 1000 -s 1024
+```
 
-The following example uses the JavaSpaces API, writes 1,000 Entries into the space in FIFO mode {{%currentjavanet fifo-support.html %}}, 1K each, and reads them back into the client three times.
+The following example uses the JavaSpaces API, writes 1,000 Entries into the space in FIFO mode {{%currentjavanet "fifo-support.html" %}}, 1K each, and reads them back into the client three times.
 
-```bashrun -read -objecttype fifo -i 1000 -s 1024 -rt 3```
+```bash
+run -read -objecttype fifo -i 1000 -s 1024 -rt 3
+```
 
 The following example uses the Map API, puts 1,000 Entries into the space, 1K each, and gets them back into the client.
 
-```bashrun -map -read -i 1000 -s 1024```
+```bash
+run -map -read -i 1000 -s 1024
+```
 
 The following example uses the Map API, puts 1,000 Entries into the space, 1K each, and removes them from the space. A remote space is accessed.
 
-```bash run -map -take -i 1000 -s 1024```
+```bash
+run -map -take -i 1000 -s 1024
+```
 
 The following example uses the Map API, puts 1,000 Entries into the space, 1K each, and gets them back into the client three times.
 
-```bashrun -map -read -i 1000 -s 1024 -rt 3```
+```bash
+run -map -read -i 1000 -s 1024 -rt 3
+```
 
 The following example uses the Map API, puts 100,000 Entries into the space, gets them back, and removes them from the space. Throughput is displayed every 10,000 operations.
 
-```bashrun -map -all -i 100000 -showrate 10000```
+```bash
+run -map -all -i 100000 -showrate 10000
+```
 
 The following example uses the JMS API, sends 10,000 JMS messages into the space (_MessageProducer.send()_), and receives them asynchronously (_MessageListener.onMessage()_) with notifications.
 
-```bashrun -i 100000 -notify -objecttype jms```
+```bash
+run -i 100000 -notify -objecttype jms
+```
 
 The following example uses the JMS API, sends 100,000 JMS messages into the space (_MessageProducer.send()_), and receives them synchronously (_MessageConsumer.receive()_). Throughput is displayed every 10,000 operations.
 
-```bashrun -i 100000 -take -objecttype jms -showrate 10000```
+```bash
+run -i 100000 -take -objecttype jms -showrate 10000
+```
 

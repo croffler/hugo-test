@@ -125,7 +125,7 @@ Splitting large batches into chunks is defined using the `cluster-config.groups.
 ```
 {{%/accord%}}
 
-{{%accord title=.NET ... pu.config | parent=acc1%}}
+{{%accord title=".NET ... pu.config"%}}
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>

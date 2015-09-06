@@ -78,7 +78,7 @@ The `report` method receives a list of snapshots. By default each sample is imme
 
 Note that some methods and fields were omitted from this snippet for brevity. The full implementation is available here:
 
-{{%accordion id=acc1%}}
+{{%accordion  %}}
 {{%accord title="FileReporterFactory"%}}
 ```java
 package com.gigaspaces.demo;
