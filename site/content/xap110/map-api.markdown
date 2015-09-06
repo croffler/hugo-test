@@ -6,28 +6,15 @@ parent: other-data-access-apis.html
 weight: 300
 ---
 
-{{%section%}}
-{{%column width="10%" %}}
-<br>
-![key-value.png](/attachment_files/subject/key-value.png)
-{{%/column%}}
-{{%column width="90%" %}}
-{{% ssummary %}} {{%/ssummary%}}
-{{%/column%}}
-{{%/section%}}
-
-
-
-
-
+{{%bannerleft "(/attachment_files/subject/key-value.png"%}}
 XAP allows applications to interact with the space and cache data using the Map API (JCache) or a [HashTable API](http://docs.oracle.com/javase/{{%version java-version%}}/docs/api/java/util/Hashtable.html). Accessing the space via the Map API can be done using the [GigaMap](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/core/GigaMap.html) interfaces. It includes enhanced options such as declarative transactions support, coherent runtime exception hierarchy, timeout operations , TTL, locking and versioning.
-
+{{%/bannerleft%}}
 
 
 
 There are multiple runtime configurations you may use when caching your data within the space:
 
-## GigaMap with a Remote Space
+# GigaMap with a Remote Space
 
 A client communicating with a remote space performs all its operation via a remote connection. The remote space can be partitioned (with or without backups) or replicated (sync or async replication based).
 
@@ -145,7 +132,6 @@ Here is an example for a `GigaMap` construct with a local cache:
 {{% tab Namespace %}}
 
 ```xml
-
 <os-core:space-proxy id="space" name="mySpace"/>
 
 <bean id="evictionStrategy" class="com.j_spaces.map.eviction.FIFOEvictionStrategy">
@@ -163,7 +149,6 @@ Here is an example for a `GigaMap` construct with a local cache:
 {{% tab Plain XML %}}
 
 ```xml
-
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -440,7 +425,6 @@ The decision of working directly with a cluster member or against the whole clus
 {{% tab Namespace %}}
 
 ```xml
-
 <os-core:embedded-space  id="space" name="mySpace"/>
 
 <!-- By default, since we are starting in embedded mode, clustered=false -->
@@ -452,7 +436,6 @@ The decision of working directly with a cluster member or against the whole clus
 {{% tab Plain XML %}}
 
 ```xml
-
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -472,7 +455,6 @@ The decision of working directly with a cluster member or against the whole clus
 {{% tab Code %}}
 
 ```java
-
 IJSpace space = // get Space either by injection or code creation (using /./space url)
 IMap directMap = new MapConfigurer(space).createMap();
 IMap clusteredMap = new MapConfigurer(space).clustered(true).createMap();

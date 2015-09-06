@@ -23,17 +23,17 @@ Three options are presented. The first two options demonstrate the various API c
 
 # Installation
 
-{{%vbar title=Download and Install XAP%}}
-- Download and unzip the latest XAP release {{%download  http://www.gigaspaces.com/xap-download%}}
+{{%vbar title="Download and Install XAP"%}}
+- Download and unzip the latest XAP release {{%download  "http://www.gigaspaces.com/xap-download"%}}
 - Unzip the distribution into a working directory
 - Set the environment variable `GS_HOME` to `/home/user/xap-distribution` or `C:\xap-distribution` for Linux and Windows respectively.
 - Set the JAVA_HOME environment variable to point to the JDK root directory
-{{%endvbar%}}
+{{%/vbar%}}
 
-{{%vbar title=The Interactive Tutorial is hosted on Github%}}
-- Download the Interactive Tutorial {{%git https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases%}}
+{{%vbar title="The Interactive Tutorial is hosted on Github"%}}
+- Download the Interactive Tutorial {{%git "https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases"%}}
 - Unzip it to your favorite directory. For this guide we will use /home/user/xap-tutorial and C:\xap-tutorial for Linux and Windows users respectively. 
-{{%endvbar%}}
+{{%/vbar%}}
 
 
 # Starting the Service Grid
@@ -41,7 +41,7 @@ Three options are presented. The first two options demonstrate the various API c
 A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent](/product_overview/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
 In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from XAP `GS_HOME\bin` folder.
 
-{{% inittab%}}
+{{% tabs%}}
 {{% tab Unix %}}
 ```bash
 <GS_HOME>/bin/gs-agent.sh
@@ -60,7 +60,7 @@ In this tutorial you'll launch a single node service grid on your machine. To st
 
 The Data Grid can be deployed from command line, from the web management tool or via an Administration API. In this tutorial we'll use the command line. Start a command line, navigate to XAP `bin` folder and run the following command:
 
-{{% inittab %}}
+{{% tabs %}}
 {{% tab Unix %}}
 ```bash
 <GS_HOME>/bin/gs.sh deploy-space -cluster total_members=2,1 myDataGrid
@@ -85,7 +85,7 @@ Note that the Lite edition is limited to a single partition - if you're using it
 
 First, we need to point to the XAP distribution directory by setting the `GS_HOME` environment variable.
 
-{{% inittab %}}
+{{% tabs %}}
 {{% tab Unix %}}
 ```bash
 export GS_HOME="/home/user/xap-distribution/"
@@ -101,7 +101,7 @@ set GS_HOME="C:\xap-distribution"
 To start the tutorial run:
 
 
-{{% inittab %}}
+{{% tabs %}}
 {{% tab Unix %}}
 ```bash
 ./start_tutorial.sh
@@ -229,7 +229,7 @@ This option will introduce you to some unique XAP features:
 {{%refer%}}
 - [Query Aggregations]({{%currentjavaurl%}}/aggregators.html)<br>
 - [Custom Change Operation]({{%currentjavaurl%}}/change-api-custom-operation.html)
-{{%endrefer%}}
+{{%/refer%}}
 
 
 {{%anchor option3%}}
@@ -307,7 +307,7 @@ gigaSpace.write(engineerPojoWithDynamicProperties);
 ```
 
 
-{{%learn%}}{{%currentjavaurl%}}/dynamic-properties.html{{%endlearn%}}
+{{%learn "{{%currentjavaurl%}}/dynamic-properties.html"%}}
 
 #### Using the Document API
 
@@ -322,7 +322,7 @@ gigaSpace.write(engineerPojoDocument);
 ```
 
 
-{{%learn%}}{{%currentjavaurl%}}/document-overview.html{{%endlearn%}}
+{{%learn "{{%currentjavaurl%}}/document-overview.html"%}}
 
 
 #### Write multiple SpaceDocuments with dynamic properties
@@ -358,7 +358,7 @@ gigaSpace.read(new SpaceDocument("EngineerDocument"));
 
 You can start XAP's console and inspect the Data Grid components that have been started. In the XAP distribution you will find the command file to launch the console.
 
-{{% tabs os_simple_space|top %}}
+{{% tabs   %}}
 {{% tab Unix%}}
 ```bash
 <GS_HOME>/bin/gs_webui.sh
@@ -375,56 +375,43 @@ After you execute the above command, open your web browser, point to `http://you
 
 
 {{%section%}}
-{{%column%}}
-{{%popup /attachment_files/qsg/interactive-1.png | Login%}}
+{{%column width="25%"%}}
+{{%popup "/attachment_files/qsg/interactive-1.png" "Login"%}}
 {{%/column%}}
 
-{{%column%}}
-{{%popup /attachment_files/qsg/interactive-2.png | Dashboard%}}
+{{%column width="25%"%}}
+{{%popup "/attachment_files/qsg/interactive-2.png" "Dashboard"%}}
 {{%/column%}}
 
-{{%column%}}
-{{%popup /attachment_files/qsg/interactive-3.png |Deployed Applications %}}
+{{%column width="25%"%}}
+{{%popup "/attachment_files/qsg/interactive-3.png""Deployed Applications" %}}
 {{%/column%}}
 
-{{%column%}}
-{{%popup /attachment_files/qsg/interactive-4.png | Hosts (GSA,GSC,GSM,LUS)%}}
+{{%column width="25%"%}}
+{{%popup "/attachment_files/qsg/interactive-4.png""Hosts (GSA,GSC,GSM,LUS)"%}}
 {{%/column%}}
 {{%/section%}}
 
 
 {{%section%}}
-{{%column%}}
-{{%popup /attachment_files/qsg/interactive-5.png | Deployed Data Grids%}}
+{{%column width="25%"%}}
+{{%popup "/attachment_files/qsg/interactive-5.png" "Deployed Data Grids"%}}
 {{%/column%}}
 
-{{%column%}}
-{{%popup /attachment_files/qsg/interactive-6.png | Classes in Space%}}
+{{%column width="25%"%}}
+{{%popup "/attachment_files/qsg/interactive-6.png" "Classes in Space"%}}
 {{%/column%}}
 
-{{%column%}}
-{{%popup /attachment_files/qsg/interactive-7.png | Class attributes %}}
+{{%column width="25%"%}}
+{{%popup "/attachment_files/qsg/interactive-7.png" "Class attributes" %}}
 {{%/column%}}
 
-{{%column%}}
-{{%popup /attachment_files/qsg/interactive-8.png | Statistics%}}
+{{%column width="25%"%}}
+{{%popup "/attachment_files/qsg/interactive-8.png" "Statistics"%}}
 {{%/column%}}
 
 {{%/section%}}
 
 
-{{%learn%}}{{%currentadmurl%}}/web-management-console.html{{%endlearn%}}
+{{%learn "{%currentadmurl%}}/web-management-console.html"%}}
 
-
-{{%comment%}}
-# What's Next?
-
-[The Full XAP Java Tutorial](./java-home.html) will introduce you to the basic concepts and functionalities of XAP. Many ready to run examples are provided.
-
-Read more about the XAP runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
-
-- [Modeling and Accessing Your Data](/sbp/modeling-your-data.html)
-- [Deploying and Interacting with the Space](./administrators-guide.html)
-- [The XAP Runtime Environment]({{%currentadmurl%}}/the-runtime-environment.html)
-- [Elastic Processing Unit](./elastic-processing-unit.html)
-{{%endcomment%}}

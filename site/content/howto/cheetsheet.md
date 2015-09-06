@@ -43,7 +43,7 @@ Current version : {{<currentversion>}}
 
 {{%externurl  "http://docs.gigaspaces.com"%}}<br>
 {{%download  "http://docs.gigaspaces.com"%}}<br>
-{{%pdf  "http://docs.gigaspaces.com"%}} doenload pdf<br>
+{{%pdf  "http://docs.gigaspaces.com"%}} download pdf<br>
 {{%git  "http://docs.gigaspaces.com"%}}<br>
 {{%zip  "http://docs.gigaspaces.com"%}}<br>
 {{%word "http://docs.gigaspaces.com"%}}

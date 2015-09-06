@@ -168,28 +168,26 @@ After you execute the above command, open a browser and goto to http://your_host
 
  
 {{%section%}}
-{{%column %}}
+{{%column width="25%"%}}
 Login
 
 {{%popup "/attachment_files/qsg/Shot0.png" %}}
 
-{{%/column%}}
+{{%/column  %}}
 
-{{%column%}}
+{{%column width="25%"%}}
 Dashboard
 
 {{%popup "/attachment_files/qsg/Shot1.png"%}}
 
 {{%/column%}}
 
-{{%column%}}
+{{%column width="25%"%}}
 Deployed Applications
-
 {{%popup "/attachment_files/qsg/Shot11.png"%}}
+{{%/column  %}}
 
-{{%/column%}}
-
-{{%column%}}
+{{%column width="25%"%}}
 Hosts (GSA,GSC,GSM,LUS)
 
 {{%popup "/attachment_files/qsg/Shot2.png"%}}
@@ -199,28 +197,28 @@ Hosts (GSA,GSC,GSM,LUS)
  
 
 {{%section%}}
-{{%column%}}
+{{%column width="25%"%}}
 Deployed Data Grids
 
 {{%popup "/attachment_files/qsg/Shot3.png" "Deployed Data Grids"%}}
 
 {{%/column%}}
 
-{{%column%}}
+{{%column width="25%"%}}
 Classes in Space
 
 {{%popup "/attachment_files/qsg/Shot4.png"%}}
 
 {{%/column%}}
 
-{{%column%}}
+{{%column width="25%"%}}
 Class attributes
 
 {{%popup "/attachment_files/qsg/Shot5.png"%}}
 
 {{%/column%}}
 
-{{%column%}}
+{{%column width="25%"%}}
 Space Query
 
 {{%popup "/attachment_files/qsg/Shot6.png"%}}
