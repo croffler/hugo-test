@@ -15,6 +15,8 @@ title:  Howto Hugo
 
 [Accordion](./accordion.html){{% wbr%}}
 
+[Panels](./panel.html){{% wbr%}}
+
 [Tabs](./tabbed.html){{% wbr%}}
 
 [Highlight](./highlight.html){{% wbr%}}

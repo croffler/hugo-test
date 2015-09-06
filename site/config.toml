@@ -13,7 +13,7 @@ highlightStyle="darkula"
 sidebartitle = "Development"
 sidebartagline = "Is super awesome"
 
-xaplatestrelease="10.2"
+xaplatestrelease="11.0"
 
 projecturl="https://github.com/guy-mograbi-at-gigaspaces/getcloudify-hugo-version"
 projectversion="3.1.0"

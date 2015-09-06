@@ -6,18 +6,9 @@ categories="100"
 +++
  
 
-# Comment
-
-{{<comment>}}
-This should not show up {%hello there %}}
-{{</comment>}}
-
-
 
 # Site variables
 
-
- 
 The latest XAP release is : {{<latestxaprelease>}} this is the latest release
 
 

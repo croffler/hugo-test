@@ -10,6 +10,9 @@ title = "Panels"
 
 
 
+{{%panel%}}
+This is a simple panel
+{{%/panel%}}
 
 
 
