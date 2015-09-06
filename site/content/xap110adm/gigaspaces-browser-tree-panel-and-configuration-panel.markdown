@@ -75,15 +75,15 @@ For this option to work, the **Objects Count** checkbox must also be selected.
 - **Used Memory (MB)** -- the amount of used memory in this space, in MB.
 This column is highlighted in orange if the space memory usage is more than the minimum (low) watermark percentage and lower than the write only block percentage (defined in the [memory usage tag](./memory-management-facilities.html)), for example:
 
-{{% indent %}}
+
 ![GMC_space_SpaceNetworkView_UsedMoemory_Column_Orange_6.5_RC2.jpg](/attachment_files/GMC_space_SpaceNetworkView_UsedMoemory_Column_Orange_6.5_RC2.jpg)
-{{% /indent %}}
+
 
 This column is highlighted in red if the space memory exceeds the write only block percentage (defined in the [memory usage tag](./memory-management-facilities.html)), for example:
 
-{{% indent %}}
+
 ![space_network_view_memoryUsage_red_6.5.jpg](/attachment_files/space_network_view_memoryUsage_red_6.5.jpg)
-{{% /indent %}}
+
 
 {{% refer %}}For more details on memory usage, refer to the [Memory Management](./memory-management-facilities.html) section.{{% /refer %}}
 
@@ -91,9 +91,9 @@ This column is highlighted in red if the space memory exceeds the write only blo
 
 You can right-click a row in the table to view options for a space. These are the same options available under each space node (see [Space Node](#spacenode) below). Clicking one of the options in the context menu switches to the clicked view, and selects the space in the tree on the left. This is an easy way to access a space or any its sub-nodes directly, without expanding the **Grid Tree**.
 
-{{% indent %}}
+
 ![space_network_view_spaceNodeSelected_6.5.jpg](/attachment_files/space_network_view_spaceNodeSelected_6.5.jpg)
-{{% /indent %}}
+
 
 {{% include /COM/jconsolejmapwarning.markdown %}}
 

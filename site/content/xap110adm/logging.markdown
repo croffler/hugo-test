@@ -124,7 +124,7 @@ com.gigaspaces.jms.level = INFO
 {{%/panel%}}
 
 {{% /tab %}}
-{{% tab Comunication Protocol %}}
+{{% tab "Comunication Protocol" %}}
 {{%panel%}}
 ```bash
 com.gigaspaces.lrmi.nio.filters.SSLFilterFactory.level = INFO
@@ -146,7 +146,7 @@ com.gigaspaces.lrmi.channel.protocol.level = INFO
 GigaSpaces components communicate using internal communications adaptor, LRMI (Light Remote Method Invocation), which is based on NIO communication protocol. More information about lrmi is [here]({{%currentadmurl%}}/tuning-communication-protocol.html).
 {{%/panel%}}
 {{% /tab %}}
-{{% tab Class Loader %}}
+{{% tab "Class Loader" %}}
 {{%panel%}}
 
 ```bash
@@ -181,7 +181,7 @@ Core runtime for the space component of GigaSpaces, above loggers relate to this
 com.gigaspaces.filters.level = INFO
 ```
 
-Space filters are described here {{%currentjavanet the-space-filters.html %}}
+Space filters are described here {{%currentjavanet "the-space-filters.html" %}}
 
 ### Space Persistency
 
@@ -191,7 +191,7 @@ com.gigaspaces.persistent.shared_iterator.level = INFO
 org.hibernate.level = WARNING
 ```
 
-GigaSpaces persistence options are explained here {{%currentjavanet space-persistency.html%}}. One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here]({{%currentjavaurl%}}/hibernate-space-persistency.html).
+GigaSpaces persistence options are explained here {{%currentjavanet "space-persistency.html"%}}. One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here]({{%currentjavaurl%}}/hibernate-space-persistency.html).
 
 ### Space Query
 
@@ -199,7 +199,7 @@ GigaSpaces persistence options are explained here {{%currentjavanet space-persis
 com.gigaspaces.query.level = INFO
 ```
 
-GigaSpaces supports SQL queries on the data in space and logger corresponds to this functionality {{%currentjavanet query-sql.html%}}.
+GigaSpaces supports SQL queries on the data in space and logger corresponds to this functionality {{%currentjavanet "query-sql.html"%}}.
 
 ### Space LRU and Eviction
 
@@ -224,7 +224,7 @@ Another way notifications can be used is thru Session based messaging which is d
 com.gigaspaces.core.fifo.level = INFO
 ```
 
-FIFO functionality is applicable for writes, reads and events (notifications) and discussed here {{%currentjavanet fifo-support.html %}}.
+FIFO functionality is applicable for writes, reads and events (notifications) and discussed here {{%currentjavanet "fifo-support.html" %}}.
 
 ### Space Replication
 
@@ -267,7 +267,7 @@ Logger corresponding to GigaSpaces POJO support, more info [here]({{%currentjava
 com.gigaspaces.core.xa.level = INFO
 ```
 
-Logger corresponding to XA Transaction manager running in the space, more information here {{%currentjavanet transaction-management.html %}}.
+Logger corresponding to XA Transaction manager running in the space, more information here {{%currentjavanet "transaction-management.html" %}}.
 
 ### Space Jini Dist. TX manager
 
@@ -276,7 +276,7 @@ com.sun.jini.mahalo.startup.level = INFO
 com.sun.jini.mahalo.destroy.level = INFO
 ```
 
-Logger for Jini Distributed Transaction manager, more information here {{%currentjavanet transaction-management.html %}}.
+Logger for Jini Distributed Transaction manager, more information here {{%currentjavanet "transaction-management.html" %}}.
 
 ### SpaceURL, SpaceValidator, SpaceURLParser
 
@@ -287,7 +287,7 @@ com.gigaspaces.common.lookupfinder.level = INFO
 com.gigaspaces.common.resourceloader.level = INFO
 ```
 
-SpaceURL and its constraints are explained here {{%currentjavanet the-space-configuration.html %}}.
+SpaceURL and its constraints are explained here {{%currentjavanet "the-space-configuration.html" %}}.
 Other loggers are related to this and applicable when a client trying to create a space proxy using a URL.
 
 ### Space Multicast Notifications
@@ -380,7 +380,7 @@ com.gigaspaces.security.level = INFO
 Logger corresponding to security of GigaSpaces components. This includes configuration and runtime execution of security functionality. More information regarding GigaSpaces security is [here]({{%currentsecurl%}}/security.html).
 {{%/panel%}}
 {{% /tab %}}
-{{% tab Web Container %}}
+{{% tab "Web Container" %}}
 {{%panel%}}
 Any web application default logging level (logger name for them is web.`[processing unit name].[instance id]`)
 
@@ -392,7 +392,7 @@ org.mortbay.level = WARNING
 Web application support in XAP is provided using a Jetty container. These loggers correspond to Web Container. More information about GigaSpaces Web Application support is [here]({{%currentjavaurl%}}/web-jetty-processing-unit-container.html).
 {{%/panel%}}
 {{% /tab %}}
-{{% tab Mule Integration %}}
+{{% tab "Mule Integration" %}}
 {{%panel%}}
 ```bash
 org.mule.level = WARNING

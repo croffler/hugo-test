@@ -109,7 +109,7 @@ public class FileReporterFactory extends MetricReporterFactory<FileReporter> {
 }
 ```
 {{%/accord%}}
-{{%accord title=FileReporter | parent=acc1%}}
+{{%accord title="FileReporter"%}}
 ```java
 package com.gigaspaces.demo;
 

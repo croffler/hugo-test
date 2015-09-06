@@ -139,7 +139,8 @@ In some scenarios you'll need to have several 'flavours' of components (e.g. mul
 For example, suppose we want our agent to load 2 'small' GSCs (512MB each) in a zone called *Small*, and 1 'large' GSC (1024MB) in a zone called *Large*. To achieve this, we'll duplicate the default `gsc.xml` (which resides in `<GSHOME>/config/gsa`) into `gsc_small.xml` and `gsc_large.xml`, and modify them to include an `environment` tag which sets `GSC_JAVA_OPTIONS` to the required settings:
 
 {{% tabs %}}
-{{% tab gsc_small.xml %}}
+{{% tab "gsc_small.xml" %}}
+
 ```xml
 <process initial-instances="script" shutdown-class="com.gigaspaces.grid.gsa.GigaSpacesShutdownProcessHandler" restart-on-exit="always">
     <script enable="true" work-dir="${com.gs.home}/bin"
@@ -156,7 +157,7 @@ For example, suppose we want our agent to load 2 'small' GSCs (512MB each) in a 
 </process>
 ```
 {{% /tab %}}
-{{% tab gsc_large.xml %}}
+{{% tab "gsc_large.xml" %}}
 ```xml
 <process initial-instances="script" shutdown-class="com.gigaspaces.grid.gsa.GigaSpacesShutdownProcessHandler" restart-on-exit="always">
     <script enable="true" work-dir="${com.gs.home}/bin"

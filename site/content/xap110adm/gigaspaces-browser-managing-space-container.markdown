@@ -11,7 +11,7 @@ weight: 300
 
 
 {{%section%}}
-{{%column width="10%"}}
+{{%column width="10%" %}}
 ![IMG501.jpg](/attachment_files/IMG501.jpg)
 {{%/column%}}
 {{%column width="90%" %}}
