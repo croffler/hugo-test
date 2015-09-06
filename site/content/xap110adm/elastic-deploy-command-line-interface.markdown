@@ -164,7 +164,7 @@ The following undeploys the data-app example application (which includes a feede
 ### Syntax
 ```bash
 gs> deploy-elastic-space [options] [space name]
-{{%endhighlight  %}}
+```
 
 ### Description
 
@@ -230,7 +230,7 @@ The following specifies command line arguments.
 ### Syntax
 ```bash
 gs> deploy-elastic-pu [options] [-puname ...] [-file ...] [space name]
-{{%endhighlight  %}}
+```
 
 ### Description
 
@@ -400,7 +400,7 @@ The following options are supported with `manual` strategy only
 ### Syntax
 ```bash
 gs> scale [options] -name [processing unit name]
-{{%endhighlight  %}}
+```
 
 ### Description
 
@@ -434,7 +434,7 @@ Easily scale an already deployed elastic processing unit.
 
 ```bash
 gs> undeploy-pu pu_name
-{{%endhighlight  %}}
+```
 
 ### Description
 

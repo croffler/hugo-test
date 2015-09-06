@@ -83,7 +83,7 @@ String jndiURL = containerConfig.jndiUrl;
 Runtime.getRuntime().exec( "jconsole " + jndiURL );
 ```
 
-{{% include /COM/jconsolejmapwarning.markdown %}}
+{{% include "/COM/jconsolejmapwarning.markdown" %}}
 
 # Remote JConsole connection
 

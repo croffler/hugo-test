@@ -235,7 +235,7 @@ Multiple deployment properties can be injected by having ; between each property
 
 ```bash
 gs> undeploy-application application_name
-{{%endhighlight  %}}
+```
 
 #### Description
 
@@ -270,7 +270,7 @@ The following undeploys the data-app example application (which includes a feede
 
 ```bash
 gs> deploy-memcached [-sla ...] [-cluster ...] [-properties ...] [-user xxx -password yyy] [-secured true/false] space_url
-{{%endhighlight  %}}
+```
 
 #### Description
 
@@ -317,7 +317,7 @@ The following deploys a memcached-enabled space called `mySpace` using an SLA el
 #### Syntax
 ```bash
 gs> deploy-space [space name]
-{{%endhighlight  %}}
+```
 
 #### Description
 
@@ -368,7 +368,7 @@ The following deploys a space called `mySpace` using an SLA element read from an
 #### Syntax
 ```bash
 usage: task ant-file [target=target-name]
-{{%endhighlight  %}}
+```
 
 #### Description
 

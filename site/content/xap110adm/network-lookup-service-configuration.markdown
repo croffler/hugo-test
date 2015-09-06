@@ -59,7 +59,7 @@ To support co-existence of different XAP versions, the defaults below may change
 Adjusting the lookup services multicast settings can be done using the following system properties:
 
 
-{{% include /COM/xap100/config-multicast.markdown %}}
+{{% include "/COM/xap100/config-multicast.markdown" %}}
 
 {{% info %}}
 The two multicast addresses allow you to completely separate two different GigaSpaces installations, so lookup services won't communicate with each other (even on the wire level, which is different than the groups, which communicate on the content level).

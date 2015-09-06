@@ -121,7 +121,7 @@ JMX provides remote management capabilities for monitoring memory utilization, V
 For more details on monitoring and management using JMX, refer to the [JMX Management](./space-jmx-management.html) section.
 {{% /tip %}}
 
-{{% include /COM/jconsolejmapwarning.markdown %}}
+{{% include "/COM/jconsolejmapwarning.markdown" %}}
 
 #### Options
 
@@ -454,7 +454,7 @@ None.
 
 ```java
 gs> version [-verbose]
-{{% endhighlight  %}}
+```
 
 #### Description
 

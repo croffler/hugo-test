@@ -68,8 +68,8 @@ To properly work, XAP-apm-introscope requires a little configuration both on Int
 
 XAP-apm-introscope communicates with `EPAgent` deployed in an Introscope environment. It requires `EPAgent` to listen on a certain port for metrics data. To enable receiving metrics from network, property `introscope.epagent.config.networkDataPort` should be uncommented in `IntroscopeEPAgent.properties` (by default this is `EPAgent` configuration file, in case another file is used, described steps should be performed on that file) and set to port on which `EPAgent` will listen for metrics data, e.g.
 
-{{% highlight properties %}}
-     introscope.epagent.config.networkDataPort=8003
+```properties
+introscope.epagent.config.networkDataPort=8003
 ```
 
 ## XAP metrics configuration
@@ -150,14 +150,15 @@ There is no possibility to tie metric data with timestamp. Introscope connects a
 
 XAP reports tens of different predefined metrics per each machine that belongs to grid, deployed processing unit or space (you can find more information [here](http://docs.gigaspaces.com/xap102adm/metrics-bundled.html)). Additionally, there might be also custom metrics defined by users. Even for one machine, number of metrics becomes too high for human-being to track them easily in webview in flat format. Hierarchy is inserted by modifying metric name - it has the given format:
 
-{{% highlight yaml %}}
+```yaml
      RESOURCE_SEGMENT_1|...|RESOURCE_SEGMENT_N:METRIC_NAME
 ```
 
 Resource segments are optional. They are separated from name by `:` and are separated from each other by `|`. Multiple resource segments create hierarchy, e.g. metrics `xap|groupA|myhost|lus|21950:lus_items` and `xap|groupA|myhost|lus|21950:lus_listeners` can be seen as:
 
 {{%section%}}
-{{%column %}}
+{{%column width="30%" %}}
+
 ```xml
 xap
 +-- groupA
@@ -168,7 +169,7 @@ xap
         --- lus_listeners
 ```
 {{%/column%}}
-{{%column %}}
+{{%column width="30%" %}}
 {{%popup "/attachment_files/introscope.png" %}}
 {{%/column%}}
 {{%/section%}}

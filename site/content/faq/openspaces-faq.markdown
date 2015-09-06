@@ -77,7 +77,7 @@ OpenSpaces introduces a JavaSpaces abstraction named [GigaSpace]({{%latestjavaur
 
 {{% info %}}
 We see this interface as a proposal for a new specification that will eventually be driven by the community, and not as a GigaSpaces specification per-se.
-{{%endinfo%}}
+{{%/info%}}
 
 The goal behind this abstraction is to provide a simpler interface that will fit into a POJO-driven architecture, such as Spring, with the following principles:
 
@@ -167,4 +167,4 @@ This mainly applies when wanting to change business logic of a Processing Unit t
 {{%info%}}
 
 Didn't find the answers you were looking for? Feel free to **[write to us](mailto:feedback60@gigaspaces.com?subject=OpenSpaces%20FAQ)** or visit our **[forums](http://ask.gigaspaces.org)**.
-{{%endinfo%}}
+{{%/info%}}

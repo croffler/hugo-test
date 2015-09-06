@@ -34,7 +34,7 @@ This example deploys a partitioned data grid with two partitions and a backup wh
 
 *sla.xml*
 
-{{% highlight xml%}}
+```xml
 <os-sla:sla cluster-schema="partitioned-sync2backup"
             number-of-instances="2" number-of-backups="1" max-instances-per-zone="A/1,B/1"
             primary-zone="A">

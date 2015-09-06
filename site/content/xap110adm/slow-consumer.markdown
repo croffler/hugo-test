@@ -59,7 +59,7 @@ When the LRMI thread pool queue size in the client side reached its limit (clien
 
 To enable and tune the slow consumer mechanism, you should configure the LRMI layer at the server side with the following JVM system properties:
 
-{{% include /COM/xap100/config-slow-consumer-server.markdown %}}
+{{% include "/COM/xap100/config-slow-consumer-server.markdown" %}}
 
 
 {{% note %}}
@@ -75,5 +75,5 @@ You should configure the following JVM system properties at the **client side**.
 When using FIFO notifications, the fifo notify queue should be limited as well for the same reasons
 {{%/info%}}
 
-{{% include /COM/xap100/config-slow-consumer-client.markdown %}}
+{{% include "/COM/xap100/config-slow-consumer-client.markdown" %}}
 

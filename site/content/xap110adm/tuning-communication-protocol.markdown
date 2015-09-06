@@ -138,7 +138,7 @@ To allow the above , the client must set the `java.rmi.server.hostname` property
 The `LRMI` configuration options set as system properties. They are listed below:
 
 
-{{% include /COM/xap100/config-lrmi-transport.markdown %}}
+{{% include "/COM/xap100/config-lrmi-transport.markdown" %}}
 
 
 
@@ -225,7 +225,7 @@ LRMI communication transport protocol debug messages are displayed.
 ![lrmi_log_jmx_console2.jpg](/attachment_files/lrmi_log_jmx_console2.jpg)
 {{% /indent %}}
 
-{{% include /COM/jconsolejmapwarning.markdown %}}
+{{% include "/COM/jconsolejmapwarning.markdown" %}}
 
 When LRMI logging is turned on, the space displays the following when started:
 

@@ -28,7 +28,7 @@ The space proxy router has the following responsibilities:
 
  The space proxy router behavior is controlled using the following configuration properties, which can be specified as part of the [Space Component]({{%currentjavaurl%}}/the-space-configuration.html#proxy) or via API:
 
-{{% include /COM/xap100/config-space-proxy-router.markdown %}}
+{{% include "/COM/xap100/config-space-proxy-router.markdown" %}}
 
 {{% note %}}
 In most scenarios the goal is for all proxies to be configured with the same settings. This is provided out of the box by configuring the proxy settings as part of the space deployment - clients that connect to the space automatically retrieve the space proxy settings and use them. If a specific client needs a different configuration, it can override the configuration locally without affecting the space or other clients.
