@@ -29,8 +29,9 @@ Deploys a [Rest Processing Unit]({{%currentjavaurl%}}/rest-service-overview.html
 The processing unit's name will be `spacename`-rest unless the -puname [name] option is provided.
 
 
-{{% togglecloak id=1 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 1 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
 
 The following deploys rest processing unit and starts a rest service on port 8888 that connects to mySpace.
@@ -38,10 +39,11 @@ The following deploys rest processing unit and starts a rest service on port 888
     gs> deploy-rest -spacename mySpace -port 8888
 
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=2 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 2 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Syntax|Description|
@@ -57,5 +59,5 @@ The following deploys rest processing unit and starts a rest service on port 888
 | `-zones [comma separated list]` |  Specify the zones that the rest pu can be deployed on |
 | `-primary-zone [zone name]` |  Set the primary zone where the processing unit is allowed to be deployed on. |
 | `-timeout [time in seconds]` |  Set the timeout for deploying the rest processing unit. Default to 30 |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 

@@ -44,8 +44,8 @@ Using `-c` (or `-cluster`) with a URL of a clustered space clears **all** cluste
 | `template` | The template for the class of objects you want to remove from the space. | `com.j_spaces.examples.benchmark.messages.MessageSerializable` |
 | `help` / `h` | Prints help -- the command's usage and options. | |
 
-{{% togglecloak id=1 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 1 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
 
 Tbe following prints a numbered list of spaces, and you can choose a space to clear by its number, or `all` (clears all spaces).
 
@@ -54,7 +54,7 @@ Tbe following prints a numbered list of spaces, and you can choose a space to cl
 The following clears all objects in the `MessageSerializable` class, from a space named `mySpace`.
 
     space clean -url jini://localhost/my_container/mySpace -template com.j_spaces.examples.benchmark.messages.MessageSerializable
-{{%endgcloak%}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # clear
@@ -91,8 +91,9 @@ Using `-c` (or `-cluster`) with a URL of a clustered space clears **all** cluste
 | `template` | The template for the class of objects you want to remove from the space. | `com.j_spaces.examples.benchmark.messages.MessageSerializable` |
 | `help` / `h` | Prints help -- the command's usage and options. | |
 
-{{% togglecloak id=2 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 2 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 Tbe following prints a numbered list of spaces, and you can choose a space to clear by its number, or `all` (clears all spaces).
 
     space clear
@@ -101,7 +102,7 @@ The following clears all objects in the `MessageSerializable` class, from a spac
 
     space clear -url jini://localhost/my_container/mySpace -template com.j_spaces.examples.benchmark.messages.MessageSerializable
 
-{{%endgcloak%}}
+{{%/accord%}} {{%/accordion%}}
 
 # cluster-members
 
@@ -120,8 +121,9 @@ This command prints a list of all cluster members (spaces belonging to the speci
 |:-------|:------------|:-------------|
 | `-url` | Specify one of the following:{{% wbr %}}* The space URL of any member belonging to the cluster{{% wbr %}}* A URL containing the cluster name{{% wbr %}}* A URL containing the Jini group and the cluster name
 
-{{% togglecloak id=3 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 3 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following prints a list of all members in a cluster named `test`:
 
@@ -134,7 +136,7 @@ The following prints a list of all members in the same cluster as the `gigaspace
 The same functionality can be achieved by running the following command, using only the cluster name:
 
     space cluster-members -clustername myClusterName
-{{%endgcloak%}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # config
@@ -224,8 +226,9 @@ The `space copy` command is relevant only for spaces that are in a started mode.
 | `-move` | clears the source space after copy | `-move` |
 | `help` \ `h` | Prints help -- the command's usage and options. | |
 
-{{% togglecloak id=4 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 4 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following prints a list of all members in a cluster named `test`:
 
@@ -238,7 +241,7 @@ The following prints a list of all members in the same cluster as the `gigaspace
 The same functionality can be achieved by running the following command, using only the cluster name:
 
     space cluster-members -clustername myClusterName
-{{%endgcloak%}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # list
@@ -270,8 +273,9 @@ Using `\-c` (or `\-cluster`) with a URL of a clustered space lists **all** clust
 | `noRTI` / `noCount` | Instructs the system not to display the number of objects and templates in the space as part of the list. | |
 | `help` / `h` | Prints help -- the command's usage and options. | |
 
-{{% togglecloak id=5 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 5 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following lists all spaces in the network:
 
@@ -281,7 +285,7 @@ The following lists a space named `mySpace`, displays the operation statistics f
 
     space list -url jini://localhost/my_container/mySpace -stats -noRTI
 
-{{%endgcloak%}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # ping
@@ -327,15 +331,16 @@ Using `-c` (or `-cluster`) with a URL of a clustered space pings **all** cluster
 | `x` | All operations performed as part of `space ping` are under a transaction. | |
 | `help` \ `h` | Prints help -- the command's usage and options. | |
 
-{{% togglecloak id=6 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 6 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following, writes a set of message objects to the space, and reads them back:
 
     space ping -url jini://host:port/mySpace_container1/mySpace -read
 
 The following, writes a set of message objects to the space, and takes them from the space:
-{{%endgcloak%}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # sql
@@ -360,10 +365,11 @@ You can query spaces in a specific container (see the options below) -- specifyi
 | `multispace` | Indicates if this query is multi space, default is single space. | |
 | `help` \ `h` | Prints help -- the command's usage and options. | |
 
-{{% togglecloak id=7 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 7 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
     space sql -url jini://localhost/mySpace_container/mySpace -query select uid,* from com.j_spaces.examples.benchmark.messages.Message
     WHERE rownum<10
-{{%endgcloak%}}
+{{%/accord%}} {{%/accordion%}}
 

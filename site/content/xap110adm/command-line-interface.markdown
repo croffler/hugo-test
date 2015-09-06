@@ -79,9 +79,9 @@ The following gsa CLI commands are available:
 | `help` / `h` | Prints help -- the command's usage and options. | |
 | `host` / `h` | Host name, optional parameter, allows to locate gsa that is running on specific machine. | |
 
+{{%accordion%}}
+{{%accord title="Example**"  %}}
 
-{{% togglecloak id=1 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 1 %}}
 The following prints a numbered list of GSA services, and you can choose a GSA service to create gsc within it:
 
     gs> gsa start-gsc
@@ -103,7 +103,8 @@ Example for gsa shutdown when specific host name provided:
 
     Enter a comma-separated list to gsa shutdown or "c" to cancel :
 
-{{% endgcloak %}}
+{{% /accord %}}
+{{% /accordion %}}
 
 
 # jconsole
@@ -131,8 +132,9 @@ For more details on monitoring and management using JMX, refer to the [JMX Manag
 | `jmx-connection-string` | The JMX connection string to be used for starting the Java Management Console. If not provided, a selection list of all GSCs is displayed. You can select the appropriate instance from the list. |
 | `h` / `help`  | Prints help |
 
-{{% togglecloak id=2 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 2 %}}
+{{%accordion%}}
+{{%accord title="Example**"  %}}
+
 
     gs> jconsole
     total services 2
@@ -144,7 +146,7 @@ For more details on monitoring and management using JMX, refer to the [JMX Manag
 
     gs> jconsole service:jmx:rmi:///jndi/rmi://192.10.10.10:10098/jmxrmi
     Launching jconsole, command successful
-{{% endgcloak%}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # list
@@ -182,8 +184,9 @@ Each option adds to (or subtracts from) the default information listed. You can 
 | `timeout` | Available for type `lus` only (**new in GigaSpaces 6.0.2** and onwards) -- the discovery timeout (in milliseconds). Usage example: `timeout=20000`. Default value is 30000 msec. |
 
 
-{{% togglecloak id=3 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 3 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 
 ## List All Services in the Network
@@ -259,7 +262,7 @@ Each option adds to (or subtracts from) the default information listed. You can 
 
 
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 #### Troubleshooting: terminated services are still listed
 
@@ -284,8 +287,8 @@ For defaults and configuration options, refer to [Jini Lookup Service configurat
 This CLI command allows you to login to secured services: GSM, GSC and spaces.
 Each time you invoke this command, you are required afterwards to type in the user name and password (if not supplied in the command). The user name and password are used in order to attempt to authenticate secured services before invoking any operation for them ( e.g. pudeploy, undeploy, space clear, space connections ... ).
 
-{{% togglecloak id=33 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 33 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
 
     gs> login
     Please enter user name:
@@ -293,7 +296,8 @@ Each time you invoke this command, you are required afterwards to type in the us
     Please enter user password:
 
     gs>
-{{%endgcloak%}}
+{{%/accord%}}
+{{%/accordion%}}
 
 
 # ls
@@ -375,8 +379,9 @@ Make sure your network and machines running GigaSpaces are configured to have mu
 See the [How to Configure Multicast]({{%currentadmurl%}}/network-multicast.html) section for details on how to enable multicast.
 {{% /refer %}}
 
-{{% togglecloak id=4 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 4 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 
 ## Displaying Current System Variables
@@ -402,7 +407,8 @@ This example sets new locations for the properties `com.gigaspaces.lib` and `com
     gs> set discovery-timeout 5500
     gs> set groups all_groups
     gs> set groups gs-grid,test
-{{% endgcloak %}}
+{{% /accord %}}
+{{%/accordion%}}
 
 
 # stats
@@ -430,8 +436,9 @@ The `stats` command provides statistics from the Grid Service Container (GSC) an
 
 None.
 
-{{% togglecloak id=5 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 5 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
     gs> stats
 
@@ -446,7 +453,8 @@ None.
     Lookup Service Discarded Statistics
             127.0.0.1:4160     gs-grid, gigaspaces-13 Mon Jan 30 12:04:16 GMT+02:00 2006
 
-{{%endgcloak%}}
+{{%/accord%}}
+{{%/accordion%}}
 
 # version
 

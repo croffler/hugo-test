@@ -87,7 +87,7 @@ public class DataRemoting {
 
 
 {{% accordion acc3 %}}
-{{%accord title="**Example**" parent="acc3"  id="tab3"%}}
+{{%accord title="**Example**" %}}
 ```java
 // Service Implementation
 @RemotingService

@@ -158,7 +158,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 
 
 {{% accordion acc3 %}}
-{{% accord title="**Example**" parent="acc3" id="tab5"%}}
+{{% accord title="**Example**"%}}
 
 ```java
 public class Process {

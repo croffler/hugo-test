@@ -28,8 +28,9 @@ gs> quiesce [options] PU_NAME
 
 Sends a quiesce request to the GSM for the provided processing unit's name.
 
-{{% togglecloak id=1 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 1 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
 One option is to specify the processing unit's name in the command:
 
@@ -58,10 +59,11 @@ Waiting up to 300 seconds until the processing unit [myPU] is quiesced
 Quiesce command completed successfully [token=ee16f577-92df-430b-afc7-2dd9f2c16998]
 ```
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=2 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 2 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Option|Description|Value Format|
@@ -69,7 +71,7 @@ Quiesce command completed successfully [token=ee16f577-92df-430b-afc7-2dd9f2c169
 | `-description` | The quiesce request description | `-description [description]`|
 | `-timeout` | Timeout for quiesce operation |`-timeout [timeout in seconds]`|
 | `-help`  | Prints help | |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 
@@ -86,8 +88,8 @@ gs> unquiesce [options] PU_NAME
 
 Sends an unquiesce request to the GSM for the provided processing unit's name.
 
-{{% togglecloak id=3 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 3 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
 
 Like the quiesce command, the unquiesce command can be executed with a processing unit name;
 
@@ -116,10 +118,11 @@ Waiting up to 300 seconds until the processing unit [myPU] is unquiesced
 Unquiesce command completed successfully
 ```
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=4 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 4 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Option|Description|Value Format|
@@ -127,4 +130,4 @@ Unquiesce command completed successfully
 | `-description` | The unquiesce request description | `-description [description]`|
 | `-timeout` | Timeout for unquiesce operation |`-timeout [timeout in seconds]`|
 | `-help`  | Prints help | |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}

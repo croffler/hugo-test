@@ -38,8 +38,9 @@ Deploys an [application]({{%currentjavaurl%}}/deploying-onto-the-service-grid.ht
 | -secured | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| -secured [true/false]|
 | -user -password | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| -user xxx -password yyyy|
 
-{{% togglecloak id=1 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 1 %}}
+{{%accordion%}}
+{{%accord title="Example"  %}}
+
 
 
 The following deploys the data-app example application (which includes a feeder and a processor).
@@ -79,7 +80,7 @@ application.xml file describes the application dependencies:
 	</os-admin:application>
 </beans>
 ```
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # undeploy application
@@ -107,13 +108,15 @@ Undeploys an [application]({{%currentjavaurl%}}/deploying-onto-the-service-grid.
 | `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
-{{% togglecloak id=2 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 2 %}}
+
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following undeploys the data-app example application (which includes a feeder and a processor).
 
     gs> undeploy-application data-app
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # deploy PU
@@ -173,8 +176,9 @@ Property files and other resources should be jared and placed within any of the 
 You may use the [Primary-Backup Zone Controller](/sbp/primary-backup-zone-controller.html) to deploy primary and backup on specific different zones.
 {{% /tip %}}
 
-{{% togglecloak id=3 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 3 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following deploys a processing unit jar file named `data-processor.jar` using the `sync_replicated` cluster schema with 2 instances (`total_members`).
 ```bash
@@ -227,7 +231,7 @@ Multiple deployment properties can be injected by having ; between each property
 ```
 {{% /tip %}}
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 # undeploy app
 
@@ -254,14 +258,15 @@ Undeploys an [application]({{%currentjavaurl%}}/deploying-onto-the-service-grid.
 | `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
-{{% togglecloak id=4 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 4 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following undeploys the data-app example application (which includes a feeder and a processor).
 
     gs> undeploy-application data-app
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # deploy memcached
@@ -299,8 +304,9 @@ Deploys a [memcached-enabled space]({{%currentjavaurl%}}/memcached-api.html), wh
 You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
 {{% /tip %}}
 
-{{% togglecloak id=5 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 5 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following deploys a memcached-enabled space named `mySpace` using the `partitioned-sync2backup` cluster schema with 2 primaries and 1 primary per backup.
 
@@ -309,7 +315,7 @@ The following deploys a memcached-enabled space named `mySpace` using the `parti
 The following deploys a memcached-enabled space called `mySpace` using an SLA element read from an external `sla.xml` file.
 
     gs> deploy-space -sla file://config/sla.xml mySpace
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # deploy space
@@ -346,8 +352,9 @@ You may use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 You may use the [Primary-Backup Zone Controller](/sbp/primary-backup-zone-controller.html) to deploy primary and backup instances on different zones.
 {{% /tip %}}
 
-{{% togglecloak id=6 %}}**Example**{{% endtogglecloak %}}
-{{% gcloak 6 %}}
+{{%accordion%}}
+{{%accord title="**Example**"  %}}
+
 
 The following deploys a space named `mySpace` using the `sync_replicated` cluster schema with 2 instances (`total_members`).
 
@@ -361,7 +368,7 @@ The following deploys a space called `mySpace` using an SLA element read from an
 
     gs> deploy-space -sla file://config/sla.xml mySpace
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 # task
 

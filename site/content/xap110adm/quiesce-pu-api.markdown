@@ -44,7 +44,7 @@ public class CustomComponent implements ... ,QuiesceStateChangedListener {
 ```
 
 # Use Cases Implementation Samples
-{{%info title="Safe undeploy a stateful processing unit"%}}{{%/info%}}
+
 ```java
 
 QuiesceRequest request = new QuiesceRequest("Jacob: performing safe shutdown in 11:33 AM");
@@ -67,8 +67,8 @@ else {
 ```
 
 {{%info title="Rolling system upgrade on a live system"%}}{{%/info%}}
-```java
 
+```java
 QuiesceRequest request = new QuiesceRequest("Jacob: performing hot deploy in 11:33 AM");
 QuiesceResult result = pu.quiesce(request);
 pu.waitFor(QuiesceState.QUIESCED, OPERATION_TIMEOUT, TimeUnit.MINUTES);

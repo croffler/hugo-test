@@ -28,8 +28,9 @@ Deploying an application that is a mixture of elastic and non-elastic spaces/pro
 To avoid such behavior, you should start your GSCs with zones and specifies these zones in the processing unit properties.
 {{% /note %}}
 
-{{% togglecloak id=1 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 1 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
 
 The following deploys the data-app example application (which includes a feeder and a processor).
@@ -105,10 +106,11 @@ You can also use the [shared machine provisioning]({{%currentjavaurl%}}/elastic-
 </os-admin:elastic-space>
 ```
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=2 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 2 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Option|Description|Value Format|
@@ -118,7 +120,7 @@ You can also use the [shared machine provisioning]({{%currentjavaurl%}}/elastic-
 | `-h` / `-help`  | Prints help | |
 | `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 
@@ -134,18 +136,19 @@ gs> undeploy-application application_name
 
 Undeploys an [application]({{%currentjavaurl%}}/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies) from the service grid, while respecting pu dependency order.
 
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
 
-{{% togglecloak id=3 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 3 %}}
 
 The following undeploys the data-app example application (which includes a feeder and a processor).
 
     gs> undeploy-application data-app
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
-{{% togglecloak id=4 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 4 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Option|Description|Value Format|
@@ -155,7 +158,7 @@ The following undeploys the data-app example application (which includes a feede
 | `-h` / `-help`  | Prints help | |
 | `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 
@@ -178,8 +181,9 @@ Deploying an elastic space requires at least one ESM to be running.
 The options' order is important as some overrides others
 {{% /note %}}
 
-{{% togglecloak id=7 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 7 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
 The following deploys an elastic space named mySpace with memory-capacity-per-container=32m and number-of-partitions=8.
 
@@ -197,10 +201,11 @@ The following specifies command line arguments.
 
     gs> deploy-elastic-space -cmdargs "-Xms2g,-Xmx10g" -max-memory-capacity 20g mySpace
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=8 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 8 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Option|Description|Value Format|
@@ -222,7 +227,7 @@ The following specifies command line arguments.
 | `-uof`, `-undeploy-on-failure` | Undeploy the processing unit if the deploy process is not completed within the timeout frame.{{% wbr %}}Defaults to `false`. | `-uof [true/false]` |
 | `-cmdargs`, `-command-line-args` | Adds the arguments as JVM level arguments when the process is executed using pure JVM. {{%wbr%}}Note the quotes in the value. | `-cmdargs ["comma separated list of args"]` |
 | `-ctxp`, `-context-properties` | Defines a context deploy time property overriding any ${...} | `-ctxp key1=value1 key2=value2` |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # deploy elastic pu
@@ -244,8 +249,9 @@ Deploying an elastic pu requires at least one ESM to be running.
 The options' order is important as some overrides others
 {{% /note %}}
 
-{{% togglecloak id=9 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 9 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
 The following deploys an elastic stateless pu from file.
 
@@ -259,11 +265,12 @@ The following deploys a secured stateful pu with -puname option.
 
     gs> deploy-elastic-pu -type stateful -memory-capacity-per-container 32m -number-of-partitions 8 -puname feeder
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
-{{% togglecloak id=10 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 10 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Option|Description|Value Format|
@@ -295,7 +302,7 @@ The following options are supported with a `stateful` elastic PU only
 | `-mnocc`, `-max-number-of-cpu-cores` | Specifies an estimate for the maximum total number of cpu cores used by this processing unit. | `-mnooc [number]` |
 | `-smd`, `-single-machine-deployment` | Allows deployment of the processing unit on a single machine.{{% wbr %}}Defaults to `false`. | `-smd [true/false]` |
 | `-ha`, `-highly-available` | Specifies if each space partition has a backup instance.{{%wbr%}}True by default. | `-ha [true/false]` |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # dedicated machine provisioning properties
@@ -305,17 +312,18 @@ The following options are supported with a `stateful` elastic PU only
 The following provisioning properties may be used with the `-dedicated-machine-provisioning [provisioning properties]` option in `deploy-elastic-space` and `deploy-elastic-pu` commands.
 
 
-{{% togglecloak id=11 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 11 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
 
 The following deploys an elastic space named mySpace with zones [zone1,zone2] while taking into consideration a reserved 1536m memory per machine.
 
     gs> deploy-elastic-space -dedicated-machine-provisioning grid-service-agents-zones=zone1,zone2 reserved-memory-capacity-per-machine=1536m mySpace
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=12 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 12 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Syntax|Description|
@@ -323,7 +331,7 @@ The following deploys an elastic space named mySpace with zones [zone1,zone2] wh
 | `gsaz, grid-service-agents-zones=zone1,zone2` | Specifies the processing unit name. |
 | `rmcpm, reserved-memory-capacity-per-machine=1g` | Sets the expected amount of memory per machine that is reserved for processes other than grid containers. |
 | `rmcpmm, reserved-memory-capacity-per-management-machine=1g` | Sets the expected amount of memory per management machine that is reserved for processes other than grid containers. |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 # shared machine provisioning properties
 
@@ -332,17 +340,19 @@ The following deploys an elastic space named mySpace with zones [zone1,zone2] wh
 The following provisioning properties may be used with the `-shared-machine-provisioning [provisioning properties]` option in `deploy-elastic-space` and `deploy-elastic-pu` commands.
 
 
-{{% togglecloak id=13 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 13 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
 The following deploys an elastic space named mySpace with zones [zone1,zone2] while taking into consideration a reserved 1536m memory per machine.
 
     gs> deploy-elastic-space -shared-machine-provisioning sharing-id=myid grid-service-agents-zones=zone1,zone2 reserved-memory-capacity-per-machine=1536m mySpace
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=14 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 14 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Syntax|Description|
@@ -351,7 +361,7 @@ The following deploys an elastic space named mySpace with zones [zone1,zone2] wh
 | `gsaz, grid-service-agents-zones=zone1,zone2` | Specifies the processing unit name. |
 | `rmcpm, reserved-memory-capacity-per-machine=1g` | Sets the expected amount of memory per machine that is reserved for processes other than grid containers. |
 | `rmcpmm, reserved-memory-capacity-per-management-machine=1g` | Sets the expected amount of memory per management machine that is reserved for processes other than grid containers. |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # scale properties
@@ -360,8 +370,9 @@ The following deploys an elastic space named mySpace with zones [zone1,zone2] wh
 
 The following scale properties may be used with the `-scale [scale properties]` option in `deploy-elastic-space` and `deploy-elastic-pu` commands.
 
-{{% togglecloak id=15 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 15 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
 The following deploys an elastic stateful pu from file with `manual` scale strategy and `memory-capacity=128m`.
 
@@ -371,11 +382,12 @@ The following deploys an elastic space named `mySpace` with `manual` scale strat
 
     gs> deploy-elastic-space -scale strategy=manual memory-capacity=128m mySpace
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
-{{% togglecloak id=16 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 16 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Syntax|Description|
@@ -391,7 +403,7 @@ The following options are supported with `manual` strategy only
 |:-----|:----------|
 | `number-of-cpu-cores=[number]` | Specifies the number of CPU cores (as reported by the operating system). {{% wbr %}}This includes both real cores and hyper-threaded cores. |
 | `memory-capacity=[number[m/g]]` | Specifies the memory capacity (RAM). |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 
@@ -406,17 +418,19 @@ gs> scale [options] -name [processing unit name]
 
 Easily scale an already deployed elastic processing unit.
 
-{{% togglecloak id=17 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 17 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
     gs> scale -name myspace -number-of-cpu-cores 2
 
     gs> scale -name myspace -memory-capacity 256m
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=18 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 18 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Option|Description|Value Format|
@@ -425,7 +439,7 @@ Easily scale an already deployed elastic processing unit.
 | `-nocc`, `-number-of-cpu-cores` | Specifies the number of CPU cores (as reported by the operating system). | `-nocc [number]` |
 | `-mc`, `-memory-capacity` | Specifies the memory capacity (RAM). | `-mc [number[m/g]]` |
 | `-mcrpm`, `-max-concurrent-relocations-per-machine` | Specifies the number of processing unit instance relocations each machine can handle concurrently | `-mcrpm [number]` |
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
 
 # undeploy PU
@@ -440,21 +454,23 @@ gs> undeploy-pu pu_name
 
 Undeploys a processing unit from the service grid, while respecting pu dependency order.
 
-{{% togglecloak id=5 %}}**<u>Example</u>**{{% endtogglecloak %}}
-{{% gcloak 5 %}}
+{{%accordion%}}
+{{%accord title="**<u>Example</u>**"  %}}
+
 
 The following undeploys the mySpace processing unit.
 
     gs> undeploy mySpace
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
 
-{{% togglecloak id=6 %}}**<u>Options</u>**{{% endtogglecloak %}}
-{{% gcloak 6 %}}
+{{%accordion%}}
+{{%accord title="**<u>Options</u>**"  %}}
+
 
 
 |Option|Description|Value Format|
 |:-----|:----------|:-----------|
 | `-h` / `-help`  | Prints help | |
 
-{{% endgcloak %}}
+{{%/accord%}} {{%/accordion%}}
