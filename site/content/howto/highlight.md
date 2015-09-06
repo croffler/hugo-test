@@ -35,7 +35,7 @@ results = gigaSpace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num IN (1
 results = gigaSpace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num > 1 ORDER BY name"));
 ```
 
-# CSHARP
+# Csharp
 
 ```c#
 namespace document
