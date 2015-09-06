@@ -76,7 +76,7 @@ GigaSpaces XAP supports the following data grid topologies:
 
 {{% section%}}
 {{% column width="80%" %}}
-{: .table  .table-condensed}
+
 |Description| Data and operations are split between two or more space instances (partitions) according to a routing field defined in the data. |
 | Common Use |Allows the In-Memory Data Grid to hold large volumes of data, even if it is larger than the memory of a single machine, by splitting the data across several partitions. |
 | Options |With/without backup space instance for each partition.<br>- Business logic can be collocated with each partition and act on the data of the local partition. <br>This is one of the principles of the SBA paradigm  |

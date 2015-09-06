@@ -65,7 +65,7 @@ public class PaymentListener {
 
 In this example we define:
 
-{: .table .table-bordered .table-condensed}
+
 |Annotation | Description|
 |:----------|:-----------|
 |@EventDriven @Notify| the listener as a notification listener |
