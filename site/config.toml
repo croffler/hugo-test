@@ -12,6 +12,7 @@ categoriescss= "/style/template.css"
 highlightStyle="darkula"
 sidebartitle = "Development"
 sidebartagline = "Is super awesome"
+
 xaplatestrelease="10.2"
 
 projecturl="https://github.com/guy-mograbi-at-gigaspaces/getcloudify-hugo-version"
@@ -30,18 +31,12 @@ projectversion="3.1.0"
     url = "/posts"
 
 
-[[menu.xap100]]
-    name = "xap100"
-    url = "/xap100"
 
  
- [[menu.xap101]]
-    name = "xap101"
-    url = "/xap101"
+ [[menu.xap110]]
+    name = "xap110"
+    url = "/xap110"
 
-    [[menu.xap102]]
-    name = "xap102"
-    url = "/xap102"
 
 
  pygmentsUseClasses = true
