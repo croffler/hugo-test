@@ -32,14 +32,13 @@ projectversion="3.1.0"
 
 
 
- 
- [[menu.xap110]]
-    name = "xap110"
-    url = "/xap110"
 
 
 
- pygmentsUseClasses = true
+
+
+SectionPagesMenu = "howto"
+
 
 
 

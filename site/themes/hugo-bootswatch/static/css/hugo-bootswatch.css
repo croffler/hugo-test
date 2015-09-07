@@ -27,22 +27,6 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .toc.compact ul > li > ul > li > ul  { display: none; }
 .toc.compact ul > li > ul > li   { display: none; }
 
-/* ToC */
-/*
-#toc {
-	float: right;
-	padding: 0 1rem 1rem 1rem;
-	border-left: 1px solid #eee;
-	font-size: 0.9rem;
-}
-nav#TableOfContents li {
-	padding-bottom: 0.25rem;
-}
-.toc-label {
-	font-size: 0.8rem;
-	color: #aeaeae;
-}
-*/
 
 /* Table of contents */
 /*

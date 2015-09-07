@@ -2,7 +2,8 @@
 
 Description = ""
 title = "Image with wrapped text"
-
+menu = "howto"
+weight="100"
 +++
 
 

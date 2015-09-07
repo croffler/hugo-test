@@ -2,7 +2,9 @@
 
 Description = ""
 title = "Cheat sheet"
-categories="100"
+categories= "100"
+menu = "howto"
+weight="400"
 +++
  
 

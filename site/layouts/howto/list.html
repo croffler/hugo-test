@@ -7,29 +7,27 @@
      
 <div class="row">
 
-	<div class="col-lg-2">
-		<nav class="sidebar-nav" style="margin-top:30px;margin-right:10px;margin-left:15;background:#f6f8f9;position:fixed;
- left:0px;">
-			{{ $currentNode := . }}
-			{{ range .Site.Menus.xap110 }}
-			<li>
-				<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "xap110" .) ($currentNode.HasMenuCurrent "xap110" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
-			</li>
-			{{ end }}
-		</nav>
-	</div>
+
+	<div class="col-sm-1">
+    	<nav class="sidebar-nav">
+        	{{ $currentNode := . }}
+        	{{ range .Site.Menus.howto }}
+        	<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "howto" .) ($currentNode.HasMenuCurrent "howto" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+        	{{ end }}
+    	</nav>
+ 	</div>
 
  
 	<div class="col-sm-9">
 		{{ .Content }}
 	</div>
 
-	<div style="border:1px solid black; margin: 10px"></div>
-	<div id="toc"  class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
-		<h5>On this page</h5>
+
+	<div id="toc" class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
+		<h5> On this page </h5>
 		{{ .TableOfContents }}
 	</div>
-
+ 
 
 
 </div>

@@ -2,6 +2,8 @@
 
 Description = ""
 title = "Banner with Image"
+menu = "howto"
+weight="300"
 
 +++
 

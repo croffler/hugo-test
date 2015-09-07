@@ -2,7 +2,7 @@
 
 Description = ""
 title = "Panels"
-
+menu = "howto"
 +++
  
 # Info panels

@@ -2,7 +2,8 @@
 
 Description = ""
 title = "Accordion"
-
+menu = "howto"
+weight= "100"
 +++
 
 # Accordion

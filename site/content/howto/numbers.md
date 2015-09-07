@@ -1,9 +1,11 @@
 ---
 
 Description:
-title: Cheat sheet
+title: Numbers
 
 version: 11.0
+
+menu: howto
 ---
  
 

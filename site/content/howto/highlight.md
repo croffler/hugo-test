@@ -3,6 +3,7 @@
 Description = ""
 title = "Highlight"
 categories="100"
+menu = "howto"
 +++
  
 

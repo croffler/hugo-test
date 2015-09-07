@@ -2,6 +2,7 @@
 
 title:  Howto Hugo
 
+menu: howto
 ---
 
 

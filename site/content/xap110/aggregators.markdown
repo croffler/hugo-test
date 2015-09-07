@@ -4,6 +4,7 @@ title:  Aggregators
 categories: XAP102
 weight: 550
 parent: the-gigaspace-interface-overview.html
+menu: xap110
 ---
 
 

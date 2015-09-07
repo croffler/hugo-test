@@ -271,12 +271,13 @@ XAP supports the `LocalDate`, `LocalTime` and `LocalDateTime` classes. The follo
 
 Here are examples on how to use the Java8 dates:
 
-{{%accordion id="acc10"%}}
+{{%accordion %}}
 
-{{%accord title="LocalDate" parent="acc10" id="tab1"%}}
+{{%accord title="LocalDate" %}}
 
 {{%tabs%}}
-{{%tab LocalDatePojo%}}
+{{%tab "LocalDatePojo"%}}
+
 ```java
 public class LocalDatePojo {
 	private LocalDate myData;
@@ -305,7 +306,8 @@ public class LocalDatePojo {
 ```
 {{%/tab%}}
 
-{{%tab Program%}}
+{{%tab "Program"%}}
+
 ```java
 public void testLocalDate() {
 	LocalDate d = LocalDate.now();
@@ -329,10 +331,11 @@ public void testLocalDate() {
 
 {{%/accord%}}
 
-{{%accord title="LocalTime" parent="acc10" id="tab2"%}}
+{{%accord title="LocalTime"  %}}
 
 {{%tabs%}}
 {{%tab LocalTimePojo%}}
+
 ```java
 public class LocalTimePojo {
 	private LocalTime myTime;
@@ -385,7 +388,7 @@ public class LocalTimePojo {
 
 {{%/accord%}}
 
-{{%accord title="LocalDateTime" parent="acc10" id="tab3"%}}
+{{%accord title="LocalDateTime" %}}
 
 {{%tabs%}}
 {{%tab LocalDateTimePojo%}}
@@ -417,7 +420,7 @@ public class LocalDateTimePojo {
 ```
 {{%/tab%}}
 
-{{%tab Program%}}
+{{%tab title="Program"%}}
 ```java
 public void testLocalDateTime() {
 	LocalDateTime d = LocalDateTime.now();
