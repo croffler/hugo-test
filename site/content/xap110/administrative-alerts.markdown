@@ -4,6 +4,7 @@ title:  Administrative Alerts
 categories: XAP102
 weight: 300
 parent: administration-and-monitoring-overview.html
+menu: xap110
 ---
 
 

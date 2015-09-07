@@ -1,7 +1,8 @@
 ---
-layout: post
+
 title:  Frequently Ask Questions
 categories: FAQ
+
 ---
 
 Here you will find answers to frequently asked questions about OpenSpaces and the GigaSpaces XAP platform.

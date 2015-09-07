@@ -1,16 +1,16 @@
 {{ partial "header.html" . }}
-{{ partial "navbar110.html" . }}
+{{ partial "navbar.html" . }}
 
 
 <div class="container-fluid" style="padding-top:10px;min-height: 650px;">
 	<div class="col-lg-2" style="margin-left:10px; margin-top:100px;">
 		<nav class="sidebar-nav">
 			{{ $currentNode := . }}
-			{{ range .Site.Menus.xap110 }}
+			{{ range .Site.Menus.faq }}
 
-			<li>
-				<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "xap110" .) ($currentNode.HasMenuCurrent "xap110" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
-			</li>
+				<li>
+					<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "faq" .) ($currentNode.HasMenuCurrent "faq" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+				</li>
 
 			{{ end }}
 		</nav>
