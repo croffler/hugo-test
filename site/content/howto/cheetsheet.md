@@ -14,7 +14,9 @@ The latest XAP release is : {{<latestxaprelease>}} this is the latest release
 
 Current adm url : {{<currentadmurl>}}
 
-Current version : {{<currentversion>}}
+Current version : {{<currentversion>}}of XAP
+
+Version : {{<version>}}of spring
 
 # Icons
 

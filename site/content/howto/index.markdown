@@ -11,6 +11,9 @@ title:  Howto Hugo
 
 {{% fpanel%}}
 
+
+[Numbers](./numbers.html){{% wbr%}}
+
 [General](./cheetsheet.html){{% wbr%}}
 
 [Accordion](./accordion.html){{% wbr%}}
