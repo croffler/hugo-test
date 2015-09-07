@@ -1,5 +1,5 @@
 ---
-layout: post102
+
 title:  Administrative Alerts
 categories: XAP102
 weight: 300

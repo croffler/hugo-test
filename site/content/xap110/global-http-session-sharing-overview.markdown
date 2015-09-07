@@ -1,5 +1,5 @@
 ---
-layout: post102
+
 title:  Global HTTP Session Sharing
 categories: XAP102
 parent: none

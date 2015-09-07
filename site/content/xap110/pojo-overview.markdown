@@ -1,9 +1,10 @@
 ---
-layout: post102
+
 title:  POJO Support
 categories: XAP102
 parent: none
 weight: 400
+menu: xap110
 ---
 
 <br>

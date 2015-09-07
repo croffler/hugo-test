@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  Database Integration
 categories: PRODUCT_OVERVIEW
 parent: the-in-memory-data-grid.html
 weight: 300
+menu: product
 ---
 
 {{%  ssummary %}} {{%  /ssummary %}}

@@ -1,5 +1,5 @@
 ---
-layout: post102
+
 title:  Apache Load Balancer Agent
 categories: XAP102
 parent: web-application-overview.html

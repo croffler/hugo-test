@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  Space Based Architecture
 categories: PRODUCT_OVERVIEW
 weight: 1210
 parent: none
+menu: product
 ---
 
 

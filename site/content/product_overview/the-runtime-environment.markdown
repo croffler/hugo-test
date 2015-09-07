@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  The Service Grid
 categories: PRODUCT_OVERVIEW
 parent: none
 weight: 550
+menu: product
 ---
 
 {{%  ssummary %}}{{%  /ssummary %}}

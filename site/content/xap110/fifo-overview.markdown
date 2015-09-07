@@ -1,5 +1,5 @@
 ---
-layout: post102
+
 title:  FIFO Ordering
 categories: XAP102
 parent: event-processing.html

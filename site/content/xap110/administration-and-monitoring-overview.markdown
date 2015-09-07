@@ -1,5 +1,5 @@
 ---
-layout: post102
+
 title:  Admin API
 categories: XAP102
 parent: none

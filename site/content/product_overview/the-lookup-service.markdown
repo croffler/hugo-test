@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  The Lookup Service
 categories: PRODUCT_OVERVIEW
 weight: 200
 parent: the-runtime-environment.html
+menu: product
 ---
 
 

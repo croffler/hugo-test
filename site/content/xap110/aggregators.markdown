@@ -1,5 +1,5 @@
 ---
-layout: post102
+
 title:  Aggregators
 categories: XAP102
 weight: 550

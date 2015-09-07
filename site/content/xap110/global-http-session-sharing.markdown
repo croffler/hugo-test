@@ -1,9 +1,9 @@
 ---
-layout: post102
 title:  Overview
 categories: XAP102
 parent: global-http-session-sharing-overview.html
 weight: 100
+menu: xap110
 ---
 
 {{% ssummary %}} {{% /ssummary %}}

@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  Services on top of the Data Grid
 categories: PRODUCT_OVERVIEW
 weight: 400
 parent: the-in-memory-data-grid.html
+menu: product
 ---
 
 

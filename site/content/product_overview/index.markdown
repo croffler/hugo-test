@@ -1,7 +1,8 @@
 ---
-layout: post
+
 title:  GigaSpaces XAP
 categories: PRODUCT_OVERVIEW
+
 ---
 
 <br>

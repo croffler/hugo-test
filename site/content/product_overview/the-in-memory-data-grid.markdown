@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  The In-Memory Data Grid
 categories: PRODUCT_OVERVIEW
 parent: none
 weight: 560
+menu: product
 ---
 
 

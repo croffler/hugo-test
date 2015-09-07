@@ -1,9 +1,9 @@
 ---
-layout: post
 title:  Real Time Big-Data Analytics
 categories: PRODUCT_OVERVIEW
 weight: 3000
 parent: none
+menu: product
 ---
 
 {{%  ssummary %}} {{%  /ssummary %}}

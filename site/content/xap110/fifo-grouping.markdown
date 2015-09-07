@@ -1,9 +1,10 @@
 ---
-layout: post102
+
 title:  FIFO Grouping
 categories: XAP102
 parent: fifo-overview.html
 weight: 200
+menu: xap110
 ---
 
 {{% ssummary %}}{{% /ssummary %}}

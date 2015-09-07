@@ -1,9 +1,10 @@
 ---
-layout: post102
+
 title:  Event Processing
 categories: XAP102
 parent: none
 weight: 1500
+menu: xap110
 ---
 
 <br>

@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  About Jini
 categories: PRODUCT_OVERVIEW
 weight: 1240
 parent: none
+menu: product
 ---
 
 {{%  ssummary %}}{{%  /ssummary %}}

@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  Product Architecture
 categories: PRODUCT_OVERVIEW
 weight: 420
 parent: none
+menu: product
 ---
 
 {{%  ssummary %}}{{%  /ssummary %}}

@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  Client Side Caching
 categories: PRODUCT_OVERVIEW
 parent: the-in-memory-data-grid.html
 weight: 200
+menu: product
 ---
 {{%  ssummary %}}  {{%  /ssummary %}}
 

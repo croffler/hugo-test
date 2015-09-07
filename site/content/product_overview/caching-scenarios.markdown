@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  Caching Scenarios
 categories: PRODUCT_OVERVIEW
 parent: the-in-memory-data-grid.html
 weight: 100
+menu: product
 ---
 
 {{%  ssummary %}}  {{%  /ssummary %}}

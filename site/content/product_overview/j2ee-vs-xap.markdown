@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  J2EE vs. XAP
 categories: PRODUCT_OVERVIEW
 weight: 1230
 parent: none
+menu: product
 ---
 
 

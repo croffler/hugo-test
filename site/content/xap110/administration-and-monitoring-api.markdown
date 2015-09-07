@@ -1,5 +1,5 @@
 ---
-layout: post102
+
 title:  Overview
 categories: XAP102
 parent: administration-and-monitoring-overview.html

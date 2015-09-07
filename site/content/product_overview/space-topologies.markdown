@@ -1,9 +1,10 @@
 ---
-layout: post
+
 title:  Topologies
 categories: PRODUCT_OVERVIEW
 parent: the-in-memory-data-grid.html
 weight: 10
+menu: product
 ---
 
 

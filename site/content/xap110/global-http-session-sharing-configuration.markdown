@@ -1,5 +1,5 @@
 ---
-layout: post102
+
 title:  Configuration & Deployment
 categories: XAP102
 parent: global-http-session-sharing-overview.html
