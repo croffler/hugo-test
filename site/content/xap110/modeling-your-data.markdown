@@ -31,7 +31,7 @@ The XAP API supports class  and properties decorations with POJOs. These can be 
 [XML based Metadata](./pojo-xml-metadata-overview.html)<br>
 Class and properties  decorations for POJOs  can be specified via an external xml file accompanied with the class byte code files located within the jar/war. You can define common behavior for all class instances, and specific behavior for class fields.
 
-[Storage type](./storage-types---controlling-serialization.html)<br>
+[Storage type](./storage-types-controlling-serialization.html)<br>
 To reduce the memory footprint of the objects stored in space, different storage types can be defined for individual properties of a space class.
 Object properties can be assigned a storage type decoration which determines how it is serialized and stored in the space.
 
