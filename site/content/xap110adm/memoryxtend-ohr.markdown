@@ -120,6 +120,7 @@ public class Person {
 ```
 
 Here is a sample xml decoration for a POJO class disabling `blobStore` mode:
+
 ```xml
 <gigaspaces-mapping>
     <class name="com.test.Person" "blobstoreEnabled"="false" >

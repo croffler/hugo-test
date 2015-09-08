@@ -92,8 +92,8 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 |Attribute Annotation| @GigaSpaceLateContext  |
 |Description         |  XAP allows you to define beans (such as filters), that are later injected to the actual space. If such beans require access to the GigaSpace instance, a cyclic dependency occurs (GigaSpace requires the Space, but the Space requires the filter injection). XAP allows you to use the same annotation-based injection mechanism in order to inject the GigaSpace instance at a different lifecycle stage. |
 
-{{% accordion acc22%}}
-{{% accord title="**Annotation**" parent="acc22" id="tab3"%}}
+{{% accordion%}}
+{{% accord "**Annotation**"  %}}
 
 ```java
 public class MyService {
@@ -111,7 +111,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 {{% accordion acc21%}}
 {{% accord title="**Spring Configuration**" parent="acc21" id="tab4"%}}
 
-{{% tabs os_simple_space %}}
+{{% tabs   %}}
 {{% tab Namespace %}}
 
 ```xml

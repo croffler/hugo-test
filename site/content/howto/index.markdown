@@ -1,8 +1,6 @@
 ---
 
 title:  Howto Hugo
-
-menu: howto
 ---
 
 
@@ -26,7 +24,6 @@ menu: howto
 [Highlight](./highlight.html){{% wbr%}}
 
 [Banner](./banner.html){{% wbr%}}
-
 
 [Table](./table.html){{% wbr%}}
 

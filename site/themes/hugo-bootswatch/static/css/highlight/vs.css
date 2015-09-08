@@ -14,6 +14,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
  /*  overflow-x: scroll;
    overflow-y: scroll;
    */
+   /* xap */
    overflow: auto;
    word-wrap: normal;
    white-space: pre;

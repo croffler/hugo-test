@@ -31,6 +31,7 @@ QuiesceDetails getQuiesceDetails();
 
 # Quiesce State Changed Listener
 A user defined component (a.k.a spring bean) in a processing unit is able to implement `QuiesceStateChangedListener` and to be aware of quiesce state changed events:
+
 ```java
 public class CustomComponent implements ... ,QuiesceStateChangedListener {
     ...
@@ -46,7 +47,6 @@ public class CustomComponent implements ... ,QuiesceStateChangedListener {
 # Use Cases Implementation Samples
 
 ```java
-
 QuiesceRequest request = new QuiesceRequest("Jacob: performing safe shutdown in 11:33 AM");
 QuiesceResult result = pu.quiesce(request);
 boolean quiesced = pu.waitFor(QuiesceState.QUIESCED, OPERATION_TIMEOUT, TimeUnit.MINUTES);
@@ -66,7 +66,8 @@ else {
 
 ```
 
-{{%info title="Rolling system upgrade on a live system"%}}{{%/info%}}
+{{%info title="Rolling system upgrade on a live system"%}}
+{{%/info%}}
 
 ```java
 QuiesceRequest request = new QuiesceRequest("Jacob: performing hot deploy in 11:33 AM");
