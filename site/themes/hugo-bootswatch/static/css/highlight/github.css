@@ -11,6 +11,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   color: #333;
   background: #f8f8f8;
   -webkit-text-size-adjust: none;
+
+    /* xap */
+     max-height:400px;
+     overflow: auto;
+     word-wrap: normal;
+     white-space: pre;
+     white-space: pre;
 }
 
 .hljs-comment,
