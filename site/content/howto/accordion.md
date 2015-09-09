@@ -178,68 +178,23 @@ properties    | no       | dict          | The properties of the node template m
 instances     | no       | dict          | Instances configuration.
 interfaces    | no       | interfaces    | Used for mapping plugins to [interfaces](dsl-spec-interfaces.html) operation or for specifying inputs for already mapped node type operations.
 relationships | no       | relationships | Used for specifying the [relationships](dsl-spec-relationships.html) this node template has with other node templates.
+
 {{%/tab%}}
-{{%/tabs"}}
+
+{{%tab table1%}}
+
+
+{{% note %}}
+```
+Note that this example uses the basic authentication configuration but, Shiro has various authenticator types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html)
+```
+{{% /note %}}
+
+
+{{%/tab%}}
+{{%/tabs%}}
 
 {{%/accord%}}
+
 {{%/accordion%}}
 
-
-<!--div class="row">
-    <div class="easyui-accordion" style="width:500px;height:300px;">
-            <div title="About" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
-            <h3 style="color:#0099FF;">Accordion for jQuery</h3>
-                <p>Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.</p>
-            </div>
-            <div title="Help" data-options="iconCls:'icon-help'" style="padding:10px;">
-
-             <div class="easyui-tabs"  >
-                     <div title="About" style="padding:10px">
-                         <p style="font-size:14px">jQuery EasyUI framework helps you build your web pages easily.</p>
-                         <ul>
-                             <li>easyui is a collection of user-interface plugin based on jQuery.</li>
-                             <li>easyui provides essential functionality for building modem, interactive, javascript applications.</li>
-                             <li>using easyui you don't need to write many javascript code, you usually defines user-interface by writing some HTML markup.</li>
-                             <li>complete framework for HTML5 web page.</li>
-                             <li>easyui save your time and scales while developing your products.</li>
-                             <li>easyui is very easy but powerful.</li>
-                         </ul>
-                     </div>
-                     <div title="My Documents" style="padding:10px">
-                         <ul class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true"></ul>
-                     </div>
-                     <div title="Help" data-options="iconCls:'icon-help',closable:true" style="padding:10px">
-                         This is the help content.
-                     </div>
-                 </div>
-            </div>
-            <div title="TreeMenu" data-options="iconCls:'icon-search'" style="padding:10px;">
-                <ul class="easyui-tree">
-                  <li>
-                    <span>Foods</span>
-                    <ul>
-                        <li>
-                            <span>Fruits</span>
-                            <ul>
-                                <li>apple</li>
-                                <li>orange</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span>Vegetables</span>
-                            <ul>
-                                <li>tomato</li>
-                                <li>carrot</li>
-                                <li>cabbage</li>
-                                <li>potato</li>
-                                <li>lettuce</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div-->
-
- 

@@ -4,12 +4,13 @@ Description = ""
 title = "Media"
 parent="cheetscheet.html"
 menu = "howto"
+weight= "700"
 +++
 
- 
 
 
 
+This page next{{%next%}}
 
 
 # Image

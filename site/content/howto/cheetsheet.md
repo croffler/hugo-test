@@ -78,7 +78,7 @@ This is a text {{%sub%}} small text should be here {{%/sub%}}
 
 # Text Alignment
 
-{{%align center%}} This text should be aligned in the center{{%/align%}}
+{{%align center%}} This text should be aligned in the center  This text should  be aligned in the center  This text should be aligned in the center {{%/align%}}
 
 {{%align right%}} This text should be aligned to the right{{%/align%}}
 

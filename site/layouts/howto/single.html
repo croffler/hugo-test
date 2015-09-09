@@ -21,6 +21,17 @@
 	<div class="col-lg-8">
 		<h1>{{ .Title }}</h1>
 		{{ .Content }}
+
+      <hr>
+        <ul class="pager">
+            {{ if .PrevInSection }}
+            <li class="next"><a href="{{.PrevInSection.Permalink}}">Next</a></li>
+            {{ end }}
+            {{ if .NextInSection }}
+            <li class="previous"><a href="{{.NextInSection.Permalink}}">Previous</a></li>
+
+            {{ end }}
+        </ul>
 	</div>
 
 
@@ -32,7 +43,13 @@
 
 
 
+
+
 </div>
+
+
+
+
 
 {{ partial "footer.html" . }}
 

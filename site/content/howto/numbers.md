@@ -3,7 +3,8 @@
 Description:
 title: Numbers
 
-version: 11.0
+version: 110
+weight: 800
 
 menu: howto
 ---
@@ -12,11 +13,15 @@ menu: howto
 
 # Site variables
 
-The latest XAP release is : {{<latestxaprelease>}} this is the latest release
+The latest XAP release is : ----{{<latestxaprelease>}}---- this is the latest release
 
 
-Current adm url : {{<currentadmurl>}}
+Current adm url : --{{<currentadmurl>}}hello.html dsdsadsad
 
-Current version : {{<currentversion>}}of XAP
+Current net url : --{{<currentneturl>}}1howto.html  sadsadsadsdsa
 
-Version : {{<version>}}of spring
+Current sec url : --{{<currentsecurl>}}1howto.html  sadsadsadsdsa
+
+Current version : --{{<currentversion>}}/of XAP
+
+Version : --{{<version>}}--of spring

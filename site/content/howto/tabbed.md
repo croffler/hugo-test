@@ -2,6 +2,7 @@
 ---
 title: Tabs test
 menu: howto
+weight: 110
 ---
 
 # Tabs

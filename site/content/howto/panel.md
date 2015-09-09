@@ -3,6 +3,7 @@
 Description = ""
 title = "Panels"
 menu = "howto"
+weight= "900"
 +++
  
 # Info panels
