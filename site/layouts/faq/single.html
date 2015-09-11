@@ -4,16 +4,49 @@
 
 <div class="container-fluid" style="padding-top:10px;min-height: 650px;">
 	<div class="col-lg-2" style="margin-left:10px; margin-top:100px;">
-		<nav class="sidebar-nav">
-			{{ $currentNode := . }}
-			{{ range .Site.Menus.faq }}
 
-				<li>
-					<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "faq" .) ($currentNode.HasMenuCurrent "faq" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+		<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+			<ul class="nav">
+				<li class="active"><a href="/faq">Home</a></li>
+
+				<li><a href="./installation.html">Installation</a></li>
+				<li><a href="./pojo-overview.html">POJO Support</a></li>
+				<li><a href="./document-overview.html">Space Document</a></li>
+				<li><a href="./modeling-your-data.html">Modeling your Data</a></li>
+				<li><a href="./the-gigaspace-interface-overview.html">The Space Interface</a></li>
+				<li><a href="./querying-the-space.html">Querying the Space</a></li>
+				<li><a href="./indexing-overview.html">Indexing</a></li>
+				<li><a href="./transaction-overview.html">Transactions</a></li>
+				<li><a href="./space-persistency-overview.html">Space Persistency</a></li>
+				<li><a href="./other-data-access-apis.html">Other Data Access APIs</a></li>
+				<li><a href="./client-side-caching.html">Client Side Caching</a></li>
+				<li><a href="./task-execution-overview.html">Task Execution</a></li>
+				<li><a href="./event-processing.html">Event Processing</a></li>
+				<li><a href="./space-based-remoting-overview.html">Space Based Remoting</a></li>
+				<li><a href="./mule-esb.html">Mule ESB Integration</a></li>
+				<li><a href="./big-data.html">Big Data Integration</a></li>
+				<li><a href="./administration-and-monitoring-overview.html">Admin API</a></li>
+				<li><a href="./the-processing-unit-overview.html">The Processing Unit</a></li>
+				<li><a href="./elastic-processing-unit-overview.html">Elastic Processing Unit</a></li>
+				<li><a href="./web-application-overview.html">Web Application Support</a></li>
+				<li><a href="./global-http-session-sharing-overview.html">Global HTTP Session Sharing</a></li>
+				<li><a href="./multi-space-replication-overview.html">Multi Site LAN Replication</a></li>
+				<li><a href="./multi-site-replication-overview.html">Multi Site WAN Replication</a></li>
+				<li><a href="./interoperability-overview.html">Platform Interoperability</a></li>
+
+				<li><a class="dropdown-toggle disabled " data-hover="dropdown" data-toggle="dropdown">Top Level Menu<b class="caret"></b></a></li>
+				<li><a href="#./installation.html" data-toggle="collapse" data-target="#sub1">Link 4 (submenu)<b class="caret"></b></a>
+					<ul href="#./installation.html" class="nav collapse" id="sub1">
+						<li><a href="#">Sub Link 1</a></li>
+						<li><a href="#">Sub Link 2</a></li>
+						<li><a href="#">Sub Link 3</a></li>
+					</ul>
 				</li>
+				<li><a href="#">Link 5</a></li>
+			</ul>
+		</div>
 
-			{{ end }}
-		</nav>
+
 	</div>
 
 

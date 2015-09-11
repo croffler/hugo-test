@@ -1,0 +1,60 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+
+<div class="container-fluid" style="padding-top:10px;min-height: 650px;">
+	<div class="col-lg-2" style="margin-left:10px; margin-top:100px;">
+
+		<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+			<ul class="nav">
+				<li class="active"><a href="/faq">Home</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+
+
+
+
+				<li><a href="#" data-toggle="collapse" data-target="#sub1">Link 4 (submenu)</a>
+					<ul class="nav collapse" id="sub1">
+						<li><a href="#">Sub Link 1</a></li>
+						<li><a href="#">Sub Link 2</a></li>
+						<li><a href="#">Sub Link 3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Link 5</a></li>
+			</ul>
+		</div>
+
+
+	</div>
+
+
+
+	<div class="col-lg-8">
+		<h1>{{ .Title }}</h1>
+		{{ .Content }}
+	</div>
+
+
+	<div id="toc" style=" margin-top:30px;margin-right:10px;margin-left:40;background:#f6f8f9" class="col-lg-2 toc {{ if gt (len .TableOfContents) 1 }}compact{{ end }}">
+		<center><h5>In This Page</h5></center>
+		{{ .TableOfContents }}
+	</div>
+
+
+
+
+</div>
+
+{{ partial "footer.html" . }}
+

@@ -10,7 +10,6 @@ weight= "700"
 
 
 
-This page next{{%next%}}
 
 
 # Image
