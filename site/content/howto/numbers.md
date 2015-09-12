@@ -11,17 +11,30 @@ menu: howto
  
 
 
-# Site variables
-
-The latest XAP release is : ----{{<latestxaprelease>}}---- this is the latest release
+# Current release
 
 
-Current adm url : --{{<currentadmurl>}}hello.html dsdsadsad
+Current adm url : >>>{{<currentadmurl>}}<<<
 
-Current net url : --{{<currentneturl>}}1howto.html  sadsadsadsdsa
+Current net url : >>>{{<currentneturl>}}<<<
 
-Current sec url : --{{<currentsecurl>}}1howto.html  sadsadsadsdsa
+Current sec url : >>>{{<currentsecurl>}}<<<
 
-Current version : --{{<currentversion>}}/of XAP
 
-Version : --{{<version>}}--of spring
+
+
+
+# Latest release
+
+Latest java url : >>>{{<latestjavaurl>}}<<<
+
+Latest adm url : >>>{{<latestadmurl>}}<<<
+
+Latest net url : >>>{{<latestneturl>}}<<<
+
+Latest sec url : >>>{{<latestsecurl>}}<<<
+
+
+# Current version
+
+Current version : >>{{<currentversion>}}<<of XAP

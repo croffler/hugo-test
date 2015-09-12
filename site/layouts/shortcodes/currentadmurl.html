@@ -1,1 +1,7 @@
-/xap{{.Page.Params.version}}adm/
+{{ if eq .Page.Permalink "97" }}/xap97adm/{{ end }}
+{{ if eq .Page.Permalink "100" }}/xap100adm/{{ end }}
+{{ if eq .Page.Permalink "101" }}/xap101adm/{{ end }}
+{{ if eq .Page.Permalink "102" }}/xap102adm/{{ end }}
+{{ if eq .Page.Permalink "110" }}/xap110adm/{{ end }}
+
+{{index .Page.Site.Params "latestadmurl"}}
