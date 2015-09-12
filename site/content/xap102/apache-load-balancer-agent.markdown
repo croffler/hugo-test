@@ -6,18 +6,9 @@ parent: web-application-overview.html
 weight: 400
 ---
 
-{{% section %}}
- {{% column width="10%" %}}
- ![counter-logo.jpg](/attachment_files/subject/loadbalancing.png)
- {{% /column %}}
- {{% column width="90%" %}}
- {{% ssummary %}} {{% /ssummary %}}
- {{% /column %}}
- {{% /section %}}
-
-
+{{% bannerleft "/attachment_files/subject/loadbalancing.png"%}}
 XAP comes with a built-in utility allowing you to dynamically update an Apache httpd web server load-balancing configuration, based on deployed web applications.
-
+{{%/bannerleft%}}
 
 
 

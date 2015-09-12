@@ -8,14 +8,11 @@ weight: 2250
 
 <br>
 
-{{% section %}}
-{{% column width="10%" %}}
-![counter-logo.jpg](/attachment_files/subject/httpsession.png)
-{{% /column %}}
-{{% column width="90%" %}}
+{{% bannerleft "/attachment_files/subject/httpsession.png"%}}
+
 With XAP you can share HTTP session data across multiple data centers, multiple web server instances or different types of web servers.
-{{% /column %}}
-{{% /section %}}
+{{% /bannerleft %}}
+
 
 {{% info title="Licensing "%}}
 This feature requires a separate license in addition to the XAP commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.

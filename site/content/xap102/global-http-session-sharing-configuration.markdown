@@ -125,7 +125,6 @@ The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below 
 
 
 ```ini
-
 [main]
 # space proxy wraper
 connector=com.gigaspaces.httpsession.SpaceConnector
@@ -192,7 +191,6 @@ securityManager.cacheManager=$cacheManager
 {{% note %}}Note that this example uses the basic authentication configuration but, Shiro has various authenticator types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html) {{% /note %}}
 
 ```ini
-
 [main]
 # space proxy wraper
 connector=com.gigaspaces.httpsession.SpaceConnector
@@ -319,7 +317,6 @@ In addition, you need to add the following in your web.xml file:
 
 
 ```xml
-
 <!-- Spring MVC -->
 <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -340,7 +337,6 @@ In addition, you need to add the following in your web.xml file:
     <filter-name>springSecurityFilterChain</filter-name>
     <url-pattern>/*</url-pattern>
 </filter-mapping>
-  
 ```
 
 {{%/accord%}}
