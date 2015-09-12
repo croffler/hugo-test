@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Troubleshooting
 categories: XAP102ADM
 parent: memoryxtend-ssd.html

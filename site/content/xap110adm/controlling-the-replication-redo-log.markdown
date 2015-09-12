@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Controlling the Replication Redo Log
 categories: XAP102ADM
 parent: replication.html

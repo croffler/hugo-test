@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Deploying REST service with Command Line
 categories: XAP102ADM
 parent: administration-tools.html
@@ -30,7 +30,7 @@ The processing unit's name will be `spacename`-rest unless the -puname [name] op
 
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 

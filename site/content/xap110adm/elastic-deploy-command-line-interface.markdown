@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Elastic Deployment with Command Line
 categories: XAP102ADM
 parent: administration-tools.html
@@ -29,7 +29,7 @@ To avoid such behavior, you should start your GSCs with zones and specifies thes
 {{% /note %}}
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 
@@ -137,7 +137,7 @@ gs> undeploy-application application_name
 Undeploys an [application]({{%currentjavaurl%}}/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies) from the service grid, while respecting pu dependency order.
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following undeploys the data-app example application (which includes a feeder and a processor).
@@ -182,7 +182,7 @@ The options' order is important as some overrides others
 {{% /note %}}
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following deploys an elastic space named mySpace with memory-capacity-per-container=32m and number-of-partitions=8.
@@ -250,7 +250,7 @@ The options' order is important as some overrides others
 {{% /note %}}
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following deploys an elastic stateless pu from file.
@@ -313,7 +313,7 @@ The following provisioning properties may be used with the `-dedicated-machine-p
 
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 The following deploys an elastic space named mySpace with zones [zone1,zone2] while taking into consideration a reserved 1536m memory per machine.
 
@@ -341,7 +341,7 @@ The following provisioning properties may be used with the `-shared-machine-prov
 
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following deploys an elastic space named mySpace with zones [zone1,zone2] while taking into consideration a reserved 1536m memory per machine.
@@ -371,7 +371,7 @@ The following deploys an elastic space named mySpace with zones [zone1,zone2] wh
 The following scale properties may be used with the `-scale [scale properties]` option in `deploy-elastic-space` and `deploy-elastic-pu` commands.
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following deploys an elastic stateful pu from file with `manual` scale strategy and `memory-capacity=128m`.
@@ -419,7 +419,7 @@ gs> scale [options] -name [processing unit name]
 Easily scale an already deployed elastic processing unit.
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
     gs> scale -name myspace -number-of-cpu-cores 2
@@ -455,7 +455,7 @@ gs> undeploy-pu pu_name
 Undeploys a processing unit from the service grid, while respecting pu dependency order.
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following undeploys the mySpace processing unit.

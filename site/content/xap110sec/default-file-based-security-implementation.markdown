@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Default File-Based Security
 categories: XAP102SEC
 parent: none

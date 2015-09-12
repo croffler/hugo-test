@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Limitations and Considerations
 categories: XAP102ADM
 parent: quiescemode.html

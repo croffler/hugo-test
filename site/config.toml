@@ -30,6 +30,11 @@ projectversion="3.1.0"
     name = "Blog"
     url = "/posts"
 
+[[menu.xap100]]
+    name = "Blog"
+    url = "/xap110"
+
+
 
 
 

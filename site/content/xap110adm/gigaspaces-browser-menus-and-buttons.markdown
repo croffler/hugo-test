@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Menus and Buttons
 categories: XAP102ADM
 parent: gigaspaces-management-center.html

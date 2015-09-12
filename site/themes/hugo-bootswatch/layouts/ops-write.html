@@ -1,0 +1,17 @@
+
+
+# Write
+
+The following example writes an `Employee` object into the space:
+
+```java
+
+    GigaSpace space = ....
+
+    Employee employee = new Employee("Last Name", new Integer(32));
+    employee.setFirstName("first name");
+    LeaseContext<Employee> lc = space.write(employee);
+```
+
+
+

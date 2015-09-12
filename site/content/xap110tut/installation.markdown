@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Installation
 categories:  XAP102TUT
 parent: none

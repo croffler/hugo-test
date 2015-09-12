@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Space Persistence
 categories: XAP102TUT
 weight: 1100

@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Quiesce Command Line
 categories: XAP102ADM
 parent: administration-tools.html
@@ -29,7 +29,7 @@ gs> quiesce [options] PU_NAME
 Sends a quiesce request to the GSM for the provided processing unit's name.
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 
 One option is to specify the processing unit's name in the command:
@@ -89,7 +89,7 @@ gs> unquiesce [options] PU_NAME
 Sends an unquiesce request to the GSM for the provided processing unit's name.
 
 {{%accordion%}}
-{{%accord title="**<u>Example</u>**"  %}}
+{{%accord title="Example"  %}}
 
 Like the quiesce command, the unquiesce command can be executed with a processing unit name;
 

@@ -4,23 +4,23 @@
 
 <div class="container-fluid" style="padding-top:10px;min-height: 650px;">
 
-	<div class="col-lg-2">
+    <div class="col-lg-2">
     </div>
-        <!--div class="col-lg-2">
-            <nav class="sidebar-nav">
-                {{ $currentNode := . }}
-                {{ range .Site.Menus.xap110 }}
-                <a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "xap110" .) ($currentNode.HasMenuCurrent "xap110" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
-                {{ end }}
-            </nav>
-         </div-->
+    <!--div class="col-lg-2">
+        <nav class="sidebar-nav">
+            {{ $currentNode := . }}
+            {{ range .Site.Menus.xap110 }}
+            <a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "xap110" .) ($currentNode.HasMenuCurrent "xap110" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+            {{ end }}
+        </nav>
+     </div-->
 
 
-	<div class="col-lg-8">
-		<h1>{{ .Title }}</h1>
-		{{ .Content }}
+    <div class="col-lg-8">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
 
-        <hr>
+        <!--hr>
         <ul class="pager">
             {{ if .PrevInSection }}
             <li class="next"><a href="{{.PrevInSection.Permalink}}">Next</a></li>
@@ -29,54 +29,17 @@
             <li class="previous"><a href="{{.NextInSection.Permalink}}">Previous</a></li>
 
             {{ end }}
-        </ul>
-	</div>
+        </ul-->
+    </div>
 
 
-	<!--div id="toc" style=" margin-top:30px;margin-right:10px;margin-left:40;background:#f6f8f9" class="col-lg-2 toc {{ if gt (len .TableOfContents) 1 }}compact{{ end }}">
-		<center><h5> In This Article</h5></center>
-		{{ .TableOfContents }}
-	</div-->
- 
-
+    <!--div id="toc" style=" margin-top:30px;margin-right:10px;margin-left:40;background:#f6f8f9" class="col-lg-2 toc {{ if gt (len .TableOfContents) 1 }}compact{{ end }}">
+        <center><h5> In This Article</h5></center>
+        {{ .TableOfContents }}
+    </div-->
 
 
 </div>
 
 {{ partial "footer.html" . }}
 
- 
-
-<!--
- <div class="container">
-        <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-       
- 
-	<div class="col-lg-8 col-md-12">
-    	<nav class="sidebar-nav">
-        	{{ $currentNode := . }}
-        	{{ range .Site.Menus.main }}
-        	<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
-        	{{ end }}
-    	</nav>
- 	</div>
-
- 
-	<div class="col-lg-8 col-md-12">
-		{{ .Content }}
-	</div>
-
-
-	<div id="toc" class="col-lg-offset-6 toc {{ if gt (len .TableOfContents) 2500 }}compact{{ end }}">
-		<h5> On this page </h5>
-		{{ .TableOfContents }}
-	</div>
- 
-
-
-</div>
-
-
-
-{{ partial "footer.html" . }}
--->

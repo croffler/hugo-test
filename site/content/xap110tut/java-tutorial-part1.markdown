@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Interacting with the Space
 categories: XAP102TUT
 weight: 500

@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Service Level Agreement
 categories: XAP102ADM
 weight: 350

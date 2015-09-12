@@ -4,7 +4,7 @@ title:  XAP Community
 categories: FAQ
 weight: 200
 parent: none
-menu: faq
+
 ---
 
 

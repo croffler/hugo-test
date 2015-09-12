@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Network Configuration
 categories: XAP102ADM
 parent: none

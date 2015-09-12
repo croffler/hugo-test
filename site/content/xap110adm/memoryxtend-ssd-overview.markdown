@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Overview
 categories: XAP102ADM
 parent: memoryxtend-ssd.html
@@ -476,7 +476,7 @@ Flash statistics:
 	num_put_ops = 2188567
 	flash_space_allocated = 1409286144
 	flash_space_consumed = 36186112
-Flash layout:
+Flash type:
 	flash_class_map 27 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 	flash_slab_map 1705845 461327 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 Application requests:

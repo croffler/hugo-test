@@ -1,5 +1,5 @@
 ---
-layout: post102
+type:
 title:  Deployment and Administration
 categories: XAP102ADM
 
@@ -7,14 +7,9 @@ categories: XAP102ADM
 
 <br>
 
-{{%section%}}
-{{%column width="20%" %}}
-<img src="/attachment_files/subject/management.png" width="80" height="80">
-{{%/column%}}
-{{%column width="80%" %}}
+{{%bannerleft "/attachment_files/subject/management.png"  %}}
 The Administrator's Guide will introduce you to the Management Center and Web Management Console which are used to deploy, configure and monitor XAP components. It also provides guidelines on how to setup your network and how to troubleshoot your XAP application.
-{{%/column%}}
-{{%/section%}}
+{{%/bannerleft%}}
 
 <br>
 

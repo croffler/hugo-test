@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Grid Services
 categories: XAP102SEC
 parent: securing-xap-components.html

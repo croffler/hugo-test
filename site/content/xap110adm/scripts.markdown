@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Scripts
 categories: XAP102ADM
 parent: administration-tools.html

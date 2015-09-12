@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Overview
 categories: XAP102ADM
 parent: web-management-console.html

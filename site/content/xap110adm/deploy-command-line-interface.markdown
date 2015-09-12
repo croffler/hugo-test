@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Deploy with Command Line
 categories: XAP102ADM
 parent: administration-tools.html
@@ -24,7 +24,7 @@ gs> deploy-application [-user xxx -password yyy] [-secured true/false] applicati
 
 #### Description
 
-Deploys an [application]({{%currentjavaurl%}}/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies), which deploys one or more processing units in dependency order onto the service grid.
+Deploys an [application](./deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies), which deploys one or more processing units in dependency order onto the service grid.
 
 
 #### Options
@@ -110,7 +110,7 @@ Undeploys an [application]({{%currentjavaurl%}}/deploying-onto-the-service-grid.
 
 
 {{%accordion%}}
-{{%accord title="**Example**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following undeploys the data-app example application (which includes a feeder and a processor).
@@ -177,7 +177,7 @@ You may use the [Primary-Backup Zone Controller](/sbp/primary-backup-zone-contro
 {{% /tip %}}
 
 {{%accordion%}}
-{{%accord title="**Example**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following deploys a processing unit jar file named `data-processor.jar` using the `sync_replicated` cluster schema with 2 instances (`total_members`).
@@ -259,7 +259,7 @@ Undeploys an [application]({{%currentjavaurl%}}/deploying-onto-the-service-grid.
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {{%accordion%}}
-{{%accord title="**Example**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following undeploys the data-app example application (which includes a feeder and a processor).
@@ -305,7 +305,7 @@ You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 {{% /tip %}}
 
 {{%accordion%}}
-{{%accord title="**Example**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following deploys a memcached-enabled space named `mySpace` using the `partitioned-sync2backup` cluster schema with 2 primaries and 1 primary per backup.
@@ -353,7 +353,7 @@ You may use the [Primary-Backup Zone Controller](/sbp/primary-backup-zone-contro
 {{% /tip %}}
 
 {{%accordion%}}
-{{%accord title="**Example**"  %}}
+{{%accord title="Example"  %}}
 
 
 The following deploys a space named `mySpace` using the `sync_replicated` cluster schema with 2 instances (`total_members`).

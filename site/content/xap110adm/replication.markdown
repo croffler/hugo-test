@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Replication
 categories: XAP102ADM
 parent: data-grid-clustering.html

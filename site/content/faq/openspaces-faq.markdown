@@ -4,7 +4,7 @@ title:  OpenSpaces
 categories: FAQ
 weight: 100
 parent: none
-menu: faq
+
 ---
 
 {{% wbr %}}

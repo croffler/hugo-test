@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Command Line Interface
 categories: XAP102SEC
 parent: security-administration.html

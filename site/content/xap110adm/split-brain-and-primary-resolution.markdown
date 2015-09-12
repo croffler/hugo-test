@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Split Brain and Primary Resolution
 categories: XAP102ADM
 parent: data-grid-clustering.html

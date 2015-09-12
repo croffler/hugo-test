@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Is Multicast Available
 categories: XAP102ADM
 parent: network-multicast.html

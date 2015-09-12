@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Query View
 categories: XAP102ADM
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html

@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Securing Components
 categories: XAP102SEC
 parent: none

@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Directory Management
 categories: XAP102SEC
 parent: none

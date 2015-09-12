@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Predefined Metrics
 categories: XAP102ADM
 parent: metrics-overview.html

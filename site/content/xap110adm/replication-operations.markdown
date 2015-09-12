@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Replication Operations
 categories: XAP102ADM
 parent: replication.html

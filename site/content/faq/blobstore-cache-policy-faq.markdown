@@ -4,7 +4,7 @@ title:  Flash Drive Storage - MemoryXtend for SSD FAQ
 categories: FAQ
 parent: none
 weight: 400
-menu: faq
+
 ---
 
 {{%wbr%}}

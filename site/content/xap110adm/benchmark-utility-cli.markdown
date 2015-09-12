@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Utility
 categories: XAP102ADM
 parent: benchmarking.html

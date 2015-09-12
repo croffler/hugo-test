@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Concepts
 categories: XAP102SEC
 parent: none

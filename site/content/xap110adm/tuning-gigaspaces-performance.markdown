@@ -1,5 +1,5 @@
 ---
-layout: post102
+type: post110
 title:  Tuning XAP
 categories: XAP102ADM
 parent:  tuning-gigaspaces-performance-overview.html
