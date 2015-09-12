@@ -42,7 +42,7 @@ The below table describes backwards compatibility support in XAP 10.0:
 
 ## OpenSpaces
 
-FIXTABLE
+
 |Delivery|XAP API/Configuration|XAP Binaries|Client-Server|Server-Server|
 |:----|:--------|:----------------|:---------------|:------------------|
 |Patch  | YES| YES |   YES   |  YES |
