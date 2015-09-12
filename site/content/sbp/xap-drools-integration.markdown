@@ -148,7 +148,7 @@ Some main methods allow for you to pass arguments
 
 Here is a list of the functional processes by category:<br>
 
- 
+
 |Category| Function|
 |:--------|:--------|
 |Analyze  | PrintOutAllKnowledgePackages <br>PrintOutSingleKnowledgePackage |
