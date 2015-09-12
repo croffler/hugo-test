@@ -8,14 +8,10 @@ weight: 200
 
 <br>
 
-{{%section%}}
-{{%column width="10%" %}}
-![apis.png](/attachment_files/subject/cpp.png)
-{{%/column%}}
-{{%column width="90%" %}}
+{{%bannerleft "/attachment_files/subject/cpp.png" %}}
+
 The XAP c++ API has been designed to allow the same level of flexibility, usability and interoperability of the Java [POJO](./pojo-support.html) counterpart API for building scalable, low-latency SBA applications.
-{{%/column%}}
-{{%/section%}}
+{{%/bannerleft%}}
 
 <br>
 
