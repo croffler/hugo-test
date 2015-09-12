@@ -6,14 +6,10 @@ categories: XAP102
 
 {{%wbr%}}
 
-{{%section%}}
-{{%column width="15%" %}}
-<img src="/attachment_files/subject/imc.png" width="80" height="80">
-{{%/column%}}
-{{%column width="85%" %}}
+{{%bannerleft "/attachment_files/subject/imc.png" %}}
 This guide introduces the key concepts for building XAP applications. The topics in this guide span installation, tutorials, the XAP API, Processing Unit, web application support, Space replication, platform interoperability and security.
-{{%/column%}}
-{{%/section%}}
+{{%/bannerleft%}}
+
 
 {{%wbr%}}
 
