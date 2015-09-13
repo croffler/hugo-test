@@ -1,7 +1,8 @@
-{{ if eq .Page.Permalink "97" }}/xap97sec/{{ end }}
-{{ if eq .Page.Permalink "100" }}/xap100sec/{{ end }}
-{{ if eq .Page.Permalink "101" }}/xap101sec/{{ end }}
-{{ if eq .Page.Permalink "102" }}/xap102sec/{{ end }}
-{{ if eq .Page.Permalink "110" }}/xap110sec/{{ end }}
-
-{{index .Page.Site.Params "latestsecmurl"}}
+{{ if in .Page.Permalink "xap97" }}      {{ "/xap97sec/"}}
+{{ else if in .Page.Permalink "xap100" }}{{ "/xap100sec/" }}
+{{ else if in .Page.Permalink "xap101" }}{{ "/xap101sec/"}}
+{{ else if in .Page.Permalink "xap102" }}{{ "/xap102sec/"}}
+{{ else if in .Page.Permalink "xap110" }}{{ "/xap110sec/"}}
+{{ else }}
+{{.Page.Site.Params.latestsecurl}}
+{{ end }}

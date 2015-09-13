@@ -119,7 +119,7 @@ public class Person {
 }
 ```
 
-{{%learn "./storage-types---controlling-serialization.html"%}}
+{{%learn "./storage-types-controlling-serialization.html"%}}
 
 # Replication
 
@@ -142,7 +142,7 @@ public class Person {
 
 
 
-{{%learn "currentadmurl/replication.html"%}}
+{{%learn "{{%currentadmurl%}}/replication.html"%}}
 
 
 # Compound Index

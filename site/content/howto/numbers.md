@@ -13,12 +13,13 @@ menu: howto
 
 # Current release
 
+Current java url : >>>{{%currentjavaurl%}}<<<
 
-Current adm url : >>>{{<currentadmurl>}}<<<
+Current adm url : >>>{{%currentadmurl%}}<<<
 
-Current net url : >>>{{<currentneturl>}}<<<
+Current net url : >>>{{%currentneturl%}}<<<
 
-Current sec url : >>>{{<currentsecurl>}}<<<
+Current sec url : >>>{{%currentsecurl%}}<<<
 
 
 
