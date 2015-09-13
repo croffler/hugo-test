@@ -49,9 +49,7 @@ Version : {{<version>}}of spring
 
 {{%tryit "http://docs.gigaspaces.com"%}}
 
-{{%learn "http://docs.gigaspaces.com"%}}
-
-
+{{%learn "{{%currentjavaurl%}}notify-container.html" %}}
 
 
 # Color

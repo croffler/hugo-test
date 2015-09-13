@@ -3,7 +3,7 @@
 Description:
 title: Numbers
 
-version: 110
+
 weight: 800
 
 menu: howto

@@ -1,5 +1,5 @@
 ---
-type: post102
+type: post110
 title:  The Processing Unit
 categories: XAP102TUT
 weight: 900
@@ -119,12 +119,12 @@ Here is an example of a pu.xml file:
    xsi:schemaLocation="
    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{{%version spring%}}.xsd
-   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/10.2/core/openspaces-core.xsd
-   http://www.openspaces.org/schema/events http://www.openspaces.org/schema/10.2/events/openspaces-events.xsd
-   http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/10.2/remoting/openspaces-remoting.xsd
-   http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/10.2/sla/openspaces-sla.xsd">
+   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{{<currentversion>}}/core/openspaces-core.xsd
+   http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{{<currentversion>}}/events/openspaces-events.xsd
+   http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{{<currentversion>}}/remoting/openspaces-remoting.xsd
+   http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{{<currentversion>}}/sla/openspaces-sla.xsd">
 
-    <!-- Enables to configure Spring beans through annotations-->
+    <!-- Enables to configure Spring beans through annotations   -->
     <context:annotation-config />
 
     <!-- Enable @PostPrimary and others annotation support. -->
@@ -165,7 +165,7 @@ A sample SLA definition is shown below:
        xmlns:os-sla="http://www.openspaces.org/schema/sla"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd
-       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/10.2/sla/openspaces-sla.xsd">
+       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{{% currentversion %}}/sla/openspaces-sla.xsd">
 
       <os-sla:sla cluster-schema="partitioned-sync2backup"
             number-of-instances="2" number-of-backups="1"

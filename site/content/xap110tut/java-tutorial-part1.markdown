@@ -1,5 +1,5 @@
 ---
-type: post102
+type: post110
 title:  Interacting with the Space
 categories: XAP102TUT
 weight: 500
@@ -657,7 +657,7 @@ Lets look at a Spring configuration file that represents the creation of an embe
 	xsi:schemaLocation="
    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{{%version spring%}}.xsd
-   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/10.2/core/openspaces-core.xsd>
+   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{{% currentversion %}}/core/openspaces-core.xsd>
 
 	<!-- Scan the packages for annotations / -->
 	<context:component-scan base-package="xap" />
