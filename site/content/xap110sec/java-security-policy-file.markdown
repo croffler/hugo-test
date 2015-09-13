@@ -27,7 +27,7 @@ GigaSpaces includes default security permissions, based on the above settings. T
 **Flat File Structure** -- the `policy.all` file can be moved under the `<XAP Root>` directory, if you want to maintain a flat file structure -- where configuration, jar, and security files can be organized under the `<XAP Root>` folder, or under their main folder without having sub-folders.
 
 {{%refer%}}
-For more details on Java security, refer to: [Sun;Default Policy Implementation and Policy File Syntax](http://docs.oracle.com/javase/{{%version java-version%}}/docs/technotes/guides/security/PolicyFiles.html).
+For more details on Java security, refer to: [Sun;Default Policy Implementation and Policy File Syntax](http://docs.oracle.com/javase/{{%version "java-version"%}}/docs/technotes/guides/security/PolicyFiles.html).
 {{%/refer%}}
 
 

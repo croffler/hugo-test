@@ -209,5 +209,5 @@ The `pu-common` directory may contain a jar file with a manifest file as describ
 1. Only file URLs are supported. (i.e http, etc... will be ignored)
 
 {{%refer%}}
-Further details about the manifest file can be found [here](http://docs.oracle.com/javase/{{%version java-version%}}/docs/technotes/guides/jar/jar.html#JAR%20Manifest).
+Further details about the manifest file can be found [here](http://docs.oracle.com/javase/{{%version "java-version"%}}/docs/technotes/guides/jar/jar.html#JAR%20Manifest).
 {{%/refer%}}

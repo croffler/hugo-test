@@ -26,7 +26,7 @@ The current supported platforms and compilers are:
 
 
 ```console
-tar -xzvf gigaspaces-cpp-{{%version xap-version %}}-ga-linux-amd64-gcc-4.1.2.tar.gz
+tar -xzvf gigaspaces-cpp-{{%version "xap-version" %}}-ga-linux-amd64-gcc-4.1.2.tar.gz
 ```
 
 Where the `gigaspaces-cpp-9.X.X-ga-linux-amd64-gcc-4.1.2.tar.gz` should be located at the `/gigaspaces-xap-premium-9.X.X-ga` folder.
@@ -59,7 +59,7 @@ For example:
 
 
 ```console
-set JSHOMEDIR=C:\{{%version gshome-directory %}}
+set JSHOMEDIR=C:\{{%version "gshome-directory" %}}
 set PLATFORM=win32
 set COMPILER=VS9.0
 ```

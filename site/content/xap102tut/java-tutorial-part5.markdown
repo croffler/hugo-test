@@ -117,8 +117,8 @@ Here is an example of a pu.xml file:
    xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
    xmlns:os-sla="http://www.openspaces.org/schema/sla"
    xsi:schemaLocation="
-   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd
-   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{{%version spring%}}.xsd
+   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version "spring"%}}.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{{%version "spring"%}}.xsd
    http://www.openspaces.org/schema/core http://www.openspaces.org/schema/10.2/core/openspaces-core.xsd
    http://www.openspaces.org/schema/events http://www.openspaces.org/schema/10.2/events/openspaces-events.xsd
    http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/10.2/remoting/openspaces-remoting.xsd
@@ -164,7 +164,7 @@ A sample SLA definition is shown below:
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-sla="http://www.openspaces.org/schema/sla"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-	   http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd
+	   http://www.springframework.org/schema/beans/spring-beans-{{%version "spring"%}}.xsd
        http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/10.2/sla/openspaces-sla.xsd">
 
       <os-sla:sla cluster-schema="partitioned-sync2backup"
@@ -230,8 +230,8 @@ In this step will create the configuration file for the PU deployment
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla"
 	xsi:schemaLocation="
-   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd
-   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{{%version spring%}}.xsd
+   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version "spring"%}}.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{{%version "spring"%}}.xsd
    http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{{% currentversion %}}/core/openspaces-core.xsd
    http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{{% currentversion %}}/events/openspaces-events.xsd
    http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{{% currentversion %}}/remoting/openspaces-remoting.xsd

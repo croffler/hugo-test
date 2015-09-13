@@ -204,7 +204,7 @@ For example:
 <dependency>
 	<groupId>com.gigaspaces</groupId>
 	<artifactId>gs-openspaces</artifactId>
-	<version>{{%version maven-version %}}</version>
+	<version>{{%version "maven-version" %}}</version>
 	<exclusions>
 		<exclusion>
 			<groupId>org.eclipse.jetty.aggregate</groupId>
@@ -557,7 +557,7 @@ With this version the connector configuration has changed. Here is a complete ex
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version "spring"%}}.xsd">
 
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="ignoreUnresolvablePlaceholders" value="true"/>

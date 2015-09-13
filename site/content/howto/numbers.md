@@ -44,4 +44,6 @@ Current version : >>{{<currentversion>}}<<of XAP
 
 # Current versions for jars
 
-Java version : >>>{{%version "java-version" %}}<<<
+Spring version : >>>{{%version "spring" %}}<<<
+
+File release : >>>{{%version "build-filename" %}}<<<

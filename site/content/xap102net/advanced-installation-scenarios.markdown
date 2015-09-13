@@ -31,7 +31,7 @@ Mixing XAP.NET and XAP versions is not supported - always use the same version a
 Yes. From the command line, type the following:
 
 ```xml
-C:\>msiexec /i {{%version msi-filename %}} /quiet
+C:\>msiexec /i {{%version "msi-filename" %}} /quiet
 ```
 
 {{% refer %}}

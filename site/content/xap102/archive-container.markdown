@@ -96,7 +96,6 @@ public class ExpiredTweetsArchiveContainer {
 
 
 ```xml
-
 <os-core:embedded-space id="space" name="space" />
 
 <os-core:distributed-tx-manager id="transactionManager" space="space"/>
@@ -143,7 +142,6 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 
 
 ```xml
-
 <bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
     <property name="name" value="space" />
 </bean>
@@ -186,7 +184,6 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 
 
 ```java
-
 TransactionManager txManager = new DistributedJiniTxManagerConfigurer().transactionManager();
 EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(txManager).create();
@@ -275,7 +272,6 @@ public class ProcessedTweetsFilter {
 
 
 ```xml
-
 <os-archive:archive-container
   id="archiveContainer"
   giga-space="gigaSpace"
@@ -294,7 +290,6 @@ public class ProcessedTweetsFilter {
 
 
 ```xml
-
 <bean id="archiveContainer" class="org.openspaces.archive.ArchivePollingContainer">
 
     <property name="gigaSpace" ref="gigaSpace" />
@@ -383,7 +378,6 @@ public class ExpiredTweetsFilter {
 
 
 ```xml
-
 <os-archive:archive-container id="archiveContainer" giga-space="gigaSpace" batch-size="100"
                              concurrent-consumers="3" max-concurrent-consumers="5" useFifoGrouping="true" >
     <!-- ... -->
@@ -395,7 +389,6 @@ public class ExpiredTweetsFilter {
 
 
 ```xml
-
 <bean id="archiveContainer" class="org.openspaces.archive.ArchivePollingContainer">
     <property name="batchSize" value="100" />
 	<property name="concurrentConsumers" value="3" />
@@ -423,8 +416,8 @@ public class ExpiredTweetsFilter {
 	xmlns:os-core="http://www.openspaces.org/schema/core"
 	xmlns:os-events="http://www.openspaces.org/schema/events"
 	xmlns:os-archive="http://www.openspaces.org/schema/archive"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{{%version spring%}}.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version "spring"%}}.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{{%version "spring"%}}.xsd
 	http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{{%currentversion%}}/core/openspaces-core.xsd
 	http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{{%currentversion%}}/events/openspaces-events.xsd
 	http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/{{%currentversion%}}/archive/openspaces-archive.xsd">

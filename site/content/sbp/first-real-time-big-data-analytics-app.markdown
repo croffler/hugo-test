@@ -139,12 +139,12 @@ The application uses [Apache Maven](http://maven.apache.org/). If you don't have
 
 4. Building the Application
 Move to the `<applicationRoot>` folder (contains the application's project files).
-Edit the pom.xml file and make sure the <gsVersion> include the correct   XAP release you have installed. For example if you have XAP {{%version xap-version %}} installed you should have the following:
+Edit the pom.xml file and make sure the <gsVersion> include the correct   XAP release you have installed. For example if you have XAP {{%version "xap-version" %}} installed you should have the following:
 
 
 ```console
 <properties>
-	<gsVersion>{{%version maven-version %}}</gsVersion>
+	<gsVersion>{{%version "maven-version" %}}</gsVersion>
 </properties>
 ```
 
@@ -224,7 +224,7 @@ Once the project is loaded in your IDE, you can run the application, as follows:
 
 - In **Eclipse**, create two run configurations. One for the **feeder** and one for the **processor**. For both, the main class must be [`org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer`](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/org/openspaces/pu/container/integrated/IntegratedProcessingUnitContainer.html).
 Configure the GigaSpaces home folder using the **com.gs.home** system property:
-`-Dcom.gs.home="c:\{{%version gshome-directory %}}"`
+`-Dcom.gs.home="c:\{{%version "gshome-directory" %}}"`
 Configure the active spring profiles using the **spring.profiles.active** system property:
 `-Dspring.profiles.active=list-feeder,file-archiver`
 
@@ -404,7 +404,7 @@ You should see the following output:
 
 
 ```console
-Deploying [rt-analytics-processor.jar] with name [rt-processor-XAP-{{% currentversion %}}] under groups [{{%version default-lookup-group %}}] and locators []
+Deploying [rt-analytics-processor.jar] with name [rt-processor-XAP-{{% currentversion %}}] under groups [{{%version "default-lookup-group" %}}] and locators []
 Uploading [rt-analytics-processor] to [http://127.0.0.1:61765/]
 Waiting indefinitely for [4] processing unit instances to be deployed...
 [rt-analytics-processor] [1] deployed successfully on [127.0.0.1]
@@ -443,7 +443,7 @@ You should see the following output:
 
 
 ```java
-Deploying [rt-analytics-feeder.jar] with name [rt-analytics-feeder] under groups [{{%version default-lookup-group %}}] and locators []
+Deploying [rt-analytics-feeder.jar] with name [rt-analytics-feeder] under groups [{{%version "default-lookup-group" %}}] and locators []
 Uploading [rt-analytics-feeder] to [http://127.0.0.1:61765/]
 SLA Not Found in PU.  Using Default SLA.
 Waiting indefinitely for [1] processing unit instances to be deployed...

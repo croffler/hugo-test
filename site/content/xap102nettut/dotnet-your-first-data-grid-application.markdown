@@ -52,7 +52,7 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 ### Setting up your IDE
 
-Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{{%version gshome-net-directory %}}\NET v4.0\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
+Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{{%version "gshome-net-directory" %}}\NET v4.0\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
 
 {{%accordion%}}
 {{%accord title="How to create a XAP.NET Project in Visual Studio"%}}
@@ -61,7 +61,7 @@ Launch Visual Studio, create a new C# *Console Application* and add a reference 
 3. In the **Name** test box, type **XapDemo**. If you wish, change the default location to a path you prefer.
 4. Select **OK** to continue. Visual Studio creates the project and opens the automatically generated `program.cs` file.
 5. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
-6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{{%version gshome-net-directory %}}\NET v4.0**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
+6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{{%version "gshome-net-directory" %}}\NET v4.0**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
 7. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
 
 {{%/accord%}}

@@ -42,7 +42,7 @@ Once you have downloaded the distribution, start the installation by double-clic
 
 ![data-access.jpg](/attachment_files/dotnet/dotnet-installer.png)
 
-The default product location is **C:\GigaSpaces\XAP.NET \{Version\} \{Platform\}** (For example: C:\{{%version gshome-net-directory%}}). This convention supports side-by-side installation of different versions and platforms (x86, x64) of XAP.NET.
+The default product location is **C:\GigaSpaces\XAP.NET \{Version\} \{Platform\}** (For example: C:\{{%version "gshome-net-directory"%}}). This convention supports side-by-side installation of different versions and platforms (x86, x64) of XAP.NET.
 
 ![data-access.jpg](/attachment_files/dotnet/dotnet-file-structure.png)
 

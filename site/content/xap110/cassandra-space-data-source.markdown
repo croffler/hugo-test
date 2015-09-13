@@ -29,25 +29,25 @@ include the following in your `pom.xml`
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-clientutil</artifactId>
-    <version>{{%version cassandra-clientutil%}}</version>
+    <version>{{%version "cassandra-clientutil"%}}</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-thrift</artifactId>
-    <version>{{%version cassandra-thrift%}}</version>
+    <version>{{%version "cassandra-thrift"%}}</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-jdbc</artifactId>
-    <version>{{%version cassandra-jdbc%}}</version>
+    <version>{{%version "cassandra-jdbc"%}}</version>
 </dependency>
 
 <dependency>
     <groupId>org.hectorclient</groupId>
     <artifactId>hector-core</artifactId>
-    <version>{{%version hector-core%}}</version>
+    <version>{{%version "hector-core"%}}</version>
 </dependency>
 ```
 
@@ -65,7 +65,7 @@ also asynchronously persists the data using a mirror (see [Cassandra Space Synch
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-core="http://www.openspaces.org/schema/core"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version spring%}}.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{{%version "spring"%}}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{{% currentversion %}}/core/openspaces-core.xsd">
 
     <bean id="propertiesConfigurer"

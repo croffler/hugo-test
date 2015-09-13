@@ -71,12 +71,12 @@ This installs the XAP libraries and the XAP Maven plugin into the local Maven re
 <dependency>
   <artifactId>gs-runtime</artifactId>
   <groupId>com.gigaspaces</groupId>
-  <version>{{%version maven-version %}}</version>
+  <version>{{%version "maven-version" %}}</version>
 </dependency>
 <dependency>
   <artifactId>gs-openspaces</artifactId>
   <groupId>com.gigaspaces</groupId>
-  <version>{{%version maven-version %}}</version>
+  <version>{{%version "maven-version" %}}</version>
 </dependency>
 ```
 

@@ -8,7 +8,7 @@ weight: 400
 
 
 
-The Local View/Cache JMX Monitor monitors the number of objects stored within the client side cache and the activities performed with it. You can use [JConsole](http://docs.oracle.com/javase/{{%version java-version%}}/docs/technotes/guides/management/jconsole.html) to graph the number of objects within the local view/cache and other exposed statistics while the application is running. The Local View/Cache JMX Monitor exposing the following statistics:
+The Local View/Cache JMX Monitor monitors the number of objects stored within the client side cache and the activities performed with it. You can use [JConsole](http://docs.oracle.com/javase/{{%version "java-version"%}}/docs/technotes/guides/management/jconsole.html) to graph the number of objects within the local view/cache and other exposed statistics while the application is running. The Local View/Cache JMX Monitor exposing the following statistics:
 
 - Object Count
 - Read Count, Take Count, Write Count, Update Count

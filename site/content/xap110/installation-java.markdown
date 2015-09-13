@@ -34,7 +34,7 @@ Use a JDK and not JRE - Have a JDK (Java Development Kit) installed and not a JR
 
 # Installing on Windows
 
-Unzip the ZIP file using your favorite unzip tool (e.g., WinZip) to the location of your choice (`c:\` or `d:\` recommended - `C:\Program Files` is NOT recommended as it include a space as part of the folder name). Unzipping the file creates a `<XAP Root>` directory (e.g. `{{%version gshome-directory%}}`) with the following files and folders:
+Unzip the ZIP file using your favorite unzip tool (e.g., WinZip) to the location of your choice (`c:\` or `d:\` recommended - `C:\Program Files` is NOT recommended as it include a space as part of the folder name). Unzipping the file creates a `<XAP Root>` directory (e.g. `{{%version "gshome-directory"%}}`) with the following files and folders:
 
 ![win_dirtree_XAP95.jpg](/attachment_files/win_dirtree_XAP95.jpg)
 
@@ -50,7 +50,7 @@ Step 1. Navigate into the directory where you want to install GigaSpaces XAP, e.
 
 
 ```java
-unzip {{%version build-filename %}}
+unzip {{%version "build-filename" %}}
 ```
 
 Step 2. Make sure all `sh` file(s) in the `/bin` and the `/examples` directory are in executable mode, meaning you can run them from your machine. To check this, use the `ls \-all` command for the relevant directory, and make sure that `x` is included in the file permissions.

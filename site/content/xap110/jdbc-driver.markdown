@@ -378,7 +378,7 @@ When using the SQL `like` operator you may use the following:
 `%` - match any string of any length (including zero length)
 `_` - match on a single character
 
-Querying the space using the [Java Regular Expression](http://docs.oracle.com/javase/{{%version java-version%}}/docs/api/java/util/regex/Pattern.html) provides more options than the SQL `like` operator. The Query syntax is done using the `rlike` operator.
+Querying the space using the [Java Regular Expression](http://docs.oracle.com/javase/{{%version "java-version"%}}/docs/api/java/util/regex/Pattern.html) provides more options than the SQL `like` operator. The Query syntax is done using the `rlike` operator.
 
 When you search for space objects with String fields that includes a **single quote** your query should use Parameterized Query - with the following we are searching for all `Data` objects that include the value `today's` with their `myTextField`:
 

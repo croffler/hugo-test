@@ -28,11 +28,11 @@ The application sources and build scripts can be downloaded {{%git "https://gith
 
 - cd to the root directory of the application
 - Edit the value of the `gsVersion` property in the `pom.xml` file at the root directory to reflect the GigaSpaces build you're using (this is the build number that the Maven plugin installation script outputs to the console when invoked).
-For example, if you are using GigaSpaces XAP {{%version xap-version %}} you should modify the `pom.xml` to have:
+For example, if you are using GigaSpaces XAP {{%version "xap-version" %}} you should modify the `pom.xml` to have:
 
 
 ```xml
-<gsVersion>{{%version maven-version %}}</gsVersion>
+<gsVersion>{{%version "maven-version" %}}</gsVersion>
 ```
 
 - Run the following Maven command:

@@ -35,19 +35,19 @@ Include the following in your `pom.xml`
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-clientutil</artifactId>
-    <version>{{%version cassandra-clientutil%}}</version>
+    <version>{{%version "cassandra-clientutil"%}}</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-thrift</artifactId>
-    <version>{{%version cassandra-thrift%}}</version>
+    <version>{{%version "cassandra-thrift"%}}</version>
 </dependency>
 
 <dependency>
     <groupId>org.hectorclient</groupId>
     <artifactId>hector-core</artifactId>
-    <version>{{%version hector-core%}}</version>
+    <version>{{%version "hector-core"%}}</version>
 </dependency>
 ```
 
@@ -59,19 +59,19 @@ Include the following in your `pom.xml`
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-clientutil</artifactId>
-    <version>{{%version cassandra-clientutil%}}</version>
+    <version>{{%version "cassandra-clientutil"%}}</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-thrift</artifactId>
-    <version>version cassandra-thrift%}}</version>
+    <version>{{%version "cassandra-thrift"%}}</version>
 </dependency>
 
 <dependency>
     <groupId>org.hectorclient</groupId>
     <artifactId>hector-core</artifactId>
-    <version>{{%version hector-core%}}</version>
+    <version>{{%version "hector-core"%}}</version>
     <exclusions>
         <exclusion>
 	    <groupId>org.slf4j</groupId>
@@ -83,12 +83,12 @@ Include the following in your `pom.xml`
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-api</artifactId>
-    <version>{{%version slf4j-api%}}</version>
+    <version>{{%version "slf4j-api"%}}</version>
 </dependency>
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-jdk14</artifactId>
-    <version>{{%version slf4j-jdk14%}}</version>
+    <version>{{%version "slf4j-jdk14"%}}</version>
 </dependency>
 ```
 
@@ -102,7 +102,6 @@ Include the following in your `pom.xml`
 
 
 ```xml
-
 <os-archive-cassandra:cassandra-archive-handler id="cassandraArchiveHandler"
   giga-space="gigaSpace"
   hosts="127.0.0.1"

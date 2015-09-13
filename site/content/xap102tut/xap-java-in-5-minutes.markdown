@@ -177,7 +177,7 @@ public class Program {
 
         System.out.println("Connecting to data grid");
         SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("myGrid");
-        configurer.lookupGroups("{{%version default-lookup-group %}}");
+        configurer.lookupGroups("{{%version "default-lookup-group" %}}");
         GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).create();
 
         System.out.println("Write (store) a couple of entries in the data grid:");

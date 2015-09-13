@@ -382,13 +382,13 @@ Another option is to use Maven:
 	<dependency>
 		<groupId>com.gigaspaces.httpsession</groupId>
 		<artifactId>gs-runtime</artifactId>
-		<version>{{%version maven-version %}}</version>
+		<version>{{%version "maven-version" %}}</version>
 	</dependency>
 
 	<dependency>
 		<groupId>com.gigaspaces.httpsession</groupId>
 		<artifactId>gs-session-manager</artifactId>
-		<version>{{%version maven-version %}}</version>
+		<version>{{%version "maven-version" %}}</version>
 	</dependency>
 </dependencies>
 ```
