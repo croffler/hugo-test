@@ -7,15 +7,10 @@ parent: none
 ---
 
 
-{{%section%}}
-{{%column width="10%" %}}
-{{%wbr%}}
-![cassandra.png](/attachment_files/qsg/web.png)
-{{%/column%}}
-{{%column width="90%" %}}
-{{% ssummary   %}} {{% /ssummary %}}
-{{%/column%}}
-{{%/section%}}
+{{%bannerleft "/attachment_files/qsg/web.png" %}}
+In this part of the tutorial we will show you how you can deploy a standard WAR file onto the Service Grid.
+{{%/bannerleft %}}
+
 
 
 In this part of the tutorial we will show you how you can deploy a standard WAR file onto the Service Grid.
