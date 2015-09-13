@@ -6,19 +6,15 @@ parent: none
 weight: 1800
 ---
 
-<br>
 
-{{%section%}}
-{{%column width="10%" %}}
-![big-data.png](/attachment_files/subject/big-data.png)
-{{%/column%}}
-{{%column width="90%" %}}
+
+{{%bannerleft "/attachment_files/subject/big-data.png" %}}
 XAP integrates with Cassandra and MongoDB NoSql data bases. These data bases can be used for data archiving and data persistence.
-{{%/column%}}
-{{%/section%}}
+{{%/bannerleft%}}
 
 
-<br>
+
+
 
 {{%fpanel%}}
 

@@ -19,7 +19,7 @@ The notify event container uses the space inherited support for notifications (c
 {{% /section %}}
 
 
-### Life Cycle Events
+# Life Cycle Events
 The notify container life cycle events described below. You may implement each of of these to perform the desired activity.
 
 ![polling_container_basic.jpg](/attachment_files/notify_container_life_cycle.jpg)
@@ -35,7 +35,6 @@ Here is a simple example of a notify event container configuration:
 
 
 ```xml
-
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
 
