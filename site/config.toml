@@ -13,6 +13,7 @@ uglyurls=true
 
 
 
+
 [[menu.footer]]
     name = "Blog"
     url = "/posts"
@@ -22,11 +23,9 @@ uglyurls=true
     url = "/xap110"
 
 
-
-
-
-
-
+[params.xap102]
+    java-version="8"
+    build-filename="xyxyxyxxyxy"
 
 
 

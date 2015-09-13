@@ -39,3 +39,9 @@ Latest sec url : >>>{{<latestsecurl>}}<<<
 # Current version
 
 Current version : >>{{<currentversion>}}<<of XAP
+
+
+
+# Current versions for jars
+
+Java version : >>>{{%version "java-version" %}}<<<

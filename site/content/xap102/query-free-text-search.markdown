@@ -11,7 +11,7 @@ weight: 350
 
 # Regular Expressions
 
-You can query the space using the SQL `like` operator or [rlike - Java Regular Expression](http://docs.oracle.com/javase/{{%version java-version%}}/docs/api/java/util/regex/Pattern.html) Query syntax.
+You can query the space using the SQL `like` operator or [rlike - Java Regular Expression](http://docs.oracle.com/javase/{{%version "java-version"%}}/docs/api/java/util/regex/Pattern.html) Query syntax.
 
 When using the SQL `like` operator you may use the following:
 `%` - match any string of any length (including zero length)

@@ -50,7 +50,7 @@ Step 1. Navigate into the directory where you want to install GigaSpaces XAP, e.
 
 
 ```java
-unzip {{%version build-filename %}}
+unzip {{%version "build-filename" %}}
 ```
 
 Step 2. Make sure all `sh` file(s) in the `/bin` and the `/examples` directory are in executable mode, meaning you can run them from your machine. To check this, use the `ls \-all` command for the relevant directory, and make sure that `x` is included in the file permissions.
