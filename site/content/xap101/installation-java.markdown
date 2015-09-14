@@ -51,7 +51,6 @@ Step 1. Navigate into the directory where you want to install GigaSpaces XAP, e.
 
 
 ```java
-build-filename
 unzip {{%version "build-filename"%}}
 ```
 
