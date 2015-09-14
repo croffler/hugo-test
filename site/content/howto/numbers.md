@@ -47,3 +47,5 @@ Current version : >>{{<currentversion>}}<<of XAP
 Spring version : >>>{{%version "spring" %}}<<<
 
 File release : >>>{{%version "build-filename" %}}<<<
+
+{{%version "hello" %}}
