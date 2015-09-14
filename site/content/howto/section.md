@@ -57,3 +57,30 @@ The polling event container is an implementation of the polling consumer pattern
   {{%/column%}}
 
  {{%/section%}}
+
+
+
+{{%tabs%}}
+{{%tab table%}}
+
+Keyname       | Required | Type          | Description
+-----------   | -------- | ----          | -----------
+type          | yes      | string        | The [node type](dsl-spec-node-types.html) of this node template.
+properties    | no       | dict          | The properties of the node template matching its node type properties schema.
+instances     | no       | dict          | Instances configuration.
+interfaces    | no       | interfaces    | Used for mapping plugins to [interfaces](dsl-spec-interfaces.html) operation or for specifying inputs for already mapped node type operations.
+relationships | no       | relationships | Used for specifying the [relationships](dsl-spec-relationships.html) this node template has with other node templates.
+{{%/tab%}}
+{{%/tabs%}}
+
+{{%section%}}
+  {{%column%}}
+  {{%popup "/attachment_files/subject/index.png"%}}
+  {{%/column%}}
+  {{%column%}}
+  {{%popup "/attachment_files/subject/index.png"%}}
+  {{%/column%}}
+  {{%column%}}
+  {{%popup "/attachment_files/subject/index.png"%}}
+  {{%/column%}}
+{{%/section%}}

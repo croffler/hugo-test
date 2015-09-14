@@ -58,33 +58,28 @@ GS_HOME\bin\gs.sh deploy tutorial.war
 You can deploy a war file just like a PU with the Web Administration UI:
 
 {{%section%}}
-{{%column width="20%"%}}
+{{%column %}}
 Host view
-
 {{%popup "/attachment_files/qsg/Deploy-web1.png"  "Host view"%}}
 {{%/column %}}
 
-{{%column width="20%"%}}
+{{%column  %}}
 Upload war file
-
 {{%popup "/attachment_files/qsg/Deploy-web2.png"  "Upload war file"%}}
 {{%/column%}}
  
-{{%column width="20%"%}}
+{{%column  %}}
 Application display
-
 {{%popup "/attachment_files/qsg/Deploy-web3.png"  "Application display"%}}
 {{%/column%}}
 
-{{%column width="20%"%}}
+{{%column  %}}
 Service display
-
 {{%popup "/attachment_files/qsg/Deploy-web4.png"  "Service display"%}}
 {{%/column%}}
 
-{{%column width="20%"%}}
+{{%column  %}}
 Web page display
-
 {{%popup "/attachment_files/qsg/Deploy-web5.png"  "Web page display"%}}
 {{%/column%}}
 {{%/section%}}
