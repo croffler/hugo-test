@@ -8,10 +8,10 @@ weight= "1000"
 
 
  {{%section%}}
- {{%column width="10%" %}}
+ {{%column width="20%" %}}
  ![fifo-groups.png](/attachment_files/subject/index.png)
  {{%/column%}}
- {{%column width="90%" %}}
+ {{%column width="80%" %}}
  <br>
  The polling event container is an implementation of the polling consumer pattern which uses the Space to receive events.
  A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
@@ -24,7 +24,7 @@ weight= "1000"
 {{%section%}}
 
 {{%column width="40%" %}}
-![display image](/images/doc_api.jpg)
+![fifo-groups.png](/attachment_files/subject/index.png)
 {{%/column%}}
 
 
@@ -36,4 +36,24 @@ The polling event container is an implementation of the polling consumer pattern
 
 {{%/section%}}
 
- 
+
+# Section without width
+
+ {{%section%}}
+
+ {{%column%}}
+ {{%popup "/attachment_files/subject/index.png"%}}
+ {{%/column%}}
+
+
+ {{%column  %}}
+
+ The polling event container is an implementation of the polling consumer pattern which uses the Space to receive events.
+  A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
+ {{%/column%}}
+
+ {{%column%}}
+  {{%youtube "9nFkfj2o5hk" "XAP UI"%}}
+  {{%/column%}}
+
+ {{%/section%}}
