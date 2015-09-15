@@ -1,7 +1,7 @@
 ---
 type: post110
 title: Overview
-categories: XAP102
+categories: XAP110
 parent: space-based-remoting-overview.html
 weight: 100
 ---

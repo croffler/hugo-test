@@ -53,7 +53,7 @@ The Space Persistency API contains two abstract classes one should extend in ord
 The ability to customize the space persistency functionality allows GigaSpaces to interact with any external application or data source.
 
 
-FIXTABLE
+
 | Client Call | Space Data Source/Synchronization Endpoint Call| Cache Policy Mode|EDS Usage Mode|
 |:------------|:-----------------------------------------------|:-----------------|:-------------|
  	|write , change , take , asyncTake , writeMultiple , takeMultiple , clear|onOperationsBatchSynchronization , afterOperationsBatchSynchronization|ALL_IN_CACHE, LRU|read-write|

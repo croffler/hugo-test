@@ -20,7 +20,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports  field-le
 
 # SpaceId
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpaceId AutoGenerate|
 |Argument   | boolean          |
 |Default    | false |
@@ -44,7 +45,8 @@ public class Person {
 
 # SpaceRouting
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpaceRouting|
 |Description| The `[SpaceRouting]` annotation specifies a get method for the field to be used to calculate the target space for the space operation (Read , Write...). The `[SpaceRouting]` field value hash code is used to calculate the target space when the space is running in **partitioned mode**.{{%wbr%}}The field value hash code is used to calculate the target space when the space is running in **partitioned mode**. |
 
@@ -67,7 +69,8 @@ public class Employee {
 
 # SpaceProperty
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpaceProperty NullValue  |
 |Argument   |  nullValue          |
 |Default    |  null |
@@ -89,7 +92,8 @@ public class Employee {
 
 # SpaceIndex
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     |  SpaceIndex Type|
 |Argument   |  [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)  |
 |Description| Querying indexed fields speeds up read and take operations. The `[SpaceIndex]` annotation should be used to specify an indexed field.|
@@ -113,7 +117,8 @@ public class User {
 
 # Unique Index
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     |  SpaceIndex Type, Unique|
 |Argument   | [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
@@ -137,7 +142,8 @@ public class Person
 
 # SpaceIndex Path
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     |  SpaceIndex Path ,Type|
 |Argument   |  [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)|
 |Description| The `path()` attribute represents the path of the indexed property within a nested object. |
@@ -168,7 +174,8 @@ public class Info : Serializable {
 
 
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpaceVersion|
 |Description| This annotation is used for object versioning used for optimistic locking. |
 |Note       | The attribute must be an `int` data type. |
@@ -191,7 +198,8 @@ public class Employee {
 
 # SpacePersist
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpacePersist|
 |Description| This specifies a getter method for holding the persistency mode of the object overriding the class level persist declaration. This field should be of the boolean data type.{{%wbr%}}If the persist class level annotation is true, all objects of this class type will be persisted into the underlying data store (Mirror, ExternalDataSource, Storage Adapter).|
 |Note       | When using this option, you must have the space class level `persist` decoration specified.|
@@ -212,7 +220,8 @@ public class Employee {
 
 # SpaceExclude
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     |  SpaceExclude|
 |Description| When this annotation is specified the attribute is not written into the space.|
 
@@ -232,7 +241,8 @@ public class Employee {
 
 # SpaceStorageType
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpaceStorageType StorageType |
 |Argument   | [StorageType](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_Metadata_StorageType.htm)          |
 |Default    | StorageType.Object |
@@ -256,7 +266,8 @@ public class Message {
 
 # SpaceFifoGroupingProperty
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpaceFifoGroupingProperty Path|
 |Argument   | path          |
 |Description| This annotation is used to define a space FIFO grouping property. |
@@ -280,7 +291,8 @@ public class FlightReservation
 
 # SpaceFifoGroupingIndex
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpaceFifoGroupingIndex Path|
 |Description| This annotation is used to define a space FIFO grouping Index. |
 |Note |This annotation can be declared on several properties in a class in order to assist in efficient traversal.{{%wbr%}}If defined, there must be a property in the class, marked with the `[SpaceFifoGroupingProperty]` annotation.{{%wbr%}}A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.   |
@@ -304,7 +316,8 @@ public Person Customer { get; set; }
 
 # SpaceDynamicProperties
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | SpaceDynamicProperties|
 |Description| Allows adding properties freely to a class without worrying about the schema.|
 |Note|**Only one property per class can be annotated with `[SpaceDynamicProperties]`.**|
@@ -328,7 +341,8 @@ public class Person {
 
 # Alias Name
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | AliasName|
 |Description| In some cases, usually in interoperability scenarios, you may need to map your C# properties to different names in the Space. You can do that using the AliasName property on [SpaceProperty].  |
 |Note| When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query](./query-sql.html).|

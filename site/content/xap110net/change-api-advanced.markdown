@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Advanced
-categories: XAP102NET
+categories: XAP110NET
 parent: change-api-overview.html
 weight: 200
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Optimistic Locking
-categories: XAP102NET
+categories: XAP110NET
 parent: transaction-overview.html
 weight: 400
 ---

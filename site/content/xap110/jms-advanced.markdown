@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Advanced Options
-categories: XAP102
+categories: XAP110
 parent: messaging-support.html
 weight: 700
 ---

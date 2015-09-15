@@ -34,8 +34,9 @@ Set the `XapNet.Gsc.Memory.Maximum` to have the right size.  Usually 20480 (20GB
 
 Below common platform configuration properties you should set when you setup your XAP .Net grid:
 
-FIXTABLE
+
 | Property name  | Description | Default value  |
+|----------------|-------------|----------------|
 |XapNet.Path| XAP .NET folder location |$(XapNet.SettingsFile)\..\.. |
 |XapNet.Install.Path| Location of XAP .NET Installation| $(XapNet.Path)\..|
 |XapNet.Config.Path| Location of Configuration folder| $(XapNet.Path)\Config|

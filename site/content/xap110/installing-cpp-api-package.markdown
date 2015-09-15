@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  C++
-categories: XAP102
+categories: XAP110
 parent: installation.html
 weight: 400
 ---

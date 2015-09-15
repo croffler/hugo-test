@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Cluster View
-categories: XAP102ADM
+categories: XAP110ADM
 parent: working-with-clusters-gigaspaces-browser.html
 weight: 100
 ---

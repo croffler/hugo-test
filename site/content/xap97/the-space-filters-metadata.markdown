@@ -10,7 +10,7 @@ weight: 100
 
 The Space Filter implementation may use the following interceptors. The relevant method should be annotated with the annotation listed below. The signature of these methods may include the following parameters:
 
-FIXTABLE
+
 | Parameter |Description|Type|
 |:----------|:----------|:---|
 |First Parameter |Space Template for before read or before take / Space object for after read/after take/write/update|Object|
@@ -19,7 +19,7 @@ FIXTABLE
 
 Annotation List:
 
-FIXTABLE
+
 | Filter Annotation| Description |Operation Type|
 |:-----------------|:------------|:-------------|
 |AfterAllNotifyTrigger|Filter callback after all notify trigger.|18|
@@ -416,7 +416,7 @@ When performing operations using transactions (write, update, or take with a tra
 
 ## ISpaceFilter Interface
 
-FIXTABLE
+
 | Return value | method |
 |:-------------|:-------|
 | `void` | `close()`{{% wbr %}}when the space is closed gracefully, all active filters close method is called to allow cleaning any open resources. |

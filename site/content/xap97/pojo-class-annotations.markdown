@@ -17,7 +17,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 
 # Persistence
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceClass(persist=true) |
 |Argument   | boolean          |
 |Default    | false|
@@ -38,7 +39,8 @@ public class Person {
 
 # Include Properties
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceClass(includeProperties=IncludeProperties.EXPLICIT) |
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | IncludeProperties.IMPLICIT|
@@ -56,9 +58,9 @@ public class Person {
 
 # FIFO Support
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceClass(fifoSupport=FifoSupport.OPERATION) |
-{{%javadoc "|Argument   | [FifoSupport](  com/gigaspaces/annotation/pojo/FifoSupport )|"%}}
 |Default    | FifoSupport.NOT_SET|
 |Description| To enable FIFO operations, set this attribute to `FifoSupport.OPERATION`|
 
@@ -77,7 +79,8 @@ public class Person {
 
 # Inherit Index
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceClass(inheritIndexes=false) |
 |Argument   | boolean          |
 |Default    | true|
@@ -97,7 +100,8 @@ public class Person {
 
 # Storage Type
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceClass(storageType=StorageType.BINARY) |
 {{%javadoc "|Argument   | [StorageType](  com/gigaspaces/metadata/StorageType )          |"%}}
 |Default    | StorageType.OBJECT |
@@ -118,7 +122,8 @@ public class Person {
 
 # Replication
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceClass(replicate=false) |
 |Argument   | boolean          |
 |Default    | true|
@@ -141,7 +146,8 @@ public class Person {
 
 # Compound Index
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @CompoundSpaceIndexes( {{%wbr%}} {@CompoundSpaceIndex(paths = {"data1", "data2"}) }  {{%wbr%}}) |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |

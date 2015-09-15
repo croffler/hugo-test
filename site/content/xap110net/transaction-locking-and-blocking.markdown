@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Locking and Blocking
-categories: XAP102NET
+categories: XAP110NET
 parent: transaction-overview.html
 weight: 200
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Maintenance
-categories: XAP102ADM
+categories: XAP110ADM
 parent: working-with-spaces-gigaspaces-browser.html
 weight: 200
 ---

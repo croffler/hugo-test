@@ -110,7 +110,7 @@ GigaSpaces JDBC Driver supports the following transaction managers:
 
 The transaction manager type can be configured via JDBC's connection properties (there are additional properties for lookup distributed tx manager):
 
-FIXTABLE
+
 |Property|Description|
 |:-------|:----------|
 | `gs.tx_manager_type` | `Transaction manager type: "local"/"distributed"/"lookup_distributed"` |
@@ -272,7 +272,8 @@ The GigaSpaces JDBC Driver translates in runtime a Space object into a relationa
 
 The following information represents the SQL to Java mapping conducted at runtime when a table is created via the JDBC driver.
 
-FIXTABLE
+
+
 |SQL Type|Java Type|
 |:-------|:--------|
 | `VARCHAR, VARCHAR2` | `java.lang.String` |
@@ -538,7 +539,7 @@ char timestamp long clob blob empty_clob() empty_blob() lob true false
 
 The JDBC Driver should be configured using the following properties. These should be part of the [The Space Component](./the-space-configuration.html#proxy) configuration when deployed:
 
-FIXTABLE
+
 | Parameter | Description | Default Value |
 |:----------|:------------|:--------------|
 |space-config.QueryProcessor.space_read_lease_time|Read timeout. Millisec units.|0|

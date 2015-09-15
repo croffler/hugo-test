@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Class Metadata
-categories: XAP102NET
+categories: XAP110NET
 parent: pono-xml-metadata-overview.html
 weight: 100
 ---

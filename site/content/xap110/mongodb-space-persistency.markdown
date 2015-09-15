@@ -1,7 +1,7 @@
 ---
 type: post110
 title: Mongo Persistency
-categories: XAP102
+categories: XAP110
 parent: mongodb.html
 weight: 100
 ---

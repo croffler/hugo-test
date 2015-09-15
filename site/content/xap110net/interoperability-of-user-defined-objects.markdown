@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  User-Defined Objects
-categories: XAP102NET
+categories: XAP110NET
 parent: interoperability.html
 weight: 200
 ---

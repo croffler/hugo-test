@@ -187,7 +187,7 @@ To configure the HTTP session to work with it, you need to set the value `bean:/
 Naturally there are additional deployment properties which are related to the HTTP session store configuration.
 The following table summarizes the available deployment properties:
 
-FIXTABLE
+
 |Property Name|Description|Example values|Mandatory?|
 |:------------|:----------|:-------------|:---------|
 |**`jetty.sessions.spaceUrl`**|specifies the URL of the space with the HTTP session store will be backed. Use the `bean://` notation to reference a space proxy defined within the `META-INF/spring/pu.xml` file.|`jini://\*/\*/sessionSpace?useLocalCache{{% wbr %}}   /./sessionSpace?cluster_schema=replicated{{% wbr %}}   bean://sessionSpace`| Yes |

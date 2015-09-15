@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Scale Triggers
-categories: XAP102
+categories: XAP110
 parent: elastic-processing-unit-overview.html
 weight: 300
 ---

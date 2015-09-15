@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Configuration
-categories: XAP102
+categories: XAP110
 weight: 200
 parent: the-processing-unit-overview.html
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Local Cache
-categories: XAP102
+categories: XAP110
 parent: client-side-caching.html
 weight: 100
 ---

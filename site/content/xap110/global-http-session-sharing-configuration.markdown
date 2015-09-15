@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Configuration & Deployment
-categories: XAP102
+categories: XAP110
 parent: global-http-session-sharing-overview.html
 weight: 200
 ---

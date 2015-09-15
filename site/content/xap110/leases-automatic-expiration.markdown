@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Lease Time
-categories: XAP102
+categories: XAP110
 weight: 1000
 parent: the-gigaspace-interface-overview.html
 ---

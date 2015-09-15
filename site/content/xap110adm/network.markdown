@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Network Configuration
-categories: XAP102ADM
+categories: XAP110ADM
 parent: none
 weight: 800
 ---

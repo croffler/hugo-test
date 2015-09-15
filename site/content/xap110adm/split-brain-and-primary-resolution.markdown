@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Split Brain and Primary Resolution
-categories: XAP102ADM
+categories: XAP110ADM
 parent: data-grid-clustering.html
 weight: 500
 ---

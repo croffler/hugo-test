@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Working with GSJMSAdmin
-categories: XAP102
+categories: XAP110
 parent: messaging-support.html
 weight: 600
 ---

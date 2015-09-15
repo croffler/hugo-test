@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Advanced Configuration
-categories: XAP102NET
+categories: XAP110NET
 parent: asynchronous-persistency-with-the-mirror.html
 weight: 100
 ---

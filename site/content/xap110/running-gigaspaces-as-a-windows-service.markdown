@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  XAP as Windows Service
-categories: XAP102
+categories: XAP110
 parent: installation.html
 weight: 800
 ---

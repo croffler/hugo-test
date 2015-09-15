@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Event Exception Handler
-categories: XAP102
+categories: XAP110
 parent: event-processing.html
 weight: 500
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Domain Service Host
-categories: XAP102NET
+categories: XAP110NET
 parent: space-based-remoting-overview.html
 weight: 100
 ---

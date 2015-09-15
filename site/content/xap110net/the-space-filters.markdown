@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Filters
-categories: XAP102NET
+categories: XAP110NET
 parent: the-gigaspace-interface-overview.html
 weight: 800
 ---

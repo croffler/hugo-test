@@ -30,7 +30,7 @@ Each configuration can be configured for all gateways or specifically per each g
 
 # Configurable Parameters
 
-FIXTABLE
+
 |Property|Description|Default|
 |:-------|:----------|:------|
 |bulk-size|Specifies the size of each replication bulk in terms of replication packets| 100 packets |

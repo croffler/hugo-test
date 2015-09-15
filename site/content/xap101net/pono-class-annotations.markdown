@@ -17,7 +17,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 
 # Alias name
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | AliasName |
 |Argument   | String          |
 |Description| By default, the name of the class in the Space is the fully-qualified class name (i.e. including namespace). In some cases, usually in interoperability scenarios, you may need to map your C# Class name and properties to different names in the Space.  |
@@ -36,7 +37,8 @@ public class Person {
 
 # Persistence
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | Persist|
 |Argument   | boolean          |
 |Default    | false|
@@ -57,7 +59,8 @@ public class Person {
 
 # Include Properties
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | IncludeFields, IncludeProperties |
 |Argument   | [IncludeMembers](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_Metadata_IncludeMembers.htm)      |
 |Default    | IncludeFields=IncludeMembers.All, IncludeProperties=IncludeMembers.All)|
@@ -86,7 +89,8 @@ Read-only properties (getter without setter) are stored in the space, but when t
 
 # FIFO Support
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | FifoSupport |
 |Argument   | [FifoSupport](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_Metadata_FifoSupport.htm)|
 |Default    | FifoSupport.Off|
@@ -107,7 +111,8 @@ public class Person {
 
 # Inherit Index
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | InheritIndexes |
 |Argument   | boolean          |
 |Default    | true|
@@ -128,7 +133,8 @@ public class Person {
 
 # Replication
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | Replicate |
 |Argument   | boolean          |
 |Default    | true|
@@ -151,7 +157,8 @@ public class Person {
 
 # Compound Index
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | CompoundSpaceIndex Paths  |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |

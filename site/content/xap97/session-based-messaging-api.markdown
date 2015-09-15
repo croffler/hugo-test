@@ -544,7 +544,7 @@ setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener)
 setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener, long renewExpiration, long renewDuration, long renewRTT)
 ```
 
-FIXTABLE
+
 |Property| Description | Default | Unit |
 |:-------|:------------|:--------|:-----|
 |renew|If set to `true`, automatically performs lease renewal and call the `LeaseListener.notify()` if fails to renew, where the lease's desired expiration time has not yet been reached.|false| |
@@ -647,7 +647,7 @@ The replication settings allows replicating notification registration, and the a
 
 Here is the system behavior when using these options:
 
-FIXTABLE
+
 |Replicate Notify Template Setting | Trigger Notify Template Setting | Description |
 |:---------------------------------|:--------------------------------|:------------|
 | `true` | `false` | The client gets notifications from the master space while it is active after registration.{{%wbr%}}If failover has been configured, it gets notifications from the replica space when the master space fails. |

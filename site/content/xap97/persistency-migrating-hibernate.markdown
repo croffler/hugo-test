@@ -12,7 +12,7 @@ To benefit from data caching and other capabilities, it is worthwhile to migrate
 
 The following tables show the correspondence between the Hibernate basic API methods to [GigaSpaces API](./the-gigaspace-interface.html) and the [GigaMap API](./map-api.html) methods.
 
-FIXTABLE
+ 
 | `org.hibernate.Session Method` | `GigaSpace` Method| `GigaMap` Method|
 |:-------------------------------|:------------------|:----------------|
 | `save` |write|put |

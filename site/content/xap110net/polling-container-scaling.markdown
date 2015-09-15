@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Concurrent Consumers
-categories: XAP102NET
+categories: XAP110NET
 parent: polling-container-overview.html
 weight: 200
 ---

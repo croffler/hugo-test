@@ -64,7 +64,7 @@ In both replication modes, when a target space instance is not available, the cl
 
 The table below shows a conceptual comparison between synchronous and asynchronous replication.
 
-FIXTABLE
+
 | Aspect | Synchronous Replication | Asynchronous Replication |
 |:-------|:------------------------|:-------------------------|
 | Data loss | Each space operation waits until completion is confirmed at the source space instance, as well as the target space instances. | May sometimes lose some data (latest operations) if there is a failure at the source space instance. |

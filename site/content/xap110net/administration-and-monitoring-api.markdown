@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Administration API
-categories: XAP102NET
+categories: XAP110NET
 parent: admin-modules.html
 weight: 100
 ---

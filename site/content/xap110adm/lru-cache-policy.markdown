@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  LRU-Cache Policy
-categories: XAP102ADM
+categories: XAP110ADM
 parent: memory-management-overview.html
 weight: 300
 ---

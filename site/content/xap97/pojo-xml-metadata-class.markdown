@@ -11,7 +11,8 @@ weight: 100
 
 # Name
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | name="" |
 |Description| Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
 
@@ -28,7 +29,8 @@ Example:
 
 # Persistence
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | persist="" |
 |Argument   | boolean|
 |Default    | false|
@@ -49,7 +51,8 @@ Example:
 
 # Replication
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | replicate="true" |
 |Argument   | boolean|
 |Default    | false|
@@ -71,7 +74,8 @@ Example:
 
 # FIFO Support
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | fifo-support=""  |
 {{%javadoc "|Argument   | [FifoSupport](  com/gigaspaces/annotation/pojo/FifoSupport )|"%}}
 |Default    | not_set|
@@ -92,7 +96,8 @@ Example:
 
 # Storage Type
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | storage-type="" |
 {{%javadoc "|Argument   | [StorageType](  com/gigaspaces/metadata/StorageType )          |"%}}
 |Default    | object |
@@ -114,7 +119,8 @@ Example:
 
 # Include Properties
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | include-properties="" |
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | implicit|
@@ -133,7 +139,8 @@ Example:
 
 # Inherit Index
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | inherit-indexes="" |
 |Argument   | boolean          |
 |Default    | true|
@@ -153,7 +160,8 @@ Example:
 
 # Compound Index
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | compound-index paths="" |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |

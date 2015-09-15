@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Nested Property Index
-categories: XAP102NET
+categories: XAP110NET
 parent: indexing-overview.html
 weight: 200
 ---

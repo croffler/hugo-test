@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Flash drive IMDG Storage
-categories: XAP102TUT
+categories: XAP110TUT
 parent: none
 weight: 1600
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Constructor Based Properties
-categories: XAP102
+categories: XAP110
 parent: scala.html
 weight: 100
 ---

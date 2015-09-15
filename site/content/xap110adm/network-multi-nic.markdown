@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Multiple Network-Cards
-categories: XAP102ADM
+categories: XAP110ADM
 parent: network.html
 weight: 500
 ---

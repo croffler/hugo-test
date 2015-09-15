@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  FIFO Support
-categories: XAP102
+categories: XAP110
 parent: fifo-overview.html
 weight: 100
 ---

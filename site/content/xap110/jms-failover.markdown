@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  JMS Failover
-categories: XAP102
+categories: XAP110
 parent: jms-advanced.html
 weight: 100
 ---

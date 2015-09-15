@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Administrative Alerts
-categories: XAP102
+categories: XAP110
 weight: 300
 parent: administration-and-monitoring-overview.html
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  JDBC Driver
-categories: XAP102
+categories: XAP110
 parent: other-data-access-apis.html
 weight: 100
 ---

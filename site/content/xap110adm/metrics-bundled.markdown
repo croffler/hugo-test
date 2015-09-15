@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Predefined Metrics
-categories: XAP102ADM
+categories: XAP110ADM
 parent: metrics-overview.html
 weight: 500
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Off Heap RAM
-categories: XAP102ADM
+categories: XAP110ADM
 parent: memoryxtend.html
 weight: 300
 ---
@@ -31,7 +31,7 @@ The off-heap BlobStore settings includes the following options:
 
 The IMDG BlobStore settings includes the following options:{{%wbr%}}
 
-FIXTABLE
+
 | Property | Description | Default | Use |
 |:---------|:------------|:--------|:--------|
 | blob-store-handler | BlobStore implementation |  | required |

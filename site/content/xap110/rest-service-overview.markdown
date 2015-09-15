@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  The REST Service
-categories: XAP102
+categories: XAP110
 parent: interoperability-overview.html
 weight: 300
 ---

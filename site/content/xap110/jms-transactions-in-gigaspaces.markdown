@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Transactions
-categories: XAP102
+categories: XAP110
 parent: jms-advanced.html
 weight: 200
 ---

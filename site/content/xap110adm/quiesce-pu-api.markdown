@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  API and Usage
-categories: XAP102ADM
+categories: XAP110ADM
 parent: quiescemode.html
 weight: 200
 ---

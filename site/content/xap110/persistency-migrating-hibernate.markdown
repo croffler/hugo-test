@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Migrating from Hibernate
-categories: XAP102
+categories: XAP110
 parent: space-persistency-overview.html
 weight: 900
 ---

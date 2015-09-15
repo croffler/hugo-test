@@ -100,7 +100,7 @@ Some of the types have different characteristics in .NET and Java (signed\unsign
 
 The following types are supported by the space for matching and interoperability:
 
-FIXTABLE
+
 | CLS | C# | VB.Net | Java | Description |
 |:----|:---|:-------|:-----|:------------|
 | [System.Byte](http://msdn2.microsoft.com/en-us/library/system.byte.aspx) |   byte  |  Byte  | [byte](http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html) | 8-bit integer.**<sup>1</sup>** |
@@ -138,7 +138,7 @@ Java 8's LocalDate, LocalTime, LocalDateTime are currently not interoperable wit
 
 The following collections are mapped for interoperability:
 
-FIXTABLE
+
 | .Net | Java | Description |
 |:-----|:-----|:------------|
 | T[] | E[] | Fixed-size arrays of elements. |

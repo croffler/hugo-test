@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Properties Metadata
-categories: XAP102
+categories: XAP110
 parent: pojo-xml-metadata-overview.html
 weight: 200
 ---

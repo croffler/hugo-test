@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  SEDA Model
-categories: XAP102
+categories: XAP110
 parent: mule-esb.html
 weight: 400
 ---

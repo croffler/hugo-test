@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  XAP Over NAT
-categories: XAP102ADM
+categories: XAP110ADM
 parent: network.html
 weight: 400
 ---

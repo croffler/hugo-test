@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Backing-up Files With a Custom Policy
-categories: XAP102ADM
+categories: XAP110ADM
 parent: logging-overview.html
 weight: 500
 ---

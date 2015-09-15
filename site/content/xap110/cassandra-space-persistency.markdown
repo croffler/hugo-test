@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Cassandra Persistency
-categories: XAP102
+categories: XAP110
 parent: cassandra.html
 weight: 100
 ---

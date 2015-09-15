@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Menus and Buttons
-categories: XAP102ADM
+categories: XAP110ADM
 parent: gigaspaces-management-center.html
 weight: 100
 ---

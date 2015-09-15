@@ -154,11 +154,13 @@ Each change on the master space triggers a notification at the local cache. The 
 
 - `None` - Do not register for master space updates - If an object is changed in the master space, it will remain stale in the local cache until its lease expires.
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 | Pull Update Policy |
 | ![local_cache_pull.jpg](/attachment_files/local_cache_pull.jpg) |
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 | Push Update Policy |
 | ![local_cache_push.jpg](/attachment_files/local_cache_push.jpg) |
 
@@ -220,7 +222,7 @@ When using a local cache with `GigaSpace`, the cache policy is set to `LRU` and 
 
 In order to properly configure the local cache eviction mechanism, you should consider tuning the following configuration elements:
 
-FIXTABLE
+
 |Parameter|Suggested Value|
 |:--------|:--------------|
 |space-config.engine.cache_size|5000000|
@@ -299,7 +301,7 @@ In previous versions the batch size and timeout were configured by setting the `
 
 The following table summarizes the configuration changes made in 8.0.5:
 
-FIXTABLE
+
 | Old Custom Property (8.0.4 and older) | `LocalCacheSpaceFactoryBean` - 8.0.5 and above| `LocalCacheSpaceConfigurer` - 8.0.5 and above|
 |:--------------------------------------|:----------------------------------------------|:---------------------------------------------|
 | `space-config.dist-cache.events.lease` | `max-disconnection-duration` | `maxDisconnectionDuration()` |
@@ -317,7 +319,7 @@ FIXTABLE
 {{%tabs%}}
 {{%tab "  XAP 8.0.4 and older "%}}
 
-FIXTABLE
+
 | Property | Description | Default Value | Unit |
 |:---------|:------------|:--------------|:-----|
 |space-config.dist-cache.retry-connections| Specify how many times the local cache should retry to reconnect with the master space in case of a disconnection.| 3 | |
@@ -331,7 +333,7 @@ FIXTABLE
 {{% /tab %}}
 {{%tab "  XAP 8.0.5 and above "%}}
 
-FIXTABLE
+
 | Property | Description | Default Value | Unit |
 |:---------|:------------|:--------------|:-----|
 |max-disconnection-duration| If local cache disconnection duration exceeds this value, the local cache enters a **disconnected** state, wherein each operation throws an exception stating the cache is disconnected| 60000 | milliseconds |

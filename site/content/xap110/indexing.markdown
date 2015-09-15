@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Basic Index
-categories: XAP102
+categories: XAP110
 parent: indexing-overview.html
 weight: 50
 ---

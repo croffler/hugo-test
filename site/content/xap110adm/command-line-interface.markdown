@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Command Line Interface
-categories: XAP102ADM
+categories: XAP110ADM
 parent: administration-tools.html
 weight: 100
 ---

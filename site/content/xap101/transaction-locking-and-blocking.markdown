@@ -33,8 +33,9 @@ The following table describes space operation blocking rules. The operations lis
 TX denotes transaction, and it is assumed that operations A are called under a different transaction to operations B. If they are called under the same transaction, blocking behavior is different.
 {{% /tip %}}
 
-FIXTABLE
+
 |Oper. A / Oper. B|Update under TX Y|Take  under TX Y|Read  under TX Y|Update, `null` TX|Take, `null` TX|Read, `null` TX|
+|-----------------|-----------------|----------------|----------------|-----------------|---------------|---------------|
 |Update under TX X| Blocked|Blocked|Blocked|Blocked|Blocked|Blocked (unless in `dirty_read)` |
 |Take under TX X|Blocked|Blocked|Blocked|Blocked|Blocked|Blocked|
 |Read under TX X|Blocked|Blocked|Allowed|Blocked|Blocked|Allowed|

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Solid State Drive
-categories: XAP102ADM
+categories: XAP110ADM
 parent: memoryxtend.html
 weight: 200
 ---

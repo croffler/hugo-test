@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Template Matching
-categories: XAP102NET
+categories: XAP110NET
 parent: querying-the-space.html
 weight: 200
 ---

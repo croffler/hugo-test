@@ -130,7 +130,7 @@ If the user lacks sufficient privileges, the UI displays a similar message to th
 
 The following table represents some of the actions that the UI disables when there are insufficient privileges.
 
-FIXTABLE
+
 | Privileges | Actions |
 |:-----------|:--------|
 | **`Provision PU`** | Deploy, Undeploy  |

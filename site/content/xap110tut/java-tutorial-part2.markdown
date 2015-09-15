@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Deploying a Space
-categories: XAP102TUT
+categories: XAP110TUT
 weight: 600
 parent: none
 ---

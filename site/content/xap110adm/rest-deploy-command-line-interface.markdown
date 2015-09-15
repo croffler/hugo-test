@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Deploying REST service with Command Line
-categories: XAP102ADM
+categories: XAP110ADM
 parent: administration-tools.html
 weight: 250
 ---

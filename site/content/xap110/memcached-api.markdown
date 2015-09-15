@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Memcached API
-categories: XAP102
+categories: XAP110
 parent: other-data-access-apis.html
 weight: 400
 ---

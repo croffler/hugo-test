@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Replication Parameters
-categories: XAP102ADM
+categories: XAP110ADM
 parent: replication.html
 weight: 700
 ---

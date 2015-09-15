@@ -394,7 +394,7 @@ The above defines zones "zone1" and "zone3" to be tagged to the GSC which will b
 
 The following table explains when a container with a specified zone can satisfy a Processing Unit with a required zone:
 
-FIXTABLE
+
 |Processing Unit|Container|Zone match?|
 |:--------------|:--------|:----------|
 |PU\[\]|GSC\[\]|YES|
@@ -702,7 +702,7 @@ You can also control how often a processing unit instance will be monitored by t
 
 This is done using the <os-sla:member-alive-indicator> element. It contains the following attributes:
 
-FIXTABLE
+
 | Attribute | Description | Default |
 |:----------|:------------|:--------|
 | invocation-delay | How often (in milliseconds) an instance will be monitored and verified to be alive by the GSM | 5000 (5 seconds) |
@@ -747,7 +747,7 @@ For troubleshooting purposes, you can lower the logging threshold of the relevan
 `org.openspaces.pu.container.servicegrid.PUFaultDetectionHandler.level` = INFO
 You can change it to one of the below thresholds for more information:
 
-FIXTABLE
+
 | Level | Description |
 |:------|:------------|
 | CONFIG | Logs the configurations applied |

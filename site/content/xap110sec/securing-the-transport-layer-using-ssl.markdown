@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Securing the Transport Layer
-categories: XAP102SEC
+categories: XAP110SEC
 parent: securing-xap-components.html
 weight: 300
 ---

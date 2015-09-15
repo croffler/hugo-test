@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Extended Document
-categories: XAP102
+categories: XAP110
 parent: document-overview.html
 weight: 200
 ---

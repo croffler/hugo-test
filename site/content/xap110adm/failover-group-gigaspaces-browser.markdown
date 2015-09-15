@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Failover Group
-categories: XAP102ADM
+categories: XAP110ADM
 parent: working-with-clusters-gigaspaces-browser.html
 weight: 300
 ---

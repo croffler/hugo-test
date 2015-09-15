@@ -38,7 +38,7 @@ Advanced options including transaction support and security.
 
 #### Additional Resources
 
-FIXTABLE
+
 | Best Practice | Description|
 |:--------------|:-----------|
 |[Master-Worker Pattern](/sbp/master-worker-pattern.html)| Grid computing pattern. Implementing distributed processing across multiple workers deployed into the Grid. |

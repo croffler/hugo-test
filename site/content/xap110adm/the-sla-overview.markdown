@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Service Level Agreement
-categories: XAP102ADM
+categories: XAP110ADM
 weight: 350
 parent: none
 ---

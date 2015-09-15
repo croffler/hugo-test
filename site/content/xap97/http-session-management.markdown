@@ -60,7 +60,7 @@ See the [Quick Start Guide](./step-2---enabling-http-session-failover-and-fault-
 
 Controlling the session Management done via the following properties:
 
-FIXTABLE
+
 |Property|Description|Default|Mandatory?|
 |:-------|:----------|:------|:---------|
 |`jetty.sessions.spaceUrl`|specifies the URL of the space with the HTTP session store will be backed. Use the `bean://` notation to reference a space proxy defined within the `META-INF/spring/pu.xml` file.|`jini://*/*/sessionSpace?useLocalCache`{{% wbr %}}`/./sessionSpace?cluster_schema=replicated`{{% wbr %}}`bean://sessionSpace`| Yes |

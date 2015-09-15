@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  JPA Entity Id
-categories: XAP102
+categories: XAP110
 parent: jpa-api-overview.html
 weight: 200
 ---

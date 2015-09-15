@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Storage Types
-categories: XAP102
+categories: XAP110
 parent: modeling-your-data.html
 weight: 500
 ---

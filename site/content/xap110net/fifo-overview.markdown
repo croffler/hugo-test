@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  FIFO Ordering
-categories: XAP102NET
+categories: XAP110NET
 parent: event-processing.html
 weight: 400
 ---

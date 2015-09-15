@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Cluster Information
-categories: XAP102NET
+categories: XAP110NET
 parent: the-processing-unit-overview.html
 weight: 300
 ---

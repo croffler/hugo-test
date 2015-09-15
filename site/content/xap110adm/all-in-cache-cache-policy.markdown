@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  ALL IN CACHE-Cache Policy
-categories: XAP102ADM
+categories: XAP110ADM
 parent: memory-management-overview.html
 weight: 200
 ---

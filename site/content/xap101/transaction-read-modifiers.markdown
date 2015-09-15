@@ -36,7 +36,7 @@ These modifiers can be set either at the proxy level - `IJSpace.setReadModifiers
 
 The following table describes the mapping between the [Spring TransactionDefinition](http://static.springsource.org/spring/docs/2.0.x/api/org/springframework/transaction/TransactionDefinition.html) Mapping to GigaSpaces ReadModifiers:
 
-FIXTABLE
+
 |Spring TransactionDefinition| XAP ReadModifiers |
 |:---------------------------|:-------------------------|
 |ISOLATION_READ_UNCOMMITTED| DIRTY_READ|
@@ -101,7 +101,7 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 
 ## Locking and Blocking Rules
 
-FIXTABLE
+
 | Operation A/Operation B | Update under transaction Y | Take under transaction Y | Read under transaction Y | Update, null transaction | Take, null transaction | Read, null transaction | Exclusive Read Lock | Dirty Read Transaction Y or null | Read Committed Transaction Y or null |
 |:------------------------|:---------------------------|:-------------------------|:-------------------------|:-------------------------|:-----------------------|:-----------------------|:--------------------|:---------------------------------|:-------------------------------------|
 | Update under transaction X | Blocked | Blocked | Blocked | Blocked | Blocked | Blocked | Blocked | Allowed | Allowed|

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Predicate Based Queries
-categories: XAP102
+categories: XAP110
 parent: scala.html
 weight: 300
 ---

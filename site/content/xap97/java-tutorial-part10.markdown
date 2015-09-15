@@ -42,7 +42,8 @@ XAP's authorization implementation is based on roles. A role is comprised of a c
 The System Authority consists of two privileges:
 
 {{%indent%}}
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Manage Roles|Define roles (a set of privileges assigned to a logical role name)|
 |Manage Users|Assign users to pre-defined roles, or assign user-specific privileges|
 {{%/indent%}}
@@ -52,7 +53,8 @@ FIXTABLE
 The Grid Authority consists of privileges for managing the Grid and its Services (GSMs, GSCs, Processing Units).
 
 {{%indent%}}
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Provision PU	 |Deploy, Un-deploy of processing units|
 |Manage PU	 |Scale up/down, Relocate, Restart PU instance, Destroy PU instance|
 |Manage Grid    |Start, Terminate, Restart of GSC/GSM/LUS via GSA|
@@ -63,7 +65,8 @@ FIXTABLE
 The Space Authority consists of privileges for operations on space data.
 
 {{%indent%}}
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Write	  |Write and Update operations|
 |Create  |Write only (no Update) operations|
 |Read	  |Read, Count and Notify operations|
@@ -77,7 +80,8 @@ The Monitor Authority consists of privileges for monitoring the Grid and its Pro
 Note that the monitoring is secured only by the 'tooling' (CLI/UI).
 
 {{%indent%}}
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Monitor JVM	 |Monitoring of JVM statistics|
 |Monitor PU	 |Monitoring of Processing Units (classes, connections, statistics, etc.)|
 {{%/indent%}}

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  XAP Performance
-categories: XAP102ADM
+categories: XAP110ADM
 parent:  tuning.html
 weight: 200
 ---

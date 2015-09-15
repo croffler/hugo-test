@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Transient Entries
-categories: XAP102
+categories: XAP110
 parent: space-persistency-overview.html
 weight: 700
 ---

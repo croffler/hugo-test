@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Events and Messaging
-categories: XAP102TUT
+categories: XAP110TUT
 weight: 800
 parent: none
 ---

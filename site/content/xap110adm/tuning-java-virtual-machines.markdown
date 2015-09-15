@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Java Virtual Machines
-categories: XAP102ADM
+categories: XAP110ADM
 parent: tuning.html
 weight: 300
 ---

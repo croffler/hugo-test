@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Platform Configuration
-categories: XAP102NET
+categories: XAP110NET
 parent: administrators-guide.html
 weight: 400
 ---

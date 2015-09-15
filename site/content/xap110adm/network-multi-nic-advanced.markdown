@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Advanced Configuration
-categories: XAP102ADM
+categories: XAP110ADM
 parent: network-multi-nic.html
 weight: 100
 ---

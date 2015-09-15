@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Annotation based Metadata
-categories: XAP102
+categories: XAP110
 parent: modeling-your-data.html
 weight: 110
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Transactions
-categories: XAP102
+categories: XAP110
 weight: 600
 parent: the-gigaspace-interface-overview.html
 ---

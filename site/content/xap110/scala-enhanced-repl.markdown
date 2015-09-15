@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Enhanced Scala REPL
-categories: XAP102
+categories: XAP110
 parent: scala.html
 weight: 200
 ---

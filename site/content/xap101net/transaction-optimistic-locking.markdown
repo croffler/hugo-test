@@ -105,7 +105,7 @@ By following the above procedure, you get a shorter locking duration, that impro
 
 Suppose that you have two applications, Application_1 and Application_2, which are both working with the same Object A. The following sequence of events describes a simple optimistic locking scenario.
 
-FIXTABLE
+
 | Time | Action | Application\_1 | Application\_2 |
 |:-----|:-------|:---------------|:---------------|
 | `T=1` | Initial conditions: both applications read the object from the space. | Object A `VersionID=1`{{% wbr %}}`Value1=X`{{% wbr %}} `Value2=Y` | Object A{{% wbr %}}`VersionID=1`{{% wbr %}}`Value1=X`{{% wbr %}}`Value2=Y` |

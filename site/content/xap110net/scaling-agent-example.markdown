@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Scaling Agent Example
-categories: XAP102NET
+categories: XAP110NET
 parent:  admin-modules.html
 weight: 200
 ---

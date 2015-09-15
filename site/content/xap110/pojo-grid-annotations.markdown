@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Grid Metadata
-categories: XAP102
+categories: XAP110
 parent: pojo-metadata.html
 weight: 400
 ---

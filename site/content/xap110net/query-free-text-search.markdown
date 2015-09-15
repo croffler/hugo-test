@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Free Text Search
-categories: XAP102NET
+categories: XAP110NET
 parent: querying-the-space.html
 weight: 550
 ---

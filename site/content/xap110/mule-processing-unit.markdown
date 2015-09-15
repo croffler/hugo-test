@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Processing Unit
-categories: XAP102
+categories: XAP110
 parent: mule-esb.html
 weight: 200
 ---

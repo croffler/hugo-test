@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Management Center
-categories: XAP102ADM
+categories: XAP110ADM
 parent: none
 weight: 100
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Replication Filters
-categories: XAP102ADM
+categories: XAP110ADM
 parent: replication.html
 weight: 450
 ---

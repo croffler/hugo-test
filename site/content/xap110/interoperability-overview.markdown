@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Platform Interoperability
-categories: XAP102
+categories: XAP110
 parent: none
 weight: 2500
 ---

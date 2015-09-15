@@ -24,7 +24,7 @@ XAP ships with a number of built-in load-balancing policies. These range from re
 
 The following table describes the built-in load balancing types.
 
-FIXTABLE
+
 |Policy|Description|
 |:-----|:----------|
 |hash-based|As above, except a new hash is computed for each user operation, and so each operation may be routed to a different space. This ensures, with high probability, that operations are evenly distributed. This is the **default mode** and the recommended mode.|
@@ -205,7 +205,7 @@ There are three Broadcast options:
 
 The following table specifies when the different batch operations executed in parallel manner and when in serial manner when the space running in partitioned mode:
 
-FIXTABLE
+
 | **Operation** | **Transactional** | **Max values** | **Execution Mode** | Returns when.. |
 |:--------------|:------------------|:---------------|:-------------------|:---------------|
 | readMultiple | NO | n/a | Parallel | Returns when all spaces completed their operation |

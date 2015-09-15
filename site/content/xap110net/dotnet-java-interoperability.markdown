@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  .NET-Java Interoperability
-categories: XAP102NET
+categories: XAP110NET
 parent: interoperability.html
 weight: 100
 ---

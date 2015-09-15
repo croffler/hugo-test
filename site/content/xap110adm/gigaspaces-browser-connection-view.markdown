@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Connections View
-categories: XAP102ADM
+categories: XAP110ADM
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 100
 ---

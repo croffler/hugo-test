@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Embedded Space
-categories: XAP102NET
+categories: XAP110NET
 weight:
 parent:
 ---

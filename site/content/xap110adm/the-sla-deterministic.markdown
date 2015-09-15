@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Deterministic Deployment
-categories: XAP102ADM
+categories: XAP110ADM
 parent: the-sla-overview.html
 weight: 400
 ---

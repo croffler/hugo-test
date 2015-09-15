@@ -17,7 +17,8 @@ There are four categories of user authorities. These categories allow the flexib
 The **System Authority** consists of two privileges and defines the distinction between a user who is allowed to define roles and a user which is only allowed to assign user's to predefined roles.
 In general, one can have both management capabilities, but in some organizations this separation may be required.
 
-FIXTABLE
+|                   |                       |
+|-------------------|-----------------------|
 | Manage Roles | Define roles (a set of privileges assigned to a logical role name) |
 | Manage Users | Assign users to pre-defined roles, or assign user-specific privileges |
 
@@ -25,7 +26,8 @@ FIXTABLE
 
 The **Grid Authority** consists of privileges for managing the Grid and its Services (GSMs, GSCs, Processing Units).
 
-FIXTABLE
+|                   |                       |
+|-------------------|-----------------------|
 | Provision PU | Deploy, Un-deploy of processing units |
 | Manage PU | Scale up/down, Relocate, Restart PU instance, Destroy PU instance |
 | Manage Grid | Start, Terminate, Restart of GSC/GSM/LUS via GSA |
@@ -41,7 +43,8 @@ When deploying an [elastic processing unit](./elastic-processing-unit.html), the
 
 The **Space Authority** consists of privileges for operation on space (stored) data. The operations are divided into five groups of interest.
 
-FIXTABLE
+|                   |                       |
+|-------------------|-----------------------|
 | Write | Write and Update operations |
 | Create| Write only (no Updates) operations|
 | Read | Read, Count and Notify operations |
@@ -78,6 +81,7 @@ But, when you **deny** a Class more caution should be taken. If you **deny** a `
 The **Monitor Authority** consists of privileges for monitoring the Grid and its Processing Units.
 Note that the monitoring is secured only by the 'tooling' (CLI/UI).
 
-FIXTABLE
+|                   |                       |
+|-------------------|-----------------------|
 | Monitor JVM | Monitoring of JVM statistics |
 | Monitor PU | Monitoring of Processing Units (classes, connections, statistics, etc.) |

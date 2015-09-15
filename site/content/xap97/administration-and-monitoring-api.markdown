@@ -230,7 +230,8 @@ The Admin Domain Model has representation to all GigaSpaces level main actors. T
 
 {{%anchor GridServiceAgentLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[GridServiceAgent](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/gsa/GridServiceAgent.html)|
 |Description     |A process manager that manages Service Grid processes such as GSM, GSC and LUS. More info [here](/product_overview/service-grid.html#gsa).|
 |Main Operations |Allows to list all the currently managed processes.- Start processes (GSM, GSC, LUS).       |
@@ -238,7 +239,8 @@ FIXTABLE
 
 {{%anchor GridServiceAgentsLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[GridServiceAgents](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/gsa/GridServiceAgents.html)|
 |Description     |Holds all the currently discovered Grid Service Agents.|
 |Main Operations |Get all the currently discovered Grid Service Agents.Wait for X number of Grid Service Agents to be up.|
@@ -246,7 +248,8 @@ FIXTABLE
 
 {{%anchor GridServiceManagerLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [GridServiceManager](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/gsm/GridServiceManager.html)|
 |Description     |Managing Processing Unit deployments and Grid Service Containers. More info [here](/product_overview/service-grid.html#gsm).|
 |Main Operations |Deploy Processing Units. Deploy pure Space Processing Units. Get the Grid Service Agent Managing it. Restart itself (if managed by a Grid Service Agent).Kill itself (if managed by a Grid Service Agent).|
@@ -254,7 +257,8 @@ FIXTABLE
 
 {{%anchor GridServiceManagersLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[GridServiceManagers](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/gsm/GridServiceManagers.html)|
 |Description     |Holds all the currently discovered Grid Service Managers.|
 |Main Operations |Deploy Processing Units on a random Grid Service Manager. Deploy pure Space Processing Units on a random Grid Service Manager. Get all the currently discovered Grid Service Managers. Wait for X number of Grid Service Managers to be up.|
@@ -262,7 +266,8 @@ FIXTABLE
 
 {{%anchor GridServiceContainerLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[GridServiceContainer](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/gsc/GridServiceContainer.html)|
 |Description     | Container hosting Processing Unit Instances deployed from the GSM. More info [here](/product_overview/service-grid.html#gsc).|
 |Main Operations | List currently running Processing Units Instances.|
@@ -271,7 +276,8 @@ FIXTABLE
 
 {{%anchor GridServiceContainersLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [GridServiceContainers](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/gsc/GridServiceContainers.html)|
 |Description     |Holds all the currently discovered Grid Service Containers.|
 |Main Operations |Get all the currently discovered Grid Service Containers.{{% wbr %}}- Wait for X number of Grid Service Containers to be up.|
@@ -280,7 +286,8 @@ FIXTABLE
 
 {{%anchor LookupServiceLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [LookupService](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/lus/LookupService.html)|
 |Description     | A registry of services (GSM, GSC, Space Instances, Processing Unit Instances) that can be lookup up using it. More info [here](/product_overview/the-lookup-service.html#lus).|
 |Main Operations | Get the Lookup Groups and Locator it was started with.|
@@ -289,7 +296,8 @@ FIXTABLE
 
 {{%anchor LookupServicesLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[LookupServices](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/lus/LookupServices.html)|
 |Description     |Holds all the currently discovered Lookup Services.|
 |Main Operations |Get all the currently discovered Lookup Services.Wait for X number of Lookup Services to be up.|
@@ -298,7 +306,8 @@ FIXTABLE
 
 {{%anchor ProcessingUnitLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |  [ProcessingUnit](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/ProcessingUnit.html)|
 |Description     | A deployable processing unit running one or more Processing Unit Instances. Managed by the Grid Service Manager.|
 |Main Operations |Undeploy the Processing Unit{{% wbr %}}- Increase the number of Processing Units Instances (if allowed).{{% wbr %}}- Decrease the number of Processing Unit Instances (if allowed).{{% wbr %}}- Get the deployment status of the Processing Unit.{{% wbr %}}- Get the managing Grid Service Manager.{{% wbr %}}- Get the list of backup Grid Service Managers.{{% wbr %}}- List all the currently running Processing Unit Instances.{{% wbr %}}- Wait for X number of Processing Unit Instances or be up.{{% wbr %}}- Get an embedded Space that the Processing Unit has.{{% wbr %}}- Wait for an embedded Space to be correlated (discovered) with the Processing Unit.|
@@ -307,7 +316,8 @@ FIXTABLE
 
 {{%anchor ProcessingUnitInstanceLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/ProcessingUnitInstance.html)|
 |Description     | An actual instance of a Processing Unit running within a Grid Service Container.|
 |Main Operations | Destroy itself (if SLA is breached, will be instantiated again).{{% wbr %}}- Decrease itself (and destroying itself in the process). Will not attempt to create it again.{{% wbr %}}- Relocate itself to a different Grid Service Container.{{% wbr %}}- List all its inner services (such as event containers).{{% wbr %}}- Get the embedded Space Instance running within it (if there is one).{{% wbr %}}- Get the JEE container details if it is a web processing unit.|
@@ -316,7 +326,8 @@ FIXTABLE
 
 {{%anchor ProcessingUnitsLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[ProcessingUnits](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/ProcessingUnits.html)|
 |Description     |  Holds all the currently deployed Processing Units|
 |Main Operations |Get all the currently deployed Processing Units.{{% wbr %}}- Wait for (and return) a Processing by a specific name.|
@@ -325,7 +336,8 @@ FIXTABLE
 
 {{%anchor SpaceLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [Space](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/space/Space.html)|
 |Description     | Composed of one or more Space Instances to form a Space topology (cluster)|
 |Main Operations | Get all the currently running Space Instance that are part of the Space.{{% wbr %}}- Wait for X number of Space Instances to be up.{{% wbr %}}- Get aggregated Space statistics.{{% wbr %}}- Get a clustered [GigaSpace](./the-gigaspace-interface.html) to perform Space operations.|
@@ -334,7 +346,8 @@ FIXTABLE
 
 {{%anchor SpaceInstanceLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[SpaceInstance](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/space/SpaceInstance.html)|
 |Description     |An actual instance of a Space that is part of a topology (cluster), usually running within a Processing Unit Instance|
 |Main Operations | Get its Space Mode (primary or backup).{{% wbr %}}- Get its replication targets.{{% wbr %}}- Get a direct [GigaSpace](./the-gigaspace-interface.html) to perform Space operations.{{% wbr %}}- Get Space Instance statistics.|
@@ -343,7 +356,8 @@ FIXTABLE
 
 {{%anchor SpacesLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[Spaces](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/space/Spaces.html)|
 |Description     | Holds all the currently running Spaces|
 |Main Operations |Get all the currently running Spaces.{{% wbr %}}- Wait for (and return) a specific Space by name.|
@@ -352,7 +366,8 @@ FIXTABLE
 
 {{%anchor VirtualMachineLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |  [VirtualMachine](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/vm/VirtualMachine.html)|
 |Description     | A virtual machine (JVM) that is currently running at least one GigaSpaces component / service.|
 |Main Operations |Get the Grid Service Agent (if exists).{{% wbr %}}- Get the Grid Service Manager (if exists).{{% wbr %}}- Get the Grid Service Container (if exists).{{% wbr %}}- Get all the Processing Unit Instances that are running within the Virtual Machine.{{% wbr %}}- Get all the Space Instances that are running within the Virtual Machine.{{% wbr %}}- Get the details of the Virtual Machine (min/max memory, and so on).{{% wbr %}}- Get the statistics of the Virtual Machine (heap used, and so on).|
@@ -360,7 +375,8 @@ FIXTABLE
 
 {{%anchor VirtualMachinesLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[VirtualMachines](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/vm/VirtualMachines.html)|
 |Description     | Holds all the currently discovered Virtual Machines|
 |Main Operations | Get all the currently discovered Virtual Machines.{{% wbr %}}- Get aggregated Virtual Machines details.{{% wbr %}}- Get aggregated Virtual Machines statistics.|
@@ -369,7 +385,8 @@ FIXTABLE
 
 {{%anchor MachineLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [Machine](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/machine/Machine.html)|
 |Description     | An actual Machine (identified by its host address) running one or more GigaSpaces components / services in one or more Virtual Machines. Associated with one Operating System|
 |Main Operations | Get all the Grid Service Agents running on the Machine.{{% wbr %}}- Get all the Grid Service Containers running on the Machine.{{% wbr %}}- Get all the Grid Service Managers running on the Machine.{{% wbr %}}- Get all the Virtual Machines running on the Machine.{{% wbr %}}- Get all the Processing Unit Instances running on the Machine.{{% wbr %}}- Get all the Space Instances running on the Machine.{{% wbr %}}- Get the Operating System the Machine is running on.|
@@ -378,7 +395,8 @@ FIXTABLE
 
 {{%anchor MachinesLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [Machines](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/machine/Machines.html)|
 |Description     | Holds all the currently discovered Machines|
 |Main Operations |  * Get all the currently running Machines.{{% wbr %}}- Wait for X number of Machines or be up.|
@@ -387,7 +405,8 @@ FIXTABLE
 
 {{%anchor OperatingSystemLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [OperatingSystem](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/os/OperatingSystem.html)|
 |Description     | The Operating System GigaSpaces components / services are running on. Associated with one Machine.|
 |Main Operations | Get the details of the Operating System.{{% wbr %}}- Get the operating system statistics.|
@@ -395,7 +414,8 @@ FIXTABLE
 
 {{%anchor OperatingSystemsLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[OperatingSystems](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/os/OperatingSystems.html)|
 |Description     |Holds all the currently discovered Operating Systems|
 |Main Operations |Get all the current Operating Systems.{{% wbr %}}- Get the aggregated Operating Systems details.{{% wbr %}}- Get the aggregated Operating Systems statistics.|
@@ -403,7 +423,8 @@ FIXTABLE
 
 {{%anchor TransportLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            |[Transport](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/transport/Transport.html)|
 |Description     | The communication layer each GigaSpaces component / service uses|
 |Main Operations | Get the Transport details (host, port).{{% wbr %}}- Get the Transport statistics.|
@@ -411,7 +432,8 @@ FIXTABLE
 
 {{%anchor TransportsLink%}}
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Name            | [Transports](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/transport/Transports.html)|
 |Description     | Holds all the currently discovered Transports|
 |Main Operations |  Get all the current Transports.{{% wbr %}}- Get the aggregated Transports details.{{% wbr %}}- Get the aggregated Transports statistics.|
@@ -650,7 +672,7 @@ public class MyProcessingUnitStatusChangedEventListener implements
 
 The admin API also allows you to monitor XAP services. The information is available through the [ProcessingUnitInstanceStatistics](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/index.html?org/openspaces/admin/pu/ProcessingUnitInstanceStatistics.html).
 
-FIXTABLE
+
 | Service | Description |
 |:--------|:------------|
 |[WebRequestsServiceMonitors](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/index.html?org/openspaces/pu/container/jee/stats/WebRequestsServiceMonitors.html) |Statistics monitor information for JEE servlet requests.|

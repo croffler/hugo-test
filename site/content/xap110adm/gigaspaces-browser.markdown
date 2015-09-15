@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Main View
-categories: XAP102ADM
+categories: XAP110ADM
 parent: gigaspaces-management-center.html
 weight: 50
 ---

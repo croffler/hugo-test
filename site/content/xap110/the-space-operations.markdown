@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Operations
-categories: XAP102
+categories: XAP110
 weight: 300
 parent: the-gigaspace-interface-overview.html
 ---

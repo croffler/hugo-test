@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Notify Container
-categories: XAP102
+categories: XAP110
 parent: event-processing.html
 weight: 200
 ---

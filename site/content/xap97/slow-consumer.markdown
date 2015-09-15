@@ -55,7 +55,7 @@ When the LRMI thread pool queue size in the client side reached its limit (clien
 
 To enable and tune the slow consumer mechanism, you should configure the LRMI layer at the server side with the following JVM system properties:
 
-FIXTABLE
+
 |Property|Description|Default|Unit|
 |:-------|:----------|:------|:---|
 |com.gs.transport_protocol.lrmi.slow-consumer.enabled| Specify whether slow consumer protection is enabled | false | |
@@ -76,7 +76,7 @@ You should configure the following JVM system properties at the **client side**.
 When using FIFO notifications, the fifo notify queue should be limited as well for the same reasons
 {{%/info%}}
 
-FIXTABLE
+
 |Property|Description|Default|Unit|
 |:-------|:----------|:------|:---|
 |com.gs.transport\_protocol.lrmi.threadpool.queue-size| specify the lrmi thread pool maximum queue size|Integer.MAX_VALUE |Notification Packets (object/batch)|

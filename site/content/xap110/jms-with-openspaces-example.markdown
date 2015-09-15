@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Example
-categories: XAP102
+categories: XAP110
 parent: messaging-support.html
 weight: 400
 ---

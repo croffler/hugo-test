@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Polling Container
-categories: XAP102
+categories: XAP110
 parent: event-processing.html
 weight: 300
 ---

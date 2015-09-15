@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  ID Queries
-categories: XAP102NET
+categories: XAP110NET
 parent: querying-the-space.html
 weight: 100
 ---

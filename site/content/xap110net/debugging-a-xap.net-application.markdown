@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Application Debugging
-categories: XAP102NET
+categories: XAP110NET
 parent: installation-overview.html
 weight: 600
 ---

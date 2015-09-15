@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Running and Debugging Within Your IDE
-categories: XAP102
+categories: XAP110
 parent: installation.html
 weight: 700
 ---

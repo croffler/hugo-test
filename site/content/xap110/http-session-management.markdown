@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  HTTP Session Management
-categories: XAP102
+categories: XAP110
 parent: web-application-overview.html
 weight: 250
 ---

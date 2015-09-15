@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Paging Support - GSIterator
-categories: XAP102
+categories: XAP110
 parent: query-paging-support.html
 weight: 100
 ---

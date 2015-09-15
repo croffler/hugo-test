@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Space Object ID
-categories: XAP102NET
+categories: XAP110NET
 parent: modeling-your-data.html
 weight: 100
 ---

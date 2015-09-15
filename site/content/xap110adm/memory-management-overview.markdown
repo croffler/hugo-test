@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Memory Management
-categories: XAP102ADM
+categories: XAP110ADM
 weight: 400
 parent: none
 ---

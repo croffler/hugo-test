@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  API Mapping File
-categories: XAP102
+categories: XAP110
 parent: xap-cpp.html
 weight: 300
 ---

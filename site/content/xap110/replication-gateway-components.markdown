@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Gateway Components
-categories: XAP102
+categories: XAP110
 parent: multi-site-replication-overview.html
 weight: 200
 ---

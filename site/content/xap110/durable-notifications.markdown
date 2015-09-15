@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Durable Notifications
-categories: XAP102
+categories: XAP110
 parent: session-based-messaging-api.html
 weight: 100
 ---

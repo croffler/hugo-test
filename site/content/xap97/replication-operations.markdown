@@ -98,7 +98,7 @@ This behavior can be controlled with the following configuration:
 
 Here are the system behaviors when using these options:
 
-FIXTABLE
+
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `cluster-config.groups.group.repl-policy.replicate-notify-templates` | Boolean value. If set to `true`, the notify templates are replicated to the target space. | true|
@@ -106,7 +106,8 @@ FIXTABLE
 
 A table describing the behavior of combining the different properties:
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 | Replicate Notify Template Setting | Trigger Notify Template Setting | Explanation |
 |:----------------------------------|:--------------------------------|:------------|
 | True | False | Client gets notification from the active space after registration.{{% wbr %}}If the active source space fails the target  space instance will continue to send the events to the registered listeners. |
@@ -132,7 +133,8 @@ Most common scenarios:
 The default behavior in these cases is to treat the conflicting operations as duplicates and ignore them.
 This can be controlled using the following property:
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `cluster-config.groups.group.repl-policy.on-conflicting-packets` | Enum value. If set to `ignore`, the conflicting operations are ignored. If set to `override` the newest operation will override the data in the target.| ignore|

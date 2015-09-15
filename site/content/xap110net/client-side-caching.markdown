@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Client Side Caching
-categories: XAP102NET
+categories: XAP110NET
 parent: none
 weight: 1000
 ---

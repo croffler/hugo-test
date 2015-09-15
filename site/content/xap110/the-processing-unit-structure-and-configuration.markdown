@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Directory Structure
-categories: XAP102
+categories: XAP110
 parent: the-processing-unit-overview.html
 weight: 100
 ---

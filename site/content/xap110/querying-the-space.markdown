@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Querying the Space
-categories: XAP102
+categories: XAP110
 parent: none
 weight: 800
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Reloading Business Logic
-categories: XAP102
+categories: XAP110
 parent: the-processing-unit-overview.html
 weight: 350
 ---

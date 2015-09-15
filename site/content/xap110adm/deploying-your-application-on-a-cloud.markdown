@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Deploying on a Cloud
-categories: XAP102ADM
+categories: XAP110ADM
 weight: 450
 parent: none
 ---

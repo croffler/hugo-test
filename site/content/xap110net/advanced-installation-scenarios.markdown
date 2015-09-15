@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Advanced Scenarios
-categories: XAP102NET
+categories: XAP110NET
 parent: installation-overview.html
 weight: 400
 ---

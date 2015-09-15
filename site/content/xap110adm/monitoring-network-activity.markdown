@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Network Monitoring
-categories: XAP102ADM
+categories: XAP110ADM
 parent: monitoring.html
 weight: 100
 ---

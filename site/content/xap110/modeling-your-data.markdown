@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Modeling your Data
-categories: XAP102
+categories: XAP110
 parent: none
 weight: 600
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  License Key
-categories: XAP102
+categories: XAP110
 parent: installation.html
 weight: 100
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  FIFO Grouping
-categories: XAP102NET
+categories: XAP110NET
 parent: fifo-overview.html
 weight: 200
 ---

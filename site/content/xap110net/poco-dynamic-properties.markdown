@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Dynamic Properties
-categories: XAP102NET
+categories: XAP110NET
 parent: poco-overview.html
 weight: 200
 ---

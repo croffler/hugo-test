@@ -17,7 +17,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 
 # Persistence
 
-FIXTABLE
+|     |   |
+|----|----|
 |Syntax     | persist |
 |Argument   | boolean          |
 |Default    | false|
@@ -38,7 +39,8 @@ public class Person {
 
 # Include Properties
 
-FIXTABLE
+|     |   |
+|----|----|
 |Syntax     | includeProperties|
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{{%currentversion%}}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | IncludeProperties.IMPLICIT|
@@ -56,7 +58,8 @@ public class Person {
 
 # FIFO Support
 
-FIXTABLE
+|     |   |
+|----|----|
 |Syntax     | fifoSupport |
 {{%javadoc "|Argument   | [FifoSupport](  com/gigaspaces/annotation/pojo/FifoSupport )|"%}}
 |Default    | FifoSupport.NOT_SET|
@@ -77,7 +80,8 @@ public class Person {
 
 # Inherit Index
 
-FIXTABLE
+|     |   |
+|----|----|
 |Syntax     | inheritIndexes |
 |Argument   | boolean          |
 |Default    | true|
@@ -97,7 +101,8 @@ public class Person {
 
 # Storage Type
 
-FIXTABLE
+|     |   |
+|----|----|
 |Syntax     | storageType |
 {{%javadoc "|Argument   | [StorageType](  com/gigaspaces/metadata/StorageType )          |"%}}
 |Default    | StorageType.OBJECT |
@@ -118,7 +123,8 @@ public class Person {
 
 # Replication
 
-FIXTABLE
+|     |   |
+|----|----|
 |Syntax     | replicate |
 |Argument   | boolean          |
 |Default    | true|
@@ -141,7 +147,8 @@ public class Person {
 
 # Compound Index
 
-FIXTABLE
+|     |   |
+|----|----|
 |Syntax     | CompoundSpaceIndexes CompoundSpaceIndex paths  |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
@@ -170,7 +177,8 @@ public class User {
 
 # Blob Store
 
-FIXTABLE
+|     |   |
+|----|----|
 |Syntax     | blobstoreEnabled  |
 |Argument | boolean          |
 |Default | true|

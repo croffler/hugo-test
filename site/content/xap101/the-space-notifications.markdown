@@ -169,7 +169,7 @@ spaceConfigurer.destroy();
 
 A bean can implement the following interfaces to get notified about space mode changes:
 
-FIXTABLE
+
 | Interface | Implemented Method | When Invoked |
 |:----------|:-------------------|:-------------|
 | _SpaceBeforeBackupListener_ | void onBeforeBackup(BeforeSpaceModeChangeEvent event) | Before a space becomes backup |
@@ -201,7 +201,7 @@ class MyBean implements SpaceBeforeBackupListener, SpaceAfterPrimaryListener {
 
 If the bean does not implement any of the interfaces above, another option is to annotate the bean's methods that need to be invoked when a space mode changes.
 
-FIXTABLE
+
 | Annotation | Method Parameter | When Invoked |
 |:-----------|:-----------------|:-------------|
 | @PreBackup | _none_ or _BeforeSpaceModeChangeEvent_ | Before a space becomes backup |

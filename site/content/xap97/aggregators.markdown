@@ -23,7 +23,7 @@ Openspaces comes with built-in aggregators you can use to calculate Min, Max, Av
 
 The following built-in Aggregators provided:
 
-FIXTABLE
+
 |Task|Description|
 |:---|:----------|
 |AvgTask|An average calculation task accepting a Task to delegate the actual execution to. Implements the reduce(java.util.List) operation to calculate average of all returned values.|

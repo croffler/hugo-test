@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Cache Eviction Strategy
-categories: XAP102NET
+categories: XAP110NET
 parent: local-cache.html
 weight: 100
 ---

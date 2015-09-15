@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Global HTTP Session Sharing
-categories: XAP102TUT
+categories: XAP110TUT
 parent: none
 weight: 1500
 ---

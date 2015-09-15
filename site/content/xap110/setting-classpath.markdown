@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Setting Classpath
-categories: XAP102
+categories: XAP110
 parent: installation-java.html
 weight: 200
 ---

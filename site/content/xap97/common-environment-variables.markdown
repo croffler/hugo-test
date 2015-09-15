@@ -14,7 +14,7 @@ The XAP environment configuration is maintained by a configuration script file. 
 
 Below is a list of some of a selected list of commonly used variables that are defined in this script:
 
-FIXTABLE
+
 |Name|Description|
 |:---|:----------|
 | `JAVA_HOME` |The directory in which Java is installed.|

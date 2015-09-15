@@ -44,13 +44,11 @@ You deploy a war file just like you deploy a pu jar.
 
 {{%tabs%}}
 {{%tab "  Unix "%}}
-
 ```console
 GS_HOME/bin/gs.sh deploy tutorial.war
 ```
 {{% /tab %}}
 {{%tab "  Windows "%}}
-
 ```console
 GS_HOME\bin\gs.sh deploy tutorial.war
 ```
@@ -190,13 +188,12 @@ When deploying, include within the META-INF/spring/pu.properties file the jetty.
 
 ### Deploying with the Web Admin UI:
 
-There are fully functional examples on GitHub available.{{%tryit "https://github.com/Gigaspaces/xap-tutorial"%}}
+There are fully functional examples on GitHub available.
 
+{{%tryit "https://github.com/Gigaspaces/xap-tutorial"%}}
 
 {{%section%}}
 {{%column%}}
-
-
 {{%popup "/attachment_files/qsg/Deploy-session1.png"  "Deploy http Space"%}}
 {{%/column%}}
 
@@ -262,7 +259,6 @@ XAP lets you share HTTP session data across multiple data centers, multiple web 
 # Load Balancing
 {{%section%}}
 {{%column width="80%" %}}
-
 When deploying a highly available web site, usually a load balancer is used to load balance requests between at least two instances of a web containers that run the web applications. When using XAP to deploy web applications, running more than one instance of a web application becomes very easy. XAP comes with a built-in utility allowing you to dynamically update an Apache httpd web server load-balancing configuration, based on deployed web applications.
 
 {{%/column%}}

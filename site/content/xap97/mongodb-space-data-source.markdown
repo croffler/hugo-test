@@ -179,7 +179,7 @@ Before deploying your Processing Unit, please do the following:
 
 ### `MongoSpaceDataSource` Properties
 
-FIXTABLE
+
 |Property|Description|Default|
 |:-------|:----------|:------|
 |mongoClientConnector|A configured `com.gigaspaces.persistency.MongoClientConnector` bean. Must be configured| | 

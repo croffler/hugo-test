@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Dynamic Language Tasks
-categories: XAP102
+categories: XAP110
 parent: task-execution-overview.html
 weight: 300
 ---

@@ -209,7 +209,7 @@ Creating a Local View directly from the space url is deprecated - use `LocalView
 
 This properties can be configured on the space side and they will affect all the local views which are created on top of that space.
 
-FIXTABLE
+
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `cluster-config.groups.group.repl-policy.redo-log-local-view-capacity` | Specifies the total capacity of replication packets the redo log can hold for a local view replication target | 150000 |
@@ -220,7 +220,7 @@ FIXTABLE
 
 The following table summarizes the configuration changes made in 8.0.5
 
-FIXTABLE
+
 | Old Property (8.0.4 and older) | `LocalViewSpaceFactoryBean` | `LocalViewSpaceConfigurer` |
 |:-------------------------------|:----------------------------|:---------------------------|
 | `space-config.dist-cache.events.lease` | `max-disconnection-duration` | `maxDisconnectionDuration()` |

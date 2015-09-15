@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Hibernate Integration
-categories: XAP102
+categories: XAP110
 parent: space-persistency-overview.html
 weight: 200
 ---

@@ -561,7 +561,7 @@ When using Programmatic Transaction Management you should be expecting to handle
 
 The following table describes the mapping between the [Spring TransactionDefinition](http://static.springsource.org/spring/docs/2.0.x/api/org/springframework/transaction/TransactionDefinition.html) Mapping to GigaSpaces ReadModifiers:
 
-FIXTABLE
+
 |Spring TransactionDefinition| GigaSpaces ReadModifiers |
 |:---------------------------|:-------------------------|
 |ISOLATION_READ_UNCOMMITTED| DIRTY_READ|

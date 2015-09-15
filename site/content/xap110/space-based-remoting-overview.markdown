@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Space Based Remoting
-categories: XAP102
+categories: XAP110
 parent: none
 weight: 1600
 ---

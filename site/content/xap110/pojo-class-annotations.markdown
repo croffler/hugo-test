@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Class Annotations
-categories: XAP102
+categories: XAP110
 parent: pojo-annotation-overview.html
 weight: 100
 ---

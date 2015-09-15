@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Other Data Access APIs
-categories: XAP102
+categories: XAP110
 parent: none
 weight: 1200
 ---

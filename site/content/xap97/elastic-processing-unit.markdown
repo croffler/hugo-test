@@ -236,7 +236,7 @@ Specifying number of partitions explicitly is recommended only when fine grained
 {{%tabs%}}
 {{%tab "  memoryCapacityPerContainer 6G "%}}
 
-FIXTABLE
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 6GB = 12GB|
@@ -247,7 +247,7 @@ FIXTABLE
 {{% /tab %}}
 {{%tab "  memoryCapacityPerContainer 12G "%}}
 
-FIXTABLE
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 12GB = 24GB|
@@ -258,7 +258,7 @@ FIXTABLE
 {{% /tab %}}
 {{%tab "  memoryCapacityPerContainer 24G "%}}
 
-FIXTABLE
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 24GB = 48GB|
@@ -663,7 +663,7 @@ ProcessingUnit puB = gsm.deploy(
 
 Here are the main configuration properties you may use with the [ElasticSpaceDeployment](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/space/ElasticSpaceDeployment.html) and the [ElasticStatefulProcessingUnitDeployment](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/ElasticStatefulProcessingUnitDeployment.html):
 
-FIXTABLE
+
 |Property| Type | Description| Default | Mandatory |
 |:--------------|:-----------|:--------|:----------|
 |highlyAvailable| boolean | Specifies if the space should duplicate each information on two different machines.| true|No|
@@ -683,7 +683,7 @@ FIXTABLE
 
 Here are the main configuration properties you may use with the [EagerScaleConfig](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/config/EagerScaleConfig.html) and the [ManualCapacityScaleConfig](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/config/ManualCapacityScaleConfig.html):
 
-FIXTABLE
+
 |Property| Type | Description| Default |Mandatory |
 |:-------|:-----|:-----------|:--------|:---------|
 |memoryCapacityInMB|int|Specifies the total memory capacity of the processing unit.| |Yes|

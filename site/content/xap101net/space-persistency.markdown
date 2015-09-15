@@ -42,7 +42,7 @@ The difference between the Synchronous or Asynchronous persistency mode concerns
 
 The Space Persistency API contains an abstract class one should extend in order to customize the space persistency functionality. The ability to customize the space persistency functionality allows GigaSpaces to interact with any external application or data source.
 
-FIXTABLE
+
 | Client Call | External Data Source Call| Cache Policy Mode|EDS Usage Mode|
 |:------------|:-----------------------------------------------|:-----------------|:-------------|
 |Write, Change, Take, WriteMultiple, TakeMultiple, Clear|ExecuteBulk |ALL_IN_CACHE, LRU|read-write|

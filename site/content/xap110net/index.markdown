@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  .Net Developers Guide
-categories: XAP102NET
+categories: XAP110NET
 ---
 
 <br>

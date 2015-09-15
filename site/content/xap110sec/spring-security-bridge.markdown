@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Spring Security Bridge
-categories: XAP102SEC
+categories: XAP110SEC
 parent: none
 weight: 900
 ---

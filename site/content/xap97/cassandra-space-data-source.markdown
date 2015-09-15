@@ -168,7 +168,7 @@ For more details about different configurations see [Space Persistency](./space-
 
 ### `CassandraSpaceDataSource` Properties
 
-FIXTABLE
+
 |Property|Description|Default|
 |:-------|:----------|:------|
 |cassandraDataSource|A configured `org.apache.cassandra.cql.jdbc.CassandraDataSource` bean. Must be configured to use CQL 2.0.0.| |

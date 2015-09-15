@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Deployment and Administration
-categories: XAP102ADM
+categories: XAP110ADM
 
 ---
 

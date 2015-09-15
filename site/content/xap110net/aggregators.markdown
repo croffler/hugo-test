@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Aggregators
-categories: XAP102NET
+categories: XAP110NET
 weight: 550
 parent: the-gigaspace-interface-overview.html
 ---

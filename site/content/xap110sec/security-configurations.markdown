@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Configuration
-categories: XAP102SEC
+categories: XAP110SEC
 parent: none
 weight: 400
 ---

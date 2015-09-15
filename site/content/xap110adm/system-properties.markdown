@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  System Properties
-categories: XAP102ADM
+categories: XAP110ADM
 parent: runtime-configuration.html
 weight: 400
 ---

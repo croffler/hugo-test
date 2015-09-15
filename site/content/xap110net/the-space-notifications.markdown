@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Notifications
-categories: XAP102NET
+categories: XAP110NET
 parent: the-gigaspace-interface-overview.html
 weight: 600
 ---

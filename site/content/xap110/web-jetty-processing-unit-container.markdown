@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Jetty Processing Unit Container
-categories: XAP102
+categories: XAP110
 parent: web-application-overview.html
 weight: 200
 ---

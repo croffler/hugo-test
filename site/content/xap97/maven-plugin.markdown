@@ -108,7 +108,7 @@ mvn os:create
 
 The result is a list of available template names and descriptions:
 
-FIXTABLE
+
 |Template Name | Description|
 |:-------------|:-----------|
 |basic|Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.|
@@ -136,7 +136,7 @@ mvn os:create
     -Dtemplate=<project-template>
 ```
 
-FIXTABLE
+
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `groupId` | The project package name | No | `com.mycompany.app` |
@@ -195,7 +195,7 @@ mvn os:run
     -Dmodule=<module-name>
 ```
 
-FIXTABLE
+
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
 | `cluster` | Cluster properties | No | * `schema` -- the cluster schema name{{% wbr %}}- `total_members` -- a list of the cluster members, separated by a comma{{% wbr %}}- `id` -- the cluster ID{{% wbr %}}- `backup_id` -- the backup ID | * `schema=partitioned`{{% wbr %}}- `total_members=1,1`{{% wbr %}}- `id=1`{{% wbr %}}- `backup_id=1` |
@@ -253,7 +253,7 @@ If not specified explicitly, unit tests are executed when packaging the Processi
 
 To suppress the execution of unit tests, add one of the following arguments to the command line: `skipTests` or `maven.test.skip`:
 
-FIXTABLE
+
 | Argument | Description |
 |:---------|:------------|
 | `skipTests` | Skips the unit test execution, but still performs unit test compilation |
@@ -287,7 +287,7 @@ mvn os:run-standalone
     -Dmodule=<module-name>
 ```
 
-FIXTABLE
+
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
 | `cluster` | Cluster properties | No | * `schema` -- the cluster schema name{{% wbr %}}- `total_members` -- a list of the cluster members, separated by a comma{{% wbr %}}- `id` -- the cluster ID{{% wbr %}}- `backup_id` -- the backup ID | * `schema=partitioned`{{% wbr %}}- `total_members=1,1`{{% wbr %}}- `id=1`{{% wbr %}}- `backup_id=1` |
@@ -340,7 +340,7 @@ mvn os:deploy
     -Dmodule=<module-name>
 ```
 
-FIXTABLE
+
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `sla` | The SLA policy | No | |
@@ -373,7 +373,7 @@ mvn os:undeploy
     -Dmodule=<module-name>
 ```
 
-FIXTABLE
+
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `groups` | Comma-delimited list of lookup group names | No | gigaspaces-\<VERSION\> |
@@ -495,7 +495,7 @@ mvn os:hsql-ui
     -Dhelp
 ```
 
-FIXTABLE
+
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `driver` | JDBC driver class | No | org.hsqldb.jdbcDriver |

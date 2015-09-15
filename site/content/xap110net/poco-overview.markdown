@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  PONO Support
-categories: XAP102NET
+categories: XAP110NET
 parent: none
 weight: 200
 ---

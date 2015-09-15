@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Configuration
-categories: XAP102NET
+categories: XAP110NET
 weight: 200
 parent: the-gigaspace-interface-overview.html
 ---

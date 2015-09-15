@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Scala
-categories: XAP102
+categories: XAP110
 parent: interoperability-overview.html
 weight: 400
 ---

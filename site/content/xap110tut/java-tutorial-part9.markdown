@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Big Data
-categories: XAP102TUT
+categories: XAP110TUT
 weight: 1300
 parent: none
 ---

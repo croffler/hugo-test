@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Browsing JMS Queues
-categories: XAP102
+categories: XAP110
 parent: jms-advanced.html
 weight: 400
 ---

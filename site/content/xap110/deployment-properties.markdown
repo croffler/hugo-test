@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Deployment Properties
-categories: XAP102
+categories: XAP110
 parent: deploying-and-running-overview.html
 weight: 400
 ---

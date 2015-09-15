@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Cassandra Integration
-categories: XAP102
+categories: XAP110
 parent: big-data.html
 weight: 200
 ---

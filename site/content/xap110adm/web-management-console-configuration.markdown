@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Configuration
-categories: XAP102ADM
+categories: XAP110ADM
 parent: web-management-console.html
 weight: 100
 ---

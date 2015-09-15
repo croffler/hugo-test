@@ -165,7 +165,7 @@ For more details about different configurations see [Space Persistency](./space-
 
 ## `CassandraSpaceSynchronizationEndpoint` Properties
 
-FIXTABLE
+
 |Property|Description|
 |:-------|:----------|
 |hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](./cassandra-hector-client.html).|
@@ -246,7 +246,7 @@ public class Address {
 
 By default, the fixed properties will be mapped to the `Person` column family in Cassandra like this:
 
-FIXTABLE
+
 |Property|Column Name (and type)|
 |:-------|:---------------------|
 |person.id|(row key) (type: `Long`)|
@@ -265,7 +265,7 @@ By default, dynamic properties are not flattened and are written as is to Cassan
 
 This is how they will be written to Cassandra:
 
-FIXTABLE
+
 |Property|Column Name (and type)|
 |:-------|:---------------------|
 |person.newName|newName (type: Bytes)|

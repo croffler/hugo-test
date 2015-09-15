@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Slow Consumer
-categories: XAP102ADM
+categories: XAP110ADM
 parent:  tuning-gigaspaces-performance-overview.html
 weight: 200
 ---

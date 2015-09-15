@@ -71,7 +71,7 @@ When a synchronous replication channel is operating in asynchronous state, a spe
 
 This throttling can be configured with the following parameters:
 
-FIXTABLE
+
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `throttle-when-inactive` | Boolean value. Set to `true` if you want to throttle replicated operations when the channel is in-active (disconnection) | `true` in primary backup `false` in full sync replicated |.
@@ -98,7 +98,7 @@ To change the default replication settings you should modify the space propertie
 
 While the replication channel is operating at asynchronous state due to the reasons mentioned above, the worker that sends the data from the redolog asynchronously is affected by the following configuration (which also relates to asynchronous replication):
 
-FIXTABLE
+
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `repl-chunk-size` | Number of packets that are replicated as a single chuck each time. | 500 |

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Authorities
-categories: XAP102SEC
+categories: XAP110SEC
 parent: none
 weight: 300
 ---

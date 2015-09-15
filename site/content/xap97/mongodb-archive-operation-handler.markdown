@@ -94,7 +94,7 @@ archiveContainer.destroy();
 
 #### MongoArchiveOperationHandler Properties
 
-FIXTABLE
+
 |Property|Description|
 |:-------|:----------|
 |gigaSpace| GigaSpace reference used for type descriptors. see [Archive Container](./archive-container.html#Configuration)|

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Gateway Bootstrapping
-categories: XAP102
+categories: XAP110
 parent: multi-space-replication-overview.html
 weight: 200
 ---

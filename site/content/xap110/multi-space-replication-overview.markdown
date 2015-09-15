@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Multi Site LAN Replication
-categories: XAP102
+categories: XAP110
 parent: none
 weight: 2300
 ---

@@ -11,7 +11,8 @@ weight: 400
 
 # RemotingService
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Class Annotation    | @RemotingService|
 |Description         | Spring provides support for various remoting technologies. GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol |
 |Attribute Annotation| @ExecutorProxy  |
@@ -54,7 +55,8 @@ public interface MyService {
 
 # ExecutorProxy
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Attribute Annotation| @ExecutorProxy  |
 |Description         | Spring provides support for various remoting technologies. GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol |
 
@@ -79,7 +81,8 @@ public class DataRemoting {
 
 # Routing
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Method argument     | @Routing |
 |Description         | Spring provides support for various remoting technologies. GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol |
 

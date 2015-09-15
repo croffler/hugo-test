@@ -118,8 +118,8 @@ TODO
 
 When one of these objects is persisted in Cassandra, the following default column mapping is performed:
 
-FIXTABLE
-|:-------|:----------------------|
+|                |             |
+|----------------|-------------|
 |Property|Column Name (and type) |
 |auditRecord.id|(row key) (type: Long) |
 |auditRecord.timeStamp | timeStamp (type: Long)|

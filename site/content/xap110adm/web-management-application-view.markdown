@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Application View
-categories:
+categories: XAP110ADM
 parent: web-management-console.html
 weight: 400
 ---

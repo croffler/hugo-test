@@ -168,7 +168,7 @@ Before deploying your Processing Unit, please do the following:
 
 ## `MongoSpaceSynchronizationEndpoint` Properties
 
-FIXTABLE
+
 |Property|Description|
 |:-------|:----------|
 |client|A configured com.gigaspaces.persistency.MongoClientConnector bean. Must be configured.| 

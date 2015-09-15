@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Runtime Configuration
-categories: XAP102ADM
+categories: XAP110ADM
 weight: 700
 parent: none
 ---

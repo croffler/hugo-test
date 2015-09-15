@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Session Based Messaging API
-categories: XAP102
+categories: XAP110
 parent: notify-container-overview.html
 weight: 300
 ---

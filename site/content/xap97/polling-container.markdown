@@ -529,7 +529,7 @@ public interface ReceiveOperationHandler {
 
 OpenSpaces comes with several built-in receive operation-handler implementations:
 
-FIXTABLE
+
 |Receive Operation Handler|Description|
 |:------------------------|:----------|
 |`SingleTakeReceiveOperationHandler`|Performs a single blocking take operation with the receive timeout.|

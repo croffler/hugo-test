@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Synchronization Endpoint
-categories: XAP102
+categories: XAP110
 parent: mongodb-space-persistency.html
 weight: 200
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Spring Security
-categories: XAP102SEC
+categories: XAP110SEC
 parent: spring-security-bridge.html
 weight: 100
 ---

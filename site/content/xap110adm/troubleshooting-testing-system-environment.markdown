@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Testing System Environment
-categories: XAP102ADM
+categories: XAP110ADM
 parent: troubleshooting.html
 weight: 200
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Hector Client
-categories: XAP102
+categories: XAP110
 parent: cassandra-space-persistency.html
 weight: 300
 ---

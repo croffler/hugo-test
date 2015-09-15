@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  JMS-Space Interoperability
-categories: XAP102
+categories: XAP110
 parent: messaging-support.html
 weight: 300
 ---

@@ -114,7 +114,7 @@ In this case the key euro inside the map behind the balance will be increased by
 
 ## Available Operations
 
-FIXTABLE
+
 |Operation Name|Description|Semantics|
 |:-------------|:----------|:--------|
 |**Set**|sets a property value|sets value of the given property|

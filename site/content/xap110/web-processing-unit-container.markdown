@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Web Processing Unit Container
-categories: XAP102
+categories: XAP110
 parent: web-application-overview.html
 weight: 300
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Protective Modes
-categories: XAP102ADM
+categories: XAP110ADM
 weight: 150
 parent: troubleshooting.html
 ---

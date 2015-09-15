@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Space Persistency
-categories: XAP102
+categories: XAP110
 parent: none
 weight: 1100
 ---

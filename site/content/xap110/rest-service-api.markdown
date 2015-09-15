@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  REST API
-categories: XAP102
+categories: XAP110
 parent: rest-service-overview.html
 weight: 400
 ---

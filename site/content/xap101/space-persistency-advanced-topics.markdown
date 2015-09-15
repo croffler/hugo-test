@@ -17,7 +17,7 @@ This sections covers advanced options related to Space Persistency.
 
 Here are the Space Persistency Properties:
 
-FIXTABLE
+
 | Property | Description | Default |
 |:---------|:------------|:--------|
 |space-config.external-data-source.shared-iterator.enabled| This attribute enables shared iterator mode which tries to optimize data source access by sharing the same iterator for the same query operations when possible. |true|

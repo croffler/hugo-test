@@ -210,7 +210,7 @@ The following example demonstrates how to set the timeout for waiting for distri
 
 Distributed transaction participants data will be processed individually if 10 seconds have passed and not all of the participants data  has arrived or if 20 new operations were executed after the distributed transaction.
 
-FIXTABLE
+
 |Attribute|Default Value|
 |:--------|:------------|
 |dist-tx-wait-timeout-millis|60000 milliseconds|

@@ -26,7 +26,7 @@ The general format of the space URL is:
 
 The following parameters can be defined:
 
-FIXTABLE
+
 | Name | Description |
 |:-----|:------------|
 | <nobr>Lookup Service Host name/IP</nobr> | The machine host name/IP running the lookup service. May be \* when Jini is used as a protocol. In this case the space is located using multicast or unicast with search path. |
@@ -103,7 +103,7 @@ java://localhost:10098/mySpace_container/mySpace?schema=default
 
 The following are optional property string values:
 
-FIXTABLE
+
 |Property String | Description | Optional values |
 |:--------------|:----------------|:------------|
 |`create` | Creates a new space using the container's default parameters. New spaces use the default space configuration file. Example: `java://localhost:10098/containerName`{{% wbr %}}`/mySpaces?create=true` | |
@@ -308,7 +308,7 @@ The application is always injected with `os-core:giga-space` bean that wraps alw
 
 The `GigaSpace` Bean can have the following elements:
 
-FIXTABLE
+
 |Element|Description|Required|Default Value|
 |:------|:----------|:-------|:------------|
 |space|This can be an embedded space , remote space , local view or local cache. |YES| |

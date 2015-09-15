@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Global vs. Local LUS
-categories: XAP102ADM
+categories: XAP110ADM
 parent: runtime-configuration.html
 weight: 200
 ---

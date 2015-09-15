@@ -12,7 +12,8 @@ parent:
 
 # Custom Properties
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | Dictionary<String,String> |
 |Default    | none|
 |Description|  |
@@ -43,7 +44,8 @@ public void createSpaceWithProperties()
 
 # Security
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | SecurityContext |
 |Default    | none|
 |Description||
@@ -72,7 +74,8 @@ public void createSpaceWithCredentials()
 
 # Cluster Info
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -106,7 +109,8 @@ public void createSpaceWithClusterInfo()
 
 # Filters
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -124,7 +128,8 @@ public void createSpaceWithFilter()
 
 # Gateway
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -143,7 +148,8 @@ public void createSpaceWithGateway()
 
 # LookupGroups
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -162,7 +168,8 @@ public void createSpaceWithLookupGroups()
 
 # LookupLocators
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -181,7 +188,8 @@ public void createSpaceWithLookupLocators()
 
 # LookupTimeout
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -200,7 +208,8 @@ public void createSpaceWithLookupTimeout()
 
 # Mirrored
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -218,7 +227,8 @@ public void createSpaceWithMirrored()
 
 # Name
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -235,7 +245,8 @@ public void createSpaceWithName()
 
 # Secured
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||
@@ -253,7 +264,8 @@ public void createSpaceSecured()
 
 # Versioned
 
-FIXTABLE
+|                |            |
+|----------------|-------------|
 |Argument   | [ClusterInfo](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_ClusterInfo.htm) |
 |Default    | none|
 |Description||

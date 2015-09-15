@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Java Security Policy File
-categories: XAP102SEC
+categories: XAP110SEC
 parent: security-administration.html
 weight: 500
 ---

@@ -14,7 +14,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports  field-le
 
 # SpaceId
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceId(autoGenerate=false)|
 |Argument   |  boolean          |
 |Default    | false |
@@ -42,7 +43,8 @@ public class Person {
 
 # SpaceRouting
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceRouting|
 |Description| The `@SpaceRouting` annotation specifies a get method for the field to be used to calculate the target space for the space operation (read , write...). The `@SpaceRouting` field value hash code is used to calculate the target space when the space is running in **partitioned mode**.{{%wbr%}}The field value hash code is used to calculate the target space when the space is running in **partitioned mode**. |
 
@@ -68,7 +70,8 @@ public class Employee {
 
 # SpaceProperty
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceProperty(nullValue="-1" )|
 |Argument   |  nullValue          |
 |Default    |  null |
@@ -95,7 +98,8 @@ public class Employee {
 
 # SpaceIndex
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     |  @SpaceIndex(type=SpaceIndexType.BASIC)|
 {{%javadoc "|Argument   |  [SpaceIndexType]( com/gigaspaces/metadata/index/SpaceIndexType )  |"%}}
 |Description| Querying indexed fields speeds up read and take operations. The `@SpaceIndex` annotation should be used to specify an indexed field.|
@@ -141,7 +145,8 @@ public class User {
 
 # Unique Index
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     |   @SpaceIndex(type=SpaceIndexType.BASIC, unique = true)|
 {{%javadoc "|Argument   |  [SpaceIndexType]( com/gigaspaces/metadata/index/SpaceIndexType )  |"%}}
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
@@ -172,7 +177,8 @@ public class Person
 
 # SpaceIndex Path
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     |  @SpaceIndex(path = "attributeName",type = SpaceIndexType.EXTENDED)|
 {{%javadoc "|Argument   |  [SpaceIndexType]( com/gigaspaces/metadata/index/SpaceIndexType )wbr path - indexed attribute|"%}}
 |Description| The `path()` attribute represents the path of the indexed property within a nested object. |
@@ -218,7 +224,8 @@ public static class Address implements Serializable {
 
 
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     |  @SpaceVersion|
 |Description| This annotation is used for object versioning used for optimistic locking. |
 |Note       | The attribute must be an `int` data type. |
@@ -244,7 +251,8 @@ public class Employee {
 
 # SpacePersist
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpacePersist|
 |Description| This specifies a getter method for holding the persistency mode of the object overriding the class level persist declaration. This field should be of the boolean data type.{{%wbr%}}If the persist class level annotation is true, all objects of this class type will be persisted into the underlying data store (Mirror, ExternalDataSource, Storage Adapter).|
 |Note       | When using this option, you must have the space class level `persist` decoration specified.|
@@ -270,7 +278,8 @@ public class Employee {
 
 # SpaceExclude
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     |  @SpaceExclude|
 |Description| When this annotation is specified the attribute is not written into the space.|
 |Note | - When `IncludeProperties` is defined as `IMPLICIT`, `@SpaceExclude` should usually be used. This is because `IMPLICIT` instructs the system to take all POJO fields into account.{{%wbr%}}- When `IncludeProperties` is defined as `EXPLICIT`, there is no need to use `@SpaceExclude`.{{%wbr%}}- `@SpaceExclude` can still be used, even if `IncludeProperties` is not defined.  |
@@ -295,7 +304,8 @@ public class Employee {
 
 # SpaceLeaseExpiration
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     |  @SpaceLeaseExpiration|
 |Description|This annotation specifies the attribute for holding the timestamp of when the instance's lease expires (this is a standard Java timestamp based on the 1/1/1970 epoch). This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
 
@@ -323,7 +333,8 @@ public class MyData {
 
 # SpaceStorageType
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceStorageType(storageType=StorageType.BINARY)|
 {{%javadoc "|Argument   | [StorageType](  com/gigaspaces/metadata/StorageType )          |"%}}
 |Default    | StorageType.OBJECT |
@@ -351,7 +362,8 @@ public class Message {
 
 # SpaceFifoGroupingProperty
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceFifoGroupingProperty(path = "attributeName")|
 |Argument   | path          |
 |Description| This annotation is used to define a space FIFO grouping property. |
@@ -379,7 +391,8 @@ public class FlightReservation
 
 # SpaceFifoGroupingIndex
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceFifoGroupingIndex|
 |Description| This annotation is used to define a space FIFO grouping Index. |
 |Note |This annotation can be declared on several properties in a class in order to assist in efficient traversal.{{%wbr%}}If defined, there must be a property in the class, marked with the `@SpaceFifoGroupingProperty` annotation.{{%wbr%}}A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.   |
@@ -406,7 +419,8 @@ Example:
 
 # SpaceDynamicProperties
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceDynamicProperties|
 |Description| Allows adding properties freely to a class without worrying about the schema.|
 |Note|**Only one property per class can be annotated with `@SpaceDynamicProperties`.**|
@@ -441,7 +455,8 @@ public class Person {
 
 # SpaceClassConstructor
 
-FIXTABLE
+|           |                            |
+|-----------|----------------------------|
 |Syntax     | @SpaceClassConstructor|
 |Description| This annotation can be placed on a POJO constructor to denote that this constructor should be used during object instantiation.{{%wbr%}}Using this annotations, it is possible for the POJO to have immutable properties (i.e. `final` fields).{{%wbr%}}As opposed to a standard POJO, a POJO annotated with this annotation may omit setters for its properties.{{%wbr%}}Except for the case where the id property is auto generated, only properties defined in this constructor will be considered space properties.{{%wbr%}}The annotations can be placed on at most one constructor.|
 

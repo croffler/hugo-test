@@ -22,7 +22,7 @@ The Integrated Processing Unit Container runs directly in your IDE using its `ma
 
 The `IntegratedProcessingUnitContainer` class provides an executable `main()` method, allowing the IDE to run it directly via a simple Java application configuration. The `main()` method uses the `IntegratedProcessingUnitContainerProvider` class and program arguments in order to create the `IntegratedProcessingUnitContainer`. The following is a list of all the possible program arguments that can be specified to the `IntegratedProcessingUnitContainer`:
 
-FIXTABLE
+
 | Option | Description |
 |:-------|:------------|
 |`-config [configLocation]` | Allows you to set/add a processing unit deployment descriptor location.{{% wbr %}}Follows the Spring [Resource Loader](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-resourceloader) including [ant style patterns](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-app-ctx-wildcards-in-resource-paths). This parameter can be specified multiple times.{{% wbr %}}The default is `classpath*:/META-INF/spring/pu.xml`. |

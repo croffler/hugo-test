@@ -151,7 +151,7 @@ Bootstrap (Java)
 
 The following table shows which user controlled locations end up in which class loader, and the important JAR files that exist within each one:
 
-FIXTABLE
+
 | Class Loader | User Locations | Built in Jar Files |
 |:-------------|:---------------|:-------------------|
 | Common | \[GSRoot\]/lib/platform/ext/\*.jar | gs-runtime.jar |

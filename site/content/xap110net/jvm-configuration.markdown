@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  JVM Configuration
-categories: XAP102NET
+categories: XAP110NET
 parent: administrators-guide.html
 weight: 500
 ---

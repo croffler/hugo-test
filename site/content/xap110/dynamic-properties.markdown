@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Dynamic Properties
-categories: XAP102
+categories: XAP110
 parent: pojo-overview.html
 weight: 200
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  InfluxDB Reporter
-categories: XAP102ADM
+categories: XAP110ADM
 parent: metrics-overview.html
 weight: 200
 ---

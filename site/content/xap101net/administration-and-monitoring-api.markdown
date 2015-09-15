@@ -243,7 +243,7 @@ This means that just creating the `IServiceGridAdmin`, and calling a specific ge
 
 The Service Grid Admin Domain Model has representation to the main actors at different GigaSpaces levels. They include:
 
-FIXTABLE
+
 |Name|Description|Main Operations|
 |:---|:----------|:--------------|
 |GridServiceAgent|A process manager that manages Service Grid processes such as GSM, GSC and LUS. More info [here](/product_overview/service-grid.html#gsa).|* Allows you to list all the currently managed processes.<br/>- Start processes (GSM, GSC, LUS).|

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  JMS Messages in XAP
-categories: XAP102
+categories: XAP110
 parent: messaging-support.html
 weight: 200
 ---

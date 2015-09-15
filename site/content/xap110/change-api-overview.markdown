@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Change API
-categories: XAP102
+categories: XAP110
 weight: 400
 parent: the-gigaspace-interface-overview.html
 ---

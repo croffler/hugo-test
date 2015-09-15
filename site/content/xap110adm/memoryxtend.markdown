@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  MemoryXtend
-categories: XAP102ADM
+categories: XAP110ADM
 parent: none
 weight: 430
 ---

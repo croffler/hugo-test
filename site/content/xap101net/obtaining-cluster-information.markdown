@@ -16,7 +16,7 @@ This mechanism is also used internally by the platform to maintain the clusterin
 
 As mentioned above the cluster information is passed to the components of each processing unit instance via an instance of the `GigaSpaces.Core.ClusterInfo` class, which holds the following information:
 
-FIXTABLE
+
 | Attribute Name | Description |
 |:---------------|:------------|
 | `Schema` | If the processing unit contains an embedded space, the cluster schema of that space |

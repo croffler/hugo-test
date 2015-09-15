@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Handling Large Objects
-categories: XAP102ADM
+categories: XAP110ADM
 parent:  tuning-gigaspaces-performance-overview.html
 weight: 500
 ---

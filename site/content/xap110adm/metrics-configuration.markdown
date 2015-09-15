@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Configuration
-categories: XAP102ADM
+categories: XAP110ADM
 parent: metrics-overview.html
 weight: 100
 ---

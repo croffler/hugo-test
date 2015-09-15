@@ -222,7 +222,7 @@ GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 
 The local cache support the following properties:
 
-FIXTABLE
+
 |Property Name|Description|Default|
 |:------------|:----------|:------|
 |evictionStrategy| An implementation of the EvictionStrategy interface|com.j_spaces.map.eviction.FIFOEvictionStrategy  |
@@ -397,7 +397,7 @@ The Lock API using transactions to ensure isolation and data consistency.
 
 Here is a simple comparison between the GigaMap API vs. the [GigaSpace API](./the-gigaspace-interface.html):
 
-FIXTABLE
+
 |Feature|GigaSpace  API|GigaMap API|
 |:------|:-----------:|:---------:|
 |Batch Operations|Yes |Limited.|

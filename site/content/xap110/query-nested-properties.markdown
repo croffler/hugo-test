@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Nested Properties
-categories: XAP102
+categories: XAP110
 parent: querying-the-space.html
 weight: 400
 ---

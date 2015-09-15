@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Local View
-categories: XAP102NET
+categories: XAP110NET
 parent: client-side-caching.html
 weight: 200
 ---

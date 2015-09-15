@@ -11,7 +11,7 @@ weight: 400
 
 # Task Execution
 
-FIXTABLE
+
 |Attribute Annotation|@TaskGigaSpace   |
 |Description         | This annotation injects a clustered proxy into the Task implementation. This is useful when the Task should access other partitions.   |
 
@@ -37,7 +37,8 @@ public class MyTask implements Task<Integer>  {
 
 # Task Routing
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Method Annotation|@SpaceRouting  |
 |Description         | This annotation selects the routing value. In case it is a POJO defined with a @SpaceRouting on one of its properties, the value of that property will be used as the routing information when passed as a parameter.   |
 

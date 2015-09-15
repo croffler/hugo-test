@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Overview
-categories: XAP102ADM
+categories: XAP110ADM
 parent: logging-overview.html
 weight: 100
 ---

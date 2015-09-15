@@ -11,7 +11,8 @@ weight: 100
 
 # Name
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | name |
 |Description| Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
 
@@ -26,7 +27,8 @@ Example:
 
 # Alias name
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | alias-name |
 |Argument   | boolean|
 |Description|  Gives the ability to map a C# class name (including namespace) to a space class name  |
@@ -44,7 +46,8 @@ Example:
 
 # Persistence
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | persist |
 |Argument   | boolean|
 |Default    | false|
@@ -65,7 +68,8 @@ Example:
 
 # Replication
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | replicate |
 |Argument   | boolean|
 |Default    | false|
@@ -87,7 +91,8 @@ Example:
 
 # FIFO Support
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | fifo  |
 |Argument   | [FifoSupport](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_Metadata_FifoSupport.htm)|
 |Default    | off|
@@ -108,7 +113,8 @@ Example:
 
 # Storage Type
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | storage-type |
 |Argument   | [StorageType](http://www.gigaspaces.com/docs/dotnetdocs{{%currentversion%}}/html/T_GigaSpaces_Core_Metadata_StorageType.htm)|
 |Default    | object |
@@ -132,7 +138,8 @@ Example:
 
 # Inherit Index
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | inherit-indexes |
 |Argument   | boolean          |
 |Default    | true|
@@ -152,7 +159,8 @@ Example:
 
 # Compound Index
 
-FIXTABLE
+|                |             |
+|----------------|-------------|
 |Syntax     | compound-index paths |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |

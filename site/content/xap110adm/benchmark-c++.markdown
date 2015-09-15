@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  C++ Benchmark
-categories: XAP102ADM
+categories: XAP110ADM
 parent: benchmarking.html
 weight: 400
 ---

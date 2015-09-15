@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Asynchronous Persistency - Write Behind
-categories: XAP102NET
+categories: XAP110NET
 parent: space-persistency-overview.html
 weight: 600
 ---

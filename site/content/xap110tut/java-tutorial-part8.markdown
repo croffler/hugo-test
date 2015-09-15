@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Web Deployment
-categories: XAP102TUT
+categories: XAP110TUT
 weight: 1200
 parent: none
 ---

@@ -1,7 +1,7 @@
 ---
 type: post110
 title:  Event Driven Remoting
-categories: XAP102
+categories: XAP110
 parent: space-based-remoting-overview.html
 weight: 300
 ---
