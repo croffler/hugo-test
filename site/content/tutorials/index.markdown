@@ -44,7 +44,7 @@ The tutorial also allows you to explore the <a href="http://www.gigaspaces.com/x
 The tutorial is available for [download]({{%latestjavatuturl%}}/interactive-api-guide.html).
 
 {{%learn "./xap_cloud_management.html"%}}
-{{%/column%}
+{{%/column%}}
 {{%/section%}}
 {{%/panel%}}
 
