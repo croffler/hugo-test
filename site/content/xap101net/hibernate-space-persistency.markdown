@@ -110,7 +110,7 @@ See [Modeling Your Data](./modeling-your-data.html) for details about these deco
 
 The Hibernate Space Persistency implementation includes the following properties:
 
-FIXTABLE
+
 |Property|Description|Default|
 |:-------|:----------|:------|
 |`EnumeratorLoadFetchSize`|Sets the fetch size that will be used when working with scrollable results. |10,000|

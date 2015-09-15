@@ -312,7 +312,7 @@ To free the resources used by the notify container make sure you close it proper
 
 The notify container allows you to mask which operations performed against the space, should cause notifications. By default (if none is defined), notifications are sent for write operations. The operations are:
 
-FIXTABLE
+
 |Operation| Description |
 |:--------|:------------|
 |write| An entry matching the template has been written to the space.|

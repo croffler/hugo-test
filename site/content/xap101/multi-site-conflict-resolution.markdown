@@ -206,7 +206,7 @@ public class MyConflictResolver extends com.gigaspaces.cluster.replication.gatew
 Overriding conflicting operations has a different behavior for each operation.
 The table below describes override behavior for each case:
 
-FIXTABLE
+
 |Operation|Conflict|Behavior|
 |:--------|:-------|:-------|
 |Write|Entry is already in space conflict|Update the existing entry in the local cluster with the provided one|

@@ -15,7 +15,7 @@ weight: 500
 
 Here are the main configuration properties you may use with the [ElasticSpaceDeployment](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/space/ElasticSpaceDeployment.html) and the [ElasticStatefulProcessingUnitDeployment](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/ElasticStatefulProcessingUnitDeployment.html):
 
-FIXTABLE
+
 |Property| Type | Description| Default | Mandatory |
 |:--------------|:-----------|:--------|:----------|
 |highlyAvailable| boolean | Specifies if the space should duplicate each information on two different machines.| true|No|
@@ -35,7 +35,7 @@ FIXTABLE
 
 Here are the main configuration properties you may use with the [EagerScaleConfig](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/config/EagerScaleConfig.html) and the [ManualCapacityScaleConfig](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/config/ManualCapacityScaleConfig.html):
 
-FIXTABLE
+
 |Property| Type | Description| Default |Mandatory |
 |:-------|:-----|:-----------|:--------|:---------|
 |memoryCapacityInMB|int|Specifies the total memory capacity of the processing unit.| |Yes|
@@ -47,7 +47,7 @@ FIXTABLE
 
 Here are the main configuration properties you may use with the [DiscoveredMachineProvisioningConfigurer](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/org/openspaces/admin/pu/elastic/config/DiscoveredMachineProvisioningConfigurer.html) that is passed to the `dedicatedMachineProvisioning` and `sharedMachineProvisioning` methods:
 
-FIXTABLE
+ 
 |Property| Type | Description| Default |Mandatory |
 |:-------|:-----|:-----------|:--------|:---------|
 |reservedMemoryCapacityPerMachine|int|Sets the expected amount of memory (total RAM) per machine that is reserved for processes other than grid containers (GSCs created dynamically). These include Grid Agent, Grid Service Manager, Lookup Service , Elastic Service  Manager , Web UI , GS-UI and also any other daemon/process running on the machine (Non-XAP related process).{{%wbr%}}In most cases the default value will be **too small** as you may choose to allocate more than 1GB for the XAP grid management processes (GSA, GSM, LUS, ESM, Web-UI, GS-UI) and other processes running on the machine.{{%wbr%}}Recommended value should be total XAP grid management processes required RAM + 20% of the total machine RAM + total memory required for all non-XAP processes running on the machine.   |1024 MB.  |No|

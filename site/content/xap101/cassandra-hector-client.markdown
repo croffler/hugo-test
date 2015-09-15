@@ -57,7 +57,7 @@ HectorCassandraClient hectorClient = new HectorCassandraClientConfigurer()
 
 ## `HectorCassandraClient` Properties
 
-FIXTABLE
+
 |Property|Description|Default|
 |:-------|:----------|:------|
 |hosts|A comma separated list of seeds in the Cassandra cluster| |

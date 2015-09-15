@@ -27,7 +27,7 @@ To run this command from the command line, the environment must be set using the
 
 The `gsxml2cpp` command has the following parameters:
 
-FIXTABLE
+
 | Parameter Description | Required Optional | Description |
 |:----------------------|:------------------|:------------|
 | XML input file | required | The `gs.xml` file name, or full path if it does not exist in the working directory. Holds definitions of object classes. |

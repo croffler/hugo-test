@@ -160,7 +160,7 @@ archiveContainer.destroy();
 
 #### CassandraArchiveOperationHandler Properties
 
-FIXTABLE
+
 |Property|Description|
 |:-------|:----------|
 |gigaSpace| GigaSpace reference used for type descriptors. see [Archive Container#Configuration](./archive-container.html#Configuration)|

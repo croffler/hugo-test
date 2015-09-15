@@ -45,7 +45,7 @@ The web application requires a couple of configuration changes to the `web.xml` 
 
 shiro.ini settings 
 
-FIXTABLE
+
 |Section|Property|Description|Required|Optional Values|Default Values|
 |:------|:-------|:----------|:-------|:--------------|:-------------|
 |main|connector| wrap SpaceProxy and perform operation aginst space|Yes|`com.gigaspaces.httpsession.SpaceConnector`|

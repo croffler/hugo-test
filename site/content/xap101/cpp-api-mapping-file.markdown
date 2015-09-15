@@ -32,7 +32,7 @@ XML mapping can be defined in the same package as the class (using the class nam
 
 **Usage**: `<class name="myClass" >`
 
-FIXTABLE
+
 | XML Attribute Name | Type | Description | Default Value |
 |:-------------------|:-----|:------------|:--------------|
 | `name` | string | The name of the class. | |
@@ -54,7 +54,7 @@ The superclass must also be a c++ class.
 
 **Usage**: `<superclass name="myBaseClass" />`
 
-FIXTABLE
+
 | XML Attribute Name | Type | Description |
 |:-------------------|:-----|:------------|
 | `name` | string | The name of the inherited class |
@@ -63,7 +63,7 @@ FIXTABLE
 
 This attribute is used to add include file declaration to your generated c++ code.
 
-FIXTABLE
+
 | XML Attribute Name | Type | Description |
 |:-------------------|:-----|:------------|
 | `file` | string | The name of the include file. |
@@ -81,7 +81,7 @@ The `property` element defines a field in this class.
 
 **Usage**: `<property name="m_Age" type="int" null-value="-1" />`
 
-FIXTABLE
+
 | XML Attribute Name | Type | Description | Default Value |
 |:-------------------|:-----|:------------|:--------------|
 | `name` | string | The property name.{{% wbr %}}{{% infosign %}} It is recommended that property names start with a lowercase letter to avoid conflicts in Java. If POJO classes are generated too, then any property that starts with an uppercase letter will be excluded from its POJO class.  | `NONE` |
@@ -97,7 +97,7 @@ FIXTABLE
 
 The table below shows the **supported types that can be used in the space**, and how the different types are mapped in each language.
 
-FIXTABLE
+
 | XML Type | c++ Type | Java Type | .NET Type |
 |:---------|:---------|:----------|:----------|
 | `bool` | `bool` | `boolean` | `boolean` |
@@ -128,7 +128,7 @@ When having a Java class and a C++ class sharing data you should use int/long/fl
 
 # ref-property
 
-FIXTABLE
+
 | XML Attribute Name | Type | Description | Default Value |
 |:-------------------|:-----|:------------|:--------------|
 | `name` | string | The property name | `NONE` |
@@ -140,7 +140,7 @@ FIXTABLE
 
 Types that can be used with the `ref-property` attribute:
 
-FIXTABLE
+
 | XML type | CPP Type | Java Type | .NET Type |
 |:---------|:---------|:----------|:----------|
 | `array` | `std::vector < boost::shared_ptr < POCO > >` | `POJO[]` | `PONO[]` |
@@ -170,7 +170,7 @@ For example:
 
 Defines whether this field value is used when generating the Entry's UID. The field value should be unique - i.e. multiple objects with the same value cannot be written into the space. Each object should have a different field value. When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Entry's UID is created based on the `id` field value.
 
-FIXTABLE
+
 | XML Attribute Name | Type | Description | Default Value |
 |:-------------------|:-----|:------------|:--------------|
 | `name` | string | Specifies the name of the property for holding the UID. | |
@@ -188,7 +188,7 @@ If `auto-generate` is declared as `false`, the field is indexed automatically. I
 
 # version
 
-FIXTABLE
+
 | XML Attribute Name | Type | Description |
 |:-------------------|:-----|:------------|
 | `name` | string | Specifies the name of the property holding the version's ID. |
@@ -198,7 +198,7 @@ FIXTABLE
 
 The `routing` element routes the field value under this element to the relevant space. This is done using hash-based load-balancing.
 
-FIXTABLE
+
 | XML Attribute Name | Type | Description |
 |:-------------------|:-----|:------------|
 | `name` | string | Specifies the property that allows identification of the `routing` element in the space. |

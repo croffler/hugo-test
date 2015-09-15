@@ -235,7 +235,7 @@ Specifying number of partitions explicitly is recommended only when fine grained
 {{%tabs%}}
 {{%tab "  memoryCapacityPerContainer 6G "%}}
 
-FIXTABLE
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 6GB = 12GB|
@@ -246,7 +246,7 @@ FIXTABLE
 {{% /tab %}}
 {{%tab "  memoryCapacityPerContainer 12G "%}}
 
-FIXTABLE
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 12GB = 24GB|
@@ -257,7 +257,7 @@ FIXTABLE
 {{% /tab %}}
 {{%tab "  memoryCapacityPerContainer 24G "%}}
 
-FIXTABLE
+
 |Number of Containers|Number of partitions per container|Total available memory|
 |:-------------------|:---------------------------------|:---------------------|
 |2|24 / 2 = 12|2 * 24GB = 48GB|

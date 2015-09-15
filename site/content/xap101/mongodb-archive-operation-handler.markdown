@@ -107,7 +107,7 @@ Include the following in your `pom.xml`
 
 #### MongoArchiveOperationHandler Properties
 
-FIXTABLE
+
 |Property|Description|
 |:-------|:----------|
 |gigaSpace| GigaSpace reference used for type descriptors. see [Archive Container](./archive-container.html#Configuration)|

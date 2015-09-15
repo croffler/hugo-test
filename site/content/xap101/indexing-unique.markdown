@@ -29,7 +29,7 @@ When the system encounters a unique constraint violation in one of the index-cha
 The operation which caused the violation is rolled back with the following effects:
 
 
-FIXTABLE
+
 | Operation | Action |
 |:--------------|:------------|
 |write|the entry is removed|

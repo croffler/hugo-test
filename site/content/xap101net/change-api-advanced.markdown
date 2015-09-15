@@ -30,7 +30,7 @@ foreach(IChangedEntryDetails<Account> changedEntryDetails in changeResult.Result
 
 Here is the full list of change operations:
 
-FIXTABLE
+
 |ChangeSet operation|ChangeOperation class|Comment|
 |:------------------|:--------------------|:------|
 |**ChangeSet.Set**|SetOperation| |

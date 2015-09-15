@@ -144,7 +144,7 @@ Logging is divided according to `Level` as follows:
 
 {{% indent %}}
 
-FIXTABLE
+
 | Level | Description |
 |:------|:------------|
 | `INFO` | The default level for informative messages. |
@@ -160,7 +160,7 @@ This section describes how the GigaSpaces Mirror Service handles different failu
 Active services are
 {{% color green %}}green{{% /color %}}, while failed services are {{% color red %}}red{{% /color %}}.
 
-FIXTABLE
+
 | Active/Failed Services | Cluster Behavior |
 |:-----------------------|:-----------------|
 | * {{% color green %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color green %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * The primary and backup spaces, each include a copy of the mirror replication queue (which is created in the backup, as part of the synchronized replication between the primary and the backup). {{% wbr %}}- The mirror doesn't acknowledge the replication until the data is successfully committed to the database.{{% wbr %}}- Every time the primary gets an acknowledgment from the mirror, it notifies the backup of the last exact point in the replication queue where replication to the mirror was successful.{{% wbr %}}- This way, the primary and backup space include the same copy of the data and are also in sync with whatever data was replicated to the mirror and written to the database. |
@@ -175,7 +175,7 @@ The following failure scenarios are highly unlikely. However, it might be useful
 
 Active services are {{% color green %}}green{{% /color %}}, while failed services are {{% color red %}}red{{% /color %}}.
 
-FIXTABLE
+
 | Active/Failed Services | Cluster Behavior |
 |:-----------------------|:-----------------|
 | * {{% color red %}}Primary{{% /color %}}{{% wbr %}}- {{% color green %}}Backup{{% /color %}}{{% wbr %}}- {{% color red %}}Mirror{{% /color %}}{{% wbr %}}- {{% color green %}}Database{{% /color %}}{{% wbr %}}| * Data which has already been saved in the database is safe.{{% wbr %}}- Data held in the mirror replication queue still exists in the backup, so no data is lost. |
