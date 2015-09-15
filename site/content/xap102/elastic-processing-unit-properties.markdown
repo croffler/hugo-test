@@ -17,7 +17,7 @@ Here are the main configuration properties you may use with the [ElasticSpaceDep
 
 
 |Property| Type | Description| Default | Mandatory |
-|:--------------|:-----------|:--------|:----------|
+|:--------------|:-----------|:--------|:----------|:----------|
 |highlyAvailable| boolean | Specifies if the space should duplicate each information on two different machines.| true|No|
 |memoryCapacityPerContainer| int , MemoryUnit |Specifies the the heap size per container (operating system process)| |Yes|
 |minNumberOfCpuCoresPerMachine | double  | Overrides the minimum number of CPU cores per machine assumption.| |No|
