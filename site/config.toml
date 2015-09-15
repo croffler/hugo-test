@@ -5,11 +5,12 @@ theme="hugo-bootswatch"
 uglyurls=true
 
 [params]
-    xaplatestrelease="11.0"
-    latestjavaurl="/xap110/"
-    latestadmurl="/xap110adm/"
-    latestsecurl="/xap110sec/"
-    latestneturl="/xap110net/"
+    latest_java_url= "/xap102"
+    latest_net_url= "/xap102net"
+    latest_adm_url= "/xap102adm"
+    latest_sec_url= "/xap102sec"
+    latest_net_tut_url= "/xap102nettut"
+    latest_java_tut_url= "/xap102tut"
 
 
 

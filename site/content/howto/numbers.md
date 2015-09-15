@@ -35,6 +35,8 @@ Latest net url : >>>{{<latestneturl>}}<<<
 
 Latest sec url : >>>{{<latestsecurl>}}<<<
 
+Latest java tutorial url : >>>{{<latestjavatuturl>}}<<<
+
 
 # Current version
 
