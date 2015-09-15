@@ -1,5 +1,5 @@
 ---
-type: post
+type: homesbp
 title:  Examples, Solutions, Patterns & Best Practices
 categories: SBP
 ---

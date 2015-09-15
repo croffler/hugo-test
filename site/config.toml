@@ -1,10 +1,11 @@
-baseurl = "http://docs.getcloudify.org/"
+baseurl = "http://docs.gigaspaces.com/"
 languageCode = "en-us"
 title = "XAP Documentation"
 theme="hugo-bootswatch"
 uglyurls=true
 
 [params]
+    latest_xap_release= "10.2"
     latest_java_url= "/xap102"
     latest_net_url= "/xap102net"
     latest_adm_url= "/xap102adm"

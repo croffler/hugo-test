@@ -41,7 +41,7 @@ In the previous section  you have learned about XAP's capabilities as a data sto
 In this part of the tutorial we will introduce you to the different processing services you can run on top of the Space.
 
 [Events and Messaging](./java-tutorial-part4.html)<br>
-The Spaceâ€™s Messaging and Events support provides messaging handlers that simplify event driven programming.
+The Spaces Messaging and Events support provides messaging handlers that simplify event driven programming.
 
 [The Processing Unit](./java-tutorial-part5.html)<br>
 The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity.

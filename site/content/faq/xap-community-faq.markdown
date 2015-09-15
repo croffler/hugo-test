@@ -1,5 +1,5 @@
 ---
-
+type: faq
 title:  XAP Community
 categories: FAQ
 weight: 200

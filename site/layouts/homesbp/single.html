@@ -1,5 +1,5 @@
 {{ partial "header.html" . }}
-{{ partial "navbar110.html" . }}
+{{ partial "navbar.html" . }}
 
 
 <div class="container-fluid" style="padding-top:10px;min-height: 650px;">
@@ -15,12 +15,10 @@
         {{ .Content }}
         <hr>
 
-        {{ partial "pager.html" .}}
-
     </div>
 
-
-    {{ partial "toc.html" .}}
+    <div class="col-lg-2">
+    </div>
 
 </div>
 

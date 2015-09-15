@@ -1,5 +1,5 @@
 ---
-type: post110
+type: panel110
 title:  The Space Interface
 categories: XAP110
 weight: 700

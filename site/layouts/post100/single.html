@@ -6,15 +6,8 @@
 
 	<div class="col-lg-2">
 	</div>
-	<!--div class="col-lg-2">
-        <nav class="sidebar-nav">
-            {{ $currentNode := . }}
-            {{ range .Site.Menus.xap110 }}
-            <a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "xap110" .) ($currentNode.HasMenuCurrent "xap110" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
-            {{ end }}
-        </nav>
-     </div-->
 
+   {{ partial "nav.html" .}}
 
 	<div class="col-lg-8">
 		<h1>{{ .Title }}</h1>
@@ -22,26 +15,12 @@
 		{{ .Content }}
       <hr>
 
-		<!--hr>
-        <ul class="pager">
-            {{ if .PrevInSection }}
-            <li class="next"><a href="{{.PrevInSection.Permalink}}">Next</a></li>
-            {{ end }}
-            {{ if .NextInSection }}
-            <li class="previous"><a href="{{.NextInSection.Permalink}}">Previous</a></li>
+      {{ partial "pager.html" .}}
 
-            {{ end }}
-        </ul-->
 	</div>
 
 
-	<div id="toc" style=" margin-top:40px;margin-right:10px;margin-left:40;background:#ffffff" class="col-lg-2 toc {{ if gt (len .TableOfContents) 1 }}compact{{ end }}">
-		<center><h5>In This Article</h5></center>
-		{{ .TableOfContents }}
-	</div>
-
-
-
+    {{ partial "toc.html" .}}
 
 </div>
 
