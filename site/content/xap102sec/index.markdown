@@ -27,7 +27,7 @@ This section provides an understanding of GigaSpaces XAP Security, where it fits
 XAP Security provides comprehensive support for securing your data, services, or both. XAP provides a set of authorities granting privileged access to data, and for performing operations on services.
 
 [Concepts](./security-concepts.html){{%wbr%}}
- 
+Authentication, Encryption, Authenticity Validation, and Managing users and roles
 
 [Authorities](./security-authorities.html){{%wbr%}}
 System, Grid, Space and Monitor authorities
