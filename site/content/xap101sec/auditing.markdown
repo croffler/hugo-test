@@ -36,7 +36,8 @@ This configuration can also be supplied using system properties.
 
 The defaults of these configurations are:
 
-FIXTABLE
+|                 |    |
+|----------------|------|
 | com.gigaspaces.security.audit.enabled | Enable/Disable security auditing; default is disabled (false) |
 | com.gigaspaces.security.audit.level | Audit level of interest; default is OFF |
 | com.gigaspaces.security.audit.handler | The Audit `java.util.logging.Handler` implementation accepting an `AuditLogRecord`; default is `AuditHandler` |
@@ -58,7 +59,8 @@ com.gigaspaces.security.audit.AuditHandler.filename-pattern = {homedir}/logs/gig
 
 # Audit Levels
 
-FIXTABLE
+|                 |    |
+|----------------|------|
 | OFF     | Nothing is audited |
 | SEVERE  | Authentication failure or invalid session |
 | WARNING | Access denied due to insufficient privileges |
