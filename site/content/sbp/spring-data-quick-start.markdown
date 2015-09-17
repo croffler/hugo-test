@@ -13,7 +13,7 @@ This guide will walk you through the steps of building a Spring Data application
 
 # Installation
 
-Before using this guide, you have to download [GigaSpaces XAP](http://www.gigaspaces.com/xap-download) and install the maven plugin. If youâ€™re not familiar with Maven, refer to [Building Java Projects with Maven](https://spring.io/guides/gs/maven/).
+Before using this guide, you have to download [GigaSpaces XAP](http://www.gigaspaces.com/xap-download) and install the maven plugin. If you're not familiar with Maven, refer to [Building Java Projects with Maven](https://spring.io/guides/gs/maven/).
 
 
 To install the XAP maven plugin run the `installmavenrep` script:
@@ -38,7 +38,7 @@ To install the XAP maven plugin run the `installmavenrep` script:
 
 Download the `spring-data-xap` project and build it with maven using `mvn clean install`.
 
-The recommended way to get started using spring-data-xap in your project is with a dependency management system â€“ the snippet below can be copied and pasted into your build.
+The recommended way to get started using spring-data-xap in your project is with a dependency management system - the snippet below can be copied and pasted into your build.
 
 
 ```xml

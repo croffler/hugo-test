@@ -8,7 +8,7 @@ weight: 700
 
 {{%ssummary%}}{{%/ssummary%}}
 
-GigaSpaces XAP is 100% Java technology based, and as such is supported on every operating system that supports the Java Platform Standard Edition technology â€“ i.e., Windows , Linux x86, Linux AMD64 (Opteron), Oracle Solaris, Hewlett Packard HP-UX, IBM P-Series PowerPC AIX, Apple Mac OS/X, etc.
+GigaSpaces XAP is 100% Java technology based, and as such is supported on every operating system that supports the Java Platform Standard Edition technology - i.e., Windows , Linux x86, Linux AMD64 (Opteron), Oracle Solaris, Hewlett Packard HP-UX, IBM P-Series PowerPC AIX, Apple Mac OS/X, etc.
 
 # Tested & Certified Platforms
 
@@ -61,8 +61,8 @@ GigaSpaces C++ source code can be built on Linux and Windows 32bit or 64bit mach
 The current supported platforms and compilers are:
 
 - Linux
-   * 64bit â€“ gcc.4.1.2
-   * 32bit â€“ gcc.4.1.2
+   * 64bit - gcc.4.1.2
+   * 32bit - gcc.4.1.2
 - Windows
    * 32/64bit C++ for Visual Studio 2008/2010 (VS9.0/VS10.0)
 

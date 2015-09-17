@@ -41,7 +41,7 @@ User and Role directory API
 The default file-based users/roles directory; Overview, Getting Started, Configuration, and Custom Extensions
 
 [Securing Components](./securing-xap-components.html)<br>
-GigaSpaces XAP has security built over the major â€œserverâ€? component - GSA, GSM, GSC and also Processing Unit with Space data. This section explains how security relates to each component and the configurations needed to securing your application.
+GigaSpaces XAP has security built over the major server component - GSA, GSM, GSC and also Processing Unit with Space data. This section explains how security relates to each component and the configurations needed to securing your application.
 
 [Administration](./security-administration.html)<br>
 This section explains the administration tools for managing XAP. The GUI provides a handy management tool for managing the users and roles, and comprehensive manageability of the secured components in the system.

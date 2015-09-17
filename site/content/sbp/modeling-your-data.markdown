@@ -988,7 +988,7 @@ select Book.id, Author.id, Author.lastName from Book, Author, AuthorBookLink WHE
 
 The main problem with this approach is the execution time. The more Books or Authors you have the time to execute the query will grow. Using the Space API with the non-embedded model will provide much better performance that will not be affected when having large amount of Books or Authors.
 
-Letâ€™s compare the JDBC approach to the embedded and non-embedded model:
+Let's compare the JDBC approach to the embedded and non-embedded model:
 
 ### Embedded Model
 

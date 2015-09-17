@@ -15,10 +15,10 @@ When a client connects to a space, a proxy is created that holds a connection wh
 
 The space is accessed via a programmatic interface which supports the following main functions:
 
-- Write â€“ the semantics of writing a new entry of information into the space.
-- Read â€“ read the contents of a stored entry into the client side.
-- Take â€“ get the value from the space and delete its content.
-- Notify â€“ alert when the contents of an entry of interest have registered changes.
+- Write - the semantics of writing a new entry of information into the space.
+- Read - read the contents of a stored entry into the client side.
+- Take - get the value from the space and delete its content.
+- Notify - alert when the contents of an entry of interest have registered changes.
 
 {{%learn "./the-space-operations.html"%}}
 

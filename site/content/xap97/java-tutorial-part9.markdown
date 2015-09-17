@@ -44,7 +44,7 @@ The Archive Container differs from Space Persistency in the following ways:
 
 
 ### Cassandra Archive Container
-The Apache Cassandra Projectâ„¢ is a scalable multi-master database with no single points of failure. The Apache Cassandra Project provides a highly scalable second-generation distributed database, bringing together Dynamo's fully distributed design and Bigtable's ColumnFamily-based data model.
+The Apache Cassandra Project  is a scalable multi-master database with no single points of failure. The Apache Cassandra Project provides a highly scalable second-generation distributed database, bringing together Dynamo's fully distributed design and Bigtable's ColumnFamily-based data model.
 {{%/column%}}
 {{%column width="20%" %}}
 <img src="/attachment_files/qsg/archive-container-cassandra.jpg" width="200" height="200">

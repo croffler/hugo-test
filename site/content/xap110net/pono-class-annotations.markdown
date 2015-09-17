@@ -82,8 +82,8 @@ Starting with .NET v2.0, properties can have different accessors for getters and
 {{%note title="Read-Only Properties "%}}
 Read-only properties (getter without setter) are stored in the space, but when the object is de-serialized, the value is not restored, since there is no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
 
-- Calculated value â€“ the property returns a calculated value based on other properties. This isnâ€™t a problem since no data is lost due to the â€˜missingâ€™ setter.
-- Access protection â€“ the class designer wishes to protect the property from outside changes. This is probably a problem since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property and including the field (as explained next).
+- Calculated value - the property returns a calculated value based on other properties. This isn't a problem since no data is lost due to the 'missing' setter.
+- Access protection - the class designer wishes to protect the property from outside changes. This is probably a problem since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property and including the field (as explained next).
 
 {{%/note%}}
 

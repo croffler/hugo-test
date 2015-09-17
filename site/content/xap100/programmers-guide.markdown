@@ -23,7 +23,7 @@ This guide is written for application developers who wish to build scaled-out ap
 {{%fpanel%}}
 
 [POJO as space object](./pojo-overview.html){{%wbr%}}
-XAPâ€™s POJO support allows you to use JavaBean classes as space domain classes, and perform space operations using these objects. POJO domain Classes should follow rules similar to the ones defined by JPA, Hibernate and other domain class frameworks.
+XAP's POJO support allows you to use JavaBean classes as space domain classes, and perform space operations using these objects. POJO domain Classes should follow rules similar to the ones defined by JPA, Hibernate and other domain class frameworks.
 
 
 [Space Document](./document-overview.html){{%wbr%}}
@@ -51,7 +51,7 @@ XAP provides advanced persistency capabilities for the space architecture.
 XAP promotes openness and interoperability, supporting common interfaces for accessing data, such as JPA, Document, SQL, JDBC, Memcached and a native POJO based API.
 
 [Client Side Caching](./client-side-caching.html){{%wbr%}}
-XAP supports client side caching of space data within the client applicationâ€™s JVM.
+XAP supports client side caching of space data within the client application's JVM.
 
 [Task Execution](./task-execution-overview.html){{%wbr%}}
 Task executors allow you to easily execute grid-wide tasks on the space using the XAP API.

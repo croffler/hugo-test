@@ -23,7 +23,7 @@ This section gives a detailed description of the Space's replication mechanism, 
 
 
 - [Overview](./replication-overview.html){{%wbr%}}
-This section gives a detailed description of the Spaceâ€™s replication mechanism, and how to configure and optimize it.
+This section gives a detailed description of the Space's replication mechanism, and how to configure and optimize it.
 
 - [Replication topologies](./replication-topologies.html){{%wbr%}}
 This page provides a brief description for the different replication topologies.

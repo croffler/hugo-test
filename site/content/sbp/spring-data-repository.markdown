@@ -38,7 +38,7 @@ Note that you define the type of data to be stored and the type of it's id.
 
 # Registering XAP repositories using XML-based metadata
 
-While you can use Springâ€™s traditional `<beans/>` XML namespace to register an instance of your repository implementing `XapRepository` with the container, the XML configuration can be quite verbose as it is general purpose. To simplify configuration, XAP Spring Data   provides a dedicated XML namespace.
+While you can use Spring's traditional `<beans/>` XML namespace to register an instance of your repository implementing `XapRepository` with the container, the XML configuration can be quite verbose as it is general purpose. To simplify configuration, XAP Spring Data   provides a dedicated XML namespace.
 
 To enable Spring searching for repositories, add the configuration in the XML-based metadata:
 

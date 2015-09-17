@@ -22,7 +22,7 @@ Set the `XapNet.HostName` to have the machine IP. This is required for machines 
 
 **Step 2**      
 
-Set the `XapNet.Locators` to have two machines IP comma separated that will run the lookup service (`IP1,IP2` or `MachineAddress1,MachineAddress2`). These machine XAP Agents should be started first!  The `XapNet.Locators`  should be set only with environments that do not have multicasting enabled or with environments where client applications donâ€™t have multicasting enabled between client machine and XAP .Net grid machines. 
+Set the `XapNet.Locators` to have two machines IP comma separated that will run the lookup service (`IP1,IP2` or `MachineAddress1,MachineAddress2`). These machine XAP Agents should be started first!  The `XapNet.Locators`  should be set only with environments that do not have multicasting enabled or with environments where client applications don't have multicasting enabled between client machine and XAP .Net grid machines.
 
 **Step 3**
 

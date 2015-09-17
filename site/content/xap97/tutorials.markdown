@@ -25,7 +25,7 @@ This tutorial explains how to deploy and use a XAP Data Grid from a Java client 
 
 
 - [Full Tutorial](./java-home.html){{%wbr%}}
-This Tutorial provides a high-level overview of the GigaSpaces XAP platform. Hands on examples are provided to demonstrate the core concepts and APIâ€™s.
+This Tutorial provides a high-level overview of the GigaSpaces XAP platform. Hands on examples are provided to demonstrate the core concepts and API's.
 
 - [Cook Books](./cook-books.html){{%wbr%}}
 Here you will find example applications that demonstrate basic XAP features.

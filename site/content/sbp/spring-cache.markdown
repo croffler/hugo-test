@@ -55,8 +55,8 @@ Since version 3.1, the `Spring Framework` provides support for transparently add
 
 {{%vbar title="Benefits when using XAP as a Spring caching provider: "%}}
 
--	**Decreased Latency** â€“  Ability to utilize local cache across all server instances for localized reads, greatly reducing serialization across the wire
+-	**Decreased Latency** -  Ability to utilize local cache across all server instances for localized reads, greatly reducing serialization across the wire
 
--	**Scalability** â€“ Horizontally scalable and partitioned cache with flexible cache entry routing
+-	**Scalability** - Horizontally scalable and partitioned cache with flexible cache entry routing
 
--	**High Availability** â€“ Each parti
+-	**High Availability** - Each parti

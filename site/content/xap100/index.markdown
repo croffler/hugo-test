@@ -34,7 +34,7 @@ The Processing Unit is the unit of packaging and deployment in the GigaSpaces XA
 How to deploy and manage an Elastic Processing Unit (EPU).
 
 [Web Application Support](./web-application-overview.html){{%wbr%}}
-XAPâ€™s integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid.
+XAP's integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid.
 
 [Space Replication](./multi-space-replication-overview.html){{%wbr%}}
 Multiple space replication is the ability to replicate state between different deployed spaces, i.e different cluster of space instances.

@@ -13,7 +13,7 @@ weight: 200
 ![cassandra.png](/attachment_files/subject/cassandra.png)
 {{%/column%}}
 {{%column width="90%" %}}
-The [Apache Cassandra Projectâ„¢](http://cassandra.apache.org) is a scalable multi-master database with no single points of failure. The Apache Cassandra Project develops a highly scalable second-generation distributed database, bringing together Dynamo's fully distributed design and Bigtable's ColumnFamily-based data model.
+The [Apache Cassandra Project ](http://cassandra.apache.org) is a scalable multi-master database with no single points of failure. The Apache Cassandra Project develops a highly scalable second-generation distributed database, bringing together Dynamo's fully distributed design and Bigtable's ColumnFamily-based data model.
 {{%/column%}}
 {{%/section%}}
 

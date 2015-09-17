@@ -31,7 +31,7 @@ This MemoryXtend white paper provides a high level overview of the technology an
 {{%/column%}}
 
 {{%column width="30%"  %}}
-[{{%pdf "/download_files/XAP10â€“MemoryXtend Tutorial.pdf"%}}
+[{{%pdf "/download_files/XAP10-MemoryXtend Tutorial.pdf"%}}
 The MemoryXtend Tutorial describes how to experiment with MemoryXtend and comparing RAM based Data Grid with SSD based Data Grid.
 {{%/column%}}
 {{%/section%}}

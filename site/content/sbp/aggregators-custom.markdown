@@ -17,4 +17,4 @@ The [SpaceEntriesAggregator](http://www.gigaspaces.com/docs/JavaDoc{{%latestxapr
 ### [aggregate](http://www.gigaspaces.com/docs/JavaDoc{{%latestxaprelease%}}/com/gigaspaces/query/aggregators/SpaceEntriesAggregator.html#aggregate-com.gigaspaces.query.aggregators.SpaceEntriesAggregatorContext-)
 The aggregate method is executed for each space entity matching the SQLQuery in a space partition.  The function receives a SpaceEntriesAggregatorContext, which is a wrapper that allows the user to access members of the user entity. The members of each space entity can be accessed by the getPathValue method of SpaceEntriesAggregatorContext.
 
-â€œLong departmentId = (Long) context.getPathValue("depar
+Long departmentId = (Long) context.getPathValue("depar

@@ -34,7 +34,7 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11834 | GSC that is supposed to be terminated due to rebalancing does not terminate | 9.7.2, 10.1.0 | 9047 | All |
 | GS-11833 | Missing parttition after reboot of node due to ESM negative capacity exception | 9.7.2, 10.1.0 | 9017 | All |
 | GS-11832 | NPE in getCachedBuffer in rare condition | 9.7.2, 10.1.0 | 9128 | All |
-| GS-11825 | SpaceMetadataException logged In loop when adding index to a type that doesnâ€™t exists in the mirror | 9.7.2, 10.1.0 | 9044 | Java |
+| GS-11825 | SpaceMetadataException logged In loop when adding index to a type that doesn't exists in the mirror | 9.7.2, 10.1.0 | 9044 | Java |
 | GS-11775 | NPE - when trying to resolve certain split brain scenario  | 9.7.2, 10.1.0 | 9032 | All |
 | GS-11748 | LRU space with no EDS partitioned-sync2backup might face version conflict that will lead to replication error and increase redolog  | 9.7.2, 10.0.0 | 8962 | All |
 | GS-11740 | Duplicate lease renewal in MapCache | 9.7.2, 10.1.0 | 8815 | Java |

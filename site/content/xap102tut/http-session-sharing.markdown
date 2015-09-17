@@ -38,7 +38,7 @@ This tutorial will show you:
 1. [Single-Applications Session Sharing](#Single Application Session Sharing) sharing the same session between different Tomcat instances. <br>
     a. Using Apache Load Balancer with **Sticky** Session configuration
 {{%wbr%}}    b. Using Apache Load Balancer with **Non-Sticky** Session configuration
-2. [Multiple-Applications Session Sharing](#multi-applications-session-sharing) â€“ sharing the same session between **different applications** running in different Web servers - Tomcat and JBoss.
+2. [Multiple-Applications Session Sharing](#multi-applications-session-sharing) - sharing the same session between **different applications** running in different Web servers - Tomcat and JBoss.
 
 
 # Prior running the Tutorial
@@ -192,7 +192,7 @@ The URL above assumes the Apache Load Balancer is configured to use port 8888.
 ### Webserver Failover
 
 -	Terminate Tomcat by terminating its process
--	Refresh the page (press the `F5` key) â€“ you should get an error. There is no web server to serve the HTTP request.
+-	Refresh the page (press the `F5` key) - you should get an error. There is no web server to serve the HTTP request.
 -	Start Tomcat again using :
 
 
@@ -227,12 +227,12 @@ To use the Non-Sticky Session model, you only need to configure the Load Balance
 # Multi-Applications Session Sharing
 With this session sharing model , the web user interacting with multiple web servers through a load balancer where each running a **different web application**. It may be one big web application that has been broken down into different modules each running within a different web server potentially running on a different host. Each web application may access different web application instance during the life cycle of the application.
 
-In this scenario the session user login â€“ the **principal** , used to identify the session to be shared across the different applications. You may have also multiple instances of each web application running to scale its activity. All will be sharing the same HTTP session.
+In this scenario the session user login - the **principal** , used to identify the session to be shared across the different applications. You may have also multiple instances of each web application running to scale its activity. All will be sharing the same HTTP session.
 
 Any new web server that will be added dynamically will be able to share the session. When the HTTP session is updated only the updated session attributes (delta) is sent to the IMDG. When the session is shared between different web applications where each might have a different version of the session - a timestamp check is performed to ensure the recent session is passed between the apps and also to be stored within the IMDG. In such a case , HTTP session attributes are merged to ensure no data is lost when navigating between the different web application modules.
 
 ### Demo Flow
-With this demo we will simulate session sharing between Tomcat and JBoss web servers instances by starting Tomcat and JBoss , running the application on both , updating the HTTP session in both â€“ where the session will be shared implicitly , terminating tomcat and JBoss and later restarting these without losing application HTTP session data.
+With this demo we will simulate session sharing between Tomcat and JBoss web servers instances by starting Tomcat and JBoss , running the application on both , updating the HTTP session in both - where the session will be shared implicitly , terminating tomcat and JBoss and later restarting these without losing application HTTP session data.
 
 -	Download JBoss 7 {{%download "http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip"%}}
 -	Install JBoss 7 by unzipping it into `c:\` or `d:\`
@@ -311,7 +311,7 @@ http://localhost:8081/demo-app2
 http://localhost:8080/demo-app
 ```
 
--	Refresh the page (press the `F5` key) â€“ see all the attributes been updated.
+-	Refresh the page (press the `F5` key) - see all the attributes been updated.
 
 {{%panel%}}
 ![http-session](/attachment_files/httpsession102/httpsession-tomcat-2.png)

@@ -132,7 +132,7 @@ connector.url=jini://*/*/sessionSpace
 # When using secured GigaSpace cluster, pass the credentials here
 # connector.username = <username>
 # connector.password = <password>
-# Default lease is Lease.FOREVER so that the session wonâ€™t be removed from the space
+# Default lease is Lease.FOREVER so that the session won't be removed from the space
 # connector.sessionLease = 9223372036854775807
 # Default read timeout is 5 minutes = 5 * 60 * 1000 = 300000
 connector.readTimeout = 300000
@@ -198,7 +198,7 @@ connector.url=jini://*/*/sessionSpace
 # When using secured GigaSpace cluster, pass the credentials here
 # connector.username = <username>
 # connector.password = <password>
-# Default lease is Lease.FOREVER so that the session wonâ€™t be removed from the space
+# Default lease is Lease.FOREVER so that the session won't be removed from the space
 # connector.sessionLease = 9223372036854775807
 # Default read timeout is 5 minutes = 5 * 60 * 1000 = 300000
 connector.readTimeout = 300000

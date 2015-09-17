@@ -19,7 +19,7 @@ weight: 300
 {{%/column%}}
 {{%/section%}}
 
-MongoDB is built for scalability, performance and high availability, scaling from single server deployments to large, complex multi-site architectures. By leveraging in-memory computing, MongoDB provides high performance for both reads and writes. MongoDBâ€™s native replication and automated failover enable enterprise-grade reliability and operational flexibility.
+MongoDB is built for scalability, performance and high availability, scaling from single server deployments to large, complex multi-site architectures. By leveraging in-memory computing, MongoDB provides high performance for both reads and writes. MongoDB's native replication and automated failover enable enterprise-grade reliability and operational flexibility.
 
 
 

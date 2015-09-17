@@ -46,7 +46,7 @@ XAP provides advanced persistency capabilities for the space architecture.
 XAP promotes openness and interoperability, supporting common interfaces for accessing data, such as JPA, Document, SQL, JDBC, Memcached and a native POJO based API.
 
 [Client Side Caching](./client-side-caching.html){{%wbr%}}
-XAP supports client side caching of space data within the client applicationâ€™s JVM.
+XAP supports client side caching of space data within the client application's JVM.
 
 [Task Execution](./task-execution-overview.html){{%wbr%}}
 Task executors allow you to easily execute grid-wide tasks on the space using the XAP API.
@@ -74,7 +74,7 @@ The Processing Unit is the unit of packaging and deployment in the GigaSpaces XA
 How to deploy and manage an Elastic Processing Unit (EPU).
 
 [Web Application Support](./web-application-overview.html){{%wbr%}}
-XAPâ€™s integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid.
+XAP's integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid.
 
 [Global HTTP Session Sharing](./global-http-session-sharing-overview.html){{%wbr%}}
 Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the Shiro Session Manager library

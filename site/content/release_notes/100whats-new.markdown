@@ -66,7 +66,7 @@ XAP 10 introduces a new Storage interface allowing an external storage mechanism
 
 XAP 10 Global HTTP Session Sharing includes the following new features:
 
-- Delta update support â€“ changes identified at the session attribute level.
+- Delta update support - changes identified at the session attribute level.
 - Better serialization (Kryo instead of xstream)
 - Compression support
 - Principle / Session ID based session management. Allows session sharing across different apps with same SSO

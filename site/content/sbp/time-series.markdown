@@ -42,7 +42,7 @@ The User Interface for this demo will mock an **Airline Flight Operations Dashbo
 - Data Partitioning
 - Indexing
 - Space Querying
-- Leases â€“ Automatic Expiration
+- Leases - Automatic Expiration
 - Projection API
 - Change API
 - DAO
@@ -54,14 +54,14 @@ The User Interface for this demo will mock an **Airline Flight Operations Dashbo
 
 ## Visual Time Series with Real Time Analytics
 
-Once the provided web processing unit is deployed you can access the demoâ€™s web page at `http://host:port/my-app-web/index.jsp.` (i.e. `http://localhost:8080/my-app-web/index.jsp`)  It will display the generic airlineâ€™s top-5 predetermined source and destinations airport sets in the left panel. Upon load, the rendered graph will show a time series in the form of a line chart. Its initial data will be limited to the last 10 inactive intervals that reside in the space. The graph can be altered on the fly in the form of area, bar and scatter charts (shown below). Once the loading process is complete the graph will update itself every 2 seconds showing the latest inactive interval along the time series; capturing the booking requests performed by the mocked users.
+Once the provided web processing unit is deployed you can access the demo's web page at `http://host:port/my-app-web/index.jsp.` (i.e. `http://localhost:8080/my-app-web/index.jsp`)  It will display the generic airline's top-5 predetermined source and destinations airport sets in the left panel. Upon load, the rendered graph will show a time series in the form of a line chart. Its initial data will be limited to the last 10 inactive intervals that reside in the space. The graph can be altered on the fly in the form of area, bar and scatter charts (shown below). Once the loading process is complete the graph will update itself every 2 seconds showing the latest inactive interval along the time series; capturing the booking requests performed by the mocked users.
 
 ![time-series-2.png](/attachment_files/sbp/time-series-2.png)
 
 
 # Architecture
 
-`Feeder` Processing Unit(s), utilizing Springâ€™s `ThreadPoolTaskSchedulers`, can concurrently generate a steady load of search and booking requests which are written to a remote space. The demo allows for feeders to be deployed as standard processing units or command-line java programs. By default each feeder is configured to update the clustered space with a pool of three threads.
+`Feeder` Processing Unit(s), utilizing Spring's `ThreadPoolTaskSchedulers`, can concurrently generate a steady load of search and booking requests which are written to a remote space. The demo allows for feeders to be deployed as standard processing units or command-line java programs. By default each feeder is configured to update the clustered space with a pool of three threads.
 	
 The clustered space being updated by the feeders is embedded in a processing unit called a `Processor`. By default each `Processor` will maintain a separate partition of the **space cluster** which is routed by the `airline` attribute. This `airline` attribute is required in all booking and search requests and for demo purposes is chosen from a fixed set of four airlines.
 
@@ -214,7 +214,7 @@ public class BookingTimeSeriesDAO implements IBookingTimeSeriesDAO {
 
 
 
-### Leases â€“ Automatic Expiration
+### Leases - Automatic Expiration
 In distributed applications on a network, where there may be partial failures of the network or of components, there needs to be a way for components to be timed out if they have failed, or have become unreachable. Lease is a basic mechanism GigaSpaces provides to address this problem.
 
 
@@ -342,7 +342,7 @@ public class DetermineInitialIntervalTask implements Task<Integer> {
 
 **Distributed Tasks**
 
-A `Distributed Task` is a task that ends up executing more than once (concurrently) and returns a result that is a reduced operation of all the different executions. This type of task is used as the implementation of the Map-Reduce Pattern provided by XAP. For this demo, it will be used to read all inactive timesSeries objects for a given airline which occurred after the provided interval. Each partition will combine the resultant timeSeriesâ€™ into a `TreeMap` and return the reduction to the remote client for aggregation.
+A `Distributed Task` is a task that ends up executing more than once (concurrently) and returns a result that is a reduced operation of all the different executions. This type of task is used as the implementation of the Map-Reduce Pattern provided by XAP. For this demo, it will be used to read all inactive timesSeries objects for a given airline which occurred after the provided interval. Each partition will combine the resultant timeSeries' into a `TreeMap` and return the reduction to the remote client for aggregation.
 
 
 
@@ -415,7 +415,7 @@ private transient IBookingTimeSeriesDAO bookingTimeSeriesDAO;
 
 
 ### Web Processing Unit Container
-XAPâ€™s web processing unit run the `WAR` file deployed onto the Service Grid. The Web Processing Unit Container allows you to run your embedded data (Space), business logic and web packages inside the same processing unit or within the same Service Grid. Or you can simply run a pure standard `WAR` file in a non-Spring and Spring configuration.
+XAP's web processing unit run the `WAR` file deployed onto the Service Grid. The Web Processing Unit Container allows you to run your embedded data (Space), business logic and web packages inside the same processing unit or within the same Service Grid. Or you can simply run a pure standard `WAR` file in a non-Spring and Spring configuration.
 
 In this demo, we are using the Web Processing Unit Container to host the web tier as a remote client to the space. Its servlet uses a `TaskDelegate` pattern to orchestrate regular and distributed tasks which will be executed within the space. It makes use of `Task` Resource Injection to access the implementation of the DAO interface and Task Routing to execute within the correct space partition.
 
@@ -459,9 +459,9 @@ public class TimeSeriesServlet extends HttpServlet {
 ```
 
 ### SLA-Driven Capabilities
-The XAP runtime environment provides SLA-driven capabilities via the `GSM` and the `GSC` runtime components. The `GSC` is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available `GSCs`. The `SLA` definitions can be provided as part of the processing unit package or during the processing unitâ€™s deployment process. They define the number of processing unit instances that should be running and deploy-time requirements such as the amount of free memory or CPU or the clustering topology for processing units which contain a space. The `GSM` reads the SLA definition, and deploys the processing unit onto the available GSCs according to it.
+The XAP runtime environment provides SLA-driven capabilities via the `GSM` and the `GSC` runtime components. The `GSC` is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available `GSCs`. The `SLA` definitions can be provided as part of the processing unit package or during the processing unit's deployment process. They define the number of processing unit instances that should be running and deploy-time requirements such as the amount of free memory or CPU or the clustering topology for processing units which contain a space. The `GSM` reads the SLA definition, and deploys the processing unit onto the available GSCs according to it.
 
-This demo will use a `sla.xml` file which contains the SLA definitions within the processing units jar file. This file can be located under the `META-INF/spring` directory, alongside the processing unitâ€™s `pu.xml` file.
+This demo will use a `sla.xml` file which contains the SLA definitions within the processing units jar file. This file can be located under the `META-INF/spring` directory, alongside the processing unit's `pu.xml` file.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -515,4 +515,4 @@ gs-ui.bat
 
 Step 6.	Deploy Applications{{%wbr%}}
     	Find the `Launch` menu at the top of the GS Management Center UI{{%wbr%}}
-	Choose â€œSBA Ap
+	Choose SBA Ap

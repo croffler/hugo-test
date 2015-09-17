@@ -68,7 +68,7 @@ The Admin API provides a way to administer and monitor all of XAP services and c
 The Processing Unit is the unit of packaging and deployment in the GigaSpaces XAP platform. This section describes its directory structure, deployment descriptor and SLA definition and configuration.
 
 [Deployment and Administration](./administrators-guide.html){{%wbr%}}
-The primary focus of the Administratorâ€™s Guide, is to provide both a basic, as well as more advanced overview of the GigaSpaces XAP administration and operation components.
+The primary focus of the Administrator's Guide, is to provide both a basic, as well as more advanced overview of the GigaSpaces XAP administration and operation components.
 
 [Platform Interoperability](./interoperability.html){{%wbr%}}
 The possibility for organizations whose projects include a combination of Java, .NET and C++ platforms to communicate and access each other easily and efficiently while also maintaining the benefits of the XAP scale-out application server.

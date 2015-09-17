@@ -65,13 +65,13 @@ In this pattern we address performance challenge by integrating Spark Streaming 
 2.	Spark worker reads the data from XAP stream and propagates it further for computation
 3.	Spark saves computation results to XAP datagrid where they can be queried to display on UI
 
-Letâ€™s discuss this in more details.
+Let's discuss this in more details.
 
 # XAP Stream
 
-On the XAP side we introduce the concept of stream. `XAPStream` is an implementation that supports writing data in single and batch modes and reading in batch mode. `XAPStream` leverages XAPâ€™s `FIFO` (First In, First Out) capabilities.
+On the XAP side we introduce the concept of stream. `XAPStream` is an implementation that supports writing data in single and batch modes and reading in batch mode. `XAPStream` leverages XAP's `FIFO` (First In, First Out) capabilities.
 
-Here is an example how one can write data to `XAPStream`. Letâ€™s consider we are building a Word Counter application and would like to write sentences of text to the stream.
+Here is an example how one can write data to `XAPStream`. Let's consider we are building a Word Counter application and would like to write sentences of text to the stream.
 
 At first we create a data model that represents a sentence. Note, that the space class should be annotated with `FIFO` support.
 
@@ -111,7 +111,7 @@ In order to ingest data from XAP to Spark, we implemented a custom `ReceiverInpu
    * @tparam T Class type of the object of this stream
    * @return Input DStream
    */
-  def createStream[T <: java.io.Serializable : ClassTag](ssc: StreamingContext, template: T, batchSize:Int, readRetryInterval: Duration = Milliseconds(100), parallelReaders: Int, storageLevel: StorageLevel = MEMORY_AND_DISK_SER){â€¦}
+  def createStream[T <: java.io.Serializable : ClassTag](ssc: StreamingContext, template: T, batchSize:Int, readRetryInterval: Duration = Milliseconds(100), parallelReaders: Int, storageLevel: StorageLevel = MEMORY_AND_DISK_SER){¦}
 ```
 
 Here is an example of creating XAP Input stream. At first we set XAP space url in Spark config:
@@ -150,7 +150,7 @@ val wordCountWindow = words
 
 # Spark Output  to XAP
 
-Output operations allow the `DStream`â€™s data to be pushed out to external systems.
+Output operations allow the `DStream`'s data to be pushed out to external systems.
 
 {{%refer%}}
 Please refer to [Spark documentation](https://spark.apache.org/docs/1.1.0/streaming-programming-guide.html#output-operations-on-dstreams) for the details.

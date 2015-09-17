@@ -72,7 +72,7 @@ Below is a list of issues that have been fixed in GigaSpaces 10.1.X.
 | GS-11836 | Extra backup-Space after network disconnection | 10.1.0 |  9119,<br>9185,<br>9186,<br>9184 | Java |
 | GS-11834 | GSC that is supposed to be terminated due to rebalancing does not terminate | 10.1.0 | 9074 | All |
 | GS-11833 | Missing partition after reboot of node due to ESM negative capacity exception | 10.1.0 | 9017 | All |
-| GS-11825 | SpaceMetadataException logged In loop when adding index to a type that doesnâ€™t exists in the mirror | 10.1.0 | 9044 | Java |
+| GS-11825 | SpaceMetadataException logged In loop when adding index to a type that doesn't exists in the mirror | 10.1.0 | 9044 | Java |
 | GS-11824 | Fail to shutdown GSC due to recovery thread that hang on socket trying to load class | 10.1.0 | 9081 | All |
 | GS-11728 | Syntax error message in DotNetException.java class | 10.1.0 | 8927 | Java, .Net |
 | GS-11381 | ESM caught in a re-balancing loop after addition of new machine in rare condition(cpu reported as 0) | 10.1.0 | | All |

@@ -36,7 +36,7 @@ The XAP queue provider is used for internal space-based communication between se
 
 
 - [SEDA Model](./mule-seda-model.html){{%wbr%}}
-XAP's Mule SEDA model allows you to define services that are aware of the space mode they are working with; and to store SEDA queues in a virtualized space queue instead of Muleâ€™s default VM queues.
+XAP's Mule SEDA model allows you to define services that are aware of the space mode they are working with; and to store SEDA queues in a virtualized space queue instead of Mule's default VM queues.
 
 <hr/>
 

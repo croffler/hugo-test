@@ -26,7 +26,7 @@ gshome-directory
 * On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{{%version "gshome-directory"%}}`.
 
 gshome-directory
-* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{{%version "gshome-directory"%}}`. Youâ€™ll also need to grant execution permissions to the scripts in the bin folder.
+* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{{%version "gshome-directory"%}}`. You'll also need to grant execution permissions to the scripts in the bin folder.
 
 
 

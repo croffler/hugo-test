@@ -142,7 +142,7 @@ In some projects you might want to apply other configurations to the Space. Ther
 
 ## Local cache
 
-A `Local Cache` is a Client Side Cache that maintains a subset of the master Spaceâ€™s data based on the client applicationâ€™s recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master Space and caches the result locally for future queries.
+A `Local Cache` is a Client Side Cache that maintains a subset of the master Space's data based on the client application's recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master Space and caches the result locally for future queries.
 
 {{%refer%}}
 To find out more about Local Cache and it's configuration, refer to [Local Cache Reference]({{%latestjavaurl%}}/local-cache.html).
@@ -150,7 +150,7 @@ To find out more about Local Cache and it's configuration, refer to [Local Cache
 
 ## Local view
 
-A `Local View` is a Client Side read only Cache that maintains a subset of the master spaceâ€™s data, allowing the client to read distributed data without performing any remote calls or data serialization. Data is streamed into the client local view based on predefined criteria (a collection of SQLQuery objects) specified by the client when the local view is created.
+A `Local View` is a Client Side read only Cache that maintains a subset of the master space's data, allowing the client to read distributed data without performing any remote calls or data serialization. Data is streamed into the client local view based on predefined criteria (a collection of SQLQuery objects) specified by the client when the local view is created.
 
 {{%refer%}}
 To read more on Local View, refer to [Local View Reference]({{%latestjavaurl%}}/local-view.html).

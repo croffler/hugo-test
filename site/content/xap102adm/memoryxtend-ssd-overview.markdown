@@ -274,7 +274,7 @@ With the following `sla.xml` we have a partitioned (2 partitions) data grid with
 ```
 
 
-{{% note %}} Make sure you provide the `sla.xml` location at the deploy time (`-sla` deploy command option) or locate it at the root of the processing unit jar or under the `META-INF/spring` directory, alongside the processing unitâ€™s `pu.xml` file. {{% /note %}}
+{{% note %}} Make sure you provide the `sla.xml` location at the deploy time (`-sla` deploy command option) or locate it at the root of the processing unit jar or under the `META-INF/spring` directory, alongside the processing unit's `pu.xml` file. {{% /note %}}
 
 ## Last Primary
 

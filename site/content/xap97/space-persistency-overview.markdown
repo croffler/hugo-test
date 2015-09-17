@@ -50,7 +50,7 @@ How to specify that some objects in a persistent space should not be saved to th
 Space Persistency advanced topics such as advanced operations, tuning, troubleshooting, and limitations.
 
 - [Migrating Hibernate](./persistency-migrating-hibernate.html){{%wbr%}}
-XAPâ€™s persistency approach consists of several paradigms for data persistency, according to the application needs. This section gives a basic overview of each paradigm.
+XAP's persistency approach consists of several paradigms for data persistency, according to the application needs. This section gives a basic overview of each paradigm.
 
 - [Migrating External Data Source](./migrating-from-external-data-source-api.html){{%wbr%}}
 This page describes how EDS implementations prior to GigaSpaces version 9.5 should migrate to the new Space Persistency APIs.

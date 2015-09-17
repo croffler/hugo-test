@@ -19,7 +19,7 @@ XAP supports client side caching of space data within the client application's J
 A local cache allows the client application to cache recently used data at the client memory address and have it updated automatically by the space when that data changes.
 
 [Local View](./local-view.html){{%wbr%}}
-A Local View allows the client application to cache specific data based on clientâ€™s criteria at the client memory address and have it updated automatically by the space when that data changes.
+A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.
 
 {{%/fpanel%}}
 

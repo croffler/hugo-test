@@ -34,8 +34,8 @@ The example contains two .Net projects:
 
 The example includes two additional Processing Unit folders:
 
-- datagrid-mongo â€“ Include a jar with the data grid configuration. See within the jar the `pu.xml` for MongoDB URL. `mongodb://localhost:27017/db` used by default.
-- mirror-mongo â€“ Include a jar with the mirror configuration. See the within the jar the `pu.xml` for MongoDB URL. `mongodb://localhost:27017/db` used by default.
+- datagrid-mongo - Include a jar with the data grid configuration. See within the jar the `pu.xml` for MongoDB URL. `mongodb://localhost:27017/db` used by default.
+- mirror-mongo - Include a jar with the mirror configuration. See the within the jar the `pu.xml` for MongoDB URL. `mongodb://localhost:27017/db` used by default.
 
 # Prerequisites
 
@@ -68,10 +68,10 @@ Deploy the data grid and the Mirror service by running `DeployDataGrid.bat`. You
 
 The client application has several options:
 
-1. `runWrite.bat` â€“ will write 10 `Person` objects into the data grid and persist to MongoDB.
-2. `runWriteMultiple.bat` â€“ will write 100 `Person` objects (10 batches of 10 Person objects) into the data grid and persist to MongoDB.
-3. `runRead.bat` â€“ will read a `Person` object from the data grid.
-4. `runReadMultiple.bat` â€“ will read a 100 `Person` object from the data grid.
+1. `runWrite.bat` - will write 10 `Person` objects into the data grid and persist to MongoDB.
+2. `runWriteMultiple.bat` - will write 100 `Person` objects (10 batches of 10 Person objects) into the data grid and persist to MongoDB.
+3. `runRead.bat` - will read a `Person` object from the data grid.
+4. `runReadMultiple.bat` - will read a 100 `Person` object from the data grid.
 
 # Opening .NET Solution with Microsoft Visual Studio
 
@@ -100,8 +100,7 @@ switched to db db
 { "__type__" : "GigaSpaces.Examples.Datagrid.Commons.Entities.Person", "FirstName" : "Name101", "Age" : "101", "LastName" : "lastname101", "_id" : "33
 94b1f1-39d1-4c04-8c73-6f41d42c13ad" }
 { "__type__" : "GigaSpaces.Examples.Datagrid.Commons.Entities.Person", "FirstName" : "Name102", "Age" : "102", "LastName" : "lastname102", "_id" : "d6
-a18590-ffb3-4dad-9548-009004b86353" }
-â€¦
+a18590-ffb3-4dad-9548-009004b86353" }¦
 ```
 
 ## Setting MongoDB URL

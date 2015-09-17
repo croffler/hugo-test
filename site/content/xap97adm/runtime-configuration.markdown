@@ -16,7 +16,7 @@ This section lists and explains the different runtime configuration parameters.
 <hr/>
 
 - [The Runtime Environment](./the-runtime-environment.html){{%wbr%}}
-A processing unit is deployed onto the Service Grid which is responsible for materializing the processing unitâ€™s configuration, provisioning its instances to the runtime infrastructure and making sure they continue to run properly over time.
+A processing unit is deployed onto the Service Grid which is responsible for materializing the processing unit's configuration, provisioning its instances to the runtime infrastructure and making sure they continue to run properly over time.
 
 
 - [Global vs. Local LUS](./lus-configuration.html){{%wbr%}}

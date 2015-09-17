@@ -24,7 +24,7 @@ The change API supports transactions in the same way the other space operation s
 
 # Example
 
-The following example demonstrates how to increment the property â€˜Countâ€™ of an object of type â€˜WordCountâ€™ with id â€˜myIDâ€™ by one.
+The following example demonstrates how to increment the property 'Count' of an object of type ˜WordCount' with id 'myID' by one.
 
 
 ```csharp

@@ -49,7 +49,7 @@ Currently this only works on Linux. In the future it should be possible to run o
 
 ##	Installing Linux Tools
 
-Firstly, keep in mind that these commands may or may not exist on the machine(s) you are using and you will need to install them if they don't. The basics are as follows (and yes, most of these commands need to be â€˜sudoâ€™):
+Firstly, keep in mind that these commands may or may not exist on the machine(s) you are using and you will need to install them if they don't. The basics are as follows (and yes, most of these commands need to be 'sudo'):
 
 
 ```bash
@@ -68,7 +68,7 @@ sudo parted <device> - provides the same functionality as fdisk but knows about 
 
 sudo mdadm <> - creates, modifies, or destroys a kernel-based raid device
 
-sudo hdparm -tT <device> - gives â€˜ballparkâ€™ drive performance rating
+sudo hdparm -tT <device> - gives 'ballpark' drive performance rating
 
 sudo iostat -h -x -d /dev/sdb 1 - gives partition level statistics for a device, updated every second
 ```

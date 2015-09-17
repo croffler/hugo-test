@@ -44,7 +44,7 @@ XAPs Global HTTP Session Management is designed to deliver maximum performance f
 
 - **Atomic HTTP request** session access support - multiple requests for the session attributes within the same HTTP request will be served without performing any remote calls. Master session copy will be updated when the HTTP request will be completed.
 
-- **Delta update support** â€“ Changes identified at the session attribute level. Minimal serialization overhead and network utilization between client and IMDG , between IMDG primary and backup instances and between remote IMDG clusters using WAN Gateway for WAN replication.
+- **Delta update support** - Changes identified at the session attribute level. Minimal serialization overhead and network utilization between client and IMDG , between IMDG primary and backup instances and between remote IMDG clusters using WAN Gateway for WAN replication.
 
 - **Compression support** - Session attributes may be compressed to support very large session storage with minimal performance impact.
 

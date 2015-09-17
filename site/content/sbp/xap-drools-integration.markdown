@@ -85,7 +85,7 @@ As stated earlier, Drools stores all rules and data types in-memory to reduce th
 - Consistency  <br>
 - Scalability  <br>
 
-Letâ€™s discuss these gaps within the context of a stateless application hosted in clustered environment and explain how an integration with XAP would benefit its use of Drools.
+Let's discuss these gaps within the context of a stateless application hosted in clustered environment and explain how an integration with XAP would benefit its use of Drools.
 
 ![drools1](/sbp/attachment_files/drools/drools2.png)
 
@@ -95,24 +95,24 @@ Drools was not created as a distributed solution. In order to maintain seamless 
 
 ### Failover
 
-Without XAP the data in the `KnowledgeBase` would be lost, in the case of node failure within the cluster, and could not be recovered by the standard failover mechanism. XAP provides data-failover out of the box via itâ€™s [asynchronous replication]({{%latestadmurl%}}/asynchronous-replication.html) to backup cluster topology. In the case of a XAP primary partition failure, the backup partition would become the primary avoiding data loss and maintaining data integrity throughout the entire process.
+Without XAP the data in the `KnowledgeBase` would be lost, in the case of node failure within the cluster, and could not be recovered by the standard failover mechanism. XAP provides data-failover out of the box via it's [asynchronous replication]({{%latestadmurl%}}/asynchronous-replication.html) to backup cluster topology. In the case of a XAP primary partition failure, the backup partition would become the primary avoiding data loss and maintaining data integrity throughout the entire process.
 
 ### Redundancy
 
-Storing the KnowledgeBaseâ€™s data in each clustered JVM memory is redundant and costly in terms of memory footprint. Integration with XAP removes the enterprise applicationâ€™s need to locally store data since the `KnowledgeBase` would reside in a partition hosted on the Data Grid.
+Storing the KnowledgeBase's data in each clustered JVM memory is redundant and costly in terms of memory footprint. Integration with XAP removes the enterprise application's need to locally store data since the `KnowledgeBase` would reside in a partition hosted on the Data Grid.
 
 ### Consistency
 
-Similar to the concerns of load-balancing, enterprise applications would require all clustered JVMs to not only store identical data but also ensure consistency upon any change. Instead of building a custom solution to update the entire cluster, XAP could be used to ensure data consistency. By utilizing XAPâ€™s built-in [Routing Mechanism]({{%currentjavaurl%}}/routing-in-partitioned-spaces.html), all instances of the cluster can seamlessly be routed to the unique partition that is storing the relevant KnowledgeBase(s) and always receive a consistent result.
+Similar to the concerns of load-balancing, enterprise applications would require all clustered JVMs to not only store identical data but also ensure consistency upon any change. Instead of building a custom solution to update the entire cluster, XAP could be used to ensure data consistency. By utilizing XAP's built-in [Routing Mechanism]({{%currentjavaurl%}}/routing-in-partitioned-spaces.html), all instances of the cluster can seamlessly be routed to the unique partition that is storing the relevant KnowledgeBase(s) and always receive a consistent result.
 
 ### Scalability
 
-An enterprise application hosting multiple instances of KnowledgeBases would be limited by the memory constraints of its underlying JVM. Turning to a 64-bit JVM could extend memory resources but its benefits will eventually be offset by incurring an increased garbage collection penalty. With XAP, KnowledgeBases could be distributed across separate partitions each hosted on top of their own individual 64-bit JVM allowing Droolâ€™s production/working memory to scale into the Terabytes.
+An enterprise application hosting multiple instances of KnowledgeBases would be limited by the memory constraints of its underlying JVM. Turning to a 64-bit JVM could extend memory resources but its benefits will eventually be offset by incurring an increased garbage collection penalty. With XAP, KnowledgeBases could be distributed across separate partitions each hosted on top of their own individual 64-bit JVM allowing Drool's production/working memory to scale into the Terabytes.
 
 
 # Integration Pattern
 
-To demonstrate XAPâ€™s integration with Drools we designed a pattern in the form of a Maven project. The project is distributed into 4 Maven-Modules each with an individual purpose: <br>
+To demonstrate XAP's integration with Drools we designed a pattern in the form of a Maven project. The project is distributed into 4 Maven-Modules each with an individual purpose: <br>
 
 
 | Module | Purpose |
@@ -124,15 +124,15 @@ To demonstrate XAPâ€™s integration with Drools we designed a pattern in the
 
 The combination of these modules will provide you with a working project to deploy a Data Grid, load/compile/remove rules from DRL files, execute rules from a one-off process and/or expose them as JSON Restful Web Service.
 
-Letâ€™s review each module to understand their code and patterns.
+Let's review each module to understand their code and patterns.
 
 ## Common Module
 
 The main purpose of this module is to define the data-model for the entire Data Grid. The data-model includes a [POJO]({{%currentjavaurl%}}/pojo-overview.html) representation of Facts, Drools Rules, Knowledge Packages, KnowledgeBases, etc.
 
-Facts are representations of business entities which will be referenced in either or both the condition and consequence of rules. In order for client applications to dynamically create rules they must first define Facts which will be loaded into a KnowledgeBaseâ€™s Working Memory before Rules execution can occur. Therefore the Fact POJO must be created and deployed with the Space module before new dynamic rules can be compiled and executed using them as a reference.
+Facts are representations of business entities which will be referenced in either or both the condition and consequence of rules. In order for client applications to dynamically create rules they must first define Facts which will be loaded into a KnowledgeBase's Working Memory before Rules execution can occur. Therefore the Fact POJO must be created and deployed with the Space module before new dynamic rules can be compiled and executed using them as a reference.
 
-The integration between Drools and XAP is represented as the [Space Class]({{%currentjavaurl%}}/pojo-support.html) called KnowledgeBaseWrapper. This object will store a KnowledgeBase in the Data Grid along with all of its compiled content (i.e. rules, definitions, globals, fact types, etc.). Therefore it is a wrapper of the Drools Production/Working Memory which is enhanced with the routing capabilities of a Space class along with additional attributes compensating for the KnowledgeBaseâ€™s lack of transparency.
+The integration between Drools and XAP is represented as the [Space Class]({{%currentjavaurl%}}/pojo-support.html) called KnowledgeBaseWrapper. This object will store a KnowledgeBase in the Data Grid along with all of its compiled content (i.e. rules, definitions, globals, fact types, etc.). Therefore it is a wrapper of the Drools Production/Working Memory which is enhanced with the routing capabilities of a Space class along with additional attributes compensating for the KnowledgeBase's lack of transparency.
 
 The remaining POJOs are meant to be informative tools for management and governance purposes. Their role is to provide the user with metadata type information about the contents of KnowledgeBase without having to execute operations against the actual objects.
 
@@ -205,7 +205,7 @@ then
 end
 ```
 
-Aside from loading rules this module can also load facts as Space Classes into the Space. These facts can be later queried as part of a decision web-service transaction and loaded into the KnowledgeBaseâ€™s working memory before rule(s) execution.
+Aside from loading rules this module can also load facts as Space Classes into the Space. These facts can be later queried as part of a decision web-service transaction and loaded into the KnowledgeBase's working memory before rule(s) execution.
 
 
 ### Manage Rules
@@ -279,7 +279,7 @@ This module will create a deployable artifact (JAR) which will instantiate State
 </beans>
 ```
 
-In addition to hosting data this processing unit will take advantage of XAPâ€™s collocation of business logic in the form of Event Processing and Space Based Remoting.
+In addition to hosting data this processing unit will take advantage of XAP's collocation of business logic in the form of Event Processing and Space Based Remoting.
 
 The event processor of choice will be the Polling Container which will be listening for specific events to occur on the Space. As part of our integration pattern we have chosen to decouple the adding/removing of Rule Events to the Space from the compilation and injection of those rules to their respective KnowledgeBase. Since loading a single instance of a KnowledgeBase creates a bottleneck for a queue of 100+ rules it would make sense to allow the client (remote client proxy) to fire and forget while the server (space) does its work at its own pace. Upon notification of an event, the collocated event handler will look up the KnowledgeBase from the Data Grid and add the new rule to the KnowledgeBase assuming compilation was successful. It will also update metadata type Space Classes to keep track of the KnowledgeBase contents for transparency.
 
@@ -414,7 +414,7 @@ public class RulesExecutionServiceImpl implements IRulesExecutionService {
 {{%/tab%}}
 {{%/tabs%}}
 
-As with any execution against a partitioned space a routing key is required for the [Hash-Based Routing]({{%currentadmurl%}}/data-partitioning.html) mechanism to determine which partition hosts the clientâ€™s requested data. The routing key can also simply be set by adding an annotation but this time to one of the parameters inside the method signature.
+As with any execution against a partitioned space a routing key is required for the [Hash-Based Routing]({{%currentadmurl%}}/data-partitioning.html) mechanism to determine which partition hosts the client's requested data. The routing key can also simply be set by adding an annotation but this time to one of the parameters inside the method signature.
 
 
 ```java
@@ -434,17 +434,17 @@ public interface IRulesExecutionService {
 
 ### Web-Services Module
 
-This module will create a deployable artifact (WAR) which will instantiate Stateless processing unit(s) hosting JSON Restful Web Services on top XAPâ€™s [Jetty Processing Unit Container]({{%currentjavaurl%}}/web-jetty-processing-unit-container.html).
+This module will create a deployable artifact (WAR) which will instantiate Stateless processing unit(s) hosting JSON Restful Web Services on top XAP's [Jetty Processing Unit Container]({{%currentjavaurl%}}/web-jetty-processing-unit-container.html).
 
 ![drools1](/sbp/attachment_files/drools/drools4.png)
 
 Interaction with these services is very simple since they only implement the GET REST method. A client only needs an Internet Browser to initiate a HTTP Servlet transaction on the listening Spring Controllers. There are two types of services that are deployed as part of this integration pattern - Decision Services and Generic Data Retrieval Services.
 
-Decision services will create or lookup facts from the Space and pass them to the Remoting Service which will add them to the KnowledgeBaseâ€™s working memory and pattern match them against all compiled rules. To initiate a decision service enter a URL into the Browser and in response you will receive a JSON payload printed to the screen.
+Decision services will create or lookup facts from the Space and pass them to the Remoting Service which will add them to the KnowledgeBase's working memory and pattern match them against all compiled rules. To initiate a decision service enter a URL into the Browser and in response you will receive a JSON payload printed to the screen.
 
 ![drools1](/sbp/attachment_files/drools/drools5.png)
 
-Generic REST Data Retrieval Services come in two flavors â€“ Read-By-ID and Read-By-Type. Read-By-ID will require the client to pass an ID along with the type of Object they are requesting. The Read-By-Type will only require the type returning multiple objects.
+Generic REST Data Retrieval Services come in two flavors - Read-By-ID and Read-By-Type. Read-By-ID will require the client to pass an ID along with the type of Object they are requesting. The Read-By-Type will only require the type returning multiple objects.
 
 ![drools1](/sbp/attachment_files/drools/drools6.png)
 
@@ -455,7 +455,7 @@ Generic REST Data Retrieval Services come in two flavors â€“ Read-By-ID and
 {{%accordion%}}
 
 {{%accord  title="Step 1: Java Installation "%}}
-Confirm Java is installed by running the java â€“version in your command line
+Confirm Java is installed by running the java -version in your command line
 
 ![drools1](/sbp/attachment_files/drools/drools8.png)
 
@@ -531,7 +531,7 @@ and then entering http://localhost:8099 into an Internet Browser (Firefox or Goo
 {{%/accord%}}
 
 {{%accord title="Step 8: Deploy the PU"%}}
-Click on the Hosts Tab and find the Deploy drop-down. Choose Processing Unitâ€¦
+Click on the Hosts Tab and find the Deploy drop-down. Choose Processing Unit¦
 
 ![drools1](/sbp/attachment_files/drools/drools22.png)
 {{%/accord%}}

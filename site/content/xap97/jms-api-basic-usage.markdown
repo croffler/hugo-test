@@ -9,8 +9,8 @@ weight: 100
 
 The JMS 1.0.2 specification introduced two domains:
 
-- Point to Point â€“ in this domain, a producer sends messages to a destination of type Queue. Each message is consumed by only one consumer.
-- Publish/Subscribe â€“ in this domain, a producer publishes messages to a destination of type Topic. Any consumer that listens on that Topic receives the messages.
+- Point to Point - in this domain, a producer sends messages to a destination of type Queue. Each message is consumed by only one consumer.
+- Publish/Subscribe - in this domain, a producer publishes messages to a destination of type Topic. Any consumer that listens on that Topic receives the messages.
 
 In JMS 1.0.2, each domain used a separate set of interfaces. JMS 1.1 presents the unified model, that unites the usage of both domains under a single set of interfaces. GigaSpaces XAP JMS implementation supports both the unified model, and the separate domains.
 

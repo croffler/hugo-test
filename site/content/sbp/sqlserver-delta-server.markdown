@@ -77,7 +77,7 @@ NOTE: If you would like to capture all the data available before CDC is enabled 
 Note:-Make Sure Sql-Server Agent is enabled.
 
 a Create a database first (e.g. named datagrid)
-b Once a database is created, create a table - with our example, letâ€™s use the **Person** table with columns: ID, Firstname(nvarchar 255), Lastname(nvarchar 255) and Age (int)
+b Once a database is created, create a table - with our example, let's use the **Person** table with columns: ID, Firstname(nvarchar 255), Lastname(nvarchar 255) and Age (int)
 
 #### Step 2:
 CDC must be enabled at the database level (it is disabled by default).  To enable CDC you must be a member of the sysadmin fixed server role.  You can enable CDC ONLY on any user database (not on system databases).  Execute the following T-SQL script in the database of your choice (e.g. datagrid in the following screenshots):

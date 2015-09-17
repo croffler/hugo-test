@@ -297,7 +297,7 @@ If you don't mark your Document Repository with `@SpaceDocumentName` annotation,
 
 Now `PersonDocumentRepository` will have basic CRUD operations available for `SpaceDocument` entities. To read more on available document storage features, refer to [Document API]({{%latestjavaurl%}}/document-api.html).
 
-While documents allow using a dynamic schema, they force us to give up Javaâ€™s type-safety for working with type less key-value pairs. Spring Data XAP supports extending the `SpaceDocument` class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema. As an example, let's declare a `PersonDocument` wrapper:
+While documents allow using a dynamic schema, they force us to give up Java's type-safety for working with type less key-value pairs. Spring Data XAP supports extending the `SpaceDocument` class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema. As an example, let's declare a `PersonDocument` wrapper:
 
 
 ```java

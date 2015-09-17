@@ -15,8 +15,8 @@ weight: 300
 
 Similar to the lookup service you may run a global GSM or a local GSM. In this case a local GSM will allow you to control the host machine where the GSM and its deploy folder will be located (configured via the `com.gs.deploy` system property). The GSM deploy folder used at the deployment time when provisioning a deployed PU into exiting GSCs or once a new GSC is started (manually or dynamically via the ESM) where it is downloading from the GSM its PU configuration (pu.xml) and relevant PU files.
 
-When performing hot deployment to support rolling upgrade or other maintenance activities the location of the GSMs is important since you must place the updated PU files in the machines running the GSM. A GSM may be running in an active or slave mode â€“ it is recommended to place updated PU files on both GSMâ€™s deploy folder.
-If you have a large grid (over 100 GSCs) or a large PU (over 10MB) with many files you may want to choose specific machines with special network or CPU capacity to run the GSM â€“ This is another scenario where the local GSM setup should be considered.
+When performing hot deployment to support rolling upgrade or other maintenance activities the location of the GSMs is important since you must place the updated PU files in the machines running the GSM. A GSM may be running in an active or slave mode - it is recommended to place updated PU files on both GSM's deploy folder.
+If you have a large grid (over 100 GSCs) or a large PU (over 10MB) with many files you may want to choose specific machines with special network or CPU capacity to run the GSM - This is another scenario where the local GSM setup should be considered.
 
 
 # Local Setup Example
@@ -39,7 +39,7 @@ gs-agent gsa.global.gsm 0 gsa.gsm 1
 gs-agent gsa.global.gsm 0 gsa.gsm 0
 ```
 
-Upon startup the only `Machine A` and `Machine D` agentâ€™s that are configured to start a local GSM will have it running.  In case of `Machine A` or `Machine D` failure the system will have a single GSM. Service Grid components (LUS , GSC) will be notified for this missing GSM. Once the missing GSM will be restarted on the relevant machine Service Grid components will be notified. With a network running a DNS - you may start a new machine with the same Host name to support total machine failure while keeping number of running GSMs intact.
+Upon startup the only `Machine A` and `Machine D` agent's that are configured to start a local GSM will have it running.  In case of `Machine A` or `Machine D` failure the system will have a single GSM. Service Grid components (LUS , GSC) will be notified for this missing GSM. Once the missing GSM will be restarted on the relevant machine Service Grid components will be notified. With a network running a DNS - you may start a new machine with the same Host name to support total machine failure while keeping number of running GSMs intact.
 
 
 {{%anchor global-gsm%}}
@@ -61,4 +61,4 @@ All agents are started with the same command instructing them to maintain two gl
 gs-agent gsa.global.gsm 2 gsa.gsm 0
 ```
 
-Upon startup the agents will decide which ones will run a GSM and which wonâ€™t.
+Upon startup the agents will decide which ones will run a GSM and which won't.
