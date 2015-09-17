@@ -2,21 +2,50 @@
 {{ partial "navbar.html" . }}
 
 
-<div class="container-fluid" style="padding-top:10px;min-height: 650px;">
-	<div class="col-lg-2" style="margin-left:10px; margin-top:100px;">
-		<nav class="sidebar-nav">
-			{{ $currentNode := . }}
-			{{ range .Site.Menus.howto }}
+<div class="container-fluid" style="padding-top:10px;min-height: 1000px;">
+	<div class="col-lg-2" style="margin-left:0px; margin-top:50px;">
 
-				<li>
-					<a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "howto" .) ($currentNode.HasMenuCurrent "howto" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
-				</li>
+        <!-- http://bootsnipp.com/snippets/featured/accordion-list-group-menu -->
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
 
-			{{ end }}
-		</nav>
-	</div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Reports</a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="list-group">
+                        <li class="list-group-item"><a href="http://fb.com/moinakbarali">Articles</a></li>
+                        <a href="/xap110/" class="list-group-item">11.0</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour1">Reports</a>
+                    </h4>
+                </div>
+                <div id="collapseFour1" class="panel-collapse collapse">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                        <a href="#" class="list-group-item">Morbi leo risus</a>
+                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                        <a href="#" class="list-group-item">Vestibulum at eros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
+
+
+    </div>
 
 	<div class="col-lg-8">
 		<h1>{{ .Title }}</h1>
