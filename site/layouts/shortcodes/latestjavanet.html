@@ -1,5 +1,3 @@
-{{ $.Scratch.Add "a1"  "xap"}}
-{{ $.Scratch.Add "a1"  "102" }}
-{{ $.Scratch.Get "a1" }}
-
+<a href="{{index .Page.Site.Params "latest_java_url"}}/{{.Get 0}}">Java version | </a>
+<a href="{{index .Page.Site.Params "latest_net_url"}}/{{.Get 0}}">.Net version</a>
 
