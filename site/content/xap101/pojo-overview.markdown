@@ -6,16 +6,10 @@ parent: none
 weight: 400
 ---
 
-<br>
-
-{{%section%}}
-{{%column width="10%" %}}
-![data-access.jpg](/attachment_files/subject/data-index.png)
-{{%/column%}}
-{{%column width="90%" %}}
+{{%bannerleft "/attachment_files/subject/data-access.png" %}}
 XAP's [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object) support allows you to use [JavaBean](http://docs.oracle.com/javase/tutorial/javabeans/) classes as space domain classes, and perform space operations using these objects.
-{{%/column%}}
-{{%/section%}}
+{{%/bannerleft%}}
+
 
 <br>
 
