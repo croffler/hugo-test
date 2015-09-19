@@ -23,7 +23,7 @@ During the local view initialization, data is loaded into the client's memory ba
 For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
 {{%/note%}}
 
-#### Where the Local View Can be Used?
+# Where the Local View Can be Used?
 
 The Local view can be used with financial applications (e.g. trading , market data , portfolio management) where each client (e.g. trader , broker) might need to access specific products / securities / equities data in real time. In this case, the application instance can generate a client side cache customized for the user needs.
 

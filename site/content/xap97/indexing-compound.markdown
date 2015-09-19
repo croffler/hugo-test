@@ -41,7 +41,7 @@ With the above scenario the Compound Index will improve the query execution dram
 
 ![compu_index_bench.jpg](/attachment_files/compu_index_bench.jpg)
 
-## Creating a Compound Index using gs.xml
+# Creating a Compound Index using gs.xml
 
 A Compound Index can be defined within the gs.xml configuration file. Example: The following a `gs.xml` describing a POJO named Data having a compound index composed from two segments:
 
@@ -56,7 +56,7 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
 </gigaspaces-mapping>
 ```
 
-## Creating a Compound Indexing for a Space Document
+# Creating a Compound Indexing for a Space Document
 
 A Compound Space Index of a [space Document](./document-api.html) can be described by `pu.xml` configuration file. Example:
 
@@ -69,7 +69,7 @@ A Compound Space Index of a [space Document](./document-api.html) can be describ
 </os-core:space>
 ```
 
-## Creating a Compound Index Dynamically
+# Creating a Compound Index Dynamically
 
 A Compound Space Index can be added dynamically using the `GigaSpaceTypeManager` interface. Example:
 

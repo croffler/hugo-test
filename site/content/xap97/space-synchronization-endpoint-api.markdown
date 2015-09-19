@@ -103,7 +103,7 @@ There are three events the interceptor can receive and act upon:
 
 ## On Transaction Consolidation Failure
 
-This event is triggered upon distributed transaction consolidation failure, refer to [Mirror](./async-persistency---mirror---advanced.html#Mirror behavior with Distributed Transactions) or [Gateway](./multi-site-replication-over-the-wan.html#Configuring and Deploying the Gateway) and Distributed Transactions for more info about scenarios triggering this event.
+This event is triggered upon distributed transaction consolidation failure, refer to [Mirror](./async-persistency-mirror-advanced.html#Mirror behavior with Distributed Transactions) or [Gateway](./multi-site-replication-over-the-wan.html#Configuring and Deploying the Gateway) and Distributed Transactions for more info about scenarios triggering this event.
 The space synchronization endpoint can get data about the current transaction participant (transaction part in a specific partition) for which the consolidation had failed and decide whether to commit or abort this participant data independently of the other participants. This is done by interacting with the `ConsolidationParticipantData` which is passed to the method as argument. This object contains all the relevant data, such as the operations and entries that are under this transaction participant, transaction metadata which contains its id, the source which participate in this transaction etc.
 
 ## After Transaction Synchronization

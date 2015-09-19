@@ -49,7 +49,7 @@ Please [install the OpenSpaces Maven plugin]({{%latestjavaurl%}}/maven-plugin.ht
 ##### Step 3: Build the project
 
 
-```console
+```bash
 cd <project_root>
 mvn clean install
 ```
@@ -63,7 +63,7 @@ In this example you should execute [benchmark from GS-UI]({{%latestadmurl%}}/ben
 For Windows:
 
 
-```console
+```bash
 cd <project_root>
 java -classpath D:\gigaspaces-xap-premium-10.1.1-ga\lib\required\*;D:\gigaspaces-xap-premium-10.1.1-ga\lib\platform\benchmark;target\*;lib\* com.gigaspaces.tools.importexport.SpaceDataImportExportMain -e -l 127.0.0.1 -s space -d D:\gs
 ```

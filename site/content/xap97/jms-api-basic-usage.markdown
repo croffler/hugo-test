@@ -15,7 +15,7 @@ The JMS 1.0.2 specification introduced two domains:
 In JMS 1.0.2, each domain used a separate set of interfaces. JMS 1.1 presents the unified model, that unites the usage of both domains under a single set of interfaces. GigaSpaces XAP JMS implementation supports both the unified model, and the separate domains.
 
 
-### Basic JMS Workflow
+# Basic JMS Workflow
 
 1. Obtain/create a `ConnectionFactory` instance.
 1. Create a `Connection` with the `ConnectionFactory`.
@@ -37,7 +37,7 @@ In JMS 1.0.2, each domain used a separate set of interfaces. JMS 1.1 presents th
 ### Using Unified Messaging Model (JMS 1.1)
 
 {{%accordion%}}
-{{%accord title=""%}}
+{{%accord title="Java"%}}
 {{% panel  %}}
 
 
@@ -87,7 +87,7 @@ connection.close();
 #### Publish/Subscribe
 
 {{%accordion%}}
-{{%accord title=""%}}
+{{%accord title="Java"%}}
 {{% panel   %}}
 
 
@@ -136,7 +136,7 @@ topicConnection.close();
 #### Point to Point
 
 {{%accordion%}}
-{{%accord title=""%}}
+{{%accord title="Java"%}}
 {{% panel   %}}
 
 

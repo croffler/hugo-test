@@ -33,7 +33,7 @@ By default all the `.dll` files in the current location are scanned. This can be
 
 In this example the space proxy will scan `File1.dll` and all the files which match the `MyCompany.\*.dll` pattern. In addition, only types whose namespace starts with "MyCompany.MyProject." will be scanned in the `MyCompany.\*.dll` files.
 
-## Disabling assemblies scan
+# Disabling assemblies scan
 
 To disable the assemblies scan altogether, use the following configuration:
 
@@ -51,7 +51,7 @@ To disable the assemblies scan altogether, use the following configuration:
 </configuration>
 ```
 
-## Configuring at Runtime
+# Configuring at Runtime
 
 Configuration can also be set at runtime, for example:
 

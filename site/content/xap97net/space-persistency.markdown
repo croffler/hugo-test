@@ -21,7 +21,7 @@ For a fully running example using the Mirror Service see `XAP Root\XAP.NET\NET v
 
 
 
-## Creating a Space with ExternalDataSource
+# Creating a Space with ExternalDataSource
 
 You can either use GigaSpaces NHibernate implementation, or create a custom implementation:
 

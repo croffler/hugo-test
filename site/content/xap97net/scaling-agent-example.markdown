@@ -20,10 +20,7 @@ The [Administration and Monitoring API](./administration-and-monitoring-api.html
 The following example illustrates how you can construct a simple processing unit (**The Scaling Agent**) to monitor an application deployed into GigaSpaces, and track the load on the application. Once the average throughput per instance of the application breaches a pre-defined limit, the scaling agent reacts and performs the necessary activities to scale the application tier.
 
 The activities to scale up the application could be: starting a new GSC on remote machines, and starting additional application instances. In the same way, the scaling agent can be extended to scale down the application to terminate running GSCs, and reduce the amount of application instances.
-
-{{% refer %}}This page assumes knowledge of the processing unit concept. If you are unfamiliar with it, please refer to
-the [SBA Example] first.{{% /refer %}}
-
+ 
 {{% align center %}}![scaling agent .net.jpg](/attachment_files/dotnet/scaling agent .net.jpg){{% /align %}}
 
 # How the Scaling Agent Works

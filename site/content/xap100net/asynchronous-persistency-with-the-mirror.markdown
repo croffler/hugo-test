@@ -94,7 +94,7 @@ The above example:
 
 You **must use a Data-Grid cluster schema that includes a backup** (i.e. `partitioned-sync2backup`) when running a Mirror Service. Without having backup, the Primary IMDG Spaces **will not** replicate their activities to the Mirror Service. For testing purposes, in case you don't want to start backup spaces, you can use the `partitioned-sync2backup` cluster schema and have 0 as the number of backups - this will still allow the primary spaces to replicate their operations to the Mirror.
 
-If you wish to change the mirror service name please refer to [Async Persistency - Mirror - Advanced](./async-persistency---mirror---advanced.html).
+If you wish to change the mirror service name please refer to [Async Persistency - Mirror - Advanced](./async-persistency-mirror-advanced.html).
 
 {{% note %}}
 Enabling replication into the mirror without starting the Mirror will generate a backlog within the primary space (and backup). Please avoid running in this configuration.
@@ -109,7 +109,7 @@ The Mirror settings includes the following options:
 
 | Property | Description | Default |
 |:---------|:------------|:--------|
-|`OperationGrouping`| Options:{{% wbr %}}group-by-space-transaction - Mirror delegating each transaction separately to the data source (database).{{% wbr %}}group-by-replication-bulk - Mirror delegating all replicated items as one bulk to the data source (database).{{% wbr %}}See the [Mirror behavior with Distributed Transactions](./async-persistency---mirror---advanced.html#Mirror behavior with Distributed Transactions) for details| group-by-replication-bulk |
+|`OperationGrouping`| Options:{{% wbr %}}group-by-space-transaction - Mirror delegating each transaction separately to the data source (database).{{% wbr %}}group-by-replication-bulk - Mirror delegating all replicated items as one bulk to the data source (database).{{% wbr %}}See the [Mirror behavior with Distributed Transactions](./async-persistency-mirror-advanced.html#Mirror behavior with Distributed Transactions) for details| group-by-replication-bulk |
 |`SourceSpace Name`| The name of source space (cluster) this mirror serves | NONE, must be supplied |
 |`SourceSpace Partitions`| The number of partitions in source space (cluster) this mirror serves | NONE, must be supplied |
 |`SourceSpace Backups`| The number of backups per partition in source space (cluster) this mirror serves | NONE, must be supplied |

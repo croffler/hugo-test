@@ -19,7 +19,7 @@ The `executor-proxy` should be created on the client side to interact with the r
 
 The `executor-proxy` include the following properties:
 
- | property| Class Type | Required | NameSpace Bean | Description | Default |
+| property| Class Type | Required | NameSpace Bean | Description | Default |
 |:--------|:-----------|:---------|:---------------|:------------|:--------|
 |gigaSpace | GigaSpace | giga-space | Yes |Sets the GigaSpace interface that will be used to work with the space as the transport layer for executions of Space tasks.| |
 |timeout | long |  Yes | timeout | Sets the timeout that will be used to wait for the remote invocation response. The timeout value is in milliseconds.  | 60000 (60 seconds).|

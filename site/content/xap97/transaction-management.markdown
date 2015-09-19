@@ -35,7 +35,7 @@ The following should be added to your `pu.xml` to enable the configuration of tr
 
 GigaSpaces provides several transaction managers, and changing the implementation you work with is just a matter of changing the the configuration.
 
-## Transaction Manager Types
+# Transaction Manager Types
 
 The section below lists the different types of transaction managers supported by GigaSpaces. Each transaction manager implements Spring's `PlatformTransactionManager` interface and therefore supports the Spring transaction framework (see below).
 

@@ -40,7 +40,7 @@ In this instance the machine with which the client machines will synchronize wil
 The simplest way is use a pool. Most linux distributions will install the NTP utility with a pre-defined list of pool servers. The following is an example, taken from the 'server' section of ntp.conf on a Ubuntu machine.
 
 
-```console
+```bash
 # Use servers from the NTP Pool Project. Approved by Ubuntu Technical Board
 # on 2011-02-08 (LP: #104525). See http://www.pool.ntp.org/join.html for
 # more information.

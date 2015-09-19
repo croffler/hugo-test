@@ -18,7 +18,7 @@ The polling event container is an implementation of the [polling consumer patter
 {{% /section %}}
 
 
-## Life Cycle Events
+# Life Cycle Events
 
 The polling container life cycle events described below. You may implement each of of these to perform the desired activity.
 ![dynamic_polling_container_life_cycle.jpg](/attachment_files/dynamic_polling_container_life_cycle.jpg)

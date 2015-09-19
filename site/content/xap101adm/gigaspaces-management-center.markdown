@@ -32,11 +32,11 @@ Using the Grid Tree and the Configuration Panel on the right.
 Using the Space Container Configuration tab of a container node in the Grid Tree, and tool buttons relevant for containers.
 
 
-[Working with Clusters](./working-with-clusters---gigaspaces-browser.html){{%wbr%}}
+[Working with Clusters](./working-with-clusters-gigaspaces-browser.html){{%wbr%}}
 Creating a cluster, replication options, load-balancing options, failover options, verifying and editing cluster definitions, visualizing clusters.
 
 
-[Working with Spaces](./working-with-spaces---gigaspaces-browser.html){{%wbr%}}
+[Working with Spaces](./working-with-spaces-gigaspaces-browser.html){{%wbr%}}
 Performing operations on a space in the XAP Browser.
 
 

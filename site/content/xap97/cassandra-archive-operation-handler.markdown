@@ -22,7 +22,7 @@ The [Archive Container](./archive-container.html) can be configured to work agai
 
 
 
-#### Library dependencies
+# Library dependencies
 
 The Cassandra Archive Operation Handler uses the [Hector Library](http://hector-client.github.com/hector/build/html/index.html) for communicating with the Cassandra cluster.
 Include the following in your `pom.xml`
@@ -95,7 +95,7 @@ Include the following in your `pom.xml`
 {{% /tab %}}
 {{% /tabs %}}
 
-#### Setup
+# Setup
 
 {{%tabs%}}
 {{%tab "  Namespace "%}}
@@ -151,7 +151,7 @@ archiveContainer.destroy();
 {{% /tab %}}
 {{% /tabs %}}
 
-#### CassandraArchiveOperationHandler Properties
+# Properties
 
 
 |Property|Description|
@@ -183,7 +183,7 @@ Object fromByteBuffer(ByteBuffer byteBuffer);
 
 Properties will only be serialized by the custom serializer if their type does not match a primitive type in Cassandra.
 
-### Known Limitations
+# Known Limitations
 
 The CassandraArchiveHandler has the following known limitations:
  *  The archiver must not write two different entries with the same ID. This would corrupt the entry in Cassandra.

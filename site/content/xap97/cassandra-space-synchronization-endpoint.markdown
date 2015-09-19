@@ -9,7 +9,7 @@ weight: 200
 
 A Cassandra based implementation of the [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html).
 
-### Library dependencies
+# Library dependencies
 
 The Cassandra Space Synchronization Endpoint uses the [Hector Library](http://hector-client.github.com/hector/build/html/index.html) For communicating with the Cassandra cluster.
 Include the following in your `pom.xml`
@@ -82,7 +82,7 @@ Include the following in your `pom.xml`
 {{% /tab %}}
 {{% /tabs %}}
 
-### Setup
+# Setup
 
 An example of how the Cassandra Space Synchronization Endpoint can be configured within a mirror.
 
@@ -163,7 +163,7 @@ IJSpace mirror = new UrlSpaceConfigurer("/./mirror-service")
 
 For more details about different configurations see [Space Persistency](./space-persistency.html).
 
-## `CassandraSpaceSynchronizationEndpoint` Properties
+#  Properties
 
 
 |Property|Description|

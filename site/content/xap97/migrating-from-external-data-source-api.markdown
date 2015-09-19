@@ -19,7 +19,7 @@ External Data Source API contains 5 interfaces the implementation can use:
 
 These interfaces have been replaced with two new classes which can be extended:
 
-#### SpaceDataSource
+# SpaceDataSource
 
 - Initial load metadata from the data source.
 - Initial load data from the data source.

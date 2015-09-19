@@ -8,14 +8,10 @@ weight: 600
 
 {{%wbr%}}
 
-{{%section%}}
-{{%column width="10%" %}}
-![fifo-groups.png](/attachment_files/subject/fifo-groups.png)
-{{%/column%}}
-{{%column width="90%" %}}
+{{%bannerleft "/attachment_files/subject/fifo-groups.png" %}}
 Supporting FIFO (First In, First Out) behavior for Entries is a critical requirement when building messaging systems or implementing master-worker patterns. Users should be able to get Entries in the same order in which they were written. GigaSpaces supports both non-ordered Entries and FIFO ordered Entries when performing space operations.
-{{%/column%}}
-{{%/section%}}
+{{%/bannerleft%}}
+
 
 <hr/>
 

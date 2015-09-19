@@ -12,7 +12,7 @@ weight: 100
 
 A Cassandra based implementation of the [Space Data Source](./space-data-source-api.html).
 
-### Library dependencies
+# Library dependencies
 
 The Cassandra Space Data Source uses [Cassandra JDBC Driver](http://code.google.com/a/apache-extras.org/p/cassandra-jdbc/) and [Hector Library](http://hector-client.github.com/hector/build/html/index.html) For communicating with the Cassandra cluster.
 include the following in your `pom.xml`
@@ -166,7 +166,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
 
 For more details about different configurations see [Space Persistency](./space-persistency.html).
 
-### `CassandraSpaceDataSource` Properties
+# CassandraSpaceDataSource Properties
 
 
 |Property|Description|Default|
@@ -179,7 +179,7 @@ For more details about different configurations see [Space Persistency](./space-
 |fixedPropertyValueSerializer|see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer).| |
 |dynamicPropertyValueSerializer|see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer).| |
 
-## Considerations
+# Considerations
 
 ### General limitations
 

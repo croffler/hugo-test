@@ -37,7 +37,7 @@ With the above scenario the Compound Index will improve the query execution dram
 
 ![compu_index_bench.jpg](/attachment_files/compu_index_bench.jpg)
 
-## Creating a Compound Index using Annotation
+# Creating a Compound Index using Annotation
 
 Compound indexes can be defined using annotations. The `CompoundSpaceIndex` annotation should be used. The annotation is a type-level annotation.
 
@@ -57,7 +57,7 @@ public class WithCompoundIndex
 }
 ```
 
-## Creating a Compound Index using gs.xml
+# Creating a Compound Index using gs.xml
 
 A Compound Index can be defined within the gs.xml configuration file. Example: The following a gs.xml describing a Class named WithCompoundIndex having a compound index composed from two segments:
 
@@ -72,7 +72,7 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
 </gigaspaces-mapping>
 ```
 
-## Creating a Compound Indexing for a Space Document
+# Creating a Compound Indexing for a Space Document
 
 You can add a Compound Space Index to a space Document.
 

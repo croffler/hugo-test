@@ -27,7 +27,7 @@ The typical scenario is when streaming vast number of raw events through the Spa
 - Big-Data storage is abstracted with the [`ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc{{% currentversion %}}/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface. [Cassandra Archive Operation Handler](./cassandra-archive-operation-handler.html) implementation is available out of the box.
 {{%/vbar%}}
 
-## Archive Container vs Space Persistency
+# Archive Container vs Space Persistency
 
 The Archive Container differs from [Space Persistency](./space-persistency.html) in the following ways:
 

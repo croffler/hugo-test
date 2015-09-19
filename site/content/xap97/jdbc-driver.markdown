@@ -26,7 +26,7 @@ GigaSpaces is not a full-fledged relational database and it does not support the
 You can use the [SQL Command Line]({{%currentadmurl%}}/space---gigaspaces-cli.html) to query and fetch data from the IMDG. The SQL Command Line using the GigaSpaces JDBC Driver when accessing the IMDG.
 {{% /tip %}}
 
-## Using Existing SQL Code and Porting to External Systems
+# Using Existing SQL Code and Porting to External Systems
 
 The JDBC interface is mostly used to enable access to the space through standard SQL tools and programming interfaces. You can write SQL commands against the space, and the same code will in many (simple) cases be compatible with other SQL implementations.
 
