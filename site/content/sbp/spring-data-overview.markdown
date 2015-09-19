@@ -254,7 +254,7 @@ Please, refer to [Indexing]({{%latestjavaurl%}}/indexing-overview.html) for more
 You can define the form in which objects will be stored in Space either with annotations on each POJO in your model or with defining default Storage Type for the  Space. This is done to save up time on serialization/de-serialization, reduce memory usage or to define schema that will change in time. Three Storage Types are available for POJOs: `OBJECT`, `BINARY` and `COMPRESSED`.
 
 {{%refer%}}
-To read more on this feature, please, refer to [Storage Types]({{%latestjavaurl%}}/storage-types---controlling-serialization.html).
+To read more on this feature, please, refer to [Storage Types]({{%latestjavaurl%}}/storage-types-controlling-serialization.html).
 {{%/refer%}}
 
 ## Exclusion

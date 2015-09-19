@@ -21,7 +21,7 @@ Secured Space, Processing Unit, Local Cache/View, Space Filters, Task Execution/
 Enabling security for Grid Service Agent, Manager and Container.
 
 
-- [Transport Security](./securing-the-transport-layer-(using-ssl).html){{%wbr%}}
+- [Transport Security](./securing-the-transport-layer-using-ssl.html){{%wbr%}}
 XAP provides a generic network filter that also provides SSL support, through an SSL communication filter.
 
 <hr/>

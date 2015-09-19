@@ -377,7 +377,7 @@ public class Message {
 }
 ```
 
-{{%learn "./storage-types---controlling-serialization.html"%}}
+{{%learn "./storage-types-controlling-serialization.html"%}}
 
 
 # SpaceFifoGroupingProperty

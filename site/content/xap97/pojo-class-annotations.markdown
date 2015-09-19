@@ -118,7 +118,7 @@ public class Person {
 }
 ```
 
-{{%learn "./storage-types---controlling-serialization.html"%}}
+{{%learn "./storage-types-controlling-serialization.html"%}}
 
 # Replication
 

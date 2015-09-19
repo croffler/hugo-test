@@ -31,7 +31,7 @@ The Gateway requires a separate license in addition to the GigaSpaces commercial
 [Overview](./multi-site-replication-over-the-wan.html){{%wbr%}}
 Establish data synchronization between multiple sites (spaces), usually used over the WAN.
 
-[Communication Filter](./communication-filter-over-the-wan-(ssl,zip).html){{%wbr%}}
+[Communication Filter](./communication-filter-over-the-wan.html){{%wbr%}}
 Creating filters over the network communication which goes across the WAN.
 
 [Gateway Components](./replication-gateway-components.html){{%wbr%}}
