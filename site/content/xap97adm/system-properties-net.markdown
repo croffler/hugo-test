@@ -8,9 +8,10 @@ weight: 500
 
 
 
-|                   |      |    |
-|-------------------|------|-----|
+
+
 | Property name  | Description | Default value  |
+|-------------------|------|-----|
 | `com.gs.active_election.timeout` | Defines the sleep timeout between iterations in the Active election algorithm | 1000 msec |
 | `com.gs.replication.disable-duplicate-filtering` | Disables the duplication filtering mechanism used to avoid double processing of packets after recovery. | false |
 | `com.gs.cluster.cache-loader.external-data-source` | Boolean property. Must be set to `true` when working with external data source | `true (since 8.0)` |

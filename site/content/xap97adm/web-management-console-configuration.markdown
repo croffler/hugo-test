@@ -14,7 +14,7 @@ The management console allows for alternative locales which can be configured vi
 are Chinese and English (which is the default). Users wishing to change the locale can do so in two ways:
 
 
-### Using a new configuration file
+# Using a new configuration file
 
 * Create a new file with the following contents:
 
@@ -69,7 +69,7 @@ bin\gs-webui.bat
 
 
 
-### Update the existing configuration file
+# Update the existing configuration file
 
 * Open the *gs-webui.war* archive (found under `[XAP_HOME]/tools/gs-webui`) for exploring and navigate to */WEB-INF/lib*.
 Open the *gs-webui-[version-build].jar* archive for exploring.

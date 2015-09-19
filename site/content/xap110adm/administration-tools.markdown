@@ -35,7 +35,7 @@ Command line tool for  deploying elastic processing units.
 [Deploying REST service with Command Line](./rest-deploy-command-line-interface.html){{%wbr%}}
 Command line tool for  deploying REST services.
 
-[Space command line interface](./space---gigaspaces-cli.html){{%wbr%}}
+[Space command line interface](./space-gigaspaces-cli.html){{%wbr%}}
 Space command line interface
 
 [Quiesce Command Line](./quiesce-command-line-interface.html){{%wbr%}}

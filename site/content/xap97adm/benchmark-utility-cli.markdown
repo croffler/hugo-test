@@ -17,7 +17,7 @@ You can find the benchmark in the `<GigaSpaces Root>\tools\benchmark` directory.
 
 Typing `run.bat -h` in the console displays:
 
-### A detailed list of options for:
+# Options for:
 
 - Setup
 - Performing operations
@@ -35,7 +35,7 @@ Option arguments in square brackets [] are required;{{%wbr%}}
 Option arguments in triangular brackets <> are optional.
 
 
-#### Setup:
+# Setup:
 
 
 -objecttype Defines the object type that will be written to the space.
@@ -64,7 +64,7 @@ Other possible values are:
 |-exit | Benchmark will hang once finished. When used with embedded space, space will still be alive.|
 
 
-### Operations:
+# Operations:
 
 
 
@@ -79,7 +79,7 @@ Other possible values are:
 |bench | perform first-*second-second-third operation with uid|
 
 
-### Options:
+# Options:
 
 
 |Option | Description|
@@ -107,7 +107,7 @@ Other possible values are:
 
 
 
-### Transactions:
+# Transactions:
 
 
 |Option | Description|
@@ -116,7 +116,7 @@ Other possible values are:
 |dtx 1000| Perform operation under distributed transaction, commit every 1000 operations.|
 
 
-### Topologies:
+# Topologies:
 
 
 |Option | Description|
@@ -128,7 +128,7 @@ Other possible values are:
 |-hashtable |use java.util.Hashtable API- first/second/third operations as: put,get, remove |
 
 
-### Statistics:
+# Statistics:
 
 
 |Option | Description|
@@ -138,7 +138,7 @@ Other possible values are:
 |-stress \[repeat times\] |runs the entire benchmark as many as 'repeat times' as stated |
 
 
-#### Examples:
+# Examples:
 
 
 

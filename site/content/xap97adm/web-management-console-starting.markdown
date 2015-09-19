@@ -18,7 +18,7 @@ In terms of functionality, it does not replace the existing Java-based GUI (the 
 The management console web application is located under `XAP root/tools/gs-webui`. This directory contains the web application itself (in the form of a standard JEE `.war` file), and a launcher library and shell scripts used to start in standalone mode (see below).
 The management console web application can be started in one of the following ways:
 
-### Starting the Management Console Web Application in Standalone Mode
+# Starting in Standalone Mode
 
 This is the simplest way to run the management console web application. Simply click the `gs-webui.sh(bat)` script to start a Jetty web container with the management console web application running within it. Once started, there's no need to deploy or perform any additional steps.
 
@@ -85,7 +85,7 @@ gs-webui.bat
 {{% /tabs %}}
 
 
-### Deploying the Management Console Web Application to the XAP Runtime Environment
+# Deploying   to the XAP Runtime Environment
 
 To deploy the management console web application to the XAP [Runtime Environment](./the-runtime-environment.html), you should simply point your deployment tool of choice (CLI, Admin API or the standalone Java-based UI) to the `<XAP root>/tools/gs-webui/gs-webui.war` file and deploy it.
 
