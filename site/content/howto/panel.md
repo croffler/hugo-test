@@ -27,14 +27,18 @@ This type is a type-safe replacement for the old `NotifyModifiers` constants.
 Notifications for expired objects sent both from the primary and the backup space (in case you have such).
 {{%/warning%}}
 
-{{%tip %}}This is an Tip panel{{%/tip%}}
+{{%tip  %}}
+This is an Tip panel
+{{%/tip%}}
 
-{{%tip title="This is a tip"%}}This is an Tip panel{{%/tip%}}
+{{%tip "This is a tip"%}}
+This is an Tip panel
+{{%/tip%}}
 
 {{%note title="Note"%}}This is an Note panel{{%/note%}}
 
 
-{{%info title="Info titasas"%}}
+{{%info "Info titasas"%}}
 This is an info panel
 {{%/info%}}
 

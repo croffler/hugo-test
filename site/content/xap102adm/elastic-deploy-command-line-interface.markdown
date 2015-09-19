@@ -8,7 +8,9 @@ weight: 250
 
 {{%ssummary%}} {{%/ssummary%}}
 
-{{%info title="Interacting with a secured gridIn order to interact with a secured grid you need to login first. See [(CLI) Security]({{%currentsecurl/command-line-interface-(cli)-security.html). {{%/info"%}}
+{{%info%}}
+Interacting with a secured gridIn order to interact with a secured grid you need to login first. See [(CLI) Security]({{%currentsecurl%}}/command-line-interface-(cli)-security.html).
+ {{%/info%}}
 
 # application
 

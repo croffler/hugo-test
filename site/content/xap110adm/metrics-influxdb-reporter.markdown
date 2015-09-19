@@ -10,7 +10,8 @@ GigaSpaces XAP is shipped with built-in support for [InfluxDB](http://influxdb.c
 
 Configuration takes place in `metrics.xml`, which resides in `XAP_HOME/config/metrics`. For more information see [Configuration](./metrics-configuration.html).
 
-{{%info title="InfluxDB StatusThe GigaSpaces InfluxDB reporter implementation is based on [InfluxDB v0.8.x](http://influxdb.com/docs/v0.8/). InfluxDB v0.9 (which is expected to be production ready in April 2015) includes some powerful enhancements (e.g. tags support), which the XAP metric framework can leverage as well. We're already experimenting with InfluxDB 0.9 and plan to release a compatible reporter soon after InfluxDB 0.9 is GA.{{%/info"%}}
+{{%info%}}
+InfluxDB StatusThe GigaSpaces InfluxDB reporter implementation is based on [InfluxDB v0.8.x](http://influxdb.com/docs/v0.8/). InfluxDB v0.9 (which is expected to be production ready in April 2015) includes some powerful enhancements (e.g. tags support), which the XAP metric framework can leverage as well. We're already experimenting with InfluxDB 0.9 and plan to release a compatible reporter soon after InfluxDB 0.9 is GA.{{%/info%}}
 
 {{%note%}}
 InfluxDB currently runs only on Linux. If you have a repository that runs on Windows, you can implement your own [custom reporter](./metrics-custom-reporter.html) to integrate with the repository.

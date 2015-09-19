@@ -46,7 +46,9 @@ public class CustomComponent implements ... ,QuiesceStateChangedListener {
 ```
 
 # Use Cases Implementation Samples
-{{%info title="Safe undeploy a stateful processing unit{{%/info"%}}
+{{%info%}}
+Safe undeploy a stateful processing unit
+{{%/info%}}
 
 ```java
 
@@ -69,7 +71,7 @@ else {
 
 ```
 
-{{%info title="Rolling system upgrade on a live system{{%/info"%}}
+{{%info%}}"Rolling system upgrade on a live system{{%/info%}}
 
 ```java
 

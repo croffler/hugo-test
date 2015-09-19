@@ -64,7 +64,8 @@ A processing unit is essentially a .NET class library with a deployment descript
 </configuration>
 ```
 
-{{%info title="PU Configuration SnippetsFrom here on processing unit configuration snippets will usually be shortened to focus on the `<ProcessingUnit>` tag. {{%/info"%}}
+{{%info%}}
+PU Configuration SnippetsFrom here on processing unit configuration snippets will usually be shortened to focus on the `<ProcessingUnit>` tag. {{%/info%}}
 
 {{%learn "./the-processing-unit-overview.html"%}}
 
@@ -100,7 +101,7 @@ Once extracted, the GSM processes the deployment descriptor and based on that pr
 
 Each GSC to which a certain instance was provisioned, downloads the PU from the GSM, extracts it to its local working directory (located by default under <XAP Root>\work\deployed-processing-units) and starts the PU instance.
 
-{{%tip title="Building directly to the deploy folder"%}}
+{{%tip "Building directly to the deploy folder"%}}
 A common practice is to change the PU project output directory to `GS_HOME\deploy\[pu-name\]`, since this is the default path used by the GUI and the command line interface will find the PU's to deploy under this file structure.
 {{%/tip%}}
 
