@@ -246,7 +246,10 @@ The following example queries for a **Dealer** which has a **Car** whose *compan
 ![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
 
 
-{{%warning title="The following is not supported"%}}
+
+{{%warning %}}
+
+The following is not supported
 
 
 ```java
@@ -278,11 +281,11 @@ For more information see the [Collection Indexing](./indexing.html#Collection In
 
 # Limitations
 
-{{%vbar%}}
+
 - The SQLQuery syntax for Nested Properties does not support the `IN` operation.
 - The type of the nested object must be a class - querying interfaces is not supported.
 - Nested properties' classes should be `Serializable`, otherwise the entry will not be accessible from remote clients.
 - Arrays of primitive types (int, boolean, etc.) are not supported - use the equivalent wrapper type (java.lang.Integer, java.lang.Boolean, etc.) instead.
 
-{{%/vbar%}}
+
 

@@ -69,7 +69,8 @@ gshome-net-directory
 {{%/accord%}}
 {{%/accordion%}}
 
-{{%warning%}} If you're using XAP.NET x64, note that the [default platform for Console Applications is x86](http://connect.microsoft.com/VisualStudio/feedback/details/455103/new-c-console-application-targets-x86-by-default), and you must [change it to x64](http://msdn.microsoft.com/en-us/library/ms185328.aspx).{{%/warning%}}
+{{%warning%}}
+If you're using XAP.NET x64, note that the [default platform for Console Applications is x86](http://connect.microsoft.com/VisualStudio/feedback/details/455103/new-c-console-application-targets-x86-by-default), and you must [change it to x64](http://msdn.microsoft.com/en-us/library/ms185328.aspx).{{%/warning%}}
 
 ### Implementing a PONO
 

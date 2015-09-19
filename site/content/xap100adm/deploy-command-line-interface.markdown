@@ -216,28 +216,28 @@ Using the following pu configuration:
 
 The following deploys a processing unit archive called `data-processor.jar` using an SLA element read from an external `sla.xml` file.
 
-```console
+```bash
 gs> deploy -sla file://config/sla.xml data-processor.jar
 ```
 
 The following example deploys a `partitioned-sync2backup` space cluster with the name `mySpace` for both the processing unit and the Space it contains.
 
 
-```console
+```bash
 deploy -cluster schema=partitioned-sync2backup total_members=2,1 -override-name mySpace -properties embed://dataGridName=mySpace myPUFolder
 ```
 
 
 
-{{% tip %}}
+{{%tip%}}
 Multiple deployment properties can be injected by having ; between each property - see below example:
 
 
-```java
+```bash
 >gs deploy -cluster schema=partitioned-sync2backup total_members=10,1
 -properties "embed://dataGridName=myIMDG;space-config.proxy.router.active-server-lookup-timeout=5000;space-config.engine.max_threads=256;mypropA=aaa;mypropB=bbb" -override-name myPU /tmp/myPu.jar
 ```
-{{% /tip %}}
+{{%/tip%}}
 
 {{%/accord%}}
 {{%/accordion%}}

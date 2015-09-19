@@ -240,10 +240,8 @@ The following example queries for a **Dealer** which has a **Car** whose *compan
 ![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
 
 
-{{%warning title="The following is not supported"%}}
-
-
-
+{{%warning%}}
+### The following is not supported
 
 ```java
 ... = new SqlQuery<Dealer>("Cars[*](company = 'Honda' OR color = 'Red' OR tags[*] = 'Convertible')");

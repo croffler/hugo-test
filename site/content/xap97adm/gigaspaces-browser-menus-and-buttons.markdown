@@ -39,7 +39,11 @@ The **Space** menu provides options relevant for a specific space.
 ![GMC_space_SpaceMenuOption_6.5.jpg](/attachment_files/GMC_space_SpaceMenuOption_6.5.jpg)
 
 
-The **Space** menu is enabled only when pressing a space node (![IMG371.gif](/attachment_files/IMG371.gif)) in the tree on the left.
+The **Space** menu is enabled only when pressing a space node
+
+![IMG371.gif](/attachment_files/IMG371.gif)
+
+in the tree on the left.
 
 The **Space** menu allows you to:
 

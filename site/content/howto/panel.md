@@ -17,17 +17,30 @@ This is a simple panel
 
 
 
-{{%warning title="Caution"%}}
+{{%warning "When walking....."%}}
 This type is a type-safe replacement for the old `NotifyModifiers` constants.
 Notifications for expired objects sent both from the primary and the backup space (in case you have such).
 {{%/warning%}}
 
-{{%tip title="Tip"%}}This is an Tip panel{{%/tip%}}
+{{%warning%}}
+This type is a type-safe replacement for the old `NotifyModifiers` constants.
+Notifications for expired objects sent both from the primary and the backup space (in case you have such).
+{{%/warning%}}
+
+{{%tip %}}This is an Tip panel{{%/tip%}}
+
+{{%tip title="This is a tip"%}}This is an Tip panel{{%/tip%}}
 
 {{%note title="Note"%}}This is an Note panel{{%/note%}}
 
 
-{{%info title="Info"%}}This is an info panel{{%/info%}}
+{{%info title="Info titasas"%}}
+This is an info panel
+{{%/info%}}
+
+{{%info%}}
+This is an info panel
+{{%/info%}}
 
 {{%vbar title="VBar"%}}This is an vbar panel{{%/vbar%}}
 

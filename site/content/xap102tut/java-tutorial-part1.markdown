@@ -31,6 +31,7 @@ You can configure the Space connection with several options.
 {{%learn "currentjavaurl/the-space-configuration.html"%}}
 
 
+
 When a client connects to a space, a proxy is created that holds a connection which implements the space API. All client interaction is performed through this proxy.
 
 

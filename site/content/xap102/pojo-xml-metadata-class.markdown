@@ -47,7 +47,9 @@ Example:
 ```
 
 
-{{%learn "./space-persistency.html"%}}
+{{%primary%}}
+[Space persistence](./space-persistency.html)
+{{%/primary%}}
 
 # Replication
 
@@ -69,7 +71,9 @@ Example:
 ```
 
 
-{{%learn "currentadmurl/replication.html"%}}
+{{%refer%}}
+[Replication]({{%currentadmurl%}}/replication.html)
+{{%/refer%}}
 
 
 # FIFO Support

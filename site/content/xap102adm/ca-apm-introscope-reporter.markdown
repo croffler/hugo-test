@@ -161,7 +161,7 @@ Integration by plugins would require additional work, because plugin semantics i
 Format of each line is as follows:
 
 ```xml
-     <metric type="TYPE" name="NAME" value="VALUE" />
+<metric type="TYPE" name="NAME" value="VALUE" />
 ```
 
 There are three fields that need to be populated: `type`, `name` and `value`. Only the first one requires a short comment. Introscope has few types of metrics defined. Some of them are connected with a little bit of logic - e.g. Introscope may compute average value of all reported values.
@@ -192,9 +192,9 @@ XAP reports tens of different predefined metrics per machine that belongs to a g
 Resource segments are optional. They are separated from name by `:` and are separated from each other by `|`. Multiple resource segments create hierarchy, e.g. metrics `xap|groupA|myhost|lus|21950:lus_items` and `xap|groupA|myhost|lus|21950:lus_listeners` can be seen as:
 
 {{%section%}}
-{{%column width="50%"%}}
+{{%column width="60%"%}}
 
-```xml
+{{%panel%}}
 xap
 +-- groupA
   +-- myhost
@@ -202,9 +202,9 @@ xap
       +-- 21950
         --- lus_items
         --- lus_listeners
-```
+{{%/panel%}}
 {{%/column%}}
-{{%column width="50%"%}}
+{{%column width="40%"%}}
 {{%popup   "/attachment_files/introscope.png"%}}
 {{%/column%}}
 {{%/section%}}

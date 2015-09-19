@@ -6,9 +6,6 @@ parent: rest-service-overview.html
 weight: 400
 ---
 
-
-
-
 {{%section%}}
 {{%column width="10%" %}}
 <br>
@@ -33,7 +30,7 @@ The REST API exposing HTTP based interface Space. It is leveraging the [XAP API]
 
 
 
-| | |
+|     |      |
 |----|----|
 |Description |Introduce the specific type to space. |
 |Request URL| PUT http://localhost:8080/{Type}/_introduce_type  |
@@ -102,7 +99,7 @@ Predefined types and their conversion:
 
 
 | Type name | Java class |
-|:-----|:----------|:-----------|
+|:-----|:----------|
 | int32 | java.lang.Integer |
 | int64 | java.lang.Long |
 | double | java.lang.Double |

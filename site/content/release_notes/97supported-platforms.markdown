@@ -16,7 +16,8 @@ GigaSpaces XAP is supported on every operating system that supports the Java Pla
 
 The list below represents the platforms that are regularly tested by GigaSpaces.
 
-{{%info%}}GigaSpaces components (space, cluster of spaces, Processing Unit, GSM, GSC, LUS, Mahalo, GUI, CLI) can run only with the same GigaSpaces JARs (i.e., the same version and build number).{{%/info%}}
+{{%info%}}
+GigaSpaces components (space, cluster of spaces, Processing Unit, GSM, GSC, LUS, Mahalo, GUI, CLI) can run only with the same GigaSpaces JARs (i.e., the same version and build number).{{%/info%}}
 
 # Mixing XAP Versions
 The following is supported:

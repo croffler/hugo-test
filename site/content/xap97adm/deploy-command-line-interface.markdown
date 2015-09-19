@@ -217,7 +217,7 @@ Using the following pu configuration:
 Multiple deployment properties can be injected by having ; between each property - see below example:
 
 
-```java
+```bash
 >gs deploy -cluster schema=partitioned-sync2backup total_members=10,1
 -properties "embed://dataGridName=myIMDG;space-config.proxy.router.active-server-lookup-timeout=5000;space-config.engine.max_threads=256"
 -override-name myPU /tmp/myPu.jar

@@ -304,7 +304,7 @@ In order to deploy the different Processing unit comprising this example:
 - Use the following commands to deploy the Processing unit libraries:
 
 
-```java
+```bash
 \gigaspaces-xap-premium-10.0.0\bin\gs pudeploy -cluster schema=partitioned-sync2backup 
 	total_members=2,1 -properties embed://dataGridName=space -max-instances-per-vm 1
 	-override-name space /templates/datagrid
@@ -316,7 +316,7 @@ In order to deploy the different Processing unit comprising this example:
 
 with mule 3.5 you can deploy from you project with the cmd:
 
-```java
+```bash
 \mvn os:deploy -Dgroups=<your jini group>
 ```
 {{% exclamation %}} You may find the different Processing Unit libraries under the `target` folder of each Processing Unit.
@@ -484,12 +484,12 @@ See below example:
 </mule>
 ```
 
-{{% warning %}}
+{{%warning%}}
 Time based Parameters Units:
 
 - The **default-timeout** parameter and the **custom-transaction timeout** parameter are in second units.
 - The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.
-{{% /warning %}}
+{{%/warning%}}
 
 # Libraries Required
 The [attached libraries](/attachment_files/sbp/mule-jars.zip) should be located at your `GigaSpaces Root\lib\platform\mule` folder before deploying the example. See below fill list of the libraries required to run this example:
