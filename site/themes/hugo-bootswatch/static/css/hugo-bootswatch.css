@@ -115,22 +115,26 @@ footer{
 */
 /* Variations */
 .bs-callout-success {
-  background-color: #ffffff;
+  background-color: #F5FFF1;
   border-color: #BAE099;
 }
 .bs-callout-danger {
-  background-color: #ffffff;
+  background-color: #FEF9F8;
   border-color: #000000;
 }
 .bs-callout-warning {
-  background-color: #ffffff;
+  background-color: #FFFDF5;
   border-color: #f1e7bc;
 }
 .bs-callout-info {
-  background-color: #ffffff;
+  background-color: #F2FFFF;
   border-color: #d0e3f0;
 }
 
+.bs-callout-primary {
+  background-color: #FBF9F7;
+  border-color: #FBF9F7;
+}
 
 
 .bs-callout {
@@ -161,55 +165,31 @@ footer{
 }
 .bs-callout-primary {
     border-left-color: #A0522D;
-       border-top-width:1px;
-        border-bottom-width:1px;
-        border-right-width:1px;
-        border-top-color: #e3e3e3;
-        border-right-color: #e3e3e3;
-        border-bottom-color: #e3e3e3;
+
 
 }
 .bs-callout-primary h4 {
     color: #A0522D;
-       border-top-width:1px;
-        border-bottom-width:1px;
-        border-right-width:1px;
-        border-top-color: #e3e3e3;
-        border-right-color: #e3e3e3;
-        border-bottom-color: #e3e3e3;
+
+
 }
 .bs-callout-success {
     border-left-color: #5cb85c;
-    border-top-width:1px;
-    border-bottom-width:1px;
-    border-right-width:1px;
-    border-top-color: #e3e3e3;
-    border-right-color: #e3e3e3;
-    border-bottom-color: #e3e3e3;
+
 }
 .bs-callout-success h4 {
     color: #5cb85c;
 }
 .bs-callout-danger {
     border-left-color: #d9534f;
-    border-top-width:1px;
-    border-bottom-width:1px;
-    border-right-width:1px;
-    border-top-color: #e3e3e3;
-    border-right-color: #e3e3e3;
-    border-bottom-color: #e3e3e3;
+
 }
 .bs-callout-danger h4 {
     color: #d9534f;
 }
 .bs-callout-warning {
     border-left-color: #f0ad4e;
-       border-top-width:1px;
-        border-bottom-width:1px;
-        border-right-width:1px;
-        border-top-color: #e3e3e3;
-        border-right-color: #e3e3e3;
-        border-bottom-color: #e3e3e3;
+
 
 }
 .bs-callout-warning h4 {
@@ -217,12 +197,7 @@ footer{
 }
 .bs-callout-info {
     border-left-color: #5bc0de;
-       border-top-width:1px;
-        border-bottom-width:1px;
-        border-right-width:1px;
-        border-top-color: #e3e3e3;
-        border-right-color: #e3e3e3;
-        border-bottom-color: #e3e3e3;
+
 }
 .bs-callout-info h4 {
     color: #5bc0de;
