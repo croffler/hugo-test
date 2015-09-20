@@ -50,7 +50,7 @@ Here is how the space should be started:
 GigaSpaces has a built in [Hibernate Space Persistency](./hibernate-space-persistency.html) implementation which is a `SpaceSynchronizationEndpoint` extension. You can implement your own Mirror very easily to accommodate your exact needs. See example below:
 
 {{%accordion%}}
-{{%accord title=""%}}
+{{%accord title="MirrorSpaceSynchronizationEndpoint"%}}
 {{% panel   %}}
 
 
@@ -94,7 +94,7 @@ public class MirrorSpaceSynchronizationEndpoint extends SpaceSynchronizationEndp
 And here is how this can be configured within the mirror configuration:
 
 {{%accordion%}}
-{{%accord title=""%}}
+{{%accord title="Mirror Configuration"%}}
 {{% panel   %}}
 
 {{%tabs%}}
