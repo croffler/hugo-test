@@ -50,7 +50,10 @@ public interface MyService {
 ```
 {{%/accord%}}
 {{%/accordion%}}
-{{%learn "./space-based-remoting.html"%}}
+
+{{%refer%}}
+[Space based remoting](./space-based-remoting.html)
+{{%/refer%}}
 
 
 # ExecutorProxy
@@ -76,7 +79,12 @@ public class DataRemoting {
 ```
 {{%/accord%}}
 {{%/accordion%}}
-{{%learn "./space-based-remoting.html"%}}
+
+{{%refer%}}
+[Space based remoting](./space-based-remoting.html)
+{{%/refer%}}
+
+
 
 
 # Routing
@@ -103,4 +111,8 @@ public class DataRemoting {
 ```
 {{%/accord%}}
 {{%/accordion%}}
-{{%learn "./space-based-remoting.html"%}}
+
+{{%refer%}}
+[Space based remoting](./space-based-remoting.html)
+{{%/refer%}}
+

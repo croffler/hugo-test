@@ -64,7 +64,7 @@ public class Employee {
 }
 ```
 
-{{%learn "currentjavaurl/data-partitioning.html"%}}
+{{%learn "./data-partitioning.html"%}}
 
 
 # SpaceProperty

@@ -97,6 +97,7 @@ Example:
 </gigaspaces-mapping>
 ```
 
+
 {{%learn "./storage-types-controlling-serialization.html"%}}
 
 ### SpaceIndex

@@ -152,7 +152,7 @@ public class Person {
 
 
 
-{{%learn "currentjavaurl/replication.html"%}}
+{{%learn "/xap97/replication.html"%}}
 
 
 # Compound Index

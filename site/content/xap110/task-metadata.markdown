@@ -32,8 +32,10 @@ public class MyTask implements Task<Integer>  {
 }
 ```
 
+{{%refer%}}
+[Task Execution over the Space](./task-execution-overview.html)
+{{%/refer%}}
 
-{{%learn "./task-execution-overview.html"%}}
 
 
 # Task Routing
@@ -58,4 +60,7 @@ public class MyTask implements Task<Integer>  {
 }
 ```
 
-{{%learn "./task-execution-overview.html"%}}
+
+{{%refer%}}
+[Task Execution over the Space](./task-execution-overview.html)
+{{%/refer%}}

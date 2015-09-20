@@ -34,7 +34,9 @@ public class Person {
 }
 ```
 
-{{%learn "./space-persistency.html"%}}
+{{%refer%}}
+ [Space Persistency](/space-persistency.html)
+ {{%/refer%}}
 
 
 # Include Properties
@@ -61,7 +63,7 @@ public class Person {
 | | |
 |----|----|
 |Syntax     | fifoSupport |
-{{%javadoc "|Argument   | [FifoSupport](  com/gigaspaces/annotation/pojo/FifoSupport )|"%}}
+|Argument   | [FifoSupport](  {{%javadoc "com/gigaspaces/annotation/pojo/FifoSupport"%}})|
 |Default    | FifoSupport.NOT_SET|
 |Description| To enable FIFO operations, set this attribute to `FifoSupport.OPERATION`|
 
@@ -75,7 +77,9 @@ public class Person {
 }
 ```
 
-{{%learn "./fifo-support.html"%}}
+{{%refer%}}
+[Fifo Support](./fifo-support.html)
+{{%/refer%}}
 
 
 # Inherit Index
@@ -97,14 +101,17 @@ public class Person {
 }
 ```
 
-{{%learn "./indexing.html"%}}
+{{%refer%}}
+[Indexing](./indexing.html)
+{{%/refer%}}
+
 
 # Storage Type
 
 | | |
 |----|----|
 |Syntax     | storageType |
-{{%javadoc "|Argument   | [StorageType](  com/gigaspaces/metadata/StorageType )          |"%}}
+|Argument   | [StorageType](  {{%javadoc "com/gigaspaces/metadata/StorageType"%}})|
 |Default    | StorageType.OBJECT |
 |Description| To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.|
 
@@ -119,7 +126,10 @@ public class Person {
 }
 ```
 
-{{%learn "./storage-types-controlling-serialization.html"%}}
+{{%refer%}}
+[Storage types](./storage-types-controlling-serialization.html)
+{{%/refer%}}
+
 
 # Replication
 
@@ -142,7 +152,9 @@ public class Person {
 
 
 
-{{%learn "currentadmurl/replication.html"%}}
+{{%refer%}}
+[Replication]({{%currentadmurl%}}/replication.html)
+{{%/refer%}}
 
 
 # Compound Index
@@ -173,7 +185,12 @@ public class User {
 
 ```
 
-{{%learn "./indexing-compound.html"%}}
+
+{{%refer%}}
+[Compond Indexing](./indexing-compound.html)
+{{%/refer%}}
+
+
 
 # Blob Store
 
@@ -195,6 +212,8 @@ public class Person {
 
 ```
 
-{{%learn "currentadmurl/memoryxtend.html"%}}
+{{%refer%}}
+[Memoryxtend]({{%currentadmurl%}}/memoryxtend.html)
+{{%/refer%}}
 
 

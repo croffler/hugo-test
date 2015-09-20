@@ -86,7 +86,7 @@ Example:
 ```
 
 
-{{%learn "currentjavaurl/replication.html"%}}
+{{%learn "/xap97/replication.html"%}}
 
 
 # FIFO Support

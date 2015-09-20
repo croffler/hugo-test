@@ -267,7 +267,7 @@ Example:
 </gigaspaces-mapping>
 ```
 
-{{%learn "currentjavaurl/data-partitioning.html"%}}
+{{%learn "/xap97/data-partitioning.html"%}}
 
 # Class Reference
 

@@ -120,7 +120,7 @@ Partitioning is used when the total number of objects is too big to be stored in
 
 {{%info%}}The routing attribute can be explicitly set using the `[SpaceRouting]` annotation for PONO entries or via the SpaceTypeDescriptorBuilder for document entries. If the routing attribute is not explicitly set, the space id attribute is used for routing. If the space id attribute is not defined, the first indexed attribute (alphabetically) is used for routing, otherwise the first attribute (alphabetically) is used for routing.{{%/info%}}
 
-{{%learn "currentjavaurl/data-partitioning.html"%}}
+{{%learn "/xap97/data-partitioning.html"%}}
 
 
 

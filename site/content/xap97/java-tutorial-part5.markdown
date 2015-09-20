@@ -426,8 +426,7 @@ With a stateless PU
 ./gs.sh deploy -cluster total_members=4 -max-instances-per-machine 2 eventPU.jar
 ```
 
-{{%learn "currentadmurl/deploy-command-line-interface.html"%}}
-
+{{%learn "/xap97adm/deploy-command-line-interface.html"%}}
 
 
 <ul class="pager">

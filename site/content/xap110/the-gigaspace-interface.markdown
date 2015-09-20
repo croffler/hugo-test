@@ -20,8 +20,10 @@ The space is accessed via a programmatic interface which supports the following 
 - Take - get the value from the space and delete its content.
 - Notify - alert when the contents of an entry of interest have registered changes.
 
-{{%learn "./the-space-operations.html"%}}
 
+{{%refer%}}
+[The Space Operations](./the-space-operations.html)
+{{%/refer%}}
 
 
 
@@ -192,7 +194,12 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 
 {{% /tabs %}}
 
-{{%learn "./local-cache.html"%}}
+
+
+{{%refer%}}
+[Local Cache](./local-cache.html)
+{{%/refer%}}
+
 
 
 # Local View
@@ -265,7 +272,11 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {{% /tab %}}
 {{% /tabs %}}
 
-{{%learn "./local-view.html"%}}
+
+{{%refer%}}
+[Local View](./local-view.html)
+{{%/refer%}}
+
 
 
 # Resource cleanup
@@ -392,7 +403,10 @@ Here is an example of how to define security with an embedded space. In this cas
 
 It is possible to configure the space to be secured using deploy time properties (bean level properties), without declaring the security element. The `security.username` and `security.password` can be provided, and the spaces defined within the processing unit are automatically secured.
 
-{{%learn "currentsecurl"%}}
+
+{{%refer%}}
+[Security]({{%currentsecurl%}}/)
+{{%/refer%}}
 
 
 # Persistency
