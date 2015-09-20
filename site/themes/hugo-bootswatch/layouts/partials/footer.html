@@ -27,6 +27,14 @@
 <script src="/js/jquery.scrollToTop.min.js"></script>
 
 
+
+
+
+
+<script src="/js/tocify/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="/js/tocify/jquery.tocify.min.js"></script>
+
+
 <script type="text/javascript" src="/js/jquery.easyui.min.js"></script>
 
 <script type="text/javascript">
@@ -56,6 +64,19 @@ $(document).ready(function(){
     
 });
 
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+    var toc = $("#toc").tocify({
+    scrollTo : 50,
+    extendPage : true,
+    selectors : "h1,h2,h3,h4,h5",
+    showEffect : "fadeIn"
+    });
+
+    });
 </script>
 
 <script src="/js/ekko-lightbox.js"></script>
