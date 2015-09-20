@@ -259,4 +259,4 @@ http://localhost:8081/demo-app2
 {{%/panel%}}
 
 
-{{%learn "currentjavaurl/global-http-session-sharing-overview.html"%}}
+{{%learn "/xap101/global-http-session-sharing-overview.html"%}}

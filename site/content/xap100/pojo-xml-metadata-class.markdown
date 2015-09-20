@@ -69,7 +69,7 @@ Example:
 ```
 
 
-{{%learn "currentadmurl/replication.html"%}}
+{{%learn "/xap100adm/replication.html"%}}
 
 
 # FIFO Support
@@ -206,7 +206,7 @@ Example:
 ```
 
 
-{{%learn "currentadmurl/blobstore-cache-policy.html"%}}
+{{%learn "/xap100adm/blobstore-cache-policy.html"%}}
 
 
 

@@ -418,6 +418,6 @@ After you execute the above command, open your web browser, point to `http://you
 {{%/section%}}
 
 
-{{%learn "currentadmurl/web-management-console.html"%}}
+{{%learn "/xap100adm/web-management-console.html"%}}
 
 

@@ -279,7 +279,7 @@ gigaSpace = admin.getProcessingUnits().getProcessingUnit(gridname).getSpace().ge
 ```
 
 
-{{%learn "currentjavaurl/the-gigaspace-interface.html"%}}
+{{%learn "/xap101/the-gigaspace-interface.html"%}}
 
 
 #### Writing and Reading simple POJO objects
@@ -294,7 +294,7 @@ gigaSpace.write(engineerPojo);
 gigaSpace.read(new EngineerPojo());
 ```
 
-{{%learn "currentjavaurl/pojo-overview.html"%}}
+{{%learn "/xap101/pojo-overview.html"%}}
 
 #### Reading multiple POJO's from the Space with a criteria
 
@@ -319,7 +319,7 @@ gigaSpace.write(engineerPojoWithDynamicProperties);
 ```
 
 
-{{%learn "currentjavaurl/dynamic-properties.html"%}}
+{{%learn "/xap101/dynamic-properties.html"%}}
 
 #### Using the Document API
 
@@ -334,7 +334,7 @@ gigaSpace.write(engineerPojoDocument);
 ```
 
 
-{{%learn "currentjavaurl/document-overview.html"%}}
+{{%learn "/xap101/document-overview.html"%}}
 
 
 #### Write multiple SpaceDocuments with dynamic properties
@@ -355,7 +355,7 @@ for (int i=0; i<10; i++) {
 gigaSpace.writeMultiple(spaceDocuments);
 ```
 
-{{%learn "currentjavaurl/document-extending.html"%}}
+{{%learn "/xap101/document-extending.html"%}}
 
 #### Read a random POJO from the Space
 
@@ -363,7 +363,7 @@ gigaSpace.writeMultiple(spaceDocuments);
 gigaSpace.read(new SpaceDocument("EngineerDocument"));
 ```
 
-{{%learn "currentjavaurl/querying-the-space.html"%}}
+{{%learn "/xap101/querying-the-space.html"%}}
 
 
 
@@ -428,6 +428,6 @@ After you execute the above command, open your web browser, point to `http://you
 {{%/section%}}
 
 
-{{%learn "currentadmurl/web-management-console.html"%}}
+{{%learn "/xap101adm/web-management-console.html"%}}
 
 

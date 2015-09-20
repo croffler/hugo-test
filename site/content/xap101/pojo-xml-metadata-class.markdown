@@ -69,7 +69,7 @@ Example:
 ```
 
 
-{{%learn "currentadmurl/replication.html"%}}
+{{%learn "/xap101adm/replication.html"%}}
 
 
 # FIFO Support
@@ -206,7 +206,7 @@ Example:
 ```
 
 
-{{%learn "currentadmurl//memoryxtend.html"%}}
+{{%learn "/xap101adm//memoryxtend.html"%}}
 
 
 

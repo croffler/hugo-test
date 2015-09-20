@@ -69,7 +69,7 @@ You will learn how to:
 - querying the space
 - indexing objects in space
 
-{{%learn "align right ./java-tutorial-part1.html  /align"%}}
+{{%learn "./java-tutorial-part1.html"%}}
 {{%/column%}}
 {{%/section%}}
 {{%/panel%}}
@@ -99,7 +99,7 @@ You will learn how to:
 - interact with the data grid
 - how to use the administration UI
 
-{{%learn "align right ./java-tutorial-part2.html/align"%}}
+{{%learn "./java-tutorial-part2.html"%}}
 {{%/column%}}
 {{%/section%}}
 {{%/panel%}}
@@ -125,7 +125,7 @@ You will learn how to use:
 - Remoting service
 
 
-{{%learn "align right ./java-tutorial-part3.html/align"%}}
+{{%learn "./java-tutorial-part3.html"%}}
 
 {{%/column%}}
 {{%/section%}}
@@ -152,7 +152,7 @@ You will learn how to use:
 - Notify container
 - Polling container
 
-{{%learn "align right ./java-tutorial-part4.html/align"%}}
+{{%learn "./java-tutorial-part4.html"%}}
 
 {{%/column%}}
 {{%/section%}}
@@ -183,7 +183,7 @@ You will learn how to:
 - how to scale and provide failover
 
 
-{{%learn "align right ./java-tutorial-part5.html/align"%}}
+{{%learn "./java-tutorial-part5.html"%}}
 
 {{%/column%}}
 {{%/section%}}
@@ -212,7 +212,7 @@ You will learn about:
 - Concurrency
 - Locking
 
-{{%learn "align right ./java-tutorial-part6.html/align"%}}
+{{%learn "./java-tutorial-part6.html"%}}
 
 {{%/column%}}
 {{%/section%}}
@@ -240,7 +240,7 @@ You will learn about:
 - Asynchronos persistence
 - Persistence Adapters
 
-{{%learn "align right ./java-tutorial-part7.html/align"%}}
+{{%learn "./java-tutorial-part7.html"%}}
 
 {{%/column%}}
 {{%/section%}}
@@ -268,7 +268,7 @@ You will learn about:
  - how to share global HTTP Sessions
  - how to integrate with Apache load balancer
 
-{{%learn "align right ./java-tutorial-part8.html/align"%}}
+{{%learn "./java-tutorial-part8.html"%}}
 
  {{%/column%}}
  {{%/section%}}
@@ -295,7 +295,7 @@ You will learn about:
  - Archive container
  - Space persistency
 
-{{%learn "align right ./java-tutorial-part9.html/align"%}}
+{{%learn "./java-tutorial-part9.html"%}}
 
  {{%/column%}}
  {{%/section%}}
@@ -323,7 +323,7 @@ You will learn about:
  - create users
  - secure XAP components
 
-{{%learn "align right./java-tutorial-part10.html/align"%}}
+{{%learn "./java-tutorial-part10.html"%}}
 
  {{%/column%}}
  {{%/section%}}

@@ -142,7 +142,7 @@ public class Person {
 
 
 
-{{%learn "currentadmurl/replication.html"%}}
+{{%learn "/xap100adm/replication.html"%}}
 
 
 # Compound Index
@@ -195,5 +195,5 @@ public class Person {
 
 ```
 
-{{%learn "currentadmurl/blobstore-cache-policy.html"%}}
+{{%learn "/xap100adm/blobstore-cache-policy.html"%}}
 

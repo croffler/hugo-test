@@ -17,8 +17,8 @@ There are four categories of user authorities. These categories allow the flexib
 The **System Authority** consists of two privileges and defines the distinction between a user who is allowed to define roles and a user which is only allowed to assign user's to predefined roles.
 In general, one can have both management capabilities, but in some organizations this separation may be required.
 
- |                |     |
- |----------------|-----|
+|                |     |
+|----------------|-----|
 | Manage Roles | Define roles (a set of privileges assigned to a logical role name) |
 | Manage Users | Assign users to pre-defined roles, or assign user-specific privileges |
 

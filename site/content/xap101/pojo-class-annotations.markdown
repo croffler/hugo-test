@@ -142,7 +142,7 @@ public class Person {
 
 
 
-{{%learn "currentadmurl/replication.html"%}}
+{{%learn "/xap101adm/replication.html"%}}
 
 
 # Compound Index
@@ -195,6 +195,6 @@ public class Person {
 
 ```
 
-{{%learn "currentadmurl/memoryxtend.html"%}}
+{{%learn "/xap101adm/memoryxtend.html"%}}
 
 
