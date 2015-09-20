@@ -34,7 +34,15 @@ Here is an overview of the most commonly used POJO annotations:
 {{% info %}}
  You can define space classes metadata by class and field level decorations. These can be defined via annotations or XML configurations files (**gs.xml file**).
 {{% /info %}}
-{{%learn "./modeling-your-data.html"%}}
+
+
+
+{{%refer%}}
+[Modeling your Data](./modeling-your-data.html)
+{{%/refer%}}
+
+
+
 
 {{%warning%}}
 When using  annotations and the gs.xml file to define metadata, the metadata in the gs.xml will be used and the annotations will be ignored. **It is not recommended to use the two metadata definitions for a space class at the same time**.

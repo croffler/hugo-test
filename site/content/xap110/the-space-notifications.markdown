@@ -57,7 +57,11 @@ eventListener.destroy();
 
 ```
 
-{{%learn "./notify-container.html"%}}
+
+{{%refer%}}
+[Notify Container](./notify-container.html)
+{{%/refer%}}
+
 
 
 # Polling Example
@@ -102,7 +106,12 @@ This example works just like the notification example above, except that the obj
   pollingListener.destroy();
 ```
 
-{{%learn "./polling-container.html"%}}
+
+{{%refer%}}
+[Polling Container](./polling-container.html)
+{{%/refer%}}
+
+
 
 # Primary/Backup
 

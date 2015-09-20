@@ -152,4 +152,8 @@ public class DefaultFooService implements FooService {
 
 In the above example, any operation performed using `GigaSpace` in the `updateFoo` method automatically works under the `READ_COMMITTED` isolation level.
 
-{{%learn "./transaction-management.html"%}}
+
+{{%refer%}}
+[Transaction Management](./transaction-management.html)
+{{%/refer%}}
+

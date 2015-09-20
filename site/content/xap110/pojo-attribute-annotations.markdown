@@ -39,7 +39,10 @@ public class Person {
 }
 ```
 
-{{%learn "./space-object-id-operations.html"%}}
+
+{{%refer%}}
+[Space Object Id Operations](./space-object-id-operations.html)
+{{%/refer%}}
 
 
 # SpaceRouting
@@ -68,7 +71,12 @@ public class Employee {
 }
 ```
 
-{{%learn "currentadmurl/data-partitioning.html"%}}
+
+{{%refer%}}
+[Data Partitioning]({{%currentadmurl%}}/data-partitioning.html)
+{{%/refer%}}
+
+
 
 <br>
 
@@ -147,7 +155,12 @@ public class User {
 ```
 
 
-{{%learn "./indexing.html"%}}
+
+{{%refer%}}
+[Indexing  ](./indexing.html)
+{{%/refer%}}
+
+
 
 # Unique Index
 
@@ -181,7 +194,11 @@ public class Person
 ```
 
 
-{{%learn "./indexing.html"%}}
+
+{{%refer%}}
+[Indexing  ](./indexing.html)
+{{%/refer%}}
+
 
 # SpaceIndex Path
 
@@ -228,7 +245,10 @@ public static class Address implements Serializable {
 }
 ```
 
-{{%learn "./indexing-nested-properties.html"%}}
+
+{{%refer%}}
+[Indexing Nested Properties](./indexing-nested-properties.html)
+{{%/refer%}}
 
 # SpaceVersion
 
@@ -259,7 +279,11 @@ public class Employee {
 }
 ```
 
-{{%learn "./transaction-optimistic-locking.html"%}}
+
+{{%refer%}}
+[Transaction Optimistic Locking](./transaction-optimistic-locking.html)
+{{%/refer%}}
+
 
 # SpacePersist
 
@@ -347,7 +371,11 @@ public class MyData {
 }
 ```
 
-{{%learn "./leases-automatic-expiration.html"%}}
+
+{{%refer%}}
+[Automatic Lease Expiration](./leases-automatic-expiration.html)
+{{%/refer%}}
+
 
 # SpaceStorageType
 

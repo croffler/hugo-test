@@ -367,8 +367,9 @@ for (GroupByValue group : groupByResult) {
 
 ```
 
-
-{{%learn "./query-sql.html#routing"%}}
+{{%refer%}}
+[SQL Query Routing](./query-sql.html#routing)
+{{%/refer%}}
 
 # Custom Aggregation
 
