@@ -28,7 +28,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("xapTutor
 
 You can configure the Space connection with several options.
 
-{{%learn "currentjavaurl/the-space-configuration.html"%}}
+{{%refer%}}[The Space Configuration]({{%currentjavaurl%}}/the-space-configuration.html){{%/refer%}}
 
 
 When a client connects to a space, a proxy is created that holds a connection which implements the space API. All client interaction is performed through this proxy.
@@ -42,7 +42,7 @@ In both cases, updates are performed (objects are added/updated/removed) on the 
 
 These two scenarios are only applicable for remote clients.
 
-{{%learn "currentjavaurl/client-side-caching.html"%}}
+{{%refer%}}[Client Side Caching]({{%currentjavaurl%}}/client-side-caching.html){{%/refer%}}
 
 
 
@@ -93,7 +93,7 @@ The space generates a unique identifier (UID) for every object in one of the fol
 #### Compound SpaceId
 You might need to construct a space id that will be comprised from a user defined class rather than using a Numeric or String type field. In such a case your user defined class used as the SpaceId data type must implement the toString , hashCode and equals methods. The compound ID class must implement a toString method that return a unique String for each ID.
 
-{{%learn "currentjavaurl/space-object-id-operations.html"%}}
+{{%refer%}}[The Space Object Id]({{%currentjavaurl%}}/space-object-id-operations.html){{%/refer%}}
 
 
 #### Defining Routing
@@ -103,7 +103,7 @@ Partitioning is used when the total number of objects is too big to be stored in
 
 {{%info%}}
 The routing attribute can be explicitly set using the @SpaceRouting annotation for POJO entries or via the SpaceTypeDescriptorBuilder for document entries. If the routing attribute is not explicitly set, the space id attribute is used for routing. If the space id attribute is not defined, the first indexed attribute (alphabetically) is used for routing, otherwise the first attribute (alphabetically) is used for routing.
-{{%learn "currentjavaurl/routing-in-partitioned-spaces.html"%}}
+{{%refer%}}[Routing in partitioned Space]({{%currentjavaurl%}}/routing-in-partitioned-spaces.html){{%/refer%}}
 {{%/info%}}
 
 
@@ -154,7 +154,7 @@ Only properties with special roles like ID and Routing are part of the schema de
 
 {{%info%}}
 It is possible to write a POJO to the space and read it back as a document, and vice versa. This scenario is useful when you want to read or modify POJO objects without loading the concrete java classes.
-{{%learn "currentjavaurl/document-pojo-interoperability.html"%}}
+{{%refer%}}[Document POJO Interoperability]({{%currentjavaurl%}}/document-pojo-interoperability.html){{%/refer%}}
 {{%/info%}}
 
 
@@ -219,7 +219,7 @@ public void writeOnlyWithLease() {
 
 In this example, we are writing an object to the space with zero delay, 10 seconds to live and write only if the object does not already exist in the space. If the object already exists, an exception will be thrown.
 
-{{%learn "currentjavaurl/the-space-operations.html"%}}
+{{%refer%}}[The Space Operations]({{%currentjavaurl%}}/the-space-operations.html){{%/refer%}}
 
 
 #### Updating an object in space
@@ -246,7 +246,7 @@ public void ChangeSet() {
 
 There are several other change operations available; 'increment', 'decrement', 'addToCollection', 'removeFromCollection' etc.
 
-{{%learn "currentjavaurl/change-api.html"%}}
+{{%refer%}}[The Change API]({{%currentjavaurl%}}/change-api.html){{%/refer%}}
 
 # Querying the Space
 
@@ -326,7 +326,7 @@ public User[] sqlFindUsersByNameAndIds() {
 }
 ```
 
-{{%learn "currentjavaurl/query-sql.html"%}}
+{{%refer%}}[SQL Query]({{%currentjavaurl%}}/query-sql.html){{%/refer%}}
 
 #### Parameterized Queries
 You can separate the values for the SQL criteria expression by placing a '?' symbol instead of the actual value in the expression. When executing the query, the conditions that includes '?' are replaced with the corresponding parameter values supplied via the setParameter  method.
@@ -374,7 +374,7 @@ public User[] findUsersByGroup() {
 
 There are several additional query options available. For example you can query Nested Maps by key,query with Regular Expression, Enum attributes and others.
 
-{{%learn "currentjavaurl/query-nested-properties.html"%}}
+{{%refer%}}[Query Netsed Properties]({{%currentjavaurl%}}/query-nested-properties.html){{%/refer%}}
 
 
 #### Query returning partial results
@@ -393,7 +393,7 @@ public User[] findUsersByNameAndProjection() {
 }
 ```
 
-{{%learn "currentjavaurl/query-partial-results.html"%}}
+{{%refer%}}[Query Partial results]({{%currentjavaurl%}}/query-partial-results.html){{%/refer%}}
 
 
 #### Document Queries
@@ -420,7 +420,7 @@ public SpaceDocument[] readProductsBySQL() {
 }
 ```
 
-{{%learn "currentjavaurl/document-api.html"%}}
+{{%refer%}}[The Document API]({{%currentjavaurl%}}/document-api.html){{%/refer%}}
 
 
 
@@ -481,7 +481,7 @@ public void clearAllObjectInSpace() {
 ```
 
 
-{{%learn "currentjavaurl/the-space-operations.html"%}}
+{{%refer%}}[The Space Operations]({{%currentjavaurl%}}/the-space-operations.html){{%/refer%}}
 
 
 #### Aggregation
@@ -512,7 +512,7 @@ Person youngestPersonInSpace = minEntry(space, personSQLQuery, "age");
 
 XAP also supports, `Compound`, `Embedded Fields` and `Group` Aggregation.
 
-{{%learn "currentjavaurl/aggregators.html"%}}
+{{%refer%}}[Aggregators]({{%currentjavaurl%}}/aggregators.html){{%/refer%}}
 
 
 # Indexing
@@ -588,7 +588,7 @@ SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Doe' AND cred
 
 There are several additional indexing options available. For example you can index nested attributes, Nested Maps, Collections, nested attributes within a Collection, free text search and others.
 
-{{%learn "currentjavaurl/indexing-overview.html"%}}
+{{%refer%}}[Indexing]({{%currentjavaurl%}}/indexing-overview.html){{%/refer%}}
 
 
 # Best Practice
@@ -624,7 +624,7 @@ There are several additional indexing options available. For example you can ind
 # Other Data Access API's
 XAP provides a JDBC Driver, JPA API, MAP and Memcached API's.
 
-{{%learn "currentjavaurl/other-data-access-apis.html"%}}
+{{%refer%}}[Other Data Access API's]({{%currentjavaurl%}}/other-data-access-apis.html){{%/refer%}}
 
 
 

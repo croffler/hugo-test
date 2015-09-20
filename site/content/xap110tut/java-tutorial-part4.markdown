@@ -33,7 +33,7 @@ The Polling Container is the equivalent of a point to point paradigm. Unlike the
 # Archive Container
 The archive container is a mechanism built on top of a polling container to transfer historical data into Big-Data storage (for example Cassandra). The typical scenario is when streaming vast number of raw events through the Space, enriching them and then moving them to a Big-Data storage. Typically, there is no intention of keeping them in the space nor querying them in the space.
 
-{{%learn "currentjavaurl/archive-container.html"%}}
+{{%refer%}}[The Archive Container]({{%currentjavaurl%}}/archive-container.html){{%/refer%}}
 
  
 
@@ -194,7 +194,7 @@ The same can be accomplished with Java8 lambda syntax:
 ```
 
 
-{{%learn "currentjavaurl/event-processing.html"%}}
+{{%refer%}}[Event Processing]({{%currentjavaurl%}}/event-processing.html){{%/refer%}}
 
 # FIFO Support
 Sometimes it is necessary to process events in the order the way they have been created. By default events are not ordered. XAP supports FIFO (First In, First Out) processing of events.  To enable FIFO operations you can turn on FIFO support for classes which will participate in such operations.    
@@ -212,7 +212,7 @@ public class Payment implements Serializable {
 }
 ```
 
-{{%learn "currentjavaurl/fifo-support.html"%}}
+{{%refer%}}[FIFO Support]({{%currentjavaurl%}}/fifo-support.html){{%/refer%}}
 
 
 
@@ -222,7 +222,7 @@ public class Payment implements Serializable {
 # JMS
 In addition to the polling containers you can also use a JMS facade on top of the space to deliver events. The JMS facade is designed to enable integration with external feeders that cannot or were not designed to work with the space based API. 
 
-{{%learn "currentjavaurl/messaging-support.html"%}}
+{{%refer%}}[Messaging Support]({{%currentjavaurl%}}/messaging-support.html){{%/refer%}}
 
  
 
@@ -244,7 +244,10 @@ In GigaSpaces XAP, you can implement the Master-Worker pattern using several met
 {{%/column%}}
 {{%/section%}}
 
-{{%learn "/sbp/master-worker-pattern.html"%}}
+
+{{%refer%}}
+[Services & Best Practices, Master Worker Pattern](/sbp/master-worker-pattern.html)
+{{%/refer%}}
 
 
 

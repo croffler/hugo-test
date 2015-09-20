@@ -45,20 +45,22 @@ XAP's authorization implementation is based on roles. A role is comprised of a c
 ### System Authority
 The System Authority consists of two privileges:
 
-{{%indent%}}
-|   |    |
-|----|----|----|
+
+
+|     |      |
+|------|------|
 |Manage Roles|Define roles (a set of privileges assigned to a logical role name)|
 |Manage Users|Assign users to pre-defined roles, or assign user-specific privileges|
-{{%/indent%}}
+
 
 
 ### Grid Authority
 The Grid Authority consists of privileges for managing the Grid and its Services (GSMs, GSCs, Processing Units).
 
 {{%indent%}}
+
 |   |    |
-|----|----|----|
+|----|----|
 |Provision PU	 |Deploy, Un-deploy of processing units|
 |Manage PU	 |Scale up/down, Relocate, Restart PU instance, Destroy PU instance|
 |Manage Grid    |Start, Terminate, Restart of GSC/GSM/LUS via GSA|
@@ -69,8 +71,9 @@ The Grid Authority consists of privileges for managing the Grid and its Services
 The Space Authority consists of privileges for operations on space data.
 
 {{%indent%}}
+
 |   |    |
-|----|----|----|
+|----|----|
 |Write	  |Write and Update operations|
 |Create  |Write only (no Update) operations|
 |Read	  |Read, Count and Notify operations|
@@ -84,13 +87,14 @@ The Monitor Authority consists of privileges for monitoring the Grid and its Pro
 Note that the monitoring is secured only by the 'tooling' (CLI/UI).
 
 {{%indent%}}
+
 |   |    |
-|----|----|----|
+|----|----|
 |Monitor JVM	 |Monitoring of JVM statistics|
 |Monitor PU	 |Monitoring of Processing Units (classes, connections, statistics, etc.)|
 {{%/indent%}}
 
-{{%learn "currentsecurl/security-authorities.html"%}}
+{{%refer%}}[Security Authorities]({{%currentsecurl%}}/security-authorities.html){{%/refer%}}
 
 
 # Managing Roles
@@ -125,7 +129,7 @@ The default username and password for the security are admin/admin.
 
 You may have noticed that you can assign fine grained access control for space operations (read/write/etc) per space class(slide 4).
 
-{{%learn "currentsecurl/gigaspaces-management-center-(ui)-security.html"%}}
+{{%refer%}}[Web Management Console]({{%currentsecurl%}}/gigaspaces-management-center-ui-security.html){{%/refer%}}
 
 
 # Managing Users
@@ -186,7 +190,7 @@ private Role createRole() {
 {{% /tab  %}}
 {{% /tabs %}}
 
-{{%learn "currentsecurl/gigaspaces-management-center-(ui)-security.html"%}}
+{{%refer%}}[Web Management Console]({{%currentsecurl%}}/gigaspaces-management-center-ui-security.html){{%/refer%}}
 
 
 # Securing XAP Components
@@ -249,7 +253,7 @@ public void setupSpace()
 
 
 
-{{%learn "currentsecurl/securing-your-data.html"%}}
+{{%refer%}}[Securing Your Data]({{%currentsecurl%}}/securing-your-data.html){{%/refer%}}
 
 
 
@@ -266,14 +270,14 @@ Grid Security is enabled in XAP by setting a global system property. This system
 
 This property affects the GSA, GSM, GSC and standalone PU instances with a space.
 
-{{%learn "currentsecurl/securing-the-grid-services.html"%}}
+{{%refer%}}[Securing Grid Services]({{%currentsecurl%}}/securing-the-grid-services.html){{%/refer%}}
 
 
 
 ### Transport Security
 The transport layer can be secured using an SSL communication filter.
 
-{{%learn "currentsecurl/securing-the-transport-layer-using-ssl.html"%}}
+{{%refer%}}[Securing the Transport Layer]({{%currentsecurl%}}/securing-the-transport-layer-using-ssl.html){{%/refer%}}
 
 
 {{%info%}}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide]({{%currentjavaurl%}}) {{%/info%}}
