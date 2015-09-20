@@ -345,4 +345,4 @@ http://localhost:8081/demo-app2
 {{%/section%}}
 
 
-{{%learn "currentjavaurl/global-http-session-sharing-overview.html"%}}
+{{%learn "/xap102/global-http-session-sharing-overview.html"%}}

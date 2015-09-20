@@ -195,6 +195,6 @@ public class Person {
 
 ```
 
-{{%learn "currentadmurl/memoryxtend.html"%}}
+{{%learn "/xap102adm/memoryxtend.html"%}}
 
 

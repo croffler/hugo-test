@@ -267,7 +267,7 @@ Example:
 </gigaspaces-mapping>
 ```
 
-{{%learn "currentadmurl/data-partitioning.html"%}}
+{{%learn "/xap102adm/data-partitioning.html"%}}
 
 # Class Reference
 

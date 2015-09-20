@@ -64,7 +64,7 @@ public class Employee {
 }
 ```
 
-{{%learn "currentadmurl/data-partitioning.html"%}}
+{{%learn "/xap102adm/data-partitioning.html"%}}
 
 
 # SpaceProperty

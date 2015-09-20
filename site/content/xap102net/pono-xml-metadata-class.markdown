@@ -86,7 +86,7 @@ Example:
 ```
 
 
-{{%learn "currentadmurl/replication.html"%}}
+{{%learn "/xap102adm/replication.html"%}}
 
 
 # FIFO Support

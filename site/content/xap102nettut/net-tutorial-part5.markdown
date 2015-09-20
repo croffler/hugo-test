@@ -66,7 +66,7 @@ A processing unit is essentially a .NET class library with a deployment descript
 
 {{%info%}}"PU Configuration SnippetsFrom here on processing unit configuration snippets will usually be shortened to focus on the `<ProcessingUnit>` tag. {{%/info%}}
 
-{{%learn "currentneturl/the-processing-unit-overview.html"%}}
+{{%learn "/xap102net/the-processing-unit-overview.html"%}}
 
 # Service Level Agreement (SLA)
 
@@ -92,7 +92,7 @@ A sample SLA definition is shown below:
 </beans>
 ```
 
-{{%learn "currentadmurl/the-sla-overview.html"%}}
+{{%learn "/xap102net/the-sla-overview.html"%}}
 
 # Deployment
 When deploying the PU to the XAP Service Grid, the PU is uploaded to the XAP Manager (GSM) and extracted to the deploy directory of the local XAP installation (located by default under <XAP Root>\deploy).

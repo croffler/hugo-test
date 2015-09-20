@@ -37,5 +37,5 @@ The MemoryXtend Tutorial describes how to experiment with MemoryXtend and compar
 {{%/section%}}
 
 <br>
-{{%learn "currentadmurl/memoryxtend.html"%}}
+{{%learn "/xap102adm/memoryxtend.html"%}}
 

@@ -6,19 +6,14 @@ parent: none
 weight: 1200
 ---
 
-<br>
 
-{{%section%}}
-{{%column width="10%" %}}
-![Events-Message.jpg](/attachment_files/subject/Events-Message.png)
-{{%/column%}}
-{{%column width="90%" %}}
+
+
+{{%bannerleft "/attachment_files/subject/Events-Message.png" %}}
 This section will guide you through event processing APIs and configuration on top of the space.
-{{%/column%}}
-{{%/section%}}
+{{%/bannerleft%}}
 
 
-<br>
 
 {{%fpanel%}}
 

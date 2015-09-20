@@ -179,7 +179,7 @@ public void executeDistributedTaskAsync()
 }
 ```
 
-{{%learn "currentneturl/task-execution-over-the-space.html"%}}
+{{%learn "/xap102net/task-execution-over-the-space.html"%}}
 
 
 
