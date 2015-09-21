@@ -426,7 +426,7 @@
 
     {{ partial "nav.html" .}}
 
-    <div class="col-lg-8">
+    <div class="col-lg-7">
         <h1>{{ .Title }}</h1>
         <hr>
         {{ .Content }}
@@ -437,9 +437,7 @@
     </div>
 
 
-    <div class="col-lg-2">
-        <div id="toc"></div>
-    </div>
+    {{ partial "toc.html" .}}
 
 </div>
 
