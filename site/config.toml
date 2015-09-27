@@ -4,6 +4,9 @@ title = "XAP Documentation"
 theme="hugo-bootswatch"
 uglyurls=true
 
+[blackfriday]
+plainIdAnchors=true
+
 [params]
     latest_xap_release= "10.2"
     latest_java_url= "/xap102"

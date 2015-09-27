@@ -78,7 +78,7 @@ $(document).ready(function() {
     // Scroll to the table of content section when user scroll the mouse
     $('body').scrollspy({
         target: '#toc',
-        offset: $('#headerNav').outerHeight(true) + 40
+        offset: $('.navbar').outerHeight(true) + 40
     });
 
     setTimeout(function() {
@@ -88,7 +88,7 @@ $(document).ready(function() {
                 top: function() {
                     var offsetTop      = $sideBar.offset().top,
                         sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10),
-                        navOuterHeight = $('#headerNav').height();
+                        navOuterHeight = $('.navbar').height();
                     return (this.top = offsetTop - navOuterHeight - sideBarMargin);
                 },
                 bottom: function() {
