@@ -5,6 +5,7 @@ theme="hugo-bootswatch"
 uglyurls=true
 
 [blackfriday]
+# https://github.com/spf13/hugo/blob/master/docs/content/overview/configuration.md#configure-blackfriday-rendering
 plainIdAnchors=true
 
 [params]
@@ -15,6 +16,8 @@ plainIdAnchors=true
     latest_sec_url= "/xap102sec"
     latest_net_tut_url= "/xap102nettut"
     latest_java_tut_url= "/xap102tut"
+
+
 
 
 
