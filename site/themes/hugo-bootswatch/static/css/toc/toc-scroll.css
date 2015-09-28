@@ -8,13 +8,13 @@
  * @license     MIT
  */
 .toc {
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   border-radius: 4px; }
   .toc.affix {
     position: static; }
   .toc .nav > .active > a, .toc .nav > .active:hover > a,
   .toc .nav > .active :focus > a {
-    border-right: 2px solid #428bca; }
+    border-right: 2px solid #428bca;}
   .toc .nav .nav {
     /*
      * If you want to hide the sub UL elements, then add the following line

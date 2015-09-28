@@ -1,4 +1,9 @@
 
+.toc .nav > .active > a,.toc .nav > .active:hover > a, .toc .nav > .active :focus > a {
+border-left: 2px solid #428bca;
+border-right:none;
+
+}
 
 /*  This is the css for the shortcods
 
@@ -16,41 +21,6 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .alignleft { float: left; }
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
-/*
-#toc {
- position:fixed;
- right:0px;
- background-color: white;
- padding: 10px 10px 10px 10px;
- margin-left: 200px;
- }
-
-.toc.compact ul > li > ul > li > ul  { display: none; }
-.toc.compact ul > li > ul > li   { display: none; }
-*/
-
-/* Table of contents */
-/*
-.toc ul { list-style: none; margin: 0; padding: 0 5px;  }
-.toc ul li { display: inline; }
-#TableOfContents > ul > li > ul > li > ul li { margin-right: 8px; }
-#TableOfContents > ul > li > ul > li > a, #TableOfContents > ul > li > a   {   bold; background-color: #f6f8f9; padding: 0 10px; margin: 0 2px; }
-#TableOfContents > ul > li > ul > li > a {  }
-.toc.compact ul > li > ul > li > ul  { display: none; }
-
-#toc {
- position:fixed;
- right:0px;
- background-color: white;
- padding: 10px 10px 10px 10px;
- }
-
-@media(max-width:1200px) {
-    .toc {
-        display: none;
-    }
-}
-*/
 /*   end toc */
 
 
